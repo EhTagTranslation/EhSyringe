@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "EhSyringeLite",
+  "description": "EhSyringeLite",
+  "author": "xioxin",
+  "version": "1.0",
+  "icons": {
+    "32": "images/logo32.png",
+    "16": "images/logo16.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/logo32.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
+      "css": [ "syringe.css" ],
+      "js": ["data/ui-data.js", "data/tag-db.js", "syringe.js" ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
+      "css": [ "tag-tip/tag-tip.css" ],
+      "js": ["tag-tip/tag-tip.js" ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
