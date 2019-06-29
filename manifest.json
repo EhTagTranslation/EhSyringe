@@ -10,10 +10,6 @@
     "48": "images/logo48.png",
     "128": "images/logo128.png"
   },
-  "browser_action": {
-    "default_icon": "images/logo32.png",
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
     {
       "matches": ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
@@ -28,7 +24,13 @@
       "run_at": "document_end"
     }
   ],
+  "page_action": {
+    "default_name": "EhSyringeLite",
+    "default_icon": "images/logo32.png",
+    "default_popup": "popup.html"
+  },
   "permissions": [
+    "*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*",
     "activeTab",
     "storage"
   ]
