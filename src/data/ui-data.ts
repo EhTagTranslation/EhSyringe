@@ -1,4 +1,4 @@
-var uiData = {
+export const uiData : {[key: string]: string} = {
   'Report Gallery': '举报图库',
   'Archive Download': '存档下载',
   'Torrent Download': '种子下载',

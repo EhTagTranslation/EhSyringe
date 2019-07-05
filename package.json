@@ -1,0 +1,32 @@
+{
+  "name": "ehsyringelite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "syringe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xioxin/EhSyringeLite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xioxin/EhSyringeLite/issues"
+  },
+  "homepage": "https://github.com/xioxin/EhSyringeLite#readme",
+  "devDependencies": {
+    "@types/chrome": "0.0.86",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^3.0.0",
+    "file-loader": "^4.0.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  }
+}

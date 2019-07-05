@@ -1,13 +1,23 @@
+import { tagDb } from './data/tag-db';
+import { uiData } from './data/ui-data';
+import { EHTDatabase, TagList } from './interface';
+import './style/syringe.css';
 
-const trim = (s) => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+const trim = (s: string): string => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+const tagList: TagList = [];
 
-const tagData = {};
+const tagReplaceData: {[key: string]: string} = {};
 tagDb.data.forEach(space => {
     const namespace = space.namespace;
     for(let key in space.data){
         const t = space.data[key];
-        tagData[key] = t.name;
-        tagData[namespace[0] + ':' + key] = namespace[0] + ':' + t.name;
+        tagList.push({
+            ...t,
+            key,
+            namespace,
+        })
+        tagReplaceData[key] = t.name;
+        tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + t.name;
     }
 })
 
@@ -42,22 +52,14 @@ observer.observe(window.document, {
     subtree: true
 });
 
-// let nodeIterator = document.createNodeIterator(window.document);
-// let node;
-// while((node = nodeIterator.nextNode())){
-//     translateNode(node);
-// }
-
-
-
-function translateNode(node){
+function translateNode(node: Node){
     if (node.nodeName === "#text"){
         if(uiData[node.textContent]){
             node.textContent = uiData[node.textContent];
             return;
         }
-        if(tagData[node.textContent]) {
-            node.textContent = tagData[node.textContent];
+        if(tagReplaceData[node.textContent]) {
+            node.textContent = tagReplaceData[node.textContent];
             return;
         }
         node.textContent = node.textContent.replace(/(\d+) pages/, '$1 页')
@@ -68,9 +70,11 @@ function translateNode(node){
         node.textContent = node.textContent.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片')
         node.textContent = node.textContent.replace(/Rate as ([\d\.]+) stars/, '$1星')
     } else if(node.nodeName === 'INPUT') {
-        if(uiData[node.placeholder]){
-            node.placeholder = uiData[node.placeholder];
+        if(uiData[(node as HTMLInputElement).placeholder]){
+            (node as HTMLInputElement).placeholder = uiData[(node as HTMLInputElement).placeholder];
             return;
         }
     }
 }
+
+
