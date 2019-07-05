@@ -86,16 +86,16 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/style/syringe.css":
-/*!*********************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/style/syringe.css ***!
-  \*********************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/style/syringe.less":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js??ref--5-3!./src/style/syringe.less ***!
+  \****************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "td.tc {\r\n    white-space:nowrap;\r\n}\r\n\r\ndiv.gt, div.gtl {\r\n    height: 16px;\r\n    line-height: 16px;\r\n    white-space:nowrap;\r\n}\r\n\r\nimg {\r\n    display: none !important;\r\n}\r\nbody, div.ido, table.itg>tbody>tr>th, table.itg>tbody>tr>td {\r\n    background: #fff !important;\r\n}\r\ntable.ptt, table.itg, table.itc {\r\n    display: none;\r\n}", ""]);
+exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}img{display:none!important}body,div.ido,table.itg>tbody>tr>td,table.itg>tbody>tr>th{background:#fff!important}table.itc,table.itg,table.ptt{display:none}", ""]);
 
 
 /***/ }),
@@ -1112,15 +1112,15 @@ exports.uiData = {
 
 /***/ }),
 
-/***/ "./src/style/syringe.css":
-/*!*******************************!*\
-  !*** ./src/style/syringe.css ***!
-  \*******************************/
+/***/ "./src/style/syringe.less":
+/*!********************************!*\
+  !*** ./src/style/syringe.less ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./syringe.css */ "./node_modules/css-loader/dist/cjs.js!./src/style/syringe.css");
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../node_modules/postcss-loader/src??postcss!../../node_modules/less-loader/dist/cjs.js??ref--5-3!./syringe.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/style/syringe.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1154,7 +1154,7 @@ if(false) {}
 Object.defineProperty(exports, "__esModule", { value: true });
 const tag_db_1 = __webpack_require__(/*! ./data/tag-db */ "./src/data/tag-db.ts");
 const ui_data_1 = __webpack_require__(/*! ./data/ui-data */ "./src/data/ui-data.ts");
-__webpack_require__(/*! ./style/syringe.css */ "./src/style/syringe.css");
+__webpack_require__(/*! ./style/syringe.less */ "./src/style/syringe.less");
 const trim = (s) => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
 const tagList = [];
 const tagReplaceData = {};

@@ -13,9 +13,45 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.less$/,
+        exclude : '/node_modules',
+        use: [
+            {
+              loader: 'style-loader',
+              options: {
+                insertInto: ':root'
+              }
+            },
+            {
+                loader: 'css-loader',   
+                options: {
+                    importLoaders: 1
+                }
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    ident: 'postcss',
+                    plugins: (loader) => [
+                      require('postcss-import')({ root: loader.resourcePath }),
+                      require('postcss-cssnext')(),
+                      require('autoprefixer')(),
+                      require('cssnano')()
+                    ]
+                  }
+            },
+            {
+                loader: 'less-loader',
+                options: {
+                    importLoaders: 1
+                }
+            }
+        ]
       },
       {
         test: /\.css$/,
@@ -26,7 +62,24 @@ module.exports = {
               insertInto: ':root'
             }
           },
-          'css-loader'
+          {
+              loader: 'css-loader',   
+              options: {
+                  importLoaders: 1
+              }
+          },
+          {
+              loader: 'postcss-loader',
+              options: {
+                  ident: 'postcss',
+                  plugins: (loader) => [
+                    require('postcss-import')({ root: loader.resourcePath }),
+                    require('postcss-cssnext')(),
+                    require('autoprefixer')(),
+                    require('cssnano')()
+                  ]
+                }
+          },
         ]
       }
     ]
