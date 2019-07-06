@@ -95,7 +95,7 @@
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}img{display:none}body,div.ido,table.itg>tbody>tr>td,table.itg>tbody>tr>th{background:#fff!important}table.itc,table.itg,table.ptt{display:none}", ""]);
+exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}", ""]);
 
 
 /***/ }),
@@ -1155,6 +1155,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tag_db_1 = __webpack_require__(/*! ./data/tag-db */ "./src/data/tag-db.ts");
 const ui_data_1 = __webpack_require__(/*! ./data/ui-data */ "./src/data/ui-data.ts");
 __webpack_require__(/*! ./style/syringe.less */ "./src/style/syringe.less");
+const tag_data_1 = __webpack_require__(/*! ./tag-data */ "./src/tag-data.ts");
+tag_data_1.getTagData();
 const trim = (s) => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
 const tagList = [];
 const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
@@ -1262,6 +1264,44 @@ function translateNode(node) {
         }
     }
 }
+
+
+/***/ }),
+
+/***/ "./src/tag-data.ts":
+/*!*************************!*\
+  !*** ./src/tag-data.ts ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+function getTagData() {
+    const tagList = window.localStorage.getItem('tag-list');
+    if (tagList) {
+        return JSON.parse(tagList);
+    }
+    let notification = new Notification('下载翻译数据中', {
+        body: '找不到本地数据'
+    });
+    const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
+    console.log('sendMessage', chrome.runtime.sendMessage({ contentScriptQuery: "get-tag-data" }));
+    // fetch(href)
+    // .then(r => {
+    //     return r.text();
+    // })
+    // .then(data => {
+    //     console.log('data', data);
+    //     // chrome.notifications.create('tag-nodata', {
+    //     //     title: '加载完毕,请刷新页面',
+    //     //     contextMessage: '找不到本地数据',
+    //     // })
+    // })
+    return [];
+}
+exports.getTagData = getTagData;
 
 
 /***/ })

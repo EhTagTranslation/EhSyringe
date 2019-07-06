@@ -36,5 +36,9 @@
     "typescript": "^3.5.2",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "@types/pako": "^1.0.1",
+    "pako": "^1.0.10"
   }
 }

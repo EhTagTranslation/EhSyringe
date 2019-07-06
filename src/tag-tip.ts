@@ -4,6 +4,7 @@ import { TagList, SearchTagItem } from './interface';
 import { namespaceTranslate } from './data/namespace-translate';
 import {distinctUntilChanged, map} from 'rxjs/internal/operators';
 
+
 class TagTip {
   selectedIndex = 0;
   inputElement: HTMLInputElement

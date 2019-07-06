@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     'syringe': path.resolve(__dirname, 'src/syringe.ts'),
     'tag-tip': path.resolve(__dirname, 'src/tag-tip.ts'),
+    'background': path.resolve(__dirname, 'src/background.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'build/script'),

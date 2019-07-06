@@ -2,6 +2,10 @@ import { tagDb } from './data/tag-db';
 import { uiData } from './data/ui-data';
 import { EHTDatabase, TagList } from './interface';
 import './style/syringe.less';
+import { getTagData } from './tag-data';
+
+
+getTagData();
 
 const trim = (s: string): string => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
 const tagList: TagList = [];

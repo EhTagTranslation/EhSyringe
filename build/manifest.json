@@ -10,6 +10,9 @@
     "48": "assets/logo48.png",
     "128": "assets/logo128.png"
   },
+  "background": {
+    "scripts": ["script/background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
@@ -25,8 +28,13 @@
     }
   ],
   "permissions": [
-    "*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*",
+    "*://exhentai.org/*",
+    "*://e-hentai.org/*",
+    "*://*.exhentai.org/*",
+    "*://*.e-hentai.org/*",
+    "*://github.com/*","*://*.amazonaws.com/*",
     "activeTab",
+    "notifications",
     "storage"
   ]
 }
