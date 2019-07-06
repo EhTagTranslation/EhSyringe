@@ -6,20 +6,38 @@ import './style/syringe.less';
 const trim = (s: string): string => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
 const tagList: TagList = [];
 
+
+
+
 const tagReplaceData: {[key: string]: string} = {};
 tagDb.data.forEach(space => {
     const namespace = space.namespace;
+    if(namespace === 'rows') return;
+
     for(let key in space.data){
         const t = space.data[key];
+        let search = ``;
+        if (namespace !== 'misc') {
+            search += namespace + ':';
+        }
+        if (key.indexOf(' ') !== -1){
+            search += `"${key}"`;
+        } else {
+            search += key;
+        }
+
         tagList.push({
             ...t,
             key,
             namespace,
+            search,
         })
         tagReplaceData[key] = t.name;
         tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + t.name;
     }
-})
+});
+
+(window as any).tagList = tagList;
 
 var documentEnd = false;
 window.document.addEventListener('DOMContentLoaded', (e) => {

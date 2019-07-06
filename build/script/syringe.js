@@ -1160,14 +1160,28 @@ const tagList = [];
 const tagReplaceData = {};
 tag_db_1.tagDb.data.forEach(space => {
     const namespace = space.namespace;
+    if (namespace === 'rows')
+        return;
     for (let key in space.data) {
         const t = space.data[key];
+        let search = ``;
+        if (namespace !== 'misc') {
+            search += namespace + ':';
+        }
+        if (key.indexOf(' ') !== -1) {
+            search += `"${key}"`;
+        }
+        else {
+            search += key;
+        }
         tagList.push(Object.assign({}, t, { key,
-            namespace }));
+            namespace,
+            search }));
         tagReplaceData[key] = t.name;
         tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + t.name;
     }
 });
+window.tagList = tagList;
 var documentEnd = false;
 window.document.addEventListener('DOMContentLoaded', (e) => {
     documentEnd = true;

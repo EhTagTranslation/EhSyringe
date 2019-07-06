@@ -32,6 +32,7 @@ export interface EHTTag {
 }
 
 export interface TagItem {
+  search: string,
   namespace: string,
   key: string,
   name: string,
@@ -40,4 +41,3 @@ export interface TagItem {
 }
 
 export type TagList = TagItem[];
-
