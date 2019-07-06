@@ -41,3 +41,8 @@ export interface TagItem {
 }
 
 export type TagList = TagItem[];
+
+
+export interface SearchTagItem extends TagItem{
+  input: string,
+}

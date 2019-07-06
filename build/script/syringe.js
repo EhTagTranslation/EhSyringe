@@ -95,7 +95,7 @@
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}img{display:none!important}body,div.ido,table.itg>tbody>tr>td,table.itg>tbody>tr>th{background:#fff!important}table.itc,table.itg,table.ptt{display:none}", ""]);
+exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}img{display:none}body,div.ido,table.itg>tbody>tr>td,table.itg>tbody>tr>th{background:#fff!important}table.itc,table.itg,table.ptt{display:none}", ""]);
 
 
 /***/ }),
@@ -1157,7 +1157,31 @@ const ui_data_1 = __webpack_require__(/*! ./data/ui-data */ "./src/data/ui-data.
 __webpack_require__(/*! ./style/syringe.less */ "./src/style/syringe.less");
 const trim = (s) => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
 const tagList = [];
+const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
 const tagReplaceData = {};
+tag_db_1.tagDb.data.sort((a, b) => {
+    return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
+});
+function mdImg2HtmlImg(mdText, max = Infinity) {
+    var n = 0;
+    return mdText.replace(/\!\[(.*?)\]\((.*?)\)/igm, function (text, alt, href, index) {
+        n++;
+        if (max >= n) {
+            var h = trim(href);
+            if (h.slice(0, 1) == "#") {
+                h = h.replace(/# +\\?['"](.*?)\\?['"]/igm, "$1");
+            }
+            else if (h.slice(h.length - 1, h.length).toLowerCase() == 'h') {
+                h = h.slice(0, -1);
+            }
+            h = h.replace('http://', 'https://');
+            return `<img src="${h}">`;
+        }
+        else {
+            return "";
+        }
+    });
+}
 tag_db_1.tagDb.data.forEach(space => {
     const namespace = space.namespace;
     if (namespace === 'rows')
@@ -1174,7 +1198,7 @@ tag_db_1.tagDb.data.forEach(space => {
         else {
             search += key;
         }
-        tagList.push(Object.assign({}, t, { key,
+        tagList.push(Object.assign({}, t, { name: mdImg2HtmlImg(t.name, 0), key,
             namespace,
             search }));
         tagReplaceData[key] = t.name;

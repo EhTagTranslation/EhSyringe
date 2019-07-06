@@ -6,21 +6,43 @@ import './style/syringe.less';
 const trim = (s: string): string => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
 const tagList: TagList = [];
 
-
-
+const namespaceOrder = ['female','language','misc', 'male','artist', 'group', 'parody', 'character', 'reclass'];
 
 const tagReplaceData: {[key: string]: string} = {};
+
+tagDb.data.sort((a,b) => {
+    return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
+})
+
+function mdImg2HtmlImg(mdText: string,max: number = Infinity){
+    var n = 0;
+    return mdText.replace(/\!\[(.*?)\]\((.*?)\)/igm, function (text,alt,href,index) {
+        n++;
+        if( max >= n){
+            var h = trim(href);
+            if(h.slice(0,1) == "#"){
+                h = h.replace(/# +\\?['"](.*?)\\?['"]/igm,"$1");
+            }else if(h.slice(h.length-1,h.length).toLowerCase() == 'h'){
+                h = h.slice(0,-1);
+            }
+            h = h.replace('http://', 'https://');
+            return `<img src="${h}">`;
+        }else{
+            return "";
+        }
+    });
+}
+
 tagDb.data.forEach(space => {
     const namespace = space.namespace;
     if(namespace === 'rows') return;
-
     for(let key in space.data){
         const t = space.data[key];
         let search = ``;
         if (namespace !== 'misc') {
             search += namespace + ':';
         }
-        if (key.indexOf(' ') !== -1){
+        if (key.indexOf(' ') !== -1) {
             search += `"${key}"`;
         } else {
             search += key;
@@ -28,14 +50,19 @@ tagDb.data.forEach(space => {
 
         tagList.push({
             ...t,
+            name: mdImg2HtmlImg(t.name, 0),
             key,
             namespace,
             search,
         })
+
+        
         tagReplaceData[key] = t.name;
         tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + t.name;
     }
 });
+
+
 
 (window as any).tagList = tagList;
 

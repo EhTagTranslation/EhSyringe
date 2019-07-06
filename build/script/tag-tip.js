@@ -95,7 +95,7 @@
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".eh-syringe-lite-auto-complete-list{position:fixed;min-height:20px;background:#fff;-moz-text-align-last:left;text-align-last:left;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);color:#202124;display:block;max-height:50vh;overflow:auto;padding:8px 0;z-index:10000000000000000000}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list .auto-complete-item{padding:0 8px;line-height:24px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;justify-content:space-between;cursor:pointer}.eh-syringe-lite-auto-complete-list .auto-complete-item>span{-webkit-box-flex:0;flex:none}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8eaed}.eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{padding:0 8px;color:#5f6368}", ""]);
+exports.push([module.i, ".eh-syringe-lite-auto-complete-list{position:fixed;min-height:20px;background:#fff;-moz-text-align-last:left;text-align-last:left;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);color:#202124;display:block;max-height:50vh;overflow:auto;padding:8px 0;z-index:10000000000000000000}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list .auto-complete-item{padding:0 8px;line-height:24px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;justify-content:space-between;cursor:pointer}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item>span{-webkit-box-flex:0;flex:none}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8eaed}.eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{padding:0 8px;color:#5f6368}", ""]);
 
 
 /***/ }),
@@ -17777,65 +17777,40 @@ if(false) {}
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const rxjs_1 = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 __webpack_require__(/*! ./style/tag-tip.less */ "./src/style/tag-tip.less");
+const rxjs_1 = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 const namespace_translate_1 = __webpack_require__(/*! ./data/namespace-translate */ "./src/data/namespace-translate.ts");
 const operators_1 = __webpack_require__(/*! rxjs/internal/operators */ "./node_modules/rxjs/internal/operators/index.js");
-// test to shoukan;
-const FSearchInput = document.querySelector('#f_search');
-const tagList = window.tagList;
-var selectedIndex = 0;
-console.log('tag-tip');
-document.querySelectorAll('input').forEach(v => {
-    v.autocomplete = 'off';
-});
-const autoCompleteList = document.createElement('div');
-autoCompleteList.className = 'eh-syringe-lite-auto-complete-list';
-autoCompleteList.hidden = true;
-document.body.insertBefore(autoCompleteList, null);
-function tagElementItem(tag) {
-    const item = document.createElement('div');
-    const cnName = document.createElement('span');
-    cnName.className = 'cn-name';
-    const enName = document.createElement('span');
-    enName.className = 'en-name';
-    const cnNamespace = namespace_translate_1.namespaceTranslate[tag.namespace];
-    let cnNameHtml = '';
-    let enNameHtml = tag.search;
-    if (tag.namespace !== 'misc') {
-        cnNameHtml += cnNamespace + ':';
+class TagTip {
+    constructor(inputElement) {
+        this.selectedIndex = 0;
+        this.inputElement = inputElement;
+        this.inputElement.autocomplete = 'off';
+        this.autoCompleteList = document.createElement('div');
+        this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list';
+        rxjs_1.fromEvent(this.inputElement, 'keyup').pipe(operators_1.map(() => this.inputElement.value), operators_1.distinctUntilChanged()).subscribe(this.search.bind(this));
+        rxjs_1.fromEvent(this.inputElement, 'keydown').subscribe(this.keydown.bind(this));
+        rxjs_1.fromEvent(this.autoCompleteList, 'click').subscribe(e => {
+            this.inputElement.focus();
+        });
+        rxjs_1.fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition.bind(this));
+        rxjs_1.fromEvent(window, 'resize').subscribe(this.setListPosition.bind(this));
+        rxjs_1.fromEvent(window, 'onscroll').subscribe(this.setListPosition.bind(this));
+        document.body.insertBefore(this.autoCompleteList, null);
     }
-    cnNameHtml += tag.name;
-    cnNameHtml = cnNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
-    enNameHtml = enNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
-    cnName.innerHTML = cnNameHtml;
-    enName.innerHTML = enNameHtml;
-    item.insertBefore(cnName, null);
-    item.insertBefore(enName, null);
-    item.className = 'auto-complete-item';
-    item.onclick = () => {
-        FSearchInput.value = FSearchInput.value.slice(0, 0 - tag.input.length) + tag.search + ' ';
-        autoCompleteList.innerHTML = '';
-    };
-    return item;
-}
-if (FSearchInput) {
-    rxjs_1.fromEvent(FSearchInput, 'keyup').pipe(operators_1.map(() => FSearchInput.value), operators_1.distinctUntilChanged()).subscribe(value => {
-        const values = value.split(' ');
+    search(value) {
+        value = this.inputElement.value = value.replace(/  +/mg, ' ');
+        const values = value.match(/(\w+:".+?"|\w+:\w+|\w+)/igm);
         let result = [];
         const used = new Set();
         values.forEach((v, i) => {
             const sv = values.slice(i);
             if (sv.length) {
                 const svs = sv.join(' ');
-                tagList.filter(v => {
-                    if (v.search.indexOf(svs) !== -1) {
-                        return true;
-                    }
-                    if (v.name.indexOf(svs) !== -1) {
-                        return true;
-                    }
-                }).forEach(tag => {
+                if (!svs || svs.replace(/\s+/, '').length == 0)
+                    return;
+                tagList.filter(v => v.search.indexOf(svs) !== -1 || v.name.indexOf(svs) !== -1)
+                    .forEach(tag => {
                     if (used.has(tag.search))
                         return;
                     used.add(tag.search);
@@ -17846,66 +17821,83 @@ if (FSearchInput) {
                 }
             }
         });
-        autoCompleteList.innerHTML = '';
+        this.autoCompleteList.innerHTML = '';
         result.slice(0, 50).forEach(tag => {
-            autoCompleteList.insertBefore(tagElementItem(tag), null);
+            this.autoCompleteList.insertBefore(this.tagElementItem(tag), null);
         });
-        selectedIndex = -1;
-    });
-    rxjs_1.fromEvent(FSearchInput, 'keydown').subscribe((e) => {
+        this.selectedIndex = -1;
+    }
+    keydown(e) {
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
-            console.log(e.code, selectedIndex, autoCompleteList.children.length);
             if (e.code === 'ArrowUp') {
-                selectedIndex--;
-                if (selectedIndex < 0) {
-                    console.log('to end');
-                    selectedIndex = autoCompleteList.children.length - 1;
+                this.selectedIndex--;
+                if (this.selectedIndex < 0) {
+                    this.selectedIndex = this.autoCompleteList.children.length - 1;
                 }
             }
             else {
-                selectedIndex++;
-                if (selectedIndex >= autoCompleteList.children.length) {
-                    console.log('to start');
-                    selectedIndex = 0;
+                this.selectedIndex++;
+                if (this.selectedIndex >= this.autoCompleteList.children.length) {
+                    this.selectedIndex = 0;
                 }
             }
-            const children = Array.from(autoCompleteList.children);
+            const children = Array.from(this.autoCompleteList.children);
             children.forEach(element => {
                 element.classList.remove('selected');
             });
-            if (selectedIndex >= 0 && children[selectedIndex]) {
-                children[selectedIndex].classList.add('selected');
+            if (this.selectedIndex >= 0 && children[this.selectedIndex]) {
+                children[this.selectedIndex].classList.add('selected');
             }
             e.preventDefault();
             e.stopPropagation();
         }
         else if (e.code === 'Enter') {
-            const children = Array.from(autoCompleteList.children);
-            if (selectedIndex >= 0 && children[selectedIndex]) {
-                children[selectedIndex].click();
+            const children = Array.from(this.autoCompleteList.children);
+            if (this.selectedIndex >= 0 && children[this.selectedIndex]) {
+                children[this.selectedIndex].click();
                 e.preventDefault();
                 e.stopPropagation();
             }
         }
-    });
-    rxjs_1.fromEvent(autoCompleteList, 'click').subscribe(e => {
-        FSearchInput.focus();
-    });
-    rxjs_1.fromEvent(FSearchInput, 'focus').subscribe(e => {
-        console.log('focus', e);
-        autoCompleteList.hidden = false;
-        const element = e.target;
-        console.log('element', element);
-        const rect = element.getBoundingClientRect();
-        autoCompleteList.style.left = `${rect.left}px`;
-        autoCompleteList.style.top = `${rect.bottom}px`;
-        autoCompleteList.style.minWidth = `${rect.width}px`;
-    });
-    rxjs_1.fromEvent(FSearchInput, 'blur').subscribe(e => {
-        // hiddenList();
-    });
+    }
+    setListPosition() {
+        const rect = this.inputElement.getBoundingClientRect();
+        this.autoCompleteList.style.left = `${rect.left}px`;
+        this.autoCompleteList.style.top = `${rect.bottom}px`;
+        this.autoCompleteList.style.minWidth = `${rect.width}px`;
+    }
+    tagElementItem(tag) {
+        const item = document.createElement('div');
+        const cnName = document.createElement('span');
+        cnName.className = 'cn-name';
+        const enName = document.createElement('span');
+        enName.className = 'en-name';
+        const cnNamespace = namespace_translate_1.namespaceTranslate[tag.namespace];
+        let cnNameHtml = '';
+        let enNameHtml = tag.search;
+        if (tag.namespace !== 'misc') {
+            cnNameHtml += cnNamespace + ':';
+        }
+        cnNameHtml += tag.name;
+        cnNameHtml = cnNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
+        enNameHtml = enNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
+        cnName.innerHTML = cnNameHtml;
+        enName.innerHTML = enNameHtml;
+        item.insertBefore(cnName, null);
+        item.insertBefore(enName, null);
+        item.className = 'auto-complete-item';
+        item.onclick = () => {
+            this.inputElement.value = this.inputElement.value.slice(0, 0 - tag.input.length) + tag.search + ' ';
+            this.autoCompleteList.innerHTML = '';
+        };
+        return item;
+    }
 }
-var hiddenTimer = 0;
+const FSearchInput = document.querySelector('#f_search');
+const tagList = window.tagList;
+if (FSearchInput) {
+    new TagTip(FSearchInput);
+}
 
 
 /***/ })

@@ -1,80 +1,52 @@
-import { fromEvent } from 'rxjs';
-import { TagList, TagItem } from './interface';
 import './style/tag-tip.less';
+import { fromEvent } from 'rxjs';
+import { TagList, SearchTagItem } from './interface';
 import { namespaceTranslate } from './data/namespace-translate';
 import {distinctUntilChanged, map} from 'rxjs/internal/operators';
 
+class TagTip {
+  selectedIndex = 0;
+  inputElement: HTMLInputElement
+  autoCompleteList: HTMLDivElement;
 
-// test to shoukan;
-const FSearchInput: HTMLInputElement = document.querySelector('#f_search');
-const tagList: TagList = (window as any).tagList
+  constructor(inputElement: HTMLInputElement) {
+    this.inputElement = inputElement;
+    this.inputElement.autocomplete = 'off';
+    this.autoCompleteList = document.createElement('div');
+    this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list'
 
-interface SearchTagItem extends TagItem{
-  input: string,
-}
+    fromEvent(this.inputElement, 'keyup').pipe(
+      map(() => this.inputElement.value),
+      distinctUntilChanged()
+    ).subscribe(this.search.bind(this));
 
-var selectedIndex = 0;
-console.log('tag-tip');
-document.querySelectorAll('input').forEach(v => {
-  v.autocomplete = 'off';
-})
+    fromEvent(this.inputElement, 'keydown').subscribe(this.keydown.bind(this));
+  
+    fromEvent(this.autoCompleteList, 'click').subscribe(e => {
+      this.inputElement.focus();
+    });
+  
+    fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition.bind(this));
 
-const autoCompleteList = document.createElement('div');
-autoCompleteList.className = 'eh-syringe-lite-auto-complete-list'
-autoCompleteList.hidden = true;
-document.body.insertBefore(autoCompleteList, null);
+    fromEvent(window, 'resize').subscribe(this.setListPosition.bind(this));
+    fromEvent(window, 'onscroll').subscribe(this.setListPosition.bind(this));
 
-function tagElementItem(tag: SearchTagItem): HTMLDivElement {
-  const item = document.createElement('div');
-  const cnName = document.createElement('span');
-  cnName.className = 'cn-name';
-  const enName = document.createElement('span');
-  enName.className = 'en-name';
-  const cnNamespace = namespaceTranslate[tag.namespace];
-  let cnNameHtml = '';
-  let enNameHtml = tag.search;
-  if (tag.namespace !== 'misc') {
-    cnNameHtml += cnNamespace + ':';
+    document.body.insertBefore(this.autoCompleteList, null);
   }
-  cnNameHtml += tag.name;
-  cnNameHtml = cnNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
-  enNameHtml = enNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
 
-  cnName.innerHTML = cnNameHtml;
-  enName.innerHTML = enNameHtml;
-
-  item.insertBefore(cnName, null);
-  item.insertBefore(enName, null);
-
-  item.className = 'auto-complete-item';
-
-  item.onclick = () => {
-    FSearchInput.value = FSearchInput.value.slice(0, 0-tag.input.length) + tag.search + ' ';
-    autoCompleteList.innerHTML = '';
-  }
-  return item
-}
-
-if (FSearchInput) {
-  fromEvent(FSearchInput, 'keyup').pipe(
-    map(() => FSearchInput.value),
-    distinctUntilChanged()
-  ).subscribe(value => {
-    const values = value.split(' ');
+  search(value: string) {
+    value = this.inputElement.value = value.replace(/  +/mg, ' ');
+    const values = value.match(/(\w+:".+?"|\w+:\w+|\w+)/igm);
     let result: SearchTagItem[] = [];
     const used = new Set();
     values.forEach((v, i) => {
       const sv = values.slice(i);
       if (sv.length) {
         const svs = sv.join(' ');
-        tagList.filter(v => {
-          if(v.search.indexOf(svs) !== -1){
-            return true;
-          }
-          if(v.name.indexOf(svs) !== -1){
-            return true;
-          }
-        }).forEach(tag => {
+        if(!svs || svs.replace(/\s+/, '').length == 0) return;
+
+        tagList.filter(v => v.search.indexOf(svs) !== -1 || v.name.indexOf(svs) !== -1)
+        .forEach(tag => {
           if(used.has(tag.search))return;
           used.add(tag.search);
           result.push({
@@ -87,71 +59,89 @@ if (FSearchInput) {
         }
       }
     });
-    autoCompleteList.innerHTML = '';
+    this.autoCompleteList.innerHTML = '';
     result.slice(0, 50).forEach(tag => {
-      autoCompleteList.insertBefore(tagElementItem(tag), null);
+      this.autoCompleteList.insertBefore(this.tagElementItem(tag), null);
     })
-    selectedIndex = -1;
-  })
-  fromEvent(FSearchInput, 'keydown').subscribe((e: KeyboardEvent) => {
-    if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+    this.selectedIndex = -1;
+  }
 
-      console.log(e.code, selectedIndex, autoCompleteList.children.length)
+  keydown(e: KeyboardEvent) {
+    if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
       if(e.code === 'ArrowUp'){
-        selectedIndex --;
-        if(selectedIndex < 0) {
-          console.log('to end')
-          selectedIndex = autoCompleteList.children.length - 1
+        this.selectedIndex --;
+        if(this.selectedIndex < 0) {
+          this.selectedIndex = this.autoCompleteList.children.length - 1
         }
       } else {
-        selectedIndex ++
-        if(selectedIndex >= autoCompleteList.children.length) {
-          console.log('to start')
-          selectedIndex = 0
+        this.selectedIndex ++
+        if(this.selectedIndex >= this.autoCompleteList.children.length) {
+          this.selectedIndex = 0
         }
       }
 
-      const children = Array.from(autoCompleteList.children);
+      const children = Array.from(this.autoCompleteList.children);
       children.forEach(element => {
         element.classList.remove('selected');
       });
-      if(selectedIndex >= 0 && children[selectedIndex]){
-        children[selectedIndex].classList.add('selected');
+      if(this.selectedIndex >= 0 && children[this.selectedIndex]){
+        children[this.selectedIndex].classList.add('selected');
       }
       e.preventDefault();
       e.stopPropagation();
     }else if(e.code === 'Enter') {
-
-      const children = Array.from(autoCompleteList.children);
-      if(selectedIndex >= 0 && children[selectedIndex]){
-        (children[selectedIndex] as any).click();
+      const children = Array.from(this.autoCompleteList.children);
+      if(this.selectedIndex >= 0 && children[this.selectedIndex]){
+        (children[this.selectedIndex] as any).click();
         e.preventDefault();
         e.stopPropagation();
       }
-    
     }
-  });
+  }
 
 
+  setListPosition(){
+    const rect = this.inputElement.getBoundingClientRect();
+    this.autoCompleteList.style.left     = `${rect.left}px`;
+    this.autoCompleteList.style.top      = `${rect.bottom}px`;
+    this.autoCompleteList.style.minWidth = `${rect.width}px`;
+  }
 
-  fromEvent(autoCompleteList, 'click').subscribe(e => {
-    FSearchInput.focus();
-  });
-
-  fromEvent(FSearchInput, 'focus').subscribe(e => {
-    console.log('focus', e);
-    autoCompleteList.hidden = false;
-    const element = e.target as HTMLInputElement;
-    console.log('element', element);
-    const rect = element.getBoundingClientRect();
-    autoCompleteList.style.left = `${rect.left}px`;
-    autoCompleteList.style.top = `${rect.bottom}px`;
-    autoCompleteList.style.minWidth = `${rect.width}px`;
-  });
-
-  fromEvent(FSearchInput, 'blur').subscribe(e => {
-    // hiddenList();
-  });
-
+  tagElementItem(tag: SearchTagItem): HTMLDivElement {
+    const item = document.createElement('div');
+    const cnName = document.createElement('span');
+    cnName.className = 'cn-name';
+    const enName = document.createElement('span');
+    enName.className = 'en-name';
+    const cnNamespace = namespaceTranslate[tag.namespace];
+    let cnNameHtml = '';
+    let enNameHtml = tag.search;
+    if (tag.namespace !== 'misc') {
+      cnNameHtml += cnNamespace + ':';
+    }
+    cnNameHtml += tag.name;
+    cnNameHtml = cnNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
+    enNameHtml = enNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
+  
+    cnName.innerHTML = cnNameHtml;
+    enName.innerHTML = enNameHtml;
+  
+    item.insertBefore(cnName, null);
+    item.insertBefore(enName, null);
+  
+    item.className = 'auto-complete-item';
+  
+    item.onclick = () => {
+      this.inputElement.value = this.inputElement.value.slice(0, 0-tag.input.length) + tag.search + ' ';
+      this.autoCompleteList.innerHTML = '';
+    }
+    return item
+  }
 }
-var hiddenTimer =0;
+
+const FSearchInput: HTMLInputElement = document.querySelector('#f_search');
+const tagList: TagList = (window as any).tagList
+
+if(FSearchInput){
+  new TagTip(FSearchInput);
+}
