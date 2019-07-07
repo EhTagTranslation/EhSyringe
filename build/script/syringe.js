@@ -1283,9 +1283,6 @@ function getTagData() {
     if (tagList) {
         return JSON.parse(tagList);
     }
-    let notification = new Notification('下载翻译数据中', {
-        body: '找不到本地数据'
-    });
     const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
     console.log('sendMessage', chrome.runtime.sendMessage({ contentScriptQuery: "get-tag-data" }));
     // fetch(href)
