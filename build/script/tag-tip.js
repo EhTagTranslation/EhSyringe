@@ -17767,6 +17767,105 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/tag-data.ts":
+/*!*************************!*\
+  !*** ./src/tag-data.ts ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+;
+const trim = (s) => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
+function getTagData() {
+    if (window.tagListStorage && window.tagReplaceDataStorage) {
+        return {
+            tagList: window.tagListStorage,
+            tagReplace: window.tagReplaceDataStorage
+        };
+    }
+    const tagListStorage = window.localStorage.getItem('tag-list');
+    const tagReplaceDataStorage = window.localStorage.getItem('tag-replace-data');
+    if (tagListStorage && tagReplaceDataStorage) {
+        window.tagListStorage = JSON.parse(tagListStorage);
+        window.tagReplaceDataStorage = JSON.parse(tagReplaceDataStorage);
+        return {
+            tagList: window.tagListStorage,
+            tagReplace: window.tagReplaceDataStorage
+        };
+    }
+    chrome.storage.local.get((data) => {
+        if ('waitingForProcessing' in data) {
+            const tagDb = data['waitingForProcessing'];
+            const tagReplaceData = {};
+            const tagList = [];
+            tagDb.data.sort((a, b) => {
+                return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
+            });
+            tagDb.data.forEach(space => {
+                const namespace = space.namespace;
+                if (namespace === 'rows')
+                    return;
+                for (let key in space.data) {
+                    const t = space.data[key];
+                    let search = ``;
+                    if (namespace !== 'misc') {
+                        search += namespace + ':';
+                    }
+                    if (key.indexOf(' ') !== -1) {
+                        search += `"${key}"`;
+                    }
+                    else {
+                        search += key;
+                    }
+                    tagList.push(Object.assign({}, t, { name: mdImg2HtmlImg(t.name, 1), key,
+                        namespace,
+                        search }));
+                    tagReplaceData[key] = t.name;
+                    tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + mdImg2HtmlImg(t.name, 1);
+                }
+            });
+            window.localStorage.setItem('tag-list', JSON.stringify(tagList));
+            window.localStorage.setItem('tag-replace-data', JSON.stringify(tagReplaceData));
+            window.location.reload();
+        }
+        else {
+            chrome.runtime.sendMessage({ contentScriptQuery: "get-tag-data" });
+        }
+    });
+    return {
+        tagList: [],
+        tagReplace: {}
+    };
+}
+exports.getTagData = getTagData;
+function mdImg2HtmlImg(mdText, max = Infinity) {
+    var n = 0;
+    return mdText.replace(/\!\[(.*?)\]\((.*?)\)/igm, function (text, alt, href, index) {
+        n++;
+        if (max >= n) {
+            var h = trim(href);
+            if (h.slice(0, 1) == "#") {
+                h = h.replace(/# +\\?['"](.*?)\\?['"]/igm, "$1");
+            }
+            else if (h.slice(h.length - 1, h.length).toLowerCase() == 'h') {
+                h = h.slice(0, -1);
+            }
+            h = h.replace('http://', 'https://');
+            return `<img src="${h}">`;
+        }
+        else {
+            return "";
+        }
+    });
+}
+
+
+/***/ }),
+
 /***/ "./src/tag-tip.ts":
 /*!************************!*\
   !*** ./src/tag-tip.ts ***!
@@ -17781,6 +17880,8 @@ __webpack_require__(/*! ./style/tag-tip.less */ "./src/style/tag-tip.less");
 const rxjs_1 = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 const namespace_translate_1 = __webpack_require__(/*! ./data/namespace-translate */ "./src/data/namespace-translate.ts");
 const operators_1 = __webpack_require__(/*! rxjs/internal/operators */ "./node_modules/rxjs/internal/operators/index.js");
+const tag_data_1 = __webpack_require__(/*! ./tag-data */ "./src/tag-data.ts");
+const { tagList } = tag_data_1.getTagData();
 class TagTip {
     constructor(inputElement) {
         this.selectedIndex = 0;
@@ -17894,7 +17995,6 @@ class TagTip {
     }
 }
 const FSearchInput = document.querySelector('#f_search');
-const tagList = window.tagList;
 if (FSearchInput) {
     new TagTip(FSearchInput);
 }

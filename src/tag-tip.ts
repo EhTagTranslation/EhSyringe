@@ -1,8 +1,10 @@
 import './style/tag-tip.less';
 import { fromEvent } from 'rxjs';
-import { TagList, SearchTagItem } from './interface';
+import { SearchTagItem } from './interface';
 import { namespaceTranslate } from './data/namespace-translate';
 import {distinctUntilChanged, map} from 'rxjs/internal/operators';
+import { getTagData } from './tag-data';
+const { tagList } = getTagData()
 
 
 class TagTip {
@@ -141,8 +143,6 @@ class TagTip {
 }
 
 const FSearchInput: HTMLInputElement = document.querySelector('#f_search');
-const tagList: TagList = (window as any).tagList
-
 if(FSearchInput){
   new TagTip(FSearchInput);
 }

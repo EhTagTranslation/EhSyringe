@@ -1,74 +1,24 @@
-import { tagDb } from './data/tag-db';
 import { uiData } from './data/ui-data';
 import { EHTDatabase, TagList } from './interface';
 import './style/syringe.less';
 import { getTagData } from './tag-data';
 
 
-getTagData();
-
-const trim = (s: string): string => s.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-const tagList: TagList = [];
-
-const namespaceOrder = ['female','language','misc', 'male','artist', 'group', 'parody', 'character', 'reclass'];
-
-const tagReplaceData: {[key: string]: string} = {};
-
-tagDb.data.sort((a,b) => {
-    return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
-})
-
-function mdImg2HtmlImg(mdText: string,max: number = Infinity){
-    var n = 0;
-    return mdText.replace(/\!\[(.*?)\]\((.*?)\)/igm, function (text,alt,href,index) {
-        n++;
-        if( max >= n){
-            var h = trim(href);
-            if(h.slice(0,1) == "#"){
-                h = h.replace(/# +\\?['"](.*?)\\?['"]/igm,"$1");
-            }else if(h.slice(h.length-1,h.length).toLowerCase() == 'h'){
-                h = h.slice(0,-1);
-            }
-            h = h.replace('http://', 'https://');
-            return `<img src="${h}">`;
-        }else{
-            return "";
-        }
-    });
+(window as any).tagClear = () => {
+    window.localStorage.removeItem('tag-list');
+    window.localStorage.removeItem('tag-replace-data');
+    chrome.storage.local.remove('waitingForProcessing');
 }
 
-tagDb.data.forEach(space => {
-    const namespace = space.namespace;
-    if(namespace === 'rows') return;
-    for(let key in space.data){
-        const t = space.data[key];
-        let search = ``;
-        if (namespace !== 'misc') {
-            search += namespace + ':';
-        }
-        if (key.indexOf(' ') !== -1) {
-            search += `"${key}"`;
-        } else {
-            search += key;
-        }
-
-        tagList.push({
-            ...t,
-            name: mdImg2HtmlImg(t.name, 0),
-            key,
-            namespace,
-            search,
-        })
-
-        
-        tagReplaceData[key] = t.name;
-        tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + t.name;
-    }
-});
+(window as any).tagDownload = () => {
+    window.localStorage.removeItem('tag-list');
+    window.localStorage.removeItem('tag-replace-data');
+    chrome.storage.local.remove('waitingForProcessing');
+    chrome.runtime.sendMessage({contentScriptQuery: "get-tag-data"})
+}
 
 
-
-(window as any).tagList = tagList;
+const {tagReplace} = getTagData();
 
 var documentEnd = false;
 window.document.addEventListener('DOMContentLoaded', (e) => {
@@ -107,8 +57,8 @@ function translateNode(node: Node){
             node.textContent = uiData[node.textContent];
             return;
         }
-        if(tagReplaceData[node.textContent]) {
-            node.textContent = tagReplaceData[node.textContent];
+        if(tagReplace[node.textContent]) {
+            node.textContent = tagReplace[node.textContent];
             return;
         }
         node.textContent = node.textContent.replace(/(\d+) pages/, '$1 页')
