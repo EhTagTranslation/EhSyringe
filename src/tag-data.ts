@@ -50,12 +50,13 @@ export function getTagData(): TagData | undefined {
                     tagList.push({
                         ...t,
                         name: mdImg2HtmlImg(t.name, 1),
+                        intro: mdImg2HtmlImg(t.intro),
                         key,
                         namespace,
                         search,
                     })
                     
-                    tagReplaceData[key] = t.name;
+                    tagReplaceData[key] = mdImg2HtmlImg(t.name, 1);
                     tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + mdImg2HtmlImg(t.name, 1);
                 }
             });
