@@ -1185,6 +1185,10 @@ observer.observe(window.document, {
 });
 function translateNode(node) {
     if (node.nodeName === "#text") {
+        if (node.parentElement.nodeName === 'MARK' || node.parentElement.classList.contains("auto-complete-text")) {
+            // 不翻译搜索提示的内容
+            return;
+        }
         if (ui_data_1.uiData[node.textContent]) {
             node.textContent = ui_data_1.uiData[node.textContent];
             return;
@@ -1261,10 +1265,10 @@ function getTagData() {
                         search += namespace + ':';
                     }
                     if (key.indexOf(' ') !== -1) {
-                        search += `"${key}"`;
+                        search += `"${key}$"`;
                     }
                     else {
-                        search += key;
+                        search += key + '$';
                     }
                     tagList.push(Object.assign({}, t, { name: mdImg2HtmlImg(t.name, 1), key,
                         namespace,
@@ -1299,7 +1303,6 @@ function mdImg2HtmlImg(mdText, max = Infinity) {
             else if (h.slice(h.length - 1, h.length).toLowerCase() == 'h') {
                 h = h.slice(0, -1);
             }
-            h = h.replace('http://', 'https://');
             return `<img src="${h}">`;
         }
         else {

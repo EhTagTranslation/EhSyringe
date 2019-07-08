@@ -17816,10 +17816,10 @@ function getTagData() {
                         search += namespace + ':';
                     }
                     if (key.indexOf(' ') !== -1) {
-                        search += `"${key}"`;
+                        search += `"${key}$"`;
                     }
                     else {
-                        search += key;
+                        search += key + '$';
                     }
                     tagList.push(Object.assign({}, t, { name: mdImg2HtmlImg(t.name, 1), key,
                         namespace,
@@ -17854,7 +17854,6 @@ function mdImg2HtmlImg(mdText, max = Infinity) {
             else if (h.slice(h.length - 1, h.length).toLowerCase() == 'h') {
                 h = h.slice(0, -1);
             }
-            h = h.replace('http://', 'https://');
             return `<img src="${h}">`;
         }
         else {
@@ -17889,7 +17888,7 @@ class TagTip {
         this.inputElement.autocomplete = 'off';
         this.autoCompleteList = document.createElement('div');
         this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list';
-        rxjs_1.fromEvent(this.inputElement, 'keyup').pipe(operators_1.map(() => this.inputElement.value), operators_1.distinctUntilChanged()).subscribe(this.search.bind(this));
+        rxjs_1.fromEvent(this.inputElement, 'keyup').pipe(operators_1.filter((e) => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)), operators_1.map(() => this.inputElement.value)).subscribe(this.search.bind(this));
         rxjs_1.fromEvent(this.inputElement, 'keydown').subscribe(this.keydown.bind(this));
         rxjs_1.fromEvent(this.autoCompleteList, 'click').subscribe(e => {
             this.inputElement.focus();
@@ -17901,7 +17900,7 @@ class TagTip {
     }
     search(value) {
         value = this.inputElement.value = value.replace(/  +/mg, ' ');
-        const values = value.match(/(\w+:".+?"|\w+:\w+|\w+)/igm);
+        const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/igm) || [];
         let result = [];
         const used = new Set();
         values.forEach((v, i) => {
@@ -17970,9 +17969,9 @@ class TagTip {
     tagElementItem(tag) {
         const item = document.createElement('div');
         const cnName = document.createElement('span');
-        cnName.className = 'cn-name';
+        cnName.className = 'auto-complete-text cn-name';
         const enName = document.createElement('span');
-        enName.className = 'en-name';
+        enName.className = 'auto-complete-text en-name';
         const cnNamespace = namespace_translate_1.namespaceTranslate[tag.namespace];
         let cnNameHtml = '';
         let enNameHtml = tag.search;
@@ -17980,6 +17979,7 @@ class TagTip {
             cnNameHtml += cnNamespace + ':';
         }
         cnNameHtml += tag.name;
+        console.log(tag.input);
         cnNameHtml = cnNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
         enNameHtml = enNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
         cnName.innerHTML = cnNameHtml;
@@ -17988,7 +17988,11 @@ class TagTip {
         item.insertBefore(enName, null);
         item.className = 'auto-complete-item';
         item.onclick = () => {
-            this.inputElement.value = this.inputElement.value.slice(0, 0 - tag.input.length) + tag.search + ' ';
+            let length = tag.input.length;
+            if (this.inputElement.value.slice(-1) == ' ') {
+                length++;
+            }
+            this.inputElement.value = this.inputElement.value.slice(0, 0 - length) + tag.search + ' ';
             this.autoCompleteList.innerHTML = '';
         };
         return item;

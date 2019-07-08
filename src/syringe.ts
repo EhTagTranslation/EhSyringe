@@ -53,6 +53,10 @@ observer.observe(window.document, {
 
 function translateNode(node: Node){
     if (node.nodeName === "#text"){
+        if(node.parentElement.nodeName === 'MARK' || node.parentElement.classList.contains("auto-complete-text")){
+            // 不翻译搜索提示的内容
+            return;
+        }
         if(uiData[node.textContent]){
             node.textContent = uiData[node.textContent];
             return;

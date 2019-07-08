@@ -42,9 +42,9 @@ export function getTagData(): TagData | undefined {
                         search += namespace + ':';
                     }
                     if (key.indexOf(' ') !== -1) {
-                        search += `"${key}"`;
+                        search += `"${key}$"`;
                     } else {
-                        search += key;
+                        search += key + '$';
                     }
             
                     tagList.push({
@@ -86,7 +86,6 @@ function mdImg2HtmlImg(mdText: string,max: number = Infinity){
             }else if(h.slice(h.length-1,h.length).toLowerCase() == 'h'){
                 h = h.slice(0,-1);
             }
-            h = h.replace('http://', 'https://');
             return `<img src="${h}">`;
         }else{
             return "";

@@ -2,7 +2,7 @@ import './style/tag-tip.less';
 import { fromEvent } from 'rxjs';
 import { SearchTagItem } from './interface';
 import { namespaceTranslate } from './data/namespace-translate';
-import {distinctUntilChanged, map} from 'rxjs/internal/operators';
+import {distinctUntilChanged, map, filter} from 'rxjs/internal/operators';
 import { getTagData } from './tag-data';
 const { tagList } = getTagData()
 
@@ -19,8 +19,9 @@ class TagTip {
     this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list'
 
     fromEvent(this.inputElement, 'keyup').pipe(
+      filter((e: KeyboardEvent) => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)),
       map(() => this.inputElement.value),
-      distinctUntilChanged()
+      // distinctUntilChanged()
     ).subscribe(this.search.bind(this));
 
     fromEvent(this.inputElement, 'keydown').subscribe(this.keydown.bind(this));
@@ -39,7 +40,7 @@ class TagTip {
 
   search(value: string) {
     value = this.inputElement.value = value.replace(/  +/mg, ' ');
-    const values = value.match(/(\w+:".+?"|\w+:\w+|\w+)/igm);
+    const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/igm) || [];
     let result: SearchTagItem[] = [];
     const used = new Set();
     values.forEach((v, i) => {
@@ -113,9 +114,9 @@ class TagTip {
   tagElementItem(tag: SearchTagItem): HTMLDivElement {
     const item = document.createElement('div');
     const cnName = document.createElement('span');
-    cnName.className = 'cn-name';
+    cnName.className = 'auto-complete-text cn-name';
     const enName = document.createElement('span');
-    enName.className = 'en-name';
+    enName.className = 'auto-complete-text en-name';
     const cnNamespace = namespaceTranslate[tag.namespace];
     let cnNameHtml = '';
     let enNameHtml = tag.search;
@@ -123,6 +124,9 @@ class TagTip {
       cnNameHtml += cnNamespace + ':';
     }
     cnNameHtml += tag.name;
+
+    console.log(tag.input);
+
     cnNameHtml = cnNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
     enNameHtml = enNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
   
@@ -135,7 +139,11 @@ class TagTip {
     item.className = 'auto-complete-item';
   
     item.onclick = () => {
-      this.inputElement.value = this.inputElement.value.slice(0, 0-tag.input.length) + tag.search + ' ';
+      let length = tag.input.length;
+      if(this.inputElement.value.slice(-1) == ' '){
+        length++
+      }
+      this.inputElement.value = this.inputElement.value.slice(0, 0-length) + tag.search + ' ';
       this.autoCompleteList.innerHTML = '';
     }
     return item
