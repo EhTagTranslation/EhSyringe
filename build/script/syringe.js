@@ -1092,6 +1092,10 @@ exports.uiData = {
     'Hath Perks': 'Hath商店',
     'Hath Exchange': 'Hath交易',
     'GP Exchange': 'GP交易',
+    // 'Credit Log': '信用记录',
+    // 'Karma Log': 'Karma记录',
+    'Apply Filter': '应用筛选',
+    'Clear Filter': '清理筛选',
 };
 
 
@@ -1155,8 +1159,11 @@ const { tagReplace } = tag_data_1.getTagData();
 var documentEnd = false;
 window.document.addEventListener('DOMContentLoaded', (e) => {
     documentEnd = true;
+    console.log('translateNode timer', timer + 'ms');
 });
+let timer = 0;
 const observer = new MutationObserver(function (mutations) {
+    const s = new Date().getTime();
     for (let i in mutations) {
         for (let n in mutations[i].addedNodes) {
             const node1 = mutations[i].addedNodes[n];
@@ -1177,6 +1184,7 @@ const observer = new MutationObserver(function (mutations) {
             }
         }
     }
+    timer += new Date().getTime() - s;
 });
 observer.observe(window.document, {
     attributes: true,
@@ -1189,26 +1197,46 @@ function translateNode(node) {
             // 不翻译搜索提示的内容
             return;
         }
+        // 标签只翻译已知的位置
+        if ((node.parentElement.classList.contains("gt") || node.parentElement.classList.contains("gtl")) ||
+            (node.parentElement.parentElement && (node.parentElement.parentElement.classList.contains("gt") ||
+                node.parentElement.parentElement.classList.contains("gtl")))) {
+            if (tagReplace[node.textContent]) {
+                node.parentElement.innerHTML = tagReplace[node.textContent];
+                return;
+            }
+        }
         if (ui_data_1.uiData[node.textContent]) {
             node.textContent = ui_data_1.uiData[node.textContent];
             return;
         }
-        if (tagReplace[node.textContent]) {
-            node.textContent = tagReplace[node.textContent];
-            return;
+        // if(tagReplace[node.textContent]) {
+        //     node.textContent = tagReplace[node.textContent];
+        //     return;
+        // }
+        let text = node.textContent;
+        text = text.replace(/(\d+) pages/, '$1 页');
+        text = text.replace(/Torrent Download \( (\d+) \)/, '种子下载 ( $1 )');
+        text = text.replace(/Average: ([\d\.]+)/, '平均值: $1');
+        text = text.replace(/Posted on (.*?) by:/, '评论时间:$1  作者:');
+        text = text.replace(/Showing ([\d,]+) results/, '共 $1 个结果');
+        text = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片');
+        text = text.replace(/Rate as ([\d\.]+) stars/, '$1星');
+        if (node.textContent !== text) {
+            node.textContent = text;
         }
-        node.textContent = node.textContent.replace(/(\d+) pages/, '$1 页');
-        node.textContent = node.textContent.replace(/Torrent Download \( (\d+) \)/, '种子下载 ( $1 )');
-        node.textContent = node.textContent.replace(/Average: ([\d\.]+)/, '平均值: $1');
-        node.textContent = node.textContent.replace(/Posted on (.*?) by:/, '评论时间:$1  作者:');
-        node.textContent = node.textContent.replace(/Showing ([\d,]+) results/, '共 $1 个结果');
-        node.textContent = node.textContent.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片');
-        node.textContent = node.textContent.replace(/Rate as ([\d\.]+) stars/, '$1星');
     }
     else if (node.nodeName === 'INPUT') {
-        if (ui_data_1.uiData[node.placeholder]) {
-            node.placeholder = ui_data_1.uiData[node.placeholder];
+        const input = node;
+        if (ui_data_1.uiData[input.placeholder]) {
+            input.placeholder = ui_data_1.uiData[input.placeholder];
             return;
+        }
+        if (input.type == "submit" || input.type == "button") {
+            if (ui_data_1.uiData[input.value]) {
+                input.value = ui_data_1.uiData[input.value];
+                return;
+            }
         }
     }
 }
@@ -1236,8 +1264,10 @@ function getTagData() {
             tagReplace: window.tagReplaceDataStorage
         };
     }
+    console.time('localStorage getItem');
     const tagListStorage = window.localStorage.getItem('tag-list');
     const tagReplaceDataStorage = window.localStorage.getItem('tag-replace-data');
+    console.timeEnd('localStorage getItem');
     if (tagListStorage && tagReplaceDataStorage) {
         window.tagListStorage = JSON.parse(tagListStorage);
         window.tagReplaceDataStorage = JSON.parse(tagReplaceDataStorage);
@@ -1270,11 +1300,12 @@ function getTagData() {
                     else {
                         search += key + '$';
                     }
-                    tagList.push(Object.assign({}, t, { name: mdImg2HtmlImg(t.name, 1), intro: mdImg2HtmlImg(t.intro), key,
+                    const name = mdImg2HtmlImg(t.name, 1);
+                    tagList.push(Object.assign({}, t, { name: name, intro: mdImg2HtmlImg(t.intro), key,
                         namespace,
                         search }));
-                    tagReplaceData[key] = mdImg2HtmlImg(t.name, 1);
-                    tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + mdImg2HtmlImg(t.name, 1);
+                    tagReplaceData[key] = name;
+                    tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + name;
                 }
             });
             window.localStorage.setItem('tag-list', JSON.stringify(tagList));

@@ -14,8 +14,10 @@ export function getTagData(): TagData | undefined {
         };
     }
 
+    console.time('localStorage getItem');
     const tagListStorage = window.localStorage.getItem('tag-list');
     const tagReplaceDataStorage = window.localStorage.getItem('tag-replace-data');
+    console.timeEnd('localStorage getItem');
     if (tagListStorage && tagReplaceDataStorage) {
         (window as any).tagListStorage = JSON.parse(tagListStorage);
         (window as any).tagReplaceDataStorage = JSON.parse(tagReplaceDataStorage);
@@ -47,17 +49,18 @@ export function getTagData(): TagData | undefined {
                         search += key + '$';
                     }
             
+                    const name = mdImg2HtmlImg(t.name, 1);
                     tagList.push({
                         ...t,
-                        name: mdImg2HtmlImg(t.name, 1),
+                        name: name,
                         intro: mdImg2HtmlImg(t.intro),
                         key,
                         namespace,
                         search,
                     })
                     
-                    tagReplaceData[key] = mdImg2HtmlImg(t.name, 1);
-                    tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + mdImg2HtmlImg(t.name, 1);
+                    tagReplaceData[key] = name;
+                    tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + name;
                 }
             });
             

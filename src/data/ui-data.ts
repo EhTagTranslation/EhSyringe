@@ -471,4 +471,6 @@ export const uiData : {[key: string]: string} = {
   'GP Exchange': 'GP交易',
   // 'Credit Log': '信用记录',
   // 'Karma Log': 'Karma记录',
+  'Apply Filter': '应用筛选',
+  'Clear Filter': '清理筛选',
 };

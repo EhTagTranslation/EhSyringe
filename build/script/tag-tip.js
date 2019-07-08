@@ -17787,8 +17787,10 @@ function getTagData() {
             tagReplace: window.tagReplaceDataStorage
         };
     }
+    console.time('localStorage getItem');
     const tagListStorage = window.localStorage.getItem('tag-list');
     const tagReplaceDataStorage = window.localStorage.getItem('tag-replace-data');
+    console.timeEnd('localStorage getItem');
     if (tagListStorage && tagReplaceDataStorage) {
         window.tagListStorage = JSON.parse(tagListStorage);
         window.tagReplaceDataStorage = JSON.parse(tagReplaceDataStorage);
@@ -17821,11 +17823,12 @@ function getTagData() {
                     else {
                         search += key + '$';
                     }
-                    tagList.push(Object.assign({}, t, { name: mdImg2HtmlImg(t.name, 1), intro: mdImg2HtmlImg(t.intro), key,
+                    const name = mdImg2HtmlImg(t.name, 1);
+                    tagList.push(Object.assign({}, t, { name: name, intro: mdImg2HtmlImg(t.intro), key,
                         namespace,
                         search }));
-                    tagReplaceData[key] = mdImg2HtmlImg(t.name, 1);
-                    tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + mdImg2HtmlImg(t.name, 1);
+                    tagReplaceData[key] = name;
+                    tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + name;
                 }
             });
             window.localStorage.setItem('tag-list', JSON.stringify(tagList));
