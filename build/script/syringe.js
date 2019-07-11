@@ -1198,9 +1198,11 @@ function translateNode(node) {
             return;
         }
         // 标签只翻译已知的位置
-        if ((node.parentElement.classList.contains("gt") || node.parentElement.classList.contains("gtl")) ||
-            (node.parentElement.parentElement && (node.parentElement.parentElement.classList.contains("gt") ||
-                node.parentElement.parentElement.classList.contains("gtl")))) {
+        if ((node.parentElement.classList.contains("gt") ||
+            node.parentElement.classList.contains("gtl") ||
+            node.parentElement.classList.contains("gtw")) || (node.parentElement.parentElement && (node.parentElement.parentElement.classList.contains("gt") ||
+            node.parentElement.parentElement.classList.contains("gtl") ||
+            node.parentElement.parentElement.classList.contains("gtw")))) {
             if (tagReplace[node.textContent]) {
                 node.parentElement.innerHTML = tagReplace[node.textContent];
                 return;
