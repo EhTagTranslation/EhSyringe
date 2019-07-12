@@ -17895,10 +17895,15 @@ class TagTip {
         rxjs_1.fromEvent(this.inputElement, 'keydown').subscribe(this.keydown.bind(this));
         rxjs_1.fromEvent(this.autoCompleteList, 'click').subscribe(e => {
             this.inputElement.focus();
+            e.preventDefault();
+            e.stopPropagation();
         });
         rxjs_1.fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition.bind(this));
         rxjs_1.fromEvent(window, 'resize').subscribe(this.setListPosition.bind(this));
         rxjs_1.fromEvent(window, 'onscroll').subscribe(this.setListPosition.bind(this));
+        rxjs_1.fromEvent(document, 'click').subscribe(() => {
+            this.autoCompleteList.innerHTML = '';
+        });
         document.body.insertBefore(this.autoCompleteList, null);
     }
     search(value) {

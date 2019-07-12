@@ -28,12 +28,18 @@ class TagTip {
   
     fromEvent(this.autoCompleteList, 'click').subscribe(e => {
       this.inputElement.focus();
+      e.preventDefault();
+      e.stopPropagation();
     });
   
     fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition.bind(this));
 
     fromEvent(window, 'resize').subscribe(this.setListPosition.bind(this));
     fromEvent(window, 'onscroll').subscribe(this.setListPosition.bind(this));
+
+    fromEvent(document, 'click').subscribe(() => {
+      this.autoCompleteList.innerHTML = '';
+    });
 
     document.body.insertBefore(this.autoCompleteList, null);
   }

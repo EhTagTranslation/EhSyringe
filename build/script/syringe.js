@@ -95,7 +95,7 @@
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}", ""]);
+exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}textarea[name=expungexpl]{display:block}", ""]);
 
 
 /***/ }),
@@ -726,6 +726,8 @@ exports.uiData = {
     'Torrent Download': '种子下载',
     'Petition to Expunge': '申请删除',
     'Petition to Rename': '申请重命名',
+    ' Read Later': ' 稍后再读',
+    ' Added to Read Later': ' 已添加稍后再读',
     'language:': '语言:',
     'parody:': '原作:',
     'character:': '角色:',
@@ -1013,7 +1015,12 @@ exports.uiData = {
     'Size': '体积',
     'Seeds': '种子',
     'Peers': '在线',
-    'DLs': '完成',
+    'Seeds:': '种子:',
+    'Peers:': '在线:',
+    'DLers': '在线',
+    'Downloads:': '已下载:',
+    'Completes': '已下载',
+    'DLs': '已下载',
     'Visitor Statistics': '访客统计',
     'Galleries All-Time': '所有时间',
     'Galleries Past Year': '过去一年',
@@ -1096,6 +1103,83 @@ exports.uiData = {
     // 'Karma Log': 'Karma记录',
     'Apply Filter': '应用筛选',
     'Clear Filter': '清理筛选',
+    'Estimated Size:   ': '预计大小:   ',
+    'Download Cost:   ': '下载费用:   ',
+    'Download Original Archive': '下载原始档案',
+    'Download Resample Archive': '下载重采样档案',
+    'No hits found': '什么也没有',
+    'Uploader:': '上传者:',
+    'New Torrents:': '新种子:',
+    'Information': '信息',
+    'Close Window': '关闭窗口',
+    'Upload Torrent': '上传种子',
+    "\n\t\tYou can add a torrent for this gallery by uploading it here. The maximum torrent file size is 10 MB.": '您可以在这里上传来为此库添加种子。最大Torrent文件大小为10MB。',
+    "\n\t\tNote that you have to download the finished torrent from this site after uploading for stats to be recorded.\n\t": '请注意，您必须在上传后从该站点下载个性化种子，以便记录统计信息。',
+    "\n\t\tIf you are creating the torrent yourself, set this as announce tracker: ": '如果您自己创建Torrent，请将其设置为AnnounceTracker：',
+    "Personalized Torrent": '个性化种子',
+    "Redistributable Torrent": '可再分发种子',
+    "(Just For You - this makes sure to record your stats)\n": '(只属于你 - 确保记录你的下载统计信息)',
+    "(use if you want a file you can post or give to others)": '(如果您想再发布或提供给其他人使用)',
+    'Back to Index': '返回',
+    'Vote to Expunge': '投票删除',
+    'No comments were given for this torrent.': '没有对这个种子的评论',
+    "Please choose a color to file this favorite gallery under. You can also add a note to it if you wish.": '请选择一个颜色标记你的收藏, 你也可以加一些备注.',
+    "Favorite Note (Max 200 Characters)": "收藏备注 (最多200字符)",
+    'Add to Favorites': '添加到收藏',
+    'Favorites 0': '收藏夹 0',
+    'Favorites 1': '收藏夹 1',
+    'Favorites 2': '收藏夹 2',
+    'Favorites 3': '收藏夹 3',
+    'Favorites 4': '收藏夹 4',
+    'Favorites 5': '收藏夹 5',
+    'Favorites 6': '收藏夹 6',
+    'Favorites 7': '收藏夹 7',
+    'Favorites 8': '收藏夹 8',
+    'Favorites 9': '收藏夹 9',
+    'It is the dawn of a new day!': '新的一天开始了!',
+    'Reflecting on your journey so far, you find that you are a little wiser.': '回想一下你迄今为止的旅程，你发现你更聪明了。',
+    'You gain ': '你获得了 ',
+    ' EXP, ': ' 经验, ',
+    ' Credits!': ' Credits!',
+    'Back to Gallery': '返回图库',
+    'Report Type': '举报类型',
+    '[Select a complaint type...]': '[请选择一个举报类型...]',
+    'DMCA/Copyright Infringement': 'DMCA/侵犯版权',
+    'Child Pornography': '儿童色情',
+    'Other Illicit Content': '其他非法内容',
+    'Specify an objective reason why you wish to expunge this gallery.': '请说明要删除此库的客观原因.',
+    'None / Withdraw Petition.': '无 / 撤回删除申请.',
+    // "This gallery is a duplicate of equal or lower quality of an earlier posted, clearly marked gallery.": 
+    // '此图库是早期发布的，标记为图库的质量相同或较低的副本。',
+    // "A newer higher-quality and clearly marked copy of this gallery has been uploaded.": 
+    // "这个画廊的更高质量和清晰标记的副本已上传。",
+    "This gallery contains either illicit content like child porn or anything else forbidden by the ": '这个画廊包含非法内容，如儿童色情片或其他任何禁止的内容, 参见',
+    ", or otherwise falls under the ": ", 或者符合",
+    'Expunge Guidelines': '清除指南',
+    " (specify below).": ' (在下方说明).',
+    'Show Expunge Log': '显示清除日志',
+    "Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.": "请输入清除原因和备注。它应包括副本的位置或违反的特定规则。",
+    "Roman Script": "罗马音",
+    "Japanese Script": "日文",
+    "Not Set": '未设置',
+    "Blank Vote": '空投票',
+    " New": ' 新',
+    "Watched Tag Galleries": "标签订阅",
+    "Currently Popular Recent Galleries": "目前最受欢迎的图库",
+    "Search Favorites": "搜索收藏夹",
+    "Clear": "清除",
+    "Delete Favorites": "删除收藏",
+    "Change Category": "移动到",
+    "Confirm": "确定",
+    "You are currently at ": "当前:",
+    " towards a limit of ": ", 限制为",
+    ". This regenerates at a rate of ": ", 每分钟回复",
+    " per minute.": "点",
+    "Reset Cost: ": "重置限制花费: ",
+    "Reset Limit": "重置限制",
+    "Reset Torrent Key": "重置种子Key",
+    "Latest Site Status Updates": "最新网站状态",
+    "Site Update Log": "网站更新日志",
 };
 
 
@@ -1192,20 +1276,27 @@ observer.observe(window.document, {
     subtree: true
 });
 function translateNode(node) {
-    if (node.nodeName === "#text") {
-        if (node.parentElement.nodeName === 'MARK' || node.parentElement.classList.contains("auto-complete-text")) {
-            // 不翻译搜索提示的内容
-            return;
-        }
-        // 标签只翻译已知的位置
-        if ((node.parentElement.classList.contains("gt") ||
-            node.parentElement.classList.contains("gtl") ||
-            node.parentElement.classList.contains("gtw")) || (node.parentElement.parentElement && (node.parentElement.parentElement.classList.contains("gt") ||
-            node.parentElement.parentElement.classList.contains("gtl") ||
-            node.parentElement.parentElement.classList.contains("gtw")))) {
-            if (tagReplace[node.textContent]) {
-                node.parentElement.innerHTML = tagReplace[node.textContent];
+    if (node.nodeName === "BODY") {
+        // node.parentElement.lang = "zh-CN";
+        // node.parentElement.setAttribute('xml:lang', "zh-CN")
+    }
+    else if (node.nodeName === "#text") {
+        if (node.parentElement) {
+            if (node.parentElement.nodeName === 'MARK' ||
+                node.parentElement.classList.contains("auto-complete-text")) {
+                // 不翻译搜索提示的内容
                 return;
+            }
+            // 标签只翻译已知的位置
+            if ((node.parentElement.classList.contains("gt") ||
+                node.parentElement.classList.contains("gtl") ||
+                node.parentElement.classList.contains("gtw")) || (node.parentElement.parentElement && (node.parentElement.parentElement.classList.contains("gt") ||
+                node.parentElement.parentElement.classList.contains("gtl") ||
+                node.parentElement.parentElement.classList.contains("gtw")))) {
+                if (tagReplace[node.textContent]) {
+                    node.parentElement.innerHTML = tagReplace[node.textContent];
+                    return;
+                }
             }
         }
         if (ui_data_1.uiData[node.textContent]) {
@@ -1224,11 +1315,14 @@ function translateNode(node) {
         text = text.replace(/Showing ([\d,]+) results/, '共 $1 个结果');
         text = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片');
         text = text.replace(/Rate as ([\d\.]+) stars/, '$1星');
+        text = text.replace(/([\d\.]+) torrent was found for this gallery./, '找到了$1个种子.');
+        text = text.replace(/([\d\.]+) \/ ([\d\.]+) favorite note slots used./, '已经使用了$1个便签, 共$2个 ');
+        text = text.replace(/Showing results for ([\d\.]+) watched tags/, '订阅的$1个标签的结果');
         if (node.textContent !== text) {
             node.textContent = text;
         }
     }
-    else if (node.nodeName === 'INPUT') {
+    else if (node.nodeName === 'INPUT' || node.nodeName === 'TEXTAREA') {
         const input = node;
         if (ui_data_1.uiData[input.placeholder]) {
             input.placeholder = ui_data_1.uiData[input.placeholder];
@@ -1237,6 +1331,25 @@ function translateNode(node) {
         if (input.type == "submit" || input.type == "button") {
             if (ui_data_1.uiData[input.value]) {
                 input.value = ui_data_1.uiData[input.value];
+                return;
+            }
+        }
+    }
+    else if (node.nodeName === 'OPTGROUP') {
+        const element = node;
+        if (ui_data_1.uiData[element.label]) {
+            element.label = ui_data_1.uiData[element.label];
+        }
+    }
+    else {
+        if (node.nodeName === "A" &&
+            node.parentElement &&
+            node.parentElement.parentElement &&
+            node.parentElement.parentElement.id === 'nb') {
+            const a = node;
+            console.log(node);
+            if (ui_data_1.uiData[a.textContent]) {
+                a.textContent = ui_data_1.uiData[a.textContent];
                 return;
             }
         }
