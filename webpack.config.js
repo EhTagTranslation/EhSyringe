@@ -1,5 +1,5 @@
 const path = require('path');
-const copyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -8,8 +8,8 @@ module.exports = {
     'background': path.resolve(__dirname, 'src/background.ts'),
   },
   output: {
-    path: path.resolve(__dirname, 'build/script'),
-    filename: '[name].js'
+    path: path.resolve(__dirname, 'build'),
+    filename: 'script/[name].js'
   },
   module: {
     rules: [
@@ -89,10 +89,16 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
   plugins: [
-    // new copyWebpackPlugin([{
-    //   form: 'src/assets',
-    //   to: 'build/assets',
-    // }])
+    new CopyPlugin([
+      { from: 'src/assets', to: 'assets' },
+      { 
+        from: 'src/data/tag.db.json',
+        to: 'assets/tag.db',
+        transform(content, path) {
+          return Promise.resolve(new Buffer(content).toString('base64'));
+        },
+      },
+    ]),
   ],
   devtool: 'source-map',
 };

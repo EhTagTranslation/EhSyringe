@@ -10,6 +10,9 @@
     "48": "assets/logo48.png",
     "128": "assets/logo128.png"
   },
+  "omnibox": {
+    "keyword" : "ex"
+   },
   "background": {
     "scripts": ["script/background.js"]
   },
@@ -36,6 +39,7 @@
     "activeTab",
     "notifications",
     "storage",
-    "contextMenus"
+    "contextMenus",
+    "omnibox"
   ]
 }

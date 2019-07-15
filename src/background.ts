@@ -1,5 +1,13 @@
 import * as pako from "pako";
-import { EHTDatabase } from "./interface";
+import { EHTDatabase, TagList } from "./interface";
+
+import { Base64 } from "js-base64";
+import { mdImg2HtmlImg } from "./tool/tool";
+import { namespaceTranslate } from "./data/namespace-translate";
+
+
+var TagList: TagList = [];
+
 
 var loadLock = false;
 async function download (): Promise<EHTDatabase>{
@@ -78,8 +86,122 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log('onMessage', request)
   if (request.contentScriptQuery == "get-tag-data") {
     download().then(data => {
-      console.log('set data');
-      chrome.storage.local.set({ waitingForProcessing: data });
+      storageTagData(data)
+      // chrome.storage.local.set({ TagDB: data });
     })
   }
 })
+
+// 如果沒有數據自動加載本地數據
+chrome.storage.local.get((data) => {
+  if (!('tagDB' in data)) {
+    const dbUrl = chrome.runtime.getURL('assets/tag.db');
+    fetch(dbUrl).then(r => r.text()).then(taxt=> {
+      const data = JSON.parse(Base64.decode(taxt));
+      storageTagData(data)
+    })
+  }
+
+  if('tagList' in data){
+    TagList = data.tagList;
+  }
+})
+
+
+function storageTagData(tagDB: EHTDatabase){
+  const namespaceOrder = ['female','language','misc', 'male','artist', 'group', 'parody', 'character', 'reclass'];
+  const tagReplaceData: {[key: string]: string} = {};
+  const tagList: TagList = [];
+  tagDB.data.sort((a,b) => {
+      return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
+  })
+  tagDB.data.forEach(space => {
+      const namespace = space.namespace;
+      if(namespace === 'rows') return;
+      for(let key in space.data){
+          const t = space.data[key];
+          let search = ``;
+          if (namespace !== 'misc') {
+              search += namespace + ':';
+          }
+          if (key.indexOf(' ') !== -1) {
+              search += `"${key}$"`;
+          } else {
+              search += key + '$';
+          }
+  
+          const name = mdImg2HtmlImg(t.name, 1);
+          tagList.push({
+              ...t,
+              name: name,
+              intro: mdImg2HtmlImg(t.intro),
+              key,
+              namespace,
+              search,
+          })
+          
+          tagReplaceData[key] = name;
+          tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + name;
+      }
+  });
+  chrome.storage.local.set({
+    tagDB,
+    tagList,
+    tagReplaceData
+  });
+  TagList = tagList;
+}
+
+
+chrome.contextMenus.create(
+  {
+    documentUrlPatterns: ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
+    title: '编辑标签',
+    contexts: ['link'],
+    onclick(info, tab) {
+      if(/\/tag\//.test(info.linkUrl)){
+        const s = info.linkUrl.replace('+', ' ').split('/')
+        const s2 = s[s.length - 1].split(':')
+        const namespace = s2.length == 1 ? 'misc' : s2[0];
+        const tag = s2.length == 1 ? s2[0] : s2[1];
+        const editorUlr = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
+        console.log('editorUlr', editorUlr);
+        chrome.tabs.create({
+          url: editorUlr,
+        })
+      }
+      console.log('click', info.linkUrl)
+    }
+  }, () => {
+    console.log('???')
+  }
+)
+
+
+
+chrome.omnibox.onInputChanged.addListener(
+  function(text, suggest) {
+    if(TagList.length){
+      const data = TagList.filter(v => v.search.indexOf(text) !== -1 || v.name.indexOf(text) !== -1).slice(0, 5).map(tag => {
+        const cnNamespace = namespaceTranslate[tag.namespace];
+        let cnNameHtml = '';
+        let enNameHtml = tag.search;
+        if (tag.namespace !== 'misc') {
+          cnNameHtml += cnNamespace + ':';
+        }
+        cnNameHtml += tag.name;
+        return {
+          content: enNameHtml,
+          description: cnNameHtml,
+        }
+      })
+      suggest(data);
+    }
+  });
+
+chrome.omnibox.onInputEntered.addListener(
+  function(text) {
+    chrome.tabs.create({
+      url: `https://exhentai.org/?f_search=${encodeURIComponent(text)}`,
+    })
+  });

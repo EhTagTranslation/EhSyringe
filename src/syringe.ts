@@ -1,19 +1,19 @@
 import { uiData } from './data/ui-data';
 import { EHTDatabase, TagList } from './interface';
 import './style/syringe.less';
-import { getTagData } from './tag-data';
+import { getTagData } from './tool/tag-data';
 
 
 (window as any).tagClear = () => {
     window.localStorage.removeItem('tag-list');
     window.localStorage.removeItem('tag-replace-data');
-    chrome.storage.local.remove('waitingForProcessing');
+    chrome.storage.local.remove('TagDB');
 }
 
 (window as any).tagDownload = () => {
     window.localStorage.removeItem('tag-list');
     window.localStorage.removeItem('tag-replace-data');
-    chrome.storage.local.remove('waitingForProcessing');
+    chrome.storage.local.remove('TagDB');
     chrome.runtime.sendMessage({contentScriptQuery: "get-tag-data"})
 }
 

@@ -3,7 +3,7 @@ import { fromEvent } from 'rxjs';
 import { SearchTagItem } from './interface';
 import { namespaceTranslate } from './data/namespace-translate';
 import {distinctUntilChanged, map, filter} from 'rxjs/internal/operators';
-import { getTagData } from './tag-data';
+import { getTagData } from './tool/tag-data';
 const { tagList } = getTagData()
 
 
