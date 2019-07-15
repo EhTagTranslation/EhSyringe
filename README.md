@@ -1,7 +1,10 @@
 # EhSyringeLite WIP
 
 
+首先`npm install` 安装依赖库
+
 `npm start` 开发模式
+
 `npm run build` 编译
 
 
