@@ -35,6 +35,7 @@
     "*://github.com/*","*://*.amazonaws.com/*",
     "activeTab",
     "notifications",
-    "storage"
+    "storage",
+    "contextMenus"
   ]
 }

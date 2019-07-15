@@ -80,7 +80,15 @@ function translateNode(node: Node){
                 )
             ) ) {
                 if(tagReplace[node.textContent]){
-                    node.parentElement.innerHTML = tagReplace[node.textContent];
+                    if(node.parentElement.hasAttribute('eh-syringe-original')){
+                        return;
+                    }
+                    node.parentElement.setAttribute('eh-syringe-original', node.textContent);
+                    if(tagReplace[node.textContent] != node.textContent){
+                        node.parentElement.innerHTML = tagReplace[node.textContent];
+                    } else {
+                        console.log('翻译内容相同', tagReplace[node.textContent]);
+                    }
                     return;
                 }
             }
