@@ -7497,7 +7497,8 @@ function storageTagData(tagDB) {
 }
 chrome.contextMenus.create({
     documentUrlPatterns: ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
-    title: '编辑标签',
+    title: '提交标签翻译',
+    targetUrlPatterns: ["*://exhentai.org/tag/*", "*://e-hentai.org/tag/*", "*://*.exhentai.org/tag/*", "*://*.e-hentai.org/tag/*"],
     contexts: ['link'],
     onclick(info, tab) {
         if (/\/tag\//.test(info.linkUrl)) {
@@ -7506,12 +7507,10 @@ chrome.contextMenus.create({
             const namespace = s2.length == 1 ? 'misc' : s2[0];
             const tag = s2.length == 1 ? s2[0] : s2[1];
             const editorUlr = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
-            console.log('editorUlr', editorUlr);
             chrome.tabs.create({
                 url: editorUlr,
             });
         }
-        console.log('click', info.linkUrl);
     }
 }, () => {
     console.log('???');
