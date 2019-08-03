@@ -1,6 +1,6 @@
 import { uiData } from './data/ui-data';
 import { EHTDatabase, TagList } from './interface';
-import './style/syringe.less';
+import './syringe.less';
 import { getTagData } from './tool/tag-data';
 
 
@@ -80,10 +80,10 @@ function translateNode(node: Node){
                 )
             ) ) {
                 if(tagReplace[node.textContent]){
-                    if(node.parentElement.hasAttribute('eh-syringe-original')){
+                    if(node.parentElement.hasAttribute('ehs-tag')){
                         return;
                     }
-                    node.parentElement.setAttribute('eh-syringe-original', node.textContent);
+                    node.parentElement.setAttribute('ehs-tag', node.textContent);
                     if(tagReplace[node.textContent] != node.textContent){
                         node.parentElement.innerHTML = tagReplace[node.textContent];
                     } else {
@@ -146,7 +146,6 @@ function translateNode(node: Node){
             node.parentElement.parentElement &&
             node.parentElement.parentElement.id === 'nb' ){
             const a = (node as HTMLElement);
-            console.log(node)
             if(uiData[a.textContent]){
                 a.textContent = uiData[a.textContent];
                 return;

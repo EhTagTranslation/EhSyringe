@@ -4,8 +4,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
     'syringe': path.resolve(__dirname, 'src/syringe.ts'),
-    'tag-tip': path.resolve(__dirname, 'src/tag-tip.ts'),
     'background': path.resolve(__dirname, 'src/background.ts'),
+    'tag-tip': path.resolve(__dirname, 'src/plugin/tag-tip/tag-tip.ts'),
+    'introduce': path.resolve(__dirname, 'src/plugin/introduce/introduce.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'build'),

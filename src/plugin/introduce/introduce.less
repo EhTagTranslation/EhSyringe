@@ -1,0 +1,80 @@
+#ehs-introduce-box {
+  position: absolute;
+  left: -18px;
+  top: -0px;
+  bottom: 0;
+  right: -5px;
+  overflow: auto;
+  background: inherit;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  .ehs-title {
+    flex: none;
+    margin: 0 8px;
+    border-bottom: 1px solid #5C0D12;
+    line-height: 14px;
+    padding: 3px 0;
+    display: flex;
+    flex-direction: row;
+
+    .ehs-cn {
+      font-weight: bold;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+    .ehs-en {
+      opacity: 0.7;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+
+    > div {
+      overflow: hidden;
+      flex: auto;
+    }
+    > span {
+      overflow: hidden;
+      flex: none;
+    }
+  }
+  .ehs-close {
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 28px;
+    width: 20px;
+    text-align: center;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .ehs-content {
+    flex: auto;
+    overflow: auto;
+    padding: 8px;
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+  }
+  .ehs-href {
+    flex: none;
+    border-top: 1px solid #5C0D12;
+    margin: 0 8px;
+    line-height: 24px;
+    &:empty {
+      display: none;
+    }
+  }
+
+  &:empty {
+    display: none;
+  }
+  img {
+    max-width: 100%;
+  }
+}

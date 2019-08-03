@@ -86,16 +86,16 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/style/syringe.less":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js??ref--5-3!./src/style/syringe.less ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/syringe.less":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js??ref--5-3!./src/syringe.less ***!
+  \**********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}textarea[name=expungexpl]{display:block}", ""]);
+exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}textarea[name=expungexpl]{display:block}body h1#gj{margin:3px 4px}body div#gright{z-index:3}body .g2{padding-bottom:20px}body .gsp{padding-top:10px}", ""]);
 
 
 /***/ }),
@@ -950,8 +950,8 @@ exports.uiData = {
     'Not published yet': '尚未发布',
     'Uploaded Files:': '上传文件数:',
     'Total Filesize:': '总体积:',
-    'Parent Gallery:': '父级画廊:',
-    'Child Gallery:': '子画廊:',
+    'Parent Gallery:': '父级图库:',
+    'Child Gallery:': '子图库:',
     'Expunged:': '删除:',
     'No (Unpublished)': 'No (尚未发布)',
     'Show Public Gallery': '查看图库',
@@ -1069,7 +1069,7 @@ exports.uiData = {
     'You are currently: ': '你位于:',
     'on the ': ' 在 ',
     'Total GP Gained': '获得的总GP',
-    'GP from gallery visits': 'GP 来自画廊浏览',
+    'GP from gallery visits': 'GP 来自图库浏览',
     'GP from torrent completions': 'GP 来自种子完成',
     'GP from archive downloads': 'GP 来自存档下载',
     'GP from Hentai@Home': 'GP 来自 Hentai@Home',
@@ -1153,7 +1153,7 @@ exports.uiData = {
     // '此图库是早期发布的，标记为图库的质量相同或较低的副本。',
     // "A newer higher-quality and clearly marked copy of this gallery has been uploaded.": 
     // "这个画廊的更高质量和清晰标记的副本已上传。",
-    "This gallery contains either illicit content like child porn or anything else forbidden by the ": '这个画廊包含非法内容，如儿童色情片或其他任何禁止的内容, 参见',
+    "This gallery contains either illicit content like child porn or anything else forbidden by the ": '这个图库包含非法内容，如儿童色情片或其他任何禁止的内容, 参见',
     ", or otherwise falls under the ": ", 或者符合",
     'Expunge Guidelines': '清除指南',
     " (specify below).": ' (在下方说明).',
@@ -1180,20 +1180,69 @@ exports.uiData = {
     "Reset Torrent Key": "重置种子Key",
     "Latest Site Status Updates": "最新网站状态",
     "Site Update Log": "网站更新日志",
+    "Multi-Page Viewer": "多页查看器",
+    "Always use the Multi-Page Viewer? There will still be a link to manually start it if this is left disabled.": "总是使用多页查看器？如果禁用此选项，仍有手动启动多页查看器。",
+    " Nope": " 否",
+    " Yup": " 是",
+    "Multi-Page Viewer Display Style:": "显示样式：",
+    " Align left; Only scale if image is larger than browser width": "左对齐；仅当图像大于浏览器宽度时缩放",
+    " Align center; Only scale if image is larger than browser width": "居中对齐；仅当图像大于浏览器宽度时缩放",
+    " Align center; Always scale images to fit browser width": "居中对齐；始终缩放图像以适应浏览器宽度",
+    "Multi-Page Viewer Thumbnail Pane:": "显示缩略图侧栏：",
+    " Show": " 显示",
+    " Hide": " 隐藏",
+    "Apply": "应用",
+    ' Minimal': ' 最小化',
+    ' Minimal+': ' 最小化+关注标签',
+    ' Compact': ' 紧凑+标签',
+    ' Extended': ' 扩展',
+    ' Thumbnail': ' 缩略图',
+    "Rename": "重命名",
+    "Description": "描述",
+    "Obtained": "已获得",
+    "Purchase": "购买",
+    "Ads-Be-Gone": "广告不见了",
+    "Unlocks the display ads toggle for E-Hentai Galleries on the User Settings page. This will allow you to browse E-Hentai Galleries sans ads, and still retain your conscience.": "解锁“用户设置”中e-hentai的显示广告切换。这将允许你移除e-hentai的广告，不需要昧着良心使用广告屏蔽插件。",
+    "Free with a $20 donation.": "捐赠$20免费解锁",
+    "Free with a $50 donation.": "捐赠$50免费解锁",
+    "Free with a $100 donation.": "捐赠$100免费解锁",
+    "Source Nexus": "原始之力",
+    "Unlocks the Original Images functionality on E-Hentai Galleries. This allows you to browse the original, non-resampled version of a gallery directly.": "解锁e-hentai图库的原始图像功能。这允许您直接浏览图库的原始非重采样版本。",
+    "Unlocks the Multi-Page Viewer function on E-Hentai Galleries. This allows you to view all images from a gallery on one page. (": "解锁e-hentai画廊的多页查看器功能。这允许您在一个页面上查看库中的所有图像。(",
+    "demo": "演示",
+    "More Thumbs": "更多的缩略图",
+    "Increases the maximum number of thumbnail rows to 10.": "将最大缩略图行数增加到10。",
+    "Further increases the maximum number of thumbnail rows to 20.": "将最大缩略图行数增加到20。",
+    "Further increases the maximum number of thumbnail rows to 40.": "将最大缩略图行数增加到40。",
+    "Thumbs Up": "更更多的缩略图",
+    "All Thumbs": "全部的缩略图",
+    "You currently have ": "你现在拥有 ",
+    "By running the Hentai@Home client, you will over time gain special bonus points known as ": "通过运行Hentai@Home客户端，您将随着时间的推移获得特殊的奖励积分，即",
+    ". These are rewards for people who help keeping this site free, fast and responsive by donating bandwidth and computer resources, and can be exchanged here for ": "。这是给予捐献带宽和计算机资源，帮助网站保持自由与快速的奖励，可以在这里交换 ",
+    ", which grant beneficial effects on E-Hentai Galleries and in the HentaiVerse.": "，这对E-Hentai和HentaiVerse产生了有益的影响。",
+    "If running H@H is not an option, you can also you can exchange Credits for Hath at the ": "如果你不能运行H@H，你可以在这里用Credits交换Hath：",
+    "Last 8 Hours (per Hath)": "最近8小时（每Hath）",
+    "Last 24 Hours (per Hath)": "最近24小时（每Hath）",
+    "Spread": "广播",
+    "Recent Transactions": "最近的交易",
+    "Buy Hath": "购买Hath",
+    "Sell Hath": "卖出Hath",
+    "You have encountered a monster!": "你遇到了怪物！",
+    "Click here to fight in the HentaiVerse.": "点击这里进入HentaiVerse战斗",
 };
 
 
 /***/ }),
 
-/***/ "./src/style/syringe.less":
-/*!********************************!*\
-  !*** ./src/style/syringe.less ***!
-  \********************************/
+/***/ "./src/syringe.less":
+/*!**************************!*\
+  !*** ./src/syringe.less ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../node_modules/postcss-loader/src??postcss!../../node_modules/less-loader/dist/cjs.js??ref--5-3!./syringe.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/style/syringe.less");
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--5-1!../node_modules/postcss-loader/src??postcss!../node_modules/less-loader/dist/cjs.js??ref--5-3!./syringe.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/syringe.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1207,7 +1256,7 @@ var options = {"insertInto":":root","hmr":true}
 options.transform = transform
 options.insertInto = ":root";
 
-var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -1226,7 +1275,7 @@ if(false) {}
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const ui_data_1 = __webpack_require__(/*! ./data/ui-data */ "./src/data/ui-data.ts");
-__webpack_require__(/*! ./style/syringe.less */ "./src/style/syringe.less");
+__webpack_require__(/*! ./syringe.less */ "./src/syringe.less");
 const tag_data_1 = __webpack_require__(/*! ./tool/tag-data */ "./src/tool/tag-data.ts");
 window.tagClear = () => {
     window.localStorage.removeItem('tag-list');
@@ -1294,10 +1343,10 @@ function translateNode(node) {
                 node.parentElement.parentElement.classList.contains("gtl") ||
                 node.parentElement.parentElement.classList.contains("gtw")))) {
                 if (tagReplace[node.textContent]) {
-                    if (node.parentElement.hasAttribute('eh-syringe-original')) {
+                    if (node.parentElement.hasAttribute('ehs-tag')) {
                         return;
                     }
-                    node.parentElement.setAttribute('eh-syringe-original', node.textContent);
+                    node.parentElement.setAttribute('ehs-tag', node.textContent);
                     if (tagReplace[node.textContent] != node.textContent) {
                         node.parentElement.innerHTML = tagReplace[node.textContent];
                     }
@@ -1356,7 +1405,6 @@ function translateNode(node) {
             node.parentElement.parentElement &&
             node.parentElement.parentElement.id === 'nb') {
             const a = node;
-            console.log(node);
             if (ui_data_1.uiData[a.textContent]) {
                 a.textContent = ui_data_1.uiData[a.textContent];
                 return;

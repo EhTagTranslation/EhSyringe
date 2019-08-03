@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/tag-tip.ts");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/plugin/tag-tip/tag-tip.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/style/tag-tip.less":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js??ref--5-3!./src/style/tag-tip.less ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/plugin/tag-tip/tag-tip.less":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js??ref--5-3!./src/plugin/tag-tip/tag-tip.less ***!
+  \*************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
 exports.push([module.i, ".eh-syringe-lite-auto-complete-list{position:fixed;min-height:20px;background:#fff;-moz-text-align-last:left;text-align-last:left;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);color:#202124;display:block;max-height:50vh;overflow:auto;padding:8px 0;z-index:10000000000000000000}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list .auto-complete-item{padding:0 8px;line-height:24px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;justify-content:space-between;cursor:pointer}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item>span{-webkit-box-flex:0;flex:none}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8eaed}.eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{padding:0 8px;color:#5f6368}", ""]);
 
@@ -17737,15 +17737,15 @@ exports.namespaceTranslate = {
 
 /***/ }),
 
-/***/ "./src/style/tag-tip.less":
-/*!********************************!*\
-  !*** ./src/style/tag-tip.less ***!
-  \********************************/
+/***/ "./src/plugin/tag-tip/tag-tip.less":
+/*!*****************************************!*\
+  !*** ./src/plugin/tag-tip/tag-tip.less ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../node_modules/postcss-loader/src??postcss!../../node_modules/less-loader/dist/cjs.js??ref--5-3!./tag-tip.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/style/tag-tip.less");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../../node_modules/postcss-loader/src??postcss!../../../node_modules/less-loader/dist/cjs.js??ref--5-3!./tag-tip.less */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/less-loader/dist/cjs.js?!./src/plugin/tag-tip/tag-tip.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -17759,7 +17759,7 @@ var options = {"insertInto":":root","hmr":true}
 options.transform = transform
 options.insertInto = ":root";
 
-var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -17767,21 +17767,21 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./src/tag-tip.ts":
-/*!************************!*\
-  !*** ./src/tag-tip.ts ***!
-  \************************/
+/***/ "./src/plugin/tag-tip/tag-tip.ts":
+/*!***************************************!*\
+  !*** ./src/plugin/tag-tip/tag-tip.ts ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(/*! ./style/tag-tip.less */ "./src/style/tag-tip.less");
+__webpack_require__(/*! ./tag-tip.less */ "./src/plugin/tag-tip/tag-tip.less");
 const rxjs_1 = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-const namespace_translate_1 = __webpack_require__(/*! ./data/namespace-translate */ "./src/data/namespace-translate.ts");
+const namespace_translate_1 = __webpack_require__(/*! ../../data/namespace-translate */ "./src/data/namespace-translate.ts");
 const operators_1 = __webpack_require__(/*! rxjs/internal/operators */ "./node_modules/rxjs/internal/operators/index.js");
-const tag_data_1 = __webpack_require__(/*! ./tool/tag-data */ "./src/tool/tag-data.ts");
+const tag_data_1 = __webpack_require__(/*! ../../tool/tag-data */ "./src/tool/tag-data.ts");
 const { tagList } = tag_data_1.getTagData();
 class TagTip {
     constructor(inputElement) {
