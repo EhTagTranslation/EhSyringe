@@ -79,15 +79,28 @@ function translateNode(node: Node){
                     node.parentElement.parentElement.classList.contains("gtw")
                 )
             ) ) {
+                let value = '';
                 if(tagReplace[node.textContent]){
+                    value = tagReplace[node.textContent];
+                }else {
+                    let aId = node.parentElement.id;
+                    if(aId){
+                        aId = aId.replace('ta_', '');
+                        aId = aId.split(':').pop();
+                        if(tagReplace[aId]){
+                            value = tagReplace[aId];
+                        }
+                    }
+                }
+                if(value){
                     if(node.parentElement.hasAttribute('ehs-tag')){
                         return;
                     }
                     node.parentElement.setAttribute('ehs-tag', node.textContent);
-                    if(tagReplace[node.textContent] != node.textContent){
-                        node.parentElement.innerHTML = tagReplace[node.textContent];
+                    if(value != node.textContent){
+                        node.parentElement.innerHTML = value;
                     } else {
-                        console.log('翻译内容相同', tagReplace[node.textContent]);
+                        console.log('翻译内容相同', value);
                     }
                     return;
                 }
