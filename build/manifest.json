@@ -3,7 +3,7 @@
   "name": "EhSyringe",
   "description": "E站注射器，将中文标签翻译注射到E站体内。以及搜索自动补全",
   "author": "xioxin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icons": {
     "32": "assets/logo32.png",
     "16": "assets/logo16.png",
