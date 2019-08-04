@@ -1,4 +1,4 @@
-export const uiData : {[key: string]: string} = {
+export const uiData: { [key: string]: string } = {
   'Report Gallery': '举报图库',
   'Archive Download': '存档下载',
   'Torrent Download': '种子下载',
@@ -52,8 +52,6 @@ export const uiData : {[key: string]: string} = {
   'Add New Tag': '添加新标签',
 
 
-
-
   'Post New Comment': '发送新的评论',
 
   'Front Page': '首页',
@@ -66,7 +64,6 @@ export const uiData : {[key: string]: string} = {
   'Fav': '收',
   'orite': '藏夹',
   'Home': '首页',
-
 
 
   'Settings': '设置',
@@ -98,8 +95,8 @@ export const uiData : {[key: string]: string} = {
   'Visit the E-Hentai Forums': '前往E-Hentai论坛',
   'Play the HentaiVerse Minigame': '玩HentaiVerse小游戏',
   'Lo-Fi Version': '低保真版本',
-  'Please read the ':'请阅读',
-  'Terms of Service':'服务条款',
+  'Please read the ': '请阅读',
+  'Terms of Service': '服务条款',
   ' before participating with or uploading any content to this site.': '后再使用该网站或上传资源',
 
   'Enter new tags, separated with comma': '输入新标签, 用逗号分隔',
@@ -116,23 +113,23 @@ export const uiData : {[key: string]: string} = {
   ' No (You will not be able to browse as many pages. Enable only if having problems.)': ' 否（您将无法同时浏览多个页面。只有出现问题时才启用。）',
   'Image Size Settings': '图片大小设置',
   'Normally, images are resampled to 1280 pixels of horizontal resolution for online viewing. You can alternatively select one of the following resample resolutions. To avoid murdering the staging servers, resolutions above 1280x are temporarily restricted to donators, people with any hath perk, and people with a UID below 3,000,000.':
-  '通常情况，图像将重采样到1280像素宽度以用于在线浏览，您也可以选择以下重新采样分辨率。' +
-      '但是为了避免负载过高，高于1280像素将只供给于赞助者、特殊贡献者，以及UID小于3,000,000的用户',
+    '通常情况，图像将重采样到1280像素宽度以用于在线浏览，您也可以选择以下重新采样分辨率。' +
+    '但是为了避免负载过高，高于1280像素将只供给于赞助者、特殊贡献者，以及UID小于3,000,000的用户',
 
 
-  "Gallery Name Display":"图库的名字显示",
-  "Archiver Settings":"归档设置",
-  "Front Page Settings":"首页设置",
-  "Favorites":"收藏",
-  "Ratings":"评分",
-  "Tag Namespaces":"标签组",
-  "Excluded Languages":"排除语言",
-  "Search Result Count":"搜索结果数",
-  "Thumbnail Settings":"缩略图设置",
-  "Gallery Comments":"图库评论",
-  "Gallery Tags":"图库标签",
-  "Gallery Page Numbering":"图库页面页码",
-  "Hentai@Home Local Network Host":"Hentai@Home本地网络服务器",
+  "Gallery Name Display": "图库的名字显示",
+  "Archiver Settings": "归档设置",
+  "Front Page Settings": "首页设置",
+  "Favorites": "收藏",
+  "Ratings": "评分",
+  "Tag Namespaces": "标签组",
+  "Excluded Languages": "排除语言",
+  "Search Result Count": "搜索结果数",
+  "Thumbnail Settings": "缩略图设置",
+  "Gallery Comments": "图库评论",
+  "Gallery Tags": "图库标签",
+  "Gallery Page Numbering": "图库页面页码",
+  "Hentai@Home Local Network Host": "Hentai@Home本地网络服务器",
 
   'Horizontal:': '宽/横向',
   'Vertical:': '高/纵向',
@@ -149,65 +146,48 @@ export const uiData : {[key: string]: string} = {
 
   'Thumbnail Scaling': '缩略图缩放',
   'Thumbnails on the thumbnail and extended gallery list views can be scaled to a custom value between 75% and 150%.':
-      '可以缩放为75%到150%之间的自定义值。',
+    '可以缩放为75%到150%之间的自定义值。',
 
   'Viewport Override': '移动端虚拟宽度',
   'Allows you to override the virtual width of the site for mobile devices. This is normally determined automatically by your device based on its DPI. Sensible values at 100% thumbnail scale are between 640 and 1400.':
-      '允许你覆盖移动设备的虚拟宽度, 默认是根据DPI自动计算的, 100%缩略图比例下的合理值在640到1400之间',
+    '允许你覆盖移动设备的虚拟宽度, 默认是根据DPI自动计算的, 100%缩略图比例下的合理值在640到1400之间',
 
   'Tag Filtering Threshold': '标签筛选阈值',
   'Tag Watching Threshold': '标签订阅阈值',
 
   'Excluded Uploaders': '屏蔽的上传者',
   'If you wish to hide galleries from certain uploaders from the gallery list and searches, add them below. Put one username per line.':
-      '如果你希望再图库中和搜索中隐藏某个上传者的话,请把他们的用户名填写再下方,每行一个.',
+    '如果你希望再图库中和搜索中隐藏某个上传者的话,请把他们的用户名填写再下方,每行一个.',
   'Note that galleries from these uploaders will never appear regardless of your search query.':
-      '注意: 无论你如何搜索, 这些上传者都不会出现.',
+    '注意: 无论你如何搜索, 这些上传者都不会出现.',
 
   "Many galleries have both an English/Romanized title and a title in Japanese script. Which gallery name would you like as default?":
-      '很多图库都同时拥有英文或者日文标题，你想默认显示哪一个？',
+    '很多图库都同时拥有英文或者日文标题，你想默认显示哪一个？',
 
   ' Default Title': '默认标题(英文)',
   ' Japanese Title (if available)': '日文标题(如果有)',
 
   'Each letter represents one star. The default RRGGB means R(ed) for the first and second star, G(reen) for the third and fourth, and B(lue) for the fifth. You can also use (Y)ellow for the normal stars. Any five-letter R/G/B/Y combo works.':
-      '每一个字幕代表一颗星, 默认的RRGGB表示第一第二颗星显示为红色R(ed), 第三第四颗星现为是绿色G(reen),第五颗星显示为蓝色B(lue). 你可以使用黄色来表示普通的星,R/G/B/Y任何五个组合都是有效的.',
+    '每一个字幕代表一颗星, 默认的RRGGB表示第一第二颗星显示为红色R(ed), 第三第四颗星现为是绿色G(reen),第五颗星显示为蓝色B(lue). 你可以使用黄色来表示普通的星,R/G/B/Y任何五个组合都是有效的.',
 
-  "While the site will automatically scale down images to fit your screen width, you can also manually restrict the maximum display size of an image. Like the automatic scaling, this does not resample the image, as the resizing is done browser-side. (0 = no limit)"
-      :"虽然图片会自动根据窗口缩小，你也可以手动设置最大大小，图片并没有重新采样（0为不限制）",
-  "The default behavior for the Archiver is to confirm the cost and selection for original or resampled archive, then present a link that can be clicked or copied elsewhere. You can change this behavior here."
-      :"默认归档下载方式为手动选择(原画质或压缩画质),然后手动改复制或点击下载链接,你可以修改归档下载方式",
-  "Which display mode would you like to use on the front and search pages?"
-      :"你想在搜索页面显示哪种样式?",
-  "What categories would you like to show by default on the front page and in searches?"
-      :"你希望在首页上看到哪些类别?",
-  "Here you can choose and rename your favorite categories."
-      :"在这里你可以重命名你的收藏夹",
-  "You can also select your default sort order for galleries on your favorites page. Note that favorites added prior to the March 2016 revamp did not store a timestamp, and will use the gallery posted time regardless of this setting."
-      :"你也可以选择收藏夹中默认排序.请注意，2016年3月改版之前加入收藏夹的画册并未保存收藏时间，会以画册发布时间代替.",
-  "If you want to exclude certain namespaces from a default tag search, you can check those below. Note that this does not prevent galleries with tags in these namespaces from appearing, it just makes it so that when searching tags, it will forego those namespaces."
-      :"如果要从默认标签搜索中排除某些标签组，可以检查以下内容。 请注意，这不会阻止在这些标签组中的标签的展示区出现，它只是在搜索标签时排除这些标签组。",
-  "If you wish to hide galleries in certain languages from the gallery list and searches, select them from the list below."
-      :"如果您希望以图库列表中的某些语言隐藏图库并进行搜索，请从下面的列表中选择它们。",
-  "Note that matching galleries will never appear regardless of your search query."
-      :"请注意，无论搜索查询如何，匹配的图库都不会出现。",
-  "How many results would you like per page for the index/search page and torrent search pages? (Hath Perk: Paging Enlargement Required)"
-      :"搜索页面每页显示多少条数据？ （Hath Perk：付费扩展）",
-  "How would you like the mouse-over thumbnails on the front page to load when using List Mode?"
-      :"你希望鼠标悬停缩略图何时加载?",
-  "You can set a default thumbnail configuration for all galleries you visit."
-      :"图库页面缩略图设置",
-  "Sort order for gallery comments:"
-      :"评论排序方式:",
-  "Show gallery comment votes:"
-      :"显示评论投票数:",
-  "Sort order for gallery tags:"
-      :"图库标签排序方式:",
-  ["Show gallery page numbers:\n\t"] :"显示图库页码:\n\t",
-  "This setting can be used if you have a H@H client running on your local network with the same public IP you browse the site with. Some routers are buggy and cannot route requests back to its own IP; this allows you to work around this problem."
-      :"如果你本地安装了H@H客户端,本地ip与浏览网站的公共ip相同,一些路由器不支持回流导致无法访问到自己,你可以设置这里来解决",
-  "If you are running the client on the same PC you browse from, use the loopback address (127.0.0.1:port). If the client is running on another computer on your network, use its local network IP. Some browser configurations prevent external web sites from accessing URLs with local network IPs, the site must then be whitelisted for this to work."
-      :"如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址(127.0.0.1:端口号). 如果客户端在网络上的其他计算机运行,请使用那台机器的内网ip. 某些浏览器的配置可能阻止外部网站访问本地网络,你必须将网站列入白名单才能工作.",
+  "While the site will automatically scale down images to fit your screen width, you can also manually restrict the maximum display size of an image. Like the automatic scaling, this does not resample the image, as the resizing is done browser-side. (0 = no limit)": "虽然图片会自动根据窗口缩小，你也可以手动设置最大大小，图片并没有重新采样（0为不限制）",
+  "The default behavior for the Archiver is to confirm the cost and selection for original or resampled archive, then present a link that can be clicked or copied elsewhere. You can change this behavior here.": "默认归档下载方式为手动选择(原画质或压缩画质),然后手动改复制或点击下载链接,你可以修改归档下载方式",
+  "Which display mode would you like to use on the front and search pages?": "你想在搜索页面显示哪种样式?",
+  "What categories would you like to show by default on the front page and in searches?": "你希望在首页上看到哪些类别?",
+  "Here you can choose and rename your favorite categories.": "在这里你可以重命名你的收藏夹",
+  "You can also select your default sort order for galleries on your favorites page. Note that favorites added prior to the March 2016 revamp did not store a timestamp, and will use the gallery posted time regardless of this setting.": "你也可以选择收藏夹中默认排序.请注意，2016年3月改版之前加入收藏夹的画册并未保存收藏时间，会以画册发布时间代替.",
+  "If you want to exclude certain namespaces from a default tag search, you can check those below. Note that this does not prevent galleries with tags in these namespaces from appearing, it just makes it so that when searching tags, it will forego those namespaces.": "如果要从默认标签搜索中排除某些标签组，可以检查以下内容。 请注意，这不会阻止在这些标签组中的标签的展示区出现，它只是在搜索标签时排除这些标签组。",
+  "If you wish to hide galleries in certain languages from the gallery list and searches, select them from the list below.": "如果您希望以图库列表中的某些语言隐藏图库并进行搜索，请从下面的列表中选择它们。",
+  "Note that matching galleries will never appear regardless of your search query.": "请注意，无论搜索查询如何，匹配的图库都不会出现。",
+  "How many results would you like per page for the index/search page and torrent search pages? (Hath Perk: Paging Enlargement Required)": "搜索页面每页显示多少条数据？ （Hath Perk：付费扩展）",
+  "How would you like the mouse-over thumbnails on the front page to load when using List Mode?": "你希望鼠标悬停缩略图何时加载?",
+  "You can set a default thumbnail configuration for all galleries you visit.": "图库页面缩略图设置",
+  "Sort order for gallery comments:": "评论排序方式:",
+  "Show gallery comment votes:": "显示评论投票数:",
+  "Sort order for gallery tags:": "图库标签排序方式:",
+  ["Show gallery page numbers:\n\t"]: "显示图库页码:\n\t",
+  "This setting can be used if you have a H@H client running on your local network with the same public IP you browse the site with. Some routers are buggy and cannot route requests back to its own IP; this allows you to work around this problem.": "如果你本地安装了H@H客户端,本地ip与浏览网站的公共ip相同,一些路由器不支持回流导致无法访问到自己,你可以设置这里来解决",
+  "If you are running the client on the same PC you browse from, use the loopback address (127.0.0.1:port). If the client is running on another computer on your network, use its local network IP. Some browser configurations prevent external web sites from accessing URLs with local network IPs, the site must then be whitelisted for this to work.": "如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址(127.0.0.1:端口号). 如果客户端在网络上的其他计算机运行,请使用那台机器的内网ip. 某些浏览器的配置可能阻止外部网站访问本地网络,你必须将网站列入白名单才能工作.",
 
   " Manual Select, Manual Start (Default)": " 手动选择,手动下载 (默认)",
   " Manual Select, Auto Start": " 手动选择,自动下载",
@@ -223,10 +203,8 @@ export const uiData : {[key: string]: string} = {
   " 50 results": "50个",
   " 100 results": "100个",
   " 200 results": "200个",
-  " On mouse-over (pages load faster, but there may be a slight delay before a thumb appears)"
-      : "鼠标悬停时 (页面加载快,缩略图加载有延迟)",
-  " On page load (pages take longer to load, but there is no delay for loading a thumb after the page has loaded)"
-      : "页面加载时 (页面加载时间更长,但是显示的时候无需等待)",
+  " On mouse-over (pages load faster, but there may be a slight delay before a thumb appears)": "鼠标悬停时 (页面加载快,缩略图加载有延迟)",
+  " On page load (pages take longer to load, but there is no delay for loading a thumb after the page has loaded)": "页面加载时 (页面加载时间更长,但是显示的时候无需等待)",
   " Oldest comments first": "最早的评论",
   " Recent comments first": "最新的评论",
   " By highest score": "分数最高",
@@ -237,30 +215,30 @@ export const uiData : {[key: string]: string} = {
   " No": "否",
   " Yes": "是",
 
-  "Size:":"大小:",
-  "Rows:":"行数:",
-  "pixels":"像素",
-  "Original":"原始语言",
-  "Translated":"翻译版",
-  "Rewrite":"改编版",
-  "All":"所有",
-  "Japanese":"日文",
-  "English":"英文",
-  "Chinese":"中文",
-  "Dutch":"荷兰语",
-  "French":"法语",
-  "German":"德语",
-  "Hungarian":"匈牙利",
-  "Italian":"意呆利",
-  "Korean":"韩语",
-  "Polish":"波兰语",
-  "Portuguese":"葡萄牙语",
-  "Russian":"俄语",
-  "Spanish":"西班牙语",
-  "Thai":"泰语",
-  "Vietnamese":"越南语",
-  "N/A":"无效",
-  "Other":"其他",
+  "Size:": "大小:",
+  "Rows:": "行数:",
+  "pixels": "像素",
+  "Original": "原始语言",
+  "Translated": "翻译版",
+  "Rewrite": "改编版",
+  "All": "所有",
+  "Japanese": "日文",
+  "English": "英文",
+  "Chinese": "中文",
+  "Dutch": "荷兰语",
+  "French": "法语",
+  "German": "德语",
+  "Hungarian": "匈牙利",
+  "Italian": "意呆利",
+  "Korean": "韩语",
+  "Polish": "波兰语",
+  "Portuguese": "葡萄牙语",
+  "Russian": "俄语",
+  "Spanish": "西班牙语",
+  "Thai": "泰语",
+  "Vietnamese": "越南语",
+  "N/A": "无效",
+  "Other": "其他",
 
 
   "Published Galleries": '发布图库',
@@ -287,16 +265,16 @@ export const uiData : {[key: string]: string} = {
 
   'Main Gallery Title': '主标题',
   'The main english or romanized title for this gallery.':
-      '这个图库的主标题, 英文或者罗马音',
+    '这个图库的主标题, 英文或者罗马音',
   'Japanese Script Title': '日文标题',
   'The original title in Japanese script, if applicable.': '原始的日文标题(如果有)',
 
   'Gallery Folder': '图库文件夹',
   'The folder this gallery will be displayed under in the gallery list. This is only used to help you organize your gallery uploads.':
-      '图库文件夹仅在我的图库列表中显示, 仅用于帮助整理上传的图库.',
+    '图库文件夹仅在我的图库列表中显示, 仅用于帮助整理上传的图库.',
 
   'Any comments or additional relevant information for this gallery. This will always show up as the topmost comment, and cannot be voted down.':
-      '关于此图库的任何评论或其他相关信息。将始终显示在评论的最顶部，并且不能投票。',
+    '关于此图库的任何评论或其他相关信息。将始终显示在评论的最顶部，并且不能投票。',
 
   'or new folder: ': '新文件夹: ',
 
@@ -319,7 +297,7 @@ export const uiData : {[key: string]: string} = {
   'I have read and agree with the ': '我已阅读并同意',
   'Upload Files': '上传文件',
   'Select one or more image or archive files and click Start Upload to add files to this gallery.':
-      '选择一个或多个图像或存档文件, 然后点击"开始上传",以添加文集到此库.',
+    '选择一个或多个图像或存档文件, 然后点击"开始上传",以添加文集到此库.',
   '\n\t\tNo files have been added yet\n\t\t': '尚未添加任何文件',
   'Folder Name': '文件夹名称',
   'Display Order': '显示顺序',
@@ -372,7 +350,7 @@ export const uiData : {[key: string]: string} = {
   'All Torrents': '所有种子',
   'Only My Torrents': '只显示我的',
   '\nNote that you cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.\n':
-      '注意:  你不能直接吧种子添加到此页面. 请在图库中上传.',
+    '注意:  你不能直接吧种子添加到此页面. 请在图库中上传.',
 
   'Added': '添加于',
   'Torrent Name': '种子名',
@@ -455,9 +433,9 @@ export const uiData : {[key: string]: string} = {
   'seedmins': '做种时长',
   'Show My Torrents': '显示我的种子',
   'If you misplace any of your personalized torrents, hit the button below to reset your key.':
-      '如果你错误的分发了个性化种子,请点击下面的按钮重置您的KEY',
+    '如果你错误的分发了个性化种子,请点击下面的按钮重置您的KEY',
   'This will immediately invalidate all of your personalized torrents in play.':
-      '这将立即注销您所有的个性化种子,会立即失效.',
+    '这将立即注销您所有的个性化种子,会立即失效.',
   'Your current key is: ': '你当前的KEY是: ',
   'EHTracker': '种子追踪器',
   'Base': '基础',
@@ -490,149 +468,160 @@ export const uiData : {[key: string]: string} = {
   'Information': '信息',
   'Close Window': '关闭窗口',
   'Upload Torrent': '上传种子',
-  "\n\t\tYou can add a torrent for this gallery by uploading it here. The maximum torrent file size is 10 MB.": 
-     '您可以在这里上传来为此库添加种子。最大Torrent文件大小为10MB。',
+  "\n\t\tYou can add a torrent for this gallery by uploading it here. The maximum torrent file size is 10 MB.":
+    '您可以在这里上传来为此库添加种子。最大Torrent文件大小为10MB。',
   "\n\t\tNote that you have to download the finished torrent from this site after uploading for stats to be recorded.\n\t":
-      '请注意，您必须在上传后从该站点下载个性化种子，以便记录统计信息。',
-  "\n\t\tIf you are creating the torrent yourself, set this as announce tracker: " : 
-      '如果您自己创建Torrent，请将其设置为AnnounceTracker：',
-      "Personalized Torrent": '个性化种子',
-      "Redistributable Torrent": '可再分发种子',
-      "(Just For You - this makes sure to record your stats)\n": '(只属于你 - 确保记录你的下载统计信息)',
-      "(use if you want a file you can post or give to others)": '(如果您想再发布或提供给其他人使用)',
-      'Back to Index': '返回',
-      'Vote to Expunge': '投票删除',
-      'No comments were given for this torrent.': '没有对这个种子的评论',
-      "Please choose a color to file this favorite gallery under. You can also add a note to it if you wish.":  
-      '请选择一个颜色标记你的收藏, 你也可以加一些备注.',
-      "Favorite Note (Max 200 Characters)": "收藏备注 (最多200字符)",
-      'Add to Favorites': '添加到收藏',
-      'Favorites 0': '收藏夹 0',
-      'Favorites 1': '收藏夹 1',
-      'Favorites 2': '收藏夹 2',
-      'Favorites 3': '收藏夹 3',
-      'Favorites 4': '收藏夹 4',
-      'Favorites 5': '收藏夹 5',
-      'Favorites 6': '收藏夹 6',
-      'Favorites 7': '收藏夹 7',
-      'Favorites 8': '收藏夹 8',
-      'Favorites 9': '收藏夹 9',
+    '请注意，您必须在上传后从该站点下载个性化种子，以便记录统计信息。',
+  "\n\t\tIf you are creating the torrent yourself, set this as announce tracker: ":
+    '如果您自己创建Torrent，请将其设置为AnnounceTracker：',
+  "Personalized Torrent": '个性化种子',
+  "Redistributable Torrent": '可再分发种子',
+  "(Just For You - this makes sure to record your stats)\n": '(只属于你 - 确保记录你的下载统计信息)',
+  "(use if you want a file you can post or give to others)": '(如果您想再发布或提供给其他人使用)',
+  'Back to Index': '返回',
+  'Vote to Expunge': '投票删除',
+  'No comments were given for this torrent.': '没有对这个种子的评论',
+  "Please choose a color to file this favorite gallery under. You can also add a note to it if you wish.":
+    '请选择一个颜色标记你的收藏, 你也可以加一些备注.',
+  "Favorite Note (Max 200 Characters)": "收藏备注 (最多200字符)",
+  'Add to Favorites': '添加到收藏',
+  'Favorites 0': '收藏夹 0',
+  'Favorites 1': '收藏夹 1',
+  'Favorites 2': '收藏夹 2',
+  'Favorites 3': '收藏夹 3',
+  'Favorites 4': '收藏夹 4',
+  'Favorites 5': '收藏夹 5',
+  'Favorites 6': '收藏夹 6',
+  'Favorites 7': '收藏夹 7',
+  'Favorites 8': '收藏夹 8',
+  'Favorites 9': '收藏夹 9',
 
-      'It is the dawn of a new day!': '新的一天开始了!',
-      'Reflecting on your journey so far, you find that you are a little wiser.': '回想一下你迄今为止的旅程，你发现你更聪明了。',
-      'You gain ': '你获得了 ',
-      ' EXP, ': ' 经验, ',
-      ' Credits!': ' Credits!',
-        'Back to Gallery': '返回图库',
-      'Report Type': '举报类型',
-      '[Select a complaint type...]': '[请选择一个举报类型...]',
-      'DMCA/Copyright Infringement': 'DMCA/侵犯版权',
-      'Child Pornography': '儿童色情',
-      'Other Illicit Content': '其他非法内容',
-        'Specify an objective reason why you wish to expunge this gallery.':
-        '请说明要删除此库的客观原因.',
-        'None / Withdraw Petition.': '无 / 撤回删除申请.',
-        // "This gallery is a duplicate of equal or lower quality of an earlier posted, clearly marked gallery.": 
-        // '此图库是早期发布的，标记为图库的质量相同或较低的副本。',
-        // "A newer higher-quality and clearly marked copy of this gallery has been uploaded.": 
-        // "这个画廊的更高质量和清晰标记的副本已上传。",
-        "This gallery contains either illicit content like child porn or anything else forbidden by the ": 
-        '这个图库包含非法内容，如儿童色情片或其他任何禁止的内容, 参见',
-        ", or otherwise falls under the ":
-        ", 或者符合",
-        'Expunge Guidelines': '清除指南',
-        " (specify below).": ' (在下方说明).',
-        'Show Expunge Log': '显示清除日志',
-        "Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.":
-        "请输入清除原因和备注。它应包括副本的位置或违反的特定规则。",
-        "Roman Script": "罗马音",
-        "Japanese Script": "日文",
-        "Not Set": '未设置',
-        "Blank Vote": '空投票',
-        " New": ' 新',
-        "Watched Tag Galleries": "标签订阅",
-        "Currently Popular Recent Galleries": "目前最受欢迎的图库",
-        "Search Favorites": "搜索收藏夹",
-        "Clear": "清除",
-        "Delete Favorites": "删除收藏",
-        "Change Category": "移动到",
-        "Confirm": "确定",
-        "You are currently at ": "当前:",
-        " towards a limit of ": ", 限制为",
-        ". This regenerates at a rate of ": ", 每分钟回复",
-        " per minute.": "点",
-        "Reset Cost: ": "重置限制花费: ",
-        "Reset Limit": "重置限制",
-        "Reset Torrent Key": "重置种子Key",
-        "Latest Site Status Updates": "最新网站状态",
-        "Site Update Log": "网站更新日志",
+  'It is the dawn of a new day!': '新的一天开始了!',
+  'Reflecting on your journey so far, you find that you are a little wiser.': '回想一下你迄今为止的旅程，你发现你更聪明了。',
+  'You gain ': '你获得了 ',
+  ' EXP, ': ' 经验, ',
+  ' Credits!': ' Credits!',
+  'Back to Gallery': '返回图库',
+  'Report Type': '举报类型',
+  '[Select a complaint type...]': '[请选择一个举报类型...]',
+  'DMCA/Copyright Infringement': 'DMCA/侵犯版权',
+  'Child Pornography': '儿童色情',
+  'Other Illicit Content': '其他非法内容',
+  'Specify an objective reason why you wish to expunge this gallery.':
+    '请说明要删除此库的客观原因.',
+  'None / Withdraw Petition.': '无 / 撤回删除申请.',
+  // "This gallery is a duplicate of equal or lower quality of an earlier posted, clearly marked gallery.":
+  // '此图库是早期发布的，标记为图库的质量相同或较低的副本。',
+  // "A newer higher-quality and clearly marked copy of this gallery has been uploaded.":
+  // "这个画廊的更高质量和清晰标记的副本已上传。",
+  "This gallery contains either illicit content like child porn or anything else forbidden by the ":
+    '这个图库包含非法内容，如儿童色情片或其他任何禁止的内容, 参见',
+  ", or otherwise falls under the ":
+    ", 或者符合",
+  'Expunge Guidelines': '清除指南',
+  " (specify below).": ' (在下方说明).',
+  'Show Expunge Log': '显示清除日志',
+  "Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.":
+    "请输入清除原因和备注。它应包括副本的位置或违反的特定规则。",
+  "Roman Script": "罗马音",
+  "Japanese Script": "日文",
+  "Not Set": '未设置',
+  "Blank Vote": '空投票',
+  " New": ' 新',
+  "Watched Tag Galleries": "标签订阅",
+  "Currently Popular Recent Galleries": "目前最受欢迎的图库",
+  "Search Favorites": "搜索收藏夹",
+  "Clear": "清除",
+  "Delete Favorites": "删除收藏",
+  "Change Category": "移动到",
+  "Confirm": "确定",
+  "You are currently at ": "当前:",
+  " towards a limit of ": ", 限制为",
+  ". This regenerates at a rate of ": ", 每分钟回复",
+  " per minute.": "点",
+  "Reset Cost: ": "重置限制花费: ",
+  "Reset Limit": "重置限制",
+  "Reset Torrent Key": "重置种子Key",
+  "Latest Site Status Updates": "最新网站状态",
+  "Site Update Log": "网站更新日志",
 
-        "Multi-Page Viewer": "多页查看器",
-        "Always use the Multi-Page Viewer? There will still be a link to manually start it if this is left disabled.":
-            "总是使用多页查看器？如果禁用此选项，仍有手动启动多页查看器。",
-        " Nope": " 否",
-        " Yup": " 是",
-        "Multi-Page Viewer Display Style:": "显示样式：",
-        " Align left; Only scale if image is larger than browser width": "左对齐；仅当图像大于浏览器宽度时缩放",
-        " Align center; Only scale if image is larger than browser width": "居中对齐；仅当图像大于浏览器宽度时缩放",
-        " Align center; Always scale images to fit browser width": "居中对齐；始终缩放图像以适应浏览器宽度",
-        "Multi-Page Viewer Thumbnail Pane:": "显示缩略图侧栏：",
-        " Show": " 显示",
-        " Hide": " 隐藏",
-        "Apply": "应用",
+  "Multi-Page Viewer": "多页查看器",
+  "Always use the Multi-Page Viewer? There will still be a link to manually start it if this is left disabled.":
+    "总是使用多页查看器？如果禁用此选项，仍有手动启动多页查看器。",
+  " Nope": " 否",
+  " Yup": " 是",
+  "Multi-Page Viewer Display Style:": "显示样式：",
+  " Align left; Only scale if image is larger than browser width": "左对齐；仅当图像大于浏览器宽度时缩放",
+  " Align center; Only scale if image is larger than browser width": "居中对齐；仅当图像大于浏览器宽度时缩放",
+  " Align center; Always scale images to fit browser width": "居中对齐；始终缩放图像以适应浏览器宽度",
+  "Multi-Page Viewer Thumbnail Pane:": "显示缩略图侧栏：",
+  " Show": " 显示",
+  " Hide": " 隐藏",
+  "Apply": "应用",
 
-        ' Minimal': ' 最小化',
-        ' Minimal+': ' 最小化+关注标签',
-        ' Compact': ' 紧凑+标签',
-        ' Extended': ' 扩展',
-        ' Thumbnail': ' 缩略图',
-      
-        "Rename": "重命名",
-        "Description": "描述",
-        "Obtained": "已获得",
-        "Purchase": "购买",
-        "Ads-Be-Gone": "广告不见了",
-        "Unlocks the display ads toggle for E-Hentai Galleries on the User Settings page. This will allow you to browse E-Hentai Galleries sans ads, and still retain your conscience.":
-        "解锁“用户设置”中e-hentai的显示广告切换。这将允许你移除e-hentai的广告，不需要昧着良心使用广告屏蔽插件。",
-        "Free with a $20 donation.": "捐赠$20免费解锁",
-        "Free with a $50 donation.": "捐赠$50免费解锁",
-        "Free with a $100 donation.": "捐赠$100免费解锁",
+  ' Minimal': ' 最小化',
+  ' Minimal+': ' 最小化+关注标签',
+  ' Compact': ' 紧凑+标签',
+  ' Extended': ' 扩展',
+  ' Thumbnail': ' 缩略图',
 
-        "Source Nexus": "原始之力",
-        "Unlocks the Original Images functionality on E-Hentai Galleries. This allows you to browse the original, non-resampled version of a gallery directly.": 
-        "解锁e-hentai图库的原始图像功能。这允许您直接浏览图库的原始非重采样版本。",
+  "Rename": "重命名",
+  "Description": "描述",
+  "Obtained": "已获得",
+  "Purchase": "购买",
+  "Ads-Be-Gone": "广告不见了",
+  "Unlocks the display ads toggle for E-Hentai Galleries on the User Settings page. This will allow you to browse E-Hentai Galleries sans ads, and still retain your conscience.":
+    "解锁“用户设置”中e-hentai的显示广告切换。这将允许你移除e-hentai的广告，不需要昧着良心使用广告屏蔽插件。",
+  "Free with a $20 donation.": "捐赠$20免费解锁",
+  "Free with a $50 donation.": "捐赠$50免费解锁",
+  "Free with a $100 donation.": "捐赠$100免费解锁",
 
-        "Unlocks the Multi-Page Viewer function on E-Hentai Galleries. This allows you to view all images from a gallery on one page. (":
-        "解锁e-hentai画廊的多页查看器功能。这允许您在一个页面上查看库中的所有图像。(",
-        "demo": "演示",
-        "More Thumbs": "更多的缩略图",
-        "Increases the maximum number of thumbnail rows to 10.": "将最大缩略图行数增加到10。",
-        "Further increases the maximum number of thumbnail rows to 20.": "将最大缩略图行数增加到20。",
-        "Further increases the maximum number of thumbnail rows to 40.": "将最大缩略图行数增加到40。",
+  "Source Nexus": "原始之力",
+  "Unlocks the Original Images functionality on E-Hentai Galleries. This allows you to browse the original, non-resampled version of a gallery directly.":
+    "解锁e-hentai图库的原始图像功能。这允许您直接浏览图库的原始非重采样版本。",
 
-        "Thumbs Up": "更更多的缩略图",
-        "All Thumbs": "全部的缩略图",
+  "Unlocks the Multi-Page Viewer function on E-Hentai Galleries. This allows you to view all images from a gallery on one page. (":
+    "解锁e-hentai画廊的多页查看器功能。这允许您在一个页面上查看库中的所有图像。(",
+  "demo": "演示",
+  "More Thumbs": "更多的缩略图",
+  "Increases the maximum number of thumbnail rows to 10.": "将最大缩略图行数增加到10。",
+  "Further increases the maximum number of thumbnail rows to 20.": "将最大缩略图行数增加到20。",
+  "Further increases the maximum number of thumbnail rows to 40.": "将最大缩略图行数增加到40。",
 
-        "You currently have ": "你现在拥有 ",
+  "Thumbs Up": "更更多的缩略图",
+  "All Thumbs": "全部的缩略图",
 
-        "By running the Hentai@Home client, you will over time gain special bonus points known as ":
-        "通过运行Hentai@Home客户端，您将随着时间的推移获得特殊的奖励积分，即",
+  "You currently have ": "你现在拥有 ",
 
-        ". These are rewards for people who help keeping this site free, fast and responsive by donating bandwidth and computer resources, and can be exchanged here for ": 
-        "。这是给予捐献带宽和计算机资源，帮助网站保持自由与快速的奖励，可以在这里交换 ",
+  "By running the Hentai@Home client, you will over time gain special bonus points known as ":
+    "通过运行Hentai@Home客户端，您将随着时间的推移获得特殊的奖励积分，即",
 
-        ", which grant beneficial effects on E-Hentai Galleries and in the HentaiVerse.": 
-        "，这对E-Hentai和HentaiVerse产生了有益的影响。",
+  ". These are rewards for people who help keeping this site free, fast and responsive by donating bandwidth and computer resources, and can be exchanged here for ":
+    "。这是给予捐献带宽和计算机资源，帮助网站保持自由与快速的奖励，可以在这里交换 ",
 
-        "If running H@H is not an option, you can also you can exchange Credits for Hath at the ":
-        "如果你不能运行H@H，你可以在这里用Credits交换Hath：",
+  ", which grant beneficial effects on E-Hentai Galleries and in the HentaiVerse.":
+    "，这对E-Hentai和HentaiVerse产生了有益的影响。",
 
-        "Last 8 Hours (per Hath)": "最近8小时（每Hath）",
-        "Last 24 Hours (per Hath)": "最近24小时（每Hath）",
-        "Spread": "广播",
-        "Recent Transactions": "最近的交易",
-        "Buy Hath": "购买Hath",
-        "Sell Hath": "卖出Hath",
-        "You have encountered a monster!": "你遇到了怪物！",
-        "Click here to fight in the HentaiVerse.": "点击这里进入HentaiVerse战斗",
-    }
+  "If running H@H is not an option, you can also you can exchange Credits for Hath at the ":
+    "如果你不能运行H@H，你可以在这里用Credits交换Hath：",
+
+  "Last 8 Hours (per Hath)": "最近8小时（每Hath）",
+  "Last 24 Hours (per Hath)": "最近24小时（每Hath）",
+  "Spread": "广播",
+  "Recent Transactions": "最近的交易",
+  "Buy Hath": "购买Hath",
+  "Sell Hath": "卖出Hath",
+  "You have encountered a monster!": "你遇到了怪物！",
+  "Click here to fight in the HentaiVerse.": "点击这里进入HentaiVerse战斗",
+
+  "If you want to combine a file search with a category/keyword search, upload the file first.":
+    "如果要将文件和类别、关键词结合搜索,请先上传文件.",
+  "Select a file to upload, then hit File Search. All public galleries containing this exact file will be displayed.":
+    "选择要搜索的图片文件,点击'文件搜索'. 将显示包含此文件的所有公开图库.",
+  "For color images, the system can also perform a similarity lookup to find resampled images.":
+    "对于彩色图片,系统还可以执行相似性查询以找到重采样过的图片.",
+  "Use Similarity Scan": "使用相似性查询",
+  "Only Search Covers": "仅搜索封面",
+  "Show Expunged": "显示被删除的图库",
+  "File Search": "文件搜索",
+}
