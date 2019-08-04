@@ -19,3 +19,13 @@ E站注射器，将中文翻译注入到E站体内。
 
 ## 特点
 * 在加载DOM过程替换翻译, 页面加载完直接是中文不会闪烁
+
+
+## 截图预览
+
+| 搜索列表 | 详情页(标签描述) |
+| --- | --- |
+| ![image](https://user-images.githubusercontent.com/5716100/62420218-3c697b80-b6c1-11e9-884e-5aa22bc60619.png) | ![image](https://user-images.githubusercontent.com/5716100/62420220-43908980-b6c1-11e9-89f5-7b78e38cbf35.png) |
+| 搜索提示/补全 |   |
+| ![GIF](https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif)
+ |  |
