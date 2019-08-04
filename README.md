@@ -1,18 +1,7 @@
-# EhSyringeLite WIP
+# EhSyringe
 
+E站注射器，将中文翻译注入到E站体内。
 
-首先`npm install` 安装依赖库
+这一针打下去你就会说中文了。
 
-`npm start` 开发模式
-
-`npm run build` 编译
-
-
-浏览器加载已解压的插件，选择 `build`目录（上传了一份编译好的可以直接安装）
-
-
-该项目为临时项目
-
-
-
-为什么是私有项目？这只是临时的，是否做下去还不一定，名字也没有定，先临时用于存储
+![image](https://user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
