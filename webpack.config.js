@@ -1,9 +1,5 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const ZipPlugin = require('zip-webpack-plugin');
-// const FileManagerPlugin = require('filemanager-webpack-plugin');
-
-
 
 module.exports = {
     entry: {
@@ -11,7 +7,7 @@ module.exports = {
         'background': path.resolve(__dirname, 'src/background.ts'),
         'tag-tip': path.resolve(__dirname, 'src/plugin/tag-tip/tag-tip.ts'),
         'introduce': path.resolve(__dirname, 'src/plugin/introduce/introduce.ts'),
-    },
+    'popup': path.resolve(__dirname, 'src/popup.ts'),},
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'script/[name].js'
@@ -94,7 +90,7 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin([
-            {from: 'src/assets', to: 'assets'},
+            {from: 'src/assets', to: 'assets'},{ from: 'src/template', to: 'template'},
             {from: 'src/manifest.json', to: 'manifest.json'},
             {
                 from: 'src/data/tag.db.json',
@@ -123,3 +119,4 @@ module.exports = {
     ],
     devtool: 'source-map',
 };
+
