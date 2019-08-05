@@ -1,18 +1,31 @@
-# EhSyringeLite WIP
+# EhSyringe
+chrome 插件地址: https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb
 
+E站注射器，将中文翻译注入到E站体内。
 
-首先`npm install` 安装依赖库
+这一针打下去你就会说中文了。
 
-`npm start` 开发模式
-
-`npm run build` 编译
-
-
-浏览器加载已解压的插件，选择 `build`目录（上传了一份编译好的可以直接安装）
-
-
-该项目为临时项目
+![image](https://user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
 
 
 
-为什么是私有项目？这只是临时的，是否做下去还不一定，名字也没有定，先临时用于存储
+## 功能:
+* 全站翻译(大部分翻译了)
+* TAG翻译
+* TAG介绍
+* TAG翻译更新 (还没做好)
+* 搜索框 TAG输入提示
+
+
+## 特点
+* 在加载DOM过程替换翻译, 页面加载完直接是中文不会闪烁
+
+
+## 截图预览
+
+| 搜索列表 | 详情页(标签描述) |
+| --- | --- |
+| ![image](https://user-images.githubusercontent.com/5716100/62420218-3c697b80-b6c1-11e9-884e-5aa22bc60619.png) | ![image](https://user-images.githubusercontent.com/5716100/62420220-43908980-b6c1-11e9-89f5-7b78e38cbf35.png) |
+| 搜索提示/补全 |   |
+| ![GIF](https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif)
+ |  |

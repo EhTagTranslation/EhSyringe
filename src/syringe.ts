@@ -57,6 +57,7 @@ function translateNode(node: Node){
     if (node.nodeName === "BODY") {
         // node.parentElement.lang = "zh-CN";
         // node.parentElement.setAttribute('xml:lang', "zh-CN")
+        (node as HTMLElement).classList.add(location.host.indexOf('exhentai') === -1 ? 'eh': 'ex');
     } else if (node.nodeName === "#text"){
         if(node.parentElement) {
             if(

@@ -95,7 +95,7 @@
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}textarea[name=expungexpl]{display:block}body h1#gj{margin:3px 4px}body div#gright{z-index:3}body .g2{padding-bottom:20px}body .gsp{padding-top:10px}", ""]);
+exports.push([module.i, "div.gt,div.gtl,td.tc{white-space:nowrap}div.gt,div.gtl{height:16px;line-height:16px}textarea[name=expungexpl]{display:block}body h1#gj{margin:3px 4px}body div#gright{z-index:3}body .g2{padding-bottom:20px}body .gsp{padding-top:10px}body div.gt,body div.gtl,body div.gtw{overflow:hidden;height:16px;line-height:16px}body div#gmid{height:auto}", ""]);
 
 
 /***/ }),
@@ -1328,6 +1328,7 @@ function translateNode(node) {
     if (node.nodeName === "BODY") {
         // node.parentElement.lang = "zh-CN";
         // node.parentElement.setAttribute('xml:lang', "zh-CN")
+        node.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
     }
     else if (node.nodeName === "#text") {
         if (node.parentElement) {

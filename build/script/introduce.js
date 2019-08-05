@@ -95,7 +95,7 @@
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "#ehs-introduce-box{position:absolute;left:-18px;top:0;bottom:0;right:-5px;overflow:auto;background:inherit;text-align:left;-webkit-box-orient:vertical;flex-direction:column;border-radius:0 0 5px 0}#ehs-introduce-box,#ehs-introduce-box .ehs-title{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}#ehs-introduce-box .ehs-title{-webkit-box-flex:0;flex:none;margin:0 8px;border-bottom:1px solid #5c0d12;line-height:14px;padding:3px 0;-webkit-box-orient:horizontal;flex-direction:row}#ehs-introduce-box .ehs-title .ehs-cn{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#ehs-introduce-box .ehs-title .ehs-en{opacity:.7;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#ehs-introduce-box .ehs-title>div{overflow:hidden;-webkit-box-flex:1;flex:auto}#ehs-introduce-box .ehs-title>span{overflow:hidden;-webkit-box-flex:0;flex:none}#ehs-introduce-box .ehs-close{cursor:pointer;font-size:16px;opacity:.8;line-height:28px;width:20px;text-align:center}#ehs-introduce-box .ehs-close:hover{opacity:1}#ehs-introduce-box .ehs-content{-webkit-box-flex:1;flex:auto;overflow:auto;padding:8px}#ehs-introduce-box .ehs-content::-webkit-scrollbar{width:2px}#ehs-introduce-box .ehs-href{-webkit-box-flex:0;flex:none;border-top:1px solid #5c0d12;margin:0 8px;line-height:24px}#ehs-introduce-box .ehs-href:empty,#ehs-introduce-box:empty{display:none}#ehs-introduce-box img{max-width:100%}", ""]);
+exports.push([module.i, "#ehs-introduce-box{position:absolute;left:-18px;top:0;bottom:0;right:-5px;overflow:auto;background:inherit;text-align:left;-webkit-box-orient:vertical;flex-direction:column;border-radius:0 0 5px 0}#ehs-introduce-box,#ehs-introduce-box .ehs-title{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal}#ehs-introduce-box .ehs-title{-webkit-box-flex:0;flex:none;margin:0 8px;border-bottom:1px solid #5c0d12;line-height:14px;padding:3px 0;-webkit-box-orient:horizontal;flex-direction:row}#ehs-introduce-box .ehs-title .ehs-cn{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#ehs-introduce-box .ehs-title .ehs-en{opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#ehs-introduce-box .ehs-title>div{overflow:hidden;-webkit-box-flex:1;flex:auto}#ehs-introduce-box .ehs-title>span{overflow:hidden;-webkit-box-flex:0;flex:none}#ehs-introduce-box .ehs-close{cursor:pointer;font-size:16px;opacity:.8;line-height:28px;width:20px;text-align:center}#ehs-introduce-box .ehs-close:hover{opacity:1}#ehs-introduce-box .ehs-content{-webkit-box-flex:1;flex:auto;overflow:auto;padding:8px}#ehs-introduce-box .ehs-content::-webkit-scrollbar{width:2px}#ehs-introduce-box .ehs-href{-webkit-box-flex:0;flex:none;border-top:1px solid #5c0d12;margin:0 8px;line-height:24px}#ehs-introduce-box .ehs-href:empty,#ehs-introduce-box:empty{display:none}#ehs-introduce-box img{max-width:100%}body.ex #ehs-introduce-box .ehs-title{border-bottom:1px solid #000}body.ex #ehs-introduce-box .ehs-href{border-top:1px solid #000}.ehs-no-translation{text-align:center;padding-top:80px}.ehs-no-translation .text{padding:8px}.ehs-no-intro,.ehs-no-translation .text{font-size:16px;opacity:.3;font-weight:700}.ehs-no-intro{text-align:center;padding-top:88px}", ""]);
 
 
 /***/ }),
@@ -788,19 +788,46 @@ if (taglist) {
                 tag = m2.join(':');
             }
             const tagData = tagList.find(v => v.namespace === namespace && v.key === tag);
-            const links = mdLinks(tagData.links);
             if (tagData) {
-                introduceBox.innerHTML = `<div class="ehs-title">
-<div>
-  <div class="ehs-cn">${tagData.name}</div>
-  <div class="ehs-en">${tagData.namespace}:${tagData.key}</div>
-</div>
-<span class="ehs-close" onclick="document.querySelector('#ehs-introduce-box').innerHTML = '';">×</span>
-</div>
-<div class="ehs-content">
-${tagData.intro}
-</div>
-<div class="ehs-href">${links.map(link => `<a href="${link.href}" target="_blank">${link.title}</a>`).join()}</div>`;
+                const links = mdLinks(tagData.links);
+                // language=HTML
+                introduceBox.innerHTML = `
+        <div class="ehs-title">
+          <div>
+            <div class="ehs-cn">${tagData.name}</div>
+            <div class="ehs-en">${tagData.namespace}:${tagData.key}</div>
+          </div>
+          <span class="ehs-close" onclick="document.querySelector('#ehs-introduce-box').innerHTML = '';">×</span>
+        </div>
+        <div class="ehs-content">
+            ${tagData.intro || `
+            <div class="ehs-no-intro">无介绍</div>
+            `}
+        </div>
+        <div class="ehs-href">${links.map(link => `<a href="${link.href}" target="_blank">${link.title}</a>`).join()}</div>
+        `;
+            }
+            else {
+                const editorUlr = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
+                // language=HTML
+                introduceBox.innerHTML = `
+        <div class="ehs-title">
+          <div>
+            <div class="ehs-cn">${namespace}:${tag}</div>
+            <div class="ehs-en">该标签尚未翻译</div>
+          </div>
+          <span class="ehs-close" onclick="document.querySelector('#ehs-introduce-box').innerHTML = '';">×</span>
+        </div>
+        <div class="ehs-content">
+          <div class="ehs-no-translation">
+            <div class="text">
+              该标签尚未翻译
+            </div>
+            <div class="button">
+              <a href="${editorUlr}" target="_blank">提供翻译</a>
+            </div>
+          </div>
+        </div>`;
             }
         }
     });
