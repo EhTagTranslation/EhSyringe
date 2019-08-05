@@ -7,6 +7,7 @@ module.exports = {
     'background': path.resolve(__dirname, 'src/background.ts'),
     'tag-tip': path.resolve(__dirname, 'src/plugin/tag-tip/tag-tip.ts'),
     'introduce': path.resolve(__dirname, 'src/plugin/introduce/introduce.ts'),
+    'popup': path.resolve(__dirname, 'src/popup.ts'),
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -92,6 +93,7 @@ module.exports = {
   plugins: [
     new CopyPlugin([
       { from: 'src/assets', to: 'assets' },
+      { from: 'src/template', to: 'template'},
       { 
         from: 'src/data/tag.db.json',
         to: 'assets/tag.db',
