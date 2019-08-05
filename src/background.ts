@@ -1,7 +1,5 @@
 import * as pako from "pako";
 import { EHTDatabase, TagList } from "./interface";
-
-import { Base64 } from "js-base64";
 import { mdImg2HtmlImg } from "./tool/tool";
 import { namespaceTranslate } from "./data/namespace-translate";
 
@@ -97,7 +95,7 @@ chrome.storage.local.get((data) => {
   if (!('tagDB' in data)) {
     const dbUrl = chrome.runtime.getURL('assets/tag.db');
     fetch(dbUrl).then(r => r.text()).then(taxt=> {
-      const data = JSON.parse(Base64.decode(taxt));
+      const data = JSON.parse(taxt);
       storageTagData(data)
     })
   }

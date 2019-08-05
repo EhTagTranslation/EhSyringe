@@ -99,9 +99,6 @@ module.exports = {
             {
                 from: 'src/data/tag.db.json',
                 to: 'assets/tag.db',
-                transform(content, path) {
-                    return Promise.resolve(Buffer.from(content, "utf8").toString('base64'));
-                },
             },
         ]),
         new ZipPlugin({
