@@ -1,7 +1,6 @@
-import { uiData } from './data/ui-data';
-import { EHTDatabase, TagList } from './interface';
+import { uiData } from '../data/ui-data';
 import './syringe.less';
-import { getTagData } from './tool/tag-data';
+import { getTagData } from '../tool/tag-data';
 
 
 (window as any).tagClear = () => {

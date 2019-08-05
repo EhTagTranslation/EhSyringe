@@ -1,13 +1,13 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = {
     entry: {
-        'syringe': path.resolve(__dirname, 'src/syringe.ts'),
         'background': path.resolve(__dirname, 'src/background.ts'),
-        'tag-tip': path.resolve(__dirname, 'src/plugin/tag-tip/tag-tip.ts'),
-        'introduce': path.resolve(__dirname, 'src/plugin/introduce/introduce.ts'),
-    'popup': path.resolve(__dirname, 'src/popup.ts'),},
+        'document-end': path.resolve(__dirname, 'src/document-end.ts'),
+        'document-start': path.resolve(__dirname, 'src/document-start.ts'),
+        'popup': path.resolve(__dirname, 'src/popup/popup.ts'),},
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'script/[name].js'
@@ -98,24 +98,9 @@ module.exports = {
             },
         ]),
         new ZipPlugin({
-            filename: "../release/eh-syringe.zip",
+            filename: "eh-syringe.zip",
             exclude: [/\.js\.map$/],
         })
-        //
-        // new FileManagerPlugin({
-        //     onEnd: {
-        //         copy: [
-        //             { source: 'src/assets', destination: 'dist/assets' },
-        //         ],
-        //         mkdir: [
-        //             'release'
-        //         ],
-        //         archive: [
-        //
-        //
-        //         ]
-        //     }
-        // })
     ],
     devtool: 'source-map',
 };

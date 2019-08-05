@@ -1,13 +1,11 @@
-
 <!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
-<html>
+<html lang="en">
 <head>
-    <title>Getting Started Extension's Popup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style type="text/css">
         body {
             margin: 10px;
@@ -24,27 +22,15 @@
             justify-content: space-between;
         }
     </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-    -->
-    <script src="popup.js"></script>
 </head>
-
 <body>
-<h1>Background Color Changer</h1>
+
+<h1>Tag数据更新</h1>
 <div id="container">
-    <span>Choose a color</span>
-    <select id="dropdown">
-        <option selected disabled hidden value=''></option>
-        <option value="white">White</option>
-        <option value="pink">Pink</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-    </select>
+    <progress id="progress" style="margin-right: 8px" value="0" max="100"></progress>
+    <button id="updateButton">更新</button>
 </div>
+
+<script src="../script/popup.js"></script>
 </body>
 </html>

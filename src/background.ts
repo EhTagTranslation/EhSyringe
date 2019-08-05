@@ -1,4 +1,5 @@
 import * as pako from "pako";
+import { timeInterval } from 'rxjs/operators';
 import { EHTDatabase, TagList } from "./interface";
 import { mdImg2HtmlImg } from "./tool/tool";
 import { namespaceTranslate } from "./data/namespace-translate";
@@ -13,6 +14,8 @@ async function download (): Promise<EHTDatabase>{
     if (loadLock) {
       return false;
     }
+    setLoadingBadgeText('0', "#4A90E2", true);
+
     var url = "https://github.com/EhTagTranslation/Database/releases/download/CI-build-84/db.raw.json.gz";
     console.log('加载');
     loadLock = true;
@@ -35,44 +38,27 @@ async function download (): Promise<EHTDatabase>{
       try {
          const data = JSON.parse(pako.ungzip(xhr.response, {to: "string"}));
          resolve(data as EHTDatabase);
-         setTimeout(() => {
-          chrome.notifications.clear("eh-tag-download");
-          chrome.notifications.create("eh-tag-download-done", {
-            title: '下载完毕',
-            message: `请刷新页面`,
-            type: 'progress',
-            iconUrl: chrome.runtime.getURL('assets/logo128.png'),
-            progress: 100,
-          })
-        }, 100);
-      
+        setLoadingBadgeText('OK', "#00C801");
+        setTimeout(() => {
+          setLoadingBadgeText('');
+        }, 4000)
       } catch (e) {
         reject();
-        chrome.notifications.update("eh-tag-download", {
-          title: '解析失败',
-          message: `请重试`,
-        })
+        setLoadingBadgeText('Err', "#C80000");
       }
       
     }
     xhr.onerror = (e) => {
       loadLock = false;
       console.error(e);
+      setLoadingBadgeText('ERR', "#C80000");
       reject();
-      chrome.notifications.update("eh-tag-download", {
-        title: '下载失败',
-        message: `请重试`,
-      })
     }
     xhr.onprogress = (event) => {
       if (event.lengthComputable) {
         var percent = Math.round((event.loaded / event.total) * 100)
         console.log(percent);
-        chrome.notifications.update("eh-tag-download", {
-          title: '数据下载中',
-          message: `下载中: ${percent}%`,
-          progress: percent,
-        })
+        setLoadingBadgeText(percent.toFixed(0), "#4A90E2", true);
       };
     }
     xhr.send();
@@ -170,7 +156,6 @@ chrome.contextMenus.create(
       }
     }
   }, () => {
-    console.log('???')
   }
 )
 
@@ -199,6 +184,43 @@ chrome.omnibox.onInputChanged.addListener(
 chrome.omnibox.onInputEntered.addListener(
   function(text) {
     chrome.tabs.create({
-      url: `https://exhentai.org/?f_search=${encodeURIComponent(text)}`,
+      url: `https://e-hentai.org/?f_search=${encodeURIComponent(text)}`,
     })
   });
+
+
+const loadingStr = '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split('');
+let index = 0;
+let interval = 0;
+let badgeText = '';
+
+function setLoadingBadgeText(text: string, color: string = '', loading = false) {
+
+  badgeText = text;
+  if (color) {
+    chrome.browserAction.setBadgeBackgroundColor({color});
+  }
+
+  if(loading){
+    if(!interval){
+      interval = setInterval(() => {
+        chrome.browserAction.setBadgeText({text: loadingStr[index] + badgeText})
+        index ++;
+        if(!loadingStr[index]){
+          index = 0;
+        }
+      }, 100);
+    }
+  } else {
+    index = 0;
+    if(interval){
+      clearInterval(interval);
+    }
+    chrome.browserAction.setBadgeText({text: badgeText})
+  }
+
+
+
+}
+
+
