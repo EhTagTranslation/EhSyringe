@@ -1,6 +1,8 @@
 # EhSyringe
 chrome 插件地址: https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb
+
 firefox 插件地址: https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/
+
 E站注射器，将中文翻译注入到E站体内。
 
 这一针打下去你就会说中文了。
