@@ -15,7 +15,7 @@ export const uiData: { [key: string]: string } = {
   'female:': '女性:',
   'male:': '男性:',
   'misc:': '其他:',
-
+  'reclass:': '重分类:',
 
   'Posted:': '发布于:',
   'Parent:': '父级:',

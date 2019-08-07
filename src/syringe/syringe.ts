@@ -87,6 +87,7 @@ function translateNode(node: Node){
                     if(aId){
                         aId = aId.replace('ta_', '');
                         aId = aId.split(':').pop();
+                        aId = aId.replace(/_/ig, ' ');
                         if(tagReplace[aId]){
                             value = tagReplace[aId];
                         }
