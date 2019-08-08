@@ -1,0 +1,69 @@
+.big-button {
+  display: block;
+  line-height: 36px;
+  font-size: 16px;
+  width: 100%;
+  margin: 8px 0;
+
+  background: #ffffff;
+  color: #8041a6;
+
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  min-width: 64px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  transform: translate3d(0,0,0);
+  border: 1px #ddd solid;
+  transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+
+  &.primary {
+    border: none;
+    background: #8041a6;
+    color: #ffffff;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),
+    0 2px 2px 0 rgba(0,0,0,.14),
+    0 1px 5px 0 rgba(0,0,0,.12);
+  }
+  &.primary:active {
+    border: none;
+    background: #8041a6;
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+  }
+  &:active{
+    background: #ddd;
+  }
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+body {
+  margin: 16px;
+  white-space: nowrap;
+  font-family: sans-serif;
+}
+.logo {
+  text-align: center;
+  margin: 40px 0;
+}
+.monospace {
+  font-family: Menlo, Consolas, "Source Code Pro", Inconsolata, Monaco, "Courier New";
+}
+table {
+  font-size: 14px;
+}
+.hasNew {
+  color: #a6000f;
+}

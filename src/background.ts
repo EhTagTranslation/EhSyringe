@@ -15,7 +15,7 @@ async function download (): Promise<EHTDatabase>{
     badge.set('', "#4A90E2", 2);
 
     const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
-    const info = await (await fetch(githubDownloadUrl)).json();
+    const info = await (await fetch(githubDownloadUrl, {credentials: 'include'})).json();
     const asset = info.assets.find((i:any) => i.name === 'db.raw.json.gz');
     const url = asset && asset.browser_download_url || '';
     if (!url) {
@@ -66,7 +66,6 @@ chromeMessage.listener('get-tag-data', (data, callback) => {
 });
 
 chromeMessage.listener('check-version', (data, callback) => {
-  console.log('check-version', data);
   checkVersion().then(value => {
     callback(value);
   })
@@ -75,14 +74,13 @@ chromeMessage.listener('check-version', (data, callback) => {
 
 // 如果沒有數據自動加載本地數據
 chrome.storage.local.get((data) => {
-  if (!('tagDB' in data)) {
+  if (!('tagList' in data && 'tagReplaceData' in data)) {
     const dbUrl = chrome.runtime.getURL('assets/tag.db');
-    fetch(dbUrl).then(r => r.text()).then(taxt=> {
-      const data = JSON.parse(taxt);
+    fetch(dbUrl).then(r => r.text()).then(text=> {
+      const data = JSON.parse(text);
       storageTagData(data)
     })
   }
-
   if('tagList' in data){
     TagList = data.tagList;
   }
@@ -197,7 +195,8 @@ class BadgeLoading {
   loadingStrArr = [
     [''],
     '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''),
-    "▹▹▹▹|▸▹▹▹|▹▸▹▹|▹▹▸▹|▹▹▹▸".split("|"),
+    // "▹▹▹▹|▸▹▹▹|▹▸▹▹|▹▹▸▹|▹▹▹▸".split("|"),
+    "    |·   | ·  |  · |   ·".split("|"),
   ];
 
   frame = 0;
@@ -205,6 +204,7 @@ class BadgeLoading {
   interval = 0;
   text = '';
   loadingString: string[] = [''];
+  color = '';
 
   set(text: string, color: string = '', loading = 0) {
     if(this.index != loading) {
@@ -213,7 +213,8 @@ class BadgeLoading {
       this.frame = 0;
     }
     this.text = text;
-    if (color) {
+    if (this.color != color) {
+      this.color = color;
       chrome.browserAction.setBadgeBackgroundColor({color});
     }
     if(loading){
@@ -231,6 +232,7 @@ class BadgeLoading {
       this.frame = 0;
       if(this.interval){
         clearInterval(this.interval);
+        this.interval = 0;
       }
       chrome.browserAction.setBadgeText({text: this.text})
     }
@@ -239,12 +241,29 @@ class BadgeLoading {
 const badge = new BadgeLoading();
 
 
+let lastCheck = 0;
+let lastCheckData: any;
+
 async function checkVersion() {
-  const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
-  const info = await (await fetch(githubDownloadUrl)).json();
+  const time = new Date().getTime();
+  // 限制每分钟最多请求1次
   const { sha } = await new Promise((resolve) => chrome.storage.local.get(resolve));
-  return  {
+  if((time - lastCheck <= 1000 * 60) && lastCheckData) {
+    return {
+      new: (lastCheckData && lastCheckData.new) ? lastCheckData.new : '',
+      old: sha,
+    };
+  }
+  lastCheck = time;
+  const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
+  const info = await (await fetch(githubDownloadUrl, {credentials: 'include'})).json();
+
+  if(!(info && info.target_commitish)){
+    return null;
+  }
+  lastCheckData = {
     old: sha,
     new: info.target_commitish,
-  }
+  };
+  return lastCheckData;
 }

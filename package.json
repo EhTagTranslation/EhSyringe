@@ -43,6 +43,5 @@
     "zip-webpack-plugin": "^3.0.0",
     "three": "^0.107.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

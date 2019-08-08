@@ -1,4 +1,5 @@
 import { TagItem, EHTDatabase, TagList } from "../interface";
+import {chromeMessage} from "./chrome-message";
 
 interface TagData {tagList: TagItem[], tagReplace: { [key: string]: string}};
 
@@ -31,6 +32,8 @@ export function getTagData(): TagData | undefined {
                 window.localStorage.setItem('tag-sha', data.sha);
                 window.location.reload();
             }
+        } else {
+          // chromeMessage.send()
         }
     });
 

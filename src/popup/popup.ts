@@ -1,536 +1,85 @@
-import * as THREE from 'three';
+import './popup.less';
 import { chromeMessage } from '../tool/chrome-message';
-
-const progress = document.querySelector('#progress') as HTMLProgressElement;
 const updateButton = document.querySelector('#updateButton') as HTMLButtonElement;
-const checkVersion = document.querySelector('#checkVersion') as HTMLButtonElement;
 
-updateButton.onclick = () => {
-  console.log('updateButton click')
-  chromeMessage.send("get-tag-data")
-};
-checkVersion.onclick = () => {
-  chromeMessage.send("check-version",{}, (data) => {
-    console.log('checkVersion', data);
-  })
+const sha = document.querySelector('#sha') as HTMLButtonElement;
+const updateTime = document.querySelector('#updateTime') as HTMLButtonElement;
+const checkVersionElement = document.querySelector('#checkVersion') as HTMLButtonElement;
+
+
+
+
+
+
+function dateDiff(hisTime: Date,nowTime?: Date){
+  if(!arguments.length) return '';
+  let arg = arguments,
+    now =arg[1]?arg[1]:new Date().getTime(),
+    diffValue = now - arg[0],
+    result='',
+
+    minute = 1000 * 60,
+    hour = minute * 60,
+    day = hour * 24,
+    halfamonth = day * 15,
+    month = day * 30,
+    year = month * 12,
+
+    _year = diffValue/year,
+    _month = diffValue/month,
+    _week = diffValue/(7*day),
+    _day = diffValue/day,
+    _hour = diffValue/hour,
+    _min = diffValue/minute;
+
+  if(_year>=1) result=Math.floor(_year) + "年前";
+  else if(_month>=1) result=Math.floor(_month) + "个月前";
+  else if(_week>=1) result=Math.floor(_week) + "周前";
+  else if(_day>=1) result=Math.floor(_day) +"天前";
+  else if(_hour>=1) result=Math.floor(_hour) +"个小时前";
+  else if(_min>=1) result=Math.floor(_min) +"分钟前";
+  else result="刚刚";
+  return result;
 }
 
-const objTxt3 = `ply
-format ascii 1.0
-comment : MagicaVoxel @ Ephtracy
-element vertex 387
-property float x
-property float y
-property float z
-property uchar red
-property uchar green
-property uchar blue
-end_header
-7 8 20 255 204 255
-16 14 20 204 153 255
-12 8 12 68 68 68
-9 9 16 17 17 17
-10 10 21 255 204 255
-11 10 10 17 17 17
-12 9 22 255 153 0
-10 8 19 255 204 255
-4 11 11 153 102 255
-11 9 19 255 204 255
-9 10 21 255 204 255
-13 11 22 255 153 0
-12 13 20 255 204 255
-7 8 17 255 204 255
-10 7 20 255 204 255
-6 10 20 153 102 255
-6 9 20 255 204 255
-6 12 19 255 204 255
-9 8 20 255 204 255
-10 9 21 255 204 255
-7 8 12 68 68 68
-13 9 12 68 68 68
-6 11 20 255 204 255
-9 13 20 255 204 255
-6 11 19 153 102 255
-13 10 17 204 255 102
-9 9 17 255 153 102
-10 9 18 255 204 153
-12 12 21 255 204 255
-11 8 16 255 204 255
-10 9 19 255 204 255
-6 10 19 255 204 255
-13 10 19 255 204 255
-3 14 19 204 153 255
-13 8 20 255 204 255
-12 10 22 255 204 255
-9 12 21 255 204 255
-6 9 19 255 204 255
-13 9 20 255 204 255
-3 14 14 204 153 255
-7 9 22 255 153 0
-12 8 17 255 204 255
-6 11 18 255 204 255
-6 10 18 255 204 255
-7 11 20 255 204 255
-6 9 18 255 204 255
-11 11 20 255 204 255
-3 14 20 204 153 255
-8 13 21 255 204 255
-8 8 22 255 204 255
-11 13 18 255 204 255
-11 10 22 255 204 255
-16 13 13 153 102 255
-6 9 22 255 204 51
-8 9 18 17 17 17
-8 9 22 255 153 0
-7 11 17 255 204 255
-13 10 18 255 204 255
-9 13 18 255 204 255
-8 10 22 255 204 255
-8 10 10 17 17 17
-9 9 15 17 17 17
-11 13 12 68 68 68
-7 10 22 255 204 255
-11 9 13 34 34 34
-7 8 21 255 204 255
-11 9 14 34 34 34
-8 8 21 255 204 255
-9 8 21 255 204 255
-3 12 12 204 255 102
-11 11 21 255 204 255
-16 13 23 204 153 255
-6 11 12 68 68 68
-8 8 20 255 204 255
-11 9 21 255 153 0
-13 9 22 255 204 51
-11 10 14 34 34 34
-9 7 20 255 204 255
-11 12 21 255 204 255
-8 14 19 255 204 255
-10 11 21 255 204 255
-12 12 18 255 204 255
-8 8 13 34 34 34
-16 14 21 204 153 255
-10 8 20 255 204 255
-6 12 20 255 204 255
-9 9 19 255 204 255
-9 11 21 255 204 255
-9 14 19 255 204 255
-10 8 21 255 204 255
-8 13 12 68 68 68
-13 12 19 255 204 255
-13 10 16 204 153 255
-11 10 21 255 204 255
-11 8 21 255 204 255
-7 9 18 136 136 136
-10 7 12 68 68 68
-8 11 20 255 204 255
-16 14 19 204 153 255
-9 11 22 255 204 255
-7 12 18 255 204 255
-8 10 15 255 204 255
-11 10 13 34 34 34
-11 11 23 255 153 0
-9 10 14 255 204 255
-8 10 13 34 34 34
-12 8 21 255 204 255
-16 14 14 204 153 255
-8 12 13 34 34 34
-8 9 16 17 17 17
-10 10 14 255 204 255
-6 10 16 204 153 255
-8 10 14 34 34 34
-8 11 23 255 153 0
-11 10 15 51 153 102
-13 10 14 255 153 102
-10 12 13 34 34 34
-9 9 18 255 204 153
-7 12 12 68 68 68
-4 12 24 204 153 255
-10 10 15 255 204 255
-11 9 16 17 17 17
-9 10 22 255 204 255
-7 7 20 255 204 255
-11 8 13 34 34 34
-13 10 12 68 68 68
-8 12 22 255 204 255
-8 9 21 255 153 0
-3 14 21 204 153 255
-13 11 20 255 204 255
-11 14 20 255 204 255
-11 14 19 255 204 255
-10 9 16 17 17 17
-12 7 20 255 204 255
-12 9 13 34 34 34
-12 11 13 34 34 34
-8 9 17 255 153 102
-10 8 22 255 204 255
-11 7 21 255 204 255
-10 9 15 17 17 17
-3 13 23 204 153 255
-8 9 14 34 34 34
-9 9 22 255 204 255
-7 10 13 34 34 34
-10 9 14 34 34 34
-10 13 19 255 204 255
-8 10 11 255 153 102
-8 8 16 255 204 255
-7 10 15 255 153 102
-11 9 18 17 17 17
-7 10 20 255 204 255
-7 8 18 255 204 255
-9 10 15 255 204 255
-11 9 17 255 204 153
-9 7 21 255 204 255
-12 11 22 255 204 255
-8 11 21 255 204 255
-7 10 17 255 204 255
-10 14 20 255 204 255
-9 9 21 255 204 255
-9 8 22 255 204 255
-3 14 18 204 153 255
-13 10 21 255 153 0
-10 13 20 255 204 255
-10 13 12 68 68 68
-16 14 18 204 153 255
-10 9 17 255 204 153
-9 12 13 34 34 34
-12 9 21 255 153 0
-8 11 22 255 204 255
-11 11 22 255 204 255
-10 10 22 255 204 255
-9 7 12 68 68 68
-8 13 20 255 204 255
-10 11 20 255 204 255
-6 10 17 204 255 102
-11 13 20 255 204 255
-11 12 13 34 34 34
-9 13 12 68 68 68
-12 12 20 255 204 255
-7 7 19 255 204 255
-16 14 16 204 153 255
-7 12 20 255 204 255
-13 12 20 255 204 255
-6 10 22 255 153 0
-13 10 22 255 153 0
-9 8 13 34 34 34
-16 14 17 204 153 255
-13 11 18 255 204 255
-10 12 21 255 204 255
-8 13 18 255 204 255
-12 10 17 136 136 136
-10 11 15 17 17 17
-11 13 21 255 204 255
-3 13 13 153 102 255
-13 8 19 255 204 255
-6 8 19 255 204 255
-6 8 20 255 204 255
-13 9 18 255 204 255
-9 13 21 255 204 255
-3 14 17 204 153 255
-6 11 21 255 153 0
-6 10 21 255 153 0
-12 11 20 255 204 255
-6 10 14 255 153 102
-7 11 22 255 204 255
-11 9 22 255 153 0
-6 9 21 255 153 0
-7 9 21 255 153 0
-10 12 20 255 204 255
-4 12 20 255 204 255
-8 10 23 255 153 0
-12 10 21 255 204 255
-13 9 19 255 204 255
-10 12 22 255 204 255
-15 12 21 255 204 255
-12 8 19 255 204 255
-13 11 21 255 153 0
-15 12 19 255 204 255
-13 11 19 153 102 255
-12 8 18 255 204 255
-12 10 15 255 153 102
-11 10 23 255 153 0
-8 9 23 255 153 0
-15 12 22 255 204 255
-4 12 19 255 204 255
-11 9 23 255 153 0
-16 12 12 204 255 102
-10 13 21 255 204 255
-11 8 20 255 204 255
-9 8 19 255 204 255
-7 8 19 255 204 255
-13 9 21 255 153 0
-9 11 15 17 17 17
-11 8 22 255 204 255
-12 7 19 255 204 255
-12 9 18 255 204 255
-9 11 20 255 204 255
-3 14 22 153 102 255
-9 11 14 34 34 34
-8 11 15 17 17 17
-16 14 22 153 102 255
-11 11 15 17 17 17
-7 10 21 255 204 255
-10 10 13 34 34 34
-9 9 14 34 34 34
-9 13 19 255 204 255
-7 13 20 255 204 255
-10 11 14 34 34 34
-8 10 16 17 17 17
-11 11 13 34 34 34
-10 8 13 34 34 34
-13 10 20 153 102 255
-7 11 21 255 204 255
-7 9 13 34 34 34
-10 7 21 255 204 255
-13 11 12 68 68 68
-11 12 22 255 204 255
-9 10 13 34 34 34
-10 13 18 255 204 255
-10 9 22 255 204 255
-9 12 20 255 204 255
-12 10 13 34 34 34
-11 10 11 255 153 102
-6 10 12 68 68 68
-8 14 20 255 204 255
-8 10 21 255 204 255
-6 9 12 68 68 68
-9 11 13 34 34 34
-8 11 13 34 34 34
-3 14 15 204 153 255
-11 7 12 68 68 68
-9 12 22 255 204 255
-8 9 15 17 17 17
-8 9 13 34 34 34
-10 9 13 34 34 34
-15 11 11 153 102 255
-8 7 21 255 204 255
-11 11 14 34 34 34
-8 11 14 34 34 34
-12 12 12 68 68 68
-8 7 12 68 68 68
-7 11 13 34 34 34
-9 9 13 34 34 34
-10 11 13 34 34 34
-9 14 20 255 204 255
-11 10 12 17 17 17
-8 10 12 17 17 17
-10 11 22 255 204 255
-11 9 15 17 17 17
-11 10 16 17 17 17
-10 10 16 17 17 17
-9 10 16 17 17 17
-11 11 16 17 17 17
-10 11 16 17 17 17
-9 11 16 17 17 17
-8 11 16 17 17 17
-11 10 17 255 204 255
-10 10 17 255 204 255
-9 10 17 255 204 255
-8 10 17 255 204 255
-12 11 17 255 204 255
-11 11 17 255 204 255
-10 11 17 255 204 255
-9 11 17 255 204 255
-8 11 17 255 204 255
-11 12 17 255 204 255
-10 12 17 255 204 255
-9 12 17 255 204 255
-8 12 17 255 204 255
-12 10 18 255 204 255
-11 10 18 255 204 255
-10 10 18 255 204 255
-9 10 18 255 204 255
-8 10 18 255 204 255
-7 10 18 255 204 255
-12 11 18 255 204 255
-11 11 18 255 204 255
-10 11 18 255 204 255
-9 11 18 255 204 255
-8 11 18 255 204 255
-7 11 18 255 204 255
-11 12 18 255 204 255
-10 12 18 255 204 255
-9 12 18 255 204 255
-8 12 18 255 204 255
-12 9 19 255 204 255
-8 9 19 255 204 255
-7 9 19 255 204 255
-12 10 19 255 204 255
-11 10 19 255 204 255
-10 10 19 255 204 255
-9 10 19 255 204 255
-8 10 19 255 204 255
-7 10 19 255 204 255
-12 11 19 255 204 255
-11 11 19 255 204 255
-10 11 19 255 204 255
-9 11 19 255 204 255
-8 11 19 255 204 255
-7 11 19 255 204 255
-12 12 19 255 204 255
-11 12 19 255 204 255
-10 12 19 255 204 255
-9 12 19 255 204 255
-8 12 19 255 204 255
-7 12 19 255 204 255
-12 11 21 255 204 255
-11 12 20 255 204 255
-8 12 20 255 204 255
-16 14 15 204 153 255
-12 8 20 255 204 255
-7 12 21 255 204 255
-8 12 21 255 204 255
-12 9 20 255 204 255
-11 9 20 255 204 255
-10 9 20 255 204 255
-9 9 20 255 204 255
-8 9 20 255 204 255
-7 9 20 255 204 255
-12 10 20 255 204 255
-11 10 20 255 204 255
-10 10 20 255 204 255
-9 10 20 255 204 255
-8 10 20 255 204 255
-7 13 19 255 204 255
-8 13 19 255 204 255
-14 11 25 204 153 255
-5 11 25 204 153 255
-11 13 19 255 204 255
-12 13 19 255 204 255
-3 14 16 204 153 255
-6 11 24 255 204 255
-13 11 24 255 204 255
-4 12 22 255 204 255
-14 12 23 255 204 255
-4 12 21 255 204 255
-7 9 23 255 204 51
-7 10 23 255 153 0
-7 11 23 255 153 0
-10 14 19 255 204 255
-5 12 23 255 204 255
-15 12 20 255 204 255
-12 9 23 255 204 51
-12 10 23 255 153 0
-12 11 23 255 153 0
-15 12 24 204 153 255
-`;
-
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-const renderer = new THREE.WebGLRenderer({ precision: 'highp', antialias: true,alpha:true });
-renderer.setPixelRatio(window.devicePixelRatio)
-renderer.setSize( 200, 200 );
-
-document.body.insertBefore(renderer.domElement,document.body.firstChild);
-
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-
-const boxGeometry = new THREE.BoxGeometry( 0, 0, 0 );
-const box = new THREE.Mesh( boxGeometry , new THREE.MeshBasicMaterial({color: 0xff0000 }));
-
-// box.position.x = -10;
-// box.position.y = -10;
-
-scene.add( box );
-let maxX = 0;
-let maxY = 0;
-let maxZ = 0;
-
-let minX = 999;
-let minY = 999;
-let minZ = 999;
-
-const objData: {x: number, y: number, z: number, r: number, g: number, b: number}[] = [];
-
-objTxt3.split('\n').forEach(v => {
-  const d = v.split(' ');
-  if(!(d.length == 6 && !isNaN(Number(d[0])))){
-    return;
-  }
-
-  const z = Number(d[0]);
-  const x = Number(d[1]);
-  const y = Number(d[2]);
-
-
-
-  maxX = Math.max(maxX, x);
-  maxY = Math.max(maxY, y);
-  maxZ = Math.max(maxZ, z);
-
-  minX = Math.min(minX, x);
-  minY = Math.min(minY, y);
-  minZ = Math.min(minZ, z);
-
-  const r = parseInt(d[3], 10);
-  const g = parseInt(d[4], 10);
-  const b = parseInt(d[5], 10);
-  objData.push({
-    z,
-    x,
-    y,
-    r,
-    g,
-    b,
+updateButton.onclick = () => {
+  updateButton.disabled = true;
+  chromeMessage.send("get-tag-data", {}, () => {
+    setTimeout(() => {
+      updateButton.disabled = false;
+      getVersion();
+      checkVersion();
+    }, 200)
   })
-});
-
-const offsetX = (0 - minX - maxX) / 2;
-const offsetY = (0 - minY - maxY) / 2;
-const offsetZ = (0 - minZ - maxZ) / 2;
-console.log({
-  maxX,
-  maxY,
-  maxZ,
-  minX,
-  minY,
-  minZ,
-  offsetX,
-  offsetY,
-  offsetZ,
-})
-
-objData.forEach(v => {
-  const {x, y, z, r, g, b} = v;
-  const material = new THREE.MeshLambertMaterial( { color: new THREE.Color(r/255, g/255, b/255), opacity: 1, transparent: false } );
-  const cube = new THREE.Mesh( geometry, material );
-  cube.position.x = x + offsetX;
-  cube.position.y = y + offsetY;
-  cube.position.z = z + offsetZ;
-  cube.castShadow = true;
-  cube.receiveShadow = true;
-  box.add( cube );
-})
-
-
-scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-
-const light1 = new THREE.DirectionalLight(0xffffff, 0.4);
-// const light2 = new THREE.SpotLight(0xffffff, 0.5);
-light1.position.set(1, -10, 30);
-// light2.position.set(20, 20, 80);
-scene.add(light1);
-// scene.add(light2);
-
-box.rotation.y = 45;
-// box.position.x =  -Math.round(maxX/2) + 4;
-
-console.log(minY , maxY)
-// box.position.x -= offsetX;
-// box.position.y -= offsetY;
-// box.position.z -= offsetZ;
-
-camera.position.z = (Math.max(maxX - minX, maxY - minY, maxZ - minZ)) * 1.3;
-
-
-
-const animate = function () {
-  requestAnimationFrame( animate );
-  box.rotation.y += 0.005;
-  renderer.render( scene, camera );
 };
 
-animate();
+function checkVersion() {
+  checkVersionElement.textContent = '检查中...';
+  chromeMessage.send("check-version",{}, (data) => {
+    console.log(data);
+    if(data && data.new){
+      const hasNewData = data.new !== data.old;
+      checkVersionElement.textContent = hasNewData ? data.new.slice(0,6) + ' 有更新!': '已是最新版本';
+      if (hasNewData) {
+        checkVersionElement.classList.add('hasNew');
+        updateButton.classList.add('primary')
+      } else {
+        checkVersionElement.classList.remove('hasNew');
+        updateButton.classList.remove('primary')
+      }
+    } else {
+      checkVersionElement.textContent = '获取失败';
+    }
+  });
+}
 
+function getVersion() {
+  chrome.storage.local.get((data) => {
+    sha.textContent = data.sha ? data.sha.slice(0,6) : 'N/A';
+    updateTime.textContent = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
+    updateTime.title = new Date(data.updateTime).toLocaleString();
+  });
+}
+
+getVersion();
+checkVersion();

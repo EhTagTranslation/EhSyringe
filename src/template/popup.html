@@ -6,55 +6,29 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style type="text/css">
-        body {
-            margin: 10px;
-            white-space: nowrap;
-        }
-
-        h1 {
-            font-size: 15px;
-        }
-
-        #container {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .title {
-            text-align: center;
-            line-height: 30px;
-            height: 30px;
-        }
-        .logo {
-            text-align: center;
-            margin: 50px 0;
-        }
-    </style>
 </head>
 <body style="width: 200px">
 <div class="logo">
-    <img style="width: 50px" src="/assets/logo.svg" alt="">
+    <img style="width: 60px" src="/assets/logo.svg" alt="">
 </div>
 
-<div id="container">
-    <div>
-        <span>
-            <b>TAG版本:</b>
-            <span id="sha"> --- </span>
-        </span>
-    </div>
-    <div>
-        <span>
-            <b>上次更新:</b>
-            <span id="updateTime"> --- </span>
-        </span>
-    </div>
-</div>
-<button id="updateButton">更新</button>
-<button id="checkVersion">检查</button>
 
+<table>
+    <tr>
+        <th>TAG版本:</th>
+        <td><span id="sha" class="monospace"> --- </span></td>
+    </tr>
+    <tr>
+        <th>上次更新:</th>
+        <td><span id="updateTime" class="monospace"> --- </span></td>
+    </tr>
+    <tr>
+        <th>更新检查:</th>
+        <td><span id="checkVersion" class="monospace"> --- </span></td>
+    </tr>
+</table>
+
+<button class="big-button" id="updateButton">更新</button>
 <script src="../script/popup.js"></script>
 </body>
 </html>

@@ -2,18 +2,16 @@ import { uiData } from '../data/ui-data';
 import './syringe.less';
 import { getTagData } from '../tool/tag-data';
 
-
 (window as any).tagClear = () => {
-    window.localStorage.removeItem('tag-list');
-    window.localStorage.removeItem('tag-replace-data');
-    chrome.storage.local.remove('TagDB');
-}
-
-(window as any).tagDownload = () => {
-    window.localStorage.removeItem('tag-list');
-    window.localStorage.removeItem('tag-replace-data');
-    chrome.storage.local.remove('TagDB');
-    chrome.runtime.sendMessage({contentScriptQuery: "get-tag-data"})
+  window.localStorage.removeItem('tag-list');
+  window.localStorage.removeItem('tag-replace-data');
+  window.localStorage.removeItem('tag-update-time');
+  window.localStorage.removeItem('tag-sha');
+  chrome.storage.local.remove('tagList');
+  chrome.storage.local.remove('tagReplaceData');
+  chrome.storage.local.remove('updateTime');
+  chrome.storage.local.remove('tagDB');
+  chrome.storage.local.remove('sha');
 }
 
 const {tagReplace} = getTagData();
