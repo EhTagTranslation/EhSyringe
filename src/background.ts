@@ -1,5 +1,6 @@
 import * as pako from "pako";
 import { EHTDatabase, TagList } from "./interface";
+import { chromeMessage } from './tool/chrome-message';
 import { mdImg2HtmlImg } from "./tool/tool";
 import { namespaceTranslate } from "./data/namespace-translate";
 
@@ -55,16 +56,22 @@ async function download (): Promise<EHTDatabase>{
     badge.set('0', "#4A90E2", 1);
   })
 }
-(globalThis as any).test = download;
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log('onMessage', request)
-  if (request.contentScriptQuery == "get-tag-data") {
-    download().then(data => {
-      storageTagData(data)
+chromeMessage.listener('get-tag-data', (data, callback) => {
+  download().then(data => {
+    storageTagData(data).then(() => {
+      callback();
     })
-  }
-})
+  })
+});
+
+chromeMessage.listener('check-version', (data, callback) => {
+  console.log('check-version', data);
+  checkVersion().then(value => {
+    callback(value);
+  })
+});
+
 
 // 如果沒有數據自動加載本地數據
 chrome.storage.local.get((data) => {
@@ -81,55 +88,58 @@ chrome.storage.local.get((data) => {
   }
 })
 
-function storageTagData(tagDB: EHTDatabase){
-  const namespaceOrder = ['female','language','misc', 'male','artist', 'group', 'parody', 'character', 'reclass'];
-  const tagReplaceData: {[key: string]: string} = {};
-  const tagList: TagList = [];
-  tagDB.data.sort((a,b) => {
+function storageTagData(tagDB: EHTDatabase): Promise<any> {
+  return new Promise(resolve => {
+    const namespaceOrder = ['female','language','misc', 'male','artist', 'group', 'parody', 'character', 'reclass'];
+    const tagReplaceData: {[key: string]: string} = {};
+    const tagList: TagList = [];
+    tagDB.data.sort((a,b) => {
       return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
-  })
-  tagDB.data.forEach(space => {
+    })
+    tagDB.data.forEach(space => {
       const namespace = space.namespace;
       if(namespace === 'rows') return;
       for(let key in space.data){
-          const t = space.data[key];
-          let search = ``;
-          if (namespace !== 'misc') {
-              search += namespace + ':';
-          }
-          if (key.indexOf(' ') !== -1) {
-              search += `"${key}$"`;
-          } else {
-              search += key + '$';
-          }
-  
-          const name = mdImg2HtmlImg(t.name, 1);
-          tagList.push({
-              ...t,
-              name: name,
-              intro: mdImg2HtmlImg(t.intro),
-              key,
-              namespace,
-              search,
-          })
-          
-          tagReplaceData[key] = name;
-          tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + name;
+        const t = space.data[key];
+        let search = ``;
+        if (namespace !== 'misc') {
+          search += namespace + ':';
+        }
+        if (key.indexOf(' ') !== -1) {
+          search += `"${key}$"`;
+        } else {
+          search += key + '$';
+        }
+
+        const name = mdImg2HtmlImg(t.name, 1);
+        tagList.push({
+          ...t,
+          name: name,
+          intro: mdImg2HtmlImg(t.intro),
+          key,
+          namespace,
+          search,
+        })
+
+        tagReplaceData[key] = name;
+        tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + name;
       }
-  });
-  chrome.storage.local.set({
-    tagDB,
-    tagList,
-    tagReplaceData,
-    updateTime: new Date().getTime(),
-    sha: tagDB.head.sha,
-  },() => {
-    badge.set('OK', "#00C801");
-    setTimeout(() => {
-      badge.set('');
-    }, 2000)
-  });
-  TagList = tagList;
+    });
+    chrome.storage.local.set({
+      tagDB,
+      tagList,
+      tagReplaceData,
+      updateTime: new Date().getTime(),
+      sha: tagDB.head.sha,
+    },() => {
+      resolve();
+      badge.set('OK', "#00C801");
+      setTimeout(() => {
+        badge.set('');
+      }, 2000)
+    });
+    TagList = tagList;
+  })
 }
 
 chrome.contextMenus.create(
@@ -183,7 +193,6 @@ chrome.omnibox.onInputEntered.addListener(
     })
   });
 
-
 class BadgeLoading {
   loadingStrArr = [
     [''],
@@ -210,7 +219,6 @@ class BadgeLoading {
     if(loading){
       if(!this.interval){
         this.interval = setInterval(() => {
-          console.log('interval', this.interval)
           const text = this.text + (this.loadingString[this.frame] || '');
           chrome.browserAction.setBadgeText({text});
           this.frame ++;
@@ -231,7 +239,12 @@ class BadgeLoading {
 const badge = new BadgeLoading();
 
 
-
-
-
-
+async function checkVersion() {
+  const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
+  const info = await (await fetch(githubDownloadUrl)).json();
+  const { sha } = await new Promise((resolve) => chrome.storage.local.get(resolve));
+  return  {
+    old: sha,
+    new: info.target_commitish,
+  }
+}

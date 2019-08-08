@@ -6,7 +6,7 @@ export function getTagData(): TagData | undefined {
     if((window as any).tagListStorage && (window as any).tagReplaceDataStorage) {
         return {
             tagList: (window as any).tagListStorage,
-            tagReplace: (window as any).tagReplaceDataStorage
+            tagReplace: (window as any).tagReplaceDataStorage,
         };
     }
 
