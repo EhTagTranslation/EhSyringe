@@ -21,16 +21,38 @@
             display: flex;
             justify-content: space-between;
         }
+
+        .title {
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+        }
+        .logo {
+            text-align: center;
+            margin: 50px 0;
+        }
     </style>
 </head>
-<body>
-
-<h1>Tag数据更新</h1>
-<div id="container">
-    <progress id="progress" style="margin-right: 8px" value="0" max="100"></progress>
-    <button id="updateButton">更新</button>
+<body style="width: 200px">
+<div class="logo">
+    <img style="width: 50px" src="/assets/logo.svg" alt="">
 </div>
 
+<div id="container">
+    <div>
+        <span>
+            <b>TAG版本:</b>
+            <span id="sha"> --- </span>
+        </span>
+    </div>
+    <div>
+        <span>
+            <b>上次更新:</b>
+            <span id="updateTime"> --- </span>
+        </span>
+    </div>
+</div>
+<button id="updateButton">更新</button>
 <script src="../script/popup.js"></script>
 </body>
 </html>

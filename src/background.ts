@@ -1,35 +1,29 @@
 import * as pako from "pako";
-import { timeInterval } from 'rxjs/operators';
 import { EHTDatabase, TagList } from "./interface";
 import { mdImg2HtmlImg } from "./tool/tool";
 import { namespaceTranslate } from "./data/namespace-translate";
 
-
 var TagList: TagList = [];
-
 
 var loadLock = false;
 async function download (): Promise<EHTDatabase>{
-  return new Promise<EHTDatabase>((resolve, reject) => {
+  return new Promise<EHTDatabase>(async (resolve, reject) =>  {
     if (loadLock) {
       return false;
     }
-    setLoadingBadgeText('0', "#4A90E2", true);
+    badge.set('', "#4A90E2", 2);
 
-    var url = "https://github.com/EhTagTranslation/Database/releases/download/CI-build-84/db.raw.json.gz";
+    const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
+    const info = await (await fetch(githubDownloadUrl)).json();
+    const asset = info.assets.find((i:any) => i.name === 'db.raw.json.gz');
+    const url = asset && asset.browser_download_url || '';
+    if (!url) {
+      console.error('地址未找到', url);
+    }
+
     console.log('加载');
     loadLock = true;
-    chrome.notifications.clear("eh-tag-download");
-    chrome.notifications.clear("eh-tag-download-done");
-    
-    chrome.notifications.create("eh-tag-download", {
-      title: '数据下载中',
-      message: `连接中...`,
-      type: 'progress',
-      iconUrl: chrome.runtime.getURL('assets/logo128.png'),
-      progress: 0,
-    })
-  
+
     var xhr = new XMLHttpRequest()
     xhr.open('GET', url)
     xhr.responseType = "arraybuffer";
@@ -38,30 +32,27 @@ async function download (): Promise<EHTDatabase>{
       try {
          const data = JSON.parse(pako.ungzip(xhr.response, {to: "string"}));
          resolve(data as EHTDatabase);
-        setLoadingBadgeText('OK', "#00C801");
-        setTimeout(() => {
-          setLoadingBadgeText('');
-        }, 4000)
+         badge.set('100', "#4A90E2", 1);
       } catch (e) {
         reject();
-        setLoadingBadgeText('Err', "#C80000");
+        badge.set('Err', "#C80000");
       }
-      
     }
     xhr.onerror = (e) => {
       loadLock = false;
       console.error(e);
-      setLoadingBadgeText('ERR', "#C80000");
+      badge.set('ERR', "#C80000");
       reject();
     }
     xhr.onprogress = (event) => {
       if (event.lengthComputable) {
         var percent = Math.round((event.loaded / event.total) * 100)
         console.log(percent);
-        setLoadingBadgeText(percent.toFixed(0), "#4A90E2", true);
+        badge.set(percent.toFixed(0), "#4A90E2", 1);
       };
     }
     xhr.send();
+    badge.set('0', "#4A90E2", 1);
   })
 }
 (globalThis as any).test = download;
@@ -71,7 +62,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.contentScriptQuery == "get-tag-data") {
     download().then(data => {
       storageTagData(data)
-      // chrome.storage.local.set({ TagDB: data });
     })
   }
 })
@@ -90,7 +80,6 @@ chrome.storage.local.get((data) => {
     TagList = data.tagList;
   }
 })
-
 
 function storageTagData(tagDB: EHTDatabase){
   const namespaceOrder = ['female','language','misc', 'male','artist', 'group', 'parody', 'character', 'reclass'];
@@ -131,11 +120,17 @@ function storageTagData(tagDB: EHTDatabase){
   chrome.storage.local.set({
     tagDB,
     tagList,
-    tagReplaceData
+    tagReplaceData,
+    updateTime: new Date().getTime(),
+    sha: tagDB.head.sha,
+  },() => {
+    badge.set('OK', "#00C801");
+    setTimeout(() => {
+      badge.set('');
+    }, 2000)
   });
   TagList = tagList;
 }
-
 
 chrome.contextMenus.create(
   {
@@ -189,38 +184,54 @@ chrome.omnibox.onInputEntered.addListener(
   });
 
 
-const loadingStr = '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split('');
-let index = 0;
-let interval = 0;
-let badgeText = '';
+class BadgeLoading {
+  loadingStrArr = [
+    [''],
+    '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''),
+    "▹▹▹▹|▸▹▹▹|▹▸▹▹|▹▹▸▹|▹▹▹▸".split("|"),
+  ];
 
-function setLoadingBadgeText(text: string, color: string = '', loading = false) {
+  frame = 0;
+  index = 0;
+  interval = 0;
+  text = '';
+  loadingString: string[] = [''];
 
-  badgeText = text;
-  if (color) {
-    chrome.browserAction.setBadgeBackgroundColor({color});
-  }
-
-  if(loading){
-    if(!interval){
-      interval = setInterval(() => {
-        chrome.browserAction.setBadgeText({text: loadingStr[index] + badgeText})
-        index ++;
-        if(!loadingStr[index]){
-          index = 0;
-        }
-      }, 100);
+  set(text: string, color: string = '', loading = 0) {
+    if(this.index != loading) {
+      this.index = loading;
+      this.loadingString = this.loadingStrArr[this.index] || [''];
+      this.frame = 0;
     }
-  } else {
-    index = 0;
-    if(interval){
-      clearInterval(interval);
+    this.text = text;
+    if (color) {
+      chrome.browserAction.setBadgeBackgroundColor({color});
     }
-    chrome.browserAction.setBadgeText({text: badgeText})
+    if(loading){
+      if(!this.interval){
+        this.interval = setInterval(() => {
+          console.log('interval', this.interval)
+          const text = this.text + (this.loadingString[this.frame] || '');
+          chrome.browserAction.setBadgeText({text});
+          this.frame ++;
+          if(!this.loadingString[this.frame]){
+            this.frame = 0;
+          }
+        }, 100);
+      }
+    } else {
+      this.frame = 0;
+      if(this.interval){
+        clearInterval(this.interval);
+      }
+      chrome.browserAction.setBadgeText({text: this.text})
+    }
   }
-
-
-
 }
+const badge = new BadgeLoading();
+
+
+
+
 
 
