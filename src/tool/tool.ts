@@ -11,14 +11,14 @@ export function mdImg2HtmlImg(mdText: string, max: number = Infinity): string {
                     state = state || 'R18';
                     if (state === '#') state = 'R18G';
                     url = url.replace('"', '%22');
-                    return `<img src="${url}" nsfw="${state}">`;
+                    return `<img src="${url}" nsfw="${state}" onerror="this.style.display = 'none'">`;
                 });
                 if (h.startsWith('<img ')) {
                     return h;
                 }
             }
             h = h.replace('"', '%22');
-            return `<img src="${h}">`;
+            return `<img src="${h}" onerror="this.style.display = 'none'">`;
         } else {
             return '';
         }
