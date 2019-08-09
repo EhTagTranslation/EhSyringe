@@ -5,30 +5,30 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>EhSyringe</title>
 </head>
-<body style="width: 200px; margin: auto;">
-<div class="logo">
-    <img style="width: 60px" src="/assets/logo.svg" alt="">
+<body>
+<div style="width: 200px; margin: auto;">
+    <div class="logo">
+        <img style="width: 60px" src="/assets/logo.svg" alt="">
+    </div>
+    <table>
+        <tr>
+            <th>TAG版本:</th>
+            <td><span id="sha" class="monospace"> --- </span></td>
+        </tr>
+        <tr>
+            <th>上次更新:</th>
+            <td><span id="updateTime" class="monospace"> --- </span></td>
+        </tr>
+        <tr>
+            <th>更新检查:</th>
+            <td><span id="checkVersion" class="monospace"> --- </span></td>
+        </tr>
+    </table>
+    <button class="big-button" id="updateButton">更新</button>
 </div>
 
-
-<table>
-    <tr>
-        <th>TAG版本:</th>
-        <td><span id="sha" class="monospace"> --- </span></td>
-    </tr>
-    <tr>
-        <th>上次更新:</th>
-        <td><span id="updateTime" class="monospace"> --- </span></td>
-    </tr>
-    <tr>
-        <th>更新检查:</th>
-        <td><span id="checkVersion" class="monospace"> --- </span></td>
-    </tr>
-</table>
-
-<button class="big-button" id="updateButton">更新</button>
 <script src="../script/popup.js"></script>
 </body>
 </html>

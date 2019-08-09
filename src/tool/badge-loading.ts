@@ -9,7 +9,6 @@ export class BadgeLoading {
   loadingStrArr = [
     [''],
     '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''),
-    // "▹▹▹▹|▸▹▹▹|▹▸▹▹|▹▹▸▹|▹▹▹▸".split("|"),
     "    |·   | ·  |  · |   ·".split("|"),
   ];
 

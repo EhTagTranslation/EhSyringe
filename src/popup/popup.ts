@@ -6,11 +6,6 @@ const sha = document.querySelector('#sha') as HTMLButtonElement;
 const updateTime = document.querySelector('#updateTime') as HTMLButtonElement;
 const checkVersionElement = document.querySelector('#checkVersion') as HTMLButtonElement;
 
-
-
-
-
-
 function dateDiff(hisTime: Date,nowTime?: Date){
   if(!arguments.length) return '';
   let arg = arguments,
