@@ -19,4 +19,4 @@ async function download() {
 
 download().then(data => {
   fs.writeFileSync("./src/data/tag.db.json", data)
-})
+});

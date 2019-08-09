@@ -6,12 +6,16 @@ const sha = document.querySelector('#sha') as HTMLButtonElement;
 const updateTime = document.querySelector('#updateTime') as HTMLButtonElement;
 const checkVersionElement = document.querySelector('#checkVersion') as HTMLButtonElement;
 
-function dateDiff(hisTime: Date,nowTime?: Date){
-  if(!arguments.length) return '';
+chrome.management.getSelf(data => {
+  document.title = data.name;
+});
+
+function dateDiff(hisTime: Date, nowTime?: Date) {
+  if (!arguments.length) return '';
   let arg = arguments,
-    now =arg[1]?arg[1]:new Date().getTime(),
+    now = arg[1] ? arg[1] : new Date().getTime(),
     diffValue = now - arg[0],
-    result='',
+    result = '',
 
     minute = 1000 * 60,
     hour = minute * 60,
@@ -20,20 +24,20 @@ function dateDiff(hisTime: Date,nowTime?: Date){
     month = day * 30,
     year = month * 12,
 
-    _year = diffValue/year,
-    _month = diffValue/month,
-    _week = diffValue/(7*day),
-    _day = diffValue/day,
-    _hour = diffValue/hour,
-    _min = diffValue/minute;
+    _year = diffValue / year,
+    _month = diffValue / month,
+    _week = diffValue / (7 * day),
+    _day = diffValue / day,
+    _hour = diffValue / hour,
+    _min = diffValue / minute;
 
-  if(_year>=1) result=Math.floor(_year) + "年前";
-  else if(_month>=1) result=Math.floor(_month) + "个月前";
-  else if(_week>=1) result=Math.floor(_week) + "周前";
-  else if(_day>=1) result=Math.floor(_day) +"天前";
-  else if(_hour>=1) result=Math.floor(_hour) +"个小时前";
-  else if(_min>=1) result=Math.floor(_min) +"分钟前";
-  else result="刚刚";
+  if (_year >= 1) result = Math.floor(_year) + "年前";
+  else if (_month >= 1) result = Math.floor(_month) + "个月前";
+  else if (_week >= 1) result = Math.floor(_week) + "周前";
+  else if (_day >= 1) result = Math.floor(_day) + "天前";
+  else if (_hour >= 1) result = Math.floor(_hour) + "个小时前";
+  else if (_min >= 1) result = Math.floor(_min) + "分钟前";
+  else result = "刚刚";
   return result;
 }
 
@@ -50,11 +54,11 @@ updateButton.onclick = () => {
 
 function checkVersion() {
   checkVersionElement.textContent = '检查中...';
-  chromeMessage.send("check-version",{}, (data) => {
+  chromeMessage.send("check-version", {}, (data) => {
     console.log(data);
-    if(data && data.new){
+    if (data && data.new) {
       const hasNewData = data.new !== data.old;
-      checkVersionElement.textContent = hasNewData ? data.new.slice(0,6) + ' 有更新!': '已是最新版本';
+      checkVersionElement.textContent = hasNewData ? data.new.slice(0, 6) + ' 有更新!' : '已是最新版本';
       if (hasNewData) {
         checkVersionElement.classList.add('hasNew');
         updateButton.classList.add('primary')
@@ -70,7 +74,7 @@ function checkVersion() {
 
 function getVersion() {
   chrome.storage.local.get((data) => {
-    sha.textContent = data.sha ? data.sha.slice(0,6) : 'N/A';
+    sha.textContent = data.sha ? data.sha.slice(0, 6) : 'N/A';
     updateTime.textContent = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
     updateTime.title = new Date(data.updateTime).toLocaleString();
   });
