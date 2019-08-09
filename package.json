@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
-    "web-ext": "web-ext"
+    "web-ext": "web-ext",
+    "update-db": "node ./tools/update-db.js"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,8 @@
     "typescript": "^3.5.2",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5",
-    "web-ext": "^3.1.1"
+    "web-ext": "^3.1.1",
+    "node-fetch": "^2.6.0"
   },
   "dependencies": {}
 }
