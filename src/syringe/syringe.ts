@@ -79,7 +79,6 @@ function translateNode(node: Node) {
       }
 
       // 标签只翻译已知的位置
-
       const p1 = (
         node.parentElement.classList.contains('gt') ||
         node.parentElement.classList.contains('gtl') ||
@@ -95,7 +94,8 @@ function translateNode(node: Node) {
 
 
       if ( p1 || p2) {
-        const parentElement = p2 ? node.parentElement.parentElement : node.parentElement;
+        const parentElement = node.parentElement;
+
         let value = '';
         let aId = parentElement.id;
         let aTitle = parentElement.title;
@@ -117,13 +117,6 @@ function translateNode(node: Node) {
             value = tagReplace[aId];
           }
         }
-
-
-        // if(!value){
-        //   if (tagReplace[node.textContent]) {
-        //     value = tagReplace[node.textContent];
-        //   }
-        // }
 
         if (value) {
           if(node.textContent[1] === ':'){
