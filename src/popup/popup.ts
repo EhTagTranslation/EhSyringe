@@ -14,8 +14,8 @@ const Enema = document.querySelector('#Enema') as SVGRectElement;
 
 function setProgress(p: number) {
   const maxWidth = 70;
-  PushRod.style.transform = `translate(${((p / 300) * maxWidth).toFixed(2)}px, 0)`;
-  Enema.style.width = `${((p / 100) * maxWidth).toFixed(2)}px`;
+  PushRod.style.transform = `translate(${((p / 400) * maxWidth).toFixed(2)}px, 0)`;
+  Enema.setAttribute('width',((p / 100) * maxWidth).toFixed(2))
 }
 
 const testAnimationList : [string, number][] = [
@@ -48,9 +48,7 @@ chrome.management.getSelf(data => {
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log('rwq', request)
   if('cmd' in request && request.cmd == 'downloadStatus'){
-
     const {data} = request;
     let className = ['logo'];
     if(data.run){
@@ -69,13 +67,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         logoElement.className = className.join(' ');
       }, 2000)
     }
-
     infoElement.textContent = data.info;
-
     setProgress(data.progress || 0)
-
     logoElement.className = className.join(' ');
-    console.log(request.data);
   }
 });
 
