@@ -79,31 +79,56 @@ function translateNode(node: Node) {
       }
 
       // 标签只翻译已知的位置
-      if ((
+
+      const p1 = (
         node.parentElement.classList.contains('gt') ||
         node.parentElement.classList.contains('gtl') ||
         node.parentElement.classList.contains('gtw')
-      ) || (
+      );
+      const p2 = (
         node.parentElement.parentElement && (
           node.parentElement.parentElement.classList.contains('gt') ||
           node.parentElement.parentElement.classList.contains('gtl') ||
           node.parentElement.parentElement.classList.contains('gtw')
         )
-      )) {
+      );
+
+
+      if ( p1 || p2) {
+        const parentElement = p2 ? node.parentElement.parentElement : node.parentElement;
         let value = '';
-        // if (tagReplace[node.textContent]) {
-        //   value = tagReplace[node.textContent];
-        // } else {
-          let aId = node.parentElement.id;
-          if (aId) {
-            aId = aId.replace('ta_', '');
-            aId = aId.replace(/_/ig, ' ');
-            if (tagReplace[aId]) {
-              value = tagReplace[aId];
-            }
+        let aId = parentElement.id;
+        let aTitle = parentElement.title;
+
+
+        if ((!value) && aTitle) {
+          if(aTitle[0] == ':'){
+            aTitle = aTitle.slice(1);
           }
+          if (tagReplace[aTitle]) {
+            value = tagReplace[aTitle];
+          }
+        }
+
+        if( (!value) && aId) {
+          aId = aId.replace('ta_', '');
+          aId = aId.replace(/_/ig, ' ');
+          if (tagReplace[aId]) {
+            value = tagReplace[aId];
+          }
+        }
+
+
+        // if(!value){
+        //   if (tagReplace[node.textContent]) {
+        //     value = tagReplace[node.textContent];
+        //   }
         // }
+
         if (value) {
+          if(node.textContent[1] === ':'){
+            value = node.textContent[0] + ':' + value;
+          }
           if (node.parentElement.hasAttribute('ehs-tag')) {
             return;
           }
