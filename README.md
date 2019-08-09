@@ -1,7 +1,5 @@
 # EhSyringe
-chrome 插件地址: https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb
-
-firefox 插件地址: https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/
+插件地址： [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb) [![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/)
 
 E站注射器，将中文翻译注入到E站体内。
 
