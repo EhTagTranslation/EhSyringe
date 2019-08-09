@@ -10,6 +10,14 @@ const infoElement = document.querySelector('#info') as HTMLDivElement;
 
 const PushRod = document.querySelector('#PushRod') as SVGGElement;
 const Enema = document.querySelector('#Enema') as SVGRectElement;
+
+
+function setProgress(p: number) {
+  const maxWidth = 70;
+  PushRod.style.transform = `translate(${((p / 300) * maxWidth).toFixed(2)}px, 0)`;
+  Enema.style.width = `${((p / 100) * maxWidth).toFixed(2)}px`;
+}
+
 const testAnimationList : [string, number][] = [
   ['prominent', 0],
   ['prominent', 10],
@@ -31,8 +39,7 @@ logoElement.onclick = () => {
     testAnimationIndex = 0;
   }
   logoElement.className = 'logo ' + a[0];
-
-
+  setProgress(a[1])
 };
 
 
@@ -43,12 +50,6 @@ chrome.management.getSelf(data => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log('rwq', request)
   if('cmd' in request && request.cmd == 'downloadStatus'){
-
-    const setProgress = (p: number) => {
-      const maxWidth = 70;
-      PushRod.style.transform = `translate(${(p / 300) * maxWidth}px, 0)`;
-      Enema.style.width = `${(p / 100) * maxWidth}px`;
-    }
 
     const {data} = request;
     let className = ['logo'];

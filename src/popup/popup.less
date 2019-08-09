@@ -60,32 +60,30 @@ body {
 }
 .logo {
   text-align: center;
-  margin: 40px 0;
+  margin: 20px 0;
   transition: transform 280ms cubic-bezier(.4,0,.2,1);
   transform: scale(1) rotate(-45deg);
   #Enema { opacity: 0; }
-  #液体A { opacity: 1; }
-  #Enema, #液体A, #PushRod {
+  #Enema2 { opacity: 1; }
+  #Enema, #Enema2, #PushRod {
     transition: width 280ms cubic-bezier(.4,0,.2,1), opacity 280ms cubic-bezier(.4,0,.2,1), transform 280ms cubic-bezier(.4,0,.2,1);
   }
   &.prominent {
-    #液体A { opacity: 0; }
+    #Enema2 { opacity: 0; }
     #Enema { opacity: 1; }
     transform: scale(1.6) rotate(0deg);
     &.injection {
       transform: scale(1.6) rotate(0deg) translate(-10px, 0);
-      #Enema, #液体A, #PushRod {
+      #Enema, #Enema2, #PushRod {
         transition: width 600ms cubic-bezier(.4,0,.2,1), transform 600ms cubic-bezier(.4,0,.2,1);
       }
     }
   }
-
-
 }
 
 #info {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 0;
   right: 0;
   height: 24px;
