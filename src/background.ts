@@ -159,6 +159,7 @@ function storageTagData(tagDB: EHTDatabase): Promise<any> {
 
         tagReplaceData[key] = name;
         tagReplaceData[namespace[0] + ':' + key] = namespace[0] + ':' + name;
+        tagReplaceData[namespace + ':' + key] = name;
       }
     });
     chrome.storage.local.set({

@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode=development --watch",
+    "dev:chrome": "webpack --mode=development --watch",
+    "dev:firefox": "webpack --mode=development --watch --firefox",
     "build": "webpack --mode=production",
     "web-ext": "web-ext",
     "update-db": "node ./tools/update-db.js"
@@ -46,5 +48,7 @@
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "yargs": "^13.3.0"
+  }
 }

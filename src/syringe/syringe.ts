@@ -91,19 +91,18 @@ function translateNode(node: Node) {
         )
       )) {
         let value = '';
-        if (tagReplace[node.textContent]) {
-          value = tagReplace[node.textContent];
-        } else {
+        // if (tagReplace[node.textContent]) {
+        //   value = tagReplace[node.textContent];
+        // } else {
           let aId = node.parentElement.id;
           if (aId) {
             aId = aId.replace('ta_', '');
-            aId = aId.split(':').pop();
             aId = aId.replace(/_/ig, ' ');
             if (tagReplace[aId]) {
               value = tagReplace[aId];
             }
           }
-        }
+        // }
         if (value) {
           if (node.parentElement.hasAttribute('ehs-tag')) {
             return;

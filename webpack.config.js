@@ -1,15 +1,29 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
+const plugins = [];
+const argv = require('yargs').argv || {};
 
-const webextRunParams = (process.argv.indexOf('--android') > 0) ? ({
-    browserConsole: false,
-    target: 'firefox-android',
-    adbDevice: '696ea70c',
-}) : ({
-    browserConsole: false,
-    startUrl: ['about:debugging#addons', 'https://e-hentai.org']
-});
+
+if(argv.firefox){
+    const webextRunParams = (process.argv.indexOf('--android') > 0) ? ({
+        browserConsole: false,
+        target: 'firefox-android',
+        adbDevice: '696ea70c',
+    }) : ({
+        browserConsole: false,
+        startUrl: ['about:debugging#addons', 'https://e-hentai.org']
+    });
+    plugins.push(
+        new WebExtWebpackPlugin({
+            build: {
+                artifactsDir: 'artifacts',
+                overwriteDest: true
+            },
+            run: webextRunParams
+        })
+    )
+}
 
 module.exports = {
     entry: {
@@ -107,13 +121,7 @@ module.exports = {
                 to: 'assets/tag.db',
             },
         ]),
-        new WebExtWebpackPlugin({
-            build: {
-                artifactsDir: 'artifacts',
-                overwriteDest: true
-            },
-            run: webextRunParams
-        })
+        ...plugins,
     ],
     devtool: 'source-map',
 };
