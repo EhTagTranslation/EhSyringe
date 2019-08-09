@@ -14,6 +14,9 @@ export class BadgeLoading {
   color = '';
 
   set(text: string, color: string = '', loading = 0) {
+    if(!(chrome.browserAction && chrome.browserAction.setBadgeText)){
+      return;
+    }
     if(this.index != loading) {
       this.index = loading;
       this.loadingString = this.loadingStrArr[this.index] || [''];
@@ -22,7 +25,9 @@ export class BadgeLoading {
     this.text = text;
     if (this.color != color) {
       this.color = color;
-      chrome.browserAction.setBadgeBackgroundColor({color});
+      if(chrome.browserAction && chrome.browserAction.setBadgeBackgroundColor){
+        chrome.browserAction.setBadgeBackgroundColor({color});
+      }
     }
     if(loading){
       if(!this.interval){
@@ -41,7 +46,9 @@ export class BadgeLoading {
         clearInterval(this.interval);
         this.interval = 0;
       }
-      chrome.browserAction.setBadgeText({text: this.text})
+      if(chrome.browserAction && chrome.browserAction.setBadgeText){
+        chrome.browserAction.setBadgeText({text: this.text})
+      }
     }
   }
 }
