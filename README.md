@@ -1,6 +1,4 @@
 # EhSyringe
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")  
-点击相应的 badge 安装插件。
 
 E站注射器，将中文翻译注入到E站体内。
 
@@ -9,8 +7,12 @@ E站注射器，将中文翻译注入到E站体内。
 ![image](https://user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
 
 
+## 安装
+点击相应的 badge 安装插件。  
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")  
 
-## 功能:
+
+## 功能
 * 全站翻译(大部分)
 * TAG翻译
 * TAG介绍
