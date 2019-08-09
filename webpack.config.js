@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -96,7 +97,16 @@ module.exports = {
                 to: 'assets/tag.db',
             },
         ]),
+        new WebExtWebpackPlugin({
+            build: {
+                artifactsDir: 'artifacts',
+                overwriteDest: true
+            },
+            run: {
+                browserConsole: false,
+                startUrl: ['about:debugging#addons', 'https://e-hentai.org']
+            }
+        })
     ],
     devtool: 'source-map',
 };
-

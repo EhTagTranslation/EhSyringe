@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="margin: 0; padding: 0;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,26 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EhSyringe</title>
 </head>
-<body>
+<body style="margin: 0; padding: 4px;">
 <div style="width: 200px; margin: auto;">
-    <div class="logo">
-        <img style="width: 60px" src="/assets/logo.svg" alt="">
+    <div style="margin: 12px">
+        <div class="logo">
+            <img style="height: 60px" src="/assets/logo.svg" alt="EhSyringe">
+        </div>
+        <table>
+            <tr>
+                <th>TAG版本:</th>
+                <td><span id="sha" class="monospace"> --- </span></td>
+            </tr>
+            <tr>
+                <th>上次更新:</th>
+                <td><span id="updateTime" class="monospace"> --- </span></td>
+            </tr>
+            <tr>
+                <th>更新检查:</th>
+                <td><span id="checkVersion" class="monospace"> --- </span></td>
+            </tr>
+        </table>
+        <button class="big-button" id="updateButton">更新</button>
     </div>
-    <table>
-        <tr>
-            <th>TAG版本:</th>
-            <td><span id="sha" class="monospace"> --- </span></td>
-        </tr>
-        <tr>
-            <th>上次更新:</th>
-            <td><span id="updateTime" class="monospace"> --- </span></td>
-        </tr>
-        <tr>
-            <th>更新检查:</th>
-            <td><span id="checkVersion" class="monospace"> --- </span></td>
-        </tr>
-    </table>
-    <button class="big-button" id="updateButton">更新</button>
 </div>
 
 <script src="../script/popup.js"></script>
