@@ -162,8 +162,6 @@ chrome.contextMenus.create(
   }
 )
 
-
-
 chrome.omnibox.onInputChanged.addListener(
   function(text, suggest) {
     if(TagList.length){

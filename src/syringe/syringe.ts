@@ -123,13 +123,16 @@ function translateNode(node: Node){
         text = text.replace(/Average: ([\d\.]+)/, '平均值: $1')
         text = text.replace(/Posted on (.*?) by:/, '评论时间:$1  作者:')
         text = text.replace(/Showing ([\d,]+) results/, '共 $1 个结果')
-        text = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片')
         text = text.replace(/Rate as ([\d\.]+) stars/, '$1星');
         text = text.replace(/([\d\.]+) torrent was found for this gallery./, '找到了$1个种子.')
         text = text.replace(/([\d\.]+) \/ ([\d\.]+) favorite note slots used./, '已经使用了$1个便签, 共$2个 ')
         text = text.replace(/Showing results for ([\d\.]+) watched tags/, '订阅的$1个标签的结果')
 
-        
+
+        // 通过类标签匹配修改
+        // text = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片')
+
+
         if(node.textContent !== text){
             node.textContent = text;
         }
@@ -163,6 +166,20 @@ function translateNode(node: Node){
                 return;
             }
         }
+
+        if (node.nodeName === "P" ) {
+            const element = node as HTMLParagraphElement;
+            if(element.classList.contains('gpc')){
+                let text = element.textContent;
+                element.style.display = 'none';
+                text = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片')
+                const p = document.createElement('p');
+                p.className = 'gpc-translate';
+                p.textContent = text;
+                element.parentElement.insertBefore(p, element);
+            }
+        }
+
     }
 }
 
