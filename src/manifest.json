@@ -3,7 +3,7 @@
   "name": "EhSyringe",
   "description": "E站注射器，将中文翻译注入到E站体内。",
   "author": "xioxin",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "icons": {
     "32": "assets/logo32.png",
     "16": "assets/logo16.png",
@@ -44,6 +44,7 @@
     "*://*.exhentai.org/*",
     "*://*.e-hentai.org/*",
     "*://github.com/*",
+    "*://*.github.com/*",
     "*://*.amazonaws.com/*",
     "activeTab",
     "notifications",

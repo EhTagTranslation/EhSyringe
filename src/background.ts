@@ -1,11 +1,13 @@
 import * as pako from "pako";
 import { EHTDatabase, TagList } from "./interface";
+import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
 import { mdImg2HtmlImg } from "./tool/tool";
 import { namespaceTranslate } from "./data/namespace-translate";
-
+var badge = new BadgeLoading();
+var lastCheck = 0;
+var lastCheckData: any;
 var TagList: TagList = [];
-
 var loadLock = false;
 async function download (): Promise<EHTDatabase>{
   return new Promise<EHTDatabase>(async (resolve, reject) =>  {
@@ -15,7 +17,7 @@ async function download (): Promise<EHTDatabase>{
     badge.set('', "#4A90E2", 2);
 
     const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
-    const info = await (await fetch(githubDownloadUrl, {credentials: 'include'})).json();
+    const info = await (await fetch(githubDownloadUrl)).json();
     const asset = info.assets.find((i:any) => i.name === 'db.raw.json.gz');
     const url = asset && asset.browser_download_url || '';
     if (!url) {
@@ -71,7 +73,6 @@ chromeMessage.listener('check-version', (data, callback) => {
   })
 });
 
-
 // 如果沒有數據自動加載本地數據
 chrome.storage.local.get((data) => {
   if (!('tagList' in data && 'tagReplaceData' in data)) {
@@ -113,7 +114,7 @@ function storageTagData(tagDB: EHTDatabase): Promise<any> {
         tagList.push({
           ...t,
           name: name,
-          intro: mdImg2HtmlImg(t.intro),
+          intro: mdImg2HtmlImg(t.intro, 3),
           key,
           namespace,
           search,
@@ -189,59 +190,6 @@ chrome.omnibox.onInputEntered.addListener(
     })
   });
 
-class BadgeLoading {
-  loadingStrArr = [
-    [''],
-    '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''),
-    // "▹▹▹▹|▸▹▹▹|▹▸▹▹|▹▹▸▹|▹▹▹▸".split("|"),
-    "    |·   | ·  |  · |   ·".split("|"),
-  ];
-
-  frame = 0;
-  index = 0;
-  interval = 0;
-  text = '';
-  loadingString: string[] = [''];
-  color = '';
-
-  set(text: string, color: string = '', loading = 0) {
-    if(this.index != loading) {
-      this.index = loading;
-      this.loadingString = this.loadingStrArr[this.index] || [''];
-      this.frame = 0;
-    }
-    this.text = text;
-    if (this.color != color) {
-      this.color = color;
-      chrome.browserAction.setBadgeBackgroundColor({color});
-    }
-    if(loading){
-      if(!this.interval){
-        this.interval = setInterval(() => {
-          const text = this.text + (this.loadingString[this.frame] || '');
-          chrome.browserAction.setBadgeText({text});
-          this.frame ++;
-          if(!this.loadingString[this.frame]){
-            this.frame = 0;
-          }
-        }, 100);
-      }
-    } else {
-      this.frame = 0;
-      if(this.interval){
-        clearInterval(this.interval);
-        this.interval = 0;
-      }
-      chrome.browserAction.setBadgeText({text: this.text})
-    }
-  }
-}
-const badge = new BadgeLoading();
-
-
-let lastCheck = 0;
-let lastCheckData: any;
-
 async function checkVersion() {
   const time = new Date().getTime();
   // 限制每分钟最多请求1次
@@ -254,7 +202,7 @@ async function checkVersion() {
   }
   lastCheck = time;
   const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
-  const info = await (await fetch(githubDownloadUrl, {credentials: 'include'})).json();
+  const info = await (await fetch(githubDownloadUrl)).json();
 
   if(!(info && info.target_commitish)){
     return null;
