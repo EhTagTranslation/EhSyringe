@@ -6,7 +6,6 @@ class ChromeMessage {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if('callback' in request){
         const key = request.callback;
-        console.log('callback', key);
         if(this.callbackMap[key]){
           this.callbackMap[key](request.data)
         }
@@ -27,12 +26,9 @@ class ChromeMessage {
   }
 
   listener(query: string, handle: (data: any, callback: (data?: any) => any) => any){
-    console.log('listener', query, handle)
     chrome.runtime.onMessage.addListener((request) => {
-      console.log('onMessage', request)
       if('query' in request && request.query === query){
         handle(request.data, (value) => {
-          console.log('handle callback',request.callbackKey , value);
           if(request.callbackKey){
             chrome.runtime.sendMessage({callback: request.callbackKey, data: value});
           }

@@ -2,13 +2,83 @@ import './popup.less';
 import { chromeMessage } from '../tool/chrome-message';
 const updateButton = document.querySelector('#updateButton') as HTMLButtonElement;
 
-const sha = document.querySelector('#sha') as HTMLButtonElement;
-const updateTime = document.querySelector('#updateTime') as HTMLButtonElement;
-const checkVersionElement = document.querySelector('#checkVersion') as HTMLButtonElement;
+const sha = document.querySelector('#sha') as HTMLSpanElement;
+const updateTime = document.querySelector('#updateTime') as HTMLSpanElement;
+const checkVersionElement = document.querySelector('#checkVersion') as HTMLSpanElement;
+const logoElement = document.querySelector('.logo') as HTMLDivElement;
+const infoElement = document.querySelector('#info') as HTMLDivElement;
+
+const PushRod = document.querySelector('#PushRod') as SVGGElement;
+const Enema = document.querySelector('#Enema') as SVGRectElement;
+const testAnimationList : [string, number][] = [
+  ['prominent', 0],
+  ['prominent', 10],
+  ['prominent', 30],
+  ['prominent', 80],
+  ['prominent', 100],
+  ['prominent injection', 100],
+  ['prominent injection', 5],
+  ['prominent', 5],
+  ['', 5],
+];
+
+var testAnimationIndex = 0;
+
+logoElement.onclick = () => {
+  const a = testAnimationList[testAnimationIndex];
+  testAnimationIndex++;
+  if(!testAnimationList[testAnimationIndex]){
+    testAnimationIndex = 0;
+  }
+  logoElement.className = 'logo ' + a[0];
+
+
+};
+
 
 chrome.management.getSelf(data => {
   document.title = data.name;
 });
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  console.log('rwq', request)
+  if('cmd' in request && request.cmd == 'downloadStatus'){
+
+    const setProgress = (p: number) => {
+      const maxWidth = 70;
+      PushRod.style.transform = `translate(${(p / 300) * maxWidth}px, 0)`;
+      Enema.style.width = `${(p / 100) * maxWidth}px`;
+    }
+
+    const {data} = request;
+    let className = ['logo'];
+    if(data.run){
+      className.push('prominent');
+    }
+    if (data.complete){
+      setTimeout(() => {
+        className.push('injection');
+        logoElement.className = className.join(' ');
+      }, 1000)
+      setTimeout(() => {
+        setProgress(5)
+      }, 1500)
+      setTimeout(() => {
+        className.pop();
+        logoElement.className = className.join(' ');
+      }, 2000)
+    }
+
+    infoElement.textContent = data.info;
+
+    setProgress(data.progress || 0)
+
+    logoElement.className = className.join(' ');
+    console.log(request.data);
+  }
+});
+
+
 
 function dateDiff(hisTime: Date, nowTime?: Date) {
   if (!arguments.length) return '';
@@ -62,9 +132,11 @@ function checkVersion() {
       if (hasNewData) {
         checkVersionElement.classList.add('hasNew');
         updateButton.classList.add('primary')
+        updateButton.textContent = '更新';
       } else {
         checkVersionElement.classList.remove('hasNew');
         updateButton.classList.remove('primary')
+        updateButton.textContent = '更新';
       }
     } else {
       checkVersionElement.textContent = '获取失败';

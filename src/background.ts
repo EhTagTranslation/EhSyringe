@@ -9,61 +9,98 @@ var lastCheck = 0;
 var lastCheckData: any;
 var TagList: TagList = [];
 var loadLock = false;
+
+var downloadStatus = {
+  run: false,
+  progress: 0,
+  info: '',
+  complete: false,
+  error: false,
+};
+
+function pushDownloadStatus(data: any = {}) {
+  downloadStatus = {
+    ...downloadStatus,
+    ...data,
+  };
+  chrome.runtime.sendMessage({cmd: 'downloadStatus', data: downloadStatus});
+}
+
 async function download(): Promise<EHTDatabase> {
   return new Promise<EHTDatabase>(async (resolve, reject) => {
     if (loadLock) {
       return false;
     }
+    loadLock = true;
     badge.set('', "#4A90E2", 2);
-
+    pushDownloadStatus({run: true, info: '加载中'});
     const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
     const info = await (await fetch(githubDownloadUrl)).json();
+    if (!(info && info.assets)) {
+      reject(new Error('无法获取版本信息'));
+      loadLock = false;
+      return;
+    }
     const asset = info.assets.find((i: any) => i.name === 'db.raw.json.gz');
     const url = asset && asset.browser_download_url || '';
     if (!url) {
-      console.error('地址未找到', url);
+      reject(new Error('无法获取下载地址'));
+      loadLock = false;
+      return;
     }
 
-    console.log('加载');
-    loadLock = true;
-
-    var xhr = new XMLHttpRequest()
+    const xhr = new XMLHttpRequest();
     xhr.open('GET', url)
     xhr.responseType = "arraybuffer";
     xhr.onload = function () {
       loadLock = false;
       try {
         const data = JSON.parse(pako.ungzip(xhr.response, { to: "string" }));
+        loadLock = false;
         resolve(data as EHTDatabase);
+        pushDownloadStatus({info: '下载完成', progress: 100});
         badge.set('100', "#4A90E2", 1);
       } catch (e) {
-        reject();
+        reject(new Error('数据无法解析'));
         badge.set('Err', "#C80000");
       }
     }
     xhr.onerror = (e) => {
       loadLock = false;
-      console.error(e);
       badge.set('ERR', "#C80000");
-      reject();
+      reject(e);
     }
     xhr.onprogress = (event) => {
       if (event.lengthComputable) {
-        var percent = Math.round((event.loaded / event.total) * 100)
-        console.log(percent);
+        const percent = Math.round((event.loaded / event.total) * 100);
+        pushDownloadStatus({info: Math.floor(percent) + '%', progress: Math.floor(percent)});
         badge.set(percent.toFixed(0), "#4A90E2", 1);
-      };
+      }
     }
     xhr.send();
+    pushDownloadStatus({info: '0%', progress: 0});
     badge.set('0', "#4A90E2", 1);
   })
 }
 
 chromeMessage.listener('get-tag-data', (data, callback) => {
+
+  // 重置状态
+  downloadStatus = {
+    run: false,
+    progress: 0,
+    info: '',
+    complete: false,
+    error: false,
+  };
+
   download().then(data => {
     storageTagData(data).then(() => {
       callback();
     })
+  }, (err: Error) => {
+    console.error(err);
+    pushDownloadStatus({run: false, error: true, info: (err && err.message) ? err.message : '更新失败'});
   })
 });
 
@@ -133,9 +170,11 @@ function storageTagData(tagDB: EHTDatabase): Promise<any> {
     }, () => {
       resolve();
       badge.set('OK', "#00C801");
+      pushDownloadStatus({run: true, info:'更新完成', progress: 100, complete: true});
       setTimeout(() => {
         badge.set('');
-      }, 2000)
+        pushDownloadStatus({run: false, info:'更新完成', progress: 0, complete: false});
+      }, 2500)
     });
     TagList = tagList;
   })
