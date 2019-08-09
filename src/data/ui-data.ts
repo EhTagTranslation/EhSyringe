@@ -240,6 +240,22 @@ export const uiData: { [key: string]: string } = {
   "N/A": "无效",
   "Other": "其他",
 
+  "Japanese  ": "日文  ",
+  "English  ": "英文  ",
+  "Chinese  ": "中文  ",
+  "Dutch  ": "荷兰语  ",
+  "French  ": "法语  ",
+  "German  ": "德语  ",
+  "Hungarian  ": "匈牙利  ",
+  "Italian  ": "意呆利  ",
+  "Korean  ": "韩语  ",
+  "Polish  ": "波兰语  ",
+  "Portuguese  ": "葡萄牙语  ",
+  "Russian  ": "俄语  ",
+  "Spanish  ": "西班牙语  ",
+  "Thai  ": "泰语  ",
+  "Vietnamese  ": "越南语  ",
+
 
   "Published Galleries": '发布图库',
   "Gallery Name ": '图库名称',
@@ -624,4 +640,6 @@ export const uiData: { [key: string]: string } = {
   "Only Search Covers": "仅搜索封面",
   "Show Expunged": "显示被删除的图库",
   "File Search": "文件搜索",
+
+  "There are newer versions of this gallery available:": "此库有更新的版本可用：",
 }

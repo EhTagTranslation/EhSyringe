@@ -1,53 +1,110 @@
 td.tc {
-    white-space:nowrap;
+  white-space: nowrap;
 }
 
 div.gt, div.gtl {
-    height: 16px;
-    line-height: 16px;
-    white-space:nowrap;
+  height: 16px;
+  line-height: 16px;
+  white-space: nowrap;
 }
 
-textarea[name=expungexpl] { 
-    display: block;
+textarea[name=expungexpl] {
+  display: block;
 }
-
 
 
 body {
 
-    h1#gj {
-        margin: 3px 4px;
+  h1#gj {
+    margin: 3px 4px;
+  }
+
+  div#gright {
+    z-index: 3;
+  }
+
+  .g2 {
+    padding-bottom: 20px;
+  }
+
+  .gsp {
+    padding-top: 10px;
+  }
+
+  div.gtl, div.gtw, div.gt {
+    overflow: hidden;
+    height: 16px;
+    line-height: 16px;
+  }
+
+  div#gmid {
+    height: auto;
+  }
+
+  p.gpc-translate {
+    margin: -3px auto;
+    text-align: center;
+    padding: 0px 5px 5px 5px;
+    clear: both;
+    font-size: 9pt;
+  }
+
+  /* 高清箭头，没啥卵用 */
+  #nb > div {
+    background: none;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 0;
+      height: 0;
+      line-height: 0;
+      box-sizing: content-box;
+      border-width: 4px 0 4px 4px;
+      border-style: solid;
+      border-color: transparent transparent transparent #484848;
     }
-    div#gright {
-        z-index: 3;
-    }
-    .g2 {
-        padding-bottom: 20px;
-    }
-    .gsp {
-        padding-top: 10px;
-    }
-    div.gtl, div.gtw, div.gt{
-        overflow: hidden;
-        height: 16px;
-        line-height: 16px;
-    }
-    div#gmid {
-        height: auto;
-    }
-    p.gpc-translate {
-        margin: -3px auto;
-        text-align: center;
-        padding: 0px 5px 5px 5px;
-        clear: both;
-        font-size: 9pt;
-    }
+  }
+  /* 高清箭头，没啥卵用 */
+  div#gd5 img{
+    margin-left: 10px;
+    overflow: hidden;
+    margin-top: 7px;
+    left: 0;
+    top: 5px;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    box-sizing: content-box;
+    border-width: 4px 0 4px 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent #484848;
+  }
+/*
+  img.ygm {
+    position: relative;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    box-sizing: content-box;
+    outline: 2px solid #5C0D11;
+    outline-offset:0;
+    border-width: 4px 5px 4px 5px;
+    border-style: solid;
+    border-color: #5C0D11 transparent transparent transparent;
+    border-top-color: #5C0D11;
+
+  }*/
+
 }
 
 @media screen and (max-width: 990px) {
-    p.gpc-translate {
-        margin-top: 25px;
-        visibility: hidden !important;
-    }
+  p.gpc-translate {
+    margin-top: 25px;
+    visibility: hidden !important;
+  }
 }
+
+
