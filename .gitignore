@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/artifacts
 /tmp
 /out-tsc
 
