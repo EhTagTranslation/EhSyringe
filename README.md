@@ -1,4 +1,5 @@
 # EhSyringe
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")  
 
 E站注射器，将中文翻译注入到E站体内。
 
@@ -8,9 +9,8 @@ E站注射器，将中文翻译注入到E站体内。
 
 
 ## 安装
-点击相应的 badge 安装插件。  
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")  
 
+[![Chrome Web Store](./.github/assets/chrome.png)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](./.github/assets/firefox.png)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")
 
 ## 功能
 * 全站翻译(大部分)
