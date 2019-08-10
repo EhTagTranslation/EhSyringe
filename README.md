@@ -10,7 +10,7 @@ E站注射器，将中文翻译注入到E站体内。
 
 ## 安装
 
-[![Chrome Web Store](./.github/assets/chrome.png)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](./.github/assets/firefox.png)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")
+[![Chrome Web Store](./.github/assets/chrome.svg)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](./.github/assets/firefox.svg)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")
 
 ## 功能
 * 全站翻译(大部分)
