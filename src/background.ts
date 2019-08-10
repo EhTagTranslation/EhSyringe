@@ -30,22 +30,23 @@ class background {
     if (chrome.omnibox) this.initOmnibox();
     this.checkLocalData();
     this.initDownloadStatus();
-
-    chromeMessage.listener('get-tag-data', async (data, callback) => {
-      // 重置下载状态
-      this.initDownloadStatus();
-      try {
-        const data = await this.download();
-        await this.storageTagData(data);
-        callback();
-      }catch (err) {
-        console.error(err);
-        this.pushDownloadStatus({run: false, error: true, info: (err && err.message) ? err.message : '更新失败'});
-      }
-    });
+    chromeMessage.listener('get-tag-data', this.getTagDataEvent.bind(this));
     chromeMessage.listener('check-version', (data, callback) => {
       this.checkVersion().then(callback)
     });
+  }
+
+  async getTagDataEvent(inputData: any, callback: () => void){
+    // 重置下载状态
+    this.initDownloadStatus();
+    try {
+      const data = await this.download();
+      await this.storageTagData(data);
+      callback();
+    }catch (err) {
+      console.error(err);
+      this.pushDownloadStatus({run: false, error: true, info: (err && err.message) ? err.message : '更新失败'});
+    }
   }
 
   initDownloadStatus() {
