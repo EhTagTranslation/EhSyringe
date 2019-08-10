@@ -1,6 +1,10 @@
 import './popup.less';
 import { chromeMessage } from '../tool/chrome-message';
 
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 function elementBinding<T = any>(selectors: string, attribute?: string) {
   return function (target: any, name: any) {
     const element = document.querySelector(selectors) as any;
@@ -69,7 +73,7 @@ class Popup {
     });
     chrome.runtime.onMessage.addListener((request) => {
       if('cmd' in request && request.cmd == 'downloadStatus'){
-        this.downloadStatus(request.data);
+        this.downloadStatus(request.data).then();
       }
     });
 
@@ -136,23 +140,24 @@ class Popup {
   @elementBinding('#info', 'disabled')
   private updateButtonDisabled: boolean;
 
-  downloadStatus(data: any) {
+  async downloadStatus(data: any) {
     let className = ['logo'];
     if(data.run){
       className.push('prominent');
     }
     if (data.complete){
-      setTimeout(() => {
-        className.push('injection');
-        this.logoElement.className = className.join(' ');
-      }, 1000);
-      setTimeout(() => {
-        this.setProgress(5)
-      }, 1500);
-      setTimeout(() => {
-        className.pop();
-        this.logoElement.className = className.join(' ');
-      }, 2000)
+
+      await sleep(1000);
+      className.push('injection');
+      this.logoElement.className = className.join(' ');
+
+      await sleep(500);
+      this.setProgress(5);
+
+      await sleep(500);
+      className.pop();
+      this.logoElement.className = className.join(' ');
+
     }
     this.info = data.info;
     this.setProgress(data.progress || 0);
