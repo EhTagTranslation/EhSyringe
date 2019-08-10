@@ -13,16 +13,20 @@ class ChromeMessage {
     })
   }
 
-  send(query: string, data?: any, callback?: (data: any) => any ){
-    const key = `${new Date().getTime()}${Math.floor(Math.random() * 10000)}`;
-    chrome.runtime.sendMessage({
-      query,
-      data,
-      callbackKey: key,
-    });
-    if(callback) {
-      this.callbackMap[key] = callback;
-    }
+  send(query: string, data?: any, callback?: (data: any) => any ): Promise<any>{
+    return new Promise(resolve => {
+      const key = `${new Date().getTime()}${Math.floor(Math.random() * 10000)}`;
+      chrome.runtime.sendMessage({
+        query,
+        data,
+        callbackKey: key,
+      });
+      if(callback) {
+        this.callbackMap[key] = callback;
+      }else {
+        this.callbackMap[key] = resolve;
+      }
+    })
   }
 
   listener(query: string, handle: (data: any, callback: (data?: any) => any) => any){

@@ -49,6 +49,7 @@
 }
 body {
   margin: 16px;
+  margin-bottom: 8px;
   white-space: nowrap;
   font-family: sans-serif;
 }
@@ -101,4 +102,61 @@ table {
 }
 .hasNew {
   color: #a6000f;
+}
+a {
+  text-decoration: none;
+  color: #8041a6;
+  &:hover {
+    color: #a553d4;
+  }
+  &:active {
+    color: #673485;
+  }
+}
+.foot-buttons {
+  line-height: 1.8;
+  //font-size: 16px;
+  display: flex;
+  > .cushion{
+    flex: auto;
+  }
+  span {
+    color: #a5a3a6;
+  }
+  a {
+    text-decoration: none;
+    color: #a5a3a6;
+    &:hover {
+      color: #d2cdd4;
+    }
+    &:active {
+      color: #838185;
+    }
+  }
+}
+
+#settingPanel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  pointer-events:none;
+  opacity: 0;
+  transition: opacity 280ms cubic-bezier(.4,0,.2,1), transform 280ms cubic-bezier(.4,0,.2,1);
+  transform: scale(1.2);
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+
+  &.open {
+    pointer-events:auto;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .form {
+    flex: auto;
+  }
 }
