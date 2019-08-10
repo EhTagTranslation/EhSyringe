@@ -59,7 +59,7 @@ class Popup {
     ['prominent injection', 100],
     ['prominent injection', 5],
     ['prominent', 5],
-    ['', 5],
+    ['', 0],
   ];
 
   constructor () {
@@ -145,10 +145,15 @@ class Popup {
     if(data.run){
       className.push('prominent');
     }
+    this.info = data.info;
+    this.setProgress(data.progress || 0);
+    this.logoElement.className = className.join(' ');
+
     if (data.complete){
 
       await sleep(1000);
       className.push('injection');
+      this.setProgress(100);
       this.logoElement.className = className.join(' ');
 
       await sleep(500);
@@ -157,11 +162,7 @@ class Popup {
       await sleep(500);
       className.pop();
       this.logoElement.className = className.join(' ');
-
     }
-    this.info = data.info;
-    this.setProgress(data.progress || 0);
-    this.logoElement.className = className.join(' ');
   }
 
   setProgress(p: number) {
