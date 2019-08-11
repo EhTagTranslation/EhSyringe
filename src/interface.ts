@@ -22,7 +22,7 @@ export interface EHTDatabase {
 export interface EHTNamespace {
   namespace: string,
   count: number,
-  data: {[tag: string]: EHTTag},
+  data: { [tag: string]: EHTTag },
 }
 
 export interface EHTTag {
@@ -43,6 +43,6 @@ export interface TagItem {
 export type TagList = TagItem[];
 
 
-export interface SearchTagItem extends TagItem{
+export interface SearchTagItem extends TagItem {
   input: string,
 }

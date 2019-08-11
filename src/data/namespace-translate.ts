@@ -1,4 +1,4 @@
-export const namespaceTranslate : {[key: string]: string} = {
+export const namespaceTranslate: { [key: string]: string } = {
   artist: "艺术家",
   parody: "原作",
   character: "角色",
@@ -8,4 +8,4 @@ export const namespaceTranslate : {[key: string]: string} = {
   male: "男",
   reclass: "重新分类",
   misc: "杂项",
-}
+};

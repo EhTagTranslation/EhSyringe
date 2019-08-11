@@ -106,6 +106,9 @@ class Popup {
   @elementBinding('#sha', 'textContent')
   private sha = '';
 
+  @elementBinding('#sha', 'href')
+  private sharef = '';
+
   @elementBinding('#updateTime', 'textContent')
   private updateTime = '';
 
@@ -202,6 +205,7 @@ class Popup {
   getVersion() {
     chrome.storage.local.get((data) => {
       this.sha = data.sha ? data.sha.slice(0, 6) : 'N/A';
+      this.sharef = data.releaseLink || '';
       this.updateTime = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
       // updateTime.title = new Date(data.updateTime).toLocaleString();
     });

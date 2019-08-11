@@ -1,9 +1,14 @@
 import * as pako from "pako";
-import {EHTDatabase, TagItem, TagList} from "./interface";
+import { EHTDatabase, TagItem, TagList } from "./interface";
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
 import { mdImg2HtmlImg } from "./tool/tool";
 import { namespaceTranslate } from "./data/namespace-translate";
+
+interface ReleaseCheckData {
+  old: string;
+  new: string;
+}
 
 class background {
 
@@ -12,7 +17,7 @@ class background {
 
   badge = new BadgeLoading();
   lastCheck = 0;
-  lastCheckData: any;
+  lastCheckData: ReleaseCheckData;
   tagList: TagList = [];
   loadLock = false;
   downloadStatus = {};
@@ -24,28 +29,27 @@ class background {
     error: false,
   };
 
-
-  constructor(){
+  constructor() {
     if (chrome.contextMenus) this.initContextMenus();
     if (chrome.omnibox) this.initOmnibox();
     this.checkLocalData();
     this.initDownloadStatus();
     chromeMessage.listener('get-tag-data', this.getTagDataEvent.bind(this));
     chromeMessage.listener('check-version', (data, callback) => {
-      this.checkVersion().then(callback)
+      this.checkVersion().then(callback);
     });
   }
 
-  async getTagDataEvent(inputData: any, callback: () => void){
+  async getTagDataEvent(inputData: any, callback: () => void) {
     // 重置下载状态
     this.initDownloadStatus();
     try {
       const data = await this.download();
-      await this.storageTagData(data);
+      await this.storageTagData(data.db, data.release.html_url);
       callback();
-    }catch (err) {
+    } catch (err) {
       console.error(err);
-      this.pushDownloadStatus({run: false, error: true, info: (err && err.message) ? err.message : '更新失败'});
+      this.pushDownloadStatus({ run: false, error: true, info: (err && err.message) ? err.message : '更新失败' });
     }
   }
 
@@ -60,7 +64,7 @@ class background {
       ...this.downloadStatus,
       ...data,
     };
-    chrome.runtime.sendMessage({cmd: 'downloadStatus', data: this.downloadStatus});
+    chrome.runtime.sendMessage({ cmd: 'downloadStatus', data: this.downloadStatus });
   }
 
   async checkVersion() {
@@ -82,19 +86,19 @@ class background {
     }
     this.lastCheckData = {
       old: sha,
-      new: info.target_commitish,
+      new: info.target_commitish
     };
     return this.lastCheckData;
   }
 
-  download(): Promise<EHTDatabase> {
-    return new Promise<EHTDatabase>(async (resolve, reject) => {
+  download(): Promise<{ release: any, db: EHTDatabase }> {
+    return new Promise(async (resolve, reject) => {
       if (this.loadLock) {
         return false;
       }
       this.loadLock = true;
       this.badge.set('', "#4A90E2", 2);
-      this.pushDownloadStatus({run: true, info: '加载中'});
+      this.pushDownloadStatus({ run: true, info: '加载中' });
       const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
       const info = await (await fetch(githubDownloadUrl)).json();
       if (!(info && info.assets)) {
@@ -116,10 +120,10 @@ class background {
       xhr.onload = () => {
         this.loadLock = false;
         try {
-          const data = JSON.parse(pako.ungzip(xhr.response, { to: "string" }));
+          const data = JSON.parse(pako.ungzip(xhr.response, { to: 'string' })) as EHTDatabase;
           this.loadLock = false;
-          resolve(data as EHTDatabase);
-          this.pushDownloadStatus({info: '下载完成', progress: 100});
+          resolve({ release: info, db: data });
+          this.pushDownloadStatus({ info: '下载完成', progress: 100 });
           this.badge.set('100', "#4A90E2", 1);
         } catch (e) {
           reject(new Error('数据无法解析'));
@@ -134,17 +138,17 @@ class background {
       xhr.onprogress = (event) => {
         if (event.lengthComputable) {
           const percent = Math.round((event.loaded / event.total) * 100);
-          this.pushDownloadStatus({info: Math.floor(percent) + '%', progress: Math.floor(percent)});
+          this.pushDownloadStatus({ info: Math.floor(percent) + '%', progress: Math.floor(percent) });
           this.badge.set(percent.toFixed(0), "#4A90E2", 1);
         }
       };
       xhr.send();
-      this.pushDownloadStatus({info: '0%', progress: 0});
+      this.pushDownloadStatus({ info: '0%', progress: 0 });
       this.badge.set('0', "#4A90E2", 1);
-    })
+    });
   }
 
-  storageTagData(tagDB: EHTDatabase): Promise<any> {
+  storageTagData(tagDB: EHTDatabase, releasePageUrl: string): Promise<void> {
     return new Promise(resolve => {
       const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
       const tagReplaceData: { [key: string]: string } = {};
@@ -188,15 +192,16 @@ class background {
         tagList,
         tagReplaceData,
         updateTime: new Date().getTime(),
+        releaseLink: releasePageUrl,
         sha: tagDB.head.sha,
         dataStructureVersion: this.DATA_STRUCTURE_VERSION,
       }, () => {
         resolve();
         this.badge.set('OK', "#00C801");
-        this.pushDownloadStatus({run: true, info:'更新完成', progress: 100, complete: true});
+        this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
         setTimeout(() => {
           this.badge.set('', "#4A90E2");
-          this.pushDownloadStatus({run: false, info:'更新完成', progress: 0, complete: false});
+          this.pushDownloadStatus({ run: false, info: '更新完成', progress: 0, complete: false });
         }, 2500)
       });
       this.tagList = tagList;
@@ -235,18 +240,18 @@ class background {
             .filter((v: TagItem) => v.search.indexOf(text) !== -1 || v.name.indexOf(text) !== -1)
             .slice(0, 5)
             .map((tag: TagItem) => {
-            const cnNamespace = namespaceTranslate[tag.namespace];
-            let cnNameHtml = '';
-            let enNameHtml = tag.search;
-            if (tag.namespace !== 'misc') {
-              cnNameHtml += cnNamespace + ':';
-            }
-            cnNameHtml += tag.name;
-            return {
-              content: enNameHtml,
-              description: cnNameHtml,
-            }
-          });
+              const cnNamespace = namespaceTranslate[tag.namespace];
+              let cnNameHtml = '';
+              let enNameHtml = tag.search;
+              if (tag.namespace !== 'misc') {
+                cnNameHtml += cnNamespace + ':';
+              }
+              cnNameHtml += tag.name;
+              return {
+                content: enNameHtml,
+                description: cnNameHtml,
+              }
+            });
 
           suggest(data);
         }
@@ -260,7 +265,7 @@ class background {
       });
   }
 
-  checkLocalData(){
+  checkLocalData() {
     // 如果沒有數據自動加載本地數據
     chrome.storage.local.get((data) => {
       if ('tagList' in data) {
@@ -270,15 +275,15 @@ class background {
         const dbUrl = chrome.runtime.getURL('assets/tag.db');
         fetch(dbUrl).then(r => r.text()).then(text => {
           const data = JSON.parse(text);
-          this.storageTagData(data).then()
+          this.storageTagData(data, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json').then()
         })
-      } else if(
-        (data.dataStructureVersion != this.DATA_STRUCTURE_VERSION)
+      } else if (
+        (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION)
         &&
         ('tagDB' in data)
       ) {
         console.log('数据结构变化, 重新构建数据');
-        this.storageTagData(data.tagDB).then()
+        this.storageTagData(data.tagDB, data.releaseLink || 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json').then()
       }
     });
   }
