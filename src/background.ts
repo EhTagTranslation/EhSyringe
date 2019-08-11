@@ -8,6 +8,7 @@ import { namespaceTranslate } from "./data/namespace-translate";
 interface ReleaseCheckData {
   old: string;
   new: string;
+  newLink: string;
 }
 
 class background {
@@ -86,7 +87,8 @@ class background {
     }
     this.lastCheckData = {
       old: sha,
-      new: info.target_commitish
+      new: info.target_commitish,
+      newLink: info.html_url,
     };
     return this.lastCheckData;
   }
@@ -267,23 +269,23 @@ class background {
 
   checkLocalData() {
     // 如果沒有數據自動加載本地數據
-    chrome.storage.local.get((data) => {
+    chrome.storage.local.get(async (data) => {
       if ('tagList' in data) {
         this.tagList = data.tagList;
       }
       if (!('tagList' in data && 'tagReplaceData' in data)) {
         const dbUrl = chrome.runtime.getURL('assets/tag.db');
-        fetch(dbUrl).then(r => r.text()).then(text => {
-          const data = JSON.parse(text);
-          this.storageTagData(data, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json').then()
-        })
+        await fetch(dbUrl)
+          .then(r => r.text())
+          .then(t => JSON.parse(t))
+          .then(d => this.storageTagData(d, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json'));
       } else if (
         (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION)
         &&
         ('tagDB' in data)
       ) {
         console.log('数据结构变化, 重新构建数据');
-        this.storageTagData(data.tagDB, data.releaseLink || 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json').then()
+        await this.storageTagData(data.tagDB, data.releaseLink || 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json');
       }
     });
   }

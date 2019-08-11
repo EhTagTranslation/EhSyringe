@@ -1,6 +1,6 @@
 import './popup.less';
 import { chromeMessage } from '../tool/chrome-message';
-import {dateDiff} from "../tool/tool";
+import { dateDiff } from '../tool/tool';
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -14,8 +14,8 @@ function elementBinding<T = any>(selectors: string, attribute?: string) {
         return element ? element[attribute] : null;
       },
       set(v: T) {
-        if(!element) element = document.querySelector(selectors) as any;
-        if(element)element[attribute] = v;
+        if (!element) element = document.querySelector(selectors) as any;
+        if (element) element[attribute] = v;
       },
       enumerable: true
     })
@@ -27,9 +27,9 @@ function element(selectors: string) {
     let element = document.querySelector(selectors) as any;
     Object.defineProperty(target, name, {
       get() {
-        if(!element) element = document.querySelector(selectors) as any;
-        if(element)return element;
-      } ,
+        if (!element) element = document.querySelector(selectors) as any;
+        if (element) return element;
+      },
       enumerable: true
     })
   }
@@ -45,7 +45,7 @@ function elementListener(selectors: string, eventName: string) {
       set(v) {
         value = v;
         const element = document.querySelector(selectors) as HTMLElement;
-        if(element){
+        if (element) {
           element.addEventListener(eventName, value);
         }
       },
@@ -56,7 +56,7 @@ function elementListener(selectors: string, eventName: string) {
 
 class Popup {
   private testAnimationIndex: number = 0;
-  private testAnimationList : [string, number][] = [
+  private testAnimationList: [string, number][] = [
     ['prominent', 0],
     ['prominent', 10],
     ['prominent', 30],
@@ -68,7 +68,7 @@ class Popup {
     ['', 0],
   ];
 
-  constructor () {
+  constructor() {
 
     this.getVersion();
     this.checkVersion().then();
@@ -78,7 +78,7 @@ class Popup {
       this.extensionVersion = `V${data.version}`;
     });
     chrome.runtime.onMessage.addListener((request) => {
-      if('cmd' in request && request.cmd == 'downloadStatus'){
+      if ('cmd' in request && request.cmd == 'downloadStatus') {
         this.downloadStatus(request.data).then();
       }
     });
@@ -92,10 +92,10 @@ class Popup {
   private logoElement: HTMLElement;
 
   @element('#PushRod')
-  private PushRod:SVGGElement;
+  private PushRod: SVGGElement;
 
   @element('#Enema')
-  private Enema:SVGRectElement;
+  private Enema: SVGRectElement;
 
   @element('#settingPanel')
   private settingPanelElement: HTMLDivElement;
@@ -121,7 +121,7 @@ class Popup {
   @elementListener('#updateButton', 'click')
   private updateButtonClick = async () => {
     this.updateButtonElement.disabled = true;
-    await chromeMessage.send("get-tag-data", {});
+    await chromeMessage.send('get-tag-data', {});
     setTimeout(() => {
       this.updateButtonElement.disabled = false;
       this.getVersion();
@@ -139,7 +139,7 @@ class Popup {
   private logoClick = () => {
     const a = this.testAnimationList[this.testAnimationIndex];
     this.testAnimationIndex++;
-    if(!this.testAnimationList[this.testAnimationIndex]){
+    if (!this.testAnimationList[this.testAnimationIndex]) {
       this.testAnimationIndex = 0;
     }
     this.logoElement.className = 'logo ' + a[0];
@@ -150,14 +150,14 @@ class Popup {
   async downloadStatus(data: any) {
     let className = ['logo'];
     this.updateButtonElement.disabled = data.run;
-    if(data.run){
+    if (data.run) {
       className.push('prominent');
     }
     this.info = data.info;
     this.setProgress(data.progress || 0);
     this.logoElement.className = className.join(' ');
 
-    if (data.complete){
+    if (data.complete) {
 
       await sleep(1000);
       className.push('injection');
@@ -176,23 +176,24 @@ class Popup {
   setProgress(p: number) {
     const maxWidth = 70;
     this.PushRod.style.transform = `translate(${((p / 400) * maxWidth).toFixed(2)}px, 0)`;
-    this.Enema.style.transform = `scaleX(${p/100})`;
+    this.Enema.style.transform = `scaleX(${p / 100})`;
     // this.Enema.setAttribute('width',((p / 100) * maxWidth).toFixed(2));
   }
 
 
   async checkVersion() {
     this.checkVersionElement.textContent = '检查中...';
-    const data = await chromeMessage.send("check-version", {});
+    const data = await chromeMessage.send('check-version', {});
     console.log(data);
     if (data && data.new) {
       const hasNewData = data.new !== data.old;
-      this.checkVersionElement.textContent = hasNewData ? data.new.slice(0, 6) + ' 有更新!' : '已是最新版本';
       if (hasNewData) {
+        this.checkVersionElement.innerHTML = `<a href="${data.newLink}">${data.new.slice(0, 6)}</a> 有更新！`;
         this.checkVersionElement.classList.add('hasNew');
         this.updateButtonElement.classList.add('primary');
         this.updateButtonElement.textContent = '更新';
       } else {
+        this.checkVersionElement.textContent = '已是最新版本';
         this.checkVersionElement.classList.remove('hasNew');
         this.updateButtonElement.classList.remove('primary');
         this.updateButtonElement.textContent = '更新';
