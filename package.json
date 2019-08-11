@@ -48,5 +48,8 @@
     "webext-webpack-plugin": "0.0.8",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
