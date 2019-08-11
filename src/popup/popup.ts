@@ -173,7 +173,8 @@ class Popup {
   setProgress(p: number) {
     const maxWidth = 70;
     this.PushRod.style.transform = `translate(${((p / 400) * maxWidth).toFixed(2)}px, 0)`;
-    this.Enema.setAttribute('width',((p / 100) * maxWidth).toFixed(2));
+    this.Enema.style.transform = `scaleX(${p/100})`;
+    // this.Enema.setAttribute('width',((p / 100) * maxWidth).toFixed(2));
   }
 
   static dateDiff(hisTime: Date, nowTime?: Date) {
