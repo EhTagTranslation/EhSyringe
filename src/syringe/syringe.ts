@@ -19,7 +19,9 @@ const {tagReplace} = getTagData();
 let documentEnd = false;
 window.document.addEventListener('DOMContentLoaded', (e) => {
   documentEnd = true;
-  console.log('translateNode timer', timer + 'ms');
+  setTimeout(() => {
+    console.log('translateNode timer', timer + 'ms');
+  }, 2000)
 });
 let timer = 0;
 const observer = new MutationObserver(function (mutations) {
@@ -201,6 +203,17 @@ function translateNode(node: Node) {
         p.textContent = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片');
         p.className = 'gpc-translate';
         element.parentElement.insertBefore(p, element);
+      }
+    }
+
+    if (node.nodeName === 'DIV') {
+      const element = node as HTMLDivElement;
+      /* E-Hentai-Downloader 兼容处理 */
+      if (element.id === 'gdd') {
+        const div = document.createElement('div');
+        div.textContent = element.textContent;
+        div.style.display = 'none';
+        element.insertBefore(div, null)
       }
     }
 
