@@ -146,6 +146,7 @@ class Popup {
 
   async downloadStatus(data: any) {
     let className = ['logo'];
+    this.updateButtonElement.disabled = data.run;
     if(data.run){
       className.push('prominent');
     }

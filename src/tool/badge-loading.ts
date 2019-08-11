@@ -22,6 +22,7 @@ export class BadgeLoading {
   extname = 'EhSyringe';
 
   private setColor(color: string): void {
+    if(!color)color = "#4A90E2";
     if (this.color !== color) {
       this.color = color;
       if (chrome.browserAction.setBadgeBackgroundColor) {
