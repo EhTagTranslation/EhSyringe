@@ -7,13 +7,14 @@ function sleep(ms: number): Promise<void> {
 
 function elementBinding<T = any>(selectors: string, attribute?: string) {
   return function (target: any, name: any) {
-    const element = document.querySelector(selectors) as any;
+    let element = document.querySelector(selectors) as any;
     Object.defineProperty(target, name, {
       get() {
-        return element[attribute]
+        return element ? element[attribute] : null;
       },
       set(v: T) {
-        element[attribute] = v;
+        if(!element) element = document.querySelector(selectors) as any;
+        if(element)element[attribute] = v;
       },
       enumerable: true
     })
@@ -22,8 +23,12 @@ function elementBinding<T = any>(selectors: string, attribute?: string) {
 
 function element(selectors: string) {
   return function (target: any, name: any) {
+    let element = document.querySelector(selectors) as any;
     Object.defineProperty(target, name, {
-      value: document.querySelector(selectors),
+      get() {
+        if(!element) element = document.querySelector(selectors) as any;
+        if(element)return element;
+      } ,
       enumerable: true
     })
   }
@@ -232,4 +237,7 @@ class Popup {
 
 }
 
-new Popup();
+
+window.onload = () => {
+  new Popup()
+};
