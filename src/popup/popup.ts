@@ -117,10 +117,10 @@ class Popup {
 
   @elementListener('#updateButton', 'click')
   private updateButtonClick = async () => {
-    this.updateButtonDisabled = true;
+    this.updateButtonElement.disabled = true;
     await chromeMessage.send("get-tag-data", {});
     setTimeout(() => {
-      this.updateButtonDisabled = false;
+      this.updateButtonElement.disabled = false;
       this.getVersion();
       this.checkVersion().then();
     }, 1000)
@@ -143,8 +143,6 @@ class Popup {
     this.setProgress(a[1])
   };
 
-  @elementBinding('#info', 'disabled')
-  private updateButtonDisabled: boolean;
 
   async downloadStatus(data: any) {
     let className = ['logo'];

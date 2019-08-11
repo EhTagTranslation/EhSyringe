@@ -3,6 +3,8 @@ import './syringe.less';
 import { getTagData } from '../tool/tag-data';
 
 const {tagReplace} = getTagData();
+// const configStr = window.localStorage.getItem('syringe-config') || '{}';
+// const config = JSON.parse(configStr);
 
 (window as any).tagClear = () => {
   window.localStorage.removeItem('tag-list');
