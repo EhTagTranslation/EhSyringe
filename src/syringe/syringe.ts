@@ -150,16 +150,16 @@ function translateNode(node: Node) {
     // }
 
     let text = node.textContent;
-    text = text.replace(/(\d+) pages/, '$1 页');
+    text = text.replace(/(\d+) pages?/, '$1 页');
     text = text.replace(/Torrent Download \( (\d+) \)/, '种子下载（$1）');
     text = text.replace(/Average: ([\d\.]+)/, '平均值：$1');
-    text = text.replace(/Posted on (.*?) by:/, '评论时间：$1  作者：');
+    text = text.replace(/Posted on (.*?) by:\s*/, (_, t) => `评论时间：${new Date(t).toLocaleString()} \xA0作者：`);
     text = text.replace(/Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/, '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。');
     text = text.replace(/Showing ([\d,]+) results?/, '共 $1 个结果');
-    text = text.replace(/Rate as ([\d\.]+) stars/, '$1 星');
+    text = text.replace(/Rate as ([\d\.]+) stars?/, '$1 星');
     text = text.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
-    text = text.replace(/([\d,]+) \/ ([\d,]+) favorite note slots used./, '已经使用了 $1 个便签，共 $2 个。');
-    text = text.replace(/Showing results for ([\d,]+) watched tags/, '订阅的 $1 个标签的结果');
+    text = text.replace(/([\d,]+) \/ ([\d,]+) favorite note slots? used./, '已经使用了 $1 个便签，共 $2 个。');
+    text = text.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
     text = text.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
 
     if (node.textContent !== text) {
@@ -201,10 +201,10 @@ function translateNode(node: Node) {
       const element = node as HTMLParagraphElement;
       /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
       if (element.classList.contains('gpc')) {
-        let text = element.textContent;
+        const text = element.textContent;
         element.style.display = 'none';
         const p = document.createElement('p');
-        p.textContent = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '第 $1 - $2 共 $3 张图片');
+        p.textContent = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '$1 - $2，共 $3 张图片');
         p.className = 'gpc-translate';
         element.parentElement.insertBefore(p, element);
       }
