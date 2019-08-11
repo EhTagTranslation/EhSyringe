@@ -155,9 +155,10 @@ function translateNode(node: Node) {
     text = text.replace(/Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/, '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。');
     text = text.replace(/Showing ([\d,]+) results?/, '共 $1 个结果');
     text = text.replace(/Rate as ([\d\.]+) stars/, '$1 星');
-    text = text.replace(/([\d\.]+) torrent was found for this gallery./, '找到了 $1 个种子.');
-    text = text.replace(/([\d\.]+) \/ ([\d\.]+) favorite note slots used./, '已经使用了 $1 个便签，共 $2 个。');
-    text = text.replace(/Showing results for ([\d\.]+) watched tags/, '订阅的 $1 个标签的结果');
+    text = text.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
+    text = text.replace(/([\d,]+) \/ ([\d,]+) favorite note slots used./, '已经使用了 $1 个便签，共 $2 个。');
+    text = text.replace(/Showing results for ([\d,]+) watched tags/, '订阅的 $1 个标签的结果');
+    text = text.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
 
     if (node.textContent !== text) {
       node.textContent = text;
