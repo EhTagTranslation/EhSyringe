@@ -8,6 +8,7 @@
     "start": "webpack --mode=development --watch",
     "dev:chrome": "webpack --mode=development --watch",
     "dev:firefox": "webpack --mode=development --watch --firefox",
+    "dev:android": "webpack --mode=development --watch --android",
     "build": "webpack --mode=production",
     "web-ext": "web-ext",
     "update-db": "node ./tools/update-db.js"
@@ -47,8 +48,5 @@
     "webext-webpack-plugin": "0.0.8",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
-  },
-  "dependencies": {
-    "yargs": "^13.3.0"
   }
 }

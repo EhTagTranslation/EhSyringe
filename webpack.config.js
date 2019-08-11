@@ -2,10 +2,8 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
 const plugins = [];
-const argv = require('yargs').argv || {};
 
-
-if(argv.firefox){
+if(process.argv.indexOf('--firefox') > 0 || process.argv.indexOf('--android') > 0){
     const webextRunParams = (process.argv.indexOf('--android') > 0) ? ({
         browserConsole: false,
         target: 'firefox-android',
