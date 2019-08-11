@@ -23,6 +23,20 @@ E站注射器，将中文翻译注入到E站体内。
 ## 特点
 * 在加载DOM过程替换翻译, 页面加载完直接是中文不会闪烁
 
+## 更新日志
+
+### 1.1.2
+* 增加更新进度条和动画效果
+* 修复与熊猫书签的兼容问题
+* 修复与E-Hentai-Downloader的兼容问题
+* 优化翻译替换逻辑
+* 增加了几条ui翻译
+
+### 1.1.1
+* 修复Android无法更新的问题
+
+### 1.1.0
+* 第一个正式版本
 
 ## 截图预览
 
@@ -30,4 +44,4 @@ E站注射器，将中文翻译注入到E站体内。
 | :---: | :---: |
 | ![image](https://user-images.githubusercontent.com/5716100/62420218-3c697b80-b6c1-11e9-884e-5aa22bc60619.png) | ![image](https://user-images.githubusercontent.com/5716100/62420220-43908980-b6c1-11e9-89f5-7b78e38cbf35.png) |
 | **搜索提示/补全** | **标签数据更新**  |
-| ![GIF](https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif) | ![GIF244](https://user-images.githubusercontent.com/5716100/62708309-b84b2700-ba25-11e9-9302-b26d18b2ea99.gif) |
+| ![GIF](https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif) | ![进度](https://user-images.githubusercontent.com/5716100/62783460-10019500-baef-11e9-8368-a48fa40dc47d.gif) |
