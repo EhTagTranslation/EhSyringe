@@ -65,13 +65,14 @@ class background {
     chrome.runtime.sendMessage({ cmd: 'downloadStatus', data: this.downloadStatus });
   }
 
-  async checkVersion() {
+  async checkVersion(): Promise<ReleaseCheckData> {
     const time = new Date().getTime();
     // 限制每分钟最多请求1次
     const { sha } = await new Promise((resolve) => chrome.storage.local.get(resolve));
     if ((time - this.lastCheck <= 1000 * 60) && this.lastCheckData) {
       return {
-        new: (this.lastCheckData && this.lastCheckData.new) ? this.lastCheckData.new : '',
+        new: (this.lastCheckData && this.lastCheckData.new) || '',
+        newLink: (this.lastCheckData && this.lastCheckData.newLink) || '',
         old: sha,
       };
     }

@@ -5,7 +5,15 @@ class ChromeMessage {
       chrome.runtime.sendMessage({
         query,
         data,
-      }, response => chrome.runtime.lastError ? reject(chrome.runtime.lastError) : resolve(response));
+      }, response => {
+        if (!response) {
+          reject(chrome.runtime.lastError);
+        } else if (response.error) {
+          reject(response.error);
+        } else {
+          resolve(response.data);
+        }
+      });
     });
   }
 
@@ -15,7 +23,7 @@ class ChromeMessage {
         return;
       }
       const promise = handler(request.data);
-      Promise.resolve(promise).then(data => sendResponse(data));
+      Promise.resolve(promise).then(data => sendResponse({ data })).catch(error => sendResponse({ error }));
       return true;
     });
   }
