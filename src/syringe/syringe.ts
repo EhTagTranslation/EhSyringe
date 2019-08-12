@@ -219,6 +219,22 @@ function translateNode(node: Node) {
         div.style.display = 'none';
         element.insertBefore(div, null)
       }
+
+      /* 熊猫书签 兼容处理 */
+      if(
+        element.parentElement &&
+        element.parentElement.id === 'gdo4' &&
+        element.classList.contains('ths') &&
+        element.classList.contains('nosel')
+      ){
+        console.log('ths nosel', element);
+        const div = document.createElement('div');
+        div.textContent = element.textContent;
+        div.style.display = 'none';
+        div.className = 'ths';
+        element.parentElement.insertBefore(div, element)
+      }
+
     }
 
   }
