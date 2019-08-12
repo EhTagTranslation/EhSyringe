@@ -133,9 +133,16 @@ class Popup {
       this.testAnimationIndex = 0;
     }
     this.logoElement.className = 'logo ' + a[0];
-    this.setProgress(a[1])
-  };
+    this.setProgress(a[1]);
+  }
 
+  @elementListener('body', 'click')
+  private click = (e: MouseEvent) => {
+    if (e.target instanceof HTMLAnchorElement && e.target.href !== undefined) {
+      chrome.tabs.create({ url: e.target.href });
+      e.preventDefault();
+    }
+  }
 
   async downloadStatus(data: any) {
     let className = ['logo'];

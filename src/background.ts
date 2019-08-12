@@ -1,14 +1,22 @@
-import * as pako from "pako";
-import { EHTDatabase, TagItem, TagList } from "./interface";
+import * as pako from 'pako';
+import { namespaceTranslate } from './data/namespace-translate';
+import { EHTDatabase, TagItem, TagList } from './interface';
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
-import { mdImg2HtmlImg } from "./tool/tool";
-import { namespaceTranslate } from "./data/namespace-translate";
+import { mdImg2HtmlImg } from './tool/tool';
 
 interface ReleaseCheckData {
   old: string;
   new: string;
   newLink: string;
+}
+
+interface DownloadStatus {
+  run: boolean;
+  progress: number;
+  info: string;
+  complete: boolean;
+  error: boolean;
 }
 
 class background {
@@ -21,25 +29,25 @@ class background {
   lastCheckData: ReleaseCheckData;
   tagList: TagList = [];
   loadLock = false;
-  downloadStatus = {};
-  downloadStatusDefault = {
+  readonly downloadStatusDefault: DownloadStatus = {
     run: false,
     progress: 0,
     info: '',
     complete: false,
     error: false,
   };
+  downloadStatus: DownloadStatus;
 
   constructor() {
+    this.initDownloadStatus();
     if (chrome.contextMenus) this.initContextMenus();
     if (chrome.omnibox) this.initOmnibox();
     this.checkLocalData();
-    this.initDownloadStatus();
-    chromeMessage.listener('get-tag-data', data => this.getTagDataEvent(data));
-    chromeMessage.listener('check-version', data => this.checkVersion().then());
+    chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
+    chromeMessage.listener('check-version', _ => this.checkVersion().then());
   }
 
-  async getTagDataEvent(inputData: any) {
+  async getTagDataEvent() {
     // 重置下载状态
     this.initDownloadStatus();
     try {
@@ -54,10 +62,10 @@ class background {
   initDownloadStatus() {
     this.downloadStatus = {
       ...this.downloadStatusDefault
-    }
+    };
   }
 
-  pushDownloadStatus(data: any = {}) {
+  pushDownloadStatus(data: Partial<DownloadStatus> = {}) {
     this.downloadStatus = {
       ...this.downloadStatus,
       ...data,
@@ -97,7 +105,7 @@ class background {
         return false;
       }
       this.loadLock = true;
-      this.badge.set('', "#4A90E2", 2);
+      this.badge.set('', '#4A90E2', 2);
       this.pushDownloadStatus({ run: true, info: '加载中' });
       const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
       const info = await (await fetch(githubDownloadUrl)).json();
@@ -116,7 +124,7 @@ class background {
 
       const xhr = new XMLHttpRequest();
       xhr.open('GET', url);
-      xhr.responseType = "arraybuffer";
+      xhr.responseType = 'arraybuffer';
       xhr.onload = () => {
         this.loadLock = false;
         try {
@@ -124,27 +132,27 @@ class background {
           this.loadLock = false;
           resolve({ release: info, db: data });
           this.pushDownloadStatus({ info: '下载完成', progress: 100 });
-          this.badge.set('100', "#4A90E2", 1);
+          this.badge.set('100', '#4A90E2', 1);
         } catch (e) {
           reject(new Error('数据无法解析'));
-          this.badge.set('Err', "#C80000");
+          this.badge.set('Err', '#C80000');
         }
       };
       xhr.onerror = (e) => {
         this.loadLock = false;
-        this.badge.set('ERR', "#C80000");
+        this.badge.set('ERR', '#C80000');
         reject(e);
       };
       xhr.onprogress = (event) => {
         if (event.lengthComputable) {
           const percent = Math.round((event.loaded / event.total) * 100);
           this.pushDownloadStatus({ info: Math.floor(percent) + '%', progress: Math.floor(percent) });
-          this.badge.set(percent.toFixed(0), "#4A90E2", 1);
+          this.badge.set(percent.toFixed(0), '#4A90E2', 1);
         }
       };
       xhr.send();
       this.pushDownloadStatus({ info: '0%', progress: 0 });
-      this.badge.set('0', "#4A90E2", 1);
+      this.badge.set('0', '#4A90E2', 1);
     });
   }
 
@@ -159,7 +167,7 @@ class background {
       tagDB.data.forEach(space => {
         const namespace = space.namespace;
         if (namespace === 'rows') return;
-        for (let key in space.data) {
+        for (const key in space.data) {
           const t = space.data[key];
           let search = ``;
           if (namespace !== 'misc') {
@@ -174,7 +182,7 @@ class background {
           const name = mdImg2HtmlImg(t.name, 1);
           tagList.push({
             ...t,
-            name: name,
+            name,
             intro: mdImg2HtmlImg(t.intro, 3),
             key,
             namespace,
@@ -197,39 +205,39 @@ class background {
         dataStructureVersion: this.DATA_STRUCTURE_VERSION,
       }, () => {
         resolve();
-        this.badge.set('OK', "#00C801");
+        this.badge.set('OK', '#00C801');
         this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
         setTimeout(() => {
-          this.badge.set('', "#4A90E2");
+          this.badge.set('', '#4A90E2');
           this.pushDownloadStatus({ run: false, info: '更新完成', progress: 0, complete: false });
-        }, 2500)
+        }, 2500);
       });
       this.tagList = tagList;
-    })
+    });
   }
 
   initContextMenus() {
     chrome.contextMenus.create(
       {
-        documentUrlPatterns: ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
+        documentUrlPatterns: ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'],
         title: '提交标签翻译',
-        targetUrlPatterns: ["*://exhentai.org/tag/*", "*://e-hentai.org/tag/*", "*://*.exhentai.org/tag/*", "*://*.e-hentai.org/tag/*"],
+        targetUrlPatterns: ['*://exhentai.org/tag/*', '*://e-hentai.org/tag/*', '*://*.exhentai.org/tag/*', '*://*.e-hentai.org/tag/*'],
         contexts: ['link'],
         onclick(info) {
           if (/\/tag\//.test(info.linkUrl)) {
             const s = info.linkUrl.replace('+', ' ').split('/');
             const s2 = s[s.length - 1].split(':');
-            const namespace = s2.length == 1 ? 'misc' : s2[0];
-            const tag = s2.length == 1 ? s2[0] : s2[1];
-            const editorUlr = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
+            const namespace = s2.length === 1 ? 'misc' : s2[0];
+            const tag = s2.length === 1 ? s2[0] : s2[1];
+            const editorUrl = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
             chrome.tabs.create({
-              url: editorUlr,
-            })
+              url: editorUrl,
+            });
           }
         }
       }, () => {
       }
-    )
+    );
   }
 
   initOmnibox() {
@@ -242,7 +250,7 @@ class background {
             .map((tag: TagItem) => {
               const cnNamespace = namespaceTranslate[tag.namespace];
               let cnNameHtml = '';
-              let enNameHtml = tag.search;
+              const enNameHtml = tag.search;
               if (tag.namespace !== 'misc') {
                 cnNameHtml += cnNamespace + ':';
               }
@@ -250,7 +258,7 @@ class background {
               return {
                 content: enNameHtml,
                 description: cnNameHtml,
-              }
+              };
             });
 
           suggest(data);
