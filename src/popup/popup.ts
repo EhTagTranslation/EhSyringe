@@ -77,12 +77,7 @@ class Popup {
       document.title = data.name;
       this.extensionVersion = `V${data.version}`;
     });
-    chrome.runtime.onMessage.addListener((request) => {
-      if ('cmd' in request && request.cmd == 'downloadStatus') {
-        this.downloadStatus(request.data).then();
-      }
-    });
-
+    chromeMessage.listener('downloadStatus', data => this.downloadStatus(data));
   }
 
   @element('#checkVersion')

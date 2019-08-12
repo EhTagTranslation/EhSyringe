@@ -62,7 +62,7 @@ class background {
       ...this.downloadStatus,
       ...data,
     };
-    chrome.runtime.sendMessage({ cmd: 'downloadStatus', data: this.downloadStatus });
+    chromeMessage.send('downloadStatus', this.downloadStatus);
   }
 
   async checkVersion(): Promise<ReleaseCheckData> {
