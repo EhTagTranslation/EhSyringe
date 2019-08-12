@@ -33,7 +33,7 @@ if (taglist) {
       const m2 = m[1].split(':');
       let namespace = 'misc';
       let tag = '';
-      if (m2.length == 1) {
+      if (m2.length === 1) {
         tag = m2[0];
       } else {
         namespace = m2.shift();

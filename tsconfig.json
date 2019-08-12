@@ -12,13 +12,14 @@
     "types"
   ],
   "compilerOptions": {
-      "outDir": "./dist/",
-      "sourceMap": true,
-      "noImplicitAny": true,
-      "module": "commonjs",
-      "target": "es6",
-      "jsx": "react",
-      "allowJs": true,
-      "experimentalDecorators": true
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "allowJs": true,
+    "experimentalDecorators": true
   }
 }

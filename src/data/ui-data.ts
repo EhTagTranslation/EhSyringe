@@ -97,9 +97,16 @@ export const uiData: { [key: string]: string } = {
   'Enter new tags, separated with comma': '输入新标签, 用逗号分隔',
   'Search Keywords': '搜索关键词',
 
+  'Enter a single tag to flag, watch or hide': '输入一个标签，来标记、关注或隐藏',
   ' Watched': ' 关注',
   ' Hidden': ' 隐藏',
   ' Enable': '启用',
+  'Action:': '操作：',
+  'Save': '保存',
+  '#default': '#默认',
+  'Select All': '全选',
+  'Delete Selected': '删除选中项',
+  'Confirm Delete': '确认删除',
 
   'Selected Profile:': '当前配置：',
   'Image Load Settings': '图片加载设置',
@@ -580,6 +587,7 @@ export const uiData: { [key: string]: string } = {
   ' Thumbnail': ' 缩略图',
 
   'Rename': '重命名',
+  'Create New': '新建',
   'Description': '描述',
   'Obtained': '已获得',
   'Purchase': '购买',

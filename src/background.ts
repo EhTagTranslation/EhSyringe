@@ -1,8 +1,11 @@
-import * as pako from 'pako';
+import pako from 'pako';
 import { namespaceTranslate } from './data/namespace-translate';
 import { EHTDatabase, TagItem, TagList } from './interface';
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
+import emojiRegex from 'emoji-regex';
+
+const emojiReg = emojiRegex();
 
 interface ReleaseCheckData {
   old: string;
@@ -178,7 +181,7 @@ class background {
             search += key + '$';
           }
 
-          t.name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
+          t.name = t.name.replace(/^<p>(.+)<\/p>$/, '$1').replace(emojiReg, '<span class="ehs-emoji">$&</span>');
 
           tagList.push({
             ...t,
