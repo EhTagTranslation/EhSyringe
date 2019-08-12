@@ -205,7 +205,7 @@ class Popup {
   }
 
   getVersion() {
-    chrome.storage.local.get((data) => {
+    chrome.storage.local.get(['sha', 'updateTime'],(data) => {
       this.sha = data.sha ? data.sha.slice(0, 6) : 'N/A';
       this.sharef = data.releaseLink || '';
       this.updateTime = data.updateTime ? dateDiff(data.updateTime) : 'N/A';

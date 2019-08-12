@@ -3,7 +3,7 @@ import { chromeMessage } from './chrome-message';
 
 interface TagData { tagList: TagItem[]; tagReplace: { [key: string]: string }; }
 
-export function getTagData(): TagData | undefined {
+export function getTagData(): TagData {
     if ((window as any).tagListStorage && (window as any).tagReplaceDataStorage) {
         return {
             tagList: (window as any).tagListStorage,
