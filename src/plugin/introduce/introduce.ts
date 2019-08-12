@@ -42,7 +42,6 @@ if (taglist) {
       const tagData = tagList.find(v => v.namespace === namespace && v.key === tag);
 
       if (tagData) {
-        const links = mdLinks(tagData.links);
         // language=HTML
         introduceBox.innerHTML = `
         <div class="ehs-title">
@@ -57,7 +56,7 @@ if (taglist) {
             <div class="ehs-no-intro">无介绍</div>
             `}
         </div>
-        <div class="ehs-href">${links.map(link => `<a href="${link.href}" target="_blank">${link.title}</a>`).join()}</div>
+        <div class="ehs-href">${tagData.links}</div>
         `;
       } else {
         const editorUlr = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
@@ -83,16 +82,4 @@ if (taglist) {
       }
     }
   });
-}
-
-function mdLinks(mdText: string): { title: string, href: string }[] {
-  var links: { title: string, href: string }[] = [];
-  mdText.replace(/\[(.*?)\]\((.*?)\)/igm, function (text, alt, href, index) {
-    links.push({
-      title: alt,
-      href: href,
-    });
-    return text;
-  });
-  return links
 }

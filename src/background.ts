@@ -3,7 +3,6 @@ import { namespaceTranslate } from './data/namespace-translate';
 import { EHTDatabase, TagItem, TagList } from './interface';
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
-import { mdImg2HtmlImg } from './tool/tool';
 
 interface ReleaseCheckData {
   old: string;
@@ -22,7 +21,7 @@ interface DownloadStatus {
 class background {
 
   /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
-  DATA_STRUCTURE_VERSION = 1;
+  DATA_STRUCTURE_VERSION = 2;
 
   badge = new BadgeLoading();
   lastCheck = 0;
@@ -114,7 +113,7 @@ class background {
         this.loadLock = false;
         return;
       }
-      const asset = info.assets.find((i: any) => i.name === 'db.raw.json.gz');
+      const asset = info.assets.find((i: any) => i.name === 'db.html.json.gz');
       const url = asset && asset.browser_download_url || '';
       if (!url) {
         reject(new Error('无法获取下载地址'));
@@ -179,19 +178,18 @@ class background {
             search += key + '$';
           }
 
-          const name = mdImg2HtmlImg(t.name, 1);
+          t.name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
+
           tagList.push({
             ...t,
-            name,
-            intro: mdImg2HtmlImg(t.intro, 3),
             key,
             namespace,
             search,
           });
 
-          tagReplaceData[namespace + ':' + key] = name;
+          tagReplaceData[`${namespace}:${key}`] = t.name;
           if (namespace === 'misc') {
-            tagReplaceData[key] = name;
+            tagReplaceData[key] = t.name;
           }
         }
       });
@@ -273,6 +271,14 @@ class background {
       });
   }
 
+  loadPackedData() {
+    const dbUrl = chrome.runtime.getURL('assets/tag.db');
+    return fetch(dbUrl)
+      .then(r => r.text())
+      .then(t => JSON.parse(t))
+      .then(d => this.storageTagData(d, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json'));
+  }
+
   checkLocalData() {
     // 如果沒有數據自動加載本地數據
     chrome.storage.local.get(async (data) => {
@@ -280,18 +286,10 @@ class background {
         this.tagList = data.tagList;
       }
       if (!('tagList' in data && 'tagReplaceData' in data)) {
-        const dbUrl = chrome.runtime.getURL('assets/tag.db');
-        await fetch(dbUrl)
-          .then(r => r.text())
-          .then(t => JSON.parse(t))
-          .then(d => this.storageTagData(d, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json'));
-      } else if (
-        (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION)
-        &&
-        ('tagDB' in data)
-      ) {
+        await this.loadPackedData();
+      } else if (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION) {
         console.log('数据结构变化, 重新构建数据');
-        await this.storageTagData(data.tagDB, data.releaseLink || 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json');
+        await this.loadPackedData();
       }
     });
   }
