@@ -5,6 +5,8 @@ import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
 import emojiRegex from 'emoji-regex';
 
+const emojiReg = emojiRegex();
+
 interface ReleaseCheckData {
   old: string;
   new: string;
@@ -179,7 +181,7 @@ class background {
             search += key + '$';
           }
 
-          t.name = t.name.replace(/^<p>(.+)<\/p>$/, '$1').replace(emojiRegex(), '<span class="ehs-emoji">$&</span>');
+          t.name = t.name.replace(/^<p>(.+)<\/p>$/, '$1').replace(emojiReg, '<span class="ehs-emoji">$&</span>');
 
           tagList.push({
             ...t,
