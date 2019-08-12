@@ -122,12 +122,7 @@ class Popup {
   private updateButtonClick = async () => {
     this.updateButtonElement.disabled = true;
     await chromeMessage.send('get-tag-data', {});
-    setTimeout(() => {
-      this.updateButtonElement.disabled = false;
-      this.getVersion();
-      this.checkVersion().then();
-    }, 1000)
-  };
+  }
 
   @elementListener('#settingSwitch', 'click')
   private settingSwitchClick = () => {
@@ -170,6 +165,10 @@ class Popup {
       await sleep(500);
       className.pop();
       this.logoElement.className = className.join(' ');
+
+      this.updateButtonElement.disabled = false;
+      this.getVersion();
+      await this.checkVersion();
     }
   }
 
@@ -183,7 +182,7 @@ class Popup {
 
   async checkVersion() {
     this.checkVersionElement.textContent = '检查中...';
-    const data = await chromeMessage.send('check-version', {});
+    const data = await chromeMessage.send<{}, any>('check-version', {});
     console.log(data);
     if (data && data.new) {
       const hasNewData = data.new !== data.old;

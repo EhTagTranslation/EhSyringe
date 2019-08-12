@@ -1,45 +1,24 @@
 class ChromeMessage {
 
-  callbackMap: {[key: string]: (data: any) => any} = {};
-
-  constructor(){
-    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-      if('callback' in request){
-        const key = request.callback;
-        if(this.callbackMap[key]){
-          this.callbackMap[key](request.data)
-        }
-      }
-    })
-  }
-
-  send(query: string, data?: any, callback?: (data: any) => any ): Promise<any>{
-    return new Promise(resolve => {
-      const key = `${new Date().getTime()}${Math.floor(Math.random() * 10000)}`;
+  send<T, U>(query: string, data?: T): Promise<U> {
+    return new Promise((resolve, reject) => {
       chrome.runtime.sendMessage({
         query,
         data,
-        callbackKey: key,
-      });
-      if(callback) {
-        this.callbackMap[key] = callback;
-      }else {
-        this.callbackMap[key] = resolve;
-      }
-    })
+      }, response => chrome.runtime.lastError ? reject(chrome.runtime.lastError) : resolve(response));
+    });
   }
 
-  listener(query: string, handle: (data: any, callback: (data?: any) => any) => any){
-    chrome.runtime.onMessage.addListener((request) => {
-      if('query' in request && request.query === query){
-        handle(request.data, (value) => {
-          if(request.callbackKey){
-            chrome.runtime.sendMessage({callback: request.callbackKey, data: value});
-          }
-        })
+  listener<T, U>(query: string, handler: (data: T) => U | Promise<U>): void {
+    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+      if (!('query' in request) || request.query !== query) {
+        return;
       }
-    })
+      const promise = handler(request.data);
+      Promise.resolve(promise).then(data => sendResponse(data));
+      return true;
+    });
   }
-
 }
+
 export const chromeMessage = new ChromeMessage();

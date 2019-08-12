@@ -35,19 +35,16 @@ class background {
     if (chrome.omnibox) this.initOmnibox();
     this.checkLocalData();
     this.initDownloadStatus();
-    chromeMessage.listener('get-tag-data', this.getTagDataEvent.bind(this));
-    chromeMessage.listener('check-version', (data, callback) => {
-      this.checkVersion().then(callback);
-    });
+    chromeMessage.listener('get-tag-data', data => this.getTagDataEvent(data));
+    chromeMessage.listener('check-version', data => this.checkVersion().then());
   }
 
-  async getTagDataEvent(inputData: any, callback: () => void) {
+  async getTagDataEvent(inputData: any) {
     // 重置下载状态
     this.initDownloadStatus();
     try {
       const data = await this.download();
       await this.storageTagData(data.db, data.release.html_url);
-      callback();
     } catch (err) {
       console.error(err);
       this.pushDownloadStatus({ run: false, error: true, info: (err && err.message) ? err.message : '更新失败' });
