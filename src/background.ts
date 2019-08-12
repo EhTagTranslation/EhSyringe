@@ -62,7 +62,7 @@ class background {
       ...this.downloadStatus,
       ...data,
     };
-    chromeMessage.send('downloadStatus', this.downloadStatus);
+    chromeMessage.broadcast('downloadStatus', this.downloadStatus);
   }
 
   async checkVersion(): Promise<ReleaseCheckData> {

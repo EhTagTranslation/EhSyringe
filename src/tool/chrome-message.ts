@@ -17,6 +17,19 @@ class ChromeMessage {
     });
   }
 
+  broadcast<T>(query: string, data?: T): void {
+    chrome.runtime.sendMessage({
+      query,
+      data,
+    }, response => {
+      // check last error
+      const _ = chrome.runtime.lastError;
+      if (response && response.error) {
+        throw response.error;
+      }
+    });
+  }
+
   listener<T, U>(query: string, handler: (data: T) => U | Promise<U>): void {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if (!('query' in request) || request.query !== query) {
