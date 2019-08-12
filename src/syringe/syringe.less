@@ -2,7 +2,7 @@ td.tc {
   white-space: nowrap;
 }
 
-div.gt, div.gtl {
+div.gt, div.gtl, div.gtw {
   height: 16px;
   line-height: 16px;
   white-space: nowrap;
@@ -98,4 +98,32 @@ body {
   }
 }
 
-
+body.ehs-hide-icon {
+  .ehs-emoji {display: none;}
+  .gt, .gtl, .gtw {
+    img { display: none; }
+  }
+  .auto-complete-item {
+    img { display: none; }
+  }
+}
+//0:hide, 1:non-h 2: R18 3: R18G
+/* nsfw="R18" */
+body.ehs-image-level-0 {
+  #ehs-introduce-box .ehs-content{
+    img { display: none; }
+  }
+}
+body.ehs-image-level-1 {
+  img[nsfw]{
+    display: none;
+  }
+}
+body.ehs-image-level-2 {
+  img[nsfw="R18G"]{
+    display: none;
+  }
+}
+body.ehs-image-level-3 {
+  // 所有都显示
+}

@@ -1,5 +1,4 @@
-import { EHTDatabase, TagItem, TagList } from '../interface';
-import { chromeMessage } from './chrome-message';
+import { TagItem } from '../interface';
 
 interface TagData { tagList: TagItem[]; tagReplace: { [key: string]: string }; }
 

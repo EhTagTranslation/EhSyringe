@@ -1,11 +1,12 @@
 
 interface ConfigData {
   translateUI: boolean;
-  translateTAG: boolean;
+  translateTag: boolean;
   showIntroduce: boolean;
   showIcon: boolean;
   introduceImageLevel: number; // 0:hide, 1:non-h 2: R18 3: R18G
   autoUpdate: boolean;
+  tagTip: boolean;
 }
 
 class ConfigManage {
@@ -13,11 +14,12 @@ class ConfigManage {
 
   DefaultValue: ConfigData = {
     translateUI: true,
-    translateTAG: true,
+    translateTag: true,
     showIntroduce: true,
     showIcon: true,
     introduceImageLevel: 3,
     autoUpdate: true,
+    tagTip: true,
   };
 
   syncGet(): ConfigData {

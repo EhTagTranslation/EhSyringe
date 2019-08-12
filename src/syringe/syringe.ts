@@ -6,7 +6,13 @@ Config.synchro();
 const config = Config.syncGet();
 console.log('config', config);
 
-// config.translateUI = false;
+/*
+config.translateTag = false;
+config.translateUI = false;
+config.showIcon = false;
+config.introduceImageLevel = 1;
+*/
+
 
 (window as any).tagClear = () => {
   window.localStorage.removeItem('tag-list');
@@ -64,11 +70,17 @@ class Syringe {
     ) { return; }
 
     if (node.nodeName === 'BODY') {
-      (node as HTMLElement).classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
+      const body = (node as HTMLBodyElement);
+      body.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
+
+      if(!config.showIcon){ body.classList.add('ehs-hide-icon') }
+
+      body.classList.add(`ehs-image-level-${config.introduceImageLevel}`);
+
     }
 
     let handled = false;
-    if (config.translateTAG){
+    if (config.translateTag){
       handled = this.translateTag(node);
     }
 
@@ -250,7 +262,7 @@ class Syringe {
 
 
 
-if(config.translateTAG || config.translateUI){
+if(config.translateTag || config.translateUI){
   new Syringe();
 }
 

@@ -1,9 +1,10 @@
 import { fromEvent } from 'rxjs';
-import { distinctUntilChanged, filter, map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { namespaceTranslate } from '../../data/namespace-translate';
 import { SearchTagItem } from '../../interface';
 import { getTagData } from '../../tool/tag-data';
 import './tag-tip.less';
+import {Config} from "../../tool/config-manage";
 const { tagList } = getTagData();
 
 class TagTip {
@@ -154,17 +155,10 @@ class TagTip {
   }
 }
 
-const FSearchInput: HTMLInputElement = document.querySelector('#f_search');
-if (FSearchInput) {
+(async () => {
+  const config = await Config.get();
+  if(!config.tagTip)return;
+  const FSearchInput: HTMLInputElement = document.querySelector('#f_search');
+  if(!FSearchInput)return;
   new TagTip(FSearchInput);
-}
-
-// const gj = document.querySelector('#gj');
-// if (gj) {
-//   let  title = gj.textContent;
-//   title = title.replace(/\[.*?\]/igm, '');
-//   title = title.replace(/\(C[0-9]+\)/igm, '');
-//   console.log('title', title);
-
-// }
-
+})();

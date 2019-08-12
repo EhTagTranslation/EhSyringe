@@ -1,16 +1,22 @@
 import './introduce.less';
 import {getTagData} from '../../tool/tag-data';
+import {Config} from "../../tool/config-manage";
 
-const {tagList} = getTagData();
 
-const taglist = document.querySelector('#taglist');
-const gright = document.querySelector('#gright');
-const introduceBox = document.createElement('div');
-introduceBox.id = 'ehs-introduce-box';
-if (gright) {
+(async () => {
+  const config = await Config.get();
+  if(!config.showIntroduce) return;
+
+
+  const {tagList} = getTagData();
+  const taglist = document.querySelector('#taglist');
+  const gright = document.querySelector('#gright');
+
+  if(!(taglist && gright)) return;
+
+  const introduceBox = document.createElement('div');
+  introduceBox.id = 'ehs-introduce-box';
   gright.insertBefore(introduceBox, null);
-}
-if (taglist) {
   taglist.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
     if (
@@ -39,7 +45,9 @@ if (taglist) {
         namespace = m2.shift();
         tag = m2.join(':');
       }
+      console.time('tagList find');
       const tagData = tagList.find(v => v.namespace === namespace && v.key === tag);
+      console.timeEnd('tagList find');
 
       if (tagData) {
         // language=HTML
@@ -82,4 +90,5 @@ if (taglist) {
       }
     }
   });
-}
+
+})()
