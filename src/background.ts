@@ -4,6 +4,7 @@ import {DownloadStatus, EHTDatabase, ReleaseCheckData, TagItem, TagList} from '.
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
 import emojiRegex from 'emoji-regex';
+import {trim} from "./tool/tool";
 
 const emojiReg = emojiRegex();
 
@@ -167,7 +168,10 @@ class background {
             search += key + '$';
           }
 
-          t.name = t.name.replace(/^<p>(.+)<\/p>$/, '$1').replace(emojiReg, '<span class="ehs-emoji">$&</span>');
+          const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
+
+          /*tagList 使用干净的名字*/
+          t.name = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''));
 
           tagList.push({
             ...t,
@@ -178,7 +182,7 @@ class background {
 
           tagReplaceData[`${namespace}:${key}`] = t.name;
           if (namespace === 'misc') {
-            tagReplaceData[key] = t.name;
+            tagReplaceData[key] = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
           }
         }
       });

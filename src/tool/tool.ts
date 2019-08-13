@@ -28,3 +28,7 @@ export function dateDiff(hisTime: Date, nowTime?: Date): string {
     else result = '刚刚';
     return result;
 }
+
+export function trim(str: string) {
+    return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+}
