@@ -177,20 +177,20 @@ class background {
           }
 
           const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
-
-          /*tagList 使用干净的名字*/
-          t.name = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''));
+          const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''))
+          const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
 
           tagList.push({
             ...t,
+            name: cleanName,
             key,
             namespace,
             search,
           });
 
-          tagReplaceData[`${namespace}:${key}`] = t.name;
+          tagReplaceData[`${namespace}:${key}`] = dirtyName;
           if (namespace === 'misc') {
-            tagReplaceData[key] = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
+            tagReplaceData[key] = dirtyName;
           }
         }
       });
