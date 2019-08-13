@@ -31,12 +31,15 @@
     "crx-reload-webpack-plugin": "^1.0.3",
     "css-loader": "^3.0.0",
     "cssnano": "^4.1.10",
+    "emoji-regex": "^8.0.0",
     "file-loader": "^4.0.0",
     "js-base64": "^2.5.1",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
     "node-fetch": "^2.6.0",
+    "normalize.css": "^8.0.1",
     "pako": "^1.0.10",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
@@ -49,8 +52,6 @@
     "web-ext": "^3.1.1",
     "webext-webpack-plugin": "0.0.8",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "emoji-regex": "^8.0.0",
-    "normalize.css": "^8.0.1"
+    "webpack-cli": "^3.3.5"
   }
 }
