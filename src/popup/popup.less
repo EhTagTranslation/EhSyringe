@@ -1,4 +1,24 @@
 @import 'normalize.css';
+body {
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: sans-serif;
+}
+
+.popup-root {
+  max-width: 400px;
+  min-width: 232px;
+  margin: 0 auto;
+  transition: opacity 280ms cubic-bezier(.4,0,.2,1), transform 280ms cubic-bezier(.4,0,.2,1);
+  transform: scale(1);
+  &.hide {
+    transform: scale(0.9);
+  }
+  .content {
+    margin: 0 16px;
+    margin-bottom: 16px;
+  }
+}
 
 .no-select {
   user-select: none;
@@ -53,17 +73,9 @@
     border: 1px #888 solid;
   }
 }
-body {
-  overflow: hidden;
-  margin: 16px;
-  margin-bottom: 8px;
-  white-space: nowrap;
-  font-family: sans-serif;
-}
+
 .logo-box{
   overflow: hidden;
-  margin: -16px;
-  margin-bottom: 0;
   position: relative;
 }
 .logo {
@@ -111,6 +123,7 @@ table {
   color: #a6000f;
 }
 a {
+  transition: all 280ms cubic-bezier(.4,0,.2,1) 0s;
   text-decoration: none;
   color: #8041a6;
   &:hover {
@@ -120,7 +133,9 @@ a {
     color: #673485;
   }
 }
-.foot-buttons {
+.head-buttons {
+  margin: 0 16px;
+  margin-top: 8px;
   line-height: 1.8;
   //font-size: 16px;
   display: flex;
@@ -152,7 +167,7 @@ a {
   pointer-events: none;
   opacity: 0;
   transition: opacity 280ms cubic-bezier(.4,0,.2,1), transform 280ms cubic-bezier(.4,0,.2,1);
-  transform: scale(1.2);
+  transform: scale(1.1);
   display: flex;
   flex-direction: column;
 
@@ -160,6 +175,35 @@ a {
     pointer-events:auto;
     opacity: 1;
     transform: scale(1);
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    a {
+      display: block;
+      margin: 8px 8px;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      vertical-align: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.0);
+      font-size: 20px;
+     /* color: #8041a6;
+      &:hover {
+        color: #6d378d;
+        //background: rgba(0, 0, 0, 0.1);
+      }
+      &:active {
+        color: #442258;
+        //background: rgba(0, 0, 0, 0.1);
+      }*/
+    }
+
+
   }
 
   .form {
@@ -190,19 +234,20 @@ a {
     font-size: 14px;
     line-height: 16px;
     vertical-align: top;
+    display: block;
   }
 
   svg {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     position: absolute;
-    left: 2px;
-    top: 2px;
+    left: 3px;
+    top: 3px;
     path {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
       stroke: #8041a6;
-      stroke-width: 13px;
+      stroke-width: 16px;
       stroke-linecap: round;
       stroke-linejoin: round;
       fill: none;
@@ -227,7 +272,7 @@ a {
     border: solid 2px #a09da6;
     box-sizing: border-box;
     vertical-align: top;
-
+    transition: all 280ms cubic-bezier(.4,0,.2,1) 0s;
   }
   input[type=checkbox]:focus {
     outline: none;
@@ -237,15 +282,11 @@ a {
     border: solid 2px #8041a6;
   }
 
-
-
-
 }
 
 
 
 #settingForm {
-
   input[type=range] {
     appearance: none;
     border-radius: 8px;
@@ -285,6 +326,12 @@ a {
     box-shadow: 0 0 7px 1px rgba(0,0,0,0.2);
   }
 
+  h3{
+    span{
+      font-weight: 400;
+      font-size: 12px;
+    }
+  }
 }
 .range-box {
   margin: 5px;
@@ -292,7 +339,6 @@ a {
 .range-label {
   display: flex;
   justify-content: space-between;
-
   a {
     flex: none;
     font-size: 12px;
