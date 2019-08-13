@@ -226,7 +226,7 @@ class Popup {
     if(key === 'introduceImageLevel'){
       this.state.configValue = {
         ...this.state.configValue,
-        introduceImageLevel: value,
+        introduceImageLevel: value - 1,
       };
     }
     this.state.configValue = {
@@ -264,6 +264,7 @@ class Popup {
     <div id="settingPanel" class="${state.showSettingPanel ? 'open' : nothing}" >
     <div class="form">
       <form id="settingForm">
+        <h2>设置</h2>
         ${checkboxList.map(item => html`
           <div class="checkbox-item">
             <label>
@@ -276,16 +277,16 @@ class Popup {
             </label>
           </div>
         `)}
-        
+        <h2>图片</h2>
         <div class="image-level">
           <div class="range-box">
             <input type="range" min="0" max="300" @change=${(e: Event) => this.changeConfigValue('introduceImageLevel', Math.round(parseInt((e.target as HTMLInputElement).value, 10) / 100))} .value="${state.configValue.introduceImageLevel * 100}"/>
           </div>
           <div class="range-label">
             <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 0)}">禁用</a>
-            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 1)}">G</a>
-            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 2)}">R</a>
-            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 3)}">RG</a>
+            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 1)}">非H</a>
+            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 2)}">R18</a>
+            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 3)}">R18G</a>
           </div>
         </div>
         

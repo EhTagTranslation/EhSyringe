@@ -197,8 +197,6 @@ a {
     position: absolute;
     left: 2px;
     top: 2px;
-    background: #ddd;
-    fill: #f00;
     path {
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
@@ -272,7 +270,7 @@ a {
     background: #ffffff;
     box-sizing: border-box;
     border-radius: 50%;
-    border: solid 1px #c28fda;
+    border: solid 2px #8041a6;
     transition: all 280ms cubic-bezier(.4,0,.2,1);
   }
 
@@ -280,7 +278,11 @@ a {
     border: solid 2px #8041a6;
     box-shadow: 0 0 7px rgba(0,0,0,0.2);
   }
-
+  input[type=range]:active::-webkit-slider-thumb {
+    border: solid 2px #8041a6;
+    background: #f7ebff;
+    box-shadow: 0 0 7px 1px rgba(0,0,0,0.2);
+  }
 
 }
 .range-box {
