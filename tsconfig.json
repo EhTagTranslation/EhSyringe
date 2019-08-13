@@ -20,6 +20,11 @@
     "target": "es6",
     "jsx": "react",
     "allowJs": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "plugins": [
+      {
+        "name": "typescript-lit-html-plugin"
+      }
+    ]
   }
 }

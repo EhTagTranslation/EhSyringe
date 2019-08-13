@@ -216,8 +216,7 @@ class Popup {
     return html`
 <div style="max-width: 400px; min-width: 200px; margin: auto;">
     <div class="logo-box" style="height: 205px;">
-        <div
-        class="logo ${['', 'prominent', 'prominent injection'][state.animationState] || ''}"
+        <div class="logo ${['', 'prominent', 'prominent injection'][state.animationState] || ''}"
         @click="${() => {this.testAnimation()}}">
             ${this._logoTemplate(state.progress)}
         </div>
