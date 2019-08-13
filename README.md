@@ -55,5 +55,5 @@ E站注射器，将中文翻译注入到E站体内。
 
 Q: 复制磁力链功能会增加吗?
 
-A: 暂时不会,你可以油猴子安装 https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03
+A: 目前插件只专注于标签相关功能, 你可以油猴子安装 https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03 来获得这个功能
 
