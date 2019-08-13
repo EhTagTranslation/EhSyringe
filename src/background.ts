@@ -33,7 +33,15 @@ class background {
     if (chrome.omnibox) this.initOmnibox();
     this.checkLocalData();
     chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
-    chromeMessage.listener('check-version', _ => this.checkVersion().then());
+    chromeMessage.listener('check-version', _ => this.checkVersion());
+    chromeMessage.listener('auto-update', async () => {
+      const version = await this.checkVersion();
+      if(version.new && (version.new != version.old)){
+        await this.getTagDataEvent();
+        return true;
+      }
+      return false;
+    })
   }
 
   async getTagDataEvent() {
@@ -290,3 +298,5 @@ class background {
 }
 
 new background();
+
+

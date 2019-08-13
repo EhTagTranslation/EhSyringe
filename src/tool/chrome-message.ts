@@ -4,11 +4,13 @@ interface RequestMap {
   'check-version': void;
   'get-tag-data': void;
   'downloadStatus': DownloadStatus;
+  'auto-update': void;
 }
 interface ResponseMap {
   'check-version': ReleaseCheckData;
   'get-tag-data': void;
   'downloadStatus': void;
+  'auto-update': boolean;
 }
 
 class ChromeMessage {

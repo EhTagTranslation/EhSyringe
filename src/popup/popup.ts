@@ -254,9 +254,17 @@ class Popup {
   async saveConfig() {
     await Config.set(this.state.configValue);
     await this.loadConfig();
-    setTimeout(() => {
-      chrome.tabs.reload()
-    }, 200)
+    await sleep(200);
+    const tabs:any[] = await new Promise(resolve => chrome.tabs.query({active: true}, resolve));
+    if(tabs && tabs.length){
+      tabs.forEach(v => {
+        if(v.url && (/hentai\.org/i).test(v.url)){
+          console.log('v', v);
+          chrome.tabs.reload(v.id);
+        }
+      })
+    }
+    window.close();
   }
 
   _settingPanelTemplate() {
@@ -306,7 +314,7 @@ class Popup {
       </form>
     </div>
     <div class="submit-button">
-      <button @click="${async () => { await this.saveConfig(); this.state.showSettingPanel = false; }}" class="big-button ${this.changeConfigUnsaved() ? 'primary' : ''}">保存</button>
+      <button @click="${async () => { await this.saveConfig();}}" class="big-button ${this.changeConfigUnsaved() ? 'primary' : ''}">保存</button>
     </div>
 </div>
     `;
