@@ -96,7 +96,7 @@ class Popup {
 
   async checkVersion() {
     this.state.versionInfo = '检查中...';
-    const data = await chromeMessage.send('check-version', {});
+    const data: any = await chromeMessage.send('check-version', {});
     console.log(data);
     if (data && data.new) {
       const hasNewData = this.state.updateAvailable = data.new !== data.old;
