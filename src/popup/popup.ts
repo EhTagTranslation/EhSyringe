@@ -111,6 +111,9 @@ class Popup {
     }
   }
 
+  openLink(url: string) {
+    chrome.tabs.create({url: url});
+  }
 
   async downloadStatus(data: any) {
     this.state.updateButtonDisabled = data.run;
@@ -241,7 +244,7 @@ class Popup {
         </div>
         <div class="cushion"></div>
         <div>
-            <span id="extensionVersion" class="monospace">V${state.extensionVersion}</span>
+            <a href="#" @click="${() => {this.openLink('https://github.com/EhTagTranslation/EhSyringe')}}" id="extensionVersion" class="monospace">V${state.extensionVersion}</a>
         </div>
     </div>
 </div>
