@@ -11,6 +11,7 @@ const emojiReg = emojiRegex();
 class background {
 
   /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
+  /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
   DATA_STRUCTURE_VERSION = 3;
 
   badge = new BadgeLoading();
@@ -153,8 +154,13 @@ class background {
     });
   }
 
-  storageTagData(tagDB: EHTDatabase, releasePageUrl: string): Promise<void> {
+  storageTagData(tagDB: EHTDatabase, releasePageUrl?: string): Promise<void> {
     return new Promise(resolve => {
+
+      if(!releasePageUrl){
+        releasePageUrl = 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json';
+      }
+
       const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
       const tagReplaceData: { [key: string]: string } = {};
       const tagList: TagList = [];
@@ -275,9 +281,8 @@ class background {
   loadPackedData() {
     const dbUrl = chrome.runtime.getURL('assets/tag.db');
     return fetch(dbUrl)
-      .then(r => r.text())
-      .then(t => JSON.parse(t))
-      .then(d => this.storageTagData(d, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json'));
+      .then(r => r.json())
+      .then(d => this.storageTagData(d));
   }
 
   checkLocalData() {
@@ -290,7 +295,11 @@ class background {
         await this.loadPackedData();
       } else if (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION) {
         console.log('数据结构变化, 重新构建数据');
-        await this.loadPackedData();
+        if('tagDB' in data){
+          await this.storageTagData(data.tagDB, data.releaseLink)
+        } else {
+          await this.loadPackedData();
+        }
       }
     });
   }
