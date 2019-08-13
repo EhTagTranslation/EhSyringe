@@ -1,5 +1,5 @@
 
-interface ConfigData {
+export interface ConfigData {
   translateUI: boolean;
   translateTag: boolean;
   showIntroduce: boolean;
@@ -18,7 +18,7 @@ class ConfigManage {
     showIntroduce: true,
     showIcon: true,
     introduceImageLevel: 3,
-    autoUpdate: true,
+    autoUpdate: false, // 默认不开启自动更新
     tagTip: true,
   };
 

@@ -1,5 +1,6 @@
 import './popup.less';
 import { chromeMessage } from '../tool/chrome-message';
+import { Config, ConfigData } from '../tool/config-manage';
 import { dateDiff } from '../tool/tool';
 import {html, render, svg} from 'lit-html';
 
@@ -21,6 +22,7 @@ interface PopupState {
   progress: number,
   animationState: number,
   info: string;
+  configValue?: ConfigData;
 }
 
 class Popup {
@@ -29,6 +31,7 @@ class Popup {
     this._update();
     this.getVersion();
     this.checkVersion().then();
+    this.loadConfig().then();
     chrome.management.getSelf(data => {
       this.state.extensionVersion = `${data.version}`;
     });
@@ -53,6 +56,7 @@ class Popup {
     showSettingPanel: false,
     progress: 0,
     animationState: 0,
+    configValue: null,
   };
   private state: PopupState = new Proxy(this._state, {
     set:  (target, key, value, receiver) => {
@@ -74,6 +78,11 @@ class Popup {
     [1, 5],
     [0, 0],
   ];
+
+
+  async loadConfig() {
+    this.state.configValue = await Config.get();
+  }
 
   testAnimation() {
     const a = this.testAnimationList[this.testAnimationIndex];
@@ -251,6 +260,7 @@ class Popup {
     <div class="form">
         <form id="settingForm">
             <input type="text" name="test">
+            <pre>${JSON.stringify(this.state.configValue, null, 2)}</pre>
         </form>
     </div>
     <button class="big-button primary">保存</button>
