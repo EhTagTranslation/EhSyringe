@@ -2,7 +2,6 @@ import './introduce.less';
 import {getTagData} from '../../tool/tag-data';
 import {Config} from "../../tool/config-manage";
 
-
 (async () => {
   const config = await Config.get();
   if(!config.showIntroduce) return;
@@ -45,9 +44,7 @@ import {Config} from "../../tool/config-manage";
         namespace = m2.shift();
         tag = m2.join(':');
       }
-      console.time('tagList find');
       const tagData = tagList.find(v => v.namespace === namespace && v.key === tag);
-      console.timeEnd('tagList find');
 
       if (tagData) {
         // language=HTML

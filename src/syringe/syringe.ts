@@ -6,13 +6,30 @@ Config.synchro();
 const config = Config.syncGet();
 console.log('config', config);
 
+/* 有可能会有性能问题, 开的页面多了不知道会是什么效果*/
+chrome.storage.onChanged.addListener(changes => {
+  console.log('changes', changes);
+  if('config' in changes && changes.config.newValue){
+    window.localStorage.setItem('ehs-config', JSON.stringify(changes.config.newValue));
+  }
 /*
-config.translateTag = false;
-config.translateUI = false;
-config.showIcon = false;
-config.introduceImageLevel = 1;
-*/
+  if('tagList' in changes && changes.tagList.newValue){
+    window.localStorage.setItem('tag-list', JSON.stringify(changes.tagList.newValue));
+    (window as any).tagListStorage = changes.tagList.newValue
+  }
+  if('tagReplaceData' in changes && changes.tagReplaceData.newValue){
+    window.localStorage.setItem('tag-replace-data', JSON.stringify(changes.tagReplaceData.newValue));
+    (window as any).tagReplaceDataStorage = changes.tagReplaceData.newValue
+  }
 
+  if('updateTime' in changes && changes.updateTime.newValue){
+    window.localStorage.setItem('tag-update-time', changes.updateTime.newValue);
+  }
+
+  if('sha' in changes && changes.sha.newValue){
+    window.localStorage.setItem('tag-sha', changes.sha.newValue);
+  }*/
+});
 
 (window as any).tagClear = () => {
   window.localStorage.removeItem('tag-list');
@@ -27,7 +44,6 @@ config.introduceImageLevel = 1;
 };
 
 class Syringe {
-
   tagReplace = getTagData().tagReplace;
   documentEnd = false;
   skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
@@ -39,6 +55,7 @@ class Syringe {
     const observer = new MutationObserver((mutations) => {
       for (let mutation of mutations) {
         for (let node1 of mutation.addedNodes) {
+          this.translateNode(node1);
           if (this.documentEnd) {
             if (node1.childNodes) {
               let nodeIterator = document.createNodeIterator(node1);
@@ -46,11 +63,7 @@ class Syringe {
               while ((node = nodeIterator.nextNode())) {
                 this.translateNode(node);
               }
-            } else {
-              this.translateNode(node1);
             }
-          } else {
-            this.translateNode(node1);
           }
         }
       }
@@ -72,18 +85,14 @@ class Syringe {
     if (node.nodeName === 'BODY') {
       const body = (node as HTMLBodyElement);
       body.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
-
       if(!config.showIcon){ body.classList.add('ehs-hide-icon') }
-
       body.classList.add(`ehs-image-level-${config.introduceImageLevel}`);
-
     }
 
     let handled = false;
     if (config.translateTag){
       handled = this.translateTag(node);
     }
-
     /* tag 处理过的ui不再处理*/
     if (config.translateUI && !handled) {
       this.translateUi(node);
@@ -248,7 +257,6 @@ class Syringe {
         element.classList.contains('ths') &&
         element.classList.contains('nosel')
       ){
-        console.log('ths nosel', element);
         const div = document.createElement('div');
         div.textContent = element.textContent;
         div.style.display = 'none';
@@ -259,8 +267,6 @@ class Syringe {
 
   }
 }
-
-
 
 if(config.translateTag || config.translateUI){
   new Syringe();

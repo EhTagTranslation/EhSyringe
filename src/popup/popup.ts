@@ -3,7 +3,7 @@ import { chromeMessage } from '../tool/chrome-message';
 import { Config, ConfigData } from '../tool/config-manage';
 import { dateDiff } from '../tool/tool';
 import { html, render, svg, nothing } from 'lit-html';
-import { ReleaseCheckData, DownloadStatus } from '../background';
+import {DownloadStatus, ReleaseCheckData} from "../interface";
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -38,7 +38,7 @@ class Popup {
     chrome.management.getSelf(data => {
       this.state.extensionVersion = `${data.version}`;
     });
-    chromeMessage.listener('downloadStatus', data => this.downloadStatus(data));
+    chromeMessage.listener('downloadStatus', data => this.downloadStatus(data as DownloadStatus));
   }
 
   private _state: PopupState = {
@@ -254,6 +254,9 @@ class Popup {
   async saveConfig() {
     await Config.set(this.state.configValue);
     await this.loadConfig();
+    setTimeout(() => {
+      chrome.tabs.reload()
+    }, 200)
   }
 
   _settingPanelTemplate() {

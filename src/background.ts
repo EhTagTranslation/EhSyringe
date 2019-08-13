@@ -1,25 +1,11 @@
 import pako from 'pako';
 import { namespaceTranslate } from './data/namespace-translate';
-import { EHTDatabase, TagItem, TagList } from './interface';
+import {DownloadStatus, EHTDatabase, ReleaseCheckData, TagItem, TagList} from './interface';
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
 import emojiRegex from 'emoji-regex';
 
 const emojiReg = emojiRegex();
-
-export interface ReleaseCheckData {
-  old: string;
-  new: string;
-  newLink: string;
-}
-
-export interface DownloadStatus {
-  run: boolean;
-  progress: number;
-  info: string;
-  complete: boolean;
-  error: boolean;
-}
 
 class background {
 

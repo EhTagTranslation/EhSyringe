@@ -46,3 +46,18 @@ export type TagList = TagItem[];
 export interface SearchTagItem extends TagItem {
   input: string,
 }
+
+
+export interface ReleaseCheckData {
+  old: string;
+  new: string;
+  newLink: string;
+}
+
+export interface DownloadStatus {
+  run: boolean;
+  progress: number;
+  info: string;
+  complete: boolean;
+  error: boolean;
+}
