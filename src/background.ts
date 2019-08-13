@@ -11,7 +11,7 @@ const emojiReg = emojiRegex();
 class background {
 
   /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
-  DATA_STRUCTURE_VERSION = 2;
+  DATA_STRUCTURE_VERSION = 3;
 
   badge = new BadgeLoading();
   lastCheck = 0;
