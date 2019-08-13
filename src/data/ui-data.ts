@@ -187,7 +187,7 @@ export const uiData: { [key: string]: string } = {
   'Sort order for gallery comments:': '评论排序方式：',
   'Show gallery comment votes:': '显示评论投票数：',
   'Sort order for gallery tags:': '图库标签排序方式：',
-  ['Show gallery page numbers:\n\t']: '显示图库页码：\n\t',
+  'Show gallery page numbers:\n\t': '显示图库页码：\n\t',
   'This setting can be used if you have a H@H client running on your local network with the same public IP you browse the site with. Some routers are buggy and cannot route requests back to its own IP; this allows you to work around this problem.': '如果你本地安装了 H@H 客户端，本地 IP 与浏览网站的公共 IP 相同，一些路由器不支持回流导致无法访问到自己，你可以设置这里来解决。',
   'If you are running the client on the same PC you browse from, use the loopback address (127.0.0.1:port). If the client is running on another computer on your network, use its local network IP. Some browser configurations prevent external web sites from accessing URLs with local network IPs, the site must then be whitelisted for this to work.': '如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址(127.0.0.1:端口号)。如果客户端在网络上的其他计算机运行，请使用那台机器的内网 IP。某些浏览器的配置可能阻止外部网站访问本地网络，你必须将网站列入白名单才能工作。',
   'Use original images instead of the resampled versions where applicable?': '当可用的时候，使用原始图像代替压缩过的版本？',

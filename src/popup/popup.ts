@@ -3,6 +3,7 @@ import { chromeMessage } from '../tool/chrome-message';
 import { Config, ConfigData } from '../tool/config-manage';
 import { dateDiff } from '../tool/tool';
 import { html, render, svg, nothing } from 'lit-html';
+import { ReleaseCheckData, DownloadStatus } from '../background';
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -15,6 +16,7 @@ interface PopupState {
   extensionVersion: string;
   shaRef: string;
   newSha: string;
+  newShaRef: string;
   versionInfo: string;
   updateAvailable: boolean;
   updateButtonDisabled: boolean;
@@ -28,6 +30,7 @@ interface PopupState {
 class Popup {
 
   constructor() {
+    window.addEventListener('click', this.openLink);
     this._update();
     this.getVersion();
     this.checkVersion().then();
@@ -35,21 +38,18 @@ class Popup {
     chrome.management.getSelf(data => {
       this.state.extensionVersion = `${data.version}`;
     });
-    chrome.runtime.onMessage.addListener((request) => {
-      if ('cmd' in request && request.cmd == 'downloadStatus') {
-        this.downloadStatus(request.data).then();
-      }
-    });
+    chromeMessage.listener('downloadStatus', data => this.downloadStatus(data));
   }
 
   private _state: PopupState = {
     sha: '',
+    shaRef: '',
     info: '',
     updateTime: '',
     updateTimeFull: '',
     extensionVersion: '',
-    shaRef: '',
     newSha: '',
+    newShaRef: '',
     versionInfo: '',
     updateAvailable: false,
     updateButtonDisabled: false,
@@ -83,7 +83,7 @@ class Popup {
 
   async loadConfig() {
     this.configOriginal = await Config.get();
-    this.state.configValue = {...this.configOriginal};
+    this.state.configValue = { ...this.configOriginal };
   }
 
   testAnimation() {
@@ -107,12 +107,13 @@ class Popup {
 
   async checkVersion() {
     this.state.versionInfo = '检查中...';
-    const data: any = await chromeMessage.send('check-version', {});
+    const data = await chromeMessage.send<{}, ReleaseCheckData>('check-version', {});
     console.log(data);
     if (data && data.new) {
       const hasNewData = this.state.updateAvailable = data.new !== data.old;
       if (hasNewData) {
         this.state.newSha = data.new.slice(0, 6);
+        this.state.newShaRef = data.newLink;
         this.state.versionInfo = `有更新！`;
       } else {
         this.state.versionInfo = '已是最新版本';
@@ -122,11 +123,18 @@ class Popup {
     }
   }
 
-  openLink(url: string) {
-    chrome.tabs.create({url: url});
+  async openLink(ev: MouseEvent) {
+    if (ev.target instanceof HTMLAnchorElement) {
+      const href = ev.target.href;
+      if (href && !href.startsWith(document.location.origin + document.location.pathname)) {
+        ev.preventDefault();
+        await new Promise(resolve => chrome.tabs.create({ url: href }, resolve));
+        window.close();
+      }
+    }
   }
 
-  async downloadStatus(data: any) {
+  async downloadStatus(data: DownloadStatus) {
     this.state.updateButtonDisabled = data.run;
     this.state.animationState = data.run ? 1 : 0;
     this.state.info = data.info;
@@ -223,7 +231,7 @@ class Popup {
   }
 
   changeConfigValue(key: string, value: any) {
-    if(key === 'introduceImageLevel'){
+    if (key === 'introduceImageLevel') {
       this.state.configValue = {
         ...this.state.configValue,
         introduceImageLevel: value,
@@ -243,7 +251,7 @@ class Popup {
     return !keys.every(key => (this.configOriginal as any)[key] === (this.state.configValue as any)[key]);
   }
 
-  async saveConfig(){
+  async saveConfig() {
     await Config.set(this.state.configValue);
     await this.loadConfig();
   }
@@ -252,12 +260,12 @@ class Popup {
     const state = this.state;
 
     const checkboxList: { key: string, name: string }[] = [
-      {key: 'translateUI', name: '翻译界面'},
-      {key: 'translateTag', name: '翻译标签'},
-      {key: 'showIntroduce', name: '标签介绍'},
-      {key: 'showIcon', name: '显示标签图标'},
-      {key: 'tagTip', name: '搜索提示'},
-      {key: 'autoUpdate', name: '自动更新'},
+      { key: 'translateUI', name: '翻译界面' },
+      { key: 'translateTag', name: '翻译标签' },
+      { key: 'showIntroduce', name: '标签介绍' },
+      { key: 'showIcon', name: '显示标签图标' },
+      { key: 'tagTip', name: '搜索提示' },
+      { key: 'autoUpdate', name: '自动更新' },
     ];
 
     return html`
@@ -293,7 +301,7 @@ class Popup {
       </form>
     </div>
     <div class="submit-button">
-      <button @click="${() => this.saveConfig()}" class="big-button ${this.changeConfigUnsaved() ? 'primary': nothing}">保存</button>
+      <button @click="${async () => { await this.saveConfig(); this.state.showSettingPanel = false; }}" class="big-button ${this.changeConfigUnsaved() ? 'primary' : nothing}">保存</button>
     </div>
 </div>
     `;
@@ -306,8 +314,8 @@ class Popup {
     <div class="logo-box" style="height: 205px;">
         <div class="logo ${[nothing, 'prominent', 'prominent injection'][state.animationState] || nothing}"
         @click="${() => {
-      this.testAnimation();
-    }}">
+        this.testAnimation();
+      }}">
             ${this._logoTemplate(state.progress)}
         </div>
         <div id="info">${state.info}</div>
@@ -315,7 +323,7 @@ class Popup {
     <table>
         <tr>
             <th class="no-select">TAG版本：</th>
-            <td><a id="sha" class="monospace">${state.sha || ' --- '}</a></td>
+            <td><a id="sha" href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
         </tr>
         <tr>
             <th class="no-select">上次更新：</th>
@@ -323,7 +331,7 @@ class Popup {
         </tr>
         <tr>
             <th class="no-select">更新检查：</th>
-            <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : nothing}"><a>${state.newSha}</a></span> ${state.versionInfo}</td>
+            <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : nothing}"><a href="${state.newShaRef}">${state.newSha || ''}</a></span> ${state.versionInfo}</td>
         </tr>
     </table>
     <button @click="${() => this.updateButtonClick()}" ?disabled=${state.updateButtonDisabled} class="big-button ${state.updateAvailable ? 'primary' : nothing}" id="updateButton">更新</button>
@@ -333,9 +341,7 @@ class Popup {
         </div>
         <div class="cushion"></div>
         <div>
-            <a href="#" @click="${() => {
-      this.openLink('https://github.com/EhTagTranslation/EhSyringe');
-    }}" id="extensionVersion" class="monospace">V${state.extensionVersion}</a>
+            <a href="https://github.com/EhTagTranslation/EhSyringe" id="extensionVersion" class="monospace">V${state.extensionVersion}</a>
         </div>
     </div>
 </div>
