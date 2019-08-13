@@ -107,7 +107,7 @@ class Popup {
 
   async checkVersion() {
     this.state.versionInfo = '检查中...';
-    const data = await chromeMessage.send<{}, ReleaseCheckData>('check-version', {});
+    const data = await chromeMessage.send('check-version', void 0);
     console.log(data);
     if (data && data.new) {
       const hasNewData = this.state.updateAvailable = data.new !== data.old;
@@ -154,13 +154,13 @@ class Popup {
 
   private updateButtonClick = async () => {
     this.state.updateButtonDisabled = true;
-    await chromeMessage.send('get-tag-data', {});
+    await chromeMessage.send('get-tag-data', void 0);
     setTimeout(() => {
       this.state.updateButtonDisabled = false;
       this.getVersion();
       this.checkVersion().then();
     }, 1000);
-  };
+  }
 
   _logoTemplate(progress = 0) {
 
