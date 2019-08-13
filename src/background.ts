@@ -7,13 +7,13 @@ import emojiRegex from 'emoji-regex';
 
 const emojiReg = emojiRegex();
 
-interface ReleaseCheckData {
+export interface ReleaseCheckData {
   old: string;
   new: string;
   newLink: string;
 }
 
-interface DownloadStatus {
+export interface DownloadStatus {
   run: boolean;
   progress: number;
   info: string;
