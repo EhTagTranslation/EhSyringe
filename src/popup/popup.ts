@@ -223,7 +223,12 @@ class Popup {
   }
 
   changeConfigValue(key: string, value: any) {
-    console.log('changeConfigValue', key, value);
+    if(key === 'introduceImageLevel'){
+      this.state.configValue = {
+        ...this.state.configValue,
+        introduceImageLevel: value,
+      };
+    }
     this.state.configValue = {
       ...this.state.configValue,
       [key]: value,
@@ -260,16 +265,36 @@ class Popup {
     <div class="form">
       <form id="settingForm">
         ${checkboxList.map(item => html`
-          <div>
-            <label style="padding: 3px 0; display: block;"><input type="checkbox" @change=${(e: Event) => this.changeConfigValue(item.key, (e.target as HTMLInputElement).checked)} ?checked="${(this.state.configValue as any)[item.key]}"> ${item.name}</label>
+          <div class="checkbox-item">
+            <label>
+                <input type="checkbox" @change=${(e: Event) => this.changeConfigValue(item.key, (e.target as HTMLInputElement).checked)} ?checked="${(this.state.configValue as any)[item.key]}">
+                ${item.name}
+                <svg class="${(this.state.configValue as any)[item.key] ? 'checked' : ''}" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 10 10 L 90 90"></path>
+                    <path d="M 90 10 L 10 90"></path>
+                </svg>
+            </label>
           </div>
         `)}
         
-        <input type="range" min="0" max="3" @change=${(e: Event) => this.changeConfigValue('introduceImageLevel', parseInt((e.target as HTMLInputElement).value, 10))} .value="${state.configValue.introduceImageLevel}"/>
+        <div class="image-level">
+          <div class="range-box">
+            <input type="range" min="0" max="300" @change=${(e: Event) => this.changeConfigValue('introduceImageLevel', Math.round(parseInt((e.target as HTMLInputElement).value, 10) / 100))} .value="${state.configValue.introduceImageLevel * 100}"/>
+          </div>
+          <div class="range-label">
+            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 0)}">禁用</a>
+            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 1)}">G</a>
+            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 2)}">R</a>
+            <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 3)}">RG</a>
+          </div>
+        </div>
+        
         <pre>${JSON.stringify(this.state.configValue, null, 2)}</pre>
       </form>
     </div>
-    <button @click="${() => this.saveConfig()}" class="big-button ${this.changeConfigUnsaved() ? 'primary': nothing}">保存</button>
+    <div class="submit-button">
+      <button @click="${() => this.saveConfig()}" class="big-button ${this.changeConfigUnsaved() ? 'primary': nothing}">保存</button>
+    </div>
 </div>
     `;
   }
@@ -314,8 +339,7 @@ class Popup {
         </div>
     </div>
 </div>
-${state.configValue ? this._settingPanelTemplate() : nothing}
-`;
+${state.configValue ? this._settingPanelTemplate() : nothing}`;
   }
 
   _update() {
