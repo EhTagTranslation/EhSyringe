@@ -1,10 +1,9 @@
-import { TagItem, EHTDatabase, TagList } from "../interface";
-import {chromeMessage} from "./chrome-message";
+import { TagItem } from '../interface';
 
-interface TagData {tagList: TagItem[], tagReplace: { [key: string]: string}};
+interface TagData { tagList: TagItem[]; tagReplace: { [key: string]: string }; }
 
-export function getTagData(): TagData | undefined {
-    if((window as any).tagListStorage && (window as any).tagReplaceDataStorage) {
+export function getTagData(): TagData {
+    if ((window as any).tagListStorage && (window as any).tagReplaceDataStorage) {
         return {
             tagList: (window as any).tagListStorage,
             tagReplace: (window as any).tagReplaceDataStorage,
@@ -21,11 +20,11 @@ export function getTagData(): TagData | undefined {
 
     chrome.storage.local.get((data) => {
         if (
-          'tagList' in data &&
-          'tagReplaceData' in data &&
-          'updateTime' in data
+            'tagList' in data &&
+            'tagReplaceData' in data &&
+            'updateTime' in data
         ) {
-            if(tagUpdateTime !=  data.updateTime) {
+            if (tagUpdateTime !== data.updateTime) {
                 window.localStorage.setItem('tag-list', JSON.stringify(data.tagList));
                 window.localStorage.setItem('tag-replace-data', JSON.stringify(data.tagReplaceData));
                 window.localStorage.setItem('tag-update-time', data.updateTime);
@@ -33,7 +32,7 @@ export function getTagData(): TagData | undefined {
                 window.location.reload();
             }
         } else {
-          // chromeMessage.send()
+            // chromeMessage.send()
         }
     });
 
@@ -50,7 +49,3 @@ export function getTagData(): TagData | undefined {
         tagReplace: {}
     };
 }
-
-
-
-

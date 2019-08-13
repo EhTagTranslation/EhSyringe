@@ -9,7 +9,7 @@ export class BadgeLoading {
   loadingStrArr = [
     [''],
     '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''),
-    "    |·   | ·  |  · |   ·".split("|"),
+    '    |·   | ·  |  · |   ·'.split('|'),
   ];
 
   frame = 0;
@@ -21,8 +21,7 @@ export class BadgeLoading {
 
   extname = 'EhSyringe';
 
-  private setColor(color: string): void {
-    if(!color)color = "#4A90E2";
+  private setColor(color: string = '#4A90E2'): void {
     if (this.color !== color) {
       this.color = color;
       if (chrome.browserAction.setBadgeBackgroundColor) {
@@ -47,7 +46,7 @@ export class BadgeLoading {
       this.frame = 0;
     }
     this.text = text;
-    this.setColor(color);
+    this.setColor(color || undefined);
     if (loading) {
       if (!this.interval) {
         this.interval = setInterval(() => {

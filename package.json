@@ -51,6 +51,7 @@
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
+    "emoji-regex": "^8.0.0",
     "normalize.css": "^8.0.1"
   }
 }

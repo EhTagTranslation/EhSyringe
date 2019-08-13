@@ -1,16 +1,22 @@
 import './introduce.less';
 import {getTagData} from '../../tool/tag-data';
+import {Config} from "../../tool/config-manage";
 
-const {tagList} = getTagData();
 
-const taglist = document.querySelector('#taglist');
-const gright = document.querySelector('#gright');
-const introduceBox = document.createElement('div');
-introduceBox.id = 'ehs-introduce-box';
-if (gright) {
+(async () => {
+  const config = await Config.get();
+  if(!config.showIntroduce) return;
+
+
+  const {tagList} = getTagData();
+  const taglist = document.querySelector('#taglist');
+  const gright = document.querySelector('#gright');
+
+  if(!(taglist && gright)) return;
+
+  const introduceBox = document.createElement('div');
+  introduceBox.id = 'ehs-introduce-box';
   gright.insertBefore(introduceBox, null);
-}
-if (taglist) {
   taglist.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
     if (
@@ -33,16 +39,17 @@ if (taglist) {
       const m2 = m[1].split(':');
       let namespace = 'misc';
       let tag = '';
-      if (m2.length == 1) {
+      if (m2.length === 1) {
         tag = m2[0];
       } else {
         namespace = m2.shift();
         tag = m2.join(':');
       }
+      console.time('tagList find');
       const tagData = tagList.find(v => v.namespace === namespace && v.key === tag);
+      console.timeEnd('tagList find');
 
       if (tagData) {
-        const links = mdLinks(tagData.links);
         // language=HTML
         introduceBox.innerHTML = `
         <div class="ehs-title">
@@ -57,7 +64,7 @@ if (taglist) {
             <div class="ehs-no-intro">无介绍</div>
             `}
         </div>
-        <div class="ehs-href">${links.map(link => `<a href="${link.href}" target="_blank">${link.title}</a>`).join()}</div>
+        <div class="ehs-href">${tagData.links}</div>
         `;
       } else {
         const editorUlr = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
@@ -83,16 +90,5 @@ if (taglist) {
       }
     }
   });
-}
 
-function mdLinks(mdText: string): { title: string, href: string }[] {
-  var links: { title: string, href: string }[] = [];
-  mdText.replace(/\[(.*?)\]\((.*?)\)/igm, function (text, alt, href, index) {
-    links.push({
-      title: alt,
-      href: href,
-    });
-    return text;
-  });
-  return links
-}
+})()
