@@ -35,6 +35,7 @@
     "js-base64": "^2.5.1",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "lit-html": "^1.1.2",
     "node-fetch": "^2.6.0",
     "pako": "^1.0.10",
     "postcss-cssnext": "^3.1.0",
