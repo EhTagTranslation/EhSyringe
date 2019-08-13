@@ -256,12 +256,12 @@ class Popup {
     ];
 
     return html`
-    <div id="settingPanel" class="${state.showSettingPanel ? 'open' : ''}" >
+    <div id="settingPanel" class="${state.showSettingPanel ? 'open' : nothing}" >
     <div class="form">
       <form id="settingForm">
         ${checkboxList.map(item => html`
           <div>
-            <label><input type="checkbox" @change=${(e: Event) => this.changeConfigValue(item.key, (e.target as HTMLInputElement).checked)} ?checked="${(this.state.configValue as any)[item.key]}"> ${item.name}</label>
+            <label style="padding: 3px 0; display: block;"><input type="checkbox" @change=${(e: Event) => this.changeConfigValue(item.key, (e.target as HTMLInputElement).checked)} ?checked="${(this.state.configValue as any)[item.key]}"> ${item.name}</label>
           </div>
         `)}
         
@@ -269,7 +269,7 @@ class Popup {
         <pre>${JSON.stringify(this.state.configValue, null, 2)}</pre>
       </form>
     </div>
-    <button @click="${() => this.saveConfig()}" class="big-button ${this.changeConfigUnsaved() ? 'primary': ''}">保存</button>
+    <button @click="${() => this.saveConfig()}" class="big-button ${this.changeConfigUnsaved() ? 'primary': nothing}">保存</button>
 </div>
     `;
   }
@@ -279,7 +279,7 @@ class Popup {
     return html`
 <div style="max-width: 400px; min-width: 200px; margin: auto;">
     <div class="logo-box" style="height: 205px;">
-        <div class="logo ${['', 'prominent', 'prominent injection'][state.animationState] || ''}"
+        <div class="logo ${[nothing, 'prominent', 'prominent injection'][state.animationState] || nothing}"
         @click="${() => {
       this.testAnimation();
     }}">
@@ -298,10 +298,10 @@ class Popup {
         </tr>
         <tr>
             <th class="no-select">更新检查：</th>
-            <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : ''}"><a>${state.newSha}</a></span> ${state.versionInfo}</td>
+            <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : nothing}"><a>${state.newSha}</a></span> ${state.versionInfo}</td>
         </tr>
     </table>
-    <button @click="${() => this.updateButtonClick()}" ?disabled=${state.updateButtonDisabled} class="big-button ${state.updateAvailable ? 'primary' : ''}" id="updateButton">更新</button>
+    <button @click="${() => this.updateButtonClick()}" ?disabled=${state.updateButtonDisabled} class="big-button ${state.updateAvailable ? 'primary' : nothing}" id="updateButton">更新</button>
     <div class="foot-buttons">
         <div>
             <a id="settingSwitch" href="#" @click="${() => state.showSettingPanel = !state.showSettingPanel}">设置</a>
@@ -314,7 +314,7 @@ class Popup {
         </div>
     </div>
 </div>
-${state.configValue ? this._settingPanelTemplate() : ''}
+${state.configValue ? this._settingPanelTemplate() : nothing}
 `;
   }
 
