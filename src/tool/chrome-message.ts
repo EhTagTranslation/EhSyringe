@@ -1,6 +1,19 @@
+import { DownloadStatus, ReleaseCheckData } from '../background';
+
+interface RequestMap {
+  'check-version': void;
+  'get-tag-data': void;
+  'downloadStatus': DownloadStatus;
+}
+interface ResponseMap {
+  'check-version': ReleaseCheckData;
+  'get-tag-data': void;
+  'downloadStatus': void;
+}
+
 class ChromeMessage {
 
-  send<T, U>(query: string, data?: T): Promise<U> {
+  send<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, data: RequestMap[Q]): Promise<ResponseMap[Q]> {
     return new Promise((resolve, reject) => {
       chrome.runtime.sendMessage({
         query,
@@ -17,7 +30,7 @@ class ChromeMessage {
     });
   }
 
-  broadcast<T>(query: string, data?: T): void {
+  broadcast<Q extends (keyof RequestMap)>(query: Q, data?: RequestMap[Q]): void {
     chrome.runtime.sendMessage({
       query,
       data,
@@ -30,7 +43,7 @@ class ChromeMessage {
     });
   }
 
-  listener<T, U>(query: string, handler: (data: T) => U | Promise<U>): void {
+  listener<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, handler: (data: RequestMap[Q]) => ResponseMap[Q] | PromiseLike<ResponseMap[Q]>): void {
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       if (!('query' in request) || request.query !== query) {
         return;
