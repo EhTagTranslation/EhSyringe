@@ -269,10 +269,11 @@ class Popup {
     ];
 
     return html`
-    <div id="settingPanel" class="${state.showSettingPanel ? 'open' : nothing}" >
+    <div id="settingPanel" class="${state.showSettingPanel ? 'open' : ''}" >
+    <div class="close"><a @click="${() => this.state.showSettingPanel = false}" href="#">×</a></div>
     <div class="form">
       <form id="settingForm">
-        <h2>设置</h2>
+        <h3 style="margin-top: 0">设置</h3>
         ${checkboxList.map(item => html`
           <div class="checkbox-item">
             <label>
@@ -285,10 +286,12 @@ class Popup {
             </label>
           </div>
         `)}
-        <h2>图片</h2>
+        <h3>介绍图片: <span>${['禁用', '隐藏色情图片', "隐藏引起不适的图片", '全部显示'][state.configValue.introduceImageLevel]}</span></h3>
         <div class="image-level">
           <div class="range-box">
-            <input type="range" min="0" max="300" @change=${(e: Event) => this.changeConfigValue('introduceImageLevel', Math.round(parseInt((e.target as HTMLInputElement).value, 10) / 100))} .value="${state.configValue.introduceImageLevel * 100}"/>
+            <input type="range" min="0" max="300"
+            @change=${(e: Event) => this.changeConfigValue('introduceImageLevel', Math.round(parseInt((e.target as HTMLInputElement).value, 10) / 100))}
+            .value="${state.configValue.introduceImageLevel * 100}"/>
           </div>
           <div class="range-label">
             <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 0)}">禁用</a>
@@ -297,12 +300,10 @@ class Popup {
             <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 3)}">R18G</a>
           </div>
         </div>
-        
-        <pre>${JSON.stringify(this.state.configValue, null, 2)}</pre>
       </form>
     </div>
     <div class="submit-button">
-      <button @click="${async () => { await this.saveConfig(); this.state.showSettingPanel = false; }}" class="big-button ${this.changeConfigUnsaved() ? 'primary' : nothing}">保存</button>
+      <button @click="${async () => { await this.saveConfig(); this.state.showSettingPanel = false; }}" class="big-button ${this.changeConfigUnsaved() ? 'primary' : ''}">保存</button>
     </div>
 </div>
     `;
@@ -311,40 +312,47 @@ class Popup {
   _template() {
     const state = this.state;
     return html`
-<div style="max-width: 400px; min-width: 200px; margin: auto;">
-    <div class="logo-box" style="height: 205px;">
-        <div class="logo ${[nothing, 'prominent', 'prominent injection'][state.animationState] || nothing}"
-        @click="${() => {
-        this.testAnimation();
-      }}">
-            ${this._logoTemplate(state.progress)}
-        </div>
-        <div id="info">${state.info}</div>
-    </div>
-    <table>
-        <tr>
-            <th class="no-select">TAG版本：</th>
-            <td><a id="sha" href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
-        </tr>
-        <tr>
-            <th class="no-select">上次更新：</th>
-            <td><span id="updateTime" class="monospace">${state.updateTime || ' --- '}</span></td>
-        </tr>
-        <tr>
-            <th class="no-select">更新检查：</th>
-            <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : nothing}"><a href="${state.newShaRef}">${state.newSha || ''}</a></span> ${state.versionInfo}</td>
-        </tr>
-    </table>
-    <button @click="${() => this.updateButtonClick()}" ?disabled=${state.updateButtonDisabled} class="big-button ${state.updateAvailable ? 'primary' : nothing}" id="updateButton">更新</button>
-    <div class="foot-buttons">
+<div class="popup-root ${state.showSettingPanel ? 'hide' : ''}">
+    <div class="head-buttons">
         <div>
-            <a id="settingSwitch" href="#" @click="${() => state.showSettingPanel = !state.showSettingPanel}">设置</a>
+           <a href="https://github.com/EhTagTranslation/EhSyringe" id="extensionVersion" class="monospace">V${state.extensionVersion}</a>
         </div>
         <div class="cushion"></div>
         <div>
-            <a href="https://github.com/EhTagTranslation/EhSyringe" id="extensionVersion" class="monospace">V${state.extensionVersion}</a>
+          <a id="settingSwitch" href="#" @click="${() => state.showSettingPanel = !state.showSettingPanel}">设置</a>
         </div>
     </div>
+<!--
+<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css"></style></defs><path d="M867.421947 451.006196c-0.204677-16.169498-11.973616-29.678193-27.938437-32.134319l-45.438337-7.061363-12.38297-23.742554 26.198681-43.596242c7.675395-12.792325 5.8333-29.268839-4.605237-40.014391L721.487108 220.027983c-10.847891-11.257246-27.73376-13.406356-41.037777-5.219268l-44.721967 27.426744-20.058365-11.871277-12.178293-50.35059c-3.581851-14.941435-16.78353-25.482311-32.134319-25.482311L452.643614 154.531281c-15.35079 0-28.552469 10.540875-32.134319 25.482311L408.331001 230.261843l-20.058365 11.871277-44.721967-27.324405c-13.304018-8.187088-30.189886-6.037977-41.037777 5.219268l-81.563862 84.327004c-10.438537 10.745553-12.280632 27.222067-4.605237 40.014391l26.198681 43.596242-12.38297 23.742554-45.438337 7.061363c-15.964821 2.456126-27.73376 16.06716-27.938437 32.134319l-1.842095 114.619228c-0.204677 13.918049 8.391765 26.608035 21.388767 31.520288l54.853488 20.672397 8.494104 19.034979-28.245453 42.777533c-8.698781 13.201679-6.856686 30.803918 4.502898 41.856486l84.838697 83.098941c11.154907 10.847891 28.552469 12.485309 41.54947 3.888867l40.8331-27.222067 22.61683 10.23386 7.982411 49.634219c2.558465 15.862483 15.964821 27.631421 32.031981 27.631421l132.835499 0c16.06716 0 29.575854-11.768939 32.031981-27.631421l7.982411-49.838897 22.61683-10.23386 40.8331 27.222067c12.894663 8.596442 30.394563 6.959025 41.54947-3.888867l84.838697-83.098941c11.359584-11.052568 13.201679-28.654807 4.502898-41.856486l-28.245453-42.777533 8.494104-19.034979 54.853488-20.672397c12.997002-4.912253 21.593444-17.602239 21.388767-31.520288L867.421947 451.006196zM772.34939 577.394363c-8.187088 3.070158-14.941435 9.415151-18.523286 17.4999l-13.201679 29.575854c-4.605237 10.438537-3.684189 22.309814 2.558465 31.724965l26.505697 40.014391-70.920648 69.385569-38.274635-25.482311c-9.619828-6.344993-21.593444-7.368379-32.031981-2.558465L593.973216 753.212073c-10.131521 4.605237-17.192884 13.611033-19.034979 24.561263l-7.368379 46.052369L456.430142 823.825705l-7.368379-46.052369c-1.739756-10.95023-8.801119-20.160704-19.034979-24.76594l-34.488107-15.555467c-10.438537-4.809914-22.514491-3.786528-32.031981 2.660804l-38.274635 25.482311-70.920648-69.385569 26.505697-40.014391c6.242654-9.51749 7.26604-21.388767 2.558465-31.724965L270.173896 594.894263c-3.581851-7.982411-10.336198-14.327404-18.523286-17.4999l-51.680991-19.444333 1.535079-96.198281 41.447132-6.447332c10.336198-1.637418 19.341995-8.084749 24.254247-17.397561l18.318609-34.9998c5.321607-10.131521 4.912253-22.514491-0.921047-32.338997l-24.868279-41.447132 68.56686-70.818309 42.675195 26.096342c10.438537 6.447332 23.537877 6.54967 34.078753 0.307016l30.59924-18.011593c7.675395-4.502898 13.304018-12.178293 15.35079-20.877074l11.154907-46.154707 99.984809 0 11.154907 46.154707c2.046772 8.596442 7.675395 16.271837 15.35079 20.774735l30.59924 18.113932c10.540875 6.242654 23.640216 6.140316 34.078753-0.307016l42.675195-26.096342 68.56686 70.818309L739.498701 370.465721c-5.935639 9.824505-6.242654 22.207476-0.921047 32.338997l18.318609 34.9998c4.809914 9.210474 13.918049 15.760144 24.254247 17.397561l41.447132 6.447332 1.535079 96.198281L772.34939 577.394363z" p-id="2031"></path><path d="M512 407.614631c-57.514291 0-104.385369 46.871077-104.385369 104.385369 0 57.514291 46.871077 104.385369 104.385369 104.385369 57.514291 0 104.385369-46.871077 104.385369-104.385369C616.385369 454.485709 569.61663 407.614631 512 407.614631zM512 571.356386c-32.748351 0-59.356386-26.608035-59.356386-59.356386 0-32.748351 26.608035-59.356386 59.356386-59.356386 32.748351 0 59.356386 26.608035 59.356386 59.356386C571.356386 544.748351 544.748351 571.356386 512 571.356386z" p-id="2032"></path></svg>
+-->
+
+    <div class="logo-box" style="height: 205px;">
+        <div class="logo ${['', 'prominent', 'prominent injection'][state.animationState] || ''}"
+        @click="${() => {
+        this.testAnimation();
+      }}">
+          ${this._logoTemplate(state.progress)}
+        </div>
+        <div id="info">${state.info}</div>
+    </div>
+    <div class="content">
+      <table>
+        <tr>
+          <th class="no-select">TAG版本：</th>
+          <td><a id="sha" href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
+        </tr>
+        <tr>
+          <th class="no-select">上次更新：</th>
+          <td><span id="updateTime" class="monospace">${state.updateTime || ' --- '}</span></td>
+        </tr>
+        <tr>
+          <th class="no-select">更新检查：</th>
+          <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : ''}"><a href="${state.newShaRef}">${state.newSha || ''}</a></span> ${state.versionInfo}</td>
+        </tr>
+      </table>
+      <button @click="${() => this.updateButtonClick()}" ?disabled=${state.updateButtonDisabled} class="big-button ${state.updateAvailable ? 'primary' : ''}" id="updateButton">更新</button>
+    </div>
+
 </div>
 ${state.configValue ? this._settingPanelTemplate() : nothing}`;
   }
