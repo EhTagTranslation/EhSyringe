@@ -2,10 +2,10 @@ import './popup.less';
 import { chromeMessage } from '../tool/chrome-message';
 import { Config, ConfigData } from '../tool/config-manage';
 import { dateDiff } from '../tool/tool';
-import {html, render, svg} from 'lit-html';
+import { html, render, svg, nothing } from 'lit-html';
 
 function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 interface PopupState {
@@ -59,12 +59,14 @@ class Popup {
     configValue: null,
   };
   private state: PopupState = new Proxy(this._state, {
-    set:  (target, key, value, receiver) => {
+    set: (target, key, value, receiver) => {
       const r = Reflect.set(target, key, value, receiver);
       this._update();
       return r;
     }
   });
+
+  private configOriginal: ConfigData;
 
   private testAnimationIndex: number = 0;
   private testAnimationList: [number, number][] = [
@@ -79,9 +81,9 @@ class Popup {
     [0, 0],
   ];
 
-
   async loadConfig() {
-    this.state.configValue = await Config.get();
+    this.configOriginal = await Config.get();
+    this.state.configValue = {...this.configOriginal};
   }
 
   testAnimation() {
@@ -116,7 +118,7 @@ class Popup {
         this.state.versionInfo = '已是最新版本';
       }
     } else {
-      this.state.versionInfo  = '获取失败';
+      this.state.versionInfo = '获取失败';
     }
   }
 
@@ -149,7 +151,7 @@ class Popup {
       this.state.updateButtonDisabled = false;
       this.getVersion();
       this.checkVersion().then();
-    }, 1000)
+    }, 1000);
   };
 
   _logoTemplate(progress = 0) {
@@ -220,13 +222,67 @@ class Popup {
   </svg>`;
   }
 
+  changeConfigValue(key: string, value: any) {
+    console.log('changeConfigValue', key, value);
+    this.state.configValue = {
+      ...this.state.configValue,
+      [key]: value,
+    };
+  }
+
+  changeConfigUnsaved(): boolean {
+    const keys = [
+      ...Object.keys(this.configOriginal),
+      ...Object.keys(this.state.configValue),
+    ];
+    return !keys.every(key => (this.configOriginal as any)[key] === (this.state.configValue as any)[key]);
+  }
+
+  async saveConfig(){
+    await Config.set(this.state.configValue);
+    await this.loadConfig();
+  }
+
+  _settingPanelTemplate() {
+    const state = this.state;
+
+    const checkboxList: { key: string, name: string }[] = [
+      {key: 'translateUI', name: '翻译界面'},
+      {key: 'translateTag', name: '翻译标签'},
+      {key: 'showIntroduce', name: '标签介绍'},
+      {key: 'showIcon', name: '显示标签图标'},
+      {key: 'tagTip', name: '搜索提示'},
+      {key: 'autoUpdate', name: '自动更新'},
+    ];
+
+    return html`
+    <div id="settingPanel" class="${state.showSettingPanel ? 'open' : ''}" >
+    <div class="form">
+      <form id="settingForm">
+        ${checkboxList.map(item => html`
+          <div>
+            <label><input type="checkbox" @change=${(e: Event) => this.changeConfigValue(item.key, (e.target as HTMLInputElement).checked)} ?checked="${(this.state.configValue as any)[item.key]}"> ${item.name}</label>
+          </div>
+        `)}
+        
+        <input type="range" min="0" max="3" @change=${(e: Event) => this.changeConfigValue('introduceImageLevel', parseInt((e.target as HTMLInputElement).value, 10))} .value="${state.configValue.introduceImageLevel}"/>
+        <pre>${JSON.stringify(this.state.configValue, null, 2)}</pre>
+      </form>
+    </div>
+    <button @click="${() => this.saveConfig()}" class="big-button ${this.changeConfigUnsaved() ? 'primary': ''}">保存</button>
+</div>
+    `;
+  }
+
   _template() {
     const state = this.state;
     return html`
 <div style="max-width: 400px; min-width: 200px; margin: auto;">
     <div class="logo-box" style="height: 205px;">
         <div class="logo ${['', 'prominent', 'prominent injection'][state.animationState] || ''}"
-        @click="${() => {this.testAnimation()}}">
+        @click="${() => {
+      this.testAnimation();
+    }}">
             ${this._logoTemplate(state.progress)}
         </div>
         <div id="info">${state.info}</div>
@@ -234,11 +290,11 @@ class Popup {
     <table>
         <tr>
             <th class="no-select">TAG版本：</th>
-            <td><a id="sha" class="monospace">${state.sha}</a></td>
+            <td><a id="sha" class="monospace">${state.sha || ' --- '}</a></td>
         </tr>
         <tr>
             <th class="no-select">上次更新：</th>
-            <td><span id="updateTime" class="monospace">${state.updateTime}</span></td>
+            <td><span id="updateTime" class="monospace">${state.updateTime || ' --- '}</span></td>
         </tr>
         <tr>
             <th class="no-select">更新检查：</th>
@@ -252,19 +308,14 @@ class Popup {
         </div>
         <div class="cushion"></div>
         <div>
-            <a href="#" @click="${() => {this.openLink('https://github.com/EhTagTranslation/EhSyringe')}}" id="extensionVersion" class="monospace">V${state.extensionVersion}</a>
+            <a href="#" @click="${() => {
+      this.openLink('https://github.com/EhTagTranslation/EhSyringe');
+    }}" id="extensionVersion" class="monospace">V${state.extensionVersion}</a>
         </div>
     </div>
 </div>
-<div id="settingPanel" class="${ state.showSettingPanel ? 'open' : ''}" >
-    <div class="form">
-        <form id="settingForm">
-            <input type="text" name="test">
-            <pre>${JSON.stringify(this.state.configValue, null, 2)}</pre>
-        </form>
-    </div>
-    <button class="big-button primary">保存</button>
-</div>`;
+${state.configValue ? this._settingPanelTemplate() : ''}
+`;
   }
 
   _update() {
