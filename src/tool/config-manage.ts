@@ -1,3 +1,4 @@
+import { promisify } from "./promise";
 
 export interface ConfigData {
   translateUI: boolean;
@@ -11,7 +12,6 @@ export interface ConfigData {
 
 class ConfigManage {
 
-
   DefaultValue: ConfigData = {
     translateUI: true,
     translateTag: true,
@@ -23,13 +23,13 @@ class ConfigManage {
   };
 
   syncGet(): ConfigData {
-    if('EHSConfig' in window){
+    if ('EHSConfig' in window) {
       return window['EHSConfig']
     }
 
     const string = window.localStorage.getItem('ehs-config');
-    if(!string){
-      return {...this.DefaultValue}
+    if (!string) {
+      return { ...this.DefaultValue }
     }
     try {
       const data = JSON.parse(string);
@@ -37,47 +37,39 @@ class ConfigManage {
       return this.fixData(data);
     } catch (e) {
       console.error(e);
-      return {...this.DefaultValue}
+      return { ...this.DefaultValue }
     }
   }
 
   async synchro(): Promise<boolean> {
     const oldConfig = window.localStorage.getItem('ehs-config');
     const newConfig = JSON.stringify(await this.get());
-    if(oldConfig != newConfig){
+    if (oldConfig != newConfig) {
       window.localStorage.setItem('ehs-config', newConfig);
       return true;
     }
     return false;
   }
 
-  get(): Promise<ConfigData> {
-    return new Promise(resolve => {
-      chrome.storage.local.get(['config'],(data) => {
-        const config = data.config || {...this.DefaultValue};
-        resolve(this.fixData(config));
-      })
-    })
+  async get(): Promise<ConfigData> {
+    const config = (await promisify(chrome.storage.local.get, 'config')).config || { ...this.DefaultValue };
+    return this.fixData(config);
   }
 
-  set(data: Partial<ConfigData>): Promise<void> {
-    return new Promise(async (resolve) => {
-      const config = await this.get();
-      const newConfig = {
-        ...config,
-        ...data,
-      };
-      chrome.storage.local.set({
-        config: newConfig,
-      } , resolve)
-    })
+  async set(data: Partial<ConfigData>): Promise<void> {
+    const config = await this.get();
+    const newConfig = {
+      ...config,
+      ...data,
+    };
+    return await promisify(chrome.storage.local.set, { config: newConfig });
   }
 
   fixData(data: any): ConfigData {
     const DefaultValue: any = this.DefaultValue;
-    for(let key in DefaultValue){
-      if(!DefaultValue.hasOwnProperty(key)) continue;
-      if(typeof data[key] === 'undefined'){
+    for (const key in DefaultValue) {
+      if (!DefaultValue.hasOwnProperty(key)) continue;
+      if (typeof data[key] === 'undefined') {
         data[key] = DefaultValue[key];
       }
     }

@@ -1,17 +1,17 @@
+import { Config } from '../../tool/config-manage';
+import { getTagData } from '../../tool/tag-data';
+
 import './introduce.less';
-import {getTagData} from '../../tool/tag-data';
-import {Config} from "../../tool/config-manage";
 
 (async () => {
   const config = await Config.get();
-  if(!config.showIntroduce) return;
+  if (!config.showIntroduce) return;
 
-
-  const {tagList} = getTagData();
+  const { tagList } = getTagData();
   const taglist = document.querySelector('#taglist');
   const gright = document.querySelector('#gright');
 
-  if(!(taglist && gright)) return;
+  if (!(taglist && gright)) return;
 
   const introduceBox = document.createElement('div');
   introduceBox.id = 'ehs-introduce-box';
@@ -23,9 +23,9 @@ import {Config} from "../../tool/config-manage";
       target.nodeName === 'A' &&
       target.parentElement &&
       (
-        target.parentElement.classList.contains("gt") ||
-        target.parentElement.classList.contains("gtl") ||
-        target.parentElement.classList.contains("gtw")
+        target.parentElement.classList.contains('gt') ||
+        target.parentElement.classList.contains('gtl') ||
+        target.parentElement.classList.contains('gtw')
       )
     ) {
       const isOpen = !!target.style.color;
@@ -88,4 +88,4 @@ import {Config} from "../../tool/config-manage";
     }
   });
 
-})()
+})().catch(console.error);
