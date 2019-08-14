@@ -295,17 +295,14 @@ class background {
         await this.loadPackedData();
       } else if (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION) {
         console.log('数据结构变化, 重新构建数据');
-        if('tagDB' in data && 'releaseLink' in data){
-          await this.storageTagData(data.tagDB, data.releaseLink)
-        } else {
-          await this.loadPackedData();
-        }
+        await this.loadPackedData();
       }
     });
   }
 
 }
 
-new background();
 
-
+// popup 可以通过 chrome.extension.getBackgroundPage().syringeBackground 直接访问
+// 有些地方可以进行优化 不过也没啥必要
+(window as any).syringeBackground = new background();
