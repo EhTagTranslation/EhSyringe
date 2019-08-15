@@ -2,7 +2,7 @@ import {Config} from "../../tool/config-manage";
 import {chromeMessage} from "../../tool/chrome-message";
 import {dateDiff} from "../../tool/tool";
 
-export const autoUpdate = async () => {
+export const autoUpdateInit = async () => {
   const config = await Config.get();
   if(!config.autoUpdate)return;
   console.log("💉 插件", "自动更新");

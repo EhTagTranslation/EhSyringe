@@ -2,7 +2,7 @@ import './introduce.less';
 import {getTagData} from '../../tool/tag-data';
 import {Config} from "../../tool/config-manage";
 
-export const introduce = async () => {
+export const introduceInit = async () => {
   const config = await Config.get();
   if(!config.showIntroduce) return;
   console.log("💉 插件", "标签介绍");

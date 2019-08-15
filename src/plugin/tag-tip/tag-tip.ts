@@ -155,7 +155,7 @@ class TagTip {
   }
 }
 
-export const tagTip = async () => {
+export const tagTipInit = async () => {
   const config = await Config.get();
   if(!config.tagTip)return;
   console.log("💉 插件", "标签提示");
