@@ -2,9 +2,10 @@ import {Config} from "../../tool/config-manage";
 import {chromeMessage} from "../../tool/chrome-message";
 import {dateDiff} from "../../tool/tool";
 
-(async () => {
+export const autoUpdate = async () => {
   const config = await Config.get();
   if(!config.autoUpdate)return;
+  console.log("💉 插件", "自动更新");
   chrome.storage.local.get(['lastCheckTime'], (data) => {
     const time = new Date().getTime();
     /*
@@ -20,5 +21,5 @@ import {dateDiff} from "../../tool/tool";
       })
     }
   })
-})();
+}
 

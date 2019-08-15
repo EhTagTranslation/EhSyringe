@@ -2,9 +2,10 @@ import './introduce.less';
 import {getTagData} from '../../tool/tag-data';
 import {Config} from "../../tool/config-manage";
 
-(async () => {
+export const introduce = async () => {
   const config = await Config.get();
   if(!config.showIntroduce) return;
+  console.log("💉 插件", "标签介绍");
 
 
   const {tagList} = getTagData();
@@ -88,4 +89,4 @@ import {Config} from "../../tool/config-manage";
     }
   });
 
-})()
+}

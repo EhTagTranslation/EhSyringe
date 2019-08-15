@@ -155,10 +155,12 @@ class TagTip {
   }
 }
 
-(async () => {
+export const tagTip = async () => {
   const config = await Config.get();
   if(!config.tagTip)return;
+  console.log("💉 插件", "标签提示");
+
   const FSearchInput: HTMLInputElement = document.querySelector('#f_search');
   if(!FSearchInput)return;
   new TagTip(FSearchInput);
-})();
+};

@@ -26,8 +26,7 @@ if(process.argv.indexOf('--firefox') > 0 || process.argv.indexOf('--android') > 
 module.exports = {
     entry: {
         'background': path.resolve(__dirname, 'src/background.ts'),
-        'document-end': path.resolve(__dirname, 'src/document-end.ts'),
-        'document-start': path.resolve(__dirname, 'src/document-start.ts'),
+        'main': path.resolve(__dirname, 'src/main.ts'),
         'popup': path.resolve(__dirname, 'src/popup/popup.ts'),
     },
     output: {

@@ -37,21 +37,9 @@
         "*://*.e-hentai.org/*"
       ],
       "js": [
-        "script/document-start.js"
+        "script/main.js"
       ],
       "run_at": "document_start"
-    },
-    {
-      "matches": [
-        "*://exhentai.org/*",
-        "*://e-hentai.org/*",
-        "*://*.exhentai.org/*",
-        "*://*.e-hentai.org/*"
-      ],
-      "js": [
-        "script/document-end.js"
-      ],
-      "run_at": "document_end"
     }
   ],
   "permissions": [
