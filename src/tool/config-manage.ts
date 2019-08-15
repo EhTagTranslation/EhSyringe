@@ -52,7 +52,9 @@ class ConfigManage {
   }
 
   async get(): Promise<ConfigData> {
-    const config = (await promisify(chrome.storage.local.get, 'config')).config || { ...this.DefaultValue };
+    /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
+    const data: any = await new Promise(resolve => chrome.storage.local.get(['config'], resolve));
+    const config = (data && data.config) ? data.config : { ...this.DefaultValue };
     return this.fixData(config);
   }
 
@@ -62,7 +64,9 @@ class ConfigManage {
       ...config,
       ...data,
     };
-    return await promisify(chrome.storage.local.set, { config: newConfig });
+
+    /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
+    return await new Promise(resolve => chrome.storage.local.set({ config: newConfig }, resolve))
   }
 
   fixData(data: any): ConfigData {

@@ -75,7 +75,7 @@ class background {
   async checkVersion(): Promise<ReleaseCheckData> {
     const time = new Date().getTime();
     // 限制每分钟最多请求1次
-    const { sha } = await promisify(chrome.storage.local.get, 'sha');
+    const { sha } = await new Promise(resolve => chrome.storage.local.get('sha', resolve))
     if ((time - this.lastCheck <= 1000 * 60) && this.lastCheckData) {
       return {
         new: (this.lastCheckData && this.lastCheckData.new) || '',
@@ -196,7 +196,9 @@ class background {
       }
     });
     this.tagList = tagList;
-    await promisify(chrome.storage.local.set, {
+
+    /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
+    await new Promise(resolve => chrome.storage.local.set({
       tagDB,
       tagList,
       tagReplaceData,
@@ -204,7 +206,8 @@ class background {
       releaseLink: releasePageUrl,
       sha: tagDB.head.sha,
       dataStructureVersion: this.DATA_STRUCTURE_VERSION,
-    });
+    }, resolve));
+
     this.badge.set('OK', '#00C801');
     this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
     await sleep(2500);

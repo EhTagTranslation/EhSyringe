@@ -6,6 +6,7 @@ export function promisify<TArgs>(fn: (args: TArgs, callback: (() => void)) => vo
 export function promisify(fn: any, ...args: any[]): Promise<any> {
     return new Promise<any>((resolve, reject) => {
         fn(...args, (result: any) => {
+            /* ????????????????? */
             if (chrome.runtime.lastError) {
                 return reject(chrome.runtime.lastError);
             }

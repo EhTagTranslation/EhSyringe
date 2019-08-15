@@ -5,7 +5,7 @@ import { tagTipInit } from "./plugin/tag-tip/tag-tip"
 import { introduceInit } from "./plugin/introduce/introduce"
 import { autoUpdateInit } from "./plugin/auto-update/auto-update"
 window.document.addEventListener('DOMContentLoaded', () => {
-  tagTipInit();
-  introduceInit();
-  autoUpdateInit();
+  tagTipInit().catch(console.error);
+  introduceInit().catch(console.error);
+  autoUpdateInit().catch(console.error);
 });

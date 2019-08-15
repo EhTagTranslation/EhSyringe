@@ -650,4 +650,5 @@ export const uiData: { [key: string]: string } = {
   'File Search': '文件搜索',
 
   'There are newer versions of this gallery available:': '此库有更新的版本可用：',
+  "Next Page >": '下一页 >'
 };
