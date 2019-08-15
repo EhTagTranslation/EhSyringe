@@ -4,7 +4,7 @@ import { namespaceTranslate } from '../../data/namespace-translate';
 import { SearchTagItem } from '../../interface';
 import { getTagData } from '../../tool/tag-data';
 import './tag-tip.less';
-import {Config} from "../../tool/config-manage";
+import { Config } from "../../tool/config-manage";
 const { tagList } = getTagData();
 
 class TagTip {
@@ -161,6 +161,6 @@ export const tagTipInit = async () => {
   console.log("💉 插件", "标签提示");
 
   const FSearchInput: HTMLInputElement = document.querySelector('#f_search');
-  if(!FSearchInput)return;
+  if (!FSearchInput) return;
   new TagTip(FSearchInput);
 };

@@ -3,8 +3,13 @@ body {
   overflow: hidden;
   white-space: nowrap;
   font-family: sans-serif;
-  font-size: 12px;
+  font-size: 12pt;
   user-select: none;
+}
+
+.hidden{
+  visibility: hidden;
+  display: none;
 }
 
 .popup-root {
@@ -20,10 +25,6 @@ body {
     margin: 0 16px;
     margin-bottom: 16px;
   }
-}
-
-.no-select {
-  user-select: none;
 }
 
 .big-button {
@@ -173,6 +174,9 @@ a {
   display: flex;
   flex-direction: column;
 
+  font-size: 10pt;
+  line-height: 12pt;
+
   &.open {
     pointer-events:auto;
     opacity: 1;
@@ -193,7 +197,7 @@ a {
       vertical-align: center;
       border-radius: 50%;
       background: rgba(0, 0, 0, 0.0);
-      font-size: 20px;
+      font-size: 20pt;
      /* color: #8041a6;
       &:hover {
         color: #6d378d;
@@ -233,8 +237,6 @@ a {
 
   label{
     position: relative;
-    font-size: 14px;
-    line-height: 16px;
     vertical-align: top;
     display: block;
   }
@@ -361,7 +363,7 @@ a {
   h3{
     span{
       font-weight: 400;
-      font-size: 12px;
+      font-size: 20pt;
     }
   }
 }
@@ -373,7 +375,7 @@ a {
   justify-content: space-between;
   a {
     flex: none;
-    font-size: 12px;
+    font-size: 10pt;
     width: 30px;
     text-align: center;
     display: inline-block;

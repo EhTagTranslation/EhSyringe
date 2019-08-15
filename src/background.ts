@@ -1,10 +1,11 @@
 import pako from 'pako';
 import { namespaceTranslate } from './data/namespace-translate';
-import {DownloadStatus, EHTDatabase, ReleaseCheckData, TagItem, TagList} from './interface';
+import { DownloadStatus, EHTDatabase, ReleaseCheckData, TagItem, TagList } from './interface';
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
 import emojiRegex from 'emoji-regex';
-import {trim} from "./tool/tool";
+import { trim } from "./tool/tool";
+import { promisify, sleep } from './tool/promise';
 
 const emojiReg = emojiRegex();
 
@@ -37,7 +38,7 @@ class background {
     chromeMessage.listener('check-version', _ => this.checkVersion());
     chromeMessage.listener('auto-update', async () => {
       const version = await this.checkVersion();
-      if(version.new && (version.new != version.old)){
+      if (version.new && (version.new != version.old)) {
         await this.getTagDataEvent();
         return true;
       }
@@ -74,7 +75,7 @@ class background {
   async checkVersion(): Promise<ReleaseCheckData> {
     const time = new Date().getTime();
     // 限制每分钟最多请求1次
-    const { sha } = await new Promise((resolve) => chrome.storage.local.get(resolve));
+    const { sha } = await promisify(chrome.storage.local.get, 'sha');
     if ((time - this.lastCheck <= 1000 * 60) && this.lastCheckData) {
       return {
         new: (this.lastCheckData && this.lastCheckData.new) || '',
@@ -154,71 +155,61 @@ class background {
     });
   }
 
-  storageTagData(tagDB: EHTDatabase, releasePageUrl?: string): Promise<void> {
-    return new Promise(resolve => {
-
-      if(!releasePageUrl){
-        releasePageUrl = 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json';
-      }
-
-      const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
-      const tagReplaceData: { [key: string]: string } = {};
-      const tagList: TagList = [];
-      tagDB.data.sort((a, b) => {
-        return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
-      });
-      tagDB.data.forEach(space => {
-        const namespace = space.namespace;
-        if (namespace === 'rows') return;
-        for (const key in space.data) {
-          const t = space.data[key];
-          let search = ``;
-          if (namespace !== 'misc') {
-            search += namespace + ':';
-          }
-          if (key.indexOf(' ') !== -1) {
-            search += `"${key}$"`;
-          } else {
-            search += key + '$';
-          }
-
-          const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
-          const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''))
-          const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
-
-          tagList.push({
-            ...t,
-            name: cleanName,
-            key,
-            namespace,
-            search,
-          });
-
-          tagReplaceData[`${namespace}:${key}`] = dirtyName;
-          if (namespace === 'misc') {
-            tagReplaceData[key] = dirtyName;
-          }
-        }
-      });
-      chrome.storage.local.set({
-        tagDB,
-        tagList,
-        tagReplaceData,
-        updateTime: new Date().getTime(),
-        releaseLink: releasePageUrl,
-        sha: tagDB.head.sha,
-        dataStructureVersion: this.DATA_STRUCTURE_VERSION,
-      }, () => {
-        resolve();
-        this.badge.set('OK', '#00C801');
-        this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
-        setTimeout(() => {
-          this.badge.set('', '#4A90E2');
-          this.pushDownloadStatus({ run: false, info: '更新完成', progress: 0, complete: false });
-        }, 2500);
-      });
-      this.tagList = tagList;
+  async storageTagData(tagDB: EHTDatabase, releasePageUrl: string = 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json'): Promise<void> {
+    const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
+    const tagReplaceData: { [key: string]: string } = {};
+    const tagList: TagList = [];
+    tagDB.data.sort((a, b) => {
+      return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
     });
+    tagDB.data.forEach(space => {
+      const namespace = space.namespace;
+      if (namespace === 'rows') return;
+      for (const key in space.data) {
+        const t = space.data[key];
+        let search = ``;
+        if (namespace !== 'misc') {
+          search += namespace + ':';
+        }
+        if (key.indexOf(' ') !== -1) {
+          search += `"${key}$"`;
+        } else {
+          search += key + '$';
+        }
+
+        const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
+        const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''))
+        const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
+
+        tagList.push({
+          ...t,
+          name: cleanName,
+          key,
+          namespace,
+          search,
+        });
+
+        tagReplaceData[`${namespace}:${key}`] = dirtyName;
+        if (namespace === 'misc') {
+          tagReplaceData[key] = dirtyName;
+        }
+      }
+    });
+    this.tagList = tagList;
+    await promisify(chrome.storage.local.set, {
+      tagDB,
+      tagList,
+      tagReplaceData,
+      updateTime: new Date().getTime(),
+      releaseLink: releasePageUrl,
+      sha: tagDB.head.sha,
+      dataStructureVersion: this.DATA_STRUCTURE_VERSION,
+    });
+    this.badge.set('OK', '#00C801');
+    this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
+    await sleep(2500);
+    this.badge.set('', '#4A90E2');
+    this.pushDownloadStatus({ run: false, info: '更新完成', progress: 0, complete: false });
   }
 
   initContextMenus() {
@@ -295,17 +286,13 @@ class background {
         await this.loadPackedData();
       } else if (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION) {
         console.log('数据结构变化, 重新构建数据');
-        if('tagDB' in data){
-          await this.storageTagData(data.tagDB, data.releaseLink)
-        } else {
-          await this.loadPackedData();
-        }
+        await this.loadPackedData();
       }
     });
   }
 
 }
 
-new background();
-
-
+// popup 可以通过 chrome.extension.getBackgroundPage().syringeBackground 直接访问
+// 有些地方可以进行优化 不过也没啥必要
+(window as any).syringeBackground = new background();

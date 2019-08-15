@@ -1,33 +1,33 @@
 import { uiData } from '../data/ui-data';
 import './syringe.less';
 import { getTagData } from '../tool/tag-data';
-import {Config} from "../tool/config-manage";
+import { Config } from "../tool/config-manage";
 Config.synchro();
 const config = Config.syncGet();
 
 /* 有可能会有性能问题, 开的页面多了不知道会是什么效果*/
 chrome.storage.onChanged.addListener(changes => {
   console.log('changes', changes);
-  if('config' in changes && changes.config.newValue){
+  if ('config' in changes && changes.config.newValue) {
     window.localStorage.setItem('ehs-config', JSON.stringify(changes.config.newValue));
   }
-/*
-  if('tagList' in changes && changes.tagList.newValue){
-    window.localStorage.setItem('tag-list', JSON.stringify(changes.tagList.newValue));
-    (window as any).tagListStorage = changes.tagList.newValue
-  }
-  if('tagReplaceData' in changes && changes.tagReplaceData.newValue){
-    window.localStorage.setItem('tag-replace-data', JSON.stringify(changes.tagReplaceData.newValue));
-    (window as any).tagReplaceDataStorage = changes.tagReplaceData.newValue
-  }
-
-  if('updateTime' in changes && changes.updateTime.newValue){
-    window.localStorage.setItem('tag-update-time', changes.updateTime.newValue);
-  }
-
-  if('sha' in changes && changes.sha.newValue){
-    window.localStorage.setItem('tag-sha', changes.sha.newValue);
-  }*/
+  /*
+    if('tagList' in changes && changes.tagList.newValue){
+      window.localStorage.setItem('tag-list', JSON.stringify(changes.tagList.newValue));
+      (window as any).tagListStorage = changes.tagList.newValue
+    }
+    if('tagReplaceData' in changes && changes.tagReplaceData.newValue){
+      window.localStorage.setItem('tag-replace-data', JSON.stringify(changes.tagReplaceData.newValue));
+      (window as any).tagReplaceDataStorage = changes.tagReplaceData.newValue
+    }
+  
+    if('updateTime' in changes && changes.updateTime.newValue){
+      window.localStorage.setItem('tag-update-time', changes.updateTime.newValue);
+    }
+  
+    if('sha' in changes && changes.sha.newValue){
+      window.localStorage.setItem('tag-sha', changes.sha.newValue);
+    }*/
 });
 
 (window as any).tagClear = () => {
@@ -47,7 +47,7 @@ class Syringe {
   documentEnd = false;
   skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
 
-  constructor(){
+  constructor() {
     window.document.addEventListener('DOMContentLoaded', (e) => {
       this.documentEnd = true;
     });
@@ -84,12 +84,12 @@ class Syringe {
     if (node.nodeName === 'BODY') {
       const body = (node as HTMLBodyElement);
       body.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
-      if(!config.showIcon){ body.classList.add('ehs-hide-icon') }
+      if (!config.showIcon) { body.classList.add('ehs-hide-icon') }
       body.classList.add(`ehs-image-level-${config.introduceImageLevel}`);
     }
 
     let handled = false;
-    if (config.translateTag){
+    if (config.translateTag) {
       handled = this.translateTag(node);
     }
     /* tag 处理过的ui不再处理*/
@@ -125,7 +125,7 @@ class Syringe {
         );
 
 
-        if ( p1 || p2) {
+        if (p1 || p2) {
           const parentElement = node.parentElement;
 
           let value = '';
@@ -134,7 +134,7 @@ class Syringe {
 
 
           if ((!value) && aTitle) {
-            if(aTitle[0] == ':'){
+            if (aTitle[0] === ':') {
               aTitle = aTitle.slice(1);
             }
             if (this.tagReplace[aTitle]) {
@@ -142,7 +142,7 @@ class Syringe {
             }
           }
 
-          if( (!value) && aId) {
+          if ((!value) && aId) {
             aId = aId.replace('ta_', '');
             aId = aId.replace(/_/ig, ' ');
             if (this.tagReplace[aId]) {
@@ -151,7 +151,7 @@ class Syringe {
           }
 
           if (value) {
-            if(node.textContent[1] === ':'){
+            if (node.textContent[1] === ':') {
               value = node.textContent[0] + ':' + value;
             }
             if (node.parentElement.hasAttribute('ehs-tag')) {
@@ -250,12 +250,12 @@ class Syringe {
       }
 
       /* 熊猫书签 兼容处理 2 */
-      if(
+      if (
         element.parentElement &&
         element.parentElement.id === 'gdo4' &&
         element.classList.contains('ths') &&
         element.classList.contains('nosel')
-      ){
+      ) {
         const div = document.createElement('div');
         div.textContent = element.textContent;
         div.style.display = 'none';
@@ -267,7 +267,7 @@ class Syringe {
   }
 }
 
-if(config.translateTag || config.translateUI){
+if (config.translateTag || config.translateUI) {
   new Syringe();
 }
 

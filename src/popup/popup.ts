@@ -1,13 +1,12 @@
-import './popup.less';
+
+import { html, nothing, render, svg } from 'lit-html';
+import { DownloadStatus, ReleaseCheckData } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
 import { Config, ConfigData } from '../tool/config-manage';
+import { promisify, sleep } from '../tool/promise';
 import { dateDiff } from '../tool/tool';
-import { html, render, svg, nothing } from 'lit-html';
-import {DownloadStatus, ReleaseCheckData} from "../interface";
 
-function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+import './popup.less';
 
 interface PopupState {
   sha: string;
@@ -21,8 +20,8 @@ interface PopupState {
   updateAvailable: boolean;
   updateButtonDisabled: boolean;
   showSettingPanel: boolean;
-  progress: number,
-  animationState: number,
+  progress: number;
+  animationState: number;
   info: string;
   configValue?: ConfigData;
 }
@@ -35,7 +34,7 @@ class Popup {
     this.getVersion();
     this.checkVersion().then();
     this.loadConfig().then();
-    chrome.management.getSelf(data => {
+    promisify(chrome.management.getSelf).then(data => {
       this.state.extensionVersion = `${data.version}`;
     });
     chromeMessage.listener('downloadStatus', data => this.downloadStatus(data as DownloadStatus));
@@ -69,7 +68,7 @@ class Popup {
   private configOriginal: ConfigData;
 
   private testAnimationIndex: number = 0;
-  private testAnimationList: [number, number][] = [
+  private testAnimationList: Array<[number, number]> = [
     [1, 0],
     [1, 10],
     [1, 30],
@@ -128,7 +127,7 @@ class Popup {
       const href = ev.target.href;
       if (href && !href.startsWith(document.location.origin + document.location.pathname)) {
         ev.preventDefault();
-        await new Promise(resolve => chrome.tabs.create({ url: href }, resolve));
+        await promisify(chrome.tabs.create, { url: href });
         window.close();
       }
     }
@@ -255,14 +254,14 @@ class Popup {
     await Config.set(this.state.configValue);
     await this.loadConfig();
     await sleep(200);
-    const tabs:any[] = await new Promise(resolve => chrome.tabs.query({active: true}, resolve));
-    if(tabs && tabs.length){
+    const tabs = await promisify(chrome.tabs.query, { active: true });
+    if (tabs && tabs.length) {
       tabs.forEach(v => {
-        if(v.url && (/hentai\.org/i).test(v.url)){
+        if (v.url && (/hentai\.org/i).test(v.url)) {
           console.log('v', v);
           chrome.tabs.reload(v.id);
         }
-      })
+      });
     }
     window.close();
   }
@@ -270,7 +269,7 @@ class Popup {
   _settingPanelTemplate() {
     const state = this.state;
 
-    const checkboxList: { key: string, name: string }[] = [
+    const checkboxList: Array<{ key: string, name: string }> = [
       { key: 'translateUI', name: '翻译界面' },
       { key: 'translateTag', name: '翻译标签' },
       { key: 'showIntroduce', name: '标签介绍' },
@@ -297,7 +296,7 @@ class Popup {
             </label>
           </div>
         `)}
-        <h3>介绍图片: <span>${['禁用', '隐藏色情图片', "隐藏引起不适的图片", '全部显示'][state.configValue.introduceImageLevel]}</span></h3>
+        <p class="checkbox-item">介绍图片: <span>${['禁用', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][state.configValue.introduceImageLevel]}</span></p>
         <div class="image-level">
           <div class="range-box">
             <input type="range" min="0" max="300"
@@ -314,7 +313,7 @@ class Popup {
       </form>
     </div>
     <div class="submit-button">
-      <button @click="${async () => { await this.saveConfig();}}" class="big-button ${this.changeConfigUnsaved() ? 'primary' : ''}">保存</button>
+      <button @click="${async () => { await this.saveConfig(); }}" class="big-button ${this.changeConfigUnsaved() ? 'primary' : ''}">保存</button>
     </div>
 </div>
     `;
@@ -349,16 +348,16 @@ class Popup {
     <div class="content">
       <table>
         <tr>
-          <th class="no-select">TAG版本：</th>
-          <td><a id="sha" href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
+          <th>TAG版本：</th>
+          <td><a href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
         </tr>
         <tr>
-          <th class="no-select">上次更新：</th>
-          <td><span id="updateTime" class="monospace">${state.updateTime || ' --- '}</span></td>
+          <th>上次更新：</th>
+          <td><span class="monospace">${state.updateTime || ' --- '}</span></td>
         </tr>
         <tr>
-          <th class="no-select">更新检查：</th>
-          <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : ''}"><a href="${state.newShaRef}">${state.newSha || ''}</a></span> ${state.versionInfo}</td>
+          <th>更新检查：</th>
+          <td><span class="monospace ${state.updateAvailable ? 'hasNew' : ''}"><a  class="${state.updateAvailable ? '' : 'hidden'}" href="${state.newShaRef}">${state.newSha || ''}</a></span> ${state.versionInfo}</td>
         </tr>
       </table>
       <button @click="${() => this.updateButtonClick()}" ?disabled=${state.updateButtonDisabled} class="big-button ${state.updateAvailable ? 'primary' : ''}" id="updateButton">更新</button>

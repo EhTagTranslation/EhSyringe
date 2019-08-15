@@ -1,18 +1,18 @@
+import { Config } from '../../tool/config-manage';
+import { getTagData } from '../../tool/tag-data';
+
 import './introduce.less';
-import {getTagData} from '../../tool/tag-data';
-import {Config} from "../../tool/config-manage";
 
 export const introduceInit = async () => {
   const config = await Config.get();
   if(!config.showIntroduce) return;
   console.log("💉 插件", "标签介绍");
 
-
-  const {tagList} = getTagData();
+  const { tagList } = getTagData();
   const taglist = document.querySelector('#taglist');
   const gright = document.querySelector('#gright');
 
-  if(!(taglist && gright)) return;
+  if (!(taglist && gright)) return;
 
   const introduceBox = document.createElement('div');
   introduceBox.id = 'ehs-introduce-box';
@@ -24,9 +24,9 @@ export const introduceInit = async () => {
       target.nodeName === 'A' &&
       target.parentElement &&
       (
-        target.parentElement.classList.contains("gt") ||
-        target.parentElement.classList.contains("gtl") ||
-        target.parentElement.classList.contains("gtw")
+        target.parentElement.classList.contains('gt') ||
+        target.parentElement.classList.contains('gtl') ||
+        target.parentElement.classList.contains('gtw')
       )
     ) {
       const isOpen = !!target.style.color;

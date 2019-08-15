@@ -1,4 +1,4 @@
-import {DownloadStatus, ReleaseCheckData} from "../interface";
+import { DownloadStatus, ReleaseCheckData } from '../interface';
 
 interface RequestMap {
   'check-version': void;

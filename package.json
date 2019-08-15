@@ -1,6 +1,6 @@
 {
   "name": "ehsyringe",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "syringe.js",
   "scripts": {
@@ -25,26 +25,18 @@
   "homepage": "https://github.com/xioxin/EhSyringeLite#readme",
   "devDependencies": {
     "@types/chrome": "0.0.86",
-    "@types/js-base64": "^2.3.1",
     "@types/pako": "^1.0.1",
     "copy-webpack-plugin": "^5.0.3",
     "crx-reload-webpack-plugin": "^1.0.3",
     "css-loader": "^3.0.0",
     "cssnano": "^4.1.10",
-    "emoji-regex": "^8.0.0",
     "file-loader": "^4.0.0",
-    "js-base64": "^2.5.1",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "lit-element": "^2.2.1",
-    "lit-html": "^1.1.2",
     "node-fetch": "^2.6.0",
-    "normalize.css": "^8.0.1",
-    "pako": "^1.0.10",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
-    "rxjs": "^6.5.2",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.2",
@@ -53,5 +45,13 @@
     "webext-webpack-plugin": "0.0.8",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "emoji-regex": "^8.0.0",
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2",
+    "normalize.css": "^8.0.1",
+    "pako": "^1.0.10",
+    "rxjs": "^6.5.2"
   }
 }
