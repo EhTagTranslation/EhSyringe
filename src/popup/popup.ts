@@ -296,7 +296,7 @@ class Popup {
             </label>
           </div>
         `)}
-        <h3>介绍图片: <span>${['禁用', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][state.configValue.introduceImageLevel]}</span></h3>
+        <p class="checkbox-item">介绍图片: <span>${['禁用', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][state.configValue.introduceImageLevel]}</span></p>
         <div class="image-level">
           <div class="range-box">
             <input type="range" min="0" max="300"
@@ -348,16 +348,16 @@ class Popup {
     <div class="content">
       <table>
         <tr>
-          <th class="no-select">TAG版本：</th>
-          <td><a id="sha" href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
+          <th>TAG版本：</th>
+          <td><a href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
         </tr>
         <tr>
-          <th class="no-select">上次更新：</th>
-          <td><span id="updateTime" class="monospace">${state.updateTime || ' --- '}</span></td>
+          <th>上次更新：</th>
+          <td><span class="monospace">${state.updateTime || ' --- '}</span></td>
         </tr>
         <tr>
-          <th class="no-select">更新检查：</th>
-          <td><span id="checkVersion" class="monospace ${state.updateAvailable ? 'hasNew' : ''}"><a  class="${state.updateAvailable ? '' : 'hidden'}" href="${state.newShaRef}">${state.newSha || ''}</a></span> ${state.versionInfo}</td>
+          <th>更新检查：</th>
+          <td><span class="monospace ${state.updateAvailable ? 'hasNew' : ''}"><a  class="${state.updateAvailable ? '' : 'hidden'}" href="${state.newShaRef}">${state.newSha || ''}</a></span> ${state.versionInfo}</td>
         </tr>
       </table>
       <button @click="${() => this.updateButtonClick()}" ?disabled=${state.updateButtonDisabled} class="big-button ${state.updateAvailable ? 'primary' : ''}" id="updateButton">更新</button>
