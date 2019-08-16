@@ -270,6 +270,3 @@ class Syringe {
 if (config.translateTag || config.translateUI) {
   new Syringe();
 }
-
-
-

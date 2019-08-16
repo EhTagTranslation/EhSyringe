@@ -212,8 +212,10 @@ class background {
     this.badge.set('OK', '#00C801');
     this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
     await sleep(2500);
-    this.badge.set('', '#4A90E2');
-    this.pushDownloadStatus({ run: false, info: '更新完成', progress: 0, complete: false });
+    if (this.downloadStatus.complete) {
+      this.badge.set('', '#4A90E2');
+      this.pushDownloadStatus({ run: false, info: '更新完成', progress: 0, complete: false });
+    }
   }
 
   initContextMenus() {
