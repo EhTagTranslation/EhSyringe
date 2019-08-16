@@ -37,14 +37,14 @@ class ConfigManage {
       return this.fixData(data);
     } catch (e) {
       console.error(e);
-      return { ...this.DefaultValue }
+      return { ...this.DefaultValue };
     }
   }
 
   async synchro(): Promise<boolean> {
     const oldConfig = window.localStorage.getItem('ehs-config');
     const newConfig = JSON.stringify(await this.get());
-    if (oldConfig != newConfig) {
+    if (oldConfig !== newConfig) {
       window.localStorage.setItem('ehs-config', newConfig);
       return true;
     }
@@ -52,7 +52,7 @@ class ConfigManage {
   }
 
   async get(): Promise<ConfigData> {
-    const data: any = browser.storage.local.get('config');
+    const data = await browser.storage.local.get('config');
     const config = (data && data.config) ? data.config : { ...this.DefaultValue };
     return this.fixData(config);
   }
