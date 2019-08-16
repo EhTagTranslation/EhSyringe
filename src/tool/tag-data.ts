@@ -23,7 +23,7 @@ export function getTagData(): TagData {
     );
     console.info('💉 TAG-SHA: ', tagSha ? tagSha : '不可用');
 
-    chrome.storage.local.get((data) => {
+    chrome.storage.local.get(['tagList', 'tagReplaceData', 'updateTime'], (data) => {
         if (
             'tagList' in data &&
             'tagReplaceData' in data &&

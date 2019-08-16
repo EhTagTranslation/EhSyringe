@@ -33,8 +33,8 @@ class background {
 
   constructor() {
     this.initDownloadStatus();
-    if (chrome.contextMenus) this.initContextMenus();
-    if (chrome.omnibox) this.initOmnibox();
+    this.initContextMenus();
+    this.initOmnibox();
     this.checkLocalData();
     chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
     chromeMessage.listener('check-version', _ => this.checkVersion());
@@ -199,7 +199,7 @@ class background {
     });
     this.tagList = tagList;
 
-    await chrome.storage.local.set({
+    await browser.storage.local.set({
       tagDB,
       tagList,
       tagReplaceData,
@@ -217,30 +217,33 @@ class background {
   }
 
   initContextMenus() {
-    chrome.contextMenus.create(
-      {
-        documentUrlPatterns: ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'],
-        title: '提交标签翻译',
-        targetUrlPatterns: ['*://exhentai.org/tag/*', '*://e-hentai.org/tag/*', '*://*.exhentai.org/tag/*', '*://*.e-hentai.org/tag/*'],
-        contexts: ['link'],
-        onclick(info) {
-          if (/\/tag\//.test(info.linkUrl)) {
-            const s = info.linkUrl.replace('+', ' ').split('/');
-            const s2 = s[s.length - 1].split(':');
-            const namespace = s2.length === 1 ? 'misc' : s2[0];
-            const tag = s2.length === 1 ? s2[0] : s2[1];
-            const editorUrl = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
-            chrome.tabs.create({
-              url: editorUrl,
-            });
-          }
+    if (!chrome.contextMenus) {
+      return;
+    }
+    chrome.contextMenus.create({
+      documentUrlPatterns: ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'],
+      title: '提交标签翻译',
+      targetUrlPatterns: ['*://exhentai.org/tag/*', '*://e-hentai.org/tag/*', '*://*.exhentai.org/tag/*', '*://*.e-hentai.org/tag/*'],
+      contexts: ['link'],
+      onclick(info: chrome.contextMenus.OnClickData): void {
+        if (/\/tag\//.test(info.linkUrl)) {
+          const s = info.linkUrl.replace('+', ' ').split('/');
+          const s2 = s[s.length - 1].split(':');
+          const namespace = s2.length === 1 ? 'misc' : s2[0];
+          const tag = s2.length === 1 ? s2[0] : s2[1];
+          const editorUrl = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
+          chrome.tabs.create({
+            url: editorUrl,
+          });
         }
-      }, () => {
       }
-    );
+    });
   }
 
   initOmnibox() {
+    if (!chrome.omnibox) {
+      return;
+    }
     chrome.omnibox.onInputChanged.addListener(
       (text, suggest) => {
         if (this.tagList.length) {
@@ -282,7 +285,7 @@ class background {
 
   checkLocalData() {
     // 如果沒有數據自動加載本地數據
-    chrome.storage.local.get(async (data) => {
+    browser.storage.local.get(['tagList', 'tagReplaceData']).then(async (data) => {
       if ('tagList' in data) {
         this.tagList = data.tagList;
       }
@@ -292,9 +295,8 @@ class background {
         console.log('数据结构变化, 重新构建数据');
         await this.loadPackedData();
       }
-    });
+    }).catch(console.error);
   }
-
 }
 
 // popup 可以通过 chrome.extension.getBackgroundPage().syringeBackground 直接访问
