@@ -4,7 +4,7 @@
   "description": "",
   "main": "syringe.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo Error: no test specified && exit 1",
     "start": "webpack --mode=development --watch",
     "dev:chrome": "webpack --mode=development --watch",
     "dev:firefox": "webpack --mode=development --watch --firefox",

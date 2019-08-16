@@ -1,11 +1,13 @@
 import emojiRegex from 'emoji-regex';
 import pako from 'pako';
+import { BehaviorSubject } from 'rxjs';
 import { browser } from 'webextension-polyfill-ts';
 
-import { namespaceTranslate } from './data/namespace-translate';
 import { DownloadStatus, EHTDatabase, ReleaseCheckData, TagItem, TagList } from './interface';
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
+import { ContextMenu } from './tool/context-menu';
+import { OmniBox } from './tool/omnibox';
 import { sleep } from './tool/promise';
 import { trim } from './tool/tool';
 
@@ -20,7 +22,8 @@ class Background {
   badge = new BadgeLoading();
   lastCheck = 0;
   lastCheckData: ReleaseCheckData;
-  tagList: TagList = [];
+  tagList: BehaviorSubject<TagList> = new BehaviorSubject([]);
+
   loadLock = false;
   readonly downloadStatusDefault: DownloadStatus = {
     run: false,
@@ -33,14 +36,14 @@ class Background {
 
   constructor() {
     this.initDownloadStatus();
-    this.initContextMenus();
-    this.initOmnibox();
+    OmniBox.init(this.tagList);
+    ContextMenu.init();
     this.checkLocalData();
     chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
     chromeMessage.listener('check-version', _ => this.checkVersion());
     chromeMessage.listener('auto-update', async () => {
       const version = await this.checkVersion();
-      if (version.new && (version.new != version.old)) {
+      if (version.new && (version.new !== version.old)) {
         await this.getTagDataEvent();
         return true;
       }
@@ -197,7 +200,7 @@ class Background {
         }
       }
     });
-    this.tagList = tagList;
+    this.tagList.next(tagList);
 
     await browser.storage.local.set({
       tagDB,
@@ -216,66 +219,6 @@ class Background {
       this.badge.set('', '#4A90E2');
       this.pushDownloadStatus({ run: false, info: '更新完成', progress: 0, complete: false });
     }
-  }
-
-  initContextMenus() {
-    if (!chrome.contextMenus) {
-      return;
-    }
-    chrome.contextMenus.create({
-      documentUrlPatterns: ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'],
-      title: '提交标签翻译',
-      targetUrlPatterns: ['*://exhentai.org/tag/*', '*://e-hentai.org/tag/*', '*://*.exhentai.org/tag/*', '*://*.e-hentai.org/tag/*'],
-      contexts: ['link'],
-      onclick(info: chrome.contextMenus.OnClickData): void {
-        if (/\/tag\//.test(info.linkUrl)) {
-          const s = info.linkUrl.replace('+', ' ').split('/');
-          const s2 = s[s.length - 1].split(':');
-          const namespace = s2.length === 1 ? 'misc' : s2[0];
-          const tag = s2.length === 1 ? s2[0] : s2[1];
-          const editorUrl = `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`;
-          chrome.tabs.create({
-            url: editorUrl,
-          });
-        }
-      }
-    });
-  }
-
-  initOmnibox() {
-    if (!chrome.omnibox) {
-      return;
-    }
-    chrome.omnibox.onInputChanged.addListener(
-      (text, suggest) => {
-        if (this.tagList.length) {
-          const data = this.tagList
-            .filter((v: TagItem) => v.search.indexOf(text) !== -1 || v.name.indexOf(text) !== -1)
-            .slice(0, 5)
-            .map((tag: TagItem) => {
-              const cnNamespace = namespaceTranslate[tag.namespace];
-              let cnNameHtml = '';
-              const enNameHtml = tag.search;
-              if (tag.namespace !== 'misc') {
-                cnNameHtml += cnNamespace + ':';
-              }
-              cnNameHtml += tag.name;
-              return {
-                content: enNameHtml,
-                description: cnNameHtml,
-              };
-            });
-
-          suggest(data);
-        }
-      });
-
-    chrome.omnibox.onInputEntered.addListener(
-      function (text) {
-        chrome.tabs.create({
-          url: `https://e-hentai.org/?f_search=${encodeURIComponent(text)}`,
-        });
-      });
   }
 
   loadPackedData() {
