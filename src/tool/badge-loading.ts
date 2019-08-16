@@ -1,9 +1,11 @@
+import { browser } from "webextension-polyfill-ts";
+
 export class BadgeLoading {
 
   constructor() {
-    chrome.management.getSelf(data => {
+    browser.management.getSelf().then(data => {
       this.extname = data.name || this.extname;
-    });
+    }).catch(console.error);
   }
 
   loadingStrArr = [

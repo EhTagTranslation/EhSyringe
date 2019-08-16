@@ -1,4 +1,4 @@
-import { promisify } from "./promise";
+import { browser } from 'webextension-polyfill-ts';
 
 export interface ConfigData {
   translateUI: boolean;
@@ -52,8 +52,7 @@ class ConfigManage {
   }
 
   async get(): Promise<ConfigData> {
-    /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
-    const data: any = await new Promise(resolve => chrome.storage.local.get(['config'], resolve));
+    const data: any = browser.storage.local.get('config');
     const config = (data && data.config) ? data.config : { ...this.DefaultValue };
     return this.fixData(config);
   }
@@ -65,8 +64,7 @@ class ConfigManage {
       ...data,
     };
 
-    /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
-    return await new Promise(resolve => chrome.storage.local.set({ config: newConfig }, resolve))
+    return await browser.storage.local.set({ config: newConfig });
   }
 
   fixData(data: any): ConfigData {

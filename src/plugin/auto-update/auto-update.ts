@@ -1,15 +1,15 @@
+import { browser } from 'webextension-polyfill-ts';
+
 import { chromeMessage } from '../../tool/chrome-message';
 import { Config } from '../../tool/config-manage';
-import { promisify } from '../../tool/promise';
 import { dateDiff } from '../../tool/tool';
 
 export const autoUpdateInit = async () => {
   const config = await Config.get();
   if (!config.autoUpdate) return;
-  console.log("💉 插件", "自动更新");
+  console.log('💉 插件', '自动更新');
 
-  /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
-  const data: any = await new Promise(resolve => chrome.storage.local.get('lastCheckTime', resolve));
+  const data = await browser.storage.local.get('lastCheckTime');
 
   const time = new Date().getTime();
   /*
@@ -19,10 +19,8 @@ export const autoUpdateInit = async () => {
   const flage = (time - (1000 * 60 * 60 * 24 * 5)) > (data.lastCheckTime || 0);
   console.log('💉 上次自动更新检查', dateDiff(new Date(data.lastCheckTime)), new Date(data.lastCheckTime), flage ? '开始检查' : '跳过');
   if (flage) {
-
-    /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
-    await new Promise(resolve => chrome.storage.local.set({ lastCheckTime: time }, resolve))
+    await browser.storage.local.set({ lastCheckTime: time });
     const updated = await chromeMessage.send('auto-update', void 0);
     console.log('💉 自动更新结束', updated ? '有新版本并更新' : '没有新版本');
   }
-}
+};

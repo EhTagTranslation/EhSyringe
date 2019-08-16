@@ -52,6 +52,7 @@
     "lit-html": "^1.1.2",
     "normalize.css": "^8.0.1",
     "pako": "^1.0.10",
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.5.2",
+    "webextension-polyfill-ts": "^0.9.1"
   }
 }

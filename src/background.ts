@@ -1,11 +1,13 @@
+import emojiRegex from 'emoji-regex';
 import pako from 'pako';
+import { browser } from 'webextension-polyfill-ts';
+
 import { namespaceTranslate } from './data/namespace-translate';
 import { DownloadStatus, EHTDatabase, ReleaseCheckData, TagItem, TagList } from './interface';
 import { BadgeLoading } from './tool/badge-loading';
 import { chromeMessage } from './tool/chrome-message';
-import emojiRegex from 'emoji-regex';
-import { trim } from "./tool/tool";
-import { promisify, sleep } from './tool/promise';
+import { sleep } from './tool/promise';
+import { trim } from './tool/tool';
 
 const emojiReg = emojiRegex();
 
@@ -43,7 +45,7 @@ class background {
         return true;
       }
       return false;
-    })
+    });
   }
 
   async getTagDataEvent() {
@@ -75,7 +77,7 @@ class background {
   async checkVersion(): Promise<ReleaseCheckData> {
     const time = new Date().getTime();
     // 限制每分钟最多请求1次
-    const { sha } = await new Promise(resolve => chrome.storage.local.get('sha', resolve))
+    const { sha } = await browser.storage.local.get('sha');
     if ((time - this.lastCheck <= 1000 * 60) && this.lastCheckData) {
       return {
         new: (this.lastCheckData && this.lastCheckData.new) || '',
@@ -197,8 +199,7 @@ class background {
     });
     this.tagList = tagList;
 
-    /* 撤回更改 修复: TypeError: Illegal invocation: Function must be called on an object of type StorageArea */
-    await new Promise(resolve => chrome.storage.local.set({
+    await chrome.storage.local.set({
       tagDB,
       tagList,
       tagReplaceData,
@@ -206,7 +207,7 @@ class background {
       releaseLink: releasePageUrl,
       sha: tagDB.head.sha,
       dataStructureVersion: this.DATA_STRUCTURE_VERSION,
-    }, resolve));
+    });
 
     this.badge.set('OK', '#00C801');
     this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });

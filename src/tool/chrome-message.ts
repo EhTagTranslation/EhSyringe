@@ -37,7 +37,7 @@ class ChromeMessage {
       query,
       data,
     }, response => {
-      // check last error
+      // ignore last error
       const _ = chrome.runtime.lastError;
       if (response && response.error) {
         throw response.error;
@@ -51,7 +51,9 @@ class ChromeMessage {
         return;
       }
       const promise = handler(request.data);
-      Promise.resolve(promise).then(data => sendResponse({ data })).catch(error => sendResponse({ error }));
+      Promise.resolve(promise)
+        .then(data => sendResponse({ data }))
+        .catch(error => sendResponse({ error }));
       return true;
     });
   }

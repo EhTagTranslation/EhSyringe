@@ -1,5 +1,6 @@
 import { TagItem } from '../interface';
-import {dateDiff} from "./tool";
+import { dateDiff } from "./tool";
+import { browser } from 'webextension-polyfill-ts';
 
 interface TagData { tagList: TagItem[]; tagReplace: { [key: string]: string }; }
 
@@ -17,8 +18,8 @@ export function getTagData(): TagData {
     const tagSha = window.localStorage.getItem('tag-sha');
 
     console.info('💉 TAG最后更新时间: ',
-      tagUpdateTime ? dateDiff(new Date(tagUpdateTime)) : '',
-      tagUpdateTime ? new Date(tagUpdateTime) : '不可用'
+        tagUpdateTime ? dateDiff(new Date(tagUpdateTime)) : '',
+        tagUpdateTime ? new Date(tagUpdateTime) : '不可用'
     );
     console.info('💉 TAG-SHA: ', tagSha ? tagSha : '不可用');
 

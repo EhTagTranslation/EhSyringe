@@ -3,10 +3,11 @@ import { html, nothing, render, svg } from 'lit-html';
 import { DownloadStatus, ReleaseCheckData } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
 import { Config, ConfigData } from '../tool/config-manage';
-import { promisify, sleep } from '../tool/promise';
+import { sleep } from '../tool/promise';
 import { dateDiff } from '../tool/tool';
 
 import './popup.less';
+import { browser } from 'webextension-polyfill-ts';
 
 interface PopupState {
   sha: string;
@@ -31,12 +32,12 @@ class Popup {
   constructor() {
     window.addEventListener('click', this.openLink);
     this._update();
-    this.getVersion();
-    this.checkVersion().then();
-    this.loadConfig().then();
-    promisify(chrome.management.getSelf).then(data => {
+    this.getVersion().catch(console.error);
+    this.checkVersion().catch(console.error);
+    this.loadConfig().catch(console.error);
+    browser.management.getSelf().then(data => {
       this.state.extensionVersion = `${data.version}`;
-    });
+    }).catch(console.error);
     chromeMessage.listener('downloadStatus', data => this.downloadStatus(data as DownloadStatus));
   }
 
@@ -95,13 +96,12 @@ class Popup {
     this.state.progress = a[1];
   }
 
-  getVersion() {
-    chrome.storage.local.get((data) => {
-      this.state.sha = data.sha ? data.sha.slice(0, 6) : 'N/A';
-      this.state.shaRef = data.releaseLink || '';
-      this.state.updateTime = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
-      this.state.updateTimeFull = new Date(data.updateTime).toLocaleString();
-    });
+  async getVersion() {
+    const data = await browser.storage.local.get(['sha', 'releaseLink', 'updateTime']);
+    this.state.sha = data.sha ? data.sha.slice(0, 6) : 'N/A';
+    this.state.shaRef = data.releaseLink || '';
+    this.state.updateTime = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
+    this.state.updateTimeFull = new Date(data.updateTime).toLocaleString();
   }
 
   async checkVersion() {
@@ -122,18 +122,18 @@ class Popup {
     }
   }
 
-  async openLink(ev: MouseEvent) {
+  async openLink(ev: MouseEvent): Promise<void> {
     if (ev.target instanceof HTMLAnchorElement) {
       const href = ev.target.href;
       if (href && !href.startsWith(document.location.origin + document.location.pathname)) {
         ev.preventDefault();
-        await promisify(chrome.tabs.create, { url: href });
+        await browser.tabs.create({ url: href });
         window.close();
       }
     }
   }
 
-  async downloadStatus(data: DownloadStatus) {
+  async downloadStatus(data: DownloadStatus): Promise<void> {
     this.state.updateButtonDisabled = data.run;
     this.state.animationState = data.run ? 1 : 0;
     this.state.info = data.info;
@@ -142,6 +142,9 @@ class Popup {
       await sleep(1000);
       this.state.progress = 100;
       this.state.animationState = 2;
+      this.state.updateButtonDisabled = false;
+      await this.getVersion();
+      await this.checkVersion();
 
       await sleep(500);
       this.state.progress = 5;
@@ -151,14 +154,9 @@ class Popup {
     }
   }
 
-  private updateButtonClick = async () => {
+  private updateButtonClick = () => {
     this.state.updateButtonDisabled = true;
-    await chromeMessage.send('get-tag-data', void 0);
-    setTimeout(() => {
-      this.state.updateButtonDisabled = false;
-      this.getVersion();
-      this.checkVersion().then();
-    }, 1000);
+    chromeMessage.send('get-tag-data', void 0).catch(console.error);
   }
 
   _logoTemplate(progress = 0) {
@@ -254,7 +252,7 @@ class Popup {
     await Config.set(this.state.configValue);
     await this.loadConfig();
     await sleep(200);
-    const tabs = await promisify(chrome.tabs.query, { active: true });
+    const tabs = await browser.tabs.query({ active: true });
     if (tabs && tabs.length) {
       tabs.forEach(v => {
         if (v.url && (/hentai\.org/i).test(v.url)) {
