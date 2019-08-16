@@ -11,7 +11,7 @@ import { trim } from './tool/tool';
 
 const emojiReg = emojiRegex();
 
-class background {
+class Background {
 
   /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
   /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
@@ -301,6 +301,14 @@ class background {
   }
 }
 
-// popup 可以通过 chrome.extension.getBackgroundPage().syringeBackground 直接访问
-// 有些地方可以进行优化 不过也没啥必要
-(window as any).syringeBackground = new background();
+function getBackground(): Background {
+  const winbg = chrome.extension.getBackgroundPage();
+  if ('syringeBackground' in winbg) {
+    console.log("Create background")
+    return (winbg as any).syringeBackground;
+  } else {
+    return (winbg as any).syringeBackground = new Background();
+  }
+}
+
+export const background = getBackground();

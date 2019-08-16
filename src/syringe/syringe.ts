@@ -4,7 +4,6 @@ import { getTagData } from '../tool/tag-data';
 import { Config } from "../tool/config-manage";
 Config.synchro();
 const config = Config.syncGet();
-
 /* 有可能会有性能问题, 开的页面多了不知道会是什么效果*/
 chrome.storage.onChanged.addListener(changes => {
   console.log('changes', changes);
@@ -84,7 +83,7 @@ class Syringe {
     if (node.nodeName === 'BODY') {
       const body = (node as HTMLBodyElement);
       body.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
-      if (!config.showIcon) { body.classList.add('ehs-hide-icon') }
+      if (!config.showIcon) { body.classList.add('ehs-hide-icon'); }
       body.classList.add(`ehs-image-level-${config.introduceImageLevel}`);
     }
 
