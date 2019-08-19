@@ -23,21 +23,22 @@ export function getTagData(): TagData {
     );
     console.info('💉 TAG-SHA: ', tagSha ? tagSha : '不可用');
 
-    chrome.storage.local.get(['tagList', 'tagReplaceData', 'updateTime'], (data) => {
+    chrome.storage.local.get(['tagList', 'tagReplaceData', 'updateTime', 'sha'], (data) => {
         if (
             'tagList' in data &&
             'tagReplaceData' in data &&
-            'updateTime' in data
+            'updateTime' in data &&
+          data.updateTime &&
+          data.tagReplaceData &&
+          data.tagList
         ) {
             if (tagUpdateTime !== data.updateTime) {
                 window.localStorage.setItem('tag-list', JSON.stringify(data.tagList));
                 window.localStorage.setItem('tag-replace-data', JSON.stringify(data.tagReplaceData));
                 window.localStorage.setItem('tag-update-time', data.updateTime);
-                window.localStorage.setItem('tag-sha', data.sha);
+                window.localStorage.setItem('tag-sha', data.sha || '');
                 window.location.reload();
             }
-        } else {
-            // chromeMessage.send()
         }
     });
 

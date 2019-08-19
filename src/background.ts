@@ -230,7 +230,7 @@ class Background {
 
   checkLocalData() {
     // 如果沒有數據自動加載本地數據
-    browser.storage.local.get(['tagList', 'tagReplaceData']).then(async (data) => {
+    browser.storage.local.get(['tagList', 'tagReplaceData', 'dataStructureVersion']).then(async (data) => {
       if ('tagList' in data) {
         this.tagList = data.tagList;
       }
