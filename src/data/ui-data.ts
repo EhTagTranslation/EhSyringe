@@ -534,7 +534,7 @@ export const uiData: { [key: string]: string } = {
   // "This gallery is a duplicate of equal or lower quality of an earlier posted, clearly marked gallery.":
   // '此图库是早期发布的，标记为图库的质量相同或较低的副本。',
   // "A newer higher-quality and clearly marked copy of this gallery has been uploaded.":
-  // "这个画廊的更高质量和清晰标记的副本已上传。",
+  // "这个图库的更高质量和清晰标记的副本已上传。",
   'This gallery contains either illicit content like child porn or anything else forbidden by the ':
     '这个图库包含非法内容，如儿童色情片或其他任何禁止的内容, 参见',
   ', or otherwise falls under the ':
@@ -603,7 +603,7 @@ export const uiData: { [key: string]: string } = {
     '解锁 E-Hentai 图库的原始图像功能。这允许您直接浏览图库的原始非重采样版本。',
 
   'Unlocks the Multi-Page Viewer function on E-Hentai Galleries. This allows you to view all images from a gallery on one page. (':
-    '解锁e-hentai画廊的多页查看器功能。这允许您在一个页面上查看库中的所有图像。 (',
+    '解锁 E-Hentai 图库的多页查看器功能。这允许您在一个页面上查看库中的所有图像。 (',
   'demo': '演示',
   'More Thumbs': '更多的缩略图',
   'Increases the maximum number of thumbnail rows to 10.': '将最大缩略图行数增加到 10。',
@@ -650,5 +650,9 @@ export const uiData: { [key: string]: string } = {
   'File Search': '文件搜索',
 
   'There are newer versions of this gallery available:': '此库有更新的版本可用：',
-  "Next Page >": '下一页 >'
+  'Next Page >': '下一页 >',
+
+  'Show all galleries with this file': '显示所有包含此图片的图库',
+  'Generate a static forum image link': '生成用于论坛的图片链接',
+  'Click here if the image fails loading': '重新加载图片',
 };
