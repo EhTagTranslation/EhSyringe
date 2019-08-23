@@ -5,33 +5,6 @@ import { getTagData } from '../tool/tag-data';
 
 import './syringe.less';
 
-config.sync().catch(logger.error);
-const conf = config.syncGet();
-/* 有可能会有性能问题, 开的页面多了不知道会是什么效果*/
-chrome.storage.onChanged.addListener(async changes => {
-    logger.log('插件存储改变', changes);
-    if ('config' in changes && changes.config.newValue) {
-        await config.sync();
-    }
-    /*
-      if('tagList' in changes && changes.tagList.newValue){
-        window.localStorage.setItem('tag-list', JSON.stringify(changes.tagList.newValue));
-        (window as any).tagListStorage = changes.tagList.newValue
-      }
-      if('tagReplaceData' in changes && changes.tagReplaceData.newValue){
-        window.localStorage.setItem('tag-replace-data', JSON.stringify(changes.tagReplaceData.newValue));
-        (window as any).tagReplaceDataStorage = changes.tagReplaceData.newValue
-      }
-  
-      if('updateTime' in changes && changes.updateTime.newValue){
-        window.localStorage.setItem('tag-update-time', changes.updateTime.newValue);
-      }
-  
-      if('sha' in changes && changes.sha.newValue){
-        window.localStorage.setItem('tag-sha', changes.sha.newValue);
-      }*/
-});
-
 (window as any).tagClear = () => {
     window.localStorage.removeItem('tag-list');
     window.localStorage.removeItem('tag-replace-data');
@@ -45,135 +18,134 @@ chrome.storage.onChanged.addListener(async changes => {
 };
 
 class Syringe {
-    tagReplace = getTagData().tagReplace;
+    readonly tagReplace = getTagData().tagReplace;
     documentEnd = false;
-    skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
+    readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
+    readonly conf = config.syncGet();
+    observer?: MutationObserver;
 
     constructor() {
+        config.sync().catch(logger.error);
+        if (this.conf.translateTag || this.conf.translateUI) {
+            this.init();
+        }
+    }
+
+    isNode<K extends keyof HTMLElementTagNameMap>(node: Node, nodeName: K): node is HTMLElementTagNameMap[K] {
+        return node && node.nodeName === nodeName.toUpperCase();
+    }
+
+    private init(): void {
         window.document.addEventListener('DOMContentLoaded', (e) => {
             this.documentEnd = true;
         });
-        const observer = new MutationObserver((mutations) => {
-            for (let mutation of mutations) {
-                for (let node1 of mutation.addedNodes) {
-                    this.translateNode(node1);
-                    if (this.documentEnd) {
-                        if (node1.childNodes) {
-                            let nodeIterator = document.createNodeIterator(node1);
-                            let node;
-                            while ((node = nodeIterator.nextNode())) {
-                                this.translateNode(node);
-                            }
-                        }
+        this.observer = new MutationObserver(mutations => mutations.forEach(mutation =>
+            mutation.addedNodes.forEach(node1 => {
+                this.translateNode(node1);
+                if (this.documentEnd && node1.childNodes) {
+                    const nodeIterator = document.createNodeIterator(node1);
+                    let node = nodeIterator.nextNode();
+                    while (node) {
+                        this.translateNode(node);
+                        node = nodeIterator.nextNode();
                     }
                 }
-            }
-        });
-        observer.observe(window.document, {
+            })
+        ));
+        this.observer.observe(window.document, {
             attributes: true,
             childList: true,
             subtree: true
         });
     }
 
-    translateNode(node: Node) {
+    translateNode(node: Node): void {
         if (
             (!node.nodeName) ||
             this.skipNode.has(node.nodeName) ||
             (node.parentNode && this.skipNode.has(node.parentNode.nodeName))
         ) { return; }
 
-        if (node.nodeName === 'BODY') {
-            const body = (node as HTMLBodyElement);
-            body.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
-            if (!conf.showIcon) { body.classList.add('ehs-hide-icon'); }
-            body.classList.add(`ehs-image-level-${conf.introduceImageLevel}`);
+        if (this.isNode(node, 'body')) {
+            node.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
+            if (!this.conf.showIcon) { node.classList.add('ehs-hide-icon'); }
+            node.classList.add(`ehs-image-level-${this.conf.introduceImageLevel}`);
         }
 
         let handled = false;
-        if (conf.translateTag) {
+        if (this.conf.translateTag) {
             handled = this.translateTag(node);
         }
         /* tag 处理过的ui不再处理*/
-        if (conf.translateUI && !handled) {
+        if (this.conf.translateUI && !handled) {
             this.translateUi(node);
         }
 
     }
 
+    private isTagContainer(node: Element): boolean {
+        if (!node) { return false; }
+        return node.classList.contains('gt') ||
+            node.classList.contains('gtl') ||
+            node.classList.contains('gtw');
+    }
+
     translateTag(node: Node): boolean {
-        if (node.nodeName === '#text') {
-            if (node.parentElement) {
-                if (
-                    node.parentElement.nodeName === 'MARK' ||
-                    node.parentElement.classList.contains('auto-complete-text')
-                ) {
-                    // 不翻译搜索提示的内容
-                    return true;
-                }
+        if (node.nodeName !== '#text' || !node.parentElement) {
+            return false;
+        }
+        const parentElement = node.parentElement;
+        if (parentElement.nodeName === 'MARK' || parentElement.classList.contains('auto-complete-text')) {
+            // 不翻译搜索提示的内容
+            return true;
+        }
 
-                // 标签只翻译已知的位置
-                const p1 = (
-                    node.parentElement.classList.contains('gt') ||
-                    node.parentElement.classList.contains('gtl') ||
-                    node.parentElement.classList.contains('gtw')
-                );
-                const p2 = (
-                    node.parentElement.parentElement && (
-                        node.parentElement.parentElement.classList.contains('gt') ||
-                        node.parentElement.parentElement.classList.contains('gtl') ||
-                        node.parentElement.parentElement.classList.contains('gtw')
-                    )
-                );
+        // 标签只翻译已知的位置
+        if (!this.isTagContainer(parentElement) && !this.isTagContainer(parentElement.parentElement)) {
+            return false;
+        }
 
+        let value = '';
+        let aId = parentElement.id;
+        let aTitle = parentElement.title;
 
-                if (p1 || p2) {
-                    const parentElement = node.parentElement;
-
-                    let value = '';
-                    let aId = parentElement.id;
-                    let aTitle = parentElement.title;
-
-
-                    if ((!value) && aTitle) {
-                        if (aTitle[0] === ':') {
-                            aTitle = aTitle.slice(1);
-                        }
-                        if (this.tagReplace[aTitle]) {
-                            value = this.tagReplace[aTitle];
-                        }
-                    }
-
-                    if ((!value) && aId) {
-                        aId = aId.replace('ta_', '');
-                        aId = aId.replace(/_/ig, ' ');
-                        if (this.tagReplace[aId]) {
-                            value = this.tagReplace[aId];
-                        }
-                    }
-
-                    if (value) {
-                        if (node.textContent[1] === ':') {
-                            value = node.textContent[0] + ':' + value;
-                        }
-                        if (node.parentElement.hasAttribute('ehs-tag')) {
-                            return true;
-                        }
-                        node.parentElement.setAttribute('ehs-tag', node.textContent);
-                        if (value !== node.textContent) {
-                            node.parentElement.innerHTML = value;
-                        } else {
-                            logger.log('翻译内容相同', value);
-                        }
-                        return true;
-                    }
-                }
+        if ((!value) && aTitle) {
+            if (aTitle[0] === ':') {
+                aTitle = aTitle.slice(1);
+            }
+            if (this.tagReplace[aTitle]) {
+                value = this.tagReplace[aTitle];
             }
         }
+
+        if ((!value) && aId) {
+            aId = aId.replace('ta_', '');
+            aId = aId.replace(/_/ig, ' ');
+            if (this.tagReplace[aId]) {
+                value = this.tagReplace[aId];
+            }
+        }
+
+        if (value) {
+            if (node.textContent[1] === ':') {
+                value = `${node.textContent[0]}:${value}`;
+            }
+            if (node.parentElement.hasAttribute('ehs-tag')) {
+                return true;
+            }
+            node.parentElement.setAttribute('ehs-tag', node.textContent);
+            if (value !== node.textContent) {
+                node.parentElement.innerHTML = value;
+            } else {
+                logger.log('翻译内容相同', value);
+            }
+            return true;
+        }
+
         return false;
     }
 
-    translateUi(node: Node) {
+    translateUi(node: Node): void {
         if (node.nodeName === '#text') {
             if (uiData[node.textContent]) {
                 node.textContent = uiData[node.textContent];
@@ -196,78 +168,71 @@ class Syringe {
                 return;
             }
 
-        } else if (node.nodeName === 'INPUT' || node.nodeName === 'TEXTAREA') {
-            const input = (node as HTMLInputElement);
-            if (uiData[input.placeholder]) {
-                input.placeholder = uiData[input.placeholder];
+        } else if (this.isNode(node, 'input') || this.isNode(node, 'textarea')) {
+            if (uiData[node.placeholder]) {
+                node.placeholder = uiData[node.placeholder];
                 return;
             }
-            if (input.type == 'submit' || input.type == 'button') {
-                if (uiData[input.value]) {
-                    input.value = uiData[input.value];
+            if (node.type === 'submit' || node.type === 'button') {
+                if (uiData[node.value]) {
+                    node.value = uiData[node.value];
                     return;
                 }
             }
-        } else if (node.nodeName === 'OPTGROUP') {
-            const element = node as HTMLOptGroupElement;
-            if (uiData[element.label]) {
-                element.label = uiData[element.label];
+        } else if (this.isNode(node, 'optgroup')) {
+            if (uiData[node.label]) {
+                node.label = uiData[node.label];
             }
         }
 
         if (
-            node.nodeName === 'A' &&
+            this.isNode(node, 'a') &&
             node.parentElement &&
             node.parentElement.parentElement &&
             node.parentElement.parentElement.id === 'nb') {
-            const a = (node as HTMLElement);
-            if (uiData[a.textContent]) {
-                a.textContent = uiData[a.textContent];
+            if (uiData[node.textContent]) {
+                node.textContent = uiData[node.textContent];
                 return;
             }
         }
 
-        if (node.nodeName === 'P') {
-            const element = node as HTMLParagraphElement;
+        if (this.isNode(node, 'p')) {
             /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
-            if (element.classList.contains('gpc')) {
-                const text = element.textContent;
-                element.style.display = 'none';
+            if (node.classList.contains('gpc')) {
+                const text = node.textContent;
+                node.style.display = 'none';
                 const p = document.createElement('p');
-                p.textContent = text.replace(/Showing (\d+) - (\d+) of (\d+) images/, '$1 - $2，共 $3 张图片');
+                p.textContent = text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图片');
                 p.className = 'gpc-translate';
-                element.parentElement.insertBefore(p, element);
+                node.parentElement.insertBefore(p, node);
             }
         }
 
-        if (node.nodeName === 'DIV') {
-            const element = node as HTMLDivElement;
+        if (this.isNode(node, 'div')) {
             /* E-Hentai-Downloader 兼容处理 */
-            if (element.id === 'gdd') {
+            if (node.id === 'gdd') {
                 const div = document.createElement('div');
-                div.textContent = element.textContent;
+                div.textContent = node.textContent;
                 div.style.display = 'none';
-                element.insertBefore(div, null)
+                node.insertBefore(div, null);
             }
 
             /* 熊猫书签 兼容处理 2 */
             if (
-                element.parentElement &&
-                element.parentElement.id === 'gdo4' &&
-                element.classList.contains('ths') &&
-                element.classList.contains('nosel')
+                node.parentElement &&
+                node.parentElement.id === 'gdo4' &&
+                node.classList.contains('ths') &&
+                node.classList.contains('nosel')
             ) {
                 const div = document.createElement('div');
-                div.textContent = element.textContent;
+                div.textContent = node.textContent;
                 div.style.display = 'none';
                 div.className = 'ths';
-                element.parentElement.insertBefore(div, element)
+                node.parentElement.insertBefore(div, node);
             }
         }
 
     }
 }
 
-if (conf.translateTag || conf.translateUI) {
-    new Syringe();
-}
+export const syringe = new Syringe();

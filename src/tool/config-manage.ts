@@ -15,7 +15,17 @@ export interface ConfigData {
 
 class ConfigManage {
 
-    defaultValue: ConfigData = {
+    constructor() {
+        /* 有可能会有性能问题, 开的页面多了不知道会是什么效果*/
+        chrome.storage.onChanged.addListener(async changes => {
+            logger.log('插件存储改变', changes);
+            if ('config' in changes && changes.config.newValue) {
+                save('config', changes.config.newValue);
+            }
+        });
+    }
+
+    readonly defaultValue: ConfigData = {
         translateUI: true,
         translateTag: true,
         showIntroduce: true,
