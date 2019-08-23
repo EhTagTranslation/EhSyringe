@@ -1,8 +1,8 @@
 ---
-name: 提供UI翻译
-about: 仅限UI翻译,标签翻译请不要选择此项
+name: 提供 UI 翻译
+about: 仅限 UI 翻译,标签翻译请不要选择此项
 title: ''
-labels: UI翻译
+labels: UI 翻译
 assignees: ''
 
 ---

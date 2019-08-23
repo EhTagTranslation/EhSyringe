@@ -1,5 +1,5 @@
 ---
-name: 报告BUG
+name: 报告 BUG
 about: 提交一个错误,帮助我们改善插件
 title: ''
 labels: bug
