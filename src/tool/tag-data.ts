@@ -1,13 +1,12 @@
 import { browser } from 'webextension-polyfill-ts';
 
-import { TagItem } from '../interface';
+import { TagItem, TagList } from '../interface';
 
 import { logger } from './log';
 import { load, save } from './storage';
 import { dateDiff } from './tool';
 
 interface TagReplace { [key: string]: string; }
-type TagList = TagItem[]
 interface TagData { tagList: TagList; tagReplace: TagReplace; }
 
 async function loadPluginData(): Promise<void> {
