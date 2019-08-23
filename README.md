@@ -1,5 +1,8 @@
 # EhSyringe
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")  
+[![Build Status](https://img.shields.io/travis/com/EhTagTranslation/EhSyringe.svg?logo=travis-ci&logoColor=white)](https://travis-ci.com/EhTagTranslation/EhSyringe)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](https://dependabot.com)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件")
+[![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")  
 
 E站注射器，将中文翻译注入到E站体内。
 
