@@ -47,7 +47,7 @@ module.exports = {
                     {
                         loader: 'style-loader',
                         options: {
-                            insertInto: ':root'
+                            insert: ':root'
                         }
                     },
                     {
@@ -82,7 +82,7 @@ module.exports = {
                     {
                         loader: 'style-loader',
                         options: {
-                            insertInto: ':root'
+                            insert: ':root'
                         }
                     },
                     {
