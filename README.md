@@ -1,4 +1,5 @@
 # EhSyringe
+
 [![Build Status](https://img.shields.io/travis/com/EhTagTranslation/EhSyringe.svg?logo=travis-ci&logoColor=white)](https://travis-ci.com/EhTagTranslation/EhSyringe)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](https://dependabot.com)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件")
@@ -16,36 +17,17 @@ E 站注射器，将中文翻译注入到E站体内。
 [![Chrome Web Store](./.github/assets/chrome.svg)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](./.github/assets/firefox.svg)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")
 
 ## 功能
+
 * 全站翻译（大部分)
 * TAG 翻译
 * TAG 介绍
 * TAG 翻译数据更新
 * 搜索框 TAG 输入提示
 
-
 ## 特点
+
 * 在加载 DOM 过程替换翻译, 页面加载完直接是中文不会闪烁
-
-## 更新日志
-
-### 1.2.0
-* 修复熊猫书签兼容问题
-* 增加设置面板
-* 增加自动更新功能（默认不开启）
-* 增加几个 UI 翻译
-
-### 1.1.2
-* 增加更新进度条和动画效果
-* 修复与熊猫书签的兼容问题
-* 修复与 E-Hentai-Downloader 的兼容问题
-* 优化翻译替换逻辑
-* 增加了几条 UI 翻译
-
-### 1.1.1
-* 修复 Android 无法更新的问题
-
-### 1.1.0
-* 第一个正式版本
+* 兼容 E-Hentai-Downloader 及熊猫书签
 
 ## 截图预览
 
@@ -61,3 +43,4 @@ Q: 旧版中复制磁力链功能会增加吗?
 
 A: 目前插件只专注于标签相关功能, 你可以油猴子安装 <https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03> 来获得这个功能
 
+## [更新日志](CHANGELOG.md)
