@@ -42,7 +42,7 @@ class Popup {
         chromeMessage.listener('downloadStatus', data => this.downloadStatus(data as DownloadStatus));
     }
 
-    private _state: PopupState = {
+    private readonly _state: PopupState = {
         sha: '',
         shaRef: '',
         info: '',

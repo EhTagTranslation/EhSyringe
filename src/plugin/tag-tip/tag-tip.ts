@@ -1,17 +1,20 @@
 import { fromEvent } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
+
 import { namespaceTranslate } from '../../data/namespace-translate';
 import { SearchTagItem } from '../../interface';
-import { getTagData } from '../../tool/tag-data';
-import './tag-tip.less';
-import { config } from "../../tool/config-manage";
+import { config } from '../../tool/config-manage';
 import { logger } from '../../tool/log';
+import { getTagData } from '../../tool/tag-data';
+
+import './tag-tip.less';
+
 const { tagList } = getTagData();
 
 class TagTip {
     selectedIndex = 0;
-    inputElement: HTMLInputElement;
-    autoCompleteList: HTMLDivElement;
+    readonly inputElement: HTMLInputElement;
+    readonly autoCompleteList: HTMLDivElement;
 
     constructor(inputElement: HTMLInputElement) {
         this.inputElement = inputElement;

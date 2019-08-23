@@ -14,6 +14,13 @@ import { ContextMenu } from './context-menu';
 import { OmniBox } from './omnibox';
 
 const emojiReg = emojiRegex();
+const defaultStatus = {
+    run: false,
+    progress: 0,
+    info: '',
+    complete: false,
+    error: false,
+};
 
 class Background {
 
@@ -25,21 +32,14 @@ class Background {
     lastCheck = 0;
     lastCheckData: ReleaseCheckData;
     readonly tagList: BehaviorSubject<TagList> = new BehaviorSubject([]);
+    readonly downloadStatus: BehaviorSubject<DownloadStatus> = new BehaviorSubject(defaultStatus);
 
     loadLock = false;
-    readonly downloadStatusDefault: DownloadStatus = {
-        run: false,
-        progress: 0,
-        info: '',
-        complete: false,
-        error: false,
-    };
-    downloadStatus: DownloadStatus;
 
     constructor() {
-        this.initDownloadStatus();
         OmniBox.init(this.tagList);
         ContextMenu.init();
+
         this.checkLocalData().catch(logger.error);
         chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
         chromeMessage.listener('check-version', _ => this.checkVersion());
@@ -51,6 +51,7 @@ class Background {
             }
             return false;
         });
+        this.downloadStatus.subscribe(v => chromeMessage.broadcast('downloadStatus', v));
     }
 
     async getTagDataEvent(): Promise<void> {
@@ -65,18 +66,21 @@ class Background {
         }
     }
 
-    initDownloadStatus() {
-        this.downloadStatus = {
-            ...this.downloadStatusDefault
-        };
+    initDownloadStatus(): void {
+        this.downloadStatus.next({
+            run: false,
+            progress: 0,
+            info: '',
+            complete: false,
+            error: false,
+        });
     }
 
-    pushDownloadStatus(data: Partial<DownloadStatus> = {}) {
-        this.downloadStatus = {
-            ...this.downloadStatus,
+    pushDownloadStatus(data: Partial<DownloadStatus> = {}): void {
+        this.downloadStatus.next({
+            ...this.downloadStatus.value,
             ...data,
-        };
-        chromeMessage.broadcast('downloadStatus', this.downloadStatus);
+        });
     }
 
     async checkVersion(): Promise<ReleaseCheckData> {
@@ -185,7 +189,7 @@ class Background {
                 }
 
                 const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
-                const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''))
+                const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''));
                 const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
 
                 tagList.push({
@@ -223,11 +227,11 @@ class Background {
         }
     }
 
-    loadPackedData() {
+    async loadPackedData(): Promise<void> {
         const dbUrl = chrome.runtime.getURL('assets/tag.db');
-        return fetch(dbUrl)
-            .then(r => r.json())
-            .then(d => this.storageTagData(d));
+        const r = await fetch(dbUrl);
+        const d = await r.json();
+        return await this.storageTagData(d);
     }
 
     async checkLocalData(): Promise<void> {

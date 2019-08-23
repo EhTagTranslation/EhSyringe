@@ -1,10 +1,10 @@
 export class ContextMenu implements chrome.contextMenus.CreateProperties {
-    documentUrlPatterns = ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'];
-    title = '提交标签翻译';
-    targetUrlPatterns = ['*://exhentai.org/tag/*', '*://e-hentai.org/tag/*', '*://*.exhentai.org/tag/*', '*://*.e-hentai.org/tag/*'];
-    contexts = ['link'];
+    readonly documentUrlPatterns = ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'];
+    readonly title = '提交标签翻译';
+    readonly targetUrlPatterns = ['*://exhentai.org/tag/*', '*://e-hentai.org/tag/*', '*://*.exhentai.org/tag/*', '*://*.e-hentai.org/tag/*'];
+    readonly contexts = ['link'];
 
-    onclick(info: chrome.contextMenus.OnClickData): void {
+    readonly onclick = (info: chrome.contextMenus.OnClickData): void => {
         if (!/\/tag\//.test(info.linkUrl)) {
             return;
         }

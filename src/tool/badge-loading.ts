@@ -10,7 +10,7 @@ export class BadgeLoading {
         }).catch(logger.error);
     }
 
-    loadingStrArr = [
+    readonly loadingStrArr = [
         [''],
         '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''),
         '    |·   | ·  |  · |   ·'.split('|'),
