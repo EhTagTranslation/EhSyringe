@@ -19,11 +19,11 @@ chrome.storage.onChanged.addListener(changes => {
       window.localStorage.setItem('tag-replace-data', JSON.stringify(changes.tagReplaceData.newValue));
       (window as any).tagReplaceDataStorage = changes.tagReplaceData.newValue
     }
-  
+
     if('updateTime' in changes && changes.updateTime.newValue){
       window.localStorage.setItem('tag-update-time', changes.updateTime.newValue);
     }
-  
+
     if('sha' in changes && changes.sha.newValue){
       window.localStorage.setItem('tag-sha', changes.sha.newValue);
     }*/
