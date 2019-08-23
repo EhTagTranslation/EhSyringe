@@ -2,169 +2,170 @@
 import { html, nothing, render, svg } from 'lit-html';
 import { DownloadStatus, ReleaseCheckData } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
-import { Config, ConfigData } from '../tool/config-manage';
+import { config, ConfigData } from '../tool/config-manage';
 import { sleep } from '../tool/promise';
 import { dateDiff } from '../tool/tool';
 
 import './popup.less';
 import { browser } from 'webextension-polyfill-ts';
+import { logger } from '../tool/log';
 
 interface PopupState {
-  sha: string;
-  updateTime: string;
-  updateTimeFull: string;
-  extensionVersion: string;
-  shaRef: string;
-  newSha: string;
-  newShaRef: string;
-  versionInfo: string;
-  updateAvailable: boolean;
-  updateButtonDisabled: boolean;
-  showSettingPanel: boolean;
-  progress: number;
-  animationState: number;
-  info: string;
-  configValue?: ConfigData;
+    sha: string;
+    updateTime: string;
+    updateTimeFull: string;
+    extensionVersion: string;
+    shaRef: string;
+    newSha: string;
+    newShaRef: string;
+    versionInfo: string;
+    updateAvailable: boolean;
+    updateButtonDisabled: boolean;
+    showSettingPanel: boolean;
+    progress: number;
+    animationState: number;
+    info: string;
+    configValue?: ConfigData;
 }
 
 class Popup {
 
-  constructor() {
-    window.addEventListener('click', this.openLink);
-    this._update();
-    this.getVersion().catch(console.error);
-    this.checkVersion().catch(console.error);
-    this.loadConfig().catch(console.error);
-    browser.management.getSelf().then(data => {
-      this.state.extensionVersion = `${data.version}`;
-    }).catch(console.error);
-    chromeMessage.listener('downloadStatus', data => this.downloadStatus(data as DownloadStatus));
-  }
-
-  private _state: PopupState = {
-    sha: '',
-    shaRef: '',
-    info: '',
-    updateTime: '',
-    updateTimeFull: '',
-    extensionVersion: '',
-    newSha: '',
-    newShaRef: '',
-    versionInfo: '',
-    updateAvailable: false,
-    updateButtonDisabled: false,
-    showSettingPanel: false,
-    progress: 0,
-    animationState: 0,
-    configValue: null,
-  };
-  private state: PopupState = new Proxy(this._state, {
-    set: (target, key, value, receiver) => {
-      const r = Reflect.set(target, key, value, receiver);
-      this._update();
-      return r;
+    constructor() {
+        window.addEventListener('click', this.openLink);
+        this._update();
+        this.getVersion().catch(logger.error);
+        this.checkVersion().catch(logger.error);
+        this.loadConfig().catch(logger.error);
+        browser.management.getSelf().then(data => {
+            this.state.extensionVersion = `${data.version}`;
+        }).catch(logger.error);
+        chromeMessage.listener('downloadStatus', data => this.downloadStatus(data as DownloadStatus));
     }
-  });
 
-  private configOriginal: ConfigData;
+    private _state: PopupState = {
+        sha: '',
+        shaRef: '',
+        info: '',
+        updateTime: '',
+        updateTimeFull: '',
+        extensionVersion: '',
+        newSha: '',
+        newShaRef: '',
+        versionInfo: '',
+        updateAvailable: false,
+        updateButtonDisabled: false,
+        showSettingPanel: false,
+        progress: 0,
+        animationState: 0,
+        configValue: null,
+    };
+    private state: PopupState = new Proxy(this._state, {
+        set: (target, key, value, receiver) => {
+            const r = Reflect.set(target, key, value, receiver);
+            this._update();
+            return r;
+        }
+    });
 
-  private testAnimationIndex: number = 0;
-  private testAnimationList: Array<[number, number]> = [
-    [1, 0],
-    [1, 10],
-    [1, 30],
-    [1, 80],
-    [1, 100],
-    [2, 100],
-    [2, 5],
-    [1, 5],
-    [0, 0],
-  ];
+    private configOriginal: ConfigData;
 
-  async loadConfig() {
-    this.configOriginal = await Config.get();
-    this.state.configValue = { ...this.configOriginal };
-  }
+    private testAnimationIndex: number = 0;
+    private testAnimationList: Array<[number, number]> = [
+        [1, 0],
+        [1, 10],
+        [1, 30],
+        [1, 80],
+        [1, 100],
+        [2, 100],
+        [2, 5],
+        [1, 5],
+        [0, 0],
+    ];
 
-  testAnimation() {
-    const a = this.testAnimationList[this.testAnimationIndex];
-    this.testAnimationIndex++;
-    if (!this.testAnimationList[this.testAnimationIndex]) {
-      this.testAnimationIndex = 0;
+    async loadConfig() {
+        this.configOriginal = await config.get();
+        this.state.configValue = { ...this.configOriginal };
     }
-    this.state.animationState = a[0];
-    this.state.progress = a[1];
-  }
 
-  async getVersion() {
-    const data = await browser.storage.local.get(['sha', 'releaseLink', 'updateTime']);
-    this.state.sha = data.sha ? data.sha.slice(0, 6) : 'N/A';
-    this.state.shaRef = data.releaseLink || '';
-    this.state.updateTime = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
-    this.state.updateTimeFull = new Date(data.updateTime).toLocaleString();
-  }
-
-  async checkVersion() {
-    this.state.versionInfo = '检查中...';
-    const data = await chromeMessage.send('check-version', void 0);
-    console.log(data);
-    if (data && data.new) {
-      const hasNewData = this.state.updateAvailable = data.new !== data.old;
-      if (hasNewData) {
-        this.state.newSha = data.new.slice(0, 6);
-        this.state.newShaRef = data.newLink;
-        this.state.versionInfo = `有更新！`;
-      } else {
-        this.state.versionInfo = '已是最新版本';
-      }
-    } else {
-      this.state.versionInfo = '获取失败';
+    testAnimation() {
+        const a = this.testAnimationList[this.testAnimationIndex];
+        this.testAnimationIndex++;
+        if (!this.testAnimationList[this.testAnimationIndex]) {
+            this.testAnimationIndex = 0;
+        }
+        this.state.animationState = a[0];
+        this.state.progress = a[1];
     }
-  }
 
-  async openLink(ev: MouseEvent): Promise<void> {
-    if (ev.target instanceof HTMLAnchorElement) {
-      const href = ev.target.href;
-      if (href && !href.startsWith(document.location.origin + document.location.pathname)) {
-        ev.preventDefault();
-        await browser.tabs.create({ url: href });
-        window.close();
-      }
+    async getVersion() {
+        const data = await browser.storage.local.get(['sha', 'releaseLink', 'updateTime']);
+        this.state.sha = data.sha ? data.sha.slice(0, 6) : 'N/A';
+        this.state.shaRef = data.releaseLink || '';
+        this.state.updateTime = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
+        this.state.updateTimeFull = new Date(data.updateTime).toLocaleString();
     }
-  }
 
-  async downloadStatus(data: DownloadStatus): Promise<void> {
-    this.state.updateButtonDisabled = data.run;
-    this.state.animationState = data.run ? 1 : 0;
-    this.state.info = data.info;
-    this.state.progress = data.progress || 0;
-    if (data.complete) {
-      await sleep(1000);
-      this.state.progress = 100;
-      this.state.animationState = 2;
-      this.state.updateButtonDisabled = false;
-      await this.getVersion();
-      await this.checkVersion();
-
-      await sleep(500);
-      this.state.progress = 5;
-
-      await sleep(500);
-      this.state.animationState = 1;
+    async checkVersion() {
+        this.state.versionInfo = '检查中...';
+        const data = await chromeMessage.send('check-version', void 0);
+        logger.log('Release Data', data);
+        if (data && data.new) {
+            const hasNewData = this.state.updateAvailable = data.new !== data.old;
+            if (hasNewData) {
+                this.state.newSha = data.new.slice(0, 6);
+                this.state.newShaRef = data.newLink;
+                this.state.versionInfo = `有更新！`;
+            } else {
+                this.state.versionInfo = '已是最新版本';
+            }
+        } else {
+            this.state.versionInfo = '获取失败';
+        }
     }
-  }
 
-  private updateButtonClick = () => {
-    this.state.updateButtonDisabled = true;
-    chromeMessage.send('get-tag-data', void 0).catch(console.error);
-  }
+    async openLink(ev: MouseEvent): Promise<void> {
+        if (ev.target instanceof HTMLAnchorElement) {
+            const href = ev.target.href;
+            if (href && !href.startsWith(document.location.origin + document.location.pathname)) {
+                ev.preventDefault();
+                await browser.tabs.create({ url: href });
+                window.close();
+            }
+        }
+    }
 
-  _logoTemplate(progress = 0) {
+    async downloadStatus(data: DownloadStatus): Promise<void> {
+        this.state.updateButtonDisabled = data.run;
+        this.state.animationState = data.run ? 1 : 0;
+        this.state.info = data.info;
+        this.state.progress = data.progress || 0;
+        if (data.complete) {
+            await sleep(1000);
+            this.state.progress = 100;
+            this.state.animationState = 2;
+            this.state.updateButtonDisabled = false;
+            await this.getVersion();
+            await this.checkVersion();
 
-    const PushRodStyle = `transform: translate(${(progress / 400) * 70}px, 0)`;
-    const EnemaStyle = `transform: scaleX(${progress / 100})`;
+            await sleep(500);
+            this.state.progress = 5;
 
-    return svg`
+            await sleep(500);
+            this.state.animationState = 1;
+        }
+    }
+
+    private updateButtonClick = () => {
+        this.state.updateButtonDisabled = true;
+        chromeMessage.send('get-tag-data', void 0).catch(logger.error);
+    }
+
+    _logoTemplate(progress = 0) {
+
+        const PushRodStyle = `transform: translate(${(progress / 400) * 70}px, 0)`;
+        const EnemaStyle = `transform: scaleX(${progress / 100})`;
+
+        return svg`
     <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
       <defs>
           <clipPath id="clip">
@@ -225,58 +226,55 @@ class Popup {
           </g>
       </g>
   </svg>`;
-  }
-
-  changeConfigValue(key: string, value: any) {
-    if (key === 'introduceImageLevel') {
-      this.state.configValue = {
-        ...this.state.configValue,
-        introduceImageLevel: value - 1,
-      };
     }
-    this.state.configValue = {
-      ...this.state.configValue,
-      [key]: value,
-    };
-  }
 
-  changeConfigUnsaved(): boolean {
-    const keys = [
-      ...Object.keys(this.configOriginal),
-      ...Object.keys(this.state.configValue),
-    ];
-    return !keys.every(key => (this.configOriginal as any)[key] === (this.state.configValue as any)[key]);
-  }
-
-  async saveConfig() {
-    await Config.set(this.state.configValue);
-    await this.loadConfig();
-    await sleep(200);
-    const tabs = await browser.tabs.query({ active: true });
-    if (tabs && tabs.length) {
-      tabs.forEach(v => {
-        if (v.url && (/hentai\.org/i).test(v.url)) {
-          console.log('v', v);
-          chrome.tabs.reload(v.id);
+    changeConfigValue(key: string, value: any) {
+        if (key === 'introduceImageLevel') {
+            this.state.configValue = {
+                ...this.state.configValue,
+                introduceImageLevel: value - 1,
+            };
         }
-      });
+        this.state.configValue = {
+            ...this.state.configValue,
+            [key]: value,
+        };
     }
-    window.close();
-  }
 
-  _settingPanelTemplate() {
-    const state = this.state;
+    changeConfigUnsaved(): boolean {
+        const keys = [
+            ...Object.keys(this.configOriginal),
+            ...Object.keys(this.state.configValue),
+        ];
+        return !keys.every(key => (this.configOriginal as any)[key] === (this.state.configValue as any)[key]);
+    }
 
-    const checkboxList: Array<{ key: string, name: string }> = [
-      { key: 'translateUI', name: '翻译界面' },
-      { key: 'translateTag', name: '翻译标签' },
-      { key: 'showIntroduce', name: '标签介绍' },
-      { key: 'showIcon', name: '显示标签图标' },
-      { key: 'tagTip', name: '搜索提示' },
-      { key: 'autoUpdate', name: '自动更新' },
-    ];
+    async saveConfig() {
+        await config.set(this.state.configValue);
+        await this.loadConfig();
+        await sleep(200);
+        const tabs = await browser.tabs.query({ active: true });
+        if (tabs && tabs.length) {
+            const ehtabs = tabs.filter(v => v.url && (/(\/\/|\.)(e-|ex)hentai\.org/i).test(v.url));
+            logger.log('Reload tabs', ehtabs);
+            ehtabs.forEach(v => chrome.tabs.reload(v.id));
+        }
+        window.close();
+    }
 
-    return html`
+    _settingPanelTemplate() {
+        const state = this.state;
+
+        const checkboxList: Array<{ key: string, name: string }> = [
+            { key: 'translateUI', name: '翻译界面' },
+            { key: 'translateTag', name: '翻译标签' },
+            { key: 'showIntroduce', name: '标签介绍' },
+            { key: 'showIcon', name: '显示标签图标' },
+            { key: 'tagTip', name: '搜索提示' },
+            { key: 'autoUpdate', name: '自动更新' },
+        ];
+
+        return html`
     <div id="settingPanel" class="${state.showSettingPanel ? 'open' : ''}" >
     <div class="close"><a @click="${() => this.state.showSettingPanel = false}" href="#">×</a></div>
     <div class="form">
@@ -315,11 +313,11 @@ class Popup {
     </div>
 </div>
     `;
-  }
+    }
 
-  _template() {
-    const state = this.state;
-    return html`
+    _template() {
+        const state = this.state;
+        return html`
 <div class="popup-root ${state.showSettingPanel ? 'hide' : ''}">
     <div class="head-buttons">
         <div>
@@ -337,8 +335,8 @@ class Popup {
     <div class="logo-box" style="height: 205px;">
         <div class="logo ${['', 'prominent', 'prominent injection'][state.animationState] || ''}"
         @click="${() => {
-        this.testAnimation();
-      }}">
+                this.testAnimation();
+            }}">
           ${this._logoTemplate(state.progress)}
         </div>
         <div id="info">${state.info}</div>
@@ -363,11 +361,11 @@ class Popup {
 
 </div>
 ${state.configValue ? this._settingPanelTemplate() : nothing}`;
-  }
+    }
 
-  _update() {
-    render(this._template(), document.body);
-  }
+    _update() {
+        render(this._template(), document.body);
+    }
 }
 
 window.onload = () => new Popup();

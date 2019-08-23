@@ -16,7 +16,7 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
         });
     }
 
-    static init() {
+    static init(): boolean {
         if (!chrome.contextMenus) {
             return false;
         }

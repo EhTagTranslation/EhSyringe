@@ -1,62 +1,62 @@
 import { DownloadStatus, ReleaseCheckData } from '../interface';
 
 interface RequestMap {
-  'check-version': void;
-  'get-tag-data': void;
-  'downloadStatus': DownloadStatus;
-  'auto-update': void;
+    'check-version': void;
+    'get-tag-data': void;
+    'downloadStatus': DownloadStatus;
+    'auto-update': void;
 }
 interface ResponseMap {
-  'check-version': ReleaseCheckData;
-  'get-tag-data': void;
-  'downloadStatus': void;
-  'auto-update': boolean;
+    'check-version': ReleaseCheckData;
+    'get-tag-data': void;
+    'downloadStatus': void;
+    'auto-update': boolean;
 }
 
 class ChromeMessage {
 
-  send<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, data: RequestMap[Q]): Promise<ResponseMap[Q]> {
-    return new Promise((resolve, reject) => {
-      chrome.runtime.sendMessage({
-        query,
-        data,
-      }, response => {
-        if (!response) {
-          reject(chrome.runtime.lastError);
-        } else if (response.error) {
-          reject(response.error);
-        } else {
-          resolve(response.data);
-        }
-      });
-    });
-  }
+    send<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, data: RequestMap[Q]): Promise<ResponseMap[Q]> {
+        return new Promise((resolve, reject) => {
+            chrome.runtime.sendMessage({
+                query,
+                data,
+            }, response => {
+                if (!response) {
+                    reject(chrome.runtime.lastError);
+                } else if (response.error) {
+                    reject(response.error);
+                } else {
+                    resolve(response.data);
+                }
+            });
+        });
+    }
 
-  broadcast<Q extends (keyof RequestMap)>(query: Q, data?: RequestMap[Q]): void {
-    chrome.runtime.sendMessage({
-      query,
-      data,
-    }, response => {
-      // ignore last error
-      const _ = chrome.runtime.lastError;
-      if (response && response.error) {
-        throw response.error;
-      }
-    });
-  }
+    broadcast<Q extends (keyof RequestMap)>(query: Q, data?: RequestMap[Q]): void {
+        chrome.runtime.sendMessage({
+            query,
+            data,
+        }, response => {
+            // ignore last error
+            const _ = chrome.runtime.lastError;
+            if (response && response.error) {
+                throw response.error;
+            }
+        });
+    }
 
-  listener<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, handler: (data: RequestMap[Q]) => ResponseMap[Q] | PromiseLike<ResponseMap[Q]>): void {
-    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-      if (!('query' in request) || request.query !== query) {
-        return;
-      }
-      const promise = handler(request.data);
-      Promise.resolve(promise)
-        .then(data => sendResponse({ data }))
-        .catch(error => sendResponse({ error }));
-      return true;
-    });
-  }
+    listener<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, handler: (data: RequestMap[Q]) => ResponseMap[Q] | PromiseLike<ResponseMap[Q]>): void {
+        chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+            if (!('query' in request) || request.query !== query) {
+                return;
+            }
+            const promise = handler(request.data);
+            Promise.resolve(promise)
+                .then(data => sendResponse({ data }))
+                .catch(error => sendResponse({ error }));
+            return true;
+        });
+    }
 }
 
 export const chromeMessage = new ChromeMessage();

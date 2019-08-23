@@ -5,7 +5,7 @@
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbhdcfeopadbmjnlbpcallmalcefnbbb?logo=Google%20Chrome)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件")
 [![Mozilla Add-on](https://img.shields.io/amo/v/ehsyringe?logo=Mozilla%20Firefox)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")  
 
-E 站注射器，将中文翻译注入到E站体内。
+E 站注射器，将中文翻译注入到 E 站体内。
 
 这一针打下去你就会说中文了。
 
@@ -31,7 +31,7 @@ E 站注射器，将中文翻译注入到E站体内。
 
 ## 截图预览
 
-| 搜索列表 | 详情页（标签描述） |
+| **搜索列表** | **详情页（标签描述）** |
 | :---: | :---: |
 | ![image](https://i.loli.net/2019/08/09/5MPFwd7aOsvqJXb.png) | ![image](https://i.loli.net/2019/08/09/l8eNzUGi9x4LfoK.png) |
 | **搜索提示/补全** | **标签数据更新**  |

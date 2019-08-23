@@ -25,7 +25,7 @@ if(process.argv.indexOf('--firefox') > 0 || process.argv.indexOf('--android') > 
 
 module.exports = {
     entry: {
-        'background': path.resolve(__dirname, 'src/background.ts'),
+        'background': path.resolve(__dirname, 'src/background/index.ts'),
         'main': path.resolve(__dirname, 'src/main.ts'),
         'popup': path.resolve(__dirname, 'src/popup/popup.ts'),
     },
@@ -111,12 +111,10 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin([
-            { from: 'src/assets', to: 'assets' }, { from: 'src/template', to: 'template' },
+            { from: 'src/assets', to: 'assets' },
+            { from: 'src/template', to: 'template' },
             { from: 'src/manifest.json', to: 'manifest.json' },
-            {
-                from: 'src/data/tag.db.json',
-                to: 'assets/tag.db',
-            },
+            { from: 'src/data/tag.db.json', to: 'assets/tag.db' },
         ]),
         ...plugins,
     ],

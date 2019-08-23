@@ -1,83 +1,75 @@
 import { browser } from 'webextension-polyfill-ts';
 
+import { logger } from './log';
+import { load, save } from './storage';
+
 export interface ConfigData {
-  translateUI: boolean;
-  translateTag: boolean;
-  showIntroduce: boolean;
-  showIcon: boolean;
-  introduceImageLevel: number; // 0:hide, 1:non-h 2: R18 3: R18G
-  autoUpdate: boolean;
-  tagTip: boolean;
+    translateUI: boolean;
+    translateTag: boolean;
+    showIntroduce: boolean;
+    showIcon: boolean;
+    introduceImageLevel: number; // 0:hide, 1:non-h 2: R18 3: R18G
+    autoUpdate: boolean;
+    tagTip: boolean;
 }
 
 class ConfigManage {
 
-  DefaultValue: ConfigData = {
-    translateUI: true,
-    translateTag: true,
-    showIntroduce: true,
-    showIcon: true,
-    introduceImageLevel: 3,
-    autoUpdate: false, // 默认不开启自动更新
-    tagTip: true,
-  };
-
-  syncGet(): ConfigData {
-    if ('EHSConfig' in window) {
-      return window['EHSConfig']
-    }
-
-    const string = window.localStorage.getItem('ehs-config');
-    if (!string) {
-      return { ...this.DefaultValue }
-    }
-    try {
-      const data = JSON.parse(string);
-      (window as any).EHSConfig = this.fixData(data);
-      return this.fixData(data);
-    } catch (e) {
-      console.error(e);
-      return { ...this.DefaultValue };
-    }
-  }
-
-  async synchro(): Promise<boolean> {
-    const oldConfig = window.localStorage.getItem('ehs-config');
-    const newConfig = JSON.stringify(await this.get());
-    if (oldConfig !== newConfig) {
-      window.localStorage.setItem('ehs-config', newConfig);
-      return true;
-    }
-    return false;
-  }
-
-  async get(): Promise<ConfigData> {
-    const data = await browser.storage.local.get('config');
-    const config = (data && data.config) ? data.config : { ...this.DefaultValue };
-    return this.fixData(config);
-  }
-
-  async set(data: Partial<ConfigData>): Promise<void> {
-    const config = await this.get();
-    const newConfig = {
-      ...config,
-      ...data,
+    defaultValue: ConfigData = {
+        translateUI: true,
+        translateTag: true,
+        showIntroduce: true,
+        showIcon: true,
+        introduceImageLevel: 3,
+        autoUpdate: false, // 默认不开启自动更新
+        tagTip: true,
     };
 
-    return await browser.storage.local.set({ config: newConfig });
-  }
-
-  fixData(data: any): ConfigData {
-    const DefaultValue: any = this.DefaultValue;
-    for (const key in DefaultValue) {
-      if (!DefaultValue.hasOwnProperty(key)) continue;
-      if (typeof data[key] === 'undefined') {
-        data[key] = DefaultValue[key];
-      }
+    syncGet(): ConfigData {
+        return this.fixData(load<ConfigData>('config'));
     }
-    return data;
-  }
+
+    async sync(): Promise<boolean> {
+        const oldConfig = this.syncGet();
+        const newConfig = await this.get();
+        if (JSON.stringify(oldConfig) !== JSON.stringify(newConfig)) {
+            save('config', newConfig);
+            return true;
+        }
+        return false;
+    }
+
+    async get(): Promise<ConfigData> {
+        const data = await browser.storage.local.get('config');
+        const conf = this.fixData(data.config);
+        save('config', conf);
+        return conf;
+    }
+
+    async set(data: Partial<ConfigData>): Promise<void> {
+        const conf = await this.get();
+        const newConfig = {
+            ...conf,
+            ...data,
+        };
+        await browser.storage.local.set({ config: newConfig });
+    }
+
+    private fixData(data?: Partial<ConfigData>): ConfigData {
+        if (!data) {
+            return { ...this.defaultValue };
+        }
+        const defaultValue = this.defaultValue as any;
+        const input = { ...data } as any;
+        for (const key in defaultValue) {
+            if (!defaultValue.hasOwnProperty(key)) continue;
+            if (typeof input[key] === 'undefined') {
+                input[key] = defaultValue[key];
+            }
+        }
+        return input;
+    }
 
 }
 
-export const Config = new ConfigManage();
+export const config = new ConfigManage();
