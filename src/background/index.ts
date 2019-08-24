@@ -11,7 +11,7 @@ class Background {
 }
 
 function getBackground(): Background {
-    const winbg = chrome.extension.getBackgroundPage() as any as { syringeBackground: Background };
+    const winbg = chrome.extension.getBackgroundPage() as { syringeBackground?: Background };
     if (winbg.syringeBackground) {
         return winbg.syringeBackground;
     } else {

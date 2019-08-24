@@ -41,9 +41,9 @@ class Update {
 
         this.checkLocalData().catch(logger.error);
         chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
-        chromeMessage.listener('check-version', _ => this.checkVersion());
+        chromeMessage.listener('check-version', force => this.checkVersion(force));
         chromeMessage.listener('auto-update', async () => {
-            const version = await this.checkVersion();
+            const version = await this.checkVersion(true);
             if (version.new && (version.new !== version.old)) {
                 await this.getTagDataEvent();
                 return true;
@@ -76,14 +76,17 @@ class Update {
         });
     }
 
-    async checkVersion(): Promise<ReleaseCheckData> {
-        const time = new Date().getTime();
-        // 限制每分钟最多请求1次
-        const lastCheckData = this.lastCheckData.value;
-        if ((time - lastCheckData.timestamp <= 1000 * 60)
-            && lastCheckData.githubRelease) {
-            return lastCheckData;
+    async checkVersion(force: boolean = false): Promise<ReleaseCheckData> {
+        if (!force) {
+            // 限制每分钟最多请求1次
+            const time = new Date().getTime();
+            const lastCheckData = this.lastCheckData.value;
+            if ((time - lastCheckData.timestamp <= 1000 * 60)
+                && lastCheckData.githubRelease) {
+                return lastCheckData;
+            }
         }
+
         const { sha, releaseLink } = await browser.storage.local.get(['sha', 'releaseLink']);
         const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
         const info = await (await fetch(githubDownloadUrl)).json();
@@ -213,6 +216,11 @@ class Update {
 
         badgeLoading.set('OK', '#00C801');
         this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
+        this.lastCheckData.next({
+            ...this.lastCheckData.value,
+            old: tagDB.head.sha,
+            oldLink: releasePageUrl,
+        });
         await sleep(2500);
         if (this.downloadStatus.complete) {
             badgeLoading.set('', '#4A90E2');

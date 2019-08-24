@@ -1,7 +1,7 @@
 import { DownloadStatus, ReleaseCheckData } from '../interface';
 
 interface RequestMap {
-    'check-version': void;
+    'check-version': boolean;
     'get-tag-data': void;
     'downloadStatus': DownloadStatus;
     'auto-update': void;
