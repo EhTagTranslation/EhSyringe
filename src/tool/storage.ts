@@ -1,14 +1,7 @@
 
-function getCacheRoot(): { [key: string]: any } {
-    let cacheRoot = (window as any).EhSCache;
-    if (!cacheRoot) {
-        cacheRoot = (window as any).EhSCache = {};
-    }
-    return cacheRoot;
-}
+const cacheRoot: { [key: string]: any } = {};
 
 export function load<T>(key: string): T | undefined {
-    const cacheRoot = getCacheRoot();
     if (cacheRoot[key]) {
         return cacheRoot[key];
     }
@@ -20,7 +13,6 @@ export function load<T>(key: string): T | undefined {
 }
 
 export function save<T>(key: string, value: T): void {
-    const cacheRoot = getCacheRoot();
     cacheRoot[key] = value;
     window.localStorage.setItem(`EhSyringe.${key}`, JSON.stringify(value));
 }

@@ -48,8 +48,12 @@ export interface SearchTagItem extends TagItem {
 
 export interface ReleaseCheckData {
     old: string;
+    oldLink: string;
     new: string;
     newLink: string;
+    timestamp: number;
+
+    githubRelease: any;
 }
 
 export interface DownloadStatus {

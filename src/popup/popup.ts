@@ -1,14 +1,16 @@
 
 import { html, nothing, render, svg } from 'lit-html';
-import { DownloadStatus, ReleaseCheckData } from '../interface';
+import { browser } from 'webextension-polyfill-ts';
+
+import { background } from '../background';
+import { DownloadStatus } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
 import { config, ConfigData } from '../tool/config-manage';
+import { logger } from '../tool/log';
 import { sleep } from '../tool/promise';
 import { dateDiff } from '../tool/tool';
 
 import './popup.less';
-import { browser } from 'webextension-polyfill-ts';
-import { logger } from '../tool/log';
 
 interface PopupState {
     sha: string;
@@ -31,7 +33,7 @@ interface PopupState {
 class Popup {
 
     constructor() {
-        window.addEventListener('click', this.openLink);
+        window.addEventListener('click', ev => this.openLink(ev));
         this._update();
         this.getVersion().catch(logger.error);
         this.checkVersion().catch(logger.error);
@@ -39,7 +41,10 @@ class Popup {
         browser.management.getSelf().then(data => {
             this.state.extensionVersion = `${data.version}`;
         }).catch(logger.error);
-        chromeMessage.listener('downloadStatus', data => this.downloadStatus(data as DownloadStatus));
+        const downloadStatusSub = background.update.downloadStatus.subscribe(data => this.downloadStatus(data));
+        window.addEventListener('unload', _ => {
+            downloadStatusSub.unsubscribe();
+        });
     }
 
     private readonly _state: PopupState = {

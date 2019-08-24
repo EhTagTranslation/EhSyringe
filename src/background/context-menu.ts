@@ -15,13 +15,15 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
             url: `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`,
         });
     }
-
-    static init(): boolean {
-        if (!chrome.contextMenus) {
-            return false;
-        }
-        const menu = new ContextMenu();
-        chrome.contextMenus.create(menu);
-        return true;
-    }
 }
+
+function init(): boolean {
+    if (!chrome.contextMenus) {
+        return false;
+    }
+    const menu = new ContextMenu();
+    chrome.contextMenus.create(menu);
+    return true;
+}
+
+export const contextMenu = init();

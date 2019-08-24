@@ -2,7 +2,7 @@ import { browser } from 'webextension-polyfill-ts';
 
 import { logger } from './log';
 
-export class BadgeLoading {
+class BadgeLoading {
 
     constructor() {
         browser.management.getSelf().then(data => {
@@ -71,3 +71,5 @@ export class BadgeLoading {
         }
     }
 }
+
+export const badgeLoading = new BadgeLoading();

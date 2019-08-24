@@ -3,10 +3,13 @@ import { Observable } from 'rxjs';
 import { namespaceTranslate } from '../data/namespace-translate';
 import { TagItem } from '../interface';
 
-export class OmniBox {
+import { update } from './update';
 
+class OmniBox {
     constructor(tagList: Observable<TagItem[]>) {
         tagList.subscribe(data => this.tagList = data);
+        chrome.omnibox.onInputChanged.addListener(this.onInputChanged);
+        chrome.omnibox.onInputEntered.addListener(this.onInputEntered);
     }
 
     private tagList: TagItem[];
@@ -39,14 +42,15 @@ export class OmniBox {
             url: `https://e-hentai.org/?f_search=${encodeURIComponent(text)}`,
         });
     }
-
-    static init(tagList: Observable<TagItem[]>): boolean {
-        if (!chrome.omnibox) {
-            return false;
-        }
-        const omnibox = new OmniBox(tagList);
-        chrome.omnibox.onInputChanged.addListener(omnibox.onInputChanged);
-        chrome.omnibox.onInputEntered.addListener(omnibox.onInputEntered);
-        return true;
-    }
 }
+
+let instance: OmniBox;
+function init(): boolean {
+    if (!chrome.omnibox) {
+        return false;
+    }
+    instance = new OmniBox(update.tagList);
+    return true;
+}
+
+export const omnibox = init();
