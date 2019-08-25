@@ -173,7 +173,7 @@ export const uiData: { [key: string]: string } = {
     '每一个字幕代表一颗星, 默认的 RRGGB 表示第一第二颗星显示为红色 R(ed)，第三第四颗星现为是绿色 G(reen)，第五颗星显示为蓝色 B(lue)。你可以使用黄色来表示普通的星，R/G/B/Y 任何五个组合都是有效的。',
 
   'While the site will automatically scale down images to fit your screen width, you can also manually restrict the maximum display size of an image. Like the automatic scaling, this does not resample the image, as the resizing is done browser-side. (0 = no limit)': '虽然图片会自动根据窗口缩小，你也可以手动设置最大大小，图片并没有重新采样（0为不限制）',
-  'The default behavior for the Archiver is to confirm the cost and selection for original or resampled archive, then present a link that can be clicked or copied elsewhere. You can change this behavior here.': '默认归档下载方式为手动选择（原画质或压缩画质），然后手动改复制或点击下载链接，你可以修改归档下载方式。',
+  'The default behavior for the Archiver is to confirm the cost and selection for original or resampled archive, then present a link that can be clicked or copied elsewhere. You can change this behavior here.': '默认归档下载方式为手动选择（原画质或压缩画质），然后手动复制或点击下载链接。你可以修改归档下载方式。',
   'Which display mode would you like to use on the front and search pages?': '你想在搜索页面显示哪种样式？',
   'What categories would you like to show by default on the front page and in searches?': '你希望在首页上看到哪些类别？',
   'Here you can choose and rename your favorite categories.': '在这里你可以重命名你的收藏夹',
@@ -454,10 +454,12 @@ export const uiData: { [key: string]: string } = {
   'If you misplace any of your personalized torrents, hit the button below to reset your key.':
     '如果你错误的分发了个性化种子，请点击下面的按钮重置您的 KEY。',
   'This will immediately invalidate all of your personalized torrents in play.':
-    '这将立即注销您所有的个性化种子，会立即失效。',
+    '这将立即注销您所有的个性化种子。',
   'Your current key is: ': '你当前的 KEY 是：',
   'EHTracker': '种子追踪器',
   '\n\t\t\tYou are currently not featured on any toplists...\n\t\t': '您当前没有上榜……',
+  'Moderation Power': '愿力',
+  'Current Moderation Power': '当前愿力',
   'Base': '基础',
   'Awards': '奖励',
   'Tagging': '打标签',
