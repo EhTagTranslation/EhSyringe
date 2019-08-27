@@ -113,13 +113,18 @@ module.exports = {
         new CopyPlugin([
             { from: 'src/assets', to: 'assets' },
             { from: 'src/template', to: 'template' },
-            { from: 'src/data/tag.db.json', to: 'assets/tag.db' },
             {
                 from: 'src/manifest.json', to: 'manifest.json', transform: content => {
-                    let str = content.toString();
                     const data = require("./package.json");
-                    str = str.replace(/\${([\w_]+)}/g, (_, key) => data[key]);
-                    return Buffer.from(str);
+                    const manifest = JSON.parse(content.toString());
+                    delete manifest.$schema;
+                    return Buffer.from(JSON.stringify(manifest, (k, v) => {
+                        if (k.startsWith('$'))
+                            return undefined;
+                        if (typeof v !== 'string')
+                            return v;
+                        return v.replace(/\${([\w_]+)}/g, (_, key) => data[key]);
+                    }));
                 }
             },
         ]),

@@ -105,7 +105,7 @@ class Update {
         return this.lastCheckData.value;
     }
 
-    download(): Promise<{ release: any, db: EHTDatabase }> {
+    download(): Promise<{ release: any, db: ArrayBuffer }> {
         return new Promise(async (resolve, reject) => {
             if (this.loadLock) {
                 return false;
@@ -132,16 +132,15 @@ class Update {
             xhr.open('GET', url);
             xhr.responseType = 'arraybuffer';
             xhr.onload = () => {
-                this.loadLock = false;
                 try {
-                    const data = JSON.parse(pako.ungzip(xhr.response, { to: 'string' })) as EHTDatabase;
-                    this.loadLock = false;
-                    resolve({ release: info, db: data });
+                    resolve({ release: info, db: xhr.response as ArrayBuffer });
                     this.pushDownloadStatus({ info: '下载完成', progress: 100 });
                     badgeLoading.set('100', '#4A90E2', 1);
                 } catch (e) {
                     reject(new Error('数据无法解析'));
                     badgeLoading.set('ERR', '#C80000');
+                } finally {
+                    this.loadLock = false;
                 }
             };
             xhr.onerror = (e) => {
@@ -162,7 +161,8 @@ class Update {
         });
     }
 
-    async storageTagData(tagDB: EHTDatabase, releasePageUrl: string = 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/data/tag.db.json'): Promise<void> {
+    async storageTagData(data: ArrayBuffer, releasePageUrl: string): Promise<void> {
+        const tagDB: EHTDatabase = JSON.parse(await pako.ungzip(new Uint8Array(data), { to: 'string' }));
         const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
         const tagReplaceData: { [key: string]: string } = {};
         const tagList: TagList = [];
@@ -231,8 +231,8 @@ class Update {
     async loadPackedData(): Promise<void> {
         const dbUrl = chrome.runtime.getURL('assets/tag.db');
         const r = await fetch(dbUrl);
-        const d = await r.json();
-        return await this.storageTagData(d);
+        const buf = await r.arrayBuffer();
+        return await this.storageTagData(buf, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/assets/tag.db');
     }
 
     async checkLocalData(): Promise<void> {

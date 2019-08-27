@@ -14,9 +14,9 @@ async function download() {
 
   console.log(`加载 ${url}`);
   const data = await fetch(url);
-  return pako.ungzip(await data.buffer(), { to: "string" });
+  return await data.buffer();
 }
 
 download().then(data => {
-  fs.writeFileSync("./src/data/tag.db.json", data)
+  fs.writeFileSync("./src/assets/tag.db", data)
 });
