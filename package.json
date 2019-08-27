@@ -1,7 +1,9 @@
 {
   "name": "ehsyringe",
+  "displayName": "EhSyringe",
   "version": "1.2.1",
-  "description": "",
+  "description": "E 站注射器，将中文翻译注入到 E 站体内。",
+  "author": "EhTagTranslation",
   "main": "syringe.js",
   "scripts": {
     "test": "echo Error: no test specified && exit 1",
@@ -15,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xioxin/EhSyringeLite.git"
+    "url": "git+https://github.com/EhTagTranslation/EhSyringe.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xioxin/EhSyringeLite/issues"
+    "url": "https://github.com/EhTagTranslation/EhSyringe/issues"
   },
-  "homepage": "https://github.com/xioxin/EhSyringeLite#readme",
+  "readme": "https://github.com/EhTagTranslation/EhSyringe",
+  "homepage": "https://github.com/EhTagTranslation/EhSyringe",
   "devDependencies": {
     "@types/chrome": "^0.0.88",
     "@types/pako": "^1.0.1",

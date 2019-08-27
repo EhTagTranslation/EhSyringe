@@ -1,9 +1,12 @@
 {
+  "$schema": "http://json.schemastore.org/webextension",
   "manifest_version": 2,
-  "name": "EhSyringe",
-  "description": "E站注射器，将中文翻译注入到E站体内。",
-  "author": "xioxin",
-  "version": "1.2.1",
+  "name": "${displayName}",
+  "short_name": "${displayName}",
+  "description": "${description}",
+  "author": "${author}",
+  "version": "${version}",
+  "homepage_url": "${homepage}",
   "icons": {
     "32": "assets/logo32.png",
     "16": "assets/logo16.png",
@@ -25,7 +28,7 @@
       "48": "assets/logo48.png",
       "128": "assets/logo128.png"
     },
-    "default_title": "EhSyringe",
+    "default_title": "${displayName}",
     "default_popup": "template/popup.html"
   },
   "content_scripts": [

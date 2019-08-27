@@ -3,7 +3,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
 const plugins = [];
 
-if(process.argv.indexOf('--firefox') > 0 || process.argv.indexOf('--android') > 0){
+if (process.argv.indexOf('--firefox') > 0 || process.argv.indexOf('--android') > 0) {
     const webextRunParams = (process.argv.indexOf('--android') > 0) ? ({
         browserConsole: false,
         target: 'firefox-android',
@@ -113,8 +113,15 @@ module.exports = {
         new CopyPlugin([
             { from: 'src/assets', to: 'assets' },
             { from: 'src/template', to: 'template' },
-            { from: 'src/manifest.json', to: 'manifest.json' },
             { from: 'src/data/tag.db.json', to: 'assets/tag.db' },
+            {
+                from: 'src/manifest.json', to: 'manifest.json', transform: content => {
+                    let str = content.toString();
+                    const data = require("./package.json");
+                    str = str.replace(/\${([\w_]+)}/g, (_, key) => data[key]);
+                    return Buffer.from(str);
+                }
+            },
         ]),
         ...plugins,
     ],
