@@ -122,7 +122,7 @@ module.exports = {
                             return undefined;
                         if (typeof v !== 'string')
                             return v;
-                        return v.replace(/\${([\w_]+)}/g, (_, key) => data[key]);
+                        return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
                     }));
                 }
             },
