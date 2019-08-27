@@ -56,7 +56,7 @@ class TagTip {
         values.forEach((v, i) => {
             const sv = values.slice(i);
             if (sv.length) {
-                const svs = sv.join(' ');
+                const svs = sv.join(' ').toLowerCase();
                 if (!svs || svs.replace(/\s+/, '').length === 0) return;
 
                 tagList.filter(v => v.search.indexOf(svs) !== -1 || v.name.indexOf(svs) !== -1)
