@@ -117,7 +117,6 @@ module.exports = {
                 from: 'src/manifest.json', to: 'manifest.json', transform: content => {
                     const data = require("./package.json");
                     const manifest = JSON.parse(content.toString());
-                    delete manifest.$schema;
                     return Buffer.from(JSON.stringify(manifest, (k, v) => {
                         if (k.startsWith('$'))
                             return undefined;
