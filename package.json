@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/EhTagTranslation/EhSyringe.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/EhTagTranslation/EhSyringe/issues"
   },
