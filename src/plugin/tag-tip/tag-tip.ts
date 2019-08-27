@@ -15,8 +15,10 @@ class TagTip {
     selectedIndex = 0;
     readonly inputElement: HTMLInputElement;
     readonly autoCompleteList: HTMLDivElement;
+    delimiter = ' ';
 
-    constructor(inputElement: HTMLInputElement) {
+    constructor(inputElement: HTMLInputElement, delimiter = ' ') {
+        this.delimiter = delimiter;
         this.inputElement = inputElement;
         this.inputElement.autocomplete = 'off';
         this.autoCompleteList = document.createElement('div');
@@ -49,6 +51,7 @@ class TagTip {
     }
 
     search(value: string) {
+        // todo: 增加自定义分隔符
         value = this.inputElement.value = value.replace(/  +/mg, ' ');
         const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/igm) || [];
         const result: SearchTagItem[] = [];
