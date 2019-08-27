@@ -174,7 +174,7 @@ class Update {
             if (namespace === 'rows') return;
             for (const key in space.data) {
                 const t = space.data[key];
-                let search = ``;
+                let search = '';
                 if (namespace !== 'misc') {
                     search += namespace + ':';
                 }
@@ -183,6 +183,9 @@ class Update {
                 } else {
                     search += key + '$';
                 }
+                
+                // 转换为小写
+                search = search.toLowerCase();
 
                 const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
                 const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''));
