@@ -1,16 +1,14 @@
-import emojiRegex from 'emoji-regex';
-import pako from 'pako';
 import { BehaviorSubject } from 'rxjs';
 import { browser } from 'webextension-polyfill-ts';
 
-import { DownloadStatus, EHTDatabase, ReleaseCheckData, TagItem, TagList } from '../interface';
+import { DownloadStatus, ReleaseCheckData } from '../interface';
 import { badgeLoading } from '../tool/badge-loading';
 import { chromeMessage } from '../tool/chrome-message';
 import { logger } from '../tool/log';
 import { sleep } from '../tool/promise';
-import { trim } from '../tool/tool';
 
-const emojiReg = emojiRegex();
+import { tagDatabase } from './tag-database';
+
 const defaultStatus = {
     run: false,
     progress: 0,
@@ -20,10 +18,6 @@ const defaultStatus = {
 };
 
 class Update {
-
-    /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
-    /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
-    private readonly DATA_STRUCTURE_VERSION = 3;
     readonly lastCheckData = new BehaviorSubject<ReleaseCheckData>({
         old: '',
         oldLink: '',
@@ -32,14 +26,11 @@ class Update {
         timestamp: 0,
         githubRelease: null,
     });
-    readonly tagList = new BehaviorSubject<TagList>([]);
     readonly downloadStatus = new BehaviorSubject<DownloadStatus>(defaultStatus);
 
     private loadLock = false;
 
     constructor() {
-
-        this.checkLocalData().catch(logger.error);
         chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
         chromeMessage.listener('check-version', force => this.checkVersion(force));
         chromeMessage.listener('auto-update', async () => {
@@ -58,7 +49,20 @@ class Update {
         this.initDownloadStatus();
         try {
             const data = await this.download();
-            await this.storageTagData(data.db, data.release.html_url);
+            await tagDatabase.update(data.db, data.release.html_url);
+
+            badgeLoading.set('OK', '#00C801');
+            this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
+            this.lastCheckData.next({
+                ...this.lastCheckData.value,
+                old: tagDatabase.sha.value,
+                oldLink: tagDatabase.releaseLink.value,
+            });
+            await sleep(2500);
+            if (this.downloadStatus.complete) {
+                badgeLoading.set('', '#4A90E2');
+                this.initDownloadStatus();
+            }
         } catch (err) {
             logger.error(err);
             this.pushDownloadStatus({ run: false, error: true, info: (err && err.message) ? err.message : '更新失败' });
@@ -159,96 +163,6 @@ class Update {
             this.pushDownloadStatus({ info: '0%', progress: 0 });
             badgeLoading.set('0', '#4A90E2', 1);
         });
-    }
-
-    async storageTagData(data: ArrayBuffer, releasePageUrl: string): Promise<void> {
-        const tagDB: EHTDatabase = JSON.parse(await pako.ungzip(new Uint8Array(data), { to: 'string' }));
-        const namespaceOrder = ['female', 'language', 'misc', 'male', 'artist', 'group', 'parody', 'character', 'reclass'];
-        const tagReplaceData: { [key: string]: string } = {};
-        const tagList: TagList = [];
-        tagDB.data.sort((a, b) => {
-            return namespaceOrder.indexOf(a.namespace) - namespaceOrder.indexOf(b.namespace);
-        });
-        tagDB.data.forEach(space => {
-            const namespace = space.namespace;
-            if (namespace === 'rows') return;
-            for (const key in space.data) {
-                const t = space.data[key];
-                let search = '';
-                if (namespace !== 'misc') {
-                    search += namespace + ':';
-                }
-                if (key.indexOf(' ') !== -1) {
-                    search += `"${key}$"`;
-                } else {
-                    search += key + '$';
-                }
-
-                // 转换为小写
-                search = search.toLowerCase();
-
-                const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
-                const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''));
-                const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
-
-                tagList.push({
-                    ...t,
-                    name: cleanName,
-                    key,
-                    namespace,
-                    search,
-                });
-
-                tagReplaceData[`${namespace}:${key}`] = dirtyName;
-                if (namespace === 'misc') {
-                    tagReplaceData[key] = dirtyName;
-                }
-            }
-        });
-        this.tagList.next(tagList);
-
-        await browser.storage.local.set({
-            tagDB,
-            tagList,
-            tagReplaceData,
-            updateTime: new Date().getTime(),
-            releaseLink: releasePageUrl,
-            sha: tagDB.head.sha,
-            dataStructureVersion: this.DATA_STRUCTURE_VERSION,
-        });
-
-        badgeLoading.set('OK', '#00C801');
-        this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
-        this.lastCheckData.next({
-            ...this.lastCheckData.value,
-            old: tagDB.head.sha,
-            oldLink: releasePageUrl,
-        });
-        await sleep(2500);
-        if (this.downloadStatus.complete) {
-            badgeLoading.set('', '#4A90E2');
-            this.initDownloadStatus();
-        }
-    }
-
-    async loadPackedData(): Promise<void> {
-        const dbUrl = chrome.runtime.getURL('assets/tag.db');
-        const r = await fetch(dbUrl);
-        const buf = await r.arrayBuffer();
-        return await this.storageTagData(buf, 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/assets/tag.db');
-    }
-
-    async checkLocalData(): Promise<void> {
-        const data = await browser.storage.local.get(['tagList', 'tagReplaceData', 'dataStructureVersion']);
-        if (data.dataStructureVersion !== this.DATA_STRUCTURE_VERSION) {
-            logger.log('数据结构变化, 重新构建数据');
-            await this.loadPackedData();
-        } else if (!('tagList' in data && 'tagReplaceData' in data)) {
-            // 如果沒有數據自動加載本地數據
-            await this.loadPackedData();
-        } else {
-            this.tagList.next(data.tagList);
-        }
     }
 }
 

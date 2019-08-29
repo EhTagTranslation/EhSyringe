@@ -1,10 +1,12 @@
-import { DownloadStatus, ReleaseCheckData, Suggestion } from '../interface';
+import { DownloadStatus, ReleaseCheckData, Suggestion, TagList, TagReplace } from '../interface';
 
 import { logger } from './log';
 
 interface RequestMap {
     'check-version': boolean;
     'get-tag-data': void;
+    'get-taglist': void;
+    'get-tagreplace': void;
     'downloadStatus': DownloadStatus;
     'auto-update': void;
     'suggest-tag': {
@@ -15,6 +17,8 @@ interface RequestMap {
 interface ResponseMap {
     'check-version': ReleaseCheckData;
     'get-tag-data': void;
+    'get-taglist': TagList;
+    'get-tagreplace': TagReplace;
     'downloadStatus': void;
     'auto-update': boolean;
     'suggest-tag': Suggestion[];

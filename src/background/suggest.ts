@@ -3,11 +3,12 @@ import { Observable } from 'rxjs';
 import { EHTNamespaceName, Suggestion, TagItem, TagList } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
 
-import { update } from './update';
+import { tagDatabase } from './tag-database';
 
 class Suggest {
     constructor(tagList: Observable<TagList>) {
         tagList.subscribe(data => this.tagList = data);
+        chromeMessage.listener('suggest-tag', args => this.getSuggests(args.term, args.limit));
     }
 
     readonly nsScore: {
@@ -101,11 +102,10 @@ class Suggest {
 }
 
 function init(): Suggest['getSuggests'] {
-    if (!update || !update.tagList) {
+    if (!tagDatabase) {
         return null;
     }
-    const instance = new Suggest(update.tagList);
-    chromeMessage.listener('suggest-tag', args => instance.getSuggests(args.term, args.limit));
+    const instance = new Suggest(tagDatabase.tagList);
     return instance.getSuggests.bind(instance);
 }
 

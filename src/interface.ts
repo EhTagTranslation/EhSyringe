@@ -43,16 +43,14 @@ export interface EHTTag {
     links: string;
 }
 
-export interface TagItem {
+export interface TagItem extends EHTTag {
     search: string;
     namespace: EHTNamespaceName;
     key: string;
-    name: string;
-    intro: string;
-    links: string;
 }
 
 export type TagList = TagItem[];
+export interface TagReplace { [key: string]: string; }
 
 export interface Suggestion {
     tag: TagItem;
