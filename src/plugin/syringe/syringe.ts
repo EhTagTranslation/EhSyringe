@@ -1,7 +1,7 @@
-import { uiData } from '../data/ui-data';
-import { config } from '../tool/config-manage';
-import { logger } from '../tool/log';
-import { getTagData } from '../tool/tag-data';
+import { uiData } from '../../data/ui-data';
+import { config } from '../../tool/config-manage';
+import { logger } from '../../tool/log';
+import { getTagData } from '../../tool/tag-data';
 
 import './syringe.less';
 
