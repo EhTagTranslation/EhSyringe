@@ -41,7 +41,7 @@ class TagTip {
         fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition.bind(this));
 
         fromEvent(window, 'resize').subscribe(this.setListPosition.bind(this));
-        fromEvent(window, 'onscroll').subscribe(this.setListPosition.bind(this));
+        fromEvent(window, 'scroll').subscribe(this.setListPosition.bind(this));
 
         fromEvent(document, 'click').subscribe(() => {
             this.autoCompleteList.innerHTML = '';
