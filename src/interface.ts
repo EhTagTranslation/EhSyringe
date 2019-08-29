@@ -19,8 +19,20 @@ export interface EHTDatabase {
     data: EHTNamespace[];
 }
 
+export type EHTNamespaceName =
+    | 'rows'
+    | 'reclass'
+    | 'language'
+    | 'parody'
+    | 'character'
+    | 'group'
+    | 'artist'
+    | 'male'
+    | 'female'
+    | 'misc';
+
 export interface EHTNamespace {
-    namespace: string;
+    namespace: EHTNamespaceName;
     count: number;
     data: { [tag: string]: EHTTag };
 }
@@ -33,7 +45,7 @@ export interface EHTTag {
 
 export interface TagItem {
     search: string;
-    namespace: string;
+    namespace: EHTNamespaceName;
     key: string;
     name: string;
     intro: string;

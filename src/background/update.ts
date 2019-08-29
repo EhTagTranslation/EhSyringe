@@ -183,7 +183,7 @@ class Update {
                 } else {
                     search += key + '$';
                 }
-                
+
                 // 转换为小写
                 search = search.toLowerCase();
 

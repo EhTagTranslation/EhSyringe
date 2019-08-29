@@ -1,26 +1,14 @@
-import { Observable } from 'rxjs';
-
 import { namespaceTranslate } from '../data/namespace-translate';
-import { TagItem } from '../interface';
-
-import { update } from './update';
+import { suggest } from '../tool/suggest';
 
 class OmniBox {
-    constructor(tagList: Observable<TagItem[]>) {
-        tagList.subscribe(data => this.tagList = data);
+    constructor() {
         chrome.omnibox.onInputChanged.addListener(this.onInputChanged);
         chrome.omnibox.onInputEntered.addListener(this.onInputEntered);
     }
 
-    private tagList: TagItem[];
-
-    readonly onInputChanged = (text: string, suggest: (suggestResults: chrome.omnibox.SuggestResult[]) => void) => {
-        if (!this.tagList.length) {
-            return;
-        }
-        const data = this.tagList
-            .filter(tag => tag.search.indexOf(text) !== -1 || tag.name.indexOf(text) !== -1)
-            .slice(0, 5)
+    readonly onInputChanged = (text: string, suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void) => {
+        const data = suggest(text.trim(), 5)
             .map(tag => {
                 const cnNamespace = namespaceTranslate[tag.namespace];
                 let cnNameHtml = '';
@@ -35,8 +23,9 @@ class OmniBox {
                 };
             });
 
-        suggest(data);
+        suggestCb(data);
     }
+
     readonly onInputEntered = (text: string) => {
         chrome.tabs.create({
             url: `https://e-hentai.org/?f_search=${encodeURIComponent(text)}`,
@@ -49,7 +38,7 @@ function init(): boolean {
     if (!chrome.omnibox) {
         return false;
     }
-    instance = new OmniBox(update.tagList);
+    instance = new OmniBox();
     return true;
 }
 
