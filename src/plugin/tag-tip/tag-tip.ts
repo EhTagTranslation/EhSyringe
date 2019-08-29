@@ -1,15 +1,13 @@
 import { fromEvent } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
-import { namespaceTranslate } from '../../data/namespace-translate';
-import { SearchTagItem } from '../../interface';
+import { Suggestion } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
 import { config } from '../../tool/config-manage';
 import { logger } from '../../tool/log';
+import { makeTagMatchHtml } from '../../tool/tool';
 
 import './tag-tip.less';
-import { Suggestion } from '../../background/suggest';
-import { escapeHtml, makeTagMatchHtml } from '../../tool/tool';
 
 class TagTip {
     selectedIndex = 0;
@@ -136,8 +134,10 @@ class TagTip {
 
         item.className = 'auto-complete-item';
 
+        const termLength = (suggestion.match.key || suggestion.match.name).length;
+
         item.onclick = () => {
-            let length = tag.input.length;
+            let length = termLength;
             if (this.inputElement.value.slice(-1) === ' ') {
                 length++;
             }
