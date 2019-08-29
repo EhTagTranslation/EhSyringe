@@ -4,10 +4,10 @@ import { contextMenu } from './context-menu';
 import { omnibox } from './omnibox';
 import { suggest } from './suggest';
 import { tagDatabase } from './tag-database';
-import { update } from './update';
+import { updater } from './updater';
 
 class Background {
-    readonly update: typeof update = require('./update').update;
+    readonly updater: typeof updater = require('./updater').updater;
     readonly suggest: typeof suggest = require('./suggest').suggest;
     readonly contextMenu: typeof contextMenu = require('./context-menu').contextMenu;
     readonly omnibox: typeof omnibox = require('./omnibox').omnibox;

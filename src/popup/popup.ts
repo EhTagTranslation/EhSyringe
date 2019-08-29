@@ -41,7 +41,7 @@ class Popup {
         browser.management.getSelf().then(data => {
             this.state.extensionVersion = `${data.version}`;
         }).catch(logger.error);
-        const downloadStatusSub = background.update.downloadStatus.subscribe(data => this.downloadStatus(data));
+        const downloadStatusSub = background.updater.downloadStatus.subscribe(data => this.downloadStatus(data));
         window.addEventListener('unload', _ => {
             downloadStatusSub.unsubscribe();
         });
@@ -112,7 +112,7 @@ class Popup {
 
     async checkVersion() {
         this.state.versionInfo = '检查中...';
-        const data = await chromeMessage.send('check-version', false);
+        const data = await background.updater.checkVersion();
         logger.log('Release Data', data);
         if (data && data.new) {
             const hasNewData = this.state.updateAvailable = data.new !== data.old;
@@ -160,9 +160,9 @@ class Popup {
         }
     }
 
-    private updateButtonClick = () => {
+    private updateButtonClick = async () => {
         this.state.updateButtonDisabled = true;
-        chromeMessage.send('get-tag-data', void 0).catch(logger.error);
+        await background.updater.update();
     }
 
     _logoTemplate(progress = 0) {

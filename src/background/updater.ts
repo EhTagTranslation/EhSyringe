@@ -17,7 +17,7 @@ const defaultStatus = {
     error: false,
 };
 
-class Update {
+class Updater {
     readonly lastCheckData = new BehaviorSubject<ReleaseCheckData>({
         old: '',
         oldLink: '',
@@ -31,20 +31,17 @@ class Update {
     private loadLock = false;
 
     constructor() {
-        chromeMessage.listener('get-tag-data', _ => this.getTagDataEvent());
-        chromeMessage.listener('check-version', force => this.checkVersion(force));
         chromeMessage.listener('auto-update', async () => {
             const version = await this.checkVersion(true);
             if (version.new && (version.new !== version.old)) {
-                await this.getTagDataEvent();
+                await this.update();
                 return true;
             }
             return false;
         });
-        this.downloadStatus.subscribe(v => chromeMessage.broadcast('downloadStatus', v));
     }
 
-    async getTagDataEvent(): Promise<void> {
+    async update(): Promise<void> {
         // 重置下载状态
         this.initDownloadStatus();
         try {
@@ -69,11 +66,11 @@ class Update {
         }
     }
 
-    initDownloadStatus(): void {
+    private initDownloadStatus(): void {
         this.downloadStatus.next(defaultStatus);
     }
 
-    pushDownloadStatus(data: Partial<DownloadStatus> = {}): void {
+    private pushDownloadStatus(data: Partial<DownloadStatus> = {}): void {
         this.downloadStatus.next({
             ...this.downloadStatus.value,
             ...data,
@@ -109,7 +106,7 @@ class Update {
         return this.lastCheckData.value;
     }
 
-    download(): Promise<{ release: any, db: ArrayBuffer }> {
+    private download(): Promise<{ release: any, db: ArrayBuffer }> {
         return new Promise(async (resolve, reject) => {
             if (this.loadLock) {
                 return false;
@@ -166,4 +163,4 @@ class Update {
     }
 }
 
-export const update = new Update();
+export const updater = new Updater();

@@ -1,13 +1,10 @@
-import { DownloadStatus, ReleaseCheckData, Suggestion, TagList, TagReplace } from '../interface';
+import { Suggestion, TagList, TagReplace } from '../interface';
 
 import { logger } from './log';
 
 interface RequestMap {
-    'check-version': boolean;
-    'get-tag-data': void;
     'get-taglist': void;
     'get-tagreplace': void;
-    'downloadStatus': DownloadStatus;
     'auto-update': void;
     'suggest-tag': {
         term: string,
@@ -15,11 +12,8 @@ interface RequestMap {
     };
 }
 interface ResponseMap {
-    'check-version': ReleaseCheckData;
-    'get-tag-data': void;
     'get-taglist': TagList;
     'get-tagreplace': TagReplace;
-    'downloadStatus': void;
     'auto-update': boolean;
     'suggest-tag': Suggestion[];
 }
