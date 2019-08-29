@@ -57,7 +57,7 @@ class TagTip {
         await Promise.all(values.map(async (v, i) => {
             const sv = values.slice(i);
             if (sv.length) {
-                const svs = sv.join(' ').toLowerCase();
+                const svs = sv.join(' ');
                 if (!svs || svs.replace(/\s+/, '').length === 0) return;
                 const suggestions = await chromeMessage.send('suggest-tag', { term: svs, limit: 50 });
 

@@ -1,3 +1,5 @@
+import { browser } from 'webextension-polyfill-ts';
+
 import { makeTagMatchHtml } from '../tool/tool';
 
 import { suggest } from './suggest';
@@ -6,6 +8,24 @@ class OmniBox {
     constructor() {
         chrome.omnibox.onInputChanged.addListener(this.onInputChanged);
         chrome.omnibox.onInputEntered.addListener(this.onInputEntered);
+        chrome.omnibox.onInputStarted.addListener(this.onInputStarted);
+    }
+
+    origin: string = 'https://e-hentai.org';
+
+    readonly onInputStarted = async () => {
+        const tabs = await browser.tabs.query({
+            url: [
+                '*://exhentai.org/*',
+                '*://e-hentai.org/*',
+            ]
+        });
+        const tab = tabs.find(t => t.active) || tabs[0];
+        if (tab) {
+            this.origin = new URL(tab.url).origin;
+        } else {
+            this.origin = 'https://e-hentai.org';
+        }
     }
 
     readonly onInputChanged = async (text: string, suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void) => {
@@ -27,7 +47,7 @@ class OmniBox {
 
     readonly onInputEntered = (text: string) => {
         chrome.tabs.create({
-            url: `https://e-hentai.org/?f_search=${encodeURIComponent(text)}`,
+            url: `${this.origin}/?f_search=${encodeURIComponent(text)}`,
         });
     }
 }
