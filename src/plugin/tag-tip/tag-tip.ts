@@ -134,10 +134,8 @@ class TagTip {
 
         item.className = 'auto-complete-item';
 
-        const termLength = (suggestion.match.key || suggestion.match.name).length;
-
         item.onclick = () => {
-            let length = termLength;
+            let length = suggestion.term.length;
             if (this.inputElement.value.slice(-1) === ' ') {
                 length++;
             }

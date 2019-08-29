@@ -57,6 +57,7 @@ export type TagList = TagItem[];
 export interface Suggestion {
     tag: TagItem;
     score: number;
+    term: string;
 
     match: {
         key?: { start: number; length: number };

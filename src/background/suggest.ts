@@ -50,23 +50,24 @@ class Suggest {
     };
 
     private tagList: TagList;
-    private markTag(tag: TagItem, term: string): Suggestion {
+    private markTag(tag: TagItem, search: string, term: string): Suggestion {
         const key = tag.key;
         const name = tag.name.toLowerCase();
-        const keyidx = key.indexOf(term);
-        const nameidx = name.indexOf(term);
+        const keyidx = key.indexOf(search);
+        const nameidx = name.indexOf(search);
         let score = 0;
         const match: Suggestion['match'] = {};
         if (keyidx >= 0) {
-            score += (this.nsScore[tag.namespace] * (term.length + 1) / key.length) * (keyidx === 0 ? 2 : 1);
-            match.key = { start: keyidx, length: term.length };
+            score += (this.nsScore[tag.namespace] * (search.length + 1) / key.length) * (keyidx === 0 ? 2 : 1);
+            match.key = { start: keyidx, length: search.length };
         }
         if (nameidx >= 0) {
-            score += (this.nsScore[tag.namespace] * (term.length + 1) / name.length) * (nameidx === 0 ? 2 : 1);
-            match.name = { start: nameidx, length: term.length };
+            score += (this.nsScore[tag.namespace] * (search.length + 1) / name.length) * (nameidx === 0 ? 2 : 1);
+            match.name = { start: nameidx, length: search.length };
         }
         return {
             tag,
+            term,
             match,
             score,
         };
@@ -87,7 +88,7 @@ class Suggest {
             }
         }
         let suggestions = tagList
-            .map(tag => this.markTag(tag, sterm))
+            .map(tag => this.markTag(tag, sterm, term))
             .filter(st => st.score > 0);
         if (term) {
             suggestions = suggestions.sort((st1, st2) => st2.score - st1.score);
