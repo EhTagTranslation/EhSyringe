@@ -1,7 +1,8 @@
 import { uiData } from '../../data/ui-data';
+import { TagReplace } from '../../interface';
+import { chromeMessage } from '../../tool/chrome-message';
 import { config } from '../../tool/config-manage';
 import { logger } from '../../tool/log';
-import { getTagData } from '../../tool/tag-data';
 
 import './syringe.less';
 
@@ -18,7 +19,8 @@ import './syringe.less';
 };
 
 class Syringe {
-    readonly tagReplace = getTagData().tagReplace;
+    tagReplace: TagReplace;
+    pendingTags: Node[] = [];
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
     readonly conf = config.syncGet();
@@ -57,6 +59,15 @@ class Syringe {
             childList: true,
             subtree: true
         });
+
+        if (this.conf.translateTag) {
+            chromeMessage.send('get-tagreplace', void 0).then(data => {
+                this.tagReplace = data;
+                const tags = this.pendingTags;
+                this.pendingTags = [];
+                tags.forEach(t => this.translateTag(t));
+            }).catch(logger.error);
+        }
     }
 
     translateNode(node: Node): void {
@@ -109,6 +120,15 @@ class Syringe {
         let aId = parentElement.id;
         let aTitle = parentElement.title;
 
+        if (!(value || aTitle || aId)) {
+            return false;
+        }
+
+        if (!this.tagReplace) {
+            this.pendingTags.push(node);
+            return true;
+        }
+
         if ((!value) && aTitle) {
             if (aTitle[0] === ':') {
                 aTitle = aTitle.slice(1);
@@ -141,8 +161,6 @@ class Syringe {
             }
             return true;
         }
-
-        return false;
     }
 
     translateUi(node: Node): void {

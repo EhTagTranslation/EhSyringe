@@ -1,6 +1,6 @@
+import { chromeMessage } from '../../tool/chrome-message';
 import { config } from '../../tool/config-manage';
 import { logger } from '../../tool/log';
-import { getTagData } from '../../tool/tag-data';
 
 import './introduce.less';
 
@@ -9,7 +9,7 @@ export const introduceInit = async () => {
     if (!conf.showIntroduce) return;
     logger.log('标签介绍');
 
-    const { tagList } = getTagData();
+    const tagList = await chromeMessage.send('get-taglist', void 0);
     const taglist = document.querySelector('#taglist');
     const gright = document.querySelector('#gright');
 
@@ -35,7 +35,7 @@ export const introduceInit = async () => {
                 introduceBox.innerHTML = '';
                 return;
             }
-            const m = /'(.*)'/ig.exec(target.getAttribute('onclick'))
+            const m = /'(.*)'/ig.exec(target.getAttribute('onclick'));
             if (!(m && m[1])) return;
             const m2 = m[1].split(':');
             let namespace = 'misc';
@@ -89,5 +89,4 @@ export const introduceInit = async () => {
             }
         }
     });
-
-}
+};
