@@ -54,8 +54,14 @@ export interface TagItem {
 
 export type TagList = TagItem[];
 
-export interface SearchTagItem extends TagItem {
-    input: string;
+export interface Suggestion {
+    tag: TagItem;
+    score: number;
+
+    match: {
+        key?: { start: number; length: number };
+        name?: { start: number; length: number };
+    };
 }
 
 export interface ReleaseCheckData {

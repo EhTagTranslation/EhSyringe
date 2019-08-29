@@ -1,17 +1,9 @@
 import { Observable } from 'rxjs';
 
-import { update } from '../background/update';
-import { EHTNamespaceName, TagItem, TagList } from '../interface';
+import { EHTNamespaceName, Suggestion, TagItem, TagList } from '../interface';
+import { chromeMessage } from '../tool/chrome-message';
 
-interface Suggestion {
-    tag: TagItem;
-    score: number;
-
-    match: {
-        key?: { start: number; length: number };
-        name?: { start: number; length: number };
-    };
-}
+import { update } from './update';
 
 class Suggest {
     constructor(tagList: Observable<TagList>) {
@@ -80,7 +72,7 @@ class Suggest {
         };
     }
 
-    getSuggests(term: string, limit: number): Suggestion[] {
+    getSuggests(term: string, limit: number = -1): Suggestion[] {
         if (!this.tagList.length || !term) {
             return [];
         }
@@ -94,14 +86,26 @@ class Suggest {
                 tagList = tagList.filter(tag => tag.namespace === ns);
             }
         }
-        return tagList
+        let suggestions = tagList
             .map(tag => this.markTag(tag, sterm))
-            .filter(st => st.score > 0)
-            .sort((st1, st2) => st2.score - st1.score)
-            .slice(0, limit);
+            .filter(st => st.score > 0);
+        if (term) {
+            suggestions = suggestions.sort((st1, st2) => st2.score - st1.score);
+        }
+        if (limit > 0) {
+            suggestions = suggestions.slice(0, limit);
+        }
+        return suggestions;
     }
 }
 
-const instance = new Suggest(update.tagList);
+function init(): Suggest['getSuggests'] {
+    if (!update || !update.tagList) {
+        return null;
+    }
+    const instance = new Suggest(update.tagList);
+    chromeMessage.listener('suggest-tag', args => instance.getSuggests(args.term, args.limit));
+    return instance.getSuggests.bind(instance);
+}
 
-export const suggest = (term: string, limit: number) => instance.getSuggests(term, limit);
+export const suggest = init();

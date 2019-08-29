@@ -3,13 +3,13 @@ import { filter, map } from 'rxjs/operators';
 
 import { namespaceTranslate } from '../../data/namespace-translate';
 import { SearchTagItem } from '../../interface';
+import { chromeMessage } from '../../tool/chrome-message';
 import { config } from '../../tool/config-manage';
 import { logger } from '../../tool/log';
-import { getTagData } from '../../tool/tag-data';
 
 import './tag-tip.less';
-
-const { tagList } = getTagData();
+import { Suggestion } from '../../background/suggest';
+import { escapeHtml, makeTagMatchHtml } from '../../tool/tool';
 
 class TagTip {
     selectedIndex = 0;
@@ -17,7 +17,7 @@ class TagTip {
     readonly autoCompleteList: HTMLDivElement;
     delimiter = ' ';
 
-    constructor(inputElement: HTMLInputElement, delimiter = ' ') {
+    constructor(inputElement: HTMLInputElement, delimiter: string = ' ') {
         this.delimiter = delimiter;
         this.inputElement = inputElement;
         this.inputElement.autocomplete = 'off';
@@ -28,9 +28,9 @@ class TagTip {
             filter((e: KeyboardEvent) => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)),
             map(() => this.inputElement.value),
             // distinctUntilChanged()
-        ).subscribe(this.search.bind(this));
+        ).subscribe(this.search);
 
-        fromEvent(this.inputElement, 'keydown').subscribe(this.keydown.bind(this));
+        fromEvent(this.inputElement, 'keydown').subscribe(this.keydown);
 
         fromEvent(this.autoCompleteList, 'click').subscribe(e => {
             this.inputElement.focus();
@@ -38,10 +38,10 @@ class TagTip {
             e.stopPropagation();
         });
 
-        fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition.bind(this));
+        fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition);
 
-        fromEvent(window, 'resize').subscribe(this.setListPosition.bind(this));
-        fromEvent(window, 'scroll').subscribe(this.setListPosition.bind(this));
+        fromEvent(window, 'resize').subscribe(this.setListPosition);
+        fromEvent(window, 'scroll').subscribe(this.setListPosition);
 
         fromEvent(document, 'click').subscribe(() => {
             this.autoCompleteList.innerHTML = '';
@@ -50,32 +50,27 @@ class TagTip {
         document.body.insertBefore(this.autoCompleteList, null);
     }
 
-    search(value: string) {
+    readonly search = async (value: string) => {
         // todo: 增加自定义分隔符
         value = this.inputElement.value = value.replace(/  +/mg, ' ');
         const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/igm) || [];
-        const result: SearchTagItem[] = [];
+        const result: Suggestion[] = [];
         const used = new Set();
-        values.forEach((v, i) => {
+        await Promise.all(values.map(async (v, i) => {
             const sv = values.slice(i);
             if (sv.length) {
                 const svs = sv.join(' ').toLowerCase();
                 if (!svs || svs.replace(/\s+/, '').length === 0) return;
+                const suggestions = await chromeMessage.send('suggest-tag', { term: svs, limit: 50 });
 
-                tagList.filter(v => v.search.indexOf(svs) !== -1 || v.name.indexOf(svs) !== -1)
-                    .forEach(tag => {
-                        if (used.has(tag.search)) return;
-                        used.add(tag.search);
-                        result.push({
-                            ...tag,
-                            input: svs,
-                        });
-                    });
-                if (result.length >= 50) {
-                    result;
-                }
+                suggestions.forEach(suggestion => {
+                    const tag = suggestion.tag;
+                    if (used.has(tag.search)) return;
+                    used.add(tag.search);
+                    result.push(suggestion);
+                });
             }
-        });
+        }));
         this.autoCompleteList.innerHTML = '';
         result.slice(0, 50).forEach(tag => {
             this.autoCompleteList.insertBefore(this.tagElementItem(tag), null);
@@ -83,7 +78,7 @@ class TagTip {
         this.selectedIndex = -1;
     }
 
-    keydown(e: KeyboardEvent) {
+    readonly keydown = (e: KeyboardEvent) => {
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
             if (e.code === 'ArrowUp') {
                 this.selectedIndex--;
@@ -116,34 +111,25 @@ class TagTip {
         }
     }
 
-    setListPosition() {
+    readonly setListPosition = () => {
         const rect = this.inputElement.getBoundingClientRect();
         this.autoCompleteList.style.left = `${rect.left}px`;
         this.autoCompleteList.style.top = `${rect.bottom}px`;
         this.autoCompleteList.style.minWidth = `${rect.width}px`;
     }
 
-    tagElementItem(tag: SearchTagItem): HTMLDivElement {
+    readonly tagElementItem = (suggestion: Suggestion): HTMLDivElement => {
+        const tag = suggestion.tag;
         const item = document.createElement('div');
         const cnName = document.createElement('span');
         cnName.className = 'auto-complete-text cn-name';
         const enName = document.createElement('span');
         enName.className = 'auto-complete-text en-name';
-        const cnNamespace = namespaceTranslate[tag.namespace];
-        let cnNameHtml = '';
-        let enNameHtml = tag.search;
-        if (tag.namespace !== 'misc') {
-            cnNameHtml += cnNamespace + ':';
-        }
-        cnNameHtml += tag.name;
 
-        logger.log(tag.input);
+        const html = makeTagMatchHtml(suggestion, 'mark');
 
-        cnNameHtml = cnNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
-        enNameHtml = enNameHtml.replace(tag.input, `<mark>${tag.input}</mark>`);
-
-        cnName.innerHTML = cnNameHtml;
-        enName.innerHTML = enNameHtml;
+        cnName.innerHTML = html.cn;
+        enName.innerHTML = html.en;
 
         item.insertBefore(cnName, null);
         item.insertBefore(enName, null);
@@ -155,7 +141,7 @@ class TagTip {
             if (this.inputElement.value.slice(-1) === ' ') {
                 length++;
             }
-            this.inputElement.value = this.inputElement.value.slice(0, 0 - length) + tag.search + ' ';
+            this.inputElement.value = `${this.inputElement.value.slice(0, 0 - length)}${tag.search} `;
             this.autoCompleteList.innerHTML = '';
         };
         return item;

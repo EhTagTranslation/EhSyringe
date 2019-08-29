@@ -1,4 +1,7 @@
 
+import { namespaceTranslate } from "../data/namespace-translate";
+import { Suggestion } from "../interface";
+
 export function dateDiff(hisTime: Date, nowTime?: Date): string {
     if (!arguments.length) return '';
     let arg = arguments,
@@ -40,4 +43,30 @@ export function escapeHtml(unsafe: string): string {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+}
+
+export function makeTagMatchHtml(suggestion: Suggestion, markTag: string = 'mark'): { en: string, cn: string } {
+    const tag = suggestion.tag;
+    const cnNamespace = namespaceTranslate[tag.namespace];
+    let cnNameHtml = '';
+    let enNameHtml;
+    if (tag.namespace !== 'misc') {
+        cnNameHtml += escapeHtml(cnNamespace) + '：';
+    }
+    if (suggestion.match.name) {
+        const range = suggestion.match.name;
+        cnNameHtml += `${escapeHtml(tag.name.substring(0, range.start))}<${markTag}>${escapeHtml(tag.name.substr(range.start, range.length))}</${markTag}>${escapeHtml(tag.name.substr(range.start + range.length))}`;
+    } else {
+        cnNameHtml += escapeHtml(tag.name);
+    }
+    if (suggestion.match.key) {
+        const range = suggestion.match.key;
+        enNameHtml = `${escapeHtml(tag.key.substring(0, range.start))}<${markTag}>${escapeHtml(tag.key.substr(range.start, range.length))}</${markTag}>${escapeHtml(tag.key.substr(range.start + range.length))}`;
+    } else {
+        enNameHtml = escapeHtml(tag.key);
+    }
+    return {
+        cn: cnNameHtml,
+        en: enNameHtml,
+    };
 }

@@ -2,10 +2,12 @@ import { logger } from '../tool/log';
 
 import { contextMenu } from './context-menu';
 import { omnibox } from './omnibox';
+import { suggest } from './suggest';
 import { update } from './update';
 
 class Background {
     readonly update = update;
+    readonly suggest = suggest;
     readonly contextMenu = contextMenu;
     readonly omnibox = omnibox;
 }

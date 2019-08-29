@@ -1,6 +1,6 @@
-import { namespaceTranslate } from '../data/namespace-translate';
-import { suggest } from '../tool/suggest';
-import { escapeHtml } from '../tool/tool';
+import { makeTagMatchHtml } from '../tool/tool';
+
+import { suggest } from './suggest';
 
 class OmniBox {
     constructor() {
@@ -8,31 +8,17 @@ class OmniBox {
         chrome.omnibox.onInputEntered.addListener(this.onInputEntered);
     }
 
-    readonly onInputChanged = (text: string, suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void) => {
-        const data = suggest(text.trim(), 5)
+    readonly onInputChanged = async (text: string, suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void) => {
+        if (!suggest) {
+            return;
+        }
+        const suggestions = suggest(text.trim(), 5);
+        const data = suggestions
             .map(suggestion => {
-                const tag = suggestion.tag;
-                const cnNamespace = namespaceTranslate[tag.namespace];
-                let cnNameHtml = '';
-                let enNameHtml;
-                if (tag.namespace !== 'misc') {
-                    cnNameHtml += escapeHtml(cnNamespace) + '：';
-                }
-                if (suggestion.match.name) {
-                    const range = suggestion.match.name;
-                    cnNameHtml += `${escapeHtml(tag.name.substring(0, range.start))}<match>${escapeHtml(tag.name.substr(range.start, range.length))}</match>${escapeHtml(tag.name.substr(range.start + range.length))}`;
-                } else {
-                    cnNameHtml += escapeHtml(tag.name);
-                }
-                if (suggestion.match.key) {
-                    const range = suggestion.match.key;
-                    enNameHtml = `${escapeHtml(tag.key.substring(0, range.start))}<match>${escapeHtml(tag.key.substr(range.start, range.length))}</match>${escapeHtml(tag.key.substr(range.start + range.length))}`;
-                } else {
-                    enNameHtml = escapeHtml(tag.key);
-                }
+                const html = makeTagMatchHtml(suggestion, 'match');
                 return {
-                    content: tag.search,
-                    description: `${cnNameHtml}<dim> - ${enNameHtml}</dim>`,
+                    content: suggestion.tag.search,
+                    description: `${html.cn}<dim> - ${html.en}</dim>`,
                 };
             });
 
