@@ -1,5 +1,6 @@
 import { namespaceTranslate } from '../data/namespace-translate';
 import { suggest } from '../tool/suggest';
+import { escapeHtml } from '../tool/tool';
 
 class OmniBox {
     constructor() {
@@ -9,17 +10,29 @@ class OmniBox {
 
     readonly onInputChanged = (text: string, suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void) => {
         const data = suggest(text.trim(), 5)
-            .map(tag => {
+            .map(suggestion => {
+                const tag = suggestion.tag;
                 const cnNamespace = namespaceTranslate[tag.namespace];
                 let cnNameHtml = '';
-                const enNameHtml = tag.search;
+                let enNameHtml;
                 if (tag.namespace !== 'misc') {
-                    cnNameHtml += cnNamespace + ':';
+                    cnNameHtml += escapeHtml(cnNamespace) + '：';
                 }
-                cnNameHtml += tag.name;
+                if (suggestion.match.name) {
+                    const range = suggestion.match.name;
+                    cnNameHtml += `${escapeHtml(tag.name.substring(0, range.start))}<match>${escapeHtml(tag.name.substr(range.start, range.length))}</match>${escapeHtml(tag.name.substr(range.start + range.length))}`;
+                } else {
+                    cnNameHtml += escapeHtml(tag.name);
+                }
+                if (suggestion.match.key) {
+                    const range = suggestion.match.key;
+                    enNameHtml = `${escapeHtml(tag.key.substring(0, range.start))}<match>${escapeHtml(tag.key.substr(range.start, range.length))}</match>${escapeHtml(tag.key.substr(range.start + range.length))}`;
+                } else {
+                    enNameHtml = escapeHtml(tag.key);
+                }
                 return {
-                    content: enNameHtml,
-                    description: cnNameHtml,
+                    content: tag.search,
+                    description: `${cnNameHtml}<dim> - ${enNameHtml}</dim>`,
                 };
             });
 

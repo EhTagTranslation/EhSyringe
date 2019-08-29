@@ -29,6 +29,15 @@ export function dateDiff(hisTime: Date, nowTime?: Date): string {
     return result;
 }
 
-export function trim(str: string) {
+export function trim(str: string): string {
     return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+}
+
+export function escapeHtml(unsafe: string): string {
+    return (unsafe || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 }
