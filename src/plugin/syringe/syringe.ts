@@ -63,9 +63,8 @@ class Syringe {
         if (this.conf.translateTag) {
             chromeMessage.send('get-tagreplace', void 0).then(data => {
                 this.tagReplace = data;
-                const tags = this.pendingTags;
-                this.pendingTags = [];
-                tags.forEach(t => this.translateTag(t));
+                this.pendingTags.forEach(t => this.translateTagImpl(t));
+                this.pendingTags = null;
             }).catch(logger.error);
         }
     }
@@ -101,20 +100,9 @@ class Syringe {
             node.classList.contains('gtw');
     }
 
-    translateTag(node: Node): boolean {
-        if (node.nodeName !== '#text' || !node.parentElement) {
-            return false;
-        }
+    // 实际进行替换，必须保证 node 是标签节点
+    private translateTagImpl(node: Node): boolean {
         const parentElement = node.parentElement;
-        if (parentElement.nodeName === 'MARK' || parentElement.classList.contains('auto-complete-text')) {
-            // 不翻译搜索提示的内容
-            return true;
-        }
-
-        // 标签只翻译已知的位置
-        if (!this.isTagContainer(parentElement) && !this.isTagContainer(parentElement.parentElement)) {
-            return false;
-        }
 
         let value = '';
         let aId = parentElement.id;
@@ -125,6 +113,7 @@ class Syringe {
         }
 
         if (!this.tagReplace) {
+            // 替换列表未加载时直接返回
             this.pendingTags.push(node);
             return true;
         }
@@ -161,6 +150,24 @@ class Syringe {
             }
             return true;
         }
+    }
+
+    translateTag(node: Node): boolean {
+        if (node.nodeName !== '#text' || !node.parentElement) {
+            return false;
+        }
+        const parentElement = node.parentElement;
+        if (parentElement.nodeName === 'MARK' || parentElement.classList.contains('auto-complete-text')) {
+            // 不翻译搜索提示的内容
+            return true;
+        }
+
+        // 标签只翻译已知的位置
+        if (!this.isTagContainer(parentElement) && !this.isTagContainer(parentElement.parentElement)) {
+            return false;
+        }
+
+        return this.translateTagImpl(node);
     }
 
     translateUi(node: Node): void {
