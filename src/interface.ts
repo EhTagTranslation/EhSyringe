@@ -47,6 +47,7 @@ export interface TagItem extends EHTTag {
     search: string;
     namespace: EHTNamespaceName;
     key: string;
+    fullKey: string;
 }
 
 export type TagList = TagItem[];

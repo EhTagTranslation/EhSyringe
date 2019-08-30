@@ -1,6 +1,6 @@
 
-import { namespaceTranslate } from "../data/namespace-translate";
-import { Suggestion } from "../interface";
+import { namespaceTranslate } from '../data/namespace-translate';
+import { EHTNamespaceName, Suggestion } from '../interface';
 
 export function dateDiff(hisTime: Date, nowTime?: Date): string {
     if (!arguments.length) return '';
@@ -69,4 +69,18 @@ export function makeTagMatchHtml(suggestion: Suggestion, markTag: string = 'mark
         cn: cnNameHtml,
         en: enNameHtml,
     };
+}
+
+export function getFullKey(namespace: EHTNamespaceName, key: string): string {
+    return namespace === 'misc' ? key : `${namespace}:${key.toLowerCase()}`;
+}
+
+export function getSearchTerm(namespace: EHTNamespaceName, key: string): string {
+    const ns = namespace === 'misc' ? '' : (namespace + ':');
+    const search = key.includes(' ') ? `"${key.toLowerCase()}$"` : `${key.toLowerCase()}$`;
+    return ns + search;
+}
+
+export function getEditorUrl(namespace: EHTNamespaceName, key: string): string {
+    return `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
 }

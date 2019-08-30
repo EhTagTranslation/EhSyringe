@@ -6,17 +6,25 @@ import { logger } from '../../tool/log';
 
 import './syringe.less';
 
-(window as any).tagClear = () => {
-    window.localStorage.removeItem('tag-list');
-    window.localStorage.removeItem('tag-replace-data');
-    window.localStorage.removeItem('tag-update-time');
-    window.localStorage.removeItem('tag-sha');
-    chrome.storage.local.remove('tagList');
-    chrome.storage.local.remove('tagReplaceData');
-    chrome.storage.local.remove('updateTime');
-    chrome.storage.local.remove('tagDB');
-    chrome.storage.local.remove('sha');
-};
+(function (): void {
+    const tagClear = () => {
+        window.localStorage.removeItem('tag-list');
+        window.localStorage.removeItem('tag-replace-data');
+        window.localStorage.removeItem('tag-update-time');
+        window.localStorage.removeItem('tag-sha');
+        chrome.storage.local.remove('tagList');
+        chrome.storage.local.remove('tagReplaceData');
+        chrome.storage.local.remove('updateTime');
+        chrome.storage.local.remove('tagDB');
+        chrome.storage.local.remove('sha');
+    };
+    const win = window as any;
+    if (win.exportFunction) {
+        win.exportFunction(tagClear, window, { defineAs: 'tagClear' });
+    } else {
+        win.tagClear = tagClear;
+    }
+})();
 
 class Syringe {
     tagReplace: TagReplace;
@@ -61,8 +69,10 @@ class Syringe {
         });
 
         if (this.conf.translateTag) {
-            chromeMessage.send('get-tagreplace', void 0).then(data => {
-                this.tagReplace = data;
+            const timer = logger.time('获取替换数据');
+            chromeMessage.send('get-tagreplace', null).then(data => {
+                this.tagReplace = data as TagReplace;
+                timer.end();
                 this.pendingTags.forEach(t => this.translateTagImpl(t));
                 this.pendingTags = null;
             }).catch(logger.error);

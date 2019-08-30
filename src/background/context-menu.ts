@@ -1,3 +1,6 @@
+import { EHTNamespaceName } from '../interface';
+import { getEditorUrl } from '../tool/tool';
+
 export class ContextMenu implements chrome.contextMenus.CreateProperties {
     readonly documentUrlPatterns = ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'];
     readonly title = '提交标签翻译';
@@ -9,10 +12,10 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
             return;
         }
         const seg = info.linkUrl.split('/').pop().replace('+', ' ').split(':');
-        const namespace = seg.length === 1 ? 'misc' : seg[0];
+        const namespace = seg.length === 1 ? 'misc' : seg[0] as EHTNamespaceName;
         const tag = seg.pop();
         chrome.tabs.create({
-            url: `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(tag)}`,
+            url: getEditorUrl(namespace, tag),
         });
     }
 }

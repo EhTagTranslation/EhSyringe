@@ -1,10 +1,10 @@
-import { Suggestion, TagList, TagReplace } from '../interface';
+import { Suggestion, TagList, TagReplace, TagItem } from '../interface';
 
 import { logger } from './log';
 
 interface RequestMap {
-    'get-taglist': void;
-    'get-tagreplace': void;
+    'get-taglist': string | null;
+    'get-tagreplace': string | null;
     'auto-update': void;
     'suggest-tag': {
         term: string,
@@ -12,8 +12,8 @@ interface RequestMap {
     };
 }
 interface ResponseMap {
-    'get-taglist': TagList;
-    'get-tagreplace': TagReplace;
+    'get-taglist': TagList | TagItem;
+    'get-tagreplace': TagReplace | string;
     'auto-update': boolean;
     'suggest-tag': Suggestion[];
 }

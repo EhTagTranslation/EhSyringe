@@ -6,13 +6,13 @@ import { browser } from 'webextension-polyfill-ts';
 import { EHTDatabase, TagList, TagReplace } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
 import { logger } from '../tool/log';
-import { trim } from '../tool/tool';
+import { getFullKey, getSearchTerm, trim } from '../tool/tool';
 
 const emojiReg = emojiRegex();
 const defaultReleaseLink = 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/assets/tag.db';
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
-const DATA_STRUCTURE_VERSION = 4;
+const DATA_STRUCTURE_VERSION = 5;
 
 class TagDatabase {
     readonly tagList = new BehaviorSubject<TagList>([]);
@@ -22,8 +22,18 @@ class TagDatabase {
     readonly sha = new BehaviorSubject<string>('');
 
     constructor() {
-        chromeMessage.listener('get-taglist', () => this.tagList.value);
-        chromeMessage.listener('get-tagreplace', () => this.tagReplace.value);
+        chromeMessage.listener('get-taglist', key => {
+            if (!key) {
+                return this.tagList.value;
+            }
+            return this.tagList.value.find(t => t.fullKey === key);
+        });
+        chromeMessage.listener('get-tagreplace', key => {
+            if (!key) {
+                return this.tagReplace.value;
+            }
+            return this.tagReplace.value[key];
+        });
         this.init().catch(logger.error);
     }
 
@@ -61,36 +71,22 @@ class TagDatabase {
             if (namespace === 'rows') return;
             for (const key in space.data) {
                 const t = space.data[key];
-                let search = '';
-                if (namespace !== 'misc') {
-                    search += namespace + ':';
-                }
-                if (key.indexOf(' ') !== -1) {
-                    search += `"${key}$"`;
-                } else {
-                    search += key + '$';
-                }
-
-                // 转换为小写
-                search = search.toLowerCase();
 
                 const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
                 const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''));
                 const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
+                const search = getSearchTerm(namespace, key);
+                const fullKey = getFullKey(namespace, key);
 
                 tagList.push({
                     ...t,
                     name: cleanName,
                     key,
+                    fullKey,
                     namespace,
                     search,
                 });
-
-                if (namespace === 'misc') {
-                    tagReplace[key] = dirtyName;
-                } else {
-                    tagReplace[`${namespace}:${key}`] = dirtyName;
-                }
+                tagReplace[fullKey] = dirtyName;
             }
         });
         const updateTime = new Date();
