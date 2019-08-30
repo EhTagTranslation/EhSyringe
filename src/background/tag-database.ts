@@ -6,7 +6,7 @@ import { browser } from 'webextension-polyfill-ts';
 import { EHTDatabase, TagList, TagReplace } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
 import { logger } from '../tool/log';
-import { getFullKey, getSearchTerm, trim } from '../tool/tool';
+import { getFullKey, getSearchTerm } from '../tool/tool';
 
 const emojiReg = emojiRegex();
 const defaultReleaseLink = 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/assets/tag.db';
@@ -47,7 +47,7 @@ class TagDatabase {
         } else {
             this.tagList.next(tagList);
             this.tagReplace.next(tagReplace);
-            this.updateTime.next(updateTime);
+            this.updateTime.next(new Date(updateTime));
             this.sha.next(sha);
             this.releaseLink.next(releaseLink);
         }
@@ -72,8 +72,8 @@ class TagDatabase {
             for (const key in space.data) {
                 const t = space.data[key];
 
-                const name = t.name.replace(/^<p>(.+)<\/p>$/, '$1');
-                const cleanName = trim(name.replace(emojiReg, '').replace(/<img.*?>/ig, ''));
+                const name = t.name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
+                const cleanName = name.replace(emojiReg, '').replace(/<img.*?>/ig, '').trim();
                 const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
                 const search = getSearchTerm(namespace, key);
                 const fullKey = getFullKey(namespace, key);

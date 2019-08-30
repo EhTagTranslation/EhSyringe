@@ -30,10 +30,6 @@ export function dateDiff(hisTime: Date, nowTime: Date = new Date()): string {
     return result;
 }
 
-export function trim(str: string): string {
-    return str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-}
-
 export function escapeHtml(unsafe: string): string {
     return (unsafe || '')
         .replace(/&/g, '&amp;')
