@@ -2,25 +2,23 @@
 import { namespaceTranslate } from '../data/namespace-translate';
 import { EHTNamespaceName, Suggestion } from '../interface';
 
-export function dateDiff(hisTime: Date, nowTime?: Date): string {
-    if (!arguments.length) return '';
-    let arg = arguments,
-        now = arg[1] ? arg[1] : new Date().getTime(),
-        diffValue = now - arg[0],
-        result = '',
+export function dateDiff(hisTime: Date, nowTime: Date = new Date()): string {
+    const diffValue = nowTime.getTime() - hisTime.getTime();
 
-        minute = 1000 * 60,
-        hour = minute * 60,
-        day = hour * 24,
-        month = day * 30,
-        year = month * 12,
+    const minute = 1000 * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+    const month = day * 30;
+    const year = month * 12;
 
-        _year = diffValue / year,
-        _month = diffValue / month,
-        _week = diffValue / (7 * day),
-        _day = diffValue / day,
-        _hour = diffValue / hour,
-        _min = diffValue / minute;
+    const _year = diffValue / year;
+    const _month = diffValue / month;
+    const _week = diffValue / (day * 7);
+    const _day = diffValue / day;
+    const _hour = diffValue / hour;
+    const _min = diffValue / minute;
+
+    let result = '';
 
     if (_year >= 1) result = Math.floor(_year) + ' 年前';
     else if (_month >= 1) result = Math.floor(_month) + ' 个月前';

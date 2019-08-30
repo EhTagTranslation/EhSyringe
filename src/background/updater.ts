@@ -9,7 +9,7 @@ import { sleep } from '../tool/promise';
 
 import { tagDatabase } from './tag-database';
 
-const defaultStatus = {
+const defaultStatus: DownloadStatus = {
     run: false,
     progress: 0,
     info: '',
@@ -31,9 +31,9 @@ class Updater {
     private loadLock = false;
 
     constructor() {
-        chromeMessage.listener('auto-update', async () => {
+        chromeMessage.listener('auto-update', async force => {
             const version = await this.checkVersion(true);
-            if (version.new && (version.new !== version.old)) {
+            if (version.new && (version.new !== version.old || force)) {
                 await this.update();
                 return true;
             }
@@ -109,7 +109,8 @@ class Updater {
     private download(): Promise<{ release: any, db: ArrayBuffer }> {
         return new Promise(async (resolve, reject) => {
             if (this.loadLock) {
-                return false;
+                reject('已经正在下载');
+                return;
             }
             this.loadLock = true;
             badgeLoading.set('', '#4A90E2', 2);

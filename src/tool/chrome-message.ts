@@ -5,7 +5,7 @@ import { logger } from './log';
 interface RequestMap {
     'get-taglist': string | null;
     'get-tagreplace': string | null;
-    'auto-update': void;
+    'auto-update': boolean;
     'suggest-tag': {
         term: string,
         limit?: number,

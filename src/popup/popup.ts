@@ -4,7 +4,6 @@ import { browser } from 'webextension-polyfill-ts';
 
 import { background } from '../background';
 import { DownloadStatus } from '../interface';
-import { chromeMessage } from '../tool/chrome-message';
 import { config, ConfigData } from '../tool/config-manage';
 import { logger } from '../tool/log';
 import { sleep } from '../tool/promise';
@@ -103,11 +102,13 @@ class Popup {
     }
 
     async getVersion() {
-        const data = await browser.storage.local.get(['sha', 'releaseLink', 'updateTime']);
-        this.state.sha = data.sha ? data.sha.slice(0, 6) : 'N/A';
-        this.state.shaRef = data.releaseLink || '';
-        this.state.updateTime = data.updateTime ? dateDiff(data.updateTime) : 'N/A';
-        this.state.updateTimeFull = new Date(data.updateTime).toLocaleString();
+        const sha = background.tagDatabase.sha.value;
+        const releaseLink = background.tagDatabase.releaseLink.value;
+        const updateTime = background.tagDatabase.updateTime.value;
+        this.state.sha = sha ? sha.slice(0, 6) : 'N/A';
+        this.state.shaRef = releaseLink || '';
+        this.state.updateTime = updateTime ? dateDiff(updateTime) : 'N/A';
+        this.state.updateTimeFull = updateTime.toLocaleString();
     }
 
     async checkVersion() {
@@ -262,7 +263,7 @@ class Popup {
         if (tabs && tabs.length) {
             const ehtabs = tabs.filter(v => v.url && (/(\/\/|\.)(e-|ex)hentai\.org/i).test(v.url));
             logger.log('Reload tabs', ehtabs);
-            ehtabs.forEach(v => chrome.tabs.reload(v.id));
+            ehtabs.forEach(v => browser.tabs.reload(v.id).catch(logger.error));
         }
         window.close();
     }
