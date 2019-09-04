@@ -17,7 +17,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 **Chrome 插件被下架**
 
 ## Chrome安装方法
-1. 下载插件并解压,[Release页面](https://github.com/EhTagTranslation/EhSyringe/releases)
+1. 前往[Release页面](https://github.com/EhTagTranslation/EhSyringe/releases)下载插件并解压
 2. 打开Chrome扩展程序管理器 `chrome://extensions`
 3. 勾选`开发者模式`
 4. 点击`加载已解压的扩展程序`，选择本扩展所在目录
