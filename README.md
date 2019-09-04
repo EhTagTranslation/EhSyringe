@@ -13,8 +13,15 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 
 ## 安装
+[![Mozilla Add-on](./.github/assets/firefox.svg)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")
+**Chrome 插件被下架**
 
-[![Chrome Web Store](./.github/assets/chrome.svg)](https://chrome.google.com/webstore/detail/ehsyringe/mbhdcfeopadbmjnlbpcallmalcefnbbb "安装 Chrome 插件") [![Mozilla Add-on](./.github/assets/firefox.svg)](https://addons.mozilla.org/zh-CN/firefox/addon/ehsyringe/ "安装 Firefox 插件")
+## Chrome安装方法
+1. 下载插件并解压,[Release页面](https://github.com/EhTagTranslation/EhSyringe/releases)
+2. 打开Chrome扩展程序管理器 `chrome://extensions`
+3. 勾选`开发者模式`
+4. 点击`加载已解压的扩展程序`，选择本扩展所在目录
+
 
 ## 功能
 
