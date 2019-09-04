@@ -11,7 +11,7 @@
     "dev:chrome": "webpack --mode=development --watch",
     "dev:firefox": "webpack --mode=development --watch --firefox",
     "dev:android": "webpack --mode=development --watch --android",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production --crx",
     "web-ext": "web-ext",
     "update-db": "node ./tools/update-db.js"
   },
@@ -29,7 +29,7 @@
     "@types/chrome": "^0.0.88",
     "@types/pako": "^1.0.1",
     "copy-webpack-plugin": "^5.0.4",
-    "crx-reload-webpack-plugin": "^1.0.3",
+    "crx": "^5.0.1",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
     "file-loader": "^4.2.0",

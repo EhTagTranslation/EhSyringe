@@ -2,9 +2,14 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
 const plugins = [];
+const Crx = require("./crx-packet");
 
-if (process.argv.indexOf('--firefox') > 0 || process.argv.indexOf('--android') > 0) {
-    const webextRunParams = (process.argv.indexOf('--android') > 0) ? ({
+const crx = process.argv.indexOf('--crx') > 0;
+const firefox = process.argv.indexOf('--firefox') > 0;
+const android = process.argv.indexOf('--android') > 0;
+
+if (firefox || android) {
+    const webextRunParams = android ? ({
         browserConsole: false,
         target: 'firefox-android',
         adbDevice: '696ea70c',
@@ -22,6 +27,18 @@ if (process.argv.indexOf('--firefox') > 0 || process.argv.indexOf('--android') >
         })
     )
 }
+
+if(crx){
+    plugins.push(
+        new Crx({
+            key: 'key.pem',
+            src: 'dist',
+            dest: 'release',
+            name: 'EhSyringe'
+        })
+    )
+}
+
 
 module.exports = {
     entry: {

@@ -33,3 +33,9 @@ Thumbs.db
 
 # 上架审核源码打包 防止误传
 /EhSyringeLite.zip
+
+# 编译密钥
+# /key.pem
+
+# 打包目录
+/release
