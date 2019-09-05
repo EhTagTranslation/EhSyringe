@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "emoji-regex": "^8.0.0",
+    "keypair": "^1.0.1",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
     "normalize.css": "^8.0.1",
