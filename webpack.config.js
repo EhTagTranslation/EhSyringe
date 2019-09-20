@@ -7,6 +7,7 @@ const Crx = require("./crx-packet");
 const crx = process.argv.indexOf('--crx') > 0;
 const firefox = process.argv.indexOf('--firefox') > 0;
 const android = process.argv.indexOf('--android') > 0;
+const nodb = process.argv.indexOf('--no-db') > 0;
 
 if (firefox || android) {
     const webextRunParams = android ? ({
@@ -39,6 +40,29 @@ if(crx){
     )
 }
 
+const copyPatterns = [
+    { from: 'src/assets', to: 'assets' },
+    { from: 'src/template', to: 'template' },
+    {
+        from: 'src/manifest.json', to: 'manifest.json', transform: content => {
+            const data = require("./package.json");
+            const manifest = JSON.parse(content.toString());
+            return Buffer.from(JSON.stringify(manifest, (k, v) => {
+                if (k.startsWith('$'))
+                    return undefined;
+                if (typeof v !== 'string')
+                    return v;
+                return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
+            }));
+        }
+    },
+];
+
+if (nodb) {
+    copyPatterns.push({
+        from: 'tools/tag-empty.db', to: 'assets/tag.db'
+    })
+}
 
 module.exports = {
     entry: {
@@ -127,23 +151,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
-        new CopyPlugin([
-            { from: 'src/assets', to: 'assets' },
-            { from: 'src/template', to: 'template' },
-            {
-                from: 'src/manifest.json', to: 'manifest.json', transform: content => {
-                    const data = require("./package.json");
-                    const manifest = JSON.parse(content.toString());
-                    return Buffer.from(JSON.stringify(manifest, (k, v) => {
-                        if (k.startsWith('$'))
-                            return undefined;
-                        if (typeof v !== 'string')
-                            return v;
-                        return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
-                    }));
-                }
-            },
-        ]),
+        new CopyPlugin(copyPatterns),
         ...plugins,
     ],
     devtool: 'source-map',

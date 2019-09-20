@@ -57,10 +57,10 @@ class TagDatabase {
         const dbUrl = chrome.runtime.getURL('assets/tag.db');
         const r = await fetch(dbUrl);
         const buf = await r.arrayBuffer();
-        return await this.update(buf, defaultReleaseLink);
+        return await this.update(buf, defaultReleaseLink, new Date(0));
     }
 
-    async update(data: ArrayBuffer, releaseLink: string): Promise<void> {
+    async update(data: ArrayBuffer, releaseLink: string, updateTime: Date = new Date()): Promise<void> {
         const timer = logger.time('构建数据');
         const tagDB: EHTDatabase = JSON.parse(await pako.ungzip(new Uint8Array(data), { to: 'string' }));
         const sha = tagDB.head.sha;
@@ -89,8 +89,7 @@ class TagDatabase {
                 tagReplace[fullKey] = dirtyName;
             }
         });
-        const updateTime = new Date();
-        this.updateTime.next(updateTime);
+        this.updateTime.next(updateTime.getTime() ? updateTime : undefined);
         this.tagList.next(tagList);
         this.tagReplace.next(tagReplace);
         this.sha.next(sha);
@@ -103,7 +102,7 @@ class TagDatabase {
             tagReplace,
             releaseLink,
             sha,
-            updateTime: updateTime.getTime(),
+            updateTime: updateTime.getTime() || undefined,
             dataStructureVersion: DATA_STRUCTURE_VERSION,
         }).catch(logger.error);
     }

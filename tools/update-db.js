@@ -18,5 +18,5 @@ async function download() {
 }
 
 download().then(data => {
-  fs.writeFileSync("./src/assets/tag.db", data)
+  fs.writeFileSync("./src/assets/tag.db", data);
 });

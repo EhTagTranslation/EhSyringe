@@ -11,7 +11,7 @@
     "dev:chrome": "webpack --mode=development --watch",
     "dev:firefox": "webpack --mode=development --watch --firefox",
     "dev:android": "webpack --mode=development --watch --android",
-    "build": "webpack --mode=production --crx",
+    "build": "webpack --mode=production --crx --no-db",
     "web-ext": "web-ext",
     "update-db": "node ./tools/update-db.js"
   },
