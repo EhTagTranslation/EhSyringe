@@ -7,11 +7,12 @@
   "main": "syringe.js",
   "scripts": {
     "test": "echo Error: no test specified && exit 1",
-    "start": "webpack --mode=development --watch",
+    "webpack": "webpack",
+    "start": "npm run dev:chrome",
     "dev:chrome": "webpack --mode=development --watch",
     "dev:firefox": "webpack --mode=development --watch --firefox",
     "dev:android": "webpack --mode=development --watch --android",
-    "build": "webpack --mode=production --crx --no-db",
+    "build": "webpack --mode=production --pack",
     "web-ext": "web-ext",
     "update-db": "node ./tools/update-db.js"
   },
@@ -46,7 +47,8 @@
     "web-ext": "^3.1.1",
     "webext-webpack-plugin": "^0.0.8",
     "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "webpack-cli": "^3.3.9",
+    "zip-webpack-plugin": "^3.0.0"
   },
   "dependencies": {
     "emoji-regex": "^8.0.0",

@@ -1,10 +1,12 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
-const plugins = [];
-const Crx = require("./crx-packet");
+const ZipPlugin = require('zip-webpack-plugin');
+const CrxPlugin = require("./crx-packet");
 
-const crx = process.argv.indexOf('--crx') > 0;
+const plugins = [];
+
+const pack = process.argv.indexOf('--pack') > 0;
 const firefox = process.argv.indexOf('--firefox') > 0;
 const android = process.argv.indexOf('--android') > 0;
 const nodb = process.argv.indexOf('--no-db') > 0;
@@ -29,15 +31,20 @@ if (firefox || android) {
     )
 }
 
-if(crx){
+if (pack) {
     plugins.push(
-        new Crx({
+        new ZipPlugin({
+            path: path.resolve(__dirname, 'release'),
+            pathPrefix: 'EhSyringe',
+            filename: 'EhSyringe'
+        }));
+    plugins.push(
+        new CrxPlugin({
             key: 'key.pem',
             src: 'dist',
             dest: 'release',
             name: 'EhSyringe'
-        })
-    )
+        }));
 }
 
 const copyPatterns = [
@@ -61,7 +68,7 @@ const copyPatterns = [
 if (nodb) {
     copyPatterns.push({
         from: 'tools/tag-empty.db', to: 'assets/tag.db'
-    })
+    });
 }
 
 module.exports = {
