@@ -46,7 +46,7 @@
     "typescript-lit-html-plugin": "^0.9.0",
     "web-ext": "^3.2.0",
     "webext-webpack-plugin": "^0.0.8",
-    "webpack": "^4.41.0",
+    "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9",
     "zip-webpack-plugin": "^3.0.0"
   },
