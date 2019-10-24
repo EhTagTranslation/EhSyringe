@@ -12,10 +12,12 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-    - name: npm install, build
-      run: |
-        npm ci
-        npm run build
+    - name: npm install
+      run: npm ci
+      env:
+        CI: true
+    - name: npm build
+      run: npm run build
       env:
         CI: true
     - uses: actions/upload-artifact@master
