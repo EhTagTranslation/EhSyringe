@@ -24,9 +24,15 @@ jobs:
       with:
         name: EhSyringe.zip
         path: release/EhSyringe.zip
-    - uses: ncipollo/release-action@v1
+    - name: publish to github release
+      uses: ncipollo/release-action@v1
       if: github.event_name == 'create' && github.event.ref_type == 'tag'
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifact: release/EhSyringe.zip
-        
+    - name: publish to firefox store
+      if: github.event_name == 'create' && github.event.ref_type == 'tag'
+      run: npx shipit firefox dist
+      env:
+        WEXT_SHIPIT_FIREFOX_JWT_ISSUER: ${{ secrets.FIREFOX_JWT_ISSUER }}
+        WEXT_SHIPIT_FIREFOX_JWT_SECRET: ${{ secrets.FIREFOX_JWT_SECRET }}
