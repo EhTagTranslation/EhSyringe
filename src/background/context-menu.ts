@@ -11,7 +11,7 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
         if (!/\/tag\//.test(info.linkUrl)) {
             return;
         }
-        const seg = info.linkUrl.split('/').pop().replace('+', ' ').split(':');
+        const seg = info.linkUrl.split('/').pop().replace(/\+/g, ' ').split(':');
         const namespace = seg.length === 1 ? 'misc' : seg[0] as EHTNamespaceName;
         const tag = seg.pop();
         chrome.tabs.create({

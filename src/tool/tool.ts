@@ -76,5 +76,5 @@ export function getSearchTerm(namespace: EHTNamespaceName, key: string): string 
 }
 
 export function getEditorUrl(namespace: EHTNamespaceName, key: string): string {
-    return `https://ehtagtranslation.github.io/Editor/edit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
+    return `https://ehtt.now.sh/edit/${encodeURIComponent(namespace || 'misc')}/${encodeURIComponent(key)}`;
 }
