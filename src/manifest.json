@@ -7,7 +7,7 @@
   "author": "${author}",
   "version": "${version}",
   "homepage_url": "${homepage}",
-  "browser_specific_settings": {
+  "applications": {
     "gecko": {
       "id": "{759d5566-1dce-41ae-bae9-00dd5172c422}",
       "strict_min_version": "57.0"
