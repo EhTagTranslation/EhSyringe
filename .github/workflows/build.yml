@@ -20,6 +20,10 @@ jobs:
       run: npm run build
       env:
         CI: true
+    - name: web-ext lint
+      run: npx web-ext lint -s dist
+      env:
+        CI: true
     - uses: actions/upload-artifact@master
       with:
         name: EhSyringe.zip
@@ -36,3 +40,4 @@ jobs:
       env:
         WEXT_SHIPIT_FIREFOX_JWT_ISSUER: ${{ secrets.FIREFOX_JWT_ISSUER }}
         WEXT_SHIPIT_FIREFOX_JWT_SECRET: ${{ secrets.FIREFOX_JWT_SECRET }}
+
