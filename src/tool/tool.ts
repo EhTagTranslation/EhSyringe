@@ -2,8 +2,12 @@
 import { namespaceTranslate } from '../data/namespace-translate';
 import { EHTNamespaceName, Suggestion } from '../interface';
 
-export function dateDiff(hisTime: Date, nowTime: Date = new Date()): string {
-    const diffValue = nowTime.getTime() - hisTime.getTime();
+export function dateDiff(hisTime: Date | number = 0, nowTime: Date | number = new Date()): string {
+    hisTime = (typeof hisTime === 'number') ? hisTime : hisTime.getTime();
+    nowTime = ((typeof nowTime === 'number') ? nowTime : nowTime.getTime());
+    if (!hisTime) return 'N/A';
+
+    const diffValue = nowTime - hisTime;
 
     const minute = 1000 * 60;
     const hour = minute * 60;

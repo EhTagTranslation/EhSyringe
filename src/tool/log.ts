@@ -12,14 +12,14 @@ class Log {
     readonly warn: (message: string, ...optionalParams: any[]) => void = console.warn.bind(console, this.prefix);
     readonly error: (message: string | Error, ...optionalParams: any[]) => void = console.error.bind(console, this.prefix);
     readonly debug: (message: any, ...optionalParams: any[]) => void = console.debug.bind(console, this.prefix);
-    readonly time: (label: string) => Timer = label => {
+    readonly time = (label: string) => {
         const plabel = `${this.prefix} ${label}`;
         console.time(plabel);
         return {
             label,
             log: console.timeLog.bind(console, plabel),
             end: console.timeEnd.bind(console, plabel),
-        };
+        } as Timer;
     }
 }
 
