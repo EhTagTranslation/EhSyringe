@@ -1,6 +1,8 @@
 name: build
 
-on: [push, create]
+on: 
+  - push
+  - create
 
 jobs:
   build:
@@ -15,15 +17,15 @@ jobs:
     - name: npm install
       run: npm ci
       env:
-        CI: true
+        CI: 'true'
     - name: npm build
       run: npm run build
       env:
-        CI: true
+        CI: 'true'
     - name: web-ext lint
       run: npx web-ext lint -s dist
       env:
-        CI: true
+        CI: 'true'
     - uses: actions/upload-artifact@master
       with:
         name: EhSyringe.zip
