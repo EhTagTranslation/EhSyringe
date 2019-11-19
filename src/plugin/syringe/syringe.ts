@@ -1,4 +1,4 @@
-import { uiData } from '../../data/ui-data';
+import { getUiData } from '../../data/ui-data';
 import { TagReplace } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
 import { config } from '../../tool/config-manage';
@@ -33,6 +33,8 @@ class Syringe {
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
     readonly conf = config.syncGet();
     observer?: MutationObserver;
+
+    readonly uiData = getUiData();
 
     constructor() {
         config.sync().catch(logger.error);
@@ -182,8 +184,8 @@ class Syringe {
 
     translateUi(node: Node): void {
         if (node.nodeName === '#text') {
-            if (uiData[node.textContent]) {
-                node.textContent = uiData[node.textContent];
+            if (this.uiData[node.textContent]) {
+                node.textContent = this.uiData[node.textContent];
                 return;
             }
             let text = node.textContent;
@@ -204,19 +206,19 @@ class Syringe {
             }
 
         } else if (this.isNode(node, 'input') || this.isNode(node, 'textarea')) {
-            if (uiData[node.placeholder]) {
-                node.placeholder = uiData[node.placeholder];
+            if (this.uiData[node.placeholder]) {
+                node.placeholder = this.uiData[node.placeholder];
                 return;
             }
             if (node.type === 'submit' || node.type === 'button') {
-                if (uiData[node.value]) {
-                    node.value = uiData[node.value];
+                if (this.uiData[node.value]) {
+                    node.value = this.uiData[node.value];
                     return;
                 }
             }
         } else if (this.isNode(node, 'optgroup')) {
-            if (uiData[node.label]) {
-                node.label = uiData[node.label];
+            if (this.uiData[node.label]) {
+                node.label = this.uiData[node.label];
             }
         }
 
@@ -225,8 +227,8 @@ class Syringe {
             node.parentElement &&
             node.parentElement.parentElement &&
             node.parentElement.parentElement.id === 'nb') {
-            if (uiData[node.textContent]) {
-                node.textContent = uiData[node.textContent];
+            if (this.uiData[node.textContent]) {
+                node.textContent = this.uiData[node.textContent];
                 return;
             }
         }
