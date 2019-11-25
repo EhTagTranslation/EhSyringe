@@ -1,15 +1,15 @@
-import { logger } from "../tool/log";
+import { logger } from '../tool/log';
 
 const regex = Symbol('location regex');
 const host = Symbol('host string');
 
 interface DataMap {
-  [regex]: RegExp;
-  [host]?: string;
-  [key: string]: string;
+  readonly [regex]: RegExp;
+  readonly [host]?: string;
+  readonly [key: string]: string;
 }
 
-const uiData: DataMap[] = [
+const uiData: readonly DataMap[] = [
   {
     [regex]: /.*/,
     'Report Gallery': '举报图库',
@@ -714,12 +714,12 @@ const uiData: DataMap[] = [
   }
 ];
 
-export function getUiData(): { [key: string]: string } {
+export function getUiData(): { readonly [key: string]: string } {
   if (!location || !(location.host.endsWith('e-hentai.org') || location.host.endsWith('exhentai.org'))) {
     return {};
   }
   const path = location.pathname + location.search;
-  logger.log('获取 UI 翻译：', path)
+  logger.log('获取 UI 翻译：', path);
   const results: { [key: string]: string } = {};
   uiData.filter(d => d[regex].test(path) && (!d[host] || location.host === d[host])).forEach(d => {
     for (const key in d) {
