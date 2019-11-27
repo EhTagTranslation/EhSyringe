@@ -66,14 +66,10 @@ const uiData: readonly DataMap[] = [
     'Post New Comment': '发送新的评论',
 
     'Front Page': '首页',
-    'Front': '首',
-    ' Page': '页',
 
     'Watched': '关注',
     'Popular': '流行',
     'Torrents': '种子',
-    'Fav': '收',
-    'orite': '藏夹',
     'Home': '首页',
 
     'Settings': '设置',
@@ -342,22 +338,10 @@ const uiData: readonly DataMap[] = [
     'Downloads:': '完成：',
     'Completes': '完成',
     'DLs': '完成',
-    'Visitor Statistics': '访客统计',
     'Galleries All-Time': '所有时间',
     'Galleries Past Year': '过去一年',
     'Galleries Past Month': '过去一个月',
     'Galleries Yesterday': '昨天',
-    'Not in top 1000': '1000 名以外',
-    'Ranking': '名次',
-    'Score': '分数',
-    'Visits': '访问',
-    'Hits': '点击',
-    'Yearly Stats': '年度统计',
-    'Last 12 Months': '最近 12 个月',
-    'Daily Stats': '每日统计',
-    'The number of total visits on your galleries.': '您的图库总访问次数',
-    'The number of total image accesses on your galleries.': '您图库中图片访问次数',
-    'Back To Gallery': '返回图库',
 
     'Gallery Toplists': '图库排行',
     'Uploader Toplists': '上传者排行',
@@ -430,11 +414,10 @@ const uiData: readonly DataMap[] = [
     'Overview': '概况',
     'My Stats': '我的统计',
     'My Settings': '我的设置',
-    // 'Hath Perks': 'Hath 商店',
     'Hath Exchange': 'Hath 交易',
     'GP Exchange': 'GP 交易',
-    // 'Credit Log': '信用记录',
-    // 'Karma Log': 'Karma记录',
+    'Credit Log': 'Credit 记录',
+    'Karma Log': 'Karma 记录',
     'Apply Filter': '应用筛选',
     'Clear Filter': '清理筛选',
     'Estimated Size:   ': '预计大小:   ',
@@ -487,27 +470,6 @@ const uiData: readonly DataMap[] = [
     'DMCA/Copyright Infringement': 'DMCA / 侵犯版权',
     'Child Pornography': '儿童色情',
     'Other Illicit Content': '其他非法内容',
-    'Specify an objective reason why you wish to expunge this gallery.':
-      '请说明要删除此库的客观原因.',
-    'None / Withdraw Petition.': '无 / 撤回删除申请.',
-    // "This gallery is a duplicate of equal or lower quality of an earlier posted, clearly marked gallery.":
-    // '此图库是早期发布的，标记为图库的质量相同或较低的副本。',
-    // "A newer higher-quality and clearly marked copy of this gallery has been uploaded.":
-    // "这个图库的更高质量和清晰标记的副本已上传。",
-    'This gallery contains either illicit content like child porn or anything else forbidden by the ':
-      '这个图库包含非法内容，如儿童色情片或其他任何禁止的内容, 参见',
-    ', or otherwise falls under the ':
-      ', 或者符合',
-    'Expunge Guidelines': '清除指南',
-    ' (specify below).': '（在下方说明）。',
-    'Show Expunge Log': '显示清除日志',
-    'Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.':
-      '请输入清除原因和备注。它应包括副本的位置或违反的特定规则。',
-    'Roman Script': '罗马音',
-    'Japanese Script': '日文',
-    'Not Set': '未设置',
-    'Blank Vote': '空投票',
-    ' New': ' 新',
     'Watched Tag Galleries': '标签订阅',
     'Currently Popular Recent Galleries': '目前最受欢迎的图库',
     'Search Favorites': '搜索收藏夹',
@@ -575,6 +537,8 @@ const uiData: readonly DataMap[] = [
     [host]: 'upload.e-hentai.org',
 
     'Published Galleries': '发布图库',
+    'Empty Galleries': '空图库',
+    'Unpublished Galleries': '未发布的图库',
     'Gallery Name ': '图库名称',
     'Date Added ': '添加时间 ',
     'Public Category': '发布类别',
@@ -711,6 +675,69 @@ const uiData: readonly DataMap[] = [
     'Donation Screen': '捐赠',
     '. These will be refunded if you buy them for Hath, and later make a qualifying donation. There is also an option to "adopt" H@H clients that will grant you Hath over time as if you were running it yourself.': '获取。如果您已经用 Hath 购买，在符合条件的捐赠后将获得退款。还有一个“领养” H@H 客户端的选项，它会随着时间的推移而授予您 Hath，就好像您自己运行它一样。',
 
+  },
+  {
+    [regex]: /^\/gallerypopups\.php\?.*act=expunge/,
+    'Specify an objective reason why you wish to expunge this gallery.':
+      '请说明要删除此库的客观原因。',
+    'None / Withdraw Petition.': '无 / 撤回删除申请。',
+    'This gallery is a duplicate of equal or lower quality of an earlier posted, clearly marked gallery.':
+      '此图库是早期发布的标记清楚的图库的质量相同或较低的副本。',
+    'A newer higher-quality and clearly marked copy of this gallery has been uploaded.':
+      '这个图库的更高质量和标记清楚的副本已上传。',
+    'This gallery contains either illicit content like child porn or anything else forbidden by the ':
+      '这个图库包含非法内容，如儿童色情或其他任何',
+    ', or otherwise falls under the ':
+      '禁止的内容，或者符合',
+    'Expunge Guidelines': '删除指南',
+    ' (specify below).': '（在下方说明）。',
+    'Show Expunge Log': '显示删除日志',
+    'Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.':
+      '请输入清除原因和备注。它应包括副本的位置或违反的特定规则。',
+    'No expunge petitions have been filed for this gallery': '尚未对此图库提出删除申诉',
+    'Back': '返回',
+  },
+  {
+    [regex]: /^\/gallerypopups\.php\?.*act=rename/,
+    'Roman Script': '罗马音',
+    'Japanese Script': '日文',
+    'Not Set': '未设置',
+    'Blank Vote': '空投票',
+    ' New': ' 新',
+    'Submit': '提交',
+  },
+  {
+    [regex]: /^\/stats\.php/,
+    'Visitor Statistics': '访客统计',
+    'This gallery has had a total of ': '此图库共计有 ',
+    ' visit(s).': ' 名访客。',
+    'Galleries All-Time': '所有时间',
+    'Galleries Past Year': '过去一年',
+    'Galleries Past Month': '过去一个月',
+    'Galleries Yesterday': '昨天',
+    'Not in top 1000': '1000 名以外',
+    'Ranking': '名次',
+    'Score': '分数',
+    'Visits': '访问',
+    'Hits': '点击',
+    'Yearly Stats': '年度统计',
+    'Last 12 Months': '最近 12 个月',
+    'Daily Stats': '每日统计',
+    'The number of total visits on your galleries.': '图库总访问次数',
+    'The number of total image accesses on your galleries.': '图库中图片访问次数',
+    'Back To Gallery': '返回图库',
+    'Jan': '1 月', 'Feb': '2 月', 'Mar': '3 月', 'Apr': '4 月', 'May': '5 月', 'Jun': '6 月', 'Jul': '7 月', 'Aug': '8 月', 'Sep': '9 月', 'Oct': '10 月', 'Nov': '11 月', 'Dec': '12 月',
+    '1st': '1 日', '2nd': '2 日', '3rd': '3 日', '4th': '4 日', '5th': '5 日', '6th': '6 日', '7th': '7 日', '8th': '8 日', '9th': '9 日', '10th': '10 日', '11th': '11 日', '12th': '12 日', '13th': '13 日', '14th': '14 日', '15th': '15 日', '16th': '16 日', '17th': '17 日', '18th': '18 日', '19th': '19 日', '20th': '20 日', '21st': '21 日', '22nd': '22 日', '23rd': '23 日', '24th': '24 日', '25th': '25 日', '26th': '26 日', '27th': '27 日', '28th': '28 日', '29th': '29 日', '30th': '30 日', '31st': '31 日',
+  },
+  {
+    [regex]: /^\/logs\.php/,
+    'Date': '日期',
+    'Amount': '金额',
+    'Information': '信息',
+    'Total Karma: ': '总 Karma：',
+    'From': '来自',
+    'Topic': '主题',
+    'Comment': '附言',
   }
 ];
 

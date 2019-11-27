@@ -26,6 +26,14 @@ import './syringe.less';
     }
 })();
 
+function isNode<K extends keyof HTMLElementTagNameMap>(node: Node, nodeName: K): node is HTMLElementTagNameMap[K] {
+    return node && node.nodeName === nodeName.toUpperCase();
+}
+
+function isText(node: Node): node is Text {
+    return node.nodeType === Node.TEXT_NODE;
+}
+
 class Syringe {
     tagReplace: TagReplace;
     pendingTags: Node[] = [];
@@ -41,10 +49,6 @@ class Syringe {
         if (this.conf.translateTag || this.conf.translateUI) {
             this.init();
         }
-    }
-
-    isNode<K extends keyof HTMLElementTagNameMap>(node: Node, nodeName: K): node is HTMLElementTagNameMap[K] {
-        return node && node.nodeName === nodeName.toUpperCase();
     }
 
     private init(): void {
@@ -88,7 +92,7 @@ class Syringe {
             (node.parentNode && this.skipNode.has(node.parentNode.nodeName))
         ) { return; }
 
-        if (this.isNode(node, 'body')) {
+        if (isNode(node, 'body')) {
             node.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
             if (!this.conf.showIcon) { node.classList.add('ehs-hide-icon'); }
             node.classList.add(`ehs-image-level-${this.conf.introduceImageLevel}`);
@@ -183,7 +187,7 @@ class Syringe {
     }
 
     translateUi(node: Node): void {
-        if (node.nodeName === '#text') {
+        if (isText(node)) {
             if (this.uiData[node.textContent]) {
                 node.textContent = this.uiData[node.textContent];
                 return;
@@ -205,7 +209,7 @@ class Syringe {
                 return;
             }
 
-        } else if (this.isNode(node, 'input') || this.isNode(node, 'textarea')) {
+        } else if (isNode(node, 'input') || isNode(node, 'textarea')) {
             if (this.uiData[node.placeholder]) {
                 node.placeholder = this.uiData[node.placeholder];
                 return;
@@ -216,24 +220,19 @@ class Syringe {
                     return;
                 }
             }
-        } else if (this.isNode(node, 'optgroup')) {
+        } else if (isNode(node, 'optgroup')) {
             if (this.uiData[node.label]) {
                 node.label = this.uiData[node.label];
+                return;
             }
-        }
-
-        if (
-            this.isNode(node, 'a') &&
-            node.parentElement &&
-            node.parentElement.parentElement &&
-            node.parentElement.parentElement.id === 'nb') {
+        } else if (isNode(node, 'a') && node?.parentElement?.parentElement.id === 'nb') {
             if (this.uiData[node.textContent]) {
                 node.textContent = this.uiData[node.textContent];
                 return;
             }
         }
 
-        if (this.isNode(node, 'p')) {
+        if (isNode(node, 'p')) {
             /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
             if (node.classList.contains('gpc')) {
                 const text = node.textContent;
@@ -245,7 +244,7 @@ class Syringe {
             }
         }
 
-        if (this.isNode(node, 'div')) {
+        if (isNode(node, 'div')) {
             /* E-Hentai-Downloader 兼容处理 */
             if (node.id === 'gdd') {
                 const div = document.createElement('div');
@@ -256,8 +255,7 @@ class Syringe {
 
             /* 熊猫书签 兼容处理 2 */
             if (
-                node.parentElement &&
-                node.parentElement.id === 'gdo4' &&
+                node.parentElement?.id === 'gdo4' &&
                 node.classList.contains('ths') &&
                 node.classList.contains('nosel')
             ) {
