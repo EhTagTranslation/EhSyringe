@@ -6,14 +6,11 @@
   "author": "EhTagTranslation",
   "main": "syringe.js",
   "scripts": {
-    "test": "echo Error: no test specified && exit 1",
-    "webpack": "webpack",
     "start": "npm run dev:chrome",
     "dev:chrome": "webpack --mode=development --watch",
     "dev:firefox": "webpack --mode=development --watch --firefox",
     "dev:android": "webpack --mode=development --watch --android",
     "build": "webpack --mode=production --pack",
-    "web-ext": "web-ext",
     "update-db": "node ./tools/update-db.js"
   },
   "repository": {
