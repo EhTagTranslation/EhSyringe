@@ -37,6 +37,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         artifact: release/EhSyringe.zip
     - name: publish to firefox store
+      continue-on-error: true
       if: github.event_name == 'create' && github.event.ref_type == 'tag'
       run: npx shipit firefox dist
       env:
