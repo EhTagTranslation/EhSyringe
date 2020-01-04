@@ -53,11 +53,11 @@ const uiData: readonly DataMap[] = [
     'Score ': '分数 ',
     'Uploader Comment': '上传者评论',
 
-    'Vote+': '👍',
-    'Vote-': '👎',
+    'Vote+': '赞',
+    'Vote-': '踩',
 
-    'Vote Up': '👍',
-    'Vote Down': '👎',
+    'Vote Up': '赞',
+    'Vote Down': '踩',
 
     'Show Tagged Galleries': '含有该标签的图库',
     'Show Tag Definition': '显示标签介绍',

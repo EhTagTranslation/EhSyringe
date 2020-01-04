@@ -169,7 +169,7 @@ class Syringe {
     }
 
     translateTag(node: Node): boolean {
-        if (node.nodeName !== '#text' || !node.parentElement) {
+        if (!isText(node) || !node.parentElement) {
             return false;
         }
         const parentElement = node.parentElement;
