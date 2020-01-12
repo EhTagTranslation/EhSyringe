@@ -1,7 +1,7 @@
 {
   "name": "ehsyringe",
   "displayName": "EhSyringe",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "E 站注射器，将中文翻译注入到 E 站体内。",
   "author": "EhTagTranslation",
   "main": "syringe.js",
@@ -32,6 +32,7 @@
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "file-loader": "^5.0.2",
+    "keypair": "^1.0.1",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "node-fetch": "^2.6.0",
@@ -50,7 +51,6 @@
   },
   "dependencies": {
     "emoji-regex": "^8.0.0",
-    "keypair": "^1.0.1",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2",
     "normalize.css": "^8.0.1",
