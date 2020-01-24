@@ -17,7 +17,7 @@ class Log {
         console.time(plabel);
         return {
             label,
-            log: console.timeLog.bind(console, plabel),
+            log: (console.timeLog || console.log).bind(console, plabel),
             end: console.timeEnd.bind(console, plabel),
         } as Timer;
     }
