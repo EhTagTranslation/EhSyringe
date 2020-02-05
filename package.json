@@ -24,7 +24,7 @@
   "readme": "https://github.com/EhTagTranslation/EhSyringe",
   "homepage": "https://github.com/EhTagTranslation/EhSyringe",
   "devDependencies": {
-    "@types/chrome": "^0.0.92",
+    "@types/chrome": "^0.0.93",
     "@types/pako": "^1.0.1",
     "@wext/shipit": "^0.2.1",
     "copy-webpack-plugin": "^5.1.1",
