@@ -43,7 +43,7 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.2",
     "typescript-lit-html-plugin": "^0.9.0",
-    "web-ext": "^4.0.0",
+    "web-ext": "^4.1.0",
     "webext-webpack-plugin": "^0.0.8",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
