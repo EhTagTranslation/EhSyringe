@@ -125,6 +125,9 @@ class Syringe {
     // 实际进行替换，必须保证 node 是标签节点
     private translateTagImpl(node: Node): boolean {
         const parentElement = node.parentElement;
+        if (parentElement.hasAttribute('ehs-tag')) {
+            return true;
+        }
 
         let value = '';
         let aId = parentElement.id;
@@ -161,12 +164,12 @@ class Syringe {
             if (node.textContent[1] === ':') {
                 value = `${node.textContent[0]}:${value}`;
             }
-            if (node.parentElement.hasAttribute('ehs-tag')) {
-                return true;
+            if (!parentElement.title) {
+                parentElement.title = aId || aTitle;
             }
-            node.parentElement.setAttribute('ehs-tag', node.textContent);
+            parentElement.setAttribute('ehs-tag', node.textContent);
             if (value !== node.textContent) {
-                node.parentElement.innerHTML = value;
+                parentElement.innerHTML = value;
             } else {
                 logger.log('翻译内容相同', value);
             }
