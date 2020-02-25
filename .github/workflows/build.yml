@@ -22,10 +22,6 @@ jobs:
       run: npm run build
       env:
         CI: 'true'
-    - name: web-ext lint
-      run: npx web-ext lint -s dist
-      env:
-        CI: 'true'
     - uses: actions/upload-artifact@master
       with:
         name: EhSyringe.zip
