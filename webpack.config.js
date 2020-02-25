@@ -35,7 +35,6 @@ if (pack) {
     plugins.push(
         new ZipPlugin({
             path: path.resolve(__dirname, 'release'),
-            pathPrefix: 'EhSyringe',
             filename: 'EhSyringe'
         }));
     plugins.push(
