@@ -1,41 +1,63 @@
 import { EHTNamespaceName } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
-import { config } from '../../tool/config-manage';
+import { config, ConfigData } from '../../tool/config-manage';
 import { logger } from '../../tool/log';
 import { getEditorUrl, getFullKey } from '../../tool/tool';
 
 import './introduce.less';
 
-export const introduceInit = async () => {
-    const conf = await config.get();
-    if (!conf.showIntroduce) return;
+class Introduce {
+    constructor() {
+        this.introduceBox = document.createElement('div')
+        this.introduceBox.id = 'ehs-introduce-box';
+    }
 
-    const taglist = document.querySelector('#taglist');
-    const gright = document.querySelector('#gright');
+    async init() {
+        const conf = await config.get();
+        if (!conf.showIntroduce) return;
 
-    if (!(taglist && gright)) return;
+        const taglist = document.querySelector('#taglist');
+        const gright = document.querySelector('#gright');
 
-    logger.log('标签介绍');
-    const introduceBox = document.createElement('div');
-    introduceBox.id = 'ehs-introduce-box';
-    gright.insertBefore(introduceBox, null);
+        if (!(taglist && gright)) return;
 
-    let currentTarget: HTMLElement = null;
-    taglist.addEventListener('click', async (e) => {
-        const target = e.target as HTMLElement;
-        if (!target || target.nodeName !== 'A') {
+        logger.log('标签介绍');
+        gright.insertBefore(this.introduceBox, null);
+
+        taglist.addEventListener('click', this.onclick);
+    }
+
+    readonly introduceBox: HTMLDivElement;
+    readonly config: ConfigData;
+
+    target: HTMLAnchorElement;
+
+    private findTarget(node: Node) {
+        const isTarget = (n: Node): n is HTMLAnchorElement =>
+            n.nodeType === Node.ELEMENT_NODE && n.nodeName === 'A'
+            && (n as HTMLElement).id.startsWith('ta_')
+            && n.parentElement
+            && (
+                n.parentElement.classList.contains('gt') ||
+                n.parentElement.classList.contains('gtl') ||
+                n.parentElement.classList.contains('gtw')
+            );
+        while (node) {
+            if (isTarget(node)) return node;
+            node = node.parentNode;
+        }
+        return null;
+    }
+
+    readonly onclick = async (e: MouseEvent) => {
+        const target = this.findTarget(e.target as Node);
+        if (!target) {
             return;
         }
-        if (!target.parentElement || !(
-            target.parentElement.classList.contains('gt') ||
-            target.parentElement.classList.contains('gtl') ||
-            target.parentElement.classList.contains('gtw'))) {
-            return;
-        }
-        currentTarget = target;
+        this.target = target;
         const isOpen = !!target.style.color;
         if (!isOpen) {
-            introduceBox.innerHTML = '';
+            this.introduceBox.innerHTML = '';
             return;
         }
         const m = /'(.*)'/ig.exec(target.getAttribute('onclick'));
@@ -54,12 +76,12 @@ export const introduceInit = async () => {
         timer.log(tagData);
         timer.end();
 
-        if (currentTarget !== target) {
+        if (this.target !== target) {
             return;
         }
         if (tagData && !Array.isArray(tagData)) {
             // language=HTML
-            introduceBox.innerHTML = `
+            this.introduceBox.innerHTML = `
             <div class="ehs-title">
                 <div>
                     <div class="ehs-cn">${tagData.name}</div>
@@ -76,7 +98,7 @@ export const introduceInit = async () => {
         } else {
             const editorUrl = getEditorUrl(namespace, tag);
             // language=HTML
-            introduceBox.innerHTML = `
+            this.introduceBox.innerHTML = `
             <div class="ehs-title">
                 <div>
                     <div class="ehs-cn">${namespace}:${tag}</div>
@@ -95,5 +117,7 @@ export const introduceInit = async () => {
                 </div>
             </div>`;
         }
-    });
-};
+    }
+}
+
+export const introduceInit = () => new Introduce().init();

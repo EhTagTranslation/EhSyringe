@@ -67,15 +67,24 @@ function transformManifest(content, isChrome) {
 const copyPatterns = [
     { from: 'src/assets', to: 'assets' },
     { from: 'src/template', to: 'template' },
-    {
-        from: 'src/manifest.json', to: 'manifest.firefox.json',
-        transform: content => transformManifest(content, false),
-    },
-    {
-        from: 'src/manifest.json', to: 'manifest.chrome.json',
-        transform: content => transformManifest(content, true),
-    },
 ];
+
+if (pack) {
+    copyPatterns.push(
+        {
+            from: 'src/manifest.json', to: 'manifest.firefox.json',
+            transform: content => transformManifest(content, false),
+        },
+        {
+            from: 'src/manifest.json', to: 'manifest.chrome.json',
+            transform: content => transformManifest(content, true),
+        });
+} else {
+    copyPatterns.push({
+        from: 'src/manifest.json', to: 'manifest.json',
+        transform: content => transformManifest(content, !(firefox || android)),
+    })
+}
 
 if (nodb) {
     copyPatterns.push({
