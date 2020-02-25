@@ -12,7 +12,7 @@ const emojiReg = emojiRegex();
 const defaultReleaseLink = 'https://github.com/EhTagTranslation/EhSyringe/blob/master/src/assets/tag.db';
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
-const DATA_STRUCTURE_VERSION = 5;
+const DATA_STRUCTURE_VERSION = 6;
 
 class TagDatabase {
     readonly tagList = new BehaviorSubject<TagList>([]);
@@ -74,7 +74,7 @@ class TagDatabase {
 
                 const name = t.name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
                 const cleanName = name.replace(emojiReg, '').replace(/<img.*?>/ig, '').trim();
-                const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>');
+                const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>').replace(/<img(.*?)>/ig, '<img class="ehs-icon" $1>');
                 const search = getSearchTerm(namespace, key);
                 const fullKey = getFullKey(namespace, key);
 

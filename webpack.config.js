@@ -2,7 +2,6 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
-const CrxPlugin = require("./crx-packet");
 
 const plugins = [];
 
@@ -18,6 +17,7 @@ if (firefox || android) {
         adbDevice: '696ea70c',
     }) : ({
         browserConsole: false,
+        firefox: 'firefoxdeveloperedition',
         startUrl: ['about:debugging#addons', 'https://e-hentai.org']
     });
     plugins.push(
@@ -34,33 +34,46 @@ if (firefox || android) {
 if (pack) {
     plugins.push(
         new ZipPlugin({
+            exclude: /^\.\./,
             path: path.resolve(__dirname, 'release'),
-            filename: 'EhSyringe'
+            pathMapper: p => p.replace(/\.firefox\.([^\.]*)$/i, '.$1'),
+            filename: 'EhSyringe.firefox'
         }));
     plugins.push(
-        new CrxPlugin({
-            key: 'key.pem',
-            src: 'dist',
-            dest: 'release',
-            name: 'EhSyringe'
+        new ZipPlugin({
+            exclude: /^\.\./,
+            path: path.resolve(__dirname, 'release'),
+            pathMapper: p => { console.log(p); return p.replace(/\.chrome\.([^\.]*)$/i, '.$1') },
+            filename: 'EhSyringe.chrome',
+            pathPrefix: 'EhSyringe'
         }));
+}
+
+function transformManifest(content, isChrome) {
+    const data = require("./package.json");
+    const manifest = JSON.parse(content.toString());
+    if (isChrome) {
+        manifest.applications = undefined;
+    }
+    return Buffer.from(JSON.stringify(manifest, (k, v) => {
+        if (k.startsWith('$'))
+            return undefined;
+        if (typeof v !== 'string')
+            return v;
+        return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
+    }));
 }
 
 const copyPatterns = [
     { from: 'src/assets', to: 'assets' },
     { from: 'src/template', to: 'template' },
     {
-        from: 'src/manifest.json', to: 'manifest.json', transform: content => {
-            const data = require("./package.json");
-            const manifest = JSON.parse(content.toString());
-            return Buffer.from(JSON.stringify(manifest, (k, v) => {
-                if (k.startsWith('$'))
-                    return undefined;
-                if (typeof v !== 'string')
-                    return v;
-                return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
-            }));
-        }
+        from: 'src/manifest.json', to: 'manifest.firefox.json',
+        transform: content => transformManifest(content, false),
+    },
+    {
+        from: 'src/manifest.json', to: 'manifest.chrome.json',
+        transform: content => transformManifest(content, true),
     },
 ];
 

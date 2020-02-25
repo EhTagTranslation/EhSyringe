@@ -55,6 +55,7 @@ class Syringe {
         window.document.addEventListener('DOMContentLoaded', (e) => {
             this.documentEnd = true;
         });
+        this.setBodyClass(document.querySelector('body'));
         this.observer = new MutationObserver(mutations => mutations.forEach(mutation =>
             mutation.addedNodes.forEach(node1 => {
                 this.translateNode(node1);
@@ -85,6 +86,13 @@ class Syringe {
         }
     }
 
+    setBodyClass(node: HTMLBodyElement) {
+        if (!node) return;
+        node.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
+        if (!this.conf.showIcon) { node.classList.add('ehs-hide-icon'); }
+        node.classList.add(`ehs-image-level-${this.conf.introduceImageLevel}`);
+    }
+
     translateNode(node: Node): void {
         if (
             (!node.nodeName) ||
@@ -93,9 +101,7 @@ class Syringe {
         ) { return; }
 
         if (isNode(node, 'body')) {
-            node.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
-            if (!this.conf.showIcon) { node.classList.add('ehs-hide-icon'); }
-            node.classList.add(`ehs-image-level-${this.conf.introduceImageLevel}`);
+            this.setBodyClass(node);
         }
 
         let handled = false;
