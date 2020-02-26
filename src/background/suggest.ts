@@ -23,6 +23,7 @@ class Suggest {
             parody: 4,
             character: 3.5,
             reclass: 1,
+            rows: 0,
         };
 
     readonly nsDic: { [k: string]: EHTNamespaceName } = {

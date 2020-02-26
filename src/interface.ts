@@ -20,6 +20,7 @@ export interface EHTDatabase {
 }
 
 export type EHTNamespaceName =
+    | 'rows'
     | 'reclass'
     | 'language'
     | 'parody'
