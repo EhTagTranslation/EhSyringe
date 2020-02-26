@@ -57,12 +57,12 @@ class TagDatabase {
         const dbUrl = chrome.runtime.getURL('assets/tag.db');
         const r = await fetch(dbUrl);
         const buf = await r.arrayBuffer();
-        return await this.update(buf, defaultReleaseLink, new Date(0));
+        this.update(buf, defaultReleaseLink, new Date(0));
     }
 
-    async update(data: ArrayBuffer, releaseLink: string, updateTime: Date = new Date()): Promise<void> {
+    update(data: ArrayBuffer, releaseLink: string, updateTime: Date = new Date()): void {
         const timer = logger.time('构建数据');
-        const tagDB: EHTDatabase = JSON.parse(await pako.ungzip(new Uint8Array(data), { to: 'string' }));
+        const tagDB: EHTDatabase = JSON.parse(pako.ungzip(new Uint8Array(data), { to: 'string' }));
         const sha = tagDB.head.sha;
         const tagReplace: TagReplace = {};
         const tagList: TagList = [];

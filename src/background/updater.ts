@@ -46,7 +46,7 @@ class Updater {
         this.initDownloadStatus();
         try {
             const data = await this.download();
-            await tagDatabase.update(data.db, data.release.html_url);
+            tagDatabase.update(data.db, data.release.html_url);
 
             badgeLoading.set('OK', '#00C801');
             this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
