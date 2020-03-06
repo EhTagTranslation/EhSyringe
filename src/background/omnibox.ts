@@ -21,7 +21,7 @@ class OmniBox {
             ]
         });
         const tab = tabs.find(t => t.active) || tabs[0];
-        if (tab) {
+        if (tab?.url) {
             this.origin = new URL(tab.url).origin;
         } else {
             this.origin = 'https://e-hentai.org';

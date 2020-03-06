@@ -22,15 +22,15 @@ class TagTip {
         this.autoCompleteList = document.createElement('div');
         this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list';
 
-        fromEvent(this.inputElement, 'keyup').pipe(
-            filter((e: KeyboardEvent) => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)),
+        fromEvent<KeyboardEvent>(this.inputElement, 'keyup').pipe(
+            filter(e => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)),
             map(() => this.inputElement.value),
             // distinctUntilChanged()
         ).subscribe(this.search);
 
-        fromEvent(this.inputElement, 'keydown').subscribe(this.keydown);
+        fromEvent<KeyboardEvent>(this.inputElement, 'keydown').subscribe(this.keydown);
 
-        fromEvent(this.autoCompleteList, 'click').subscribe(e => {
+        fromEvent<MouseEvent>(this.autoCompleteList, 'click').subscribe(e => {
             this.inputElement.focus();
             e.preventDefault();
             e.stopPropagation();
@@ -151,7 +151,7 @@ export const tagTipInit = async () => {
     if (!conf.tagTip) return;
     logger.log('标签提示');
 
-    const searchInput: HTMLInputElement = document.querySelector('#f_search');
+    const searchInput: HTMLInputElement | null = document.querySelector('#f_search, #newtagfield, [name=f_search]');
     if (!searchInput) return;
     return new TagTip(searchInput);
 };

@@ -20,6 +20,7 @@
     "target": "es6",
     "jsx": "react",
     "allowJs": true,
+    "strict": true,
     "experimentalDecorators": true,
     "plugins": [
       {

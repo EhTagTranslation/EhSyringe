@@ -17,7 +17,7 @@ const DATA_STRUCTURE_VERSION = 6;
 class TagDatabase {
     readonly tagList = new BehaviorSubject<TagList>([]);
     readonly tagReplace = new BehaviorSubject<TagReplace>({});
-    readonly updateTime = new BehaviorSubject<Date>(new Date(0));
+    readonly updateTime = new BehaviorSubject<Date | undefined>(undefined);
     readonly releaseLink = new BehaviorSubject<string>(defaultReleaseLink);
     readonly sha = new BehaviorSubject<string>('');
 

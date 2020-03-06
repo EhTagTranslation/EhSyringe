@@ -26,7 +26,7 @@ interface PopupState {
     progress: number;
     animationState: number;
     info: string;
-    configValue?: ConfigData;
+    configValue: ConfigData;
 }
 
 class Popup {
@@ -46,6 +46,7 @@ class Popup {
         });
     }
 
+    private configOriginal!: ConfigData;
     private readonly _state: PopupState = {
         sha: '',
         shaRef: '',
@@ -61,7 +62,7 @@ class Popup {
         showSettingPanel: false,
         progress: 0,
         animationState: 0,
-        configValue: null,
+        configValue: this.configOriginal,
     };
     private state: PopupState = new Proxy(this._state, {
         set: (target, key, value, receiver) => {
@@ -71,7 +72,6 @@ class Popup {
         }
     });
 
-    private configOriginal: ConfigData;
 
     private testAnimationIndex: number = 0;
     private testAnimationList: Array<[number, number]> = [
@@ -108,7 +108,7 @@ class Popup {
         this.state.sha = sha ? sha.slice(0, 6) : 'N/A';
         this.state.shaRef = releaseLink || '';
         this.state.updateTime = updateTime ? dateDiff(updateTime) : 'N/A';
-        this.state.updateTimeFull = updateTime.toLocaleString();
+        this.state.updateTimeFull = updateTime?.toLocaleString() ?? 'N/A';
     }
 
     async checkVersion() {

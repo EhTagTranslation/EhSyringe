@@ -2,25 +2,23 @@ import { Suggestion, TagList, TagReplace, TagItem } from '../interface';
 
 import { logger } from './log';
 
-interface RequestMap {
-    'get-taglist': string | null;
-    'get-tagreplace': string | null;
-    'auto-update': boolean;
-    'suggest-tag': {
+
+interface MessageMap {
+    'get-taglist': [string | null, TagList | TagItem | undefined];
+    'get-tagreplace': [string | null, TagReplace | string];
+    'auto-update': [boolean, boolean];
+    'suggest-tag': [{
         term: string,
         limit?: number,
-    };
+    }, Suggestion[]];
 }
-interface ResponseMap {
-    'get-taglist': TagList | TagItem;
-    'get-tagreplace': TagReplace | string;
-    'auto-update': boolean;
-    'suggest-tag': Suggestion[];
-}
+
+type MessageHandler<Q extends keyof MessageMap>
+    = (data: MessageMap[Q][0]) => MessageMap[Q][1] | PromiseLike<MessageMap[Q][1]>;
 
 class ChromeMessage {
 
-    send<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, data: RequestMap[Q]): Promise<ResponseMap[Q]> {
+    send<Q extends keyof MessageMap>(query: Q, data: MessageMap[Q][0]): Promise<MessageMap[Q][1]> {
         return new Promise((resolve, reject) => {
             chrome.runtime.sendMessage({
                 query,
@@ -37,7 +35,7 @@ class ChromeMessage {
         });
     }
 
-    broadcast<Q extends (keyof RequestMap)>(query: Q, data?: RequestMap[Q]): void {
+    broadcast<Q extends keyof MessageMap>(query: Q, data?: MessageMap[Q][0]): void {
         chrome.runtime.sendMessage({
             query,
             data,
@@ -50,7 +48,7 @@ class ChromeMessage {
         });
     }
 
-    listener<Q extends (keyof RequestMap) & (keyof ResponseMap)>(query: Q, handler: (data: RequestMap[Q]) => ResponseMap[Q] | PromiseLike<ResponseMap[Q]>): void {
+    listener<Q extends keyof MessageMap>(query: Q, handler: MessageHandler<Q>): void {
         logger.log('注册事件', query);
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             if (!('query' in request) || request.query !== query) {

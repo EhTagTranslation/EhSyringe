@@ -8,12 +8,12 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
     readonly contexts = ['link'];
 
     readonly onclick = (info: chrome.contextMenus.OnClickData): void => {
-        if (!/\/tag\//.test(info.linkUrl)) {
+        if (!info.linkUrl || !/\/tag\//.test(info.linkUrl)) {
             return;
         }
-        const seg = info.linkUrl.split('/').pop().replace(/\+/g, ' ').split(':');
+        const seg = info.linkUrl.split('/').pop()!.replace(/\+/g, ' ').split(':');
         const namespace = seg.length === 1 ? 'misc' : (seg[0] as EHTNamespaceName);
-        const tag = seg.pop();
+        const tag = seg.pop()!;
         chrome.tabs.create({
             url: getEditorUrl(namespace, tag),
         });

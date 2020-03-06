@@ -35,7 +35,7 @@ function isText(node: Node): node is Text {
 }
 
 class Syringe {
-    tagReplace: TagReplace;
+    tagReplace: TagReplace = {};
     pendingTags: Node[] = [];
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
@@ -55,7 +55,7 @@ class Syringe {
         window.document.addEventListener('DOMContentLoaded', (e) => {
             this.documentEnd = true;
         });
-        this.setBodyClass(document.querySelector('body'));
+        this.setBodyClass(document.querySelector('body')!);
         this.observer = new MutationObserver(mutations => mutations.forEach(mutation =>
             mutation.addedNodes.forEach(node1 => {
                 this.translateNode(node1);
@@ -81,7 +81,7 @@ class Syringe {
                 this.tagReplace = data as TagReplace;
                 timer.end();
                 this.pendingTags.forEach(t => this.translateTagImpl(t));
-                this.pendingTags = null;
+                this.pendingTags = [];
             }).catch(logger.error);
         }
     }
@@ -115,7 +115,7 @@ class Syringe {
 
     }
 
-    private isTagContainer(node: Element): boolean {
+    private isTagContainer(node: Element | null): boolean {
         if (!node) { return false; }
         return node.classList.contains('gt') ||
             node.classList.contains('gtl') ||
@@ -125,7 +125,7 @@ class Syringe {
     // 实际进行替换，必须保证 node 是标签节点
     private translateTagImpl(node: Node): boolean {
         const parentElement = node.parentElement;
-        if (parentElement.hasAttribute('ehs-tag')) {
+        if (!parentElement || parentElement.hasAttribute('ehs-tag')) {
             return true;
         }
 
@@ -161,13 +161,14 @@ class Syringe {
         }
 
         if (value) {
-            if (node.textContent[1] === ':') {
-                value = `${node.textContent[0]}:${value}`;
+            const text = node.textContent ?? '';
+            if (text[1] === ':') {
+                value = `${text[0]}:${value}`;
             }
             if (!parentElement.title) {
                 parentElement.title = aId || aTitle;
             }
-            parentElement.setAttribute('ehs-tag', node.textContent);
+            parentElement.setAttribute('ehs-tag', text);
             if (value !== node.textContent) {
                 parentElement.innerHTML = value;
             } else {
@@ -175,6 +176,8 @@ class Syringe {
             }
             return true;
         }
+
+        return false;
     }
 
     translateTag(node: Node): boolean {
@@ -188,7 +191,7 @@ class Syringe {
         }
 
         // 标签只翻译已知的位置
-        if (!this.isTagContainer(parentElement) && !this.isTagContainer(parentElement.parentElement)) {
+        if (!this.isTagContainer(parentElement) && !this.isTagContainer(parentElement?.parentElement)) {
             return false;
         }
 
@@ -196,25 +199,26 @@ class Syringe {
     }
 
     translateUi(node: Node): void {
+        const text = node.textContent ?? '';
         if (isText(node)) {
-            if (this.uiData[node.textContent]) {
-                node.textContent = this.uiData[node.textContent];
+            if (this.uiData[text]) {
+                node.textContent = this.uiData[text];
                 return;
             }
-            let text = node.textContent;
-            text = text.replace(/(\d+) pages?/, '$1 页');
-            text = text.replace(/Torrent Download \( (\d+) \)/, '种子下载（$1）');
-            text = text.replace(/Average: ([\d\.]+)/, '平均值：$1');
-            text = text.replace(/Posted on (.*?) by:\s*/, (_, t) => `评论时间：${new Date(t).toLocaleString()} \xA0作者：`);
-            text = text.replace(/Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/, '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。');
-            text = text.replace(/Showing ([\d,]+) results?/, '共 $1 个结果');
-            text = text.replace(/Rate as ([\d\.]+) stars?/, '$1 星');
-            text = text.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
-            text = text.replace(/([\d,]+) \/ ([\d,]+) favorite note slots? used./, '已经使用了 $1 个便签，共 $2 个。');
-            text = text.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
-            text = text.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
-            if (node.textContent !== text) {
-                node.textContent = text;
+            let reptext = text;
+            reptext = reptext.replace(/(\d+) pages?/, '$1 页');
+            reptext = reptext.replace(/Torrent Download \( (\d+) \)/, '种子下载（$1）');
+            reptext = reptext.replace(/Average: ([\d\.]+)/, '平均值：$1');
+            reptext = reptext.replace(/Posted on (.*?) by:\s*/, (_, t) => `评论时间：${new Date(t).toLocaleString()} \xA0作者：`);
+            reptext = reptext.replace(/Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/, '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。');
+            reptext = reptext.replace(/Showing ([\d,]+) results?/, '共 $1 个结果');
+            reptext = reptext.replace(/Rate as ([\d\.]+) stars?/, '$1 星');
+            reptext = reptext.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
+            reptext = reptext.replace(/([\d,]+) \/ ([\d,]+) favorite note slots? used./, '已经使用了 $1 个便签，共 $2 个。');
+            reptext = reptext.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
+            reptext = reptext.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
+            if (reptext !== text) {
+                node.textContent = reptext;
                 return;
             }
 
@@ -234,9 +238,9 @@ class Syringe {
                 node.label = this.uiData[node.label];
                 return;
             }
-        } else if (isNode(node, 'a') && node?.parentElement?.parentElement.id === 'nb') {
-            if (this.uiData[node.textContent]) {
-                node.textContent = this.uiData[node.textContent];
+        } else if (isNode(node, 'a') && node?.parentElement?.parentElement?.id === 'nb') {
+            if (this.uiData[text]) {
+                node.textContent = this.uiData[text];
                 return;
             }
         }
@@ -244,12 +248,11 @@ class Syringe {
         if (isNode(node, 'p')) {
             /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
             if (node.classList.contains('gpc')) {
-                const text = node.textContent;
                 node.style.display = 'none';
                 const p = document.createElement('p');
                 p.textContent = text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图片');
                 p.className = 'gpc-translate';
-                node.parentElement.insertBefore(p, node);
+                node.parentElement!.insertBefore(p, node);
             }
         }
 

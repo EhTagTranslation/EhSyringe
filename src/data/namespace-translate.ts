@@ -1,6 +1,6 @@
 import { EHTNamespaceName } from '../interface';
 
-export const namespaceTranslate: { [key in EHTNamespaceName]: string } = {
+export const namespaceTranslate: Record<EHTNamespaceName, string> = {
     rows: '行名',
     artist: '艺术家',
     parody: '原作',

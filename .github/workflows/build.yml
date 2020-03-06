@@ -18,6 +18,10 @@ jobs:
       run: npm ci
       env:
         CI: 'true'
+    - name: update-db
+      run: npm run update-db
+      env:
+        CI: 'true'
     - name: npm build
       run: npm run build
       env:

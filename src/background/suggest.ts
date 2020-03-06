@@ -8,7 +8,6 @@ import { tagDatabase } from './tag-database';
 class Suggest {
     constructor(tagList: Observable<TagList>) {
         tagList.subscribe(data => this.tagList = data);
-        chromeMessage.listener('suggest-tag', args => this.getSuggests(args.term, args.limit));
     }
 
     readonly nsScore: {
@@ -50,7 +49,7 @@ class Suggest {
         female: 'female',
     };
 
-    private tagList: TagList;
+    private tagList: TagList = [];
     private markTag(tag: TagItem, search: string, term: string): Suggestion {
         const key = tag.key;
         const name = tag.name.toLowerCase();
@@ -102,11 +101,13 @@ class Suggest {
 }
 
 function init(): Suggest['getSuggests'] {
-    if (!tagDatabase) {
-        return null;
+    let getSuggests: Suggest['getSuggests'] = () => [];
+    if (tagDatabase) {
+        const instance = new Suggest(tagDatabase.tagList);
+        getSuggests = instance.getSuggests.bind(instance);
     }
-    const instance = new Suggest(tagDatabase.tagList);
-    return instance.getSuggests.bind(instance);
+    chromeMessage.listener('suggest-tag', args => getSuggests(args.term, args.limit));
+    return getSuggests;
 }
 
 export const suggest = init();

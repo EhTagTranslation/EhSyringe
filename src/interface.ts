@@ -128,7 +128,7 @@ export interface ReleaseCheckData {
     new: string;
     newLink: string;
     timestamp: number;
-    githubRelease: GithubRelease;
+    githubRelease: GithubRelease | null;
 }
 
 export interface DownloadStatus {

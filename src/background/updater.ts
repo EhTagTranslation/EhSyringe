@@ -33,7 +33,7 @@ class Updater {
     constructor() {
         chromeMessage.listener('auto-update', async force => {
             const version = await this.checkVersion(true);
-            if (version.new && (version.new !== version.old || force)) {
+            if (version && version.new && (version.new !== version.old || force)) {
                 await this.update();
                 return true;
             }
@@ -56,7 +56,7 @@ class Updater {
                 oldLink: tagDatabase.releaseLink.value,
             });
             await sleep(2500);
-            if (this.downloadStatus.complete) {
+            if (this.downloadStatus.value.complete) {
                 badgeLoading.set('', '#4A90E2');
                 this.initDownloadStatus();
             }
@@ -77,7 +77,7 @@ class Updater {
         });
     }
 
-    async checkVersion(force: boolean = false): Promise<ReleaseCheckData> {
+    async checkVersion(force: boolean = false): Promise<ReleaseCheckData | null> {
         if (!force) {
             // 限制每分钟最多请求1次
             const time = new Date().getTime();
@@ -124,13 +124,13 @@ class Updater {
             }
             const info = checkData.githubRelease;
             const asset = info.assets.find(i => i.name === 'db.html.json.gz') ?? info.assets.find(i => i.name === 'db.html.json');
-            const url = asset?.browser_download_url;
-            if (!url) {
+            if (!asset ||! asset.browser_download_url) {
                 logger.debug('assets', info.assets);
                 reject(new Error('无法获取下载地址'));
                 this.loadLock = false;
                 return;
             }
+            const url = asset.browser_download_url;
 
             const timer = logger.time(`开始下载 ${url}`);
             const xhr = new XMLHttpRequest();
