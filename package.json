@@ -54,6 +54,6 @@
     "normalize.css": "^8.0.1",
     "pako": "^1.0.11",
     "rxjs": "^6.5.4",
-    "webextension-polyfill-ts": "^0.12.0"
+    "webextension-polyfill-ts": "^0.13.0"
   }
 }
