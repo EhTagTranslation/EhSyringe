@@ -460,7 +460,7 @@ const uiData: readonly DataMap[] = [
     'More Favorite Notes I': '更多收藏便签 I',
     'Increases the number of favorite note slots to 10000.': '将收藏便签限制增加到 10000。',
     'More Favorite Notes II': '更多收藏便签 II',
-    'Increases the number of favorite note slots to 25000.': '将收藏便签限制增加到 25000',
+    'Increases the number of favorite note slots to 25000.': '将收藏便签限制增加到 25000。',
 
     'Paging Enlargement I': '页面扩大 I',
     'Increases the number of results you can show per page on the index, search and torrent pages to 50.': '将主页、搜索和种子页面的结果数量变为 50。',
