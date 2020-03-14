@@ -14,16 +14,16 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-    - name: npm install
-      run: npm ci
+    - name: yarn install
+      run: yarn install
       env:
         CI: 'true'
     - name: update-db
-      run: npm run update-db
+      run: yarn run update-db
       env:
         CI: 'true'
-    - name: npm build
-      run: npm run build
+    - name: yarn build
+      run: yarn run build
       env:
         CI: 'true'
     - uses: actions/upload-artifact@master
@@ -35,6 +35,8 @@ jobs:
       if: github.event_name == 'create' && github.event.ref_type == 'tag'
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifact: release/*
+        body: |
+          [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
+        artifacts: release/*
 
 

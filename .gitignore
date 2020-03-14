@@ -5,11 +5,10 @@
 /artifacts
 /tmp
 /out-tsc
+/release
 
 # dependencies
 /node_modules
-/yarn-taobao.lock
-/yarn.lock
 
 # IDEs and editors
 /.idea
@@ -30,12 +29,3 @@
 # System Files
 .DS_Store
 Thumbs.db
-
-# 上架审核源码打包 防止误传
-/EhSyringeLite.zip
-
-# 编译密钥
-# /key.pem
-
-# 打包目录
-/release
