@@ -5054,10 +5054,10 @@ lit-element@^2.2.1:
   dependencies:
     lit-html "^1.0.0"
 
-lit-html@^1.0.0, lit-html@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npm.taobao.org/lit-html/download/lit-html-1.1.2.tgz?cache=0&sync_timestamp=1580809198519&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flit-html%2Fdownload%2Flit-html-1.1.2.tgz#2e3560a7075210243649c888ad738eaf0daa8374"
-  integrity sha1-LjVgpwdSECQ2SciIrXOOrw2qg3Q=
+lit-html@^1.0.0, lit-html@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.0.tgz#4d1a458d70354bd034b4a24fb0d229a4cbc7e0ee"
+  integrity sha512-PC/oZsNhTiH4/JHIWMtAFePkKYbflmTi1ZHA/FRDKuw/HARINK/MNHWuHuQ8pXKXOIgBzdHZEDApm/7SGZQXgA==
 
 load-json-file@^1.0.0:
   version "1.1.0"
