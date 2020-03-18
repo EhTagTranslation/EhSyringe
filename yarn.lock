@@ -95,10 +95,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/chrome@^0.0.100":
-  version "0.0.100"
-  resolved "https://registry.npm.taobao.org/@types/chrome/download/@types/chrome-0.0.100.tgz#78caca66784ccd636fc15f497366b6a2987b5606"
-  integrity sha1-eMrKZnhMzWNvwV9Jc2a2oph7VgY=
+"@types/chrome@^0.0.101":
+  version "0.0.101"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.101.tgz#8b6f7d4f1d4890ba7d950f8492725fa7ba9ab910"
+  integrity sha512-9GpAt3fBVPdzEIwdgDrxqCaURyJqOVz+oIWB+iDE2FD0ZeGQhkMwTqJIW+Ok/lnie6tt6DwVMZkOS8x6QkmWsQ==
   dependencies:
     "@types/filesystem" "*"
 
