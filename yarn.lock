@@ -5047,14 +5047,14 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npm.taobao.org/lines-and-columns/download/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lit-element@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.npm.taobao.org/lit-element/download/lit-element-2.2.1.tgz#79c94d8cfdc2d73b245656e37991bd1e4811d96f"
-  integrity sha1-eclNjP3C1zskVlbjeZG9HkgR2W8=
+lit-element@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.3.0.tgz#a78d98e3c17afdfcfa3ab8335e839ac69f5c204e"
+  integrity sha512-t3ask/FPcNTIixniBjTrkCeNPWOxyEQxWkSNuSqBYARoyg7/EjNT8uNrbgUwKt0GALwN417GI9eHQY1BgXpLUA==
   dependencies:
-    lit-html "^1.0.0"
+    lit-html "^1.1.1"
 
-lit-html@^1.0.0, lit-html@^1.2.0:
+lit-html@^1.1.1, lit-html@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.0.tgz#4d1a458d70354bd034b4a24fb0d229a4cbc7e0ee"
   integrity sha512-PC/oZsNhTiH4/JHIWMtAFePkKYbflmTi1ZHA/FRDKuw/HARINK/MNHWuHuQ8pXKXOIgBzdHZEDApm/7SGZQXgA==
