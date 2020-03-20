@@ -5054,10 +5054,10 @@ lit-element@^2.3.0:
   dependencies:
     lit-html "^1.1.1"
 
-lit-html@^1.1.1, lit-html@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.0.tgz#4d1a458d70354bd034b4a24fb0d229a4cbc7e0ee"
-  integrity sha512-PC/oZsNhTiH4/JHIWMtAFePkKYbflmTi1ZHA/FRDKuw/HARINK/MNHWuHuQ8pXKXOIgBzdHZEDApm/7SGZQXgA==
+lit-html@^1.1.1, lit-html@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.1.tgz#1fb933dc1e2ddc095f60b8086277d4fcd9d62cc8"
+  integrity sha512-GSJHHXMGLZDzTRq59IUfL9FCdAlGfqNp/dEa7k7aBaaWD+JKaCjsAk9KYm2V12ItonVaYx2dprN66Zdm1AuBTQ==
 
 load-json-file@^1.0.0:
   version "1.1.0"
