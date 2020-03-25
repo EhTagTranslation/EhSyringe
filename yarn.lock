@@ -9568,10 +9568,10 @@ webext-webpack-plugin@^0.0.8:
   dependencies:
     web-ext "^2.8.0"
 
-webextension-polyfill-ts@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.npm.taobao.org/webextension-polyfill-ts/download/webextension-polyfill-ts-0.13.0.tgz#2a55837fd626736758523cdae6c10ac8b6684edc"
-  integrity sha1-KlWDf9Ymc2dYUjza5sEKyLZoTtw=
+webextension-polyfill-ts@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill-ts/-/webextension-polyfill-ts-0.14.0.tgz#37c56852613f9b9fa4992ba673b615d8fcaf1e24"
+  integrity sha512-eBfjCgF8IvxKCphygM2MxQi1ixtxrzxz3k3cLQ2er2KUDJqWc8qkR5YjOH62PdPI9slJHYV4kHuQN3bG9/sQqw==
   dependencies:
     webextension-polyfill "^0.6.0"
 
