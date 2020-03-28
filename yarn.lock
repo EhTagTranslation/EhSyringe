@@ -95,12 +95,13 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/chrome@^0.0.102":
-  version "0.0.102"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.102.tgz#ea427dbe0211f239ca6c90473c1ac1aaf8c3fbba"
-  integrity sha512-nk0nB64umULB3mMbRGA1vCgi90aVtYenXqstFsm8NPJMDrFA2PSZZHMUUOrVobTXwKx6+8B1MSNyKiXfa/qmwg==
+"@types/chrome@^0.0.103":
+  version "0.0.103"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.103.tgz#604f3d94ab4465cc8cde302c4916f4955eb7e8b6"
+  integrity sha512-s8So1IG1fIu2dg2MRV3k6W5OjlVaJriNXIxIWDHi+Rdz5dLeuzPKcWzkVlcaVL4gONfn44JKC0RhW+P0UohLfg==
   dependencies:
     "@types/filesystem" "*"
+    "@types/har-format" "*"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -118,6 +119,11 @@
   version "0.0.28"
   resolved "https://registry.npm.taobao.org/@types/filewriter/download/@types/filewriter-0.0.28.tgz#c054e8af4d9dd75db4e63abc76f885168714d4b3"
   integrity sha1-wFTor02d11205jq8dviFFocU1LM=
+
+"@types/har-format@*":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@types/har-format/-/har-format-1.2.4.tgz#3275842095abb60d14b47fa798cc9ff708dab6d4"
+  integrity sha512-iUxzm1meBm3stxUMzRqgOVHjj4Kgpgu5w9fm4X7kPRfSgVRzythsucEN7/jtOo8SQzm+HfcxWWzJS0mJDH/3DQ==
 
 "@types/minimatch@^3.0.3":
   version "3.0.3"
