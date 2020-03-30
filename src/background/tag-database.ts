@@ -22,13 +22,13 @@ class TagDatabase {
     readonly sha = new BehaviorSubject<string>('');
 
     constructor() {
-        chromeMessage.listener('get-taglist', key => {
+        chromeMessage.listener('get-taglist', (key) => {
             if (!key) {
                 return this.tagList.value;
             }
-            return this.tagList.value.find(t => t.fullKey === key);
+            return this.tagList.value.find((t) => t.fullKey === key);
         });
-        chromeMessage.listener('get-tagreplace', key => {
+        chromeMessage.listener('get-tagreplace', (key) => {
             if (!key) {
                 return this.tagReplace.value;
             }
@@ -38,9 +38,29 @@ class TagDatabase {
     }
 
     private async init(): Promise<void> {
-        const { tagList, tagReplace, releaseLink, sha, updateTime, dataStructureVersion }
-            = await browser.storage.local.get(['tagList', 'tagReplace', 'releaseLink', 'updateTime', 'sha', 'dataStructureVersion']);
-        if (dataStructureVersion !== DATA_STRUCTURE_VERSION || !tagList || !tagReplace || !releaseLink || !sha || !updateTime) {
+        const {
+            tagList,
+            tagReplace,
+            releaseLink,
+            sha,
+            updateTime,
+            dataStructureVersion,
+        } = await browser.storage.local.get([
+            'tagList',
+            'tagReplace',
+            'releaseLink',
+            'updateTime',
+            'sha',
+            'dataStructureVersion',
+        ]);
+        if (
+            dataStructureVersion !== DATA_STRUCTURE_VERSION ||
+            !tagList ||
+            !tagReplace ||
+            !releaseLink ||
+            !sha ||
+            !updateTime
+        ) {
             const timer = logger.time('数据结构变化, 重新构建数据');
             await this.updateUseLocal();
             timer.end();
@@ -62,21 +82,26 @@ class TagDatabase {
 
     update(data: ArrayBuffer, isGziped: boolean, releaseLink: string, updateTime: Date = new Date()): void {
         const timer = logger.time('构建数据');
-        const tagDB: EHTDatabase = JSON.parse(isGziped
-            ? (pako.ungzip(new Uint8Array(data), { to: 'string' }))
-            : (new TextDecoder('utf-8').decode(data)));
+        const tagDB: EHTDatabase = JSON.parse(
+            isGziped ? pako.ungzip(new Uint8Array(data), { to: 'string' }) : new TextDecoder('utf-8').decode(data),
+        );
         const sha = tagDB.head.sha;
         const tagReplace: TagReplace = {};
         const tagList: TagList = [];
-        tagDB.data.forEach(space => {
+        tagDB.data.forEach((space) => {
             const namespace = space.namespace;
             if (namespace === 'rows') return;
             for (const key in space.data) {
                 const t = space.data[key];
 
                 const name = t.name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
-                const cleanName = name.replace(emojiReg, '').replace(/<img.*?>/ig, '').trim();
-                const dirtyName = name.replace(emojiReg, '<span class="ehs-emoji">$&</span>').replace(/<img(.*?)>/ig, '<img class="ehs-icon" $1>');
+                const cleanName = name
+                    .replace(emojiReg, '')
+                    .replace(/<img.*?>/gi, '')
+                    .trim();
+                const dirtyName = name
+                    .replace(emojiReg, '<span class="ehs-emoji">$&</span>')
+                    .replace(/<img(.*?)>/gi, '<img class="ehs-icon" $1>');
                 const search = getSearchTerm(namespace, key);
                 const fullKey = getFullKey(namespace, key);
 
@@ -99,14 +124,16 @@ class TagDatabase {
         timer.end();
 
         // 后台继续处理，直接返回
-        browser.storage.local.set({
-            tagList,
-            tagReplace,
-            releaseLink,
-            sha,
-            updateTime: updateTime.getTime() || undefined,
-            dataStructureVersion: DATA_STRUCTURE_VERSION,
-        }).catch(logger.error);
+        browser.storage.local
+            .set({
+                tagList,
+                tagReplace,
+                releaseLink,
+                sha,
+                updateTime: updateTime.getTime() || undefined,
+                dataStructureVersion: DATA_STRUCTURE_VERSION,
+            })
+            .catch(logger.error);
     }
 }
 

@@ -1,10 +1,9 @@
-
 import { namespaceTranslate } from '../data/namespace-translate';
 import { EHTNamespaceName, Suggestion } from '../interface';
 
 export function dateDiff(hisTime: Date | number = 0, nowTime: Date | number = new Date()): string {
-    hisTime = (typeof hisTime === 'number') ? hisTime : hisTime.getTime();
-    nowTime = ((typeof nowTime === 'number') ? nowTime : nowTime.getTime());
+    hisTime = typeof hisTime === 'number' ? hisTime : hisTime.getTime();
+    nowTime = typeof nowTime === 'number' ? nowTime : nowTime.getTime();
     if (!hisTime) return 'N/A';
 
     const diffValue = nowTime - hisTime;
@@ -43,7 +42,7 @@ export function escapeHtml(unsafe: string): string {
         .replace(/'/g, '&#039;');
 }
 
-export function makeTagMatchHtml(suggestion: Suggestion, markTag: string = 'mark'): { en: string, cn: string } {
+export function makeTagMatchHtml(suggestion: Suggestion, markTag = 'mark'): { en: string; cn: string } {
     const tag = suggestion.tag;
     const cnNamespace = namespaceTranslate[tag.namespace];
     let cnNameHtml = '';
@@ -53,13 +52,17 @@ export function makeTagMatchHtml(suggestion: Suggestion, markTag: string = 'mark
     }
     if (suggestion.match.name) {
         const range = suggestion.match.name;
-        cnNameHtml += `${escapeHtml(tag.name.substring(0, range.start))}<${markTag}>${escapeHtml(tag.name.substr(range.start, range.length))}</${markTag}>${escapeHtml(tag.name.substr(range.start + range.length))}`;
+        cnNameHtml += `${escapeHtml(tag.name.substring(0, range.start))}<${markTag}>${escapeHtml(
+            tag.name.substr(range.start, range.length),
+        )}</${markTag}>${escapeHtml(tag.name.substr(range.start + range.length))}`;
     } else {
         cnNameHtml += escapeHtml(tag.name);
     }
     if (suggestion.match.key) {
         const range = suggestion.match.key;
-        enNameHtml = `${escapeHtml(tag.key.substring(0, range.start))}<${markTag}>${escapeHtml(tag.key.substr(range.start, range.length))}</${markTag}>${escapeHtml(tag.key.substr(range.start + range.length))}`;
+        enNameHtml = `${escapeHtml(tag.key.substring(0, range.start))}<${markTag}>${escapeHtml(
+            tag.key.substr(range.start, range.length),
+        )}</${markTag}>${escapeHtml(tag.key.substr(range.start + range.length))}`;
     } else {
         enNameHtml = escapeHtml(tag.key);
     }
@@ -74,7 +77,7 @@ export function getFullKey(namespace: EHTNamespaceName, key: string): string {
 }
 
 export function getSearchTerm(namespace: EHTNamespaceName, key: string): string {
-    const ns = namespace === 'misc' ? '' : (namespace + ':');
+    const ns = namespace === 'misc' ? '' : namespace + ':';
     const search = key.includes(' ') ? `"${key.toLowerCase()}$"` : `${key.toLowerCase()}$`;
     return ns + search;
 }

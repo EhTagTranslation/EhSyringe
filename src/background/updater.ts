@@ -31,9 +31,9 @@ class Updater {
     private loadLock = false;
 
     constructor() {
-        chromeMessage.listener('auto-update', async force => {
+        chromeMessage.listener('auto-update', async (force) => {
             const version = await this.checkVersion(true);
-            if (version && version.new && (version.new !== version.old || force)) {
+            if (version?.new && (version.new !== version.old || force)) {
                 await this.update();
                 return true;
             }
@@ -62,7 +62,7 @@ class Updater {
             }
         } catch (err) {
             logger.error(err);
-            this.pushDownloadStatus({ run: false, error: true, info: (err && err.message) ? err.message : '更新失败' });
+            this.pushDownloadStatus({ run: false, error: true, info: err?.message ? err.message : '更新失败' });
         }
     }
 
@@ -77,20 +77,19 @@ class Updater {
         });
     }
 
-    async checkVersion(force: boolean = false): Promise<ReleaseCheckData | null> {
+    async checkVersion(force = false): Promise<ReleaseCheckData | null> {
         if (!force) {
             // 限制每分钟最多请求1次
             const time = new Date().getTime();
             const lastCheckData = this.lastCheckData.value;
-            if ((time - lastCheckData.timestamp <= 1000 * 60)
-                && lastCheckData.githubRelease) {
+            if (time - lastCheckData.timestamp <= 1000 * 60 && lastCheckData.githubRelease) {
                 return lastCheckData;
             }
         }
 
         const { sha, releaseLink } = await browser.storage.local.get(['sha', 'releaseLink']);
         const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
-        const info = await (await fetch(githubDownloadUrl)).json() as GithubRelease;
+        const info = (await (await fetch(githubDownloadUrl)).json()) as GithubRelease;
 
         if (!info?.target_commitish) {
             return null;
@@ -106,7 +105,7 @@ class Updater {
         return this.lastCheckData.value;
     }
 
-    private download(): Promise<{ release: GithubRelease, filename: string, content: ArrayBuffer }> {
+    private download(): Promise<{ release: GithubRelease; filename: string; content: ArrayBuffer }> {
         return new Promise(async (resolve, reject) => {
             if (this.loadLock) {
                 reject('已经正在下载');
@@ -123,8 +122,10 @@ class Updater {
                 return;
             }
             const info = checkData.githubRelease;
-            const asset = info.assets.find(i => i.name === 'db.html.json.gz') ?? info.assets.find(i => i.name === 'db.html.json');
-            if (!asset ||! asset.browser_download_url) {
+            const asset =
+                info.assets.find((i) => i.name === 'db.html.json.gz') ??
+                info.assets.find((i) => i.name === 'db.html.json');
+            if (!asset || !asset.browser_download_url) {
                 logger.debug('assets', info.assets);
                 reject(new Error('无法获取下载地址'));
                 this.loadLock = false;

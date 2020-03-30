@@ -56,49 +56,58 @@ class Syringe {
             this.documentEnd = true;
         });
         this.setBodyClass(document.querySelector('body')!);
-        this.observer = new MutationObserver(mutations => mutations.forEach(mutation =>
-            mutation.addedNodes.forEach(node1 => {
-                this.translateNode(node1);
-                if (this.documentEnd && node1.childNodes) {
-                    const nodeIterator = document.createNodeIterator(node1);
-                    let node = nodeIterator.nextNode();
-                    while (node) {
-                        this.translateNode(node);
-                        node = nodeIterator.nextNode();
+        this.observer = new MutationObserver((mutations) =>
+            mutations.forEach((mutation) =>
+                mutation.addedNodes.forEach((node1) => {
+                    this.translateNode(node1);
+                    if (this.documentEnd && node1.childNodes) {
+                        const nodeIterator = document.createNodeIterator(node1);
+                        let node = nodeIterator.nextNode();
+                        while (node) {
+                            this.translateNode(node);
+                            node = nodeIterator.nextNode();
+                        }
                     }
-                }
-            })
-        ));
+                }),
+            ),
+        );
         this.observer.observe(window.document, {
             attributes: true,
             childList: true,
-            subtree: true
+            subtree: true,
         });
 
         if (this.conf.translateTag) {
             const timer = logger.time('获取替换数据');
-            chromeMessage.send('get-tagreplace', null).then(data => {
-                this.tagReplace = data as TagReplace;
-                timer.end();
-                this.pendingTags.forEach(t => this.translateTagImpl(t));
-                this.pendingTags = [];
-            }).catch(logger.error);
+            chromeMessage
+                .send('get-tagreplace', null)
+                .then((data) => {
+                    this.tagReplace = data as TagReplace;
+                    timer.end();
+                    this.pendingTags.forEach((t) => this.translateTagImpl(t));
+                    this.pendingTags = [];
+                })
+                .catch(logger.error);
         }
     }
 
     setBodyClass(node: HTMLBodyElement) {
         if (!node) return;
-        node.classList.add(location.host.indexOf('exhentai') === -1 ? 'eh' : 'ex');
-        if (!this.conf.showIcon) { node.classList.add('ehs-hide-icon'); }
+        node.classList.add(!location.host.includes('exhentai') ? 'eh' : 'ex');
+        if (!this.conf.showIcon) {
+            node.classList.add('ehs-hide-icon');
+        }
         node.classList.add(`ehs-image-level-${this.conf.introduceImageLevel}`);
     }
 
     translateNode(node: Node): void {
         if (
-            (!node.nodeName) ||
+            !node.nodeName ||
             this.skipNode.has(node.nodeName) ||
             (node.parentNode && this.skipNode.has(node.parentNode.nodeName))
-        ) { return; }
+        ) {
+            return;
+        }
 
         if (isNode(node, 'body')) {
             this.setBodyClass(node);
@@ -112,14 +121,13 @@ class Syringe {
         if (this.conf.translateUI && !handled) {
             this.translateUi(node);
         }
-
     }
 
     private isTagContainer(node: Element | null): boolean {
-        if (!node) { return false; }
-        return node.classList.contains('gt') ||
-            node.classList.contains('gtl') ||
-            node.classList.contains('gtw');
+        if (!node) {
+            return false;
+        }
+        return node.classList.contains('gt') || node.classList.contains('gtl') || node.classList.contains('gtw');
     }
 
     // 实际进行替换，必须保证 node 是标签节点
@@ -143,8 +151,8 @@ class Syringe {
             return true;
         }
 
-        if ((!value) && aTitle) {
-            if (aTitle[0] === ':') {
+        if (!value && aTitle) {
+            if (aTitle.startsWith(':')) {
                 aTitle = aTitle.slice(1);
             }
             if (this.tagReplace[aTitle]) {
@@ -152,9 +160,9 @@ class Syringe {
             }
         }
 
-        if ((!value) && aId) {
+        if (!value && aId) {
             aId = aId.replace('ta_', '');
-            aId = aId.replace(/_/ig, ' ');
+            aId = aId.replace(/_/gi, ' ');
             if (this.tagReplace[aId]) {
                 value = this.tagReplace[aId];
             }
@@ -209,19 +217,27 @@ class Syringe {
             reptext = reptext.replace(/(\d+) pages?/, '$1 页');
             reptext = reptext.replace(/Torrent Download \( (\d+) \)/, '种子下载（$1）');
             reptext = reptext.replace(/Average: ([\d\.]+)/, '平均值：$1');
-            reptext = reptext.replace(/Posted on (.*?) by:\s*/, (_, t) => `评论时间：${new Date(t).toLocaleString()} \xA0作者：`);
-            reptext = reptext.replace(/Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/, '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。');
+            reptext = reptext.replace(
+                /Posted on (.*?) by:\s*/,
+                (_, t) => `评论时间：${new Date(t).toLocaleString()} \xA0作者：`,
+            );
+            reptext = reptext.replace(
+                /Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/,
+                '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。',
+            );
             reptext = reptext.replace(/Showing ([\d,]+) results?/, '共 $1 个结果');
             reptext = reptext.replace(/Rate as ([\d\.]+) stars?/, '$1 星');
             reptext = reptext.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
-            reptext = reptext.replace(/([\d,]+) \/ ([\d,]+) favorite note slots? used./, '已经使用了 $1 个便签，共 $2 个。');
+            reptext = reptext.replace(
+                /([\d,]+) \/ ([\d,]+) favorite note slots? used./,
+                '已经使用了 $1 个便签，共 $2 个。',
+            );
             reptext = reptext.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
             reptext = reptext.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
             if (reptext !== text) {
                 node.textContent = reptext;
                 return;
             }
-
         } else if (isNode(node, 'input') || isNode(node, 'textarea')) {
             if (this.uiData[node.placeholder]) {
                 node.placeholder = this.uiData[node.placeholder];
@@ -250,7 +266,10 @@ class Syringe {
             if (node.classList.contains('gpc')) {
                 node.style.display = 'none';
                 const p = document.createElement('p');
-                p.textContent = text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图片');
+                p.textContent = text.replace(
+                    /Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/,
+                    '$1 - $2，共 $3 张图片',
+                );
                 p.className = 'gpc-translate';
                 node.parentElement!.insertBefore(p, node);
             }
@@ -278,7 +297,6 @@ class Syringe {
                 node.parentElement.insertBefore(div, node);
             }
         }
-
     }
 }
 

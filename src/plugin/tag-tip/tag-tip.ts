@@ -15,22 +15,24 @@ class TagTip {
     readonly autoCompleteList: HTMLDivElement;
     delimiter = ' ';
 
-    constructor(inputElement: HTMLInputElement, delimiter: string = ' ') {
+    constructor(inputElement: HTMLInputElement, delimiter = ' ') {
         this.delimiter = delimiter;
         this.inputElement = inputElement;
         this.inputElement.autocomplete = 'off';
         this.autoCompleteList = document.createElement('div');
         this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list';
 
-        fromEvent<KeyboardEvent>(this.inputElement, 'keyup').pipe(
-            filter(e => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)),
-            map(() => this.inputElement.value),
-            // distinctUntilChanged()
-        ).subscribe(this.search);
+        fromEvent<KeyboardEvent>(this.inputElement, 'keyup')
+            .pipe(
+                filter((e) => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)),
+                map(() => this.inputElement.value),
+                // distinctUntilChanged()
+            )
+            .subscribe(this.search);
 
         fromEvent<KeyboardEvent>(this.inputElement, 'keydown').subscribe(this.keydown);
 
-        fromEvent<MouseEvent>(this.autoCompleteList, 'click').subscribe(e => {
+        fromEvent<MouseEvent>(this.autoCompleteList, 'click').subscribe((e) => {
             this.inputElement.focus();
             e.preventDefault();
             e.stopPropagation();
@@ -50,31 +52,33 @@ class TagTip {
 
     readonly search = async (value: string) => {
         // todo: 增加自定义分隔符
-        value = this.inputElement.value = value.replace(/  +/mg, ' ');
-        const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/igm) || [];
+        value = this.inputElement.value = value.replace(/  +/gm, ' ');
+        const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/gim) ?? [];
         const result: Suggestion[] = [];
         const used = new Set();
-        await Promise.all(values.map(async (v, i) => {
-            const sv = values.slice(i);
-            if (sv.length) {
-                const svs = sv.join(' ');
-                if (!svs || svs.replace(/\s+/, '').length === 0) return;
-                const suggestions = await chromeMessage.send('suggest-tag', { term: svs, limit: 50 });
+        await Promise.all(
+            values.map(async (v, i) => {
+                const sv = values.slice(i);
+                if (sv.length) {
+                    const svs = sv.join(' ');
+                    if (!svs || svs.replace(/\s+/, '').length === 0) return;
+                    const suggestions = await chromeMessage.send('suggest-tag', { term: svs, limit: 50 });
 
-                suggestions.forEach(suggestion => {
-                    const tag = suggestion.tag;
-                    if (used.has(tag.search)) return;
-                    used.add(tag.search);
-                    result.push(suggestion);
-                });
-            }
-        }));
+                    suggestions.forEach((suggestion) => {
+                        const tag = suggestion.tag;
+                        if (used.has(tag.search)) return;
+                        used.add(tag.search);
+                        result.push(suggestion);
+                    });
+                }
+            }),
+        );
         this.autoCompleteList.innerHTML = '';
-        result.slice(0, 50).forEach(tag => {
+        result.slice(0, 50).forEach((tag) => {
             this.autoCompleteList.insertBefore(this.tagElementItem(tag), null);
         });
         this.selectedIndex = -1;
-    }
+    };
 
     readonly keydown = (e: KeyboardEvent) => {
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
@@ -91,7 +95,7 @@ class TagTip {
             }
 
             const children = Array.from(this.autoCompleteList.children);
-            children.forEach(element => {
+            children.forEach((element) => {
                 element.classList.remove('selected');
             });
             if (this.selectedIndex >= 0 && children[this.selectedIndex]) {
@@ -107,14 +111,14 @@ class TagTip {
                 e.stopPropagation();
             }
         }
-    }
+    };
 
     readonly setListPosition = () => {
         const rect = this.inputElement.getBoundingClientRect();
         this.autoCompleteList.style.left = `${rect.left}px`;
         this.autoCompleteList.style.top = `${rect.bottom}px`;
         this.autoCompleteList.style.minWidth = `${rect.width}px`;
-    }
+    };
 
     readonly tagElementItem = (suggestion: Suggestion): HTMLDivElement => {
         const tag = suggestion.tag;
@@ -136,14 +140,14 @@ class TagTip {
 
         item.onclick = () => {
             let length = suggestion.term.length;
-            if (this.inputElement.value.slice(-1) === ' ') {
+            if (this.inputElement.value.endsWith(' ')) {
                 length++;
             }
             this.inputElement.value = `${this.inputElement.value.slice(0, 0 - length)}${tag.search} `;
             this.autoCompleteList.innerHTML = '';
         };
         return item;
-    }
+    };
 }
 
 export const tagTipInit = async () => {

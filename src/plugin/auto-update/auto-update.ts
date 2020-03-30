@@ -16,7 +16,7 @@ export const autoUpdateInit = async () => {
     const { lastCheckTime } = await browser.storage.local.get('lastCheckTime');
 
     const time = new Date().getTime();
-    const needCheck = (time - autoCheckInterval) > (lastCheckTime || 0);
+    const needCheck = time - autoCheckInterval > (lastCheckTime || 0);
     logger.log('上次自动更新检查', dateDiff(lastCheckTime), new Date(lastCheckTime), needCheck ? '开始检查' : '跳过');
     if (needCheck) {
         await browser.storage.local.set({ lastCheckTime: time });

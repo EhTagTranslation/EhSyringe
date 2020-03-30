@@ -7,10 +7,7 @@ import { getEditorUrl, getFullKey } from '../../tool/tool';
 import './introduce.less';
 
 class Introduce {
-    constructor() {
-    }
-
-    async init() {
+    async init(): Promise<void> {
         const conf = await config.get();
         if (!conf.showIntroduce) return;
 
@@ -27,14 +24,14 @@ class Introduce {
         taglist.addEventListener('click', this.onclick);
     }
 
-    private initIntroduceBox() {
-        this.introduceBox = document.createElement('div')
+    private initIntroduceBox(): void {
+        this.introduceBox = document.createElement('div');
         this.introduceBox.id = 'ehs-introduce-box';
-        this.introduceBox.addEventListener('click', ev => {
+        this.introduceBox.addEventListener('click', (ev) => {
             let target = ev.target as Node | null;
 
             if (target instanceof HTMLElement && target.classList.contains('ehs-close')) {
-                const selectedTag = this.tagList.querySelector('[style*="color"]') as HTMLAnchorElement | null;
+                const selectedTag = this.tagList.querySelector('[style*="color"]') as HTMLElement;
                 if (selectedTag) {
                     selectedTag.click();
                 } else {
@@ -50,7 +47,7 @@ class Introduce {
             if (target) {
                 const a = target as HTMLAnchorElement;
                 ev.preventDefault();
-                window.open(a.href, '_BLANK')
+                window.open(a.href, '_BLANK');
             }
         });
     }
@@ -60,16 +57,15 @@ class Introduce {
 
     target: HTMLAnchorElement | null = null;
 
-    private findTarget(node: Node | null) {
+    private findTarget(node: Node | null): HTMLAnchorElement | null {
         const isTarget = (n: Node): n is HTMLAnchorElement =>
-            n.nodeType === Node.ELEMENT_NODE && n.nodeName === 'A'
-            && (n as HTMLElement).id.startsWith('ta_')
-            && n.parentElement != null
-            && (
-                n.parentElement.classList.contains('gt') ||
+            n.nodeType === Node.ELEMENT_NODE &&
+            n.nodeName === 'A' &&
+            (n as HTMLElement).id.startsWith('ta_') &&
+            n.parentElement != null &&
+            (n.parentElement.classList.contains('gt') ||
                 n.parentElement.classList.contains('gtl') ||
-                n.parentElement.classList.contains('gtw')
-            );
+                n.parentElement.classList.contains('gtw'));
         while (node) {
             if (isTarget(node)) return node;
             node = node.parentNode;
@@ -77,7 +73,7 @@ class Introduce {
         return null;
     }
 
-    async openIntroduceBox(namespace: EHTNamespaceName, tag: string, canceled: () => boolean) {
+    async openIntroduceBox(namespace: EHTNamespaceName, tag: string, canceled: () => boolean): Promise<void> {
         const timer = logger.time('获取标签介绍');
         const tagData = await chromeMessage.send('get-taglist', getFullKey(namespace, tag));
         timer.log(tagData);
@@ -97,9 +93,12 @@ class Introduce {
                 <span class="ehs-close">×</span>
             </div>
             <div class="ehs-content">
-                ${tagData.intro || `
+                ${
+                    tagData.intro ||
+                    `
                 <div class="ehs-no-intro">无介绍</div>
-                `}
+                `
+                }
             </div>
             <div class="ehs-href">${tagData.links}</div>`;
         } else {
@@ -126,11 +125,11 @@ class Introduce {
         }
     }
 
-    closeIntroduceBox() {
+    closeIntroduceBox(): void {
         this.introduceBox.innerHTML = '';
     }
 
-    readonly onclick = async (e: MouseEvent) => {
+    readonly onclick = (e: MouseEvent): void => {
         const target = this.findTarget(e.target as Node);
         if (!target) {
             return;
@@ -141,8 +140,8 @@ class Introduce {
             this.closeIntroduceBox();
             return;
         }
-        const m = /'(.*)'/ig.exec(target.getAttribute('onclick') ?? '');
-        if (!(m && m[1])) return;
+        const m = /'(.*)'/gi.exec(target.getAttribute('onclick') ?? '');
+        if (!m?.[1]) return;
         const m2 = m[1].split(':');
         let namespace: EHTNamespaceName = 'misc';
         let tag = '';
@@ -153,8 +152,8 @@ class Introduce {
             tag = m2.join(':');
         }
 
-        await this.openIntroduceBox(namespace, tag, () => this.target !== target);
-    }
+        this.openIntroduceBox(namespace, tag, () => this.target !== target).catch(logger.error);
+    };
 }
 
-export const introduceInit = () => new Introduce().init();
+export const introduceInit = (): Promise<void> => new Introduce().init();

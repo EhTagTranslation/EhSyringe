@@ -1,0 +1,17 @@
+{
+  "eslint.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.format.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.validate": [
+    "typescript"
+  ],
+  "editor.tabSize": 4,
+  "files.eol": "\n",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+}

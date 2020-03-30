@@ -2,13 +2,23 @@ import { EHTNamespaceName } from '../interface';
 import { getEditorUrl } from '../tool/tool';
 
 export class ContextMenu implements chrome.contextMenus.CreateProperties {
-    readonly documentUrlPatterns = ['*://exhentai.org/*', '*://e-hentai.org/*', '*://*.exhentai.org/*', '*://*.e-hentai.org/*'];
+    readonly documentUrlPatterns = [
+        '*://exhentai.org/*',
+        '*://e-hentai.org/*',
+        '*://*.exhentai.org/*',
+        '*://*.e-hentai.org/*',
+    ];
     readonly title = '提交标签翻译';
-    readonly targetUrlPatterns = ['*://exhentai.org/tag/*', '*://e-hentai.org/tag/*', '*://*.exhentai.org/tag/*', '*://*.e-hentai.org/tag/*'];
+    readonly targetUrlPatterns = [
+        '*://exhentai.org/tag/*',
+        '*://e-hentai.org/tag/*',
+        '*://*.exhentai.org/tag/*',
+        '*://*.e-hentai.org/tag/*',
+    ];
     readonly contexts = ['link'];
 
     readonly onclick = (info: chrome.contextMenus.OnClickData): void => {
-        if (!info.linkUrl || !/\/tag\//.test(info.linkUrl)) {
+        if (!info.linkUrl || !info.linkUrl.includes('/tag/')) {
             return;
         }
         const seg = info.linkUrl.split('/').pop()!.replace(/\+/g, ' ').split(':');
@@ -17,7 +27,7 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
         chrome.tabs.create({
             url: getEditorUrl(namespace, tag),
         });
-    }
+    };
 }
 
 function init(): boolean {

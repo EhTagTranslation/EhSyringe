@@ -1,10 +1,10 @@
 import { logger } from '../tool/log';
 
-import { contextMenu } from './context-menu';
-import { omnibox } from './omnibox';
-import { suggest } from './suggest';
-import { tagDatabase } from './tag-database';
-import { updater } from './updater';
+import type { contextMenu } from './context-menu';
+import type { omnibox } from './omnibox';
+import type { suggest } from './suggest';
+import type { tagDatabase } from './tag-database';
+import type { updater } from './updater';
 
 class Background {
     readonly updater: typeof updater = require('./updater').updater;

@@ -1,4 +1,3 @@
-
 const cacheRoot: { [key: string]: any } = {};
 
 function makeStorageKey(key: string): string {
@@ -10,9 +9,9 @@ export function load<T>(key: string): T | undefined {
         return cacheRoot[key];
     }
     const storageValue = window.localStorage.getItem(makeStorageKey(key));
-    if (typeof (storageValue) === 'string') {
+    if (typeof storageValue === 'string') {
         try {
-            return cacheRoot[key] = JSON.parse(storageValue);
+            return (cacheRoot[key] = JSON.parse(storageValue));
         } catch {
             window.localStorage.removeItem(makeStorageKey(key));
         }

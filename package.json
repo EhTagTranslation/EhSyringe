@@ -11,7 +11,8 @@
     "dev:firefox": "webpack --mode=development --watch --firefox",
     "dev:android": "webpack --mode=development --watch --android",
     "build": "webpack --mode=production --pack",
-    "update-db": "node ./tools/update-db.js"
+    "update-db": "node ./tools/update-db.js",
+    "lint": "eslint --fix ./src/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,14 @@
   "devDependencies": {
     "@types/chrome": "^0.0.103",
     "@types/pako": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "file-loader": "^6.0.0",
     "keypair": "^1.0.1",
     "less": "^3.11.1",
@@ -37,6 +43,7 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.2",
     "style-loader": "^1.1.3",
     "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",

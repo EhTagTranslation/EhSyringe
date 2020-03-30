@@ -7,23 +7,23 @@ import { tagDatabase } from './tag-database';
 
 class Suggest {
     constructor(tagList: Observable<TagList>) {
-        tagList.subscribe(data => this.tagList = data);
+        tagList.subscribe((data) => (this.tagList = data));
     }
 
     readonly nsScore: {
         [k in EHTNamespaceName]: number;
     } = {
-            female: 5,
-            male: 4.995,
-            misc: 4.5,
-            language: 1,
-            artist: 3,
-            group: 2.5,
-            parody: 4,
-            character: 3.5,
-            reclass: 1,
-            rows: 0,
-        };
+        female: 5,
+        male: 4.995,
+        misc: 4.5,
+        language: 1,
+        artist: 3,
+        group: 2.5,
+        parody: 4,
+        character: 3.5,
+        reclass: 1,
+        rows: 0,
+    };
 
     readonly nsDic: { [k: string]: EHTNamespaceName } = {
         r: 'reclass',
@@ -58,11 +58,11 @@ class Suggest {
         let score = 0;
         const match: Suggestion['match'] = {};
         if (keyidx >= 0) {
-            score += (this.nsScore[tag.namespace] * (search.length + 1) / key.length) * (keyidx === 0 ? 2 : 1);
+            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / key.length) * (keyidx === 0 ? 2 : 1);
             match.key = { start: keyidx, length: search.length };
         }
         if (nameidx >= 0) {
-            score += (this.nsScore[tag.namespace] * (search.length + 1) / name.length) * (nameidx === 0 ? 2 : 1);
+            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / name.length) * (nameidx === 0 ? 2 : 1);
             match.name = { start: nameidx, length: search.length };
         }
         return {
@@ -73,7 +73,7 @@ class Suggest {
         };
     }
 
-    getSuggests(term: string, limit: number = -1): Suggestion[] {
+    getSuggests(term: string, limit = -1): Suggestion[] {
         if (!this.tagList.length || !term) {
             return [];
         }
@@ -84,12 +84,10 @@ class Suggest {
             const ns = this.nsDic[sterm.substr(0, col)];
             if (ns) {
                 sterm = sterm.substr(col + 1);
-                tagList = tagList.filter(tag => tag.namespace === ns);
+                tagList = tagList.filter((tag) => tag.namespace === ns);
             }
         }
-        let suggestions = tagList
-            .map(tag => this.markTag(tag, sterm, term))
-            .filter(st => st.score > 0);
+        let suggestions = tagList.map((tag) => this.markTag(tag, sterm, term)).filter((st) => st.score > 0);
         if (term) {
             suggestions = suggestions.sort((st1, st2) => st2.score - st1.score);
         }
@@ -106,7 +104,7 @@ function init(): Suggest['getSuggests'] {
         const instance = new Suggest(tagDatabase.tagList);
         getSuggests = instance.getSuggests.bind(instance);
     }
-    chromeMessage.listener('suggest-tag', args => getSuggests(args.term, args.limit));
+    chromeMessage.listener('suggest-tag', (args) => getSuggests(args.term, args.limit));
     return getSuggests;
 }
 

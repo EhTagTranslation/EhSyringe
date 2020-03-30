@@ -3,18 +3,16 @@ import { browser } from 'webextension-polyfill-ts';
 import { logger } from './log';
 
 class BadgeLoading {
-
     constructor() {
-        browser.management.getSelf().then(data => {
-            this.extname = data.name || this.extname;
-        }).catch(logger.error);
+        browser.management
+            .getSelf()
+            .then((data) => {
+                this.extname = data.name || this.extname;
+            })
+            .catch(logger.error);
     }
 
-    readonly loadingStrArr = [
-        [''],
-        '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''),
-        '    |·   | ·  |  · |   ·'.split('|'),
-    ];
+    readonly loadingStrArr = [[''], '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''), '    |·   | ·  |  · |   ·'.split('|')];
 
     frame = 0;
     index = 0;
@@ -25,7 +23,7 @@ class BadgeLoading {
 
     extname = 'EhSyringe';
 
-    private setColor(color: string = '#4A90E2'): void {
+    private setColor(color = '#4A90E2'): void {
         if (this.color !== color) {
             this.color = color;
             if (chrome.browserAction.setBadgeBackgroundColor) {
@@ -43,7 +41,7 @@ class BadgeLoading {
         }
     }
 
-    set(text: string, color: string = '', loading: number = 0): void {
+    set(text: string, color = '', loading = 0): void {
         if (this.index !== loading) {
             this.index = loading;
             this.loadingString = this.loadingStrArr[this.index] || [''];

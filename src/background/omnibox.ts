@@ -11,45 +11,44 @@ class OmniBox {
         chrome.omnibox.onInputStarted.addListener(this.onInputStarted);
     }
 
-    origin: string = 'https://e-hentai.org';
+    origin = 'https://e-hentai.org';
 
     readonly onInputStarted = async () => {
         const tabs = await browser.tabs.query({
-            url: [
-                '*://exhentai.org/*',
-                '*://e-hentai.org/*',
-            ]
+            url: ['*://exhentai.org/*', '*://e-hentai.org/*'],
         });
-        const tab = tabs.find(t => t.active) || tabs[0];
+        const tab = tabs.find((t) => t.active) ?? tabs[0];
         if (tab?.url) {
             this.origin = new URL(tab.url).origin;
         } else {
             this.origin = 'https://e-hentai.org';
         }
-    }
+    };
 
-    readonly onInputChanged = async (text: string, suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void) => {
+    readonly onInputChanged = async (
+        text: string,
+        suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void,
+    ) => {
         if (!suggest) {
             return;
         }
         const suggestions = suggest(text.trim(), 5);
-        const data = suggestions
-            .map(suggestion => {
-                const html = makeTagMatchHtml(suggestion, 'match');
-                return {
-                    content: suggestion.tag.search,
-                    description: `${html.cn}<dim> - ${html.en}</dim>`,
-                };
-            });
+        const data = suggestions.map((suggestion) => {
+            const html = makeTagMatchHtml(suggestion, 'match');
+            return {
+                content: suggestion.tag.search,
+                description: `${html.cn}<dim> - ${html.en}</dim>`,
+            };
+        });
 
         suggestCb(data);
-    }
+    };
 
     readonly onInputEntered = (text: string) => {
         chrome.tabs.create({
             url: `${this.origin}/?f_search=${encodeURIComponent(text)}`,
         });
-    }
+    };
 }
 
 let instance: OmniBox;
