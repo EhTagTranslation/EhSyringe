@@ -8,6 +8,7 @@ import { logger } from '../tool/log';
 import { sleep } from '../tool/promise';
 
 import { tagDatabase } from './tag-database';
+import { downloadFile } from '../tool/tool';
 
 const defaultStatus: DownloadStatus = {
     run: false,
@@ -105,21 +106,18 @@ class Updater {
         return this.lastCheckData.value;
     }
 
-    private download(): Promise<{ release: GithubRelease; filename: string; content: ArrayBuffer }> {
-        return new Promise(async (resolve, reject) => {
-            if (this.loadLock) {
-                reject('已经正在下载');
-                return;
-            }
-            this.loadLock = true;
+    private async download(): Promise<{ release: GithubRelease; filename: string; content: ArrayBuffer }> {
+        if (this.loadLock) {
+            throw new Error('已经正在下载');
+        }
+        this.loadLock = true;
+        try {
             badgeLoading.set('', '#4A90E2', 2);
             this.pushDownloadStatus({ run: true, info: '加载中' });
             const checkData = await this.checkVersion();
             if (!checkData?.githubRelease?.assets) {
                 logger.debug('checkData', checkData);
-                reject(new Error('无法获取版本信息'));
-                this.loadLock = false;
-                return;
+                throw new Error('无法获取版本信息');
             }
             const info = checkData.githubRelease;
             const asset =
@@ -127,46 +125,32 @@ class Updater {
                 info.assets.find((i) => i.name === 'db.html.json');
             if (!asset || !asset.browser_download_url) {
                 logger.debug('assets', info.assets);
-                reject(new Error('无法获取下载地址'));
-                this.loadLock = false;
-                return;
+                throw new Error('无法获取下载地址');
             }
             const url = asset.browser_download_url;
-
             const timer = logger.time(`开始下载 ${url}`);
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', url);
-            xhr.responseType = 'arraybuffer';
-            xhr.onload = () => {
-                try {
-                    resolve({ release: info, filename: asset.name, content: xhr.response as ArrayBuffer });
-                    this.pushDownloadStatus({ info: '下载完成', progress: 100 });
-                    badgeLoading.set('100', '#4A90E2', 1);
-                } catch (e) {
-                    reject(new Error('数据无法解析'));
-                    badgeLoading.set('ERR', '#C80000');
-                } finally {
-                    timer.end();
-                    this.loadLock = false;
-                }
-            };
-            xhr.onerror = (e) => {
-                this.loadLock = false;
+            try {
+                this.pushDownloadStatus({ info: '0%', progress: 0 });
+                badgeLoading.set('0', '#4A90E2', 1);
+                const data = await downloadFile(url, undefined, (event) => {
+                    if (event.lengthComputable) {
+                        const percent = Math.floor((event.loaded / event.total) * 100);
+                        this.pushDownloadStatus({ info: percent + '%', progress: percent });
+                        badgeLoading.set(percent.toFixed(0), '#4A90E2', 1);
+                    }
+                });
+                this.pushDownloadStatus({ info: '下载完成', progress: 100 });
+                badgeLoading.set('100', '#4A90E2', 1);
+                return { release: info, filename: asset.name, content: data };
+            } catch (ex) {
                 badgeLoading.set('ERR', '#C80000');
+                throw ex;
+            } finally {
                 timer.end();
-                reject(e);
-            };
-            xhr.onprogress = (event) => {
-                if (event.lengthComputable) {
-                    const percent = Math.floor((event.loaded / event.total) * 100);
-                    this.pushDownloadStatus({ info: percent + '%', progress: percent });
-                    badgeLoading.set(percent.toFixed(0), '#4A90E2', 1);
-                }
-            };
-            xhr.send();
-            this.pushDownloadStatus({ info: '0%', progress: 0 });
-            badgeLoading.set('0', '#4A90E2', 1);
-        });
+            }
+        } finally {
+            this.loadLock = false;
+        }
     }
 }
 

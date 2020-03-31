@@ -21,9 +21,9 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
         if (!info.linkUrl || !info.linkUrl.includes('/tag/')) {
             return;
         }
-        const seg = info.linkUrl.split('/').pop()!.replace(/\+/g, ' ').split(':');
-        const namespace = seg.length === 1 ? 'misc' : (seg[0] as EHTNamespaceName);
-        const tag = seg.pop()!;
+        const seg = info.linkUrl.split('/').pop()?.replace(/\+/g, ' ').split(':') ?? [];
+        const namespace = seg.length <= 1 ? 'misc' : (seg[0] as EHTNamespaceName);
+        const tag = seg.pop() ?? '';
         chrome.tabs.create({
             url: getEditorUrl(namespace, tag),
         });

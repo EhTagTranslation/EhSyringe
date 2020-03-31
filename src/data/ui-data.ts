@@ -944,9 +944,7 @@ export function getUiData(): { readonly [key: string]: string } {
         .filter((d) => d[regex].test(path) && (!d[host] || location.host === d[host]))
         .forEach((d) => {
             for (const key in d) {
-                if (d.hasOwnProperty(key)) {
-                    results[key] = d[key];
-                }
+                results[key] = d[key];
             }
         });
     return results;

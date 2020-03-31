@@ -1,19 +1,20 @@
 import { browser } from 'webextension-polyfill-ts';
-
 import { makeTagMatchHtml } from '../tool/tool';
-
 import { suggest } from './suggest';
+import { logger } from '../tool/log';
 
 class OmniBox {
     constructor() {
         chrome.omnibox.onInputChanged.addListener(this.onInputChanged);
         chrome.omnibox.onInputEntered.addListener(this.onInputEntered);
-        chrome.omnibox.onInputStarted.addListener(this.onInputStarted);
+        chrome.omnibox.onInputStarted.addListener(() => {
+            this.onInputStarted().catch(logger.error);
+        });
     }
 
     origin = 'https://e-hentai.org';
 
-    readonly onInputStarted = async () => {
+    readonly onInputStarted = async (): Promise<void> => {
         const tabs = await browser.tabs.query({
             url: ['*://exhentai.org/*', '*://e-hentai.org/*'],
         });
@@ -25,10 +26,10 @@ class OmniBox {
         }
     };
 
-    readonly onInputChanged = async (
+    readonly onInputChanged = (
         text: string,
         suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void,
-    ) => {
+    ): void => {
         if (!suggest) {
             return;
         }
@@ -44,19 +45,18 @@ class OmniBox {
         suggestCb(data);
     };
 
-    readonly onInputEntered = (text: string) => {
+    readonly onInputEntered = (text: string): void => {
         chrome.tabs.create({
             url: `${this.origin}/?f_search=${encodeURIComponent(text)}`,
         });
     };
 }
 
-let instance: OmniBox;
 function init(): boolean {
     if (!chrome.omnibox) {
         return false;
     }
-    instance = new OmniBox();
+    new OmniBox();
     return true;
 }
 
