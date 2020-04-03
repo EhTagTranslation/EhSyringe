@@ -1,7 +1,7 @@
 # EhSyringe
 
-[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/build/badge.svg)](https://github.com/EhTagTranslation/EhSyringe/actions)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](https://dependabot.com)
+[![Build Status](../../workflows/build/badge.svg)](../../actions)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](//dependabot.com)
 
 E 站注射器，将中文翻译注入到 E 站体内。
 
@@ -13,18 +13,18 @@ E 站注射器，将中文翻译注入到 E 站体内。
 ## 安装
 
 ### Chrome 安装方法
-1. 前往 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)下载 zip 文件并解压
+1. 前往 [Release 页面](../../releases)下载 zip 文件并解压
 2. 打开 Chrome 扩展程序管理器 `chrome://extensions`
 3. 勾选 `开发者模式`
 4. 点击 `加载已解压的扩展程序`，选择本扩展所在目录
 
 ### Firefox 安装方法
-1. 前往 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)下载 zip 文件
-2. 安装 Firefox 的[延长支持版（ESR）](https://www.mozilla.org/firefox/organizations/)、[开发者版](https://www.mozilla.org/firefox/developer/)或 [Nightly 版](https://nightly.mozilla.org/)
+1. 前往 [Release 页面](../../releases)下载 zip 文件
+2. 安装 Firefox 的[延长支持版（ESR）](//www.mozilla.org/firefox/organizations/)、[开发者版](//www.mozilla.org/firefox/developer/)或 [Nightly 版](//nightly.mozilla.org/)
 3. 打开 Firefox 配置编辑器（`about:config` 页），搜索 `xpinstall.signatures.required` 并将值设置为 `false`
 4. 打开 Firefox 附加组件管理器 `about:addons`，点击右上角设置菜单，选择“从文件安装附加组件”，选择下载的 zip 文件
 
-参考 [Firefox 中的附加组件签名](https://support.mozilla.org/zh-CN/kb/add-ons-signing-firefox#w_dalioucllleeyzgaauoeoeoakekikakneojdeeniko)
+参考 [Firefox 中的附加组件签名](//support.mozilla.org/kb/add-ons-signing-firefox#w_dalioucllleeyzgaauoeoeoakekikakneojdeeniko)
 
 
 ## 功能
