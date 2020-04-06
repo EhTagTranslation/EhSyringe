@@ -28,7 +28,7 @@
     "@types/chrome": "^0.0.103",
     "@types/pako": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
+    "@typescript-eslint/parser": "^2.27.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
