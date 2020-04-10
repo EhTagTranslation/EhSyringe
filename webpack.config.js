@@ -18,7 +18,7 @@ if (firefox || android) {
     }) : ({
         browserConsole: false,
         firefox: 'firefoxdeveloperedition',
-        startUrl: ['about:debugging#addons', 'https://e-hentai.org']
+        startUrl: ['about:debugging#addons', 'https://e-hentai.org'],
     });
     plugins.push(
         new WebExtWebpackPlugin({
@@ -37,7 +37,7 @@ if (pack) {
             exclude: /^\.\./,
             path: path.resolve(__dirname, 'release'),
             pathMapper: p => p.replace(/\.firefox\.([^\.]*)$/i, '.$1'),
-            filename: 'EhSyringe.firefox'
+            filename: 'EhSyringe.firefox',
         }));
     plugins.push(
         new ZipPlugin({
@@ -45,7 +45,7 @@ if (pack) {
             path: path.resolve(__dirname, 'release'),
             pathMapper: p => { console.log(p); return p.replace(/\.chrome\.([^\.]*)$/i, '.$1') },
             filename: 'EhSyringe.chrome',
-            pathPrefix: 'EhSyringe'
+            pathPrefix: 'EhSyringe',
         }));
 }
 
