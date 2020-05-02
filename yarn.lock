@@ -9896,10 +9896,10 @@ webext-webpack-plugin@^0.0.8:
   dependencies:
     web-ext "^2.8.0"
 
-webextension-polyfill-ts@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/webextension-polyfill-ts/-/webextension-polyfill-ts-0.14.0.tgz#37c56852613f9b9fa4992ba673b615d8fcaf1e24"
-  integrity sha512-eBfjCgF8IvxKCphygM2MxQi1ixtxrzxz3k3cLQ2er2KUDJqWc8qkR5YjOH62PdPI9slJHYV4kHuQN3bG9/sQqw==
+webextension-polyfill-ts@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill-ts/-/webextension-polyfill-ts-0.15.0.tgz#b66032d70b2e8ab3b3c58647c80fdabfa650a05a"
+  integrity sha512-4Cp4sd8M9/ZzYRuKt/V5jNDfXoKRnfsbFtCnufKCGEqBFifJe3GRzFnnOwI7v0GuRzlewbmkr/0QaMO3gImyag==
   dependencies:
     webextension-polyfill "^0.6.0"
 
