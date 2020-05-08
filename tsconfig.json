@@ -1,31 +1,22 @@
 {
-  "include": [
-    "src/*",
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ],
-  "typeRoots": [
-    "node_modules/@types",
-    "types"
-  ],
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "module": "commonjs",
-    "target": "es6",
-    "jsx": "react",
-    "allowJs": true,
-    "strict": true,
-    "experimentalDecorators": true,
-    "plugins": [
-      {
-        "name": "typescript-lit-html-plugin"
-      }
-    ]
-  }
+    "include": ["src/*", "src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"],
+    "typeRoots": ["node_modules/@types", "types"],
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "react",
+        "allowJs": true,
+        "strict": true,
+        "experimentalDecorators": true,
+        "plugins": [
+            {
+                "name": "typescript-lit-html-plugin"
+            }
+        ]
+    }
 }

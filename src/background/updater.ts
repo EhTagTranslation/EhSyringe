@@ -50,7 +50,12 @@ class Updater {
             tagDatabase.update(data.content, data.filename.endsWith('.gz'), data.release.html_url);
 
             badgeLoading.set('OK', '#00C801');
-            this.pushDownloadStatus({ run: true, info: '更新完成', progress: 100, complete: true });
+            this.pushDownloadStatus({
+                run: true,
+                info: '更新完成',
+                progress: 100,
+                complete: true,
+            });
             this.lastCheckData.next({
                 ...this.lastCheckData.value,
                 old: tagDatabase.sha.value,
@@ -63,7 +68,11 @@ class Updater {
             }
         } catch (err) {
             logger.error(err);
-            this.pushDownloadStatus({ run: false, error: true, info: err?.message ? err.message : '更新失败' });
+            this.pushDownloadStatus({
+                run: false,
+                error: true,
+                info: err?.message ? err.message : '更新失败',
+            });
         }
     }
 
@@ -106,7 +115,11 @@ class Updater {
         return this.lastCheckData.value;
     }
 
-    private async download(): Promise<{ release: GithubRelease; filename: string; content: ArrayBuffer }> {
+    private async download(): Promise<{
+        release: GithubRelease;
+        filename: string;
+        content: ArrayBuffer;
+    }> {
         if (this.loadLock) {
             throw new Error('已经正在下载');
         }

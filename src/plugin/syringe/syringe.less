@@ -1,54 +1,56 @@
 td.tc {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
-div.gt, div.gtl, div.gtw {
-  height: 16px;
-  line-height: 16px;
-  white-space: nowrap;
-}
-
-textarea[name=expungexpl] {
-  display: block;
-}
-
-
-body {
-
-  h1#gj {
-    margin: 3px 4px;
-  }
-
-  div#gright {
-    z-index: 3;
-  }
-
-  .g2 {
-    padding-bottom: 20px;
-  }
-
-  .gsp {
-    padding-top: 10px;
-  }
-
-  div.gtl, div.gtw, div.gt {
-    overflow: hidden;
+div.gt,
+div.gtl,
+div.gtw {
     height: 16px;
     line-height: 16px;
-  }
+    white-space: nowrap;
+}
 
-  div#gmid {
-    height: auto;
-  }
+textarea[name='expungexpl'] {
+    display: block;
+}
 
-  p.gpc-translate {
-    margin: -3px auto;
-    text-align: center;
-    padding: 0px 5px 5px 5px;
-    clear: both;
-    font-size: 9pt;
-  }
-  /*
+body {
+    h1#gj {
+        margin: 3px 4px;
+    }
+
+    div#gright {
+        z-index: 3;
+    }
+
+    .g2 {
+        padding-bottom: 20px;
+    }
+
+    .gsp {
+        padding-top: 10px;
+    }
+
+    div.gtl,
+    div.gtw,
+    div.gt {
+        overflow: hidden;
+        height: 16px;
+        line-height: 16px;
+    }
+
+    div#gmid {
+        height: auto;
+    }
+
+    p.gpc-translate {
+        margin: -3px auto;
+        text-align: center;
+        padding: 0px 5px 5px 5px;
+        clear: both;
+        font-size: 9pt;
+    }
+    /*
 
   !* 高清箭头，没啥卵用 *!
   #nb > div {
@@ -85,39 +87,48 @@ body {
   }
   */
 
-  div.c6 {
-    text-align: left;
-  }
-
+    div.c6 {
+        text-align: left;
+    }
 }
 
 @media screen and (max-width: 990px) {
-  p.gpc-translate {
-    margin-top: 25px;
-    visibility: hidden !important;
-  }
+    p.gpc-translate {
+        margin-top: 25px;
+        visibility: hidden !important;
+    }
 }
 
-.ehs-icon, .ehs-emoji {
-  height: 1em;
-  margin: 0 1px;
+.ehs-icon,
+.ehs-emoji {
+    height: 1em;
+    margin: 0 1px;
 }
 
 body.ehs-hide-icon {
-  .ehs-icon, .ehs-emoji { display: none; }
+    .ehs-icon,
+    .ehs-emoji {
+        display: none;
+    }
 }
 
 //0:hide, 1:non-h 2: R18 3: R18G
 /* nsfw="R18" */
 body.ehs-image-level-0 #ehs-introduce-box .ehs-content {
-  img { display: none; }
+    img {
+        display: none;
+    }
 }
 body.ehs-image-level-1 #ehs-introduce-box .ehs-content {
-  img[nsfw] { display: none; }
+    img[nsfw] {
+        display: none;
+    }
 }
 body.ehs-image-level-2 #ehs-introduce-box .ehs-content {
-  img[nsfw="R18G"] { display: none; }
+    img[nsfw='R18G'] {
+        display: none;
+    }
 }
 body.ehs-image-level-3 {
-  // 所有都显示
+    // 所有都显示
 }

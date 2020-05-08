@@ -62,7 +62,10 @@ class TagTip {
                 if (sv.length) {
                     const svs = sv.join(' ');
                     if (!svs || svs.replace(/\s+/, '').length === 0) return;
-                    const suggestions = await chromeMessage.send('suggest-tag', { term: svs, limit: 50 });
+                    const suggestions = await chromeMessage.send('suggest-tag', {
+                        term: svs,
+                        limit: 50,
+                    });
 
                     suggestions.forEach((suggestion) => {
                         const tag = suggestion.tag;

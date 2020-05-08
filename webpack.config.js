@@ -11,24 +11,26 @@ const android = process.argv.indexOf('--android') > 0;
 const nodb = process.argv.indexOf('--no-db') > 0;
 
 if (firefox || android) {
-    const webextRunParams = android ? ({
-        browserConsole: false,
-        target: 'firefox-android',
-        adbDevice: '696ea70c',
-    }) : ({
-        browserConsole: false,
-        firefox: 'firefoxdeveloperedition',
-        startUrl: ['about:debugging#addons', 'https://e-hentai.org'],
-    });
+    const webextRunParams = android
+        ? {
+              browserConsole: false,
+              target: 'firefox-android',
+              adbDevice: '696ea70c',
+          }
+        : {
+              browserConsole: false,
+              firefox: 'firefoxdeveloperedition',
+              startUrl: ['about:debugging#addons', 'https://e-hentai.org'],
+          };
     plugins.push(
         new WebExtWebpackPlugin({
             build: {
                 artifactsDir: 'artifacts',
-                overwriteDest: true
+                overwriteDest: true,
             },
-            run: webextRunParams
-        })
-    )
+            run: webextRunParams,
+        }),
+    );
 }
 
 if (pack) {
@@ -36,32 +38,37 @@ if (pack) {
         new ZipPlugin({
             exclude: /^\.\./,
             path: path.resolve(__dirname, 'release'),
-            pathMapper: p => p.replace(/\.firefox\.([^\.]*)$/i, '.$1'),
+            pathMapper: (p) => p.replace(/\.firefox\.([^\.]*)$/i, '.$1'),
             filename: 'EhSyringe.firefox',
-        }));
+        }),
+    );
     plugins.push(
         new ZipPlugin({
             exclude: /^\.\./,
             path: path.resolve(__dirname, 'release'),
-            pathMapper: p => { console.log(p); return p.replace(/\.chrome\.([^\.]*)$/i, '.$1') },
+            pathMapper: (p) => {
+                console.log(p);
+                return p.replace(/\.chrome\.([^\.]*)$/i, '.$1');
+            },
             filename: 'EhSyringe.chrome',
             pathPrefix: 'EhSyringe',
-        }));
+        }),
+    );
 }
 
 function transformManifest(content, isChrome) {
-    const data = require("./package.json");
+    const data = require('./package.json');
     const manifest = JSON.parse(content.toString());
     if (isChrome) {
         manifest.applications = undefined;
     }
-    return Buffer.from(JSON.stringify(manifest, (k, v) => {
-        if (k.startsWith('$'))
-            return undefined;
-        if (typeof v !== 'string')
-            return v;
-        return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
-    }));
+    return Buffer.from(
+        JSON.stringify(manifest, (k, v) => {
+            if (k.startsWith('$')) return undefined;
+            if (typeof v !== 'string') return v;
+            return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
+        }),
+    );
 }
 
 const copyPatterns = [
@@ -72,42 +79,47 @@ const copyPatterns = [
 if (pack) {
     copyPatterns.push(
         {
-            from: 'src/manifest.json', to: 'manifest.firefox.json',
-            transform: content => transformManifest(content, false),
+            from: 'src/manifest.json',
+            to: 'manifest.firefox.json',
+            transform: (content) => transformManifest(content, false),
         },
         {
-            from: 'src/manifest.json', to: 'manifest.chrome.json',
-            transform: content => transformManifest(content, true),
-        });
+            from: 'src/manifest.json',
+            to: 'manifest.chrome.json',
+            transform: (content) => transformManifest(content, true),
+        },
+    );
 } else {
     copyPatterns.push({
-        from: 'src/manifest.json', to: 'manifest.json',
-        transform: content => transformManifest(content, !(firefox || android)),
-    })
+        from: 'src/manifest.json',
+        to: 'manifest.json',
+        transform: (content) => transformManifest(content, !(firefox || android)),
+    });
 }
 
 if (nodb) {
     copyPatterns.push({
-        from: 'tools/tag-empty.db', to: 'assets/tag.db'
+        from: 'tools/tag-empty.db',
+        to: 'assets/tag.db',
     });
 }
 
 module.exports = {
     entry: {
-        'background': path.resolve(__dirname, 'src/background/index.ts'),
-        'main': path.resolve(__dirname, 'src/main.ts'),
-        'popup': path.resolve(__dirname, 'src/popup/popup.ts'),
+        background: path.resolve(__dirname, 'src/background/index.ts'),
+        main: path.resolve(__dirname, 'src/main.ts'),
+        popup: path.resolve(__dirname, 'src/popup/popup.ts'),
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'script/[name].js'
+        filename: 'script/[name].js',
     },
     module: {
         rules: [
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /\.less$/,
@@ -116,14 +128,14 @@ module.exports = {
                     {
                         loader: 'style-loader',
                         options: {
-                            insert: ':root'
-                        }
+                            insert: ':root',
+                        },
                     },
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 1
-                        }
+                            importLoaders: 1,
+                        },
                     },
                     {
                         loader: 'postcss-loader',
@@ -133,17 +145,15 @@ module.exports = {
                                 require('postcss-import')({ root: loader.resourcePath }),
                                 require('postcss-cssnext')(),
                                 require('autoprefixer')(),
-                                require('cssnano')()
-                            ]
-                        }
+                                require('cssnano')(),
+                            ],
+                        },
                     },
                     {
                         loader: 'less-loader',
-                        options: {
-                            importLoaders: 1
-                        }
-                    }
-                ]
+                        options: {},
+                    },
+                ],
             },
             {
                 test: /\.css$/,
@@ -151,14 +161,14 @@ module.exports = {
                     {
                         loader: 'style-loader',
                         options: {
-                            insert: ':root'
-                        }
+                            insert: ':root',
+                        },
                     },
                     {
                         loader: 'css-loader',
                         options: {
-                            importLoaders: 1
-                        }
+                            importLoaders: 1,
+                        },
                     },
                     {
                         loader: 'postcss-loader',
@@ -167,20 +177,17 @@ module.exports = {
                             plugins: (loader) => [
                                 require('postcss-import')({ root: loader.resourcePath }),
                                 require('postcss-cssnext')(),
-                                require('cssnano')()
-                            ]
-                        }
+                                require('cssnano')(),
+                            ],
+                        },
                     },
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
     },
-    plugins: [
-        new CopyPlugin(copyPatterns),
-        ...plugins,
-    ],
+    plugins: [new CopyPlugin(copyPatterns), ...plugins],
     devtool: 'source-map',
 };

@@ -1,49 +1,42 @@
 root: true
-parser: "@typescript-eslint/parser"
+parser: '@typescript-eslint/parser'
 parserOptions:
-  project: tsconfig.json
+    project: tsconfig.json
 plugins:
-  - "@typescript-eslint"
-  - prettier
+    - '@typescript-eslint'
+    - prettier
 extends:
-  - eslint:recommended
-  - plugin:@typescript-eslint/eslint-recommended
-  - plugin:@typescript-eslint/recommended
-  - plugin:@typescript-eslint/recommended-requiring-type-checking
-  - prettier
-  - prettier/@typescript-eslint
-  - plugin:prettier/recommended
+    - eslint:recommended
+    - plugin:@typescript-eslint/eslint-recommended
+    - plugin:@typescript-eslint/recommended
+    - plugin:@typescript-eslint/recommended-requiring-type-checking
+    - prettier
+    - prettier/@typescript-eslint
+    - plugin:prettier/recommended
 rules:
-  "prettier/prettier":
-    - 1
-    - singleQuote: true
-      trailingComma: all
-      tabWidth: 4
-      endOfLine: lf
-      printWidth: 120
-    - usePrettierrc: false
-  "@typescript-eslint/array-type": [1, { default: array-simple }]
-  "@typescript-eslint/explicit-function-return-type":
-    - 2
-    - allowExpressions: true
-  "@typescript-eslint/no-extra-non-null-assertion": [2]
-  "@typescript-eslint/no-extraneous-class":
-    - 1
-    - allowWithDecorator: true
-      allowStaticOnly: true
-  "@typescript-eslint/no-floating-promises": [1]
-  "@typescript-eslint/no-parameter-properties":
-    - 1
-    - allows:
-        - protected readonly
-        - private readonly
-        - public readonly
-        - readonly
-  "@typescript-eslint/no-throw-literal": [2]
-  "no-unused-vars": [0]
-  "@typescript-eslint/prefer-for-of": [1]
-  "@typescript-eslint/prefer-function-type": [1]
-  "@typescript-eslint/prefer-nullish-coalescing": [1]
-  "@typescript-eslint/prefer-optional-chain": [1]
-  no-void: [1]
-  eqeqeq: [1, smart]
+    'prettier/prettier': [1]
+    '@typescript-eslint/array-type': [1, { default: array-simple }]
+    '@typescript-eslint/explicit-function-return-type':
+        - 2
+        - allowExpressions: true
+    '@typescript-eslint/no-extra-non-null-assertion': [2]
+    '@typescript-eslint/no-extraneous-class':
+        - 1
+        - allowWithDecorator: true
+          allowStaticOnly: true
+    '@typescript-eslint/no-floating-promises': [1]
+    '@typescript-eslint/no-parameter-properties':
+        - 1
+        - allows:
+              - protected readonly
+              - private readonly
+              - public readonly
+              - readonly
+    '@typescript-eslint/no-throw-literal': [2]
+    'no-unused-vars': [0]
+    '@typescript-eslint/prefer-for-of': [1]
+    '@typescript-eslint/prefer-function-type': [1]
+    '@typescript-eslint/prefer-nullish-coalescing': [1]
+    '@typescript-eslint/prefer-optional-chain': [1]
+    no-void: [1]
+    eqeqeq: [1, smart]

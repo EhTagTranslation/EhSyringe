@@ -1,42 +1,39 @@
 name: build
 
-on: 
-  - push
-  - create
+on:
+    - push
+    - create
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-    - name: yarn install
-      run: yarn install
-      env:
-        CI: 'true'
-    - name: update-db
-      run: yarn run update-db
-      env:
-        CI: 'true'
-    - name: yarn build
-      run: yarn run build
-      env:
-        CI: 'true'
-    - uses: actions/upload-artifact@master
-      with:
-        name: EhSyringe.zip
-        path: release
-    - name: publish to github release
-      uses: ncipollo/release-action@v1
-      if: github.event_name == 'create' && github.event.ref_type == 'tag'
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        body: |
-          [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
-        artifacts: release/*
-
-
+        steps:
+            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+            - name: yarn install
+              run: yarn install
+              env:
+                  CI: 'true'
+            - name: update-db
+              run: yarn run update-db
+              env:
+                  CI: 'true'
+            - name: yarn build
+              run: yarn run build
+              env:
+                  CI: 'true'
+            - uses: actions/upload-artifact@master
+              with:
+                  name: EhSyringe.zip
+                  path: release
+            - name: publish to github release
+              uses: ncipollo/release-action@v1
+              if: github.event_name == 'create' && github.event.ref_type == 'tag'
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  body: |
+                      [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
+                  artifacts: release/*

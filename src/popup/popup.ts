@@ -278,7 +278,9 @@ class Popup {
 
         return html`
             <div id="settingPanel" class="${state.showSettingPanel ? 'open' : ''}">
-                <div class="close"><a @click="${() => (this.state.showSettingPanel = false)}" href="#">×</a></div>
+                <div class="close">
+                    <a @click="${() => (this.state.showSettingPanel = false)}" href="#">×</a>
+                </div>
                 <div class="form">
                     <form id="settingForm">
                         <h3 style="margin-top: 0">设置</h3>
@@ -391,11 +393,15 @@ class Popup {
                     <table>
                         <tr>
                             <th>TAG版本：</th>
-                            <td><a href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a></td>
+                            <td>
+                                <a href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a>
+                            </td>
                         </tr>
                         <tr>
                             <th>上次更新：</th>
-                            <td><span class="monospace">${state.updateTime || ' --- '}</span></td>
+                            <td>
+                                <span class="monospace">${state.updateTime || ' --- '}</span>
+                            </td>
                         </tr>
                         <tr>
                             <th>更新检查：</th>
