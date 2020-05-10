@@ -8,7 +8,7 @@ import { dateDiff } from '../../tool/tool';
 // 1 day
 const autoCheckInterval = 1000 * 60 * 60 * 24;
 
-export const autoUpdateInit = async () => {
+export const autoUpdateInit = async (): Promise<void> => {
     const conf = await config.get();
     if (!conf.autoUpdate) return;
     logger.log('自动更新');

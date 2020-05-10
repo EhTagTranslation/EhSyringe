@@ -1,4 +1,4 @@
-import { html, nothing, render, svg } from 'lit-html';
+import { html, nothing, render, svg, SVGTemplateResult, TemplateResult } from 'lit-html';
 import { browser } from 'webextension-polyfill-ts';
 
 import { background } from '../background';
@@ -30,9 +30,11 @@ interface PopupState {
 
 class Popup {
     constructor() {
-        window.addEventListener('click', (ev) => this.openLink(ev));
+        window.addEventListener('click', (ev) => {
+            this.openLink(ev).catch(logger.error);
+        });
         this._update();
-        this.getVersion().catch(logger.error);
+        this.getVersion();
         this.checkVersion().catch(logger.error);
         this.loadConfig().catch(logger.error);
         browser.management
@@ -41,8 +43,10 @@ class Popup {
                 this.state.extensionVersion = `${data.version}`;
             })
             .catch(logger.error);
-        const downloadStatusSub = background.updater.downloadStatus.subscribe((data) => this.downloadStatus(data));
-        window.addEventListener('unload', (_) => {
+        const downloadStatusSub = background.updater.downloadStatus.subscribe((data) => {
+            this.downloadStatus(data).catch(logger.error);
+        });
+        window.addEventListener('unload', () => {
             downloadStatusSub.unsubscribe();
         });
     }
@@ -86,12 +90,12 @@ class Popup {
         [0, 0],
     ];
 
-    async loadConfig() {
+    async loadConfig(): Promise<void> {
         this.configOriginal = await config.get();
         this.state.configValue = { ...this.configOriginal };
     }
 
-    testAnimation() {
+    testAnimation(): void {
         const a = this.testAnimationList[this.testAnimationIndex];
         this.testAnimationIndex++;
         if (!this.testAnimationList[this.testAnimationIndex]) {
@@ -101,7 +105,7 @@ class Popup {
         this.state.progress = a[1];
     }
 
-    async getVersion() {
+    getVersion(): void {
         const sha = background.tagDatabase.sha.value;
         const releaseLink = background.tagDatabase.releaseLink.value;
         const updateTime = background.tagDatabase.updateTime.value;
@@ -111,7 +115,7 @@ class Popup {
         this.state.updateTimeFull = updateTime?.toLocaleString() ?? 'N/A';
     }
 
-    async checkVersion() {
+    async checkVersion(): Promise<void> {
         this.state.versionInfo = '检查中...';
         const data = await background.updater.checkVersion();
         logger.log('Release Data', data);
@@ -150,7 +154,7 @@ class Popup {
             this.state.progress = 100;
             this.state.animationState = 2;
             this.state.updateButtonDisabled = false;
-            await this.getVersion();
+            this.getVersion();
             await this.checkVersion();
 
             await sleep(500);
@@ -161,12 +165,12 @@ class Popup {
         }
     }
 
-    private updateButtonClick = async () => {
+    private async updateButtonClick(): Promise<void> {
         this.state.updateButtonDisabled = true;
         await background.updater.update();
-    };
+    }
 
-    _logoTemplate(progress = 0) {
+    _logoTemplate(progress = 0): SVGTemplateResult {
         const PushRodStyle = `transform: translate(${(progress / 400) * 70}px, 0)`;
         const EnemaStyle = `transform: scaleX(${progress / 100})`;
 
@@ -233,7 +237,7 @@ class Popup {
   </svg>`;
     }
 
-    changeConfigValue(key: string, value: any) {
+    changeConfigValue(key: string, value: any): void {
         if (key === 'introduceImageLevel') {
             this.state.configValue = {
                 ...this.state.configValue,
@@ -251,20 +255,20 @@ class Popup {
         return !keys.every((key) => (this.configOriginal as any)[key] === (this.state.configValue as any)[key]);
     }
 
-    async saveConfig() {
+    async saveConfig(): Promise<void> {
         await config.set(this.state.configValue);
         await this.loadConfig();
         await sleep(200);
+        window.close();
         const tabs = await browser.tabs.query({ active: true });
         if (tabs?.length) {
             const ehtabs = tabs.filter((v) => v.url && /(\/\/|\.)(e-|ex)hentai\.org/i.test(v.url));
             logger.log('Reload tabs', ehtabs);
-            ehtabs.forEach((v) => browser.tabs.reload(v.id).catch(logger.error));
+            await Promise.all(ehtabs.map((v) => browser.tabs.reload(v.id)));
         }
-        window.close();
     }
 
-    _settingPanelTemplate() {
+    _settingPanelTemplate(): TemplateResult {
         const state = this.state;
 
         const checkboxList: Array<{ key: string; name: string }> = [
@@ -355,7 +359,7 @@ class Popup {
         `;
     }
 
-    _template() {
+    _template(): TemplateResult {
         const state = this.state;
         return html` <div class="popup-root ${state.showSettingPanel ? 'hide' : ''}">
                 <div class="head-buttons">
@@ -428,7 +432,7 @@ class Popup {
             ${state.configValue ? this._settingPanelTemplate() : nothing}`;
     }
 
-    _update() {
+    _update(): void {
         render(this._template(), document.body);
     }
 }

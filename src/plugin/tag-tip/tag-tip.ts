@@ -28,9 +28,11 @@ class TagTip {
                 map(() => this.inputElement.value),
                 // distinctUntilChanged()
             )
-            .subscribe(this.search);
+            .subscribe((s) => {
+                this.search(s).catch(logger.error);
+            });
 
-        fromEvent<KeyboardEvent>(this.inputElement, 'keydown').subscribe(this.keydown);
+        fromEvent<KeyboardEvent>(this.inputElement, 'keydown').subscribe((e) => this.keydown(e));
 
         fromEvent<MouseEvent>(this.autoCompleteList, 'click').subscribe((e) => {
             this.inputElement.focus();
@@ -38,10 +40,10 @@ class TagTip {
             e.stopPropagation();
         });
 
-        fromEvent(this.inputElement, 'focus').subscribe(this.setListPosition);
+        fromEvent(this.inputElement, 'focus').subscribe(() => this.setListPosition());
 
-        fromEvent(window, 'resize').subscribe(this.setListPosition);
-        fromEvent(window, 'scroll').subscribe(this.setListPosition);
+        fromEvent(window, 'resize').subscribe(() => this.setListPosition());
+        fromEvent(window, 'scroll').subscribe(() => this.setListPosition());
 
         fromEvent(document, 'click').subscribe(() => {
             this.autoCompleteList.innerHTML = '';
@@ -50,7 +52,7 @@ class TagTip {
         document.body.insertBefore(this.autoCompleteList, null);
     }
 
-    readonly search = async (value: string) => {
+    async search(value: string): Promise<void> {
         // todo: 增加自定义分隔符
         value = this.inputElement.value = value.replace(/  +/gm, ' ');
         const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/gim) ?? [];
@@ -81,9 +83,9 @@ class TagTip {
             this.autoCompleteList.insertBefore(this.tagElementItem(tag), null);
         });
         this.selectedIndex = -1;
-    };
+    }
 
-    readonly keydown = (e: KeyboardEvent) => {
+    keydown(e: KeyboardEvent): void {
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
             if (e.code === 'ArrowUp') {
                 this.selectedIndex--;
@@ -114,16 +116,16 @@ class TagTip {
                 e.stopPropagation();
             }
         }
-    };
+    }
 
-    readonly setListPosition = () => {
+    setListPosition(): void {
         const rect = this.inputElement.getBoundingClientRect();
         this.autoCompleteList.style.left = `${rect.left}px`;
         this.autoCompleteList.style.top = `${rect.bottom}px`;
         this.autoCompleteList.style.minWidth = `${rect.width}px`;
-    };
+    }
 
-    readonly tagElementItem = (suggestion: Suggestion): HTMLDivElement => {
+    tagElementItem(suggestion: Suggestion): HTMLDivElement {
         const tag = suggestion.tag;
         const item = document.createElement('div');
         const cnName = document.createElement('span');
@@ -150,10 +152,10 @@ class TagTip {
             this.autoCompleteList.innerHTML = '';
         };
         return item;
-    };
+    }
 }
 
-export const tagTipInit = async () => {
+export async function tagTipInit(): Promise<TagTip | undefined> {
     const conf = await config.get();
     if (!conf.tagTip) return;
     logger.log('标签提示');
@@ -161,4 +163,4 @@ export const tagTipInit = async () => {
     const searchInput: HTMLInputElement | null = document.querySelector('#f_search, #newtagfield, [name=f_search]');
     if (!searchInput) return;
     return new TagTip(searchInput);
-};
+}

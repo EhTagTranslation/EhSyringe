@@ -7,7 +7,7 @@ import { logger } from '../../tool/log';
 import './syringe.less';
 
 (function (): void {
-    const tagClear = () => {
+    const tagClear = (): void => {
         window.localStorage.removeItem('tag-list');
         window.localStorage.removeItem('tag-replace-data');
         window.localStorage.removeItem('tag-update-time');
@@ -35,7 +35,7 @@ function isText(node: Node): node is Text {
 }
 
 class Syringe {
-    tagReplace: TagReplace = {};
+    tagReplace?: TagReplace;
     pendingTags: Node[] = [];
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
@@ -55,7 +55,8 @@ class Syringe {
         window.document.addEventListener('DOMContentLoaded', (e) => {
             this.documentEnd = true;
         });
-        this.setBodyClass(document.querySelector('body')!);
+        const body = document.querySelector('body');
+        if (body) this.setBodyClass(body);
         this.observer = new MutationObserver((mutations) =>
             mutations.forEach((mutation) =>
                 mutation.addedNodes.forEach((node1) => {
@@ -84,14 +85,15 @@ class Syringe {
                 .then((data) => {
                     this.tagReplace = data as TagReplace;
                     timer.end();
-                    this.pendingTags.forEach((t) => this.translateTagImpl(t));
+                    const pendingTags = this.pendingTags;
                     this.pendingTags = [];
+                    pendingTags.forEach((t) => this.translateTagImpl(t));
                 })
                 .catch(logger.error);
         }
     }
 
-    setBodyClass(node: HTMLBodyElement) {
+    setBodyClass(node: HTMLBodyElement): void {
         if (!node) return;
         node.classList.add(!location.host.includes('exhentai') ? 'eh' : 'ex');
         if (!this.conf.showIcon) {
