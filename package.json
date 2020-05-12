@@ -49,7 +49,7 @@
         "rimraf": "^3.0.2",
         "style-loader": "^1.2.1",
         "ts-loader": "^7.0.4",
-        "typescript": "^3.8.3",
+        "typescript": "^3.9.2",
         "typescript-lit-html-plugin": "^0.9.0",
         "web-ext": "^4.2.0",
         "webext-webpack-plugin": "^0.0.8",
