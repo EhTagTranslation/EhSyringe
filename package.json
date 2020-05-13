@@ -27,7 +27,7 @@
     "readme": "https://github.com/EhTagTranslation/EhSyringe",
     "homepage": "https://github.com/EhTagTranslation/EhSyringe",
     "devDependencies": {
-        "@types/chrome": "^0.0.108",
+        "@types/chrome": "^0.0.109",
         "@types/pako": "^1.0.1",
         "@typescript-eslint/eslint-plugin": "^2.32.0",
         "@typescript-eslint/parser": "^2.32.0",
