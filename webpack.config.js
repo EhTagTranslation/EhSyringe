@@ -88,6 +88,11 @@ if (pack) {
             to: 'manifest.chrome.json',
             transform: (content) => transformManifest(content, true),
         },
+        {
+            from: 'src/manifest.json',
+            to: 'manifest.json',
+            transform: (content) => transformManifest(content, true),
+        },
     );
 } else {
     copyPatterns.push({
@@ -188,6 +193,6 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
-    plugins: [new CopyPlugin(copyPatterns), ...plugins],
+    plugins: [new CopyPlugin({ patterns: copyPatterns }), ...plugins],
     devtool: 'source-map',
 };
