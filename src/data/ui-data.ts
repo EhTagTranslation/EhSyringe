@@ -17,6 +17,7 @@ const uiData: readonly DataMap[] = [
         'Torrent Download': '种子下载',
         'Petition to Expunge': '申请删除',
         'Petition to Rename': '申请重命名',
+        'Rename Petition Sent': '重命名申请已发送',
         'Show Gallery Stats': '查看统计',
         'Multi-Page Viewer': '多页查看器',
 
@@ -859,7 +860,7 @@ const uiData: readonly DataMap[] = [
 
         'Excluded Uploaders': '屏蔽的上传者',
         'If you wish to hide galleries from certain uploaders from the gallery list and searches, add them below. Put one username per line.':
-            '如果你希望再图库中和搜索中隐藏某个上传者的话，请把他们的用户名填写再下方，每行一个。',
+            '如果你希望在图库中和搜索中隐藏某个上传者的话，请把他们的用户名填写在下方，每行一个。',
         'Note that galleries from these uploaders will never appear regardless of your search query.':
             '注意：无论你如何搜索，这些上传者都不会出现。',
         'You are currently using ': '已使用 ',
