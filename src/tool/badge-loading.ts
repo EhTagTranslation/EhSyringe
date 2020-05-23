@@ -12,7 +12,11 @@ class BadgeLoading {
             .catch(logger.error);
     }
 
-    readonly loadingStrArr = [[''], '⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'.split(''), '    |·   | ·  |  · |   ·'.split('|')];
+    readonly loadingStrArr = [
+        [''],
+        ['⢎⠀', '⢆⡀', '⢄⡠', '⢀⡰', '⠀⡱', '⠈⠱', '⠊⠑', '⠎⠁'],
+        ['    ', '·   ', ' ·  ', '  · ', '   ·'],
+    ];
 
     frame = 0;
     index = 0;
