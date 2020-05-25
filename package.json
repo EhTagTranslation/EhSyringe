@@ -29,7 +29,7 @@
     "devDependencies": {
         "@types/chrome": "^0.0.114",
         "@types/pako": "^1.0.1",
-        "@typescript-eslint/eslint-plugin": "^3.0.0",
+        "@typescript-eslint/eslint-plugin": "^3.0.1",
         "@typescript-eslint/parser": "^3.0.0",
         "copy-webpack-plugin": "^6.0.1",
         "css-loader": "^3.5.3",
