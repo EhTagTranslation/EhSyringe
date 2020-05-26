@@ -217,7 +217,7 @@ class Syringe {
             }
             let reptext = text;
             reptext = reptext.replace(/(\d+) pages?/, '$1 页');
-            reptext = reptext.replace(/Torrent Download \( (\d+) \)/, '种子下载（$1）');
+            reptext = reptext.replace(/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）');
             reptext = reptext.replace(/Average: ([\d\.]+)/, '平均值：$1');
             reptext = reptext.replace(
                 /Posted on (.*?) by:\s*/,
