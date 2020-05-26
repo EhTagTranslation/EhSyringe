@@ -13,7 +13,7 @@ class Introduce {
 
         const taglist = document.querySelector('#taglist') as HTMLDivElement;
         this.tagList = taglist;
-        const gright = document.querySelector('#gright');
+        const gright = document.querySelector('#gd5');
 
         if (!(taglist && gright)) return;
 

@@ -1,11 +1,32 @@
+#gmid {
+    display: flex;
+    #gd3, #gd4 {
+        flex: none;
+    }
+    #gd5 {
+        flex: auto;
+        width: auto;
+    }
+}
+
+div#gd5 {
+    z-index: 3;
+    position: relative;
+    #ehs-introduce-box img {
+        margin: 0;
+        width: auto;
+        height: auto;
+    }
+}
+
 #ehs-introduce-box {
     position: absolute;
-    left: -18px;
-    top: -0px;
+    left: 0px;
+    top: 0px;
     bottom: 0;
     right: -5px;
     overflow: auto;
-    background: inherit;
+    background: #EDEBDF;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -81,6 +102,7 @@
 
 body.ex {
     #ehs-introduce-box {
+        background: #4f535b;
         .ehs-title {
             border-bottom: 1px solid #000;
         }
