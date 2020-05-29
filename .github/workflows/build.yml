@@ -27,7 +27,7 @@ jobs:
                   CI: 'true'
             - uses: actions/upload-artifact@master
               with:
-                  name: EhSyringe.zip
+                  name: EhSyringe
                   path: release
             - name: publish to github release
               uses: ncipollo/release-action@v1
