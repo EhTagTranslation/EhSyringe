@@ -2,6 +2,7 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
+const webpack = require('webpack');
 
 const plugins = [];
 
@@ -34,20 +35,21 @@ if (firefox || android) {
 }
 
 if (pack) {
+    const releaseDir = path.resolve(__dirname, 'release');
     plugins.push(
-        new ZipPlugin({
-            exclude: /^\.\./,
-            path: path.resolve(__dirname, 'release'),
-            pathMapper: (p) => p.replace(/\.firefox\.([^\.]*)$/i, '.$1'),
-            filename: 'EhSyringe.firefox',
+        new WebExtWebpackPlugin({
+            build: {
+                artifactsDir: releaseDir,
+                overwriteDest: true,
+                ignoreFiles: ['**/*.chrome.*'],
+            },
         }),
     );
     plugins.push(
         new ZipPlugin({
-            exclude: /^\.\./,
             path: path.resolve(__dirname, 'release'),
+            exclude: ['../**', 'manifest.json'],
             pathMapper: (p) => {
-                console.log(p);
                 return p.replace(/\.chrome\.([^\.]*)$/i, '.$1');
             },
             filename: 'EhSyringe.chrome',
@@ -80,18 +82,13 @@ if (pack) {
     copyPatterns.push(
         {
             from: 'src/manifest.json',
-            to: 'manifest.firefox.json',
-            transform: (content) => transformManifest(content, false),
-        },
-        {
-            from: 'src/manifest.json',
             to: 'manifest.chrome.json',
             transform: (content) => transformManifest(content, true),
         },
         {
             from: 'src/manifest.json',
             to: 'manifest.json',
-            transform: (content) => transformManifest(content, true),
+            transform: (content) => transformManifest(content, false),
         },
     );
 } else {
@@ -109,6 +106,7 @@ if (nodb) {
     });
 }
 
+/** @type {webpack.Configuration} */
 module.exports = {
     entry: {
         background: path.resolve(__dirname, 'src/background/index.ts'),
