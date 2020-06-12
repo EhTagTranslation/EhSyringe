@@ -5446,32 +5446,15 @@ lcid@^3.0.0:
   dependencies:
     invert-kv "^3.0.0"
 
-less-loader@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.npm.taobao.org/less-loader/download/less-loader-6.1.0.tgz#59fd591df408ced89a40fce11a2aea449b005631"
-  integrity sha1-Wf1ZHfQIztiaQPzhGirqRJsAVjE=
+less-loader@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.npm.taobao.org/less-loader/download/less-loader-6.1.1.tgz#cb17cc2b7acba46e5d6932416e0ba8fa5964fcfe"
+  integrity sha1-yxfMK3rLpG5daTJBbguo+llk/P4=
   dependencies:
     clone "^2.1.2"
-    less "^3.11.1"
+    less "^3.11.3"
     loader-utils "^2.0.0"
-    schema-utils "^2.6.6"
-
-less@^3.11.1:
-  version "3.11.2"
-  resolved "https://registry.yarnpkg.com/less/-/less-3.11.2.tgz#51a484e9017287f5ac3db921cb86970eb7506e81"
-  integrity sha512-ed8Lir98Tu6a+LeU7+8ShpRLSUdk//lWf1sh+5w7tNju4wGItztqDHp03Z+a2o1nzU6pObVxw1n4Gu7VzQYusQ==
-  dependencies:
-    clone "^2.1.2"
-    tslib "^1.10.0"
-  optionalDependencies:
-    errno "^0.1.1"
-    graceful-fs "^4.1.2"
-    image-size "~0.5.0"
-    make-dir "^2.1.0"
-    mime "^1.4.1"
-    promise "^7.1.1"
-    request "^2.83.0"
-    source-map "~0.6.0"
+    schema-utils "^2.7.0"
 
 less@^3.11.3:
   version "3.11.3"
