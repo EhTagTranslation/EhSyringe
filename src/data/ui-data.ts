@@ -745,6 +745,7 @@ const uiData: readonly DataMap[] = [
         [regex]: /^\/uconfig\.php/,
 
         'Selected Profile:': '当前配置：',
+        'Settings were updated': '设置更新完毕',
         Rename: '重命名',
         'Create New': '新建',
         'Delete Profile': '删除配置',
