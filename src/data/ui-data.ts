@@ -32,7 +32,7 @@ const uiData: readonly DataMap[] = [
         'female:': '女性:',
         'male:': '男性:',
         'misc:': '杂项:',
-        'reclass:': '重分类:',
+        'reclass:': '重新分类:',
 
         'Posted:': '发布于:',
         'Parent:': '父级:',
@@ -185,7 +185,7 @@ const uiData: readonly DataMap[] = [
         'Status: ': '状态：',
         All: '全部',
         Seeded: '有种',
-        Unseeded: '没种',
+        Unseeded: '无种',
         ' \xA0 \xA0 \xA0 \xA0 Show: ': ' |  显示：',
         'All Torrents': '全部种子',
         'Only My Torrents': '我的种子',
