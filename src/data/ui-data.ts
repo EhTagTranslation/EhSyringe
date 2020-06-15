@@ -666,9 +666,9 @@ const uiData: readonly DataMap[] = [
         seedmins: '做种时长',
         'Show My Torrents': '显示我的种子',
         'If you misplace any of your personalized torrents, hit the button below to reset your key.':
-            '如果你错误的分发了个性化种子，请点击下面的按钮重置你的 KEY。',
+            '如果你错误的分发了私有种子，请点击下面的按钮重置你的 KEY。',
         'This will immediately invalidate all of your personalized torrents in play.':
-            '这将立即注销你所有的个性化种子。',
+            '这将立即注销你所有的私有种子。',
         'Your current key is: ': '你当前的 KEY 是：',
         'Reset Torrent Key': '重置种子 KEY',
 
