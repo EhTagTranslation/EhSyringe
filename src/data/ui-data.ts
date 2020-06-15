@@ -183,10 +183,11 @@ const uiData: readonly DataMap[] = [
         '5 stars': '5 星',
 
         'Status: ': '状态：',
+        All: '全部',
         Seeded: '有种',
         Unseeded: '没种',
         ' \xA0 \xA0 \xA0 \xA0 Show: ': ' |  显示：',
-        'All Torrents': '所有种子',
+        'All Torrents': '全部种子',
         'Only My Torrents': '我的种子',
         '\nNote that you cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.\n':
             '注意：你不能直接把种子添加到此页面。请在图库中上传。',
