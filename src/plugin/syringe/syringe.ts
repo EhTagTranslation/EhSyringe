@@ -236,6 +236,8 @@ class Syringe {
             );
             reptext = reptext.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
             reptext = reptext.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
+            reptext = reptext.replace(/Download original (.*?) source/, '下载原图（$1）');
+
             if (reptext !== text) {
                 node.textContent = reptext;
                 return;
