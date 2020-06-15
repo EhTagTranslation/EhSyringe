@@ -464,10 +464,10 @@ const uiData: readonly DataMap[] = [
         'Too Many Pages': '全部页面',
         'Increases all limits on how many pages you can view by a factor of ten.': '将图片限制变为原来的 10 倍。',
 
-        'More Favorite Notes I': '更多收藏便签 I',
-        'Increases the number of favorite note slots to 10000.': '将收藏便签限制增加到 10000。',
-        'More Favorite Notes II': '更多收藏便签 II',
-        'Increases the number of favorite note slots to 25000.': '将收藏便签限制增加到 25000。',
+        'More Favorite Notes I': '更多收藏备注 I',
+        'Increases the number of favorite note slots to 10000.': '将收藏备注限制增加到 10000。',
+        'More Favorite Notes II': '更多收藏备注 II',
+        'Increases the number of favorite note slots to 25000.': '将收藏备注限制增加到 25000。',
 
         'Paging Enlargement I': '页面扩大 I',
         'Increases the number of results you can show per page on the index, search and torrent pages to 50.':
