@@ -495,7 +495,7 @@ const uiData: readonly DataMap[] = [
         'Show Expunge Log': '显示删除日志',
         'Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.':
             '请输入清除原因和备注。它应包括副本的位置或违反的特定规则。',
-        'No expunge petitions have been filed for this gallery': '尚未对此图库提出删除申诉',
+        'No expunge petitions have been filed for this gallery': '此图库尚未有删除申诉',
         Back: '返回',
     },
     {
@@ -739,7 +739,7 @@ const uiData: readonly DataMap[] = [
         'You can follow ': '你可以',
         'follow us on Twitter': '在推特上关注我们',
         ' to receive these site status updates if the site is ever unavailable.':
-            '以便于在网站不可用时获取网站状态信息。 ',
+            '以便在网站不可用时获取网站状态信息。 ',
     },
     {
         [regex]: /^\/uconfig\.php/,
