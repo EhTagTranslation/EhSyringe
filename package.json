@@ -32,7 +32,7 @@
     "devDependencies": {
         "@types/chrome": "^0.0.115",
         "@types/pako": "^1.0.1",
-        "@typescript-eslint/eslint-plugin": "^3.2.0",
+        "@typescript-eslint/eslint-plugin": "^3.3.0",
         "@typescript-eslint/parser": "^3.2.0",
         "copy-webpack-plugin": "^6.0.2",
         "css-loader": "^3.6.0",
