@@ -10232,10 +10232,10 @@ webext-webpack-plugin@^0.0.8:
   dependencies:
     web-ext "^2.8.0"
 
-webextension-polyfill-ts@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/webextension-polyfill-ts/-/webextension-polyfill-ts-0.18.0.tgz#fc54698f83032b26e491eb8183b08a05f4dd69bd"
-  integrity sha512-quf/QdTZ5jB7D8X8oWKU4EAhMcmABL6n0xFFjANdnuz4WmNZ8q4IRBySge6TOs28rLoegxRJlu4S8l0dpPmAjg==
+webextension-polyfill-ts@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill-ts/-/webextension-polyfill-ts-0.19.0.tgz#3e3a059c656936c853b47d2a57bf114c615c1e1e"
+  integrity sha512-VcA7bdf0dzUc8JXQwQU+spSUTV0Gc0Y7VPsdrEFLbuTxJluC4xBoKVWtfUXRqykVfDvFsfo591+p1MmPSJezsw==
   dependencies:
     webextension-polyfill "^0.6.0"
 
