@@ -232,10 +232,12 @@ class Syringe {
             reptext = reptext.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
             reptext = reptext.replace(
                 /([\d,]+) \/ ([\d,]+) favorite note slots? used./,
-                '已经使用了 $1 个便签，共 $2 个。',
+                '已经使用了 $1 个备注，共 $2 个。',
             );
             reptext = reptext.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
             reptext = reptext.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
+            reptext = reptext.replace(/Download original (.*?) source/, '下载原图（$1）');
+
             if (reptext !== text) {
                 node.textContent = reptext;
                 return;
