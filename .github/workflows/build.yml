@@ -13,18 +13,12 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
-            - name: yarn install
-              run: yarn install
-              env:
-                  CI: 'true'
+            - name: Install
+              uses: bahmutov/npm-install@v1
             - name: update-db
-              run: yarn run update-db
-              env:
-                  CI: 'true'
+              run: yarn update-db
             - name: yarn build
-              run: yarn run build
-              env:
-                  CI: 'true'
+              run: yarn build
             - uses: actions/upload-artifact@master
               with:
                   name: EhSyringe
