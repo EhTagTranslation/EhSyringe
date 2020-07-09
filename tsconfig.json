@@ -1,17 +1,16 @@
 {
     "include": ["src/*", "src/**/*"],
     "exclude": ["node_modules", "**/*.spec.ts"],
-    "typeRoots": ["node_modules/@types", "types"],
     "compilerOptions": {
-        "outDir": "./dist/",
-        "sourceMap": true,
-        "noImplicitAny": true,
-        "esModuleInterop": true,
         "module": "commonjs",
         "target": "es6",
         "jsx": "react",
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "esModuleInterop": true,
         "allowJs": true,
         "strict": true,
+        "noImplicitReturns": true,
         "experimentalDecorators": true,
         "plugins": [
             {

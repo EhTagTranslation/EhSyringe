@@ -6,6 +6,7 @@ interface MessageMap {
     'get-taglist': [string | null, TagList | TagItem | undefined];
     'get-tagreplace': [string | null, TagReplace | string];
     'auto-update': [boolean, boolean];
+    'ext-update': [void, void];
     'suggest-tag': [
         {
             term: string;

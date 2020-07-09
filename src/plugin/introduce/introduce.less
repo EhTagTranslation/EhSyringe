@@ -82,6 +82,13 @@ div#gd5 {
         &::-webkit-scrollbar {
             width: 2px;
         }
+        abbr[title] {
+            padding: 0 1px;
+            &::after {
+                content: ' (' attr(title) ')';
+                font-size: 90%;
+            }
+        }
     }
     .ehs-href {
         flex: none;

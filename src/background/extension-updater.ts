@@ -1,7 +1,15 @@
 import { browser } from 'webextension-polyfill-ts';
 import { logger } from '../tool/log';
+import { chromeMessage } from '../tool/chrome-message';
 
-async function main(): Promise<void> {
+let checked = false;
+
+async function update(): Promise<void> {
+    if (checked) {
+        logger.log('检查插件更新', '跳过');
+        return;
+    }
+
     const info = await browser.management.getSelf();
     const response = await fetch('https://api.github.com/repos/EhTagTranslation/EhSyringe/releases/latest', {
         headers: {
@@ -27,6 +35,11 @@ async function main(): Promise<void> {
             }
         });
     }
+    checked = true;
 }
 
-export const result = main();
+function init(): void {
+    chromeMessage.listener('ext-update', () => update());
+}
+
+export const result = init();

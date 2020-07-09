@@ -31,13 +31,21 @@ class Updater {
 
     private loadLock = false;
 
+    private checked = false;
+
     constructor() {
         chromeMessage.listener('auto-update', async (force) => {
+            if (this.checked && !force) {
+                logger.log('自动更新', '跳过');
+                return false;
+            }
             const version = await this.checkVersion(true);
             if (version?.new && (version.new !== version.old || force)) {
                 await this.update();
+                logger.log('自动更新', '有新版本并更新');
                 return true;
             }
+            logger.log('自动更新', '没有新版本');
             return false;
         });
     }
@@ -112,6 +120,7 @@ class Updater {
             githubRelease: info,
             timestamp: new Date().getTime(),
         });
+        this.checked = true;
         return this.lastCheckData.value;
     }
 
@@ -148,7 +157,7 @@ class Updater {
                 const data = await downloadFile(url, undefined, (event) => {
                     if (event.lengthComputable) {
                         const percent = Math.floor((event.loaded / event.total) * 100);
-                        this.pushDownloadStatus({ info: percent + '%', progress: percent });
+                        this.pushDownloadStatus({ info: `${percent}%`, progress: percent });
                         badgeLoading.set(percent.toFixed(0), '#4A90E2', 1);
                     }
                 });

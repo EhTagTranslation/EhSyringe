@@ -1,4 +1,4 @@
-const cacheRoot: { [key: string]: any } = {};
+const cacheRoot: Record<string, unknown> = {};
 
 function makeStorageKey(key: string): string {
     return `EhSyringe.${key}`;
@@ -6,12 +6,12 @@ function makeStorageKey(key: string): string {
 
 export function load<T>(key: string): T | undefined {
     if (cacheRoot[key]) {
-        return cacheRoot[key];
+        return cacheRoot[key] as T;
     }
     const storageValue = window.localStorage.getItem(makeStorageKey(key));
     if (typeof storageValue === 'string') {
         try {
-            return (cacheRoot[key] = JSON.parse(storageValue));
+            return (cacheRoot[key] = JSON.parse(storageValue) as T);
         } catch {
             window.localStorage.removeItem(makeStorageKey(key));
         }

@@ -68,12 +68,10 @@ class ConfigManage {
         if (!data) {
             return { ...this.defaultValue };
         }
-        const defaultValue = this.defaultValue as any;
-        const input = { ...data } as any;
-        for (const key in defaultValue) {
-            if (typeof input[key] === 'undefined') {
-                input[key] = defaultValue[key];
-            }
+        const input = { ...data } as ConfigData;
+        for (const k in this.defaultValue) {
+            const key = k as keyof ConfigData;
+            ((input as unknown) as Record<string, unknown>)[key] = input[key] ?? this.defaultValue[key];
         }
         return input;
     }
