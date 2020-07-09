@@ -17,7 +17,7 @@ async function main(): Promise<void> {
             type: 'basic',
             title: info.name,
             message: `发现新的版本 ${latest}，点击跳转到下载页面。`,
-            iconUrl: '../assets/logo-padding.svg',
+            iconUrl: browser.runtime.getURL('assets/logo-padding.svg'),
         });
         browser.notifications.onClicked.addListener((cid) => {
             if (cid === id) {
