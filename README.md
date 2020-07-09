@@ -3,6 +3,10 @@
 [![Build Status](../../workflows/build/badge.svg)](../../actions)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](//dependabot.com)
 
+[![GitHub All Releases](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/total)](../../releases)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/EhSyringe.chrome.zip)
+![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/EhSyringe.firefox.zip)](../../releases/latest)
+
 E 站注射器，将中文翻译注入到 E 站体内。
 
 这一针打下去你就会说中文了。
