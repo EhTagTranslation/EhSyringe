@@ -53,14 +53,7 @@ class TagDatabase {
             'sha',
             'dataStructureVersion',
         ]);
-        if (
-            dataStructureVersion !== DATA_STRUCTURE_VERSION ||
-            !tagList ||
-            !tagReplace ||
-            !releaseLink ||
-            !sha ||
-            !updateTime
-        ) {
+        if (dataStructureVersion !== DATA_STRUCTURE_VERSION || !tagList || !tagReplace || !releaseLink || !sha) {
             const timer = logger.time('数据结构变化, 重新构建数据');
             await this.updateUseLocal();
             timer.end();
@@ -130,7 +123,7 @@ class TagDatabase {
                 tagReplace,
                 releaseLink,
                 sha,
-                updateTime: updateTime.getTime() || undefined,
+                updateTime: updateTime.getTime() ?? undefined,
                 dataStructureVersion: DATA_STRUCTURE_VERSION,
             })
             .catch(logger.error);

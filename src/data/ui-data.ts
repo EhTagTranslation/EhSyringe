@@ -12,62 +12,6 @@ interface DataMap {
 const uiData: readonly DataMap[] = [
     {
         [regex]: /.*/,
-        'Report Gallery': '举报图库',
-        'Archive Download': '存档下载',
-        'Torrent Download': '种子下载',
-        'Petition to Expunge': '申请删除',
-        'Petition to Rename': '申请重命名',
-        'Rename Petition Sent': '已发送的重命名申请',
-        'Show Gallery Stats': '查看统计',
-        'Multi-Page Viewer': '多页查看器',
-
-        ' Read Later': ' 稍后再读',
-        ' Added to Read Later': ' 已添加到稍后再读',
-
-        'language:': '语言:',
-        'parody:': '原作:',
-        'character:': '角色:',
-        'group:': '社团:',
-        'artist:': '作者:',
-        'female:': '女性:',
-        'male:': '男性:',
-        'misc:': '杂项:',
-        'reclass:': '重新分类:',
-
-        'Posted:': '发布于:',
-        'Parent:': '父级:',
-        'Visible:': '显示:',
-        'Language:': '语言:',
-        'File Size:': '文件大小:',
-        'Length:': '页数:',
-        'Favorited:': '收藏:',
-        'Rating:': '评分:',
-        'Average:': '平均:',
-        ' Add to Favorites': ' 添加到收藏夹',
-        Normal: '普通',
-        Large: '大图',
-        ' Normal': '普通',
-        ' Large': '大图',
-
-        '4 rows': '4 行',
-        '10 rows': '10 行',
-        '20 rows': '20 行',
-        '40 rows': '40 行',
-
-        'Score ': '分数 ',
-        'Uploader Comment': '上传者评论',
-
-        'Vote+': '顶',
-        'Vote-': '踩',
-
-        'Vote Up': '顶',
-        'Vote Down': '踩',
-
-        'Show Tagged Galleries': '含有该标签的图库',
-        'Show Tag Definition': '显示标签解释',
-        'Add New Tag': '添加新标签',
-
-        'Post New Comment': '发送新评论',
 
         'Front Page': '首页',
 
@@ -182,30 +126,6 @@ const uiData: readonly DataMap[] = [
         '4 stars': '4 星',
         '5 stars': '5 星',
 
-        'Status: ': '状态：',
-        All: '全部',
-        Seeded: '有种',
-        Unseeded: '无种',
-        ' \xA0 \xA0 \xA0 \xA0 Show: ': ' |  显示：',
-        'All Torrents': '全部种子',
-        'Only My Torrents': '我的种子',
-        '\nNote that you cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.\n':
-            '注意：你不能直接把种子添加到此页面。请在图库中上传。',
-        'Search Torrents': '搜索种子',
-
-        Added: '添加于',
-        'Torrent Name': '种子名',
-        Gallery: '图库 ID',
-        Size: '体积',
-        Seeds: '做种',
-        Peers: '下载',
-        'Seeds:': '做种：',
-        'Peers:': '下载：',
-        DLers: '下载',
-        'Downloads:': '完成：',
-        Completes: '完成',
-        DLs: '完成',
-
         Overview: '概况',
         'My Stats': '我的统计',
         'My Settings': '我的设置',
@@ -217,31 +137,9 @@ const uiData: readonly DataMap[] = [
         'Karma Log': 'Karma 记录',
         'Apply Filter': '应用筛选',
         'Clear Filter': '清理筛选',
-        'Estimated Size:   ': '预计大小:   ',
-        'Download Cost:   ': '下载费用:   ',
-        'Download Original Archive': '下载原始档案',
-        'Download Resample Archive': '下载重采样档案',
         'No hits found': '什么也没有',
         'No unfiltered results in this page range. You either requested an invalid page or used too aggressive filters.':
             '在此页面范围内没有未被过滤的结果。你的过滤设置可能过于激进。',
-        'Uploader:': '上传者:',
-        'New Torrents:': '新种子:',
-        Information: '信息',
-        'Close Window': '关闭窗口',
-        'Upload Torrent': '上传种子',
-        '\n\t\tYou can add a torrent for this gallery by uploading it here. The maximum torrent file size is 10 MB.':
-            '您可以在这里上传来为此库添加种子。最大 Torrent 文件大小为 10MB。',
-        '\n\t\tNote that you have to download the finished torrent from this site after uploading for stats to be recorded.\n\t':
-            '请注意，您必须在上传后从该站点下载私有种子，以便记录统计信息。',
-        '\n\t\tIf you are creating the torrent yourself, set this as announce tracker: ':
-            '如果您自己创建 Torrent，请将其设置为 AnnounceTracker：',
-        'Personalized Torrent': '私有种子',
-        'Redistributable Torrent': '可再分发种子',
-        '(Just For You - this makes sure to record your stats)\n': '(只属于你 - 确保记录你的下载统计信息)',
-        '(use if you want a file you can post or give to others)': '(如果您想再发布或提供给其他人使用)',
-        'Back to Index': '返回',
-        'Vote to Expunge': '投票删除',
-        'No comments were given for this torrent.': '这个种子没有评论',
 
         'Favorites 0': '收藏夹 0',
         'Favorites 1': '收藏夹 1',
@@ -298,7 +196,7 @@ const uiData: readonly DataMap[] = [
         'Show Expunged': '显示被删除的图库',
         'File Search': '文件搜索',
 
-        'There are newer versions of this gallery available:': '此库有更新的版本可用：',
+        'There are newer versions of this gallery available:': '此图库有更新的版本可用：',
         'Next Page >': '下一页 >',
 
         'Show all galleries with this file': '显示所有包含此图片的图库',
@@ -382,16 +280,30 @@ const uiData: readonly DataMap[] = [
     },
     {
         [regex]: /^\/exchange\.php\?/,
+
         'The Hath Exchange': 'Hath 交易',
         'The GP Exchange': 'GP 交易',
+
         'Last 8 Hours (per kGP)': '最近 8 小时（每 kGP）',
         'Last 24 Hours (per kGP)': '最近 24 小时（每 kGP）',
         'Last 8 Hours (per Hath)': '最近 8 小时（每 Hath）',
         'Last 24 Hours (per Hath)': '最近 24 小时（每 Hath）',
-        'Buy Hath': '购买 Hath',
+
+        'Buy Hath': '买进 Hath',
         'Sell Hath': '卖出 Hath',
-        'Buy GP': '购买 GP',
+        'Buy GP': '买进 GP',
         'Sell GP': '卖出 GP',
+
+        '\n\t\t\t\tCount: ': '数量：',
+        ' Hath \xA0\n\t\t\t\tBid Price/Hath: ': 'Hath \xA0 买入单价：',
+        ' Hath \xA0\n\t\t\t\tAsk Price/Hath: ': 'Hath \xA0 卖出单价：',
+        'Buy Hath!': '买进 Hath',
+        'Sell Hath!': '卖出 Hath',
+        ' kGP \xA0\n\t\t\t\tBid Price/kGP: ': 'kGP \xA0 买入单价：',
+        ' kGP \xA0\n\t\t\t\tAsk Price/kGP: ': 'kGP \xA0 卖出单价：',
+        'Buy GP!': '买进 GP',
+        'Sell GP!': '卖出 GP',
+
         Spread: '挂单交易',
         'Recent Transactions': '最近成交',
         'Bid (Buyers)': '买单',
@@ -500,6 +412,7 @@ const uiData: readonly DataMap[] = [
     },
     {
         [regex]: /^\/gallerypopups\.php\?.*act=rename/,
+        'Uploader:': '上传者：',
         'Roman Script': '罗马音',
         'Japanese Script': '日文',
         'Not Set': '未设置',
@@ -667,8 +580,7 @@ const uiData: readonly DataMap[] = [
         'Show My Torrents': '显示我的种子',
         'If you misplace any of your personalized torrents, hit the button below to reset your key.':
             '如果你错误地分发了私有种子，请点击下面的按钮重置你的 KEY。',
-        'This will immediately invalidate all of your personalized torrents in play.':
-            '这将立即注销你全部的私有种子。',
+        'This will immediately invalidate all of your personalized torrents in play.': '这将立即注销你全部的私有种子。',
         'Your current key is: ': '你当前的 KEY 是：',
         'Reset Torrent Key': '重置种子 KEY',
 
@@ -730,6 +642,12 @@ const uiData: readonly DataMap[] = [
         'Uploads/H@H': '上传 / H@H',
         'Account Age': '账户资历',
         '(capped to 25)': '（不超过 25）',
+    },
+    {
+        [regex]: /^\/watched/,
+
+        'You do not have any watched tags. You can change your watched tags from ':
+            '你当前没有关注任何标签。你可以修改关注的标签：',
     },
     {
         [regex]: /^\/news\.php/,
@@ -933,6 +851,160 @@ const uiData: readonly DataMap[] = [
         'Multi-Page Viewer Thumbnail Pane:': '显示缩略图侧栏：',
         ' Show': ' 显示',
         ' Hide': ' 隐藏',
+    },
+    {
+        [regex]: /^\/g\//,
+
+        'No tags have been added for this gallery yet.': '当前图库还没有标签',
+
+        'Report Gallery': '举报图库',
+        'Archive Download': '存档下载',
+        'Torrent Download': '种子下载',
+        'Petition to Expunge': '申请删除',
+        'Petition to Rename': '申请重命名',
+        'Rename Petition Sent': '已发送的重命名申请',
+        'Show Gallery Stats': '查看统计',
+        'Multi-Page Viewer': '多页查看器',
+
+        ' Read Later': ' 稍后再读',
+        ' Added to Read Later': ' 已添加到稍后再读',
+
+        'language:': '语言:',
+        'parody:': '原作:',
+        'character:': '角色:',
+        'group:': '社团:',
+        'artist:': '作者:',
+        'female:': '女性:',
+        'male:': '男性:',
+        'misc:': '杂项:',
+        'reclass:': '重新分类:',
+
+        'Posted:': '发布于:',
+        'Parent:': '父级:',
+        None: '无',
+        'Visible:': '显示:',
+        Yes: '是',
+        'No (Expunged)': '否（已删除）',
+        'No (Replaced)': '否（已被替换）',
+        'Language:': '语言:',
+        'File Size:': '文件大小:',
+        'Length:': '页数:',
+        'Favorited:': '收藏:',
+        'Rating:': '评分:',
+        'Not Yet Rated': '还没有评分',
+        'Average:': '平均:',
+        ' Add to Favorites': ' 添加到收藏夹',
+        Normal: '普通',
+        Large: '大图',
+        ' Normal': '普通',
+        ' Large': '大图',
+
+        '4 rows': '4 行',
+        '10 rows': '10 行',
+        '20 rows': '20 行',
+        '40 rows': '40 行',
+
+        'Score ': '分数 ',
+        'Uploader Comment': '上传者评论',
+
+        'Vote+': '顶',
+        'Vote-': '踩',
+
+        'Vote Up': '顶',
+        'Vote Down': '踩',
+
+        'Show Tagged Galleries': '含有该标签的图库',
+        'Show Tag Definition': '显示标签解释',
+        'Add New Tag': '添加新标签',
+
+        'Post New Comment': '发送新评论',
+
+        'A Quick Note About Tagging': '关于标签系统的简单说明',
+        'While tagging is relatively straight-forward, there are a number of established guidelines that determine when adding a particular tag is proper and when it is not. Before you put any significant amount of effort into it, we therefore ask that you skim through the ':
+            '尽管标签相对简单明了，但是有许多已建立的准则可以确定何时添加特定标签是正确的。因此，在您投入其中之前，我们要求您阅读',
+        'Basic Tagging Guidelines': '基本标签指南',
+        ' and ': '和',
+        'Fetish Listing': '恋物标签列表',
+        '. This will likely save both you and the tagging moderators from doing unnecessary work. In particular, you should note the following:':
+            '。这可以使您和标签管理员免于进行不必要的工作。特别要注意以下几点：',
+        '- These are galleries, not individual images. ': '● 这些是图库，而不是单张图片。',
+        'Do not tag stuff that is only featured in a few images.': '不要标记仅在少量图像中显示的内容。',
+        '- If a tag is ambiguous or frequently misused, you may have to specify a ':
+            '● 如果标签含糊不清或经常被滥用，则可能必须指定',
+        namespace: '命名空间',
+        '; ': '；',
+        'see the Wiki': '参见 Wiki',
+        '.': '。',
+        '- The ': '● 您对标签的影响',
+        power: '权重',
+        ' with which you can affect tagging is determined by a number of factors, such as your account age and whether or not you are active on the ':
+            '取决于多种因素，例如您的帐户资历以及您是否活跃在',
+        forums: '论坛',
+        '- The forums is also where ': '● 论坛也是',
+        'everything about tagging is discussed': '讨论标签相关内容',
+        '. If you have any comments, suggestions or questions about tagging, this is where you should take it.':
+            '的地方。如果您对标签有任何意见、建议或问题，可在此处讨论。',
+        'Alright Already': '好的',
+    },
+    {
+        [regex]: /^\/(gallery)?torrents\.php/,
+
+        'Status: ': '状态：',
+        All: '全部',
+        Seeded: '有种',
+        Unseeded: '无种',
+        ' \xA0 \xA0 \xA0 \xA0 Show: ': ' |  显示：',
+        'All Torrents': '全部种子',
+        'Only My Torrents': '我的种子',
+        '\nNote that you cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.\n':
+            '注意：你不能直接把种子添加到此页面。请在图库中上传。',
+        'Search Torrents': '搜索种子',
+
+        Added: '添加于',
+        'Torrent Name': '种子名',
+        Gallery: '图库 ID',
+        Size: '体积',
+        Seeds: '做种',
+        Peers: '下载',
+        'Seeds:': '做种：',
+        'Peers:': '下载：',
+        DLers: '下载',
+        'Downloads:': '完成：',
+        Completes: '完成',
+        DLs: '完成',
+
+        '0 torrents were found for this gallery.': '当前画集还没有种子',
+        'Uploader:': '上传者:',
+        'New Torrents:': '新种子:',
+        Information: '信息',
+        'Close Window': '关闭窗口',
+        'Upload Torrent': '上传种子',
+        '\n\t\tYou can add a torrent for this gallery by uploading it here. The maximum torrent file size is 10 MB.':
+            '您可以在这里上传来为此库添加种子。最大 Torrent 文件大小为 10MB。',
+        '\n\t\tNote that you have to download the finished torrent from this site after uploading for stats to be recorded.\n\t':
+            '请注意，您必须在上传后从该站点下载私有种子，以便记录统计信息。',
+        '\n\t\tIf you are creating the torrent yourself, set this as announce tracker: ':
+            '如果您自己创建 Torrent，请将其设置为 AnnounceTracker：',
+        'Personalized Torrent': '私有种子',
+        'Redistributable Torrent': '可再分发种子',
+        '(Just For You - this makes sure to record your stats)\n': '(只属于你 - 确保记录你的下载统计信息)',
+        '(use if you want a file you can post or give to others)': '(如果您想再发布或提供给其他人使用)',
+        'Back to Index': '返回',
+        'Vote to Expunge': '投票删除',
+        'No comments were given for this torrent.': '这个种子没有评论',
+    },
+    {
+        [regex]: /^\/archiver\.php/,
+
+        'Current Funds:': '现有资金',
+        'Estimated Size: \xA0 ': '预计大小： ',
+        'Download Cost: \xA0 ': '下载费用： ',
+        'Download Original Archive': '下载原始档案',
+        'Download Resample Archive': '下载重采样档案',
+        'H@H Downloader': 'H@H 下载器',
+        Original: '原图',
+        'Your H@H client appears to be offline.': '你的 H@H 客户端处于离线状态',
+        'Turn it on, then try again.': '请启动 H@H 客户端后重试',
     },
 ];
 

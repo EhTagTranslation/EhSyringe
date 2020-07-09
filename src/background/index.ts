@@ -12,6 +12,7 @@ class Background {
     readonly contextMenu: typeof contextMenu = require('./context-menu').contextMenu;
     readonly omnibox: typeof omnibox = require('./omnibox').omnibox;
     readonly tagDatabase: typeof tagDatabase = require('./tag-database').tagDatabase;
+    readonly extensionUpdate = require('./extension-updater');
 }
 
 function getBackground(): Background {
