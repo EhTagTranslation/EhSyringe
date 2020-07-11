@@ -21,9 +21,7 @@ const defaultStatus: DownloadStatus = {
 class Updater {
     readonly lastCheckData = new BehaviorSubject<ReleaseCheckData>({
         old: '',
-        oldLink: '',
         new: '',
-        newLink: '',
         timestamp: 0,
         githubRelease: null,
     });
@@ -55,7 +53,7 @@ class Updater {
         this.initDownloadStatus();
         try {
             const data = await this.download();
-            tagDatabase.update(data.content, data.filename.endsWith('.gz'), data.release.html_url);
+            tagDatabase.update(data.content, data.filename.endsWith('.gz'));
 
             badgeLoading.set('OK', '#00C801');
             this.pushDownloadStatus({
@@ -67,7 +65,6 @@ class Updater {
             this.lastCheckData.next({
                 ...this.lastCheckData.value,
                 old: tagDatabase.sha.value,
-                oldLink: tagDatabase.releaseLink.value,
             });
             await sleep(2500);
             if (this.downloadStatus.value.complete) {
@@ -75,11 +72,12 @@ class Updater {
                 this.initDownloadStatus();
             }
         } catch (err) {
-            logger.error(err);
+            const e = err as Error;
+            logger.error(e);
             this.pushDownloadStatus({
                 run: false,
                 error: true,
-                info: err?.message ? err.message : '更新失败',
+                info: e?.message ? e.message : '更新失败',
             });
         }
     }
@@ -105,7 +103,7 @@ class Updater {
             }
         }
 
-        const { sha, releaseLink } = await browser.storage.local.get(['sha', 'releaseLink']);
+        const { sha } = await browser.storage.local.get(['sha']);
         const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
         const info = (await (await fetch(githubDownloadUrl)).json()) as GithubRelease;
 
@@ -114,9 +112,7 @@ class Updater {
         }
         this.lastCheckData.next({
             old: sha,
-            oldLink: releaseLink,
             new: info.target_commitish,
-            newLink: info.html_url,
             githubRelease: info,
             timestamp: new Date().getTime(),
         });

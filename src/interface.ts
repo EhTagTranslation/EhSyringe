@@ -125,9 +125,7 @@ interface Author {
 
 export interface ReleaseCheckData {
     old: string;
-    oldLink: string;
     new: string;
-    newLink: string;
     timestamp: number;
     githubRelease: GithubRelease | null;
 }

@@ -15,9 +15,7 @@ interface PopupState {
     updateTime: string;
     updateTimeFull: string;
     extensionVersion: string;
-    shaRef: string;
     newSha: string;
-    newShaRef: string;
     versionInfo: string;
     updateAvailable: boolean;
     updateButtonDisabled: boolean;
@@ -54,13 +52,11 @@ class Popup {
     private configOriginal!: ConfigData;
     private readonly _state: PopupState = {
         sha: '',
-        shaRef: '',
         info: '',
         updateTime: '',
         updateTimeFull: '',
         extensionVersion: '',
         newSha: '',
-        newShaRef: '',
         versionInfo: '',
         updateAvailable: false,
         updateButtonDisabled: false,
@@ -107,10 +103,8 @@ class Popup {
 
     getVersion(): void {
         const sha = background.tagDatabase.sha.value;
-        const releaseLink = background.tagDatabase.releaseLink.value;
         const updateTime = background.tagDatabase.updateTime.value;
-        this.state.sha = sha ? sha.slice(0, 6) : 'N/A';
-        this.state.shaRef = releaseLink || '';
+        this.state.sha = sha ? sha.slice(0, 7) : 'N/A';
         this.state.updateTime = updateTime ? dateDiff(updateTime) : 'N/A';
         this.state.updateTimeFull = updateTime?.toLocaleString() ?? 'N/A';
     }
@@ -122,8 +116,7 @@ class Popup {
         if (data?.new) {
             const hasNewData = (this.state.updateAvailable = data.new !== data.old);
             if (hasNewData) {
-                this.state.newSha = data.new.slice(0, 6);
-                this.state.newShaRef = data.newLink;
+                this.state.newSha = data.new.slice(0, 7);
                 this.state.versionInfo = `有更新！`;
             } else {
                 this.state.versionInfo = '已是最新版本';
@@ -173,7 +166,6 @@ class Popup {
     _logoTemplate(progress = 0): SVGTemplateResult {
         const PushRodStyle = `transform: translate(${(progress / 400) * 70}px, 0)`;
         const EnemaStyle = `transform: scaleX(${progress / 100})`;
-
         return svg`
     <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
       <defs>
@@ -237,11 +229,11 @@ class Popup {
   </svg>`;
     }
 
-    changeConfigValue(key: string, value: any): void {
+    changeConfigValue<T extends keyof ConfigData>(key: T, value: ConfigData[T]): void {
         if (key === 'introduceImageLevel') {
             this.state.configValue = {
                 ...this.state.configValue,
-                introduceImageLevel: value - 1,
+                introduceImageLevel: (value as ConfigData['introduceImageLevel']) - 1,
             };
         }
         this.state.configValue = {
@@ -251,8 +243,10 @@ class Popup {
     }
 
     changeConfigUnsaved(): boolean {
-        const keys = [...Object.keys(this.configOriginal), ...Object.keys(this.state.configValue)];
-        return !keys.every((key) => (this.configOriginal as any)[key] === (this.state.configValue as any)[key]);
+        const keys = [...Object.keys(this.configOriginal), ...Object.keys(this.state.configValue)] as Array<
+            keyof ConfigData
+        >;
+        return !keys.every((key) => this.configOriginal[key] === this.state.configValue[key]);
     }
 
     async saveConfig(): Promise<void> {
@@ -271,7 +265,7 @@ class Popup {
     _settingPanelTemplate(): TemplateResult {
         const state = this.state;
 
-        const checkboxList: Array<{ key: string; name: string }> = [
+        const checkboxList: Array<{ key: keyof ConfigData; name: string }> = [
             { key: 'translateUI', name: '翻译界面' },
             { key: 'translateTag', name: '翻译标签' },
             { key: 'showIntroduce', name: '标签介绍' },
@@ -299,11 +293,11 @@ class Popup {
                                                     item.key,
                                                     (e.target as HTMLInputElement).checked,
                                                 )}
-                                            ?checked="${(this.state.configValue as any)[item.key]}"
+                                            ?checked="${this.state.configValue[item.key]}"
                                         />
                                         ${item.name}
                                         <svg
-                                            class="${(this.state.configValue as any)[item.key] ? 'checked' : ''}"
+                                            class="${this.state.configValue[item.key] ? 'checked' : ''}"
                                             viewBox="0 0 100 100"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
@@ -398,7 +392,11 @@ class Popup {
                         <tr>
                             <th>TAG版本：</th>
                             <td>
-                                <a href="${state.shaRef}" class="monospace">${state.sha || ' --- '}</a>
+                                <a
+                                    href="https://github.com/EhTagTranslation/Database/tree/${state.sha}"
+                                    class="monospace"
+                                    >${state.sha || ' --- '}</a
+                                >
                             </td>
                         </tr>
                         <tr>
@@ -411,7 +409,9 @@ class Popup {
                             <th>更新检查：</th>
                             <td>
                                 <span class="monospace ${state.updateAvailable ? 'hasNew' : ''}"
-                                    ><a class="${state.updateAvailable ? '' : 'hidden'}" href="${state.newShaRef}"
+                                    ><a
+                                        class="${state.updateAvailable ? '' : 'hidden'}"
+                                        href="https://github.com/EhTagTranslation/Database/tree/${state.newSha}"
                                         >${state.newSha || ''}</a
                                     ></span
                                 >
