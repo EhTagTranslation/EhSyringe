@@ -129,7 +129,7 @@ if (argv.userScript) {
 } else {
     /** @type {import('type-fest').PackageJson} */
     const pkgJson = require('./package.json');
-    const vendor = argv.webExtVendor ? String(argv.webExtVendor) : undefined;
+    const vendor = argv.vender ? String(argv.vender) : undefined;
     config.plugins.push(
         new WebExtensionPlugin({
             vendor,
