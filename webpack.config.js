@@ -1,113 +1,19 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
-const ZipPlugin = require('zip-webpack-plugin');
+const WebExtensionPlugin = require('webpack-webextension-plugin');
 const webpack = require('webpack');
+const WebpackUserscript = require('webpack-userscript');
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
+const { argv } = require('yargs');
 
-const plugins = [];
-
-const pack = process.argv.indexOf('--pack') > 0;
-const firefox = process.argv.indexOf('--firefox') > 0;
-const android = process.argv.indexOf('--android') > 0;
-const nodb = process.argv.indexOf('--no-db') > 0;
-
-if (firefox || android) {
-    const webextRunParams = android
-        ? {
-              browserConsole: false,
-              target: 'firefox-android',
-              adbDevice: '696ea70c',
-          }
-        : {
-              browserConsole: false,
-              firefox: 'firefoxdeveloperedition',
-              startUrl: ['about:debugging#addons', 'https://e-hentai.org'],
-          };
-    plugins.push(
-        new WebExtWebpackPlugin({
-            build: {
-                artifactsDir: 'artifacts',
-                overwriteDest: true,
-            },
-            run: webextRunParams,
-        }),
-    );
-}
-
-if (pack) {
-    const releaseDir = path.resolve(__dirname, 'release');
-    plugins.push(
-        new WebExtWebpackPlugin({
-            build: {
-                artifactsDir: releaseDir,
-                overwriteDest: true,
-                ignoreFiles: ['**/*.chrome.*'],
-            },
-        }),
-    );
-    plugins.push(
-        new ZipPlugin({
-            path: path.resolve(__dirname, 'release'),
-            exclude: ['../**', 'manifest.json'],
-            pathMapper: (p) => {
-                return p.replace(/\.chrome\.([^\.]*)$/i, '.$1');
-            },
-            filename: 'EhSyringe.chrome',
-            pathPrefix: 'EhSyringe',
-        }),
-    );
-}
-
-function transformManifest(content, isChrome) {
-    const data = require('./package.json');
-    const manifest = JSON.parse(content.toString());
-    if (isChrome) {
-        manifest.applications = undefined;
-    }
-    return Buffer.from(
-        JSON.stringify(manifest, (k, v) => {
-            if (k.startsWith('$')) return undefined;
-            if (typeof v !== 'string') return v;
-            return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
-        }),
-    );
-}
-
+/** @type { ConstructorParameters< CopyPlugin>[0]['patterns'][number][] } */
 const copyPatterns = [
     { from: 'src/assets', to: 'assets' },
     { from: 'src/template', to: 'template' },
 ];
 
-if (pack) {
-    copyPatterns.push(
-        {
-            from: 'src/manifest.json',
-            to: 'manifest.chrome.json',
-            transform: (content) => transformManifest(content, true),
-        },
-        {
-            from: 'src/manifest.json',
-            to: 'manifest.json',
-            transform: (content) => transformManifest(content, false),
-        },
-    );
-} else {
-    copyPatterns.push({
-        from: 'src/manifest.json',
-        to: 'manifest.json',
-        transform: (content) => transformManifest(content, !(firefox || android)),
-    });
-}
-
-if (nodb) {
-    copyPatterns.push({
-        from: 'tools/tag-empty.db',
-        to: 'assets/tag.db',
-    });
-}
-
 /** @type {webpack.Configuration} */
-module.exports = {
+const config = {
     entry: {
         background: path.resolve(__dirname, 'src/background/index.ts'),
         main: path.resolve(__dirname, 'src/main.ts'),
@@ -123,6 +29,15 @@ module.exports = {
                 test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
+            },
+            {
+                include: [path.resolve(__dirname, 'src/resources')],
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[folder]/[name].[hash:8].[ext]',
+                    },
+                },
             },
             {
                 test: /\.less$/,
@@ -190,7 +105,44 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        plugins: [new TsconfigPathsPlugin()],
     },
-    plugins: [new CopyPlugin({ patterns: copyPatterns }), ...plugins],
+    plugins: [new CopyPlugin({ patterns: copyPatterns })],
     devtool: 'source-map',
+    performance: {
+        maxAssetSize: 1024 ** 2,
+    },
 };
+
+if (argv.userScript) {
+    config.plugins.push(
+        new WebpackUserscript({
+            headers: {
+                version: `[version]`,
+            },
+        }),
+    );
+    config.output = {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].user.js',
+    };
+} else {
+    /** @type {import('type-fest').PackageJson} */
+    const pkgJson = require('./package.json');
+    const vendor = argv.webExtVendor ? String(argv.webExtVendor) : undefined;
+    config.plugins.push(
+        new WebExtensionPlugin({
+            vendor,
+            manifestDefaults: {
+                name: pkgJson.displayName,
+                short_name: pkgJson.displayName,
+                description: pkgJson.description,
+                author: pkgJson.author,
+                version: pkgJson.version,
+                homepage_url: pkgJson.homepage,
+            },
+        }),
+    );
+}
+
+module.exports = config;

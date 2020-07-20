@@ -1,13 +1,6 @@
 {
-    "$schema": "http://json.schemastore.org/webextension",
     "manifest_version": 2,
-    "name": "${displayName}",
-    "short_name": "${displayName}",
-    "description": "${description}",
-    "author": "${author}",
-    "version": "${version}",
-    "homepage_url": "${homepage}",
-    "applications": {
+    "__firefox__applications": {
         "gecko": {
             "id": "{759d5566-1dce-41ae-bae9-00dd5172c422}",
             "strict_min_version": "57.0"

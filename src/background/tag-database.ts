@@ -8,6 +8,8 @@ import { chromeMessage } from '../tool/chrome-message';
 import { logger } from '../tool/log';
 import { getFullKey, getSearchTerm } from '../tool/tool';
 
+import db from 'resources/tag.db';
+
 const emojiReg = emojiRegex();
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
@@ -56,8 +58,7 @@ class TagDatabase {
     }
 
     async updateUseLocal(): Promise<void> {
-        const dbUrl = chrome.runtime.getURL('assets/tag.db');
-        const r = await fetch(dbUrl);
+        const r = await fetch(db);
         const buf = await r.arrayBuffer();
         this.update(buf, true, new Date(0));
     }

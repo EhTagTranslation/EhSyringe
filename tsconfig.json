@@ -12,6 +12,7 @@
         "strict": true,
         "noImplicitReturns": true,
         "experimentalDecorators": true,
+        "baseUrl": "src",
         "plugins": [
             {
                 "name": "typescript-lit-html-plugin"
