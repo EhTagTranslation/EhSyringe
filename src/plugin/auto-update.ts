@@ -1,4 +1,4 @@
-import { chromeMessage } from '../../tool/chrome-message';
+import { chromeMessage } from '../tool/chrome-message';
 import { Service } from 'services';
 import { Logger } from 'services/logger';
 import { Storage } from 'services/storage';

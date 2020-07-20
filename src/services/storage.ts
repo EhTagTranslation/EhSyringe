@@ -20,9 +20,11 @@ export interface ConfigData {
 
 export interface StorageItems {
     config: ConfigData;
+    extensionCheck: number;
 }
 
 const defaults: StorageItems = {
+    extensionCheck: 0,
     config: {
         translateUi: true,
         translateTag: true,

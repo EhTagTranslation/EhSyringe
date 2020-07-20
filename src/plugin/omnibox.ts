@@ -1,14 +1,25 @@
 import { browser } from 'webextension-polyfill-ts';
 import { makeTagMatchHtml } from '../tool/tool';
-import { suggest } from './suggest';
-import { logger } from '../services/logger';
+import { suggest } from '../background/suggest';
+import { Service } from 'typedi';
+import { Logger } from 'services/logger';
+import { openInTab } from 'providers/utils';
 
-class OmniBox {
-    constructor() {
+@Service()
+export class OmniBox {
+    constructor(readonly logger: Logger) {
+        if (!chrome.omnibox) {
+            logger.info('不支持 Omnibox');
+            return;
+        }
+        this.init();
+    }
+
+    private init(): void {
         chrome.omnibox.onInputChanged.addListener(this.onInputChanged);
         chrome.omnibox.onInputEntered.addListener(this.onInputEntered);
         chrome.omnibox.onInputStarted.addListener(() => {
-            this.onInputStarted().catch(logger.error);
+            this.onInputStarted().catch(this.logger.error);
         });
     }
 
@@ -46,18 +57,6 @@ class OmniBox {
     };
 
     readonly onInputEntered = (text: string): void => {
-        chrome.tabs.create({
-            url: `${this.origin}/?f_search=${encodeURIComponent(text)}`,
-        });
+        openInTab(`${this.origin}/?f_search=${encodeURIComponent(text)}`);
     };
 }
-
-function init(): boolean {
-    if (!chrome.omnibox) {
-        return false;
-    }
-    new OmniBox();
-    return true;
-}
-
-export const omnibox = init();

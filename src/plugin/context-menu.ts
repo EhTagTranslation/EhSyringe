@@ -1,7 +1,18 @@
 import { EHTNamespaceName } from '../interface';
 import { getEditorUrl } from '../tool/tool';
+import { Service } from 'services';
+import { createMenu, Context, Menu, OnClickData } from 'providers/menu';
+import { openInTab } from 'providers/utils';
 
-export class ContextMenu implements chrome.contextMenus.CreateProperties {
+@Service()
+export class ContextMenu implements Menu {
+    constructor() {
+        this.init();
+    }
+
+    private init(): void {
+        createMenu(this);
+    }
     readonly documentUrlPatterns = [
         '*://exhentai.org/*',
         '*://e-hentai.org/*',
@@ -15,28 +26,15 @@ export class ContextMenu implements chrome.contextMenus.CreateProperties {
         '*://*.exhentai.org/tag/*',
         '*://*.e-hentai.org/tag/*',
     ];
-    readonly contexts = ['link'];
+    readonly contexts: Context[] = ['link'];
 
-    readonly onclick = (info: chrome.contextMenus.OnClickData): void => {
-        if (!info.linkUrl || !info.linkUrl.includes('/tag/')) {
+    readonly onclick = (info: OnClickData): void => {
+        if (!info.url || !info.url.includes('/tag/')) {
             return;
         }
-        const seg = info.linkUrl.split('/').pop()?.replace(/\+/g, ' ').split(':') ?? [];
+        const seg = info.url.split('/').pop()?.replace(/\+/g, ' ').split(':') ?? [];
         const namespace = seg.length <= 1 ? 'misc' : (seg[0] as EHTNamespaceName);
         const tag = seg.pop() ?? '';
-        chrome.tabs.create({
-            url: getEditorUrl(namespace, tag),
-        });
+        openInTab(getEditorUrl(namespace, tag));
     };
 }
-
-function init(): boolean {
-    if (!chrome.contextMenus) {
-        return false;
-    }
-    const menu = new ContextMenu();
-    chrome.contextMenus.create(menu);
-    return true;
-}
-
-export const contextMenu = init();

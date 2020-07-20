@@ -19,7 +19,7 @@ const config = {
     module: {
         rules: [
             {
-                include: [path.resolve(__dirname, 'src/resources')],
+                include: [path.resolve(__dirname, 'src/resources'), path.resolve(__dirname, 'src/assets')],
                 use: {
                     loader: 'url-loader',
                     options: {
