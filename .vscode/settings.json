@@ -19,11 +19,5 @@
             "url": "http://json.schemastore.org/webextension"
         }
     ],
-    "cSpell.words": [
-        "ehgt",
-        "ehsyringe",
-        "exhentai",
-        "hentai",
-        "omnibox"
-    ]
+    "cSpell.words": ["ehgt", "ehsyringe", "exhentai", "hentai", "omnibox"]
 }

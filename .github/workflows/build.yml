@@ -16,7 +16,10 @@ jobs:
             - name: Install
               uses: bahmutov/npm-install@v1
             - name: yarn build
-              run: yarn build:firefox && yarn build:chrome
+              run: |
+                  yarn build:firefox
+                  yarn build:chrome
+                  yarn build:monkey
             - uses: actions/upload-artifact@v2
               with:
                   path: releases/*
