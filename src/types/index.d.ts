@@ -1,4 +1,4 @@
 declare module 'resources/*' {
-    const path: string;
-    export default path;
+    const dataUrl: string;
+    export default dataUrl;
 }

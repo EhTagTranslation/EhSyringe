@@ -1,7 +1,7 @@
 import { getUiData } from '../../data/ui-data';
 import { TagReplace } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
-import { config } from '../../tool/config-manage';
+import { config } from 'providers/settings';
 import { logger } from '../../tool/log';
 
 import './syringe.less';
@@ -18,11 +18,10 @@ import './syringe.less';
         chrome.storage.local.remove('tagDB');
         chrome.storage.local.remove('sha');
     };
-    const win = window as any;
-    if (win.exportFunction) {
-        win.exportFunction(tagClear, window, { defineAs: 'tagClear' });
+    if ('exportFunction' in window) {
+        (window as any).exportFunction(tagClear, window, { defineAs: 'tagClear' });
     } else {
-        win.tagClear = tagClear;
+        Object.defineProperty(window, 'tagClear', { value: tagClear, configurable: true });
     }
 })();
 

@@ -18,5 +18,10 @@
             "fileMatch": ["manifest.json"],
             "url": "http://json.schemastore.org/webextension"
         }
+    ],
+    "cSpell.words": [
+        "ehgt",
+        "exhentai",
+        "hentai"
     ]
 }

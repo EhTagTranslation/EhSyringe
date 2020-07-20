@@ -2,27 +2,18 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebExtensionPlugin = require('webpack-webextension-plugin');
 const webpack = require('webpack');
-const WebpackUserscript = require('webpack-userscript');
+const WebpackUserScript = require('webpack-userscript');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { argv } = require('yargs');
+const glob = require('glob');
 
-/** @type { ConstructorParameters< CopyPlugin>[0]['patterns'][number][] } */
-const copyPatterns = [
-    { from: 'src/assets', to: 'assets' },
-    { from: 'src/template', to: 'template' },
-];
+/** @type {import('type-fest').PackageJson} */
+const pkgJson = require('./package.json');
+
+let type = '';
 
 /** @type {webpack.Configuration} */
 const config = {
-    entry: {
-        background: path.resolve(__dirname, 'src/background/index.ts'),
-        main: path.resolve(__dirname, 'src/main.ts'),
-        popup: path.resolve(__dirname, 'src/popup/popup.ts'),
-    },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'script/[name].js',
-    },
     module: {
         rules: [
             {
@@ -33,7 +24,7 @@ const config = {
             {
                 include: [path.resolve(__dirname, 'src/resources')],
                 use: {
-                    loader: 'file-loader',
+                    loader: 'url-loader',
                     options: {
                         name: '[folder]/[name].[hash:8].[ext]',
                     },
@@ -107,30 +98,57 @@ const config = {
         extensions: ['.tsx', '.ts', '.js'],
         plugins: [new TsconfigPathsPlugin()],
     },
-    plugins: [new CopyPlugin({ patterns: copyPatterns })],
+    plugins: [
+        new webpack.NormalModuleReplacementPlugin(/providers\/(.+)$/, (resource) => {
+            /** @type {string} */
+            let req = resource.request;
+            if (req.startsWith('./interface/') || req.includes('providers/interface/')) {
+                return;
+            }
+            req = req.replace('providers/', `providers/${type}/`);
+            resource.request = req;
+        }),
+    ],
     devtool: 'source-map',
     performance: {
-        maxAssetSize: 1024 ** 2,
+        maxEntrypointSize: 2 * 1024 ** 2,
+        maxAssetSize: 2 * 1024 ** 2,
     },
 };
 
 if (argv.userScript) {
+    type = 'user-script';
+    config.entry = path.resolve(__dirname, 'src/user-script.ts');
     config.plugins.push(
-        new WebpackUserscript({
+        new WebpackUserScript({
             headers: {
-                version: `[version]`,
+                name: String(pkgJson.displayName || pkgJson.name),
+                match: ['*://e-hentai.org/*', '*://*/e-hentai.org/*', '*://exhentai.org/*', '*://*/exhentai.org/*'],
             },
         }),
     );
     config.output = {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].user.js',
+        path: path.resolve(__dirname, 'releases'),
+        filename: `${pkgJson.name}.user.js`,
     };
 } else {
-    /** @type {import('type-fest').PackageJson} */
-    const pkgJson = require('./package.json');
+    type = 'web-ext';
+    config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
+        obj[path.parse(el).name] = path.resolve(__dirname, el);
+        return obj;
+    }, {});
+    config.output = {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'script/[name].js',
+    };
     const vendor = argv.vender ? String(argv.vender) : undefined;
     config.plugins.push(
+        new CopyPlugin({
+            patterns: [
+                { from: 'src/assets', to: 'assets' },
+                { from: 'src/template', to: 'template' },
+            ],
+        }),
         new WebExtensionPlugin({
             vendor,
             manifestDefaults: {

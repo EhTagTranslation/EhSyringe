@@ -31,7 +31,7 @@
     "content_scripts": [
         {
             "matches": ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
-            "js": ["script/main.js"],
+            "js": ["script/page.js"],
             "run_at": "document_start"
         }
     ],
