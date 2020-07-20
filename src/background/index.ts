@@ -1,4 +1,4 @@
-import { logger } from '../tool/log';
+import { logger } from '../services/logger';
 
 import type { contextMenu } from './context-menu';
 import type { omnibox } from './omnibox';

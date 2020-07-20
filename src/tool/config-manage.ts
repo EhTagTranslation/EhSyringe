@@ -1,6 +1,6 @@
 import { browser } from 'webextension-polyfill-ts';
 
-import { logger } from './log';
+import { logger } from '../services/logger';
 import { load, save } from './storage';
 
 export interface ConfigData {

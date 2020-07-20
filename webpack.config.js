@@ -19,11 +19,6 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-            {
                 include: [path.resolve(__dirname, 'src/resources')],
                 use: {
                     loader: 'url-loader',
@@ -31,6 +26,11 @@ const config = {
                         name: '[folder]/[name].[hash:8].[ext]',
                     },
                 },
+            },
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
             {
                 test: /\.less$/,
@@ -104,7 +104,7 @@ const config = {
         new webpack.NormalModuleReplacementPlugin(/providers\/(.+)$/, (resource) => {
             /** @type {string} */
             let req = resource.request;
-            if (req.startsWith('./interface/') || req.includes('providers/interface/')) {
+            if (req.startsWith('./common/') || req.includes('providers/common/')) {
                 return;
             }
             req = req.replace('providers/', `providers/${type}/`);
@@ -134,11 +134,14 @@ if (argv.userScript) {
                 downloadURL: url.resolve(pkgJson.homepage, `releases/latest/download/${pkgJson.name}.user.js`),
                 'run-at': 'document-start',
                 grant: [
-                    'GM_addStyle',
+                    'unsafeWindow',
                     'GM_deleteValue',
                     'GM_listValues',
                     'GM_setValue',
                     'GM_getValue',
+                    'GM_addValueChangeListener',
+                    'GM_removeValueChangeListener',
+                    'GM_addStyle',
                     'GM_log',
                     'GM_openInTab',
                     'GM_notification',

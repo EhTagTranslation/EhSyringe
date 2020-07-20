@@ -1,11 +1,11 @@
 import { UiTranslation } from 'services/ui-translation';
-import { ioc } from 'services';
+import { Service } from 'services';
 import { TagReplace } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
-import { config } from 'providers/settings';
-import { logger } from '../../tool/log';
+import { Storage, ConfigData } from 'services/storage';
+import { Logger } from 'services/logger';
 
-import './syringe.less';
+import './index.less';
 
 (function (): void {
     const tagClear = (): void => {
@@ -20,6 +20,7 @@ import './syringe.less';
         chrome.storage.local.remove('sha');
     };
     if ('exportFunction' in window) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
         (window as any).exportFunction(tagClear, window, { defineAs: 'tagClear' });
     } else {
         Object.defineProperty(window, 'tagClear', { value: tagClear, configurable: true });
@@ -34,24 +35,25 @@ function isText(node: Node): node is Text {
     return node.nodeType === Node.TEXT_NODE;
 }
 
-class Syringe {
+@Service()
+export class Syringe {
+    constructor(readonly storage: Storage, readonly uiTranslation: UiTranslation, readonly logger: Logger) {
+        this.init().catch(this.logger.error);
+    }
+
     tagReplace?: TagReplace;
     pendingTags: Node[] = [];
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
-    readonly conf = config.syncGet();
+    config!: ConfigData;
     observer?: MutationObserver;
 
-    readonly uiData = ioc.get(UiTranslation).get();
+    readonly uiData = this.uiTranslation.get();
 
-    constructor() {
-        config.sync().catch(logger.error);
-        if (this.conf.translateTag || this.conf.translateUI) {
-            this.init();
-        }
-    }
+    private async init(): Promise<void> {
+        this.config = await this.storage.get('config');
+        if (!(this.config.translateUi || this.config.translateTag)) return;
 
-    private init(): void {
         window.document.addEventListener('DOMContentLoaded', () => {
             this.documentEnd = true;
         });
@@ -78,8 +80,8 @@ class Syringe {
             subtree: true,
         });
 
-        if (this.conf.translateTag) {
-            const timer = logger.time('获取替换数据');
+        if (this.config.translateTag) {
+            const timer = this.logger.time('获取替换数据');
             chromeMessage
                 .send('get-tagreplace', null)
                 .then((data) => {
@@ -89,17 +91,17 @@ class Syringe {
                     this.pendingTags = [];
                     pendingTags.forEach((t) => this.translateTagImpl(t));
                 })
-                .catch(logger.error);
+                .catch(this.logger.error);
         }
     }
 
     setBodyClass(node: HTMLBodyElement): void {
         if (!node) return;
         node.classList.add(!location.host.includes('exhentai') ? 'eh' : 'ex');
-        if (!this.conf.showIcon) {
+        if (!this.config.showIcon) {
             node.classList.add('ehs-hide-icon');
         }
-        node.classList.add(`ehs-image-level-${this.conf.introduceImageLevel}`);
+        node.classList.add(`ehs-image-level-${this.config.introduceImageLevel}`);
     }
 
     translateNode(node: Node): void {
@@ -116,11 +118,11 @@ class Syringe {
         }
 
         let handled = false;
-        if (this.conf.translateTag) {
+        if (this.config.translateTag) {
             handled = this.translateTag(node);
         }
         /* tag 处理过的ui不再处理*/
-        if (this.conf.translateUI && !handled) {
+        if (this.config.translateUi && !handled) {
             this.translateUi(node);
         }
     }
@@ -182,7 +184,7 @@ class Syringe {
             if (value !== node.textContent) {
                 parentElement.innerHTML = value;
             } else {
-                logger.log('翻译内容相同', value);
+                this.logger.log('翻译内容相同', value);
             }
             return true;
         }
@@ -303,5 +305,3 @@ class Syringe {
         }
     }
 }
-
-export const syringe = new Syringe();

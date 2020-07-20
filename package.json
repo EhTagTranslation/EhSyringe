@@ -33,6 +33,7 @@
     "homepage": "https://github.com/EhTagTranslation/EhSyringe",
     "devDependencies": {
         "@types/chrome": "^0.0.121",
+        "@types/escape-html": "^1.0.0",
         "@types/node": "^14.0.23",
         "@types/pako": "^1.0.1",
         "@types/tampermonkey": "^4.0.0",
@@ -70,6 +71,7 @@
     },
     "dependencies": {
         "emoji-regex": "^9.0.0",
+        "escape-html": "^1.0.3",
         "lit-element": "^2.3.1",
         "lit-html": "^1.2.1",
         "normalize.css": "^8.0.1",

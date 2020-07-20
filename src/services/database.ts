@@ -1,4 +1,4 @@
-import { Service } from 'typedi';
+import { Service } from '.';
 import { GithubRelease, EHTDatabase } from 'interface';
 import { Http } from './http';
 

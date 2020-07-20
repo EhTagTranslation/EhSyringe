@@ -1,16 +1,17 @@
-import { logger } from 'tool/log';
+import { Logger } from 'services/logger';
 import { dataMaps, REGEX, HOST } from './helper';
-import { Service } from 'typedi';
+import { Service } from '..';
 import './data';
 
 @Service()
 export class UiTranslation {
+    constructor(readonly logger: Logger) {}
     get(url: URL | Location = location): Record<string, string> {
         if (!url || !(url.host.endsWith('e-hentai.org') || url.host.endsWith('exhentai.org'))) {
             return {};
         }
         const path = url.pathname + url.search;
-        logger.log('获取 UI 翻译：', path);
+        this.logger.log('获取 UI 翻译：', path);
         const results: { [key: string]: string } = {};
         Object.assign(
             results,

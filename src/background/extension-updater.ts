@@ -1,5 +1,5 @@
 import { browser } from 'webextension-polyfill-ts';
-import { logger } from '../tool/log';
+import { logger } from '../services/logger';
 import { chromeMessage } from '../tool/chrome-message';
 
 let checked = false;

@@ -1,6 +1,6 @@
 import { Suggestion, TagList, TagReplace, TagItem } from '../interface';
 
-import { logger } from './log';
+import { logger } from '../services/logger';
 
 interface MessageMap {
     'get-taglist': [string | null, TagList | TagItem | undefined];

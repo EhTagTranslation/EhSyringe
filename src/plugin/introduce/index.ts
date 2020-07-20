@@ -1,27 +1,32 @@
-import { EHTNamespaceName, TagItem } from '../../interface';
+import { EHTNamespaceName } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
-import { config, ConfigData } from '../../tool/config-manage';
-import { logger } from '../../tool/log';
 import { getEditorUrl, getFullKey } from '../../tool/tool';
+import { Service } from 'services';
 
-import './introduce.less';
+import './index.less';
+import { Logger } from 'services/logger';
+import { Storage } from 'services/storage';
 
-class Introduce {
+@Service()
+export class Introduce {
+    constructor(readonly logger: Logger, readonly storage: Storage) {
+        this.init().catch(logger.error);
+    }
     async init(): Promise<void> {
-        const conf = await config.get();
+        const conf = await this.storage.get('config');
         if (!conf.showIntroduce) return;
 
-        const taglist = document.querySelector('#taglist') as HTMLDivElement;
-        this.tagList = taglist;
-        const gright = document.querySelector('#gd5');
+        const tagList = document.querySelector('#taglist') as HTMLDivElement;
+        this.tagList = tagList;
+        const gridRight = document.querySelector('#gd5');
 
-        if (!(taglist && gright)) return;
+        if (!(tagList && gridRight)) return;
 
-        logger.log('标签介绍');
+        this.logger.log('标签介绍');
         this.initIntroduceBox();
-        gright.insertBefore(this.introduceBox, null);
+        gridRight.insertBefore(this.introduceBox, null);
 
-        taglist.addEventListener('click', this.onclick);
+        tagList.addEventListener('click', this.onclick);
     }
 
     private initIntroduceBox(): void {
@@ -74,7 +79,7 @@ class Introduce {
     }
 
     async openIntroduceBox(namespace: EHTNamespaceName, tag: string, canceled: () => boolean): Promise<void> {
-        const timer = logger.time('获取标签介绍');
+        const timer = this.logger.time('获取标签介绍');
         const tagData = await chromeMessage.send('get-taglist', getFullKey(namespace, tag));
         timer.log(tagData);
         timer.end();
@@ -152,8 +157,6 @@ class Introduce {
             tag = m2.join(':');
         }
 
-        this.openIntroduceBox(namespace, tag, () => this.target !== target).catch(logger.error);
+        this.openIntroduceBox(namespace, tag, () => this.target !== target).catch(this.logger.error);
     };
 }
-
-export const introduceInit = (): Promise<void> => new Introduce().init();

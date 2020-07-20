@@ -1,4 +1,4 @@
-import { Service } from 'typedi';
+import { Service } from '.';
 
 @Service()
 export class Http {

@@ -1,7 +1,7 @@
 import { browser } from 'webextension-polyfill-ts';
 import { makeTagMatchHtml } from '../tool/tool';
 import { suggest } from './suggest';
-import { logger } from '../tool/log';
+import { logger } from '../services/logger';
 
 class OmniBox {
     constructor() {

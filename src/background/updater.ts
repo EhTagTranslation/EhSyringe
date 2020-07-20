@@ -4,7 +4,7 @@ import { browser } from 'webextension-polyfill-ts';
 import { DownloadStatus, ReleaseCheckData, GithubRelease } from '../interface';
 import { badgeLoading } from '../tool/badge-loading';
 import { chromeMessage } from '../tool/chrome-message';
-import { logger } from '../tool/log';
+import { logger } from '../services/logger';
 import { sleep } from '../tool/promise';
 
 import { tagDatabase } from './tag-database';

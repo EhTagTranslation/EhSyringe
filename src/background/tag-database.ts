@@ -5,7 +5,7 @@ import { browser } from 'webextension-polyfill-ts';
 
 import { EHTDatabase, TagList, TagReplace } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
-import { logger } from '../tool/log';
+import { logger } from '../services/logger';
 import { getFullKey, getSearchTerm } from '../tool/tool';
 
 import db from 'resources/tag.db';

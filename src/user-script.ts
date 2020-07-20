@@ -1,1 +1,1 @@
-export {};
+import 'web-ext/page';

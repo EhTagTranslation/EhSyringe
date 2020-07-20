@@ -1,23 +1,35 @@
 import { fromEvent } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
+import { Service } from 'services';
 import { Suggestion } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
-import { config } from '../../tool/config-manage';
-import { logger } from '../../tool/log';
 import { makeTagMatchHtml } from '../../tool/tool';
 
-import './tag-tip.less';
+import './index.less';
+import { Storage } from 'services/storage';
+import { Logger } from 'services/logger';
 
-class TagTip {
+@Service()
+export class TagTip {
+    constructor(readonly storage: Storage, readonly logger: Logger) {
+        this.init().catch(logger.error);
+    }
+
     selectedIndex = 0;
-    readonly inputElement: HTMLInputElement;
-    readonly autoCompleteList: HTMLDivElement;
+    inputElement!: HTMLInputElement;
+    autoCompleteList!: HTMLDivElement;
     delimiter = ' ';
 
-    constructor(inputElement: HTMLInputElement, delimiter = ' ') {
-        this.delimiter = delimiter;
-        this.inputElement = inputElement;
+    private async init(): Promise<void> {
+        const conf = await this.storage.get('config');
+        if (!conf.tagTip) return;
+        this.logger.log('标签提示');
+
+        const searchInput: HTMLInputElement | null = document.querySelector('#f_search, #newtagfield, [name=f_search]');
+        if (!searchInput) return;
+        this.delimiter = location.pathname.startsWith('/g/') ? ',' : ' ';
+        this.inputElement = searchInput;
         this.inputElement.autocomplete = 'off';
         this.autoCompleteList = document.createElement('div');
         this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list';
@@ -29,7 +41,7 @@ class TagTip {
                 // distinctUntilChanged()
             )
             .subscribe((s) => {
-                this.search(s).catch(logger.error);
+                this.search(s).catch(this.logger.error);
             });
 
         fromEvent<KeyboardEvent>(this.inputElement, 'keydown').subscribe((e) => this.keydown(e));
@@ -111,7 +123,7 @@ class TagTip {
         } else if (e.code === 'Enter') {
             const children = Array.from(this.autoCompleteList.children);
             if (this.selectedIndex >= 0 && children[this.selectedIndex]) {
-                (children[this.selectedIndex] as any).click();
+                (children[this.selectedIndex] as HTMLAnchorElement).click();
                 e.preventDefault();
                 e.stopPropagation();
             }
@@ -153,14 +165,4 @@ class TagTip {
         };
         return item;
     }
-}
-
-export async function tagTipInit(): Promise<TagTip | undefined> {
-    const conf = await config.get();
-    if (!conf.tagTip) return;
-    logger.log('标签提示');
-
-    const searchInput: HTMLInputElement | null = document.querySelector('#f_search, #newtagfield, [name=f_search]');
-    if (!searchInput) return;
-    return new TagTip(searchInput);
 }

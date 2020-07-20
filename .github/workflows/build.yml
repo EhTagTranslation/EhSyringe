@@ -15,8 +15,6 @@ jobs:
                   node-version: 12
             - name: Install
               uses: bahmutov/npm-install@v1
-            - name: update-db
-              run: yarn update-db
             - name: yarn build
               run: yarn build:firefox && yarn build:chrome
             - uses: actions/upload-artifact@v2
