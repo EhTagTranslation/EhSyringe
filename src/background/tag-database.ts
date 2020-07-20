@@ -6,7 +6,7 @@ import { browser } from 'webextension-polyfill-ts';
 import { EHTDatabase, TagList, TagReplace } from '../interface';
 import { chromeMessage } from '../tool/chrome-message';
 import { logger } from '../services/logger';
-import { getFullKey, getSearchTerm } from '../tool/tool';
+import { getFullKey, getSearchTerm } from 'utils';
 
 import db from 'resources/tag.db';
 
@@ -15,7 +15,7 @@ const emojiReg = emojiRegex();
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
 const DATA_STRUCTURE_VERSION = 6;
 
-class TagDatabase {
+export class TagDatabase {
     readonly tagList = new BehaviorSubject<TagList>([]);
     readonly tagReplace = new BehaviorSubject<TagReplace>({});
     readonly updateTime = new BehaviorSubject<Date | undefined>(undefined);

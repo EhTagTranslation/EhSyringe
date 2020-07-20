@@ -12,7 +12,6 @@
         "start:chrome": "yarn start:ext --vendor=chrome",
         "start:firefox": "yarn start:ext --vendor=firefox",
         "start:monkey": "yarn start --user-script",
-        "prebuild": "yarn clean",
         "build": "webpack --mode=production",
         "build:ext": "yarn build --web-ext",
         "build:chrome": "yarn build:ext --vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o",
@@ -21,7 +20,7 @@
         "update-db": "node ./tools/update-db.js",
         "lint": "eslint ./src/**/*.ts",
         "format": "prettier --ignore-path .gitignore --write .",
-        "clean": "rimraf dist release"
+        "clean": "rimraf dist releases"
     },
     "repository": {
         "type": "git",

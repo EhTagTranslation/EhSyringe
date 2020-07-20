@@ -1,13 +1,27 @@
-import { Observable } from 'rxjs';
+import { Service } from 'typedi';
+import { Logger } from 'services/logger';
+import { EHTNamespaceName, TagItem, TagList } from 'interface';
+import { TagDatabase } from 'background/tag-database';
+import { messaging } from 'providers/messaging';
 
-import { EHTNamespaceName, Suggestion, TagItem, TagList } from '../interface';
-import { chromeMessage } from '../tool/chrome-message';
+export interface Suggestion {
+    tag: TagItem;
+    score: number;
+    term: string;
 
-import { tagDatabase } from './tag-database';
+    match: {
+        key?: { start: number; length: number };
+        name?: { start: number; length: number };
+    };
+}
 
-class Suggest {
-    constructor(tagList: Observable<TagList>) {
-        tagList.subscribe((data) => (this.tagList = data));
+@Service()
+export class Suggest {
+    constructor(readonly tagDatabase: TagDatabase, readonly logger: Logger) {
+        tagDatabase.tagList.subscribe((data) => (this.tagList = data));
+        messaging.listen('suggest-tag', (args) => {
+            return this.getSuggests(args.term, args.limit);
+        });
     }
 
     readonly nsScore: {
@@ -53,17 +67,17 @@ class Suggest {
     private markTag(tag: TagItem, search: string, term: string): Suggestion {
         const key = tag.key;
         const name = tag.name.toLowerCase();
-        const keyidx = key.indexOf(search);
-        const nameidx = name.indexOf(search);
+        const keyIdx = key.indexOf(search);
+        const nameIdx = name.indexOf(search);
         let score = 0;
         const match: Suggestion['match'] = {};
-        if (keyidx >= 0) {
-            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / key.length) * (keyidx === 0 ? 2 : 1);
-            match.key = { start: keyidx, length: search.length };
+        if (keyIdx >= 0) {
+            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / key.length) * (keyIdx === 0 ? 2 : 1);
+            match.key = { start: keyIdx, length: search.length };
         }
-        if (nameidx >= 0) {
-            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / name.length) * (nameidx === 0 ? 2 : 1);
-            match.name = { start: nameidx, length: search.length };
+        if (nameIdx >= 0) {
+            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / name.length) * (nameIdx === 0 ? 2 : 1);
+            match.name = { start: nameIdx, length: search.length };
         }
         return {
             tag,
@@ -77,17 +91,17 @@ class Suggest {
         if (!this.tagList.length || !term) {
             return [];
         }
-        let sterm = term.toLowerCase();
-        const col = sterm.indexOf(':');
+        let sTerm = term.toLowerCase();
+        const col = sTerm.indexOf(':');
         let tagList = this.tagList;
         if (col >= 1) {
-            const ns = this.nsDic[sterm.substr(0, col)];
+            const ns = this.nsDic[sTerm.substr(0, col)];
             if (ns) {
-                sterm = sterm.substr(col + 1);
+                sTerm = sTerm.substr(col + 1);
                 tagList = tagList.filter((tag) => tag.namespace === ns);
             }
         }
-        let suggestions = tagList.map((tag) => this.markTag(tag, sterm, term)).filter((st) => st.score > 0);
+        let suggestions = tagList.map((tag) => this.markTag(tag, sTerm, term)).filter((st) => st.score > 0);
         if (term) {
             suggestions = suggestions.sort((st1, st2) => st2.score - st1.score);
         }
@@ -97,15 +111,3 @@ class Suggest {
         return suggestions;
     }
 }
-
-function init(): Suggest['getSuggests'] {
-    let getSuggests: Suggest['getSuggests'] = () => [];
-    if (tagDatabase) {
-        const instance = new Suggest(tagDatabase.tagList);
-        getSuggests = instance.getSuggests.bind(instance);
-    }
-    chromeMessage.listener('suggest-tag', (args) => getSuggests(args.term, args.limit));
-    return getSuggests;
-}
-
-export const suggest = init();

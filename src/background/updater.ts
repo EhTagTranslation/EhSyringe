@@ -4,11 +4,11 @@ import { browser } from 'webextension-polyfill-ts';
 import { DownloadStatus, ReleaseCheckData, GithubRelease } from '../interface';
 import { badgeLoading } from '../tool/badge-loading';
 import { chromeMessage } from '../tool/chrome-message';
-import { logger } from '../services/logger';
+import { Logger } from 'services/logger';
 import { sleep } from '../tool/promise';
 
 import { tagDatabase } from './tag-database';
-import { downloadFile } from '../tool/tool';
+import { downloadFile } from '../utils/tool';
 
 const defaultStatus: DownloadStatus = {
     run: false,

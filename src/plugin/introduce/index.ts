@@ -1,11 +1,11 @@
-import { EHTNamespaceName } from '../../interface';
-import { chromeMessage } from '../../tool/chrome-message';
-import { getEditorUrl, getFullKey } from '../../tool/tool';
+import { EHTNamespaceName } from 'interface';
+import { getEditorUrl, getFullKey } from 'utils';
 import { Service } from 'services';
-
-import './index.less';
 import { Logger } from 'services/logger';
 import { Storage } from 'services/storage';
+import { messaging } from 'providers/messaging';
+
+import './index.less';
 
 @Service()
 export class Introduce {
@@ -80,7 +80,7 @@ export class Introduce {
 
     async openIntroduceBox(namespace: EHTNamespaceName, tag: string, canceled: () => boolean): Promise<void> {
         const timer = this.logger.time('获取标签介绍');
-        const tagData = await chromeMessage.send('get-taglist', getFullKey(namespace, tag));
+        const tagData = await messaging.emit('get-tag-list', getFullKey(namespace, tag));
         timer.log(tagData);
         timer.end();
 

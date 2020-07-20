@@ -1,14 +1,13 @@
 import { fromEvent } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-
 import { Service } from 'services';
-import { Suggestion } from '../../interface';
-import { chromeMessage } from '../../tool/chrome-message';
-import { makeTagMatchHtml } from '../../tool/tool';
-
-import './index.less';
+import { makeTagMatchHtml } from 'utils';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
+import { Suggestion } from 'plugin/suggest';
+import { messaging } from 'providers/messaging';
+
+import './index.less';
 
 @Service()
 export class TagTip {
@@ -76,7 +75,7 @@ export class TagTip {
                 if (sv.length) {
                     const svs = sv.join(' ');
                     if (!svs || svs.replace(/\s+/, '').length === 0) return;
-                    const suggestions = await chromeMessage.send('suggest-tag', {
+                    const suggestions = await messaging.emit('suggest-tag', {
                         term: svs,
                         limit: 50,
                     });

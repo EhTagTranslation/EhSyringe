@@ -1,6 +1,7 @@
 import { Menu } from '../common/menu';
 import escapeHtml from 'escape-html';
 import icon from 'assets/logo.svg';
+export * from '../common/menu';
 
 const supported = 'contextMenu' in document.documentElement && 'HTMLMenuItemElement' in window;
 

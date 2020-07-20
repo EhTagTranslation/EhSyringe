@@ -4,9 +4,7 @@ import { browser } from 'webextension-polyfill-ts';
 import { background } from '../background';
 import { DownloadStatus } from '../interface';
 import { config, ConfigData } from '../tool/config-manage';
-import { logger } from '../services/logger';
-import { sleep } from '../tool/promise';
-import { dateDiff } from '../tool/tool';
+import { dateDiff } from 'utils';
 
 import './popup.less';
 

@@ -1,5 +1,6 @@
 import { Menu } from '../common/menu';
 import { browser, Menus } from 'webextension-polyfill-ts';
+export * from '../common/menu';
 
 export function createMenu(info: Menu): void {
     if (!chrome.contextMenus) {

@@ -54,17 +54,6 @@ export interface TagReplace {
     [key: string]: string;
 }
 
-export interface Suggestion {
-    tag: TagItem;
-    score: number;
-    term: string;
-
-    match: {
-        key?: { start: number; length: number };
-        name?: { start: number; length: number };
-    };
-}
-
 export interface GithubRelease {
     url: string;
     assets_url: string;

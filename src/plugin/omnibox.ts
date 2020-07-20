@@ -1,9 +1,9 @@
 import { browser } from 'webextension-polyfill-ts';
-import { makeTagMatchHtml } from '../tool/tool';
-import { suggest } from '../background/suggest';
+import { makeTagMatchHtml } from 'utils';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { openInTab } from 'providers/utils';
+import { messaging } from 'providers/messaging';
 
 @Service()
 export class OmniBox {
@@ -41,19 +41,19 @@ export class OmniBox {
         text: string,
         suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void,
     ): void => {
-        if (!suggest) {
-            return;
-        }
-        const suggestions = suggest(text.trim(), 5);
-        const data = suggestions.map((suggestion) => {
-            const html = makeTagMatchHtml(suggestion, 'match');
-            return {
-                content: suggestion.tag.search,
-                description: `${html.cn}<dim> - ${html.en}</dim>`,
-            };
-        });
-
-        suggestCb(data);
+        messaging
+            .emit('suggest-tag', { term: text.trim(), limit: 5 })
+            .then((suggestions) => {
+                const data = suggestions.map((suggestion) => {
+                    const html = makeTagMatchHtml(suggestion, 'match');
+                    return {
+                        content: suggestion.tag.search,
+                        description: `${html.cn}<dim> - ${html.en}</dim>`,
+                    };
+                });
+                suggestCb(data);
+            })
+            .catch(this.logger.error);
     };
 
     readonly onInputEntered = (text: string): void => {

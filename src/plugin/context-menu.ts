@@ -1,5 +1,5 @@
 import { EHTNamespaceName } from '../interface';
-import { getEditorUrl } from '../tool/tool';
+import { getEditorUrl } from 'utils';
 import { Service } from 'services';
 import { createMenu, Context, Menu, OnClickData } from 'providers/menu';
 import { openInTab } from 'providers/utils';
