@@ -6,6 +6,8 @@ const WebpackUserScript = require('webpack-userscript');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { argv } = require('yargs');
 const glob = require('glob');
+const fs = require('fs');
+const url = require('url');
 
 /** @type {import('type-fest').PackageJson} */
 const pkgJson = require('./package.json');
@@ -109,7 +111,7 @@ const config = {
             resource.request = req;
         }),
     ],
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     performance: {
         maxEntrypointSize: 2 * 1024 ** 2,
         maxAssetSize: 2 * 1024 ** 2,
@@ -123,7 +125,24 @@ if (argv.userScript) {
         new WebpackUserScript({
             headers: {
                 name: String(pkgJson.displayName || pkgJson.name),
+                namespace: `https://github.com/EhTagTranslation/`,
                 match: ['*://e-hentai.org/*', '*://*/e-hentai.org/*', '*://exhentai.org/*', '*://*/exhentai.org/*'],
+                icon:
+                    'data:image/svg+xml;base64,' +
+                    fs.readFileSync(path.resolve(__dirname, 'src/assets/logo.svg')).toString('base64'),
+                updateURL: url.resolve(pkgJson.homepage, `releases/latest/download/${pkgJson.name}.meta.js`),
+                downloadURL: url.resolve(pkgJson.homepage, `releases/latest/download/${pkgJson.name}.user.js`),
+                'run-at': 'document-start',
+                grant: [
+                    'GM_addStyle',
+                    'GM_deleteValue',
+                    'GM_listValues',
+                    'GM_setValue',
+                    'GM_getValue',
+                    'GM_log',
+                    'GM_openInTab',
+                    'GM_notification',
+                ],
             },
         }),
     );

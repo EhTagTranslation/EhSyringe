@@ -216,6 +216,11 @@
   resolved "https://registry.npm.taobao.org/@types/q/download/@types/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha1-FZJUFOCtLNdlv+9YhC9+JqesyyQ=
 
+"@types/tampermonkey@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/@types/tampermonkey/download/@types/tampermonkey-4.0.0.tgz#fd654ea1191f6ae7acd7e9ddc19c67ed062a1495"
+  integrity sha1-/WVOoRkfaues1+ndwZxn7QYqFJU=
+
 "@typescript-eslint/eslint-plugin@^3.6.1":
   version "3.6.1"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-3.6.1.tgz?cache=0&sync_timestamp=1595124628154&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Feslint-plugin%2Fdownload%2F%40typescript-eslint%2Feslint-plugin-3.6.1.tgz#5ced8fd2087fbb83a76973dea4a0d39d9cb4a642"
@@ -7302,6 +7307,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typedi@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.npm.taobao.org/typedi/download/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
+  integrity sha1-2OIDvR1BqW4rClxilRR9dLKy0D4=
 
 typescript-lit-html-plugin@^0.9.0:
   version "0.9.0"

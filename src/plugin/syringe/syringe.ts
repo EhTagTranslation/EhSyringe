@@ -1,4 +1,5 @@
-import { getUiData } from '../../data/ui-data';
+import { UiTranslation } from 'services/ui-translation';
+import { ioc } from 'services';
 import { TagReplace } from '../../interface';
 import { chromeMessage } from '../../tool/chrome-message';
 import { config } from 'providers/settings';
@@ -41,7 +42,7 @@ class Syringe {
     readonly conf = config.syncGet();
     observer?: MutationObserver;
 
-    readonly uiData = getUiData();
+    readonly uiData = ioc.get(UiTranslation).get();
 
     constructor() {
         config.sync().catch(logger.error);
@@ -51,7 +52,7 @@ class Syringe {
     }
 
     private init(): void {
-        window.document.addEventListener('DOMContentLoaded', (e) => {
+        window.document.addEventListener('DOMContentLoaded', () => {
             this.documentEnd = true;
         });
         const body = document.querySelector('body');
@@ -217,7 +218,7 @@ class Syringe {
             let reptext = text;
             reptext = reptext.replace(/(\d+) pages?/, '$1 页');
             reptext = reptext.replace(/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）');
-            reptext = reptext.replace(/Average: ([\d\.]+)/, '平均值：$1');
+            reptext = reptext.replace(/Average: ([\d.]+)/, '平均值：$1');
             reptext = reptext.replace(
                 /Posted on (.*?) by:\s*/,
                 (_, t) => `评论时间：${new Date(t).toLocaleString()} \xA0作者：`,
@@ -227,7 +228,7 @@ class Syringe {
                 '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。',
             );
             reptext = reptext.replace(/Showing ([\d,]+) results?/, '共 $1 个结果');
-            reptext = reptext.replace(/Rate as ([\d\.]+) stars?/, '$1 星');
+            reptext = reptext.replace(/Rate as ([\d.]+) stars?/, '$1 星');
             reptext = reptext.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
             reptext = reptext.replace(
                 /([\d,]+) \/ ([\d,]+) favorite note slots? used./,
@@ -274,7 +275,7 @@ class Syringe {
                     '$1 - $2，共 $3 张图片',
                 );
                 p.className = 'gpc-translate';
-                node.parentElement!.insertBefore(p, node);
+                node.parentElement?.insertBefore(p, node);
             }
         }
 

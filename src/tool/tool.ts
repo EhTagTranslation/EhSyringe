@@ -1,4 +1,4 @@
-import { namespaceTranslate } from '../data/namespace-translate';
+import { namespaceTranslate } from '../translation/namespace';
 import { EHTNamespaceName, Suggestion } from '../interface';
 
 export function dateDiff(hisTime: Date | number = 0, nowTime: Date | number = new Date()): string {

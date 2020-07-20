@@ -1,7 +1,7 @@
 {
-    "include": ["src/*", "src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"],
+    "include": ["src/**/*"],
     "compilerOptions": {
+        "baseUrl": "src",
         "module": "commonjs",
         "target": "es6",
         "jsx": "react",
@@ -12,7 +12,6 @@
         "strict": true,
         "noImplicitReturns": true,
         "experimentalDecorators": true,
-        "baseUrl": "src",
         "plugins": [
             {
                 "name": "typescript-lit-html-plugin"
