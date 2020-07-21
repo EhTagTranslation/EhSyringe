@@ -1,8 +1,8 @@
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { EHTNamespaceName, TagItem, TagList } from 'interface';
-import { TagDatabase } from 'background/tag-database';
-import { messaging } from 'providers/messaging';
+import { TagDatabase } from 'plugin/tag-database';
+import { Messaging } from 'services/messaging';
 
 export interface Suggestion {
     tag: TagItem;
@@ -17,7 +17,7 @@ export interface Suggestion {
 
 @Service()
 export class Suggest {
-    constructor(readonly tagDatabase: TagDatabase, readonly logger: Logger) {
+    constructor(readonly tagDatabase: TagDatabase, readonly logger: Logger, readonly messaging: Messaging) {
         tagDatabase.tagList.subscribe((data) => (this.tagList = data));
         messaging.listen('suggest-tag', (args) => {
             return this.getSuggests(args.term, args.limit);

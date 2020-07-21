@@ -1,5 +1,6 @@
 import { Service } from '.';
 import { storage } from 'providers/storage';
+import { TagMap } from 'interface';
 
 export const enum ImageLevel {
     hide,
@@ -21,10 +22,21 @@ export interface ConfigData {
 export interface StorageItems {
     config: ConfigData;
     extensionCheck: number;
+    database:
+        | {
+              sha: string;
+              map: TagMap;
+              /** 上次检查时间 */
+              check: number;
+              /** 插件数据结构版本 */
+              version: number;
+          }
+        | undefined;
 }
 
 const defaults: StorageItems = {
     extensionCheck: 0,
+
     config: {
         translateUi: true,
         translateTag: true,
@@ -34,6 +46,7 @@ const defaults: StorageItems = {
         autoUpdate: true,
         tagTip: true,
     },
+    database: undefined,
 };
 
 @Service()

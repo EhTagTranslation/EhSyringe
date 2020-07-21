@@ -3,11 +3,11 @@ import { makeTagMatchHtml } from 'utils';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { openInTab } from 'providers/utils';
-import { messaging } from 'providers/messaging';
+import { Messaging } from 'services/messaging';
 
 @Service()
 export class OmniBox {
-    constructor(readonly logger: Logger) {
+    constructor(readonly logger: Logger, readonly messaging: Messaging) {
         if (!chrome.omnibox) {
             logger.info('不支持 Omnibox');
             return;
@@ -41,7 +41,7 @@ export class OmniBox {
         text: string,
         suggestCb: (suggestResults: chrome.omnibox.SuggestResult[]) => void,
     ): void => {
-        messaging
+        this.messaging
             .emit('suggest-tag', { term: text.trim(), limit: 5 })
             .then((suggestions) => {
                 const data = suggestions.map((suggestion) => {

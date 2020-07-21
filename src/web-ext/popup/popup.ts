@@ -1,9 +1,9 @@
 import { html, nothing, render, svg, SVGTemplateResult, TemplateResult } from 'lit-html';
 import { browser } from 'webextension-polyfill-ts';
 
-import { background } from '../background';
-import { DownloadStatus } from '../interface';
-import { config, ConfigData } from '../tool/config-manage';
+import { background } from '../../background';
+import { DownloadStatus } from '../../interface';
+import { config, ConfigData } from '../../tool/config-manage';
 import { dateDiff } from 'utils';
 
 import './popup.less';

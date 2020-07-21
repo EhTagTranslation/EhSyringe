@@ -1,50 +1,35 @@
 import emojiRegex from 'emoji-regex';
-import pako from 'pako';
-import { BehaviorSubject } from 'rxjs';
 import { browser } from 'webextension-polyfill-ts';
-
-import { EHTDatabase, TagList, TagReplace } from '../interface';
-import { chromeMessage } from '../tool/chrome-message';
-import { logger } from '../services/logger';
+import { EHTDatabase, TagMap } from '../interface';
 import { getFullKey, getSearchTerm } from 'utils';
-
-import db from 'resources/tag.db';
+import { Service } from 'typedi';
+import { Storage } from 'services/storage';
+import { Logger } from 'services/logger';
+import { Messaging } from 'services/messaging';
 
 const emojiReg = emojiRegex();
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
-const DATA_STRUCTURE_VERSION = 6;
+const DATA_STRUCTURE_VERSION = 7;
 
+@Service()
 export class TagDatabase {
-    readonly tagList = new BehaviorSubject<TagList>([]);
-    readonly tagReplace = new BehaviorSubject<TagReplace>({});
-    readonly updateTime = new BehaviorSubject<Date | undefined>(undefined);
-    readonly sha = new BehaviorSubject<string>('');
+    readonly tagMap: TagMap = {};
+    readonly sha = '0000000000000000000000000000000000000000';
 
-    constructor() {
-        chromeMessage.listener('get-taglist', (key) => {
-            if (!key) {
-                return this.tagList.value;
-            }
-            return this.tagList.value.find((t) => t.fullKey === key);
+    constructor(readonly storage: Storage, readonly logger: Logger, readonly messaging: Messaging) {
+        messaging.listen('get-tag', (key) => {
+            return this.tagMap[key];
         });
-        chromeMessage.listener('get-tagreplace', (key) => {
-            if (!key) {
-                return this.tagReplace.value;
-            }
-            return this.tagReplace.value[key];
+        messaging.listen('get-tag-map', ({ ifNotMatch }) => {
+            if (ifNotMatch === this.sha) return undefined;
+            return this.tagMap;
         });
         this.init().catch(logger.error);
     }
 
     private async init(): Promise<void> {
-        const { tagList, tagReplace, sha, updateTime, dataStructureVersion } = await browser.storage.local.get([
-            'tagList',
-            'tagReplace',
-            'updateTime',
-            'sha',
-            'dataStructureVersion',
-        ]);
+        const data = await this.storage.get('database');
         if (dataStructureVersion !== DATA_STRUCTURE_VERSION || !tagList || !tagReplace || !sha) {
             const timer = logger.time('数据结构变化, 重新构建数据');
             await this.updateUseLocal();
@@ -55,12 +40,6 @@ export class TagDatabase {
             this.updateTime.next(new Date(updateTime));
             this.sha.next(sha);
         }
-    }
-
-    async updateUseLocal(): Promise<void> {
-        const r = await fetch(db);
-        const buf = await r.arrayBuffer();
-        this.update(buf, true, new Date(0));
     }
 
     update(data: ArrayBuffer, isGziped: boolean, updateTime: Date = new Date()): void {

@@ -1,6 +1,6 @@
-import type { suggest } from './suggest';
-import type { tagDatabase } from './tag-database';
-import type { updater } from './updater';
+import type { suggest } from '../plugin/suggest';
+import type { tagDatabase } from '../plugin/tag-database';
+import type { updater } from '../plugin/database-updater';
 
 class Background {
     readonly updater: typeof updater = require('./updater').updater;

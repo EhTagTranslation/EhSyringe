@@ -9,6 +9,8 @@ import { sleep } from '../tool/promise';
 
 import { tagDatabase } from './tag-database';
 import { downloadFile } from '../utils/tool';
+import { Service } from 'typedi';
+import { messaging } from 'providers/messaging';
 
 const defaultStatus: DownloadStatus = {
     run: false,
@@ -18,7 +20,25 @@ const defaultStatus: DownloadStatus = {
     error: false,
 };
 
+@Service()
 class Updater {
+    constructor(readonly logger: Logger) {
+        messaging.listen('update-database', async ({ force }) => {
+            if (this.checked && !force) {
+                this.logger.log('跳过');
+                return false;
+            }
+            const version = await this.checkVersion(true);
+            if (version?.new && (version.new !== version.old || force)) {
+                await this.update();
+                this.logger.log('有新版本并更新');
+                return true;
+            }
+            this.logger.log('没有新版本');
+            return false;
+        });
+    }
+
     readonly lastCheckData = new BehaviorSubject<ReleaseCheckData>({
         old: '',
         new: '',
@@ -30,23 +50,6 @@ class Updater {
     private loadLock = false;
 
     private checked = false;
-
-    constructor() {
-        chromeMessage.listener('auto-update', async (force) => {
-            if (this.checked && !force) {
-                logger.log('自动更新', '跳过');
-                return false;
-            }
-            const version = await this.checkVersion(true);
-            if (version?.new && (version.new !== version.old || force)) {
-                await this.update();
-                logger.log('自动更新', '有新版本并更新');
-                return true;
-            }
-            logger.log('自动更新', '没有新版本');
-            return false;
-        });
-    }
 
     async update(): Promise<void> {
         // 重置下载状态

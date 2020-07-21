@@ -3,52 +3,56 @@ import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { Storage } from 'services/storage';
 import { openInTab } from 'providers/utils';
+import { Messaging } from 'services/messaging';
+import { Notification } from 'services/notification';
+import { Http } from 'services/http';
+import { GithubRelease } from 'interface';
 
 @Service()
 export class ExtensionUpdater {
-    constructor(readonly logger: Logger, readonly storage: Storage) {
+    constructor(
+        readonly logger: Logger,
+        readonly storage: Storage,
+        readonly messaging: Messaging,
+        readonly notification: Notification,
+        readonly http: Http,
+    ) {
         this.check().catch(logger.error);
+        messaging.listen('update-extension', () => this.check());
     }
 
-    async check(): Promise<void> {
+    private async check(): Promise<boolean> {
         const lastCheck = await this.storage.get('extensionCheck');
         const diff = Date.now() - lastCheck;
         if (diff <= 1000 * 60 * 60 * 24) {
             this.logger.info(`上次检查于 ${new Date(lastCheck).toLocaleString()}，跳过`);
-            return;
+            return false;
         }
 
         try {
             const info = await browser.management.getSelf();
-            const response = await fetch('https://api.github.com/repos/EhTagTranslation/EhSyringe/releases/latest', {
-                headers: {
-                    accept: 'application/json',
-                },
-            });
-            const payload = (await response.json()) as { tag_name: string; html_url: string };
+            const response = await this.http.json<GithubRelease>(
+                'https://api.github.com/repos/EhTagTranslation/EhSyringe/releases/latest',
+            );
             const current = `v${info.version}`;
-            const latest = payload.tag_name;
+            const latest = response.tag_name;
             if (typeof latest != 'string' || !latest.startsWith('v')) {
                 const e = new Error('响应格式错误');
-                Object.defineProperty(e, 'response', payload);
+                Object.defineProperty(e, 'response', response);
                 throw e;
             }
             this.logger.log('检查插件更新', { current, latest });
-            if (latest !== current) {
-                const id = await browser.notifications.create({
-                    type: 'basic',
-                    title: info.name,
-                    message: `发现新的版本 ${latest}，点击跳转到下载页面。`,
-                    iconUrl: browser.runtime.getURL('assets/logo-padding.svg'),
-                });
-                browser.notifications.onClicked.addListener((cid) => {
-                    if (cid === id) {
-                        openInTab(payload.html_url);
-                    }
-                });
-            }
+            if (latest === current) return false;
+
+            this.notification.send({
+                title: info.name,
+                message: `发现新的版本 ${latest}，点击跳转到下载页面。`,
+                action: () => openInTab(response.html_url),
+            });
+            return true;
         } catch (ex) {
             this.logger.error('检查插件更新失败', ex);
+            return false;
         }
     }
 }

@@ -1,51 +1,36 @@
-import { Messaging as Interface, MessageMap } from '../common/messaging';
-import { Container, Service } from 'services';
-import { Logger } from 'services/logger';
-export * from '../common/messaging';
+import { Messaging as Interface } from '../common/messaging';
 
 interface Req {
-    key: keyof MessageMap;
+    key: string;
     args: unknown;
 }
 
 type Res = { data: unknown } | { error: unknown };
 
-@Service()
 class Messaging implements Interface {
-    constructor(readonly logger: Logger) {}
-
-    listen<K extends keyof MessageMap>(
-        key: K,
-        listener: (args: MessageMap[K][0]) => Promise<MessageMap[K][1]> | MessageMap[K][1],
-    ): void {
-        this.logger.log('注册事件', key);
-        chrome.runtime.onMessage.addListener((request: Req, sender, sendResponse) => {
-            if (!('key' in request) || request.key !== key) {
-                return;
-            }
-            const promise = listener(request.args as MessageMap[K][0]);
+    listen(key: string, listener: (args: unknown) => Promise<unknown> | unknown): void {
+        chrome.runtime.onMessage.addListener((request: Req, sender, sendResponse: (res: Res) => void) => {
+            if (request.key !== key) return;
+            const promise = listener(request.args);
             Promise.resolve(promise)
-                .then((data) => sendResponse({ data } as Res))
-                .catch((error: unknown) => sendResponse({ error } as Res));
+                .then((data) => sendResponse({ data }))
+                .catch((error: unknown) => sendResponse({ error }));
         });
     }
-    emit<K extends keyof MessageMap>(key: K, args: MessageMap[K][0]): Promise<MessageMap[K][1]> {
+    emit(key: string, args: unknown): Promise<unknown> {
+        const req: Req = { key, args };
         return new Promise((resolve, reject) => {
-            const req: Req = {
-                key,
-                args,
-            };
             chrome.runtime.sendMessage(req, (response: Res) => {
                 if (!response) {
                     reject(chrome.runtime.lastError);
                 } else if ('error' in response) {
                     reject(response.error);
                 } else {
-                    resolve(response.data as MessageMap[K][1]);
+                    resolve(response.data);
                 }
             });
         });
     }
 }
 
-export const messaging = Container.get(Messaging);
+export const messaging = new Messaging();
