@@ -1,127 +1,42 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const { WebExtWebpackPlugin } = require('webext-webpack-plugin');
-const ZipPlugin = require('zip-webpack-plugin');
+const WebExtensionPlugin = require('webpack-webextension-plugin');
 const webpack = require('webpack');
+const WebpackUserScript = require('webpack-userscript');
+const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
+const { argv } = require('yargs');
+const glob = require('glob');
+const execa = require('execa');
 
-const plugins = [];
+const dev = argv.mode === 'development';
+/** @type {import('type-fest').PackageJson} */
+const pkgJson = require('./package.json');
 
-const pack = process.argv.indexOf('--pack') > 0;
-const firefox = process.argv.indexOf('--firefox') > 0;
-const android = process.argv.indexOf('--android') > 0;
-const nodb = process.argv.indexOf('--no-db') > 0;
-
-if (firefox || android) {
-    const webextRunParams = android
-        ? {
-              browserConsole: false,
-              target: 'firefox-android',
-              adbDevice: '696ea70c',
-          }
-        : {
-              browserConsole: false,
-              firefox: 'firefoxdeveloperedition',
-              startUrl: ['about:debugging#addons', 'https://e-hentai.org'],
-          };
-    plugins.push(
-        new WebExtWebpackPlugin({
-            build: {
-                artifactsDir: 'artifacts',
-                overwriteDest: true,
-            },
-            run: webextRunParams,
-        }),
-    );
-}
-
-if (pack) {
-    const releaseDir = path.resolve(__dirname, 'release');
-    plugins.push(
-        new WebExtWebpackPlugin({
-            build: {
-                artifactsDir: releaseDir,
-                overwriteDest: true,
-                ignoreFiles: ['**/*.chrome.*'],
-            },
-        }),
-    );
-    plugins.push(
-        new ZipPlugin({
-            path: path.resolve(__dirname, 'release'),
-            exclude: ['../**', 'manifest.json'],
-            pathMapper: (p) => {
-                return p.replace(/\.chrome\.([^\.]*)$/i, '.$1');
-            },
-            filename: 'EhSyringe.chrome',
-            pathPrefix: 'EhSyringe',
-        }),
-    );
-}
-
-function transformManifest(content, isChrome) {
-    const data = require('./package.json');
-    const manifest = JSON.parse(content.toString());
-    if (isChrome) {
-        manifest.applications = undefined;
-    }
-    return Buffer.from(
-        JSON.stringify(manifest, (k, v) => {
-            if (k.startsWith('$')) return undefined;
-            if (typeof v !== 'string') return v;
-            return v.replace(/\${([\w\$_]+)}/g, (_, key) => data[key]);
-        }),
-    );
-}
-
-const copyPatterns = [
-    { from: 'src/assets', to: 'assets' },
-    { from: 'src/template', to: 'template' },
-];
-
-if (pack) {
-    copyPatterns.push(
-        {
-            from: 'src/manifest.json',
-            to: 'manifest.chrome.json',
-            transform: (content) => transformManifest(content, true),
-        },
-        {
-            from: 'src/manifest.json',
-            to: 'manifest.json',
-            transform: (content) => transformManifest(content, false),
-        },
-    );
-} else {
-    copyPatterns.push({
-        from: 'src/manifest.json',
-        to: 'manifest.json',
-        transform: (content) => transformManifest(content, !(firefox || android)),
-    });
-}
-
-if (nodb) {
-    copyPatterns.push({
-        from: 'tools/tag-empty.db',
-        to: 'assets/tag.db',
-    });
-}
+let type = '';
 
 /** @type {webpack.Configuration} */
-module.exports = {
-    entry: {
-        background: path.resolve(__dirname, 'src/background/index.ts'),
-        main: path.resolve(__dirname, 'src/main.ts'),
-        popup: path.resolve(__dirname, 'src/popup/popup.ts'),
-    },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'script/[name].js',
-    },
+const config = {
     module: {
         rules: [
             {
+                include: [path.resolve(__dirname, 'src/resources'), path.resolve(__dirname, 'src/assets')],
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        name: '[folder]/[name].[hash:8].[ext]',
+                    },
+                },
+            },
+            {
                 test: /\.ts$/,
-                use: 'ts-loader',
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        configFile: dev
+                            ? path.resolve(__dirname, 'tsconfig.json')
+                            : path.resolve(__dirname, 'tsconfig.build.json'),
+                    },
+                },
                 exclude: /node_modules/,
             },
             {
@@ -190,7 +105,85 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        plugins: [new TsconfigPathsPlugin()],
     },
-    plugins: [new CopyPlugin({ patterns: copyPatterns }), ...plugins],
-    devtool: 'source-map',
+    plugins: [
+        new webpack.NormalModuleReplacementPlugin(/providers\/(.+)$/, (resource) => {
+            /** @type {string} */
+            let req = resource.request;
+            if (req.startsWith('providers/common/') || req.startsWith(`providers/${type}/`)) {
+                return;
+            }
+            req = req.replace('providers/', `providers/${type}/`);
+            resource.request = req;
+        }),
+    ],
+    performance: {
+        maxEntrypointSize: 2 * 1024 ** 2,
+        maxAssetSize: 2 * 1024 ** 2,
+    },
+    devtool: dev ? 'inline-source-map' : 'source-map',
 };
+
+if (argv.userScript) {
+    type = 'user-script';
+    config.entry = path.resolve(__dirname, 'src/user-script.ts');
+    const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
+    config.plugins.push(
+        new WebpackUserScript({
+            headers: {
+                name: String(pkgJson.displayName || pkgJson.name),
+                namespace: pkgJson.homepage,
+                match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
+                icon: `${pkgJson.homepage}/raw/${currentHEAD}/src/assets/logo.svg`,
+                updateURL: `${pkgJson.homepage}/releases/latest/download/${pkgJson.name}.meta.js`,
+                downloadURL: `${pkgJson.homepage}/releases/latest/download/${pkgJson.name}.user.js`,
+                'run-at': 'document-start',
+                grant: [
+                    'unsafeWindow',
+                    'GM_deleteValue',
+                    'GM_listValues',
+                    'GM_setValue',
+                    'GM_getValue',
+                    'GM_addValueChangeListener',
+                    'GM_removeValueChangeListener',
+                    'GM_openInTab',
+                    'GM_notification',
+                ],
+            },
+        }),
+    );
+    config.output = {
+        path: path.resolve(__dirname, 'releases'),
+        filename: `${pkgJson.name}.user.js`,
+    };
+} else {
+    type = 'web-ext';
+    config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
+        obj[path.parse(el).name] = path.resolve(__dirname, el);
+        return obj;
+    }, {});
+    config.output = {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'script/[name].js',
+    };
+    const vendor = argv.vender ? String(argv.vender) : undefined;
+    config.plugins.push(
+        new CopyPlugin({
+            patterns: [{ from: 'src/assets', to: 'assets' }],
+        }),
+        new WebExtensionPlugin({
+            vendor,
+            manifestDefaults: {
+                name: pkgJson.displayName,
+                short_name: pkgJson.displayName,
+                description: pkgJson.description,
+                author: pkgJson.author,
+                version: pkgJson.version,
+                homepage_url: pkgJson.homepage,
+            },
+        }),
+    );
+}
+
+module.exports = config;

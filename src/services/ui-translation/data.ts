@@ -1,0 +1,16 @@
+import './data/archiver';
+import './data/common';
+import './data/exchange';
+import './data/gallery';
+import './data/gallerypopups';
+import './data/hathperks';
+import './data/home';
+import './data/login';
+import './data/logs';
+import './data/news';
+import './data/stats';
+import './data/toplist';
+import './data/torrents';
+import './data/uconfig';
+import './data/upload';
+import './data/watched';

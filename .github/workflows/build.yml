@@ -1,8 +1,9 @@
 name: build
 
 on:
-    - push
-    - create
+    push:
+    create:
+    pull_request:
 
 jobs:
     build:
@@ -15,14 +16,14 @@ jobs:
                   node-version: 12
             - name: Install
               uses: bahmutov/npm-install@v1
-            - name: update-db
-              run: yarn update-db
             - name: yarn build
-              run: yarn build
-            - uses: actions/upload-artifact@master
+              run: |
+                  yarn build:firefox
+                  yarn build:chrome
+                  yarn build:monkey
+            - uses: actions/upload-artifact@v2
               with:
-                  name: EhSyringe
-                  path: release
+                  path: releases/*
             - name: publish to github release
               uses: ncipollo/release-action@v1
               if: github.event_name == 'create' && github.event.ref_type == 'tag'
@@ -30,4 +31,5 @@ jobs:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   body: |
                       [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
-                  artifacts: release/*
+                  artifacts: releases/*
+                  prerelease: ${{ contains(github.event.ref, '-') }}

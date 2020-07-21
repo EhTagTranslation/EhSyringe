@@ -2,10 +2,7 @@
 
 # compiled output
 /dist
-/artifacts
-/tmp
-/out-tsc
-/release
+/releases
 
 # dependencies
 /node_modules

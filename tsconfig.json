@@ -1,10 +1,11 @@
 {
-    "include": ["src/*", "src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"],
+    "include": ["src/**/*"],
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es6",
+        "target": "ES2018",
         "jsx": "react",
+        "baseUrl": "src",
+        "resolveJsonModule": true,
         "outDir": "./dist/",
         "sourceMap": true,
         "esModuleInterop": true,
@@ -12,6 +13,8 @@
         "strict": true,
         "noImplicitReturns": true,
         "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "importHelpers": true,
         "plugins": [
             {
                 "name": "typescript-lit-html-plugin"

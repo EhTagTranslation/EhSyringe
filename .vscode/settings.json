@@ -12,5 +12,12 @@
     "[typescript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
-    "typescript.tsdk": "node_modules\\typescript\\lib"
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "json.schemas": [
+        {
+            "fileMatch": ["manifest.json"],
+            "url": "http://json.schemastore.org/webextension"
+        }
+    ],
+    "cSpell.words": ["ehgt", "ehsyringe", "exhentai", "hentai", "omnibox", "typedi"]
 }

@@ -30,6 +30,8 @@ export type EHTNamespaceName =
     | 'female'
     | 'misc';
 
+export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'm' | 'f';
+
 export interface EHTNamespace {
     namespace: EHTNamespaceName;
     count: number;
@@ -43,97 +45,26 @@ export interface EHTTag {
 }
 
 export interface TagItem extends EHTTag {
-    search: string;
-    namespace: EHTNamespaceName;
+    /** 单字母表示的命名空间 */
+    ns: EHTNamespaceNameShort;
     key: string;
-    fullKey: string;
+    /** 去除 emoji 和图片等的名称 */
+    cn: string;
 }
 
-export type TagList = TagItem[];
-export interface TagReplace {
-    [key: string]: string;
-}
-
-export interface Suggestion {
-    tag: TagItem;
-    score: number;
-    term: string;
-
-    match: {
-        key?: { start: number; length: number };
-        name?: { start: number; length: number };
-    };
+export interface TagMap {
+    [fullKey: string]: TagItem;
 }
 
 export interface GithubRelease {
     url: string;
-    assets_url: string;
-    upload_url: string;
     html_url: string;
     id: number;
-    node_id: string;
     tag_name: string;
     target_commitish: string;
     name: string;
-    draft: boolean;
-    author: Author;
     prerelease: boolean;
     created_at: string;
     published_at: string;
-    assets: Asset[];
-    tarball_url: string;
-    zipball_url: string;
     body: string;
-}
-
-interface Asset {
-    url: string;
-    id: number;
-    node_id: string;
-    name: string;
-    label: string;
-    uploader: Author;
-    content_type: string;
-    state: string;
-    size: number;
-    download_count: number;
-    created_at: string;
-    updated_at: string;
-    browser_download_url: string;
-}
-
-interface Author {
-    login: string;
-    id: number;
-    node_id: string;
-    avatar_url: string;
-    gravatar_id: string;
-    url: string;
-    html_url: string;
-    followers_url: string;
-    following_url: string;
-    gists_url: string;
-    starred_url: string;
-    subscriptions_url: string;
-    organizations_url: string;
-    repos_url: string;
-    events_url: string;
-    received_events_url: string;
-    type: string;
-    site_admin: boolean;
-}
-
-export interface ReleaseCheckData {
-    old: string;
-    new: string;
-    timestamp: number;
-    githubRelease: GithubRelease | null;
-}
-
-export interface DownloadStatus {
-    run: boolean;
-    progress: number;
-    info: string;
-    complete: boolean;
-    error: boolean;
 }
