@@ -1,9 +1,9 @@
 name: build
 
 on:
-  push:
-  create:
-  pull_request:
+    push:
+    create:
+    pull_request:
 
 jobs:
     build:

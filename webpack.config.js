@@ -6,8 +6,7 @@ const WebpackUserScript = require('webpack-userscript');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { argv } = require('yargs');
 const glob = require('glob');
-const url = require('url');
-const execa = require('execa')
+const execa = require('execa');
 
 const dev = argv.mode === 'development';
 /** @type {import('type-fest').PackageJson} */
@@ -129,15 +128,16 @@ const config = {
 if (argv.userScript) {
     type = 'user-script';
     config.entry = path.resolve(__dirname, 'src/user-script.ts');
+    const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
     config.plugins.push(
         new WebpackUserScript({
             headers: {
                 name: String(pkgJson.displayName || pkgJson.name),
-                namespace: `https://github.com/EhTagTranslation/`,
+                namespace: pkgJson.homepage,
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
-                icon: `https://github.com/EhTagTranslation/EhSyringe/raw/${execa.commandSync('git rev-parse HEAD').stdout.trim()}/src/assets/logo.svg`,
-                updateURL: url.resolve(pkgJson.homepage, `releases/latest/download/${pkgJson.name}.meta.js`),
-                downloadURL: url.resolve(pkgJson.homepage, `releases/latest/download/${pkgJson.name}.user.js`),
+                icon: `${pkgJson.homepage}/raw/${currentHEAD}/src/assets/logo.svg`,
+                updateURL: `${pkgJson.homepage}/releases/latest/download/${pkgJson.name}.meta.js`,
+                downloadURL: `${pkgJson.homepage}/releases/latest/download/${pkgJson.name}.user.js`,
                 'run-at': 'document-start',
                 grant: [
                     'unsafeWindow',
