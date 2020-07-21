@@ -3,7 +3,7 @@ import { Suggestion } from 'plugin/suggest';
 import { Service } from 'typedi';
 import { Logger } from './logger';
 import { messaging } from 'providers/messaging';
-import { DownloadStatus } from 'plugin/database-updater';
+import { DownloadStatus, ReleaseCheckData } from 'plugin/database-updater';
 import { MessageListener } from 'providers/common/messaging';
 
 export interface MessageMap {
@@ -17,8 +17,8 @@ export interface MessageMap {
         },
         Suggestion[],
     ];
-    'check-database': [{ force: boolean }, { sha: string; oldSha: string }];
-    'update-database': [{ force?: boolean; recheck?: boolean }, boolean];
+    'check-database': [{ force: boolean }, ReleaseCheckData];
+    'update-database': [{ force?: boolean; recheck?: boolean }, ReleaseCheckData | undefined];
     'update-tag': [EHTDatabase, void];
     'updating-database': [DownloadStatus, void];
     'check-extension': [void, boolean];
@@ -36,10 +36,10 @@ export class Messaging {
         this.logger.log(`注册事件`, key);
         return messaging.on(key, listener as (args: unknown) => Promise<Res<K>> | Res<K>);
     }
-    off(listener: MessageListener): void {
+    off(listener: MessageListener): boolean {
         return messaging.off(listener);
     }
-    emit<K extends MessageKey>(key: K, args: Req<K>): Promise<Res<K>> {
-        return messaging.emit(key, args) as Promise<Res<K>>;
+    emit<K extends MessageKey>(key: K, args: Req<K>, broadcast = false): Promise<Res<K>> {
+        return messaging.emit(key, args, broadcast) as Promise<Res<K>>;
     }
 }

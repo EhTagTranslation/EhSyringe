@@ -1,12 +1,12 @@
 import { EHTNamespaceName } from '../interface';
-import { getEditorUrl } from 'utils';
 import { Service } from 'services';
 import { createMenu, Context, Menu, OnClickData } from 'providers/menu';
 import { openInTab } from 'providers/utils';
+import { Tagging } from 'services/tagging';
 
 @Service()
 export class ContextMenu implements Menu {
-    constructor() {
+    constructor(readonly tagging: Tagging) {
         this.init();
     }
 
@@ -34,7 +34,7 @@ export class ContextMenu implements Menu {
         }
         const seg = info.url.split('/').pop()?.replace(/\+/g, ' ').split(':') ?? [];
         const namespace = seg.length <= 1 ? 'misc' : (seg[0] as EHTNamespaceName);
-        const tag = seg.pop() ?? '';
-        openInTab(getEditorUrl(namespace, tag));
+        const key = seg.pop() ?? '';
+        openInTab(this.tagging.editorUrl({ namespace, key }));
     };
 }

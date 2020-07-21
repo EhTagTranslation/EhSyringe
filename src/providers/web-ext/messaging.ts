@@ -1,42 +1,62 @@
-import { Messaging as Interface, MessageListener } from '../common/messaging';
+import { Messaging } from '../common/messaging';
 
-interface Req {
-    key: string;
-    args: unknown;
-}
+type Res = { handlers: number; data?: unknown; error?: unknown };
+type Req = { key: string; args: unknown };
 
-type Res = { data: unknown } | { error: unknown };
-type Listener = (request: Req, sender: unknown, sendResponse: (res: Res) => void) => void;
-
-class Messaging implements Interface {
-    on(key: string, listener: (args: unknown) => Promise<unknown> | unknown): MessageListener {
-        const l: Listener = (request, sender, sendResponse) => {
-            if (request.key !== key) return;
-            const promise = listener(request.args);
-            Promise.resolve(promise)
-                .then((data) => sendResponse({ data }))
-                .catch((error: unknown) => sendResponse({ error }));
-        };
-        chrome.runtime.onMessage.addListener(l);
-        return (l as unknown) as MessageListener;
+class MessagingCross extends Messaging {
+    constructor() {
+        super();
+        chrome.runtime.onMessage.addListener((request: Req, _: unknown, sendResponse: (res: Res) => void) => {
+            const handlers = this.handlers.get(request.key);
+            if (!handlers || handlers.size === 0) {
+                sendResponse({ handlers: 0, data: undefined });
+                return;
+            }
+            handlers
+                .handle(request.args)
+                .then((res) => {
+                    sendResponse({ handlers: handlers.size, data: res });
+                })
+                .catch((error: unknown) => {
+                    sendResponse({ handlers: handlers.size, error });
+                });
+            return true;
+        });
     }
-    off(listener: MessageListener): void {
-        chrome.runtime.onMessage.removeListener((listener as unknown) as Listener);
-    }
-    emit(key: string, args: unknown): Promise<unknown> {
-        const req: Req = { key, args };
-        return new Promise((resolve, reject) => {
+    async emit(key: string, args: unknown, broadcast = false): Promise<unknown> {
+        const localSize = this.handlers.get(key)?.size ?? 0;
+        const localHandled = localSize > 0 ? super.emit(key, args, broadcast) : Promise.resolve();
+        const remoteHandled = new Promise<Res>((resolve) => {
+            const req: Req = { key, args };
             chrome.runtime.sendMessage(req, (response: Res) => {
                 if (!response) {
-                    reject(chrome.runtime.lastError);
-                } else if ('error' in response) {
-                    reject(response.error);
+                    const error = new Error(chrome.runtime.lastError?.message ?? '消息发送失败');
+                    Object.defineProperties(error, {
+                        request: { value: req },
+                    });
+                    resolve({ handlers: -1, error });
                 } else {
-                    resolve(response.data);
+                    resolve(response);
                 }
             });
         });
+        const rr = await remoteHandled;
+        let lr: unknown;
+        let le: Error | undefined;
+        try {
+            lr = await localHandled;
+        } catch (ex) {
+            le = ex as Error;
+        }
+        if (broadcast) {
+            return lr ?? rr.data;
+        } else {
+            if (le) throw le;
+            if (rr.error && rr.handlers < 0) console.error(key, args, rr.error);
+            if (rr.error && rr.handlers > 0) throw rr.error;
+            return lr ?? rr.data;
+        }
     }
 }
 
-export const messaging = new Messaging();
+export const messaging = new MessagingCross();

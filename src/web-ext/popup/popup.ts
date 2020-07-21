@@ -1,14 +1,17 @@
+import 'polyfills';
 import { html, nothing, render, svg, SVGTemplateResult, TemplateResult } from 'lit-html';
 import { browser } from 'webextension-polyfill-ts';
-import { dateDiff } from 'utils';
-import { extInfo } from 'providers/web-ext/info';
+import { dateDiff, sleep } from 'utils';
 import { Service } from 'typedi';
 import { Container } from 'services';
 import { Logger } from 'services/logger';
-
-import './index.less';
-import { ConfigData, Storage } from 'services/storage';
+import { ConfigData, Storage, ImageLevel } from 'services/storage';
 import { Messaging } from 'services/messaging';
+import { openInTab } from 'providers/utils';
+import { DownloadStatus } from 'plugin/database-updater';
+import { packageJson } from 'info';
+
+import './popup.less';
 
 interface PopupState {
     sha: string;
@@ -29,20 +32,18 @@ interface PopupState {
 @Service()
 class Popup {
     constructor(readonly logger: Logger, readonly messaging: Messaging, readonly storage: Storage) {
+        this.init().catch(logger.error);
+    }
+
+    private async init(): Promise<void> {
         window.addEventListener('click', (ev) => {
-            this.openLink(ev).catch(logger.error);
+            this.openLink(ev);
         });
         this._update();
-        this.getVersion();
-        this.checkVersion().catch(logger.error);
-        this.loadConfig().catch(logger.error);
-        extInfo()
-            .then((data) => {
-                this.state.extensionVersion = `${data.version}`;
-            })
-            .catch(logger.error);
+        await this.checkVersion();
+        await this.loadConfig();
         const sub = this.messaging.on('updating-database', (data) => {
-            this.downloadStatus(data).catch(logger.error);
+            this.downloadStatus(data).catch(this.logger.error);
         });
         window.addEventListener('unload', () => {
             this.messaging.off(sub);
@@ -55,7 +56,7 @@ class Popup {
         info: '',
         updateTime: '',
         updateTimeFull: '',
-        extensionVersion: '',
+        extensionVersion: packageJson.version,
         newSha: '',
         versionInfo: '',
         updateAvailable: false,
@@ -101,37 +102,36 @@ class Popup {
         this.state.progress = a[1];
     }
 
-    getVersion(): void {
-        const sha = background.tagDatabase.sha.value;
-        const updateTime = background.tagDatabase.updateTime.value;
-        this.state.sha = sha ? sha.slice(0, 7) : 'N/A';
-        this.state.updateTime = updateTime ? dateDiff(updateTime) : 'N/A';
-        this.state.updateTimeFull = updateTime?.toLocaleString() ?? 'N/A';
-    }
-
     async checkVersion(): Promise<void> {
         this.state.versionInfo = '检查中...';
-        const data = await background.updater.checkVersion();
-        logger.log('Release Data', data);
-        if (data?.new) {
-            const hasNewData = (this.state.updateAvailable = data.new !== data.old);
+
+        const currentSha = await this.messaging.emit('get-tag-sha', undefined);
+        const updateTime = (await this.storage.get('database'))?.check;
+        this.state.sha = currentSha ? currentSha.slice(0, 7) : 'N/A';
+        this.state.updateTime = updateTime ? dateDiff(updateTime) : 'N/A';
+        this.state.updateTimeFull = updateTime ? new Date(updateTime).toLocaleString() : 'N/A';
+        try {
+            const data = await this.messaging.emit('check-database', { force: true });
+            this.logger.log('Release Data', data);
+            const hasNewData = (this.state.updateAvailable = data.sha !== currentSha);
             if (hasNewData) {
-                this.state.newSha = data.new.slice(0, 7);
+                this.state.newSha = data.sha.slice(0, 7);
                 this.state.versionInfo = `有更新！`;
             } else {
                 this.state.versionInfo = '已是最新版本';
             }
-        } else {
+        } catch (ex) {
+            this.logger.error('获取失败', ex);
             this.state.versionInfo = '获取失败';
         }
     }
 
-    async openLink(ev: MouseEvent): Promise<void> {
+    openLink(ev: MouseEvent): void {
         if (ev.target instanceof HTMLAnchorElement) {
             const href = ev.target.href;
             if (href && !href.startsWith(document.location.origin + document.location.pathname)) {
                 ev.preventDefault();
-                await browser.tabs.create({ url: href });
+                openInTab(href);
                 window.close();
             }
         }
@@ -147,7 +147,6 @@ class Popup {
             this.state.progress = 100;
             this.state.animationState = 2;
             this.state.updateButtonDisabled = false;
-            this.getVersion();
             await this.checkVersion();
 
             await sleep(500);
@@ -160,7 +159,7 @@ class Popup {
 
     private async updateButtonClick(): Promise<void> {
         this.state.updateButtonDisabled = true;
-        await background.updater.update();
+        await this.messaging.emit('update-database', { force: true, recheck: false });
     }
 
     _logoTemplate(progress = 0): SVGTemplateResult {
@@ -230,12 +229,6 @@ class Popup {
     }
 
     changeConfigValue<T extends keyof ConfigData>(key: T, value: ConfigData[T]): void {
-        if (key === 'introduceImageLevel') {
-            this.state.configValue = {
-                ...this.state.configValue,
-                introduceImageLevel: value - 1,
-            };
-        }
         this.state.configValue = {
             ...this.state.configValue,
             [key]: value,
@@ -250,15 +243,17 @@ class Popup {
     }
 
     async saveConfig(): Promise<void> {
-        await config.set(this.state.configValue);
+        await this.storage.set('config', this.state.configValue);
         await this.loadConfig();
         await sleep(200);
         window.close();
-        const tabs = await browser.tabs.query({ active: true });
-        if (tabs?.length) {
-            const ehtabs = tabs.filter((v) => v.url && /(\/\/|\.)(e-|ex)hentai\.org/i.test(v.url));
-            logger.log('Reload tabs', ehtabs);
-            await Promise.all(ehtabs.map((v) => browser.tabs.reload(v.id)));
+        if (chrome) {
+            const tabs = await browser.tabs.query({ active: true });
+            if (tabs?.length) {
+                const ehtabs = tabs.filter((v) => v.url && /(\/\/|\.)(e-|ex)hentai\.org/i.test(v.url));
+                this.logger.log('Reload tabs', ehtabs);
+                await Promise.all(ehtabs.map((v) => browser.tabs.reload(v.id)));
+            }
         }
     }
 
@@ -266,7 +261,7 @@ class Popup {
         const state = this.state;
 
         const checkboxList: Array<{ key: keyof ConfigData; name: string }> = [
-            { key: 'translateUI', name: '翻译界面' },
+            { key: 'translateUi', name: '翻译界面' },
             { key: 'translateTag', name: '翻译标签' },
             { key: 'showIntroduce', name: '标签介绍' },
             { key: 'showIcon', name: '显示标签图标' },
@@ -331,10 +326,26 @@ class Popup {
                                 />
                             </div>
                             <div class="range-label">
-                                <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 0)}">禁用</a>
-                                <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 1)}">非H</a>
-                                <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 2)}">R18</a>
-                                <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', 3)}">R18G</a>
+                                <a
+                                    href="#"
+                                    @click="${() => this.changeConfigValue('introduceImageLevel', ImageLevel.hide)}"
+                                    >禁用</a
+                                >
+                                <a
+                                    href="#"
+                                    @click="${() => this.changeConfigValue('introduceImageLevel', ImageLevel.nonH)}"
+                                    >非H</a
+                                >
+                                <a
+                                    href="#"
+                                    @click="${() => this.changeConfigValue('introduceImageLevel', ImageLevel.r18)}"
+                                    >R18</a
+                                >
+                                <a
+                                    href="#"
+                                    @click="${() => this.changeConfigValue('introduceImageLevel', ImageLevel.r18g)}"
+                                    >R18G</a
+                                >
                             </div>
                         </div>
                     </form>

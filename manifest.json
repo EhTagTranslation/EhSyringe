@@ -25,8 +25,7 @@
             "48": "assets/logo48.png",
             "128": "assets/logo128.png"
         },
-        "default_title": "${displayName}",
-        "default_popup": "template/popup.html"
+        "default_popup": "assets/popup.html"
     },
     "content_scripts": [
         {

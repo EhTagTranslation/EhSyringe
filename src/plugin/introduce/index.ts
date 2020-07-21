@@ -1,15 +1,20 @@
 import { EHTNamespaceName } from 'interface';
-import { getEditorUrl, getFullKey } from 'utils';
 import { Service } from 'services';
 import { Logger } from 'services/logger';
 import { Storage } from 'services/storage';
 import { Messaging } from 'services/messaging';
 
 import './index.less';
+import { Tagging } from 'services/tagging';
 
 @Service()
 export class Introduce {
-    constructor(readonly logger: Logger, readonly storage: Storage, readonly messaging: Messaging) {
+    constructor(
+        readonly logger: Logger,
+        readonly storage: Storage,
+        readonly messaging: Messaging,
+        readonly tagging: Tagging,
+    ) {
         this.init().catch(logger.error);
     }
     async init(): Promise<void> {
@@ -78,9 +83,9 @@ export class Introduce {
         return null;
     }
 
-    async openIntroduceBox(namespace: EHTNamespaceName, tag: string, canceled: () => boolean): Promise<void> {
+    async openIntroduceBox(namespace: EHTNamespaceName, key: string, canceled: () => boolean): Promise<void> {
         const timer = this.logger.time('获取标签介绍');
-        const tagData = await this.messaging.emit('get-tag', getFullKey(namespace, tag));
+        const tagData = await this.messaging.emit('get-tag', this.tagging.fullKey({ namespace, key }));
         timer.log(tagData);
         timer.end();
 
@@ -93,7 +98,7 @@ export class Introduce {
             <div class="ehs-title">
                 <div>
                     <div class="ehs-cn">${tagData.name}</div>
-                    <div class="ehs-en">${tagData.namespace}:${tagData.key}</div>
+                    <div class="ehs-en">${this.tagging.namespace(tagData.ns)}:${tagData.key}</div>
                 </div>
                 <span class="ehs-close">×</span>
             </div>
@@ -107,12 +112,12 @@ export class Introduce {
             </div>
             <div class="ehs-href">${tagData.links}</div>`;
         } else {
-            const editorUrl = getEditorUrl(namespace, tag);
+            const editorUrl = this.tagging.editorUrl({ namespace, key });
             // language=HTML
             this.introduceBox.innerHTML = `
             <div class="ehs-title">
                 <div>
-                    <div class="ehs-cn">${namespace}:${tag}</div>
+                    <div class="ehs-cn">${namespace}:${key}</div>
                     <div class="ehs-en">该标签尚未翻译</div>
                 </div>
                 <span class="ehs-close">×</span>

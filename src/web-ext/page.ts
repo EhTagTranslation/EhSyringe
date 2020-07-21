@@ -1,3 +1,4 @@
+import 'polyfills';
 import { Container } from 'services';
 import { Introduce } from 'plugin/introduce';
 import { TagTip } from 'plugin/tag-tip';

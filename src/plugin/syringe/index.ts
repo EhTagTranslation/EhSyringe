@@ -4,9 +4,10 @@ import { Storage, ConfigData } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { TagMap } from 'interface';
+import { packageJson } from 'info';
 
 import './index.less';
-import { DatabaseUpdater } from 'plugin/database-updater';
+import { Tagging } from 'services/tagging';
 
 function isNode<K extends keyof HTMLElementTagNameMap>(node: Node, nodeName: K): node is HTMLElementTagNameMap[K] {
     return node && node.nodeName === nodeName.toUpperCase();
@@ -23,8 +24,9 @@ export class Syringe {
         readonly uiTranslation: UiTranslation,
         readonly logger: Logger,
         readonly messaging: Messaging,
+        readonly tagging: Tagging,
     ) {
-        this.init().catch(this.logger.error);
+        this.init();
     }
 
     tagMap?: TagMap;
@@ -32,13 +34,32 @@ export class Syringe {
     pendingTags: Node[] = [];
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
-    config!: ConfigData;
+    config = this.getAndInitConfig();
     observer?: MutationObserver;
 
     readonly uiData = this.uiTranslation.get();
 
-    private async init(): Promise<void> {
-        this.config = await this.storage.get('config');
+    private getAndInitConfig(): ConfigData {
+        const key = `${packageJson.name}_config`;
+        this.storage
+            .get('config')
+            .then((conf) => {
+                this.config = conf;
+                localStorage.setItem(key, JSON.stringify(conf));
+            })
+            .catch(this.logger.error);
+        const v = localStorage.getItem(key);
+        if (v) {
+            try {
+                return JSON.parse(v) as ConfigData;
+            } catch {
+                this.logger.error('解析 localStorage 配置失败');
+            }
+        }
+        return this.storage.defaults.config;
+    }
+
+    private init(): void {
         if (!(this.config.translateUi || this.config.translateTag)) return;
 
         window.document.addEventListener('DOMContentLoaded', () => {
@@ -130,8 +151,8 @@ export class Syringe {
         }
 
         let value = '';
-        let aId = parentElement.id;
-        let aTitle = parentElement.title;
+        const aId = parentElement.id;
+        const aTitle = parentElement.title;
 
         if (!(value || aTitle || aId)) {
             return false;
@@ -144,19 +165,20 @@ export class Syringe {
         }
 
         if (!value && aTitle) {
-            if (aTitle.startsWith(':')) {
-                aTitle = aTitle.slice(1);
-            }
-            if (this.tagMap[aTitle]) {
-                value = this.tagMap[aTitle].name;
+            const [namespace, key] = aTitle.split(':');
+            const fullKey = this.tagging.fullKey({ namespace, key });
+            if (fullKey in this.tagMap) {
+                value = this.tagMap[fullKey].name;
             }
         }
 
         if (!value && aId) {
-            aId = aId.replace('ta_', '');
-            aId = aId.replace(/_/gi, ' ');
-            if (this.tagMap[aId]) {
-                value = this.tagMap[aId].name;
+            const [namespace, key] = aId.replace('ta_', '').replace(/_/gi, ' ').split(':');
+            const fullKey = key
+                ? this.tagging.fullKey({ namespace, key })
+                : this.tagging.fullKey({ namespace: '', key: namespace });
+            if (fullKey in this.tagMap) {
+                value = this.tagMap[fullKey].name;
             }
         }
 

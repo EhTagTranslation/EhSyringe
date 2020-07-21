@@ -1,10 +1,10 @@
 import emojiRegex from 'emoji-regex';
 import { EHTDatabase, TagMap } from '../interface';
-import { getFullKey, getSearchTerm } from 'utils';
 import { Service } from 'typedi';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
+import { Tagging } from 'services/tagging';
 
 const emojiReg = emojiRegex();
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
@@ -16,7 +16,12 @@ export class TagDatabase {
     tagMap: TagMap = {};
     sha = '0000000000000000000000000000000000000000';
 
-    constructor(readonly storage: Storage, readonly logger: Logger, readonly messaging: Messaging) {
+    constructor(
+        readonly storage: Storage,
+        readonly logger: Logger,
+        readonly messaging: Messaging,
+        readonly tagging: Tagging,
+    ) {
         messaging.on('get-tag', (key) => {
             return this.tagMap[key];
         });
@@ -35,6 +40,7 @@ export class TagDatabase {
         this.messaging.on('update-tag', (data) => this.update(data));
         if (!data || data.version !== DATA_STRUCTURE_VERSION || !data.map || !data.sha) {
             const timer = this.logger.time('数据结构变化, 重新构建数据');
+            await this.storage.migrate();
             await this.messaging.emit('update-database', { force: true });
             timer.end();
         } else {
@@ -62,17 +68,14 @@ export class TagDatabase {
                 const dirtyName = name
                     .replace(emojiReg, '<span class="ehs-emoji">$&</span>')
                     .replace(/<img(.*?)>/gi, '<img class="ehs-icon" $1>');
-                const search = getSearchTerm(namespace, key);
-                const fullKey = getFullKey(namespace, key);
 
+                const fullKey = this.tagging.fullKey({ namespace, key });
                 map[fullKey] = {
                     ...t,
                     name: dirtyName,
-                    cleanName,
+                    cn: cleanName,
                     key,
-                    fullKey,
-                    namespace,
-                    search,
+                    ns: this.tagging.ns(namespace),
                 };
             }
         });

@@ -1,6 +1,8 @@
 import { Service } from '.';
 import { storage } from 'providers/storage';
-import { TagMap, GithubRelease } from 'interface';
+import { TagMap } from 'interface';
+import { ReleaseCheckData } from 'plugin/database-updater';
+import { Logger } from './logger';
 
 export const enum ImageLevel {
     hide,
@@ -23,6 +25,7 @@ export interface StorageItems {
     config: ConfigData;
     extensionCheck: number;
     database:
+        | undefined
         | {
               sha: string;
               map: TagMap;
@@ -30,33 +33,29 @@ export interface StorageItems {
               check: number;
               /** 插件数据结构版本 */
               version: number;
-          }
-        | undefined;
+          };
 
-    release: { info: GithubRelease; check: number } | undefined;
+    release: undefined | ReleaseCheckData;
 }
-
-const defaults: StorageItems = {
-    extensionCheck: 0,
-
-    config: {
-        translateUi: true,
-        translateTag: true,
-        showIntroduce: true,
-        showIcon: true,
-        introduceImageLevel: ImageLevel.r18g,
-        autoUpdate: true,
-        tagTip: true,
-    },
-    database: undefined,
-    release: undefined,
-};
 
 @Service()
 export class Storage {
+    constructor(readonly logger: Logger) {
+        Object.defineProperty(globalThis, 'storage', {
+            value: () => {
+                (async () => {
+                    const keys = await this.keys();
+                    for (const key of keys) {
+                        console.log(key, await this.get(key));
+                    }
+                })().catch(logger.error);
+            },
+        });
+    }
+
     async get<K extends keyof StorageItems>(key: K): Promise<StorageItems[K]> {
         const value = await storage.get(key);
-        if (value == null) return defaults[key];
+        if (value == null) return this.defaults[key];
         return JSON.parse(value) as StorageItems[K];
     }
     async set<T extends keyof StorageItems>(key: T, value: StorageItems[T] | undefined): Promise<void> {
@@ -70,4 +69,31 @@ export class Storage {
     async keys(): Promise<Array<keyof StorageItems>> {
         return (await storage.keys()) as Array<keyof StorageItems>;
     }
+
+    async migrate(): Promise<void> {
+        const keys = await this.keys();
+        const keysInCurrentVersion = Object.keys(this.defaults);
+        const deletes = keys.filter((k) => !keysInCurrentVersion.includes(k));
+        if (deletes.length === 0) return;
+
+        this.logger.log(`迁移存储版本，删除 `, deletes);
+        for (const key of deletes) {
+            await this.delete(key);
+        }
+    }
+
+    readonly defaults: Readonly<StorageItems> = {
+        extensionCheck: 0,
+        config: {
+            translateUi: true,
+            translateTag: true,
+            showIntroduce: true,
+            showIcon: true,
+            introduceImageLevel: ImageLevel.r18g,
+            autoUpdate: true,
+            tagTip: true,
+        },
+        database: undefined,
+        release: undefined,
+    };
 }

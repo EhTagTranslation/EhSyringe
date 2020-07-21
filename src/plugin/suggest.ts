@@ -2,6 +2,7 @@ import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { EHTNamespaceName, TagItem } from 'interface';
 import { Messaging } from 'services/messaging';
+import { Tagging } from 'services/tagging';
 
 export interface Suggestion {
     tag: TagItem;
@@ -9,14 +10,14 @@ export interface Suggestion {
     term: string;
 
     match: {
-        key?: { start: number; length: number };
-        cleanName?: { start: number; length: number };
+        key?: { start: number; end: number };
+        cn?: { start: number; end: number };
     };
 }
 
 @Service()
 export class Suggest {
-    constructor(readonly logger: Logger, readonly messaging: Messaging) {
+    constructor(readonly logger: Logger, readonly messaging: Messaging, readonly tagging: Tagging) {
         messaging.on('suggest-tag', (args) => {
             return this.getSuggests(args.term, args.limit);
         });
@@ -44,46 +45,23 @@ export class Suggest {
         rows: 0,
     };
 
-    readonly nsDic: { [k: string]: EHTNamespaceName } = {
-        r: 'reclass',
-        reclass: 'reclass',
-        l: 'language',
-        language: 'language',
-        lang: 'language',
-        p: 'parody',
-        parody: 'parody',
-        series: 'parody',
-        c: 'character',
-        char: 'character',
-        character: 'character',
-        g: 'group',
-        group: 'group',
-        creator: 'group',
-        circle: 'group',
-        a: 'artist',
-        artist: 'artist',
-        m: 'male',
-        male: 'male',
-        f: 'female',
-        female: 'female',
-    };
-
     private tagList: TagItem[] = [];
     private sha = '';
     private markTag(tag: TagItem, search: string, term: string): Suggestion {
         const key = tag.key;
-        const cleanName = tag.cleanName.toLowerCase();
+        const cn = tag.cn.toLowerCase();
         const keyIdx = key.indexOf(search);
-        const nameIdx = cleanName.indexOf(search);
+        const nameIdx = cn.indexOf(search);
+        const ns = this.tagging.namespace(tag.ns);
         let score = 0;
         const match: Suggestion['match'] = {};
         if (keyIdx >= 0) {
-            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / key.length) * (keyIdx === 0 ? 2 : 1);
-            match.key = { start: keyIdx, length: search.length };
+            score += ((this.nsScore[ns] * (search.length + 1)) / key.length) * (keyIdx === 0 ? 2 : 1);
+            match.key = { start: keyIdx, end: keyIdx + search.length };
         }
         if (nameIdx >= 0) {
-            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / cleanName.length) * (nameIdx === 0 ? 2 : 1);
-            match.cleanName = { start: nameIdx, length: search.length };
+            score += ((this.nsScore[ns] * (search.length + 1)) / cn.length) * (nameIdx === 0 ? 2 : 1);
+            match.cn = { start: nameIdx, end: nameIdx + search.length };
         }
         return {
             tag,
@@ -102,10 +80,10 @@ export class Suggest {
         const col = sTerm.indexOf(':');
         let tagList = this.tagList;
         if (col >= 1) {
-            const ns = this.nsDic[sTerm.substr(0, col)];
+            const ns = this.tagging.ns(sTerm.slice(0, col));
             if (ns) {
-                sTerm = sTerm.substr(col + 1);
-                tagList = tagList.filter((tag) => tag.namespace === ns);
+                sTerm = sTerm.slice(col + 1);
+                tagList = tagList.filter((tag) => tag.ns === ns);
             }
         }
         let suggestions = tagList.map((tag) => this.markTag(tag, sTerm, term)).filter((st) => st.score > 0);

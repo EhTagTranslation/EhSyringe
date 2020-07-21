@@ -1,7 +1,7 @@
 import { browser } from 'webextension-polyfill-ts';
 import { NotificationInfo } from '../common/notification';
 import { Badge } from 'providers/common/badge';
-import { extInfo } from './info';
+import { packageJson } from 'info';
 
 export function openInTab(url: string): void {
     void browser.tabs.create({
@@ -39,13 +39,9 @@ export function setBadge(info: Badge): void {
         if (chrome.browserAction.setBadgeText) {
             chrome.browserAction.setBadgeText({ text: info.text });
         } else if (chrome.browserAction.setTitle) {
-            extInfo()
-                .then((ext) => {
-                    const extname = ext.name ?? 'EhSyringe';
-                    const title = info.text ? `${extname} (${info.text})` : extname;
-                    chrome.browserAction.setTitle({ title });
-                })
-                .catch(console.error);
+            const extname = packageJson.displayName;
+            const title = info.text ? `${extname} (${info.text})` : extname;
+            chrome.browserAction.setTitle({ title });
         }
     }
 }

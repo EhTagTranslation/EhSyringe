@@ -29,7 +29,15 @@ const config = {
             },
             {
                 test: /\.ts$/,
-                use: 'ts-loader',
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        configFile:
+                            argv.mode === 'development'
+                                ? path.resolve(__dirname, 'tsconfig.json')
+                                : path.resolve(__dirname, 'tsconfig.build.json'),
+                    },
+                },
                 exclude: /node_modules/,
             },
             {
@@ -104,7 +112,7 @@ const config = {
         new webpack.NormalModuleReplacementPlugin(/providers\/(.+)$/, (resource) => {
             /** @type {string} */
             let req = resource.request;
-            if (req.startsWith('./common/') || req.includes('providers/common/')) {
+            if (req.startsWith('providers/common/') || req.startsWith(`providers/${type}/`)) {
                 return;
             }
             req = req.replace('providers/', `providers/${type}/`);

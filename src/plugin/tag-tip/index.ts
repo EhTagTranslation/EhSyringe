@@ -1,17 +1,22 @@
 import { fromEvent } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { Service } from 'services';
-import { makeTagMatchHtml } from 'utils';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Suggestion } from 'plugin/suggest';
 import { Messaging } from 'services/messaging';
+import { Tagging } from 'services/tagging';
 
 import './index.less';
 
 @Service()
 export class TagTip {
-    constructor(readonly storage: Storage, readonly logger: Logger, readonly messaging: Messaging) {
+    constructor(
+        readonly storage: Storage,
+        readonly logger: Logger,
+        readonly messaging: Messaging,
+        readonly tagging: Tagging,
+    ) {
         this.init().catch(logger.error);
     }
 
@@ -82,8 +87,8 @@ export class TagTip {
 
                     suggestions.forEach((suggestion) => {
                         const tag = suggestion.tag;
-                        if (used.has(tag.search)) return;
-                        used.add(tag.search);
+                        if (used.has(this.tagging.fullKey(tag))) return;
+                        used.add(this.tagging.fullKey(tag));
                         result.push(suggestion);
                     });
                 }
@@ -144,7 +149,7 @@ export class TagTip {
         const enName = document.createElement('span');
         enName.className = 'auto-complete-text en-name';
 
-        const html = makeTagMatchHtml(suggestion, 'mark');
+        const html = this.tagging.makeTagMatchHtml(suggestion, 'mark');
 
         cnName.innerHTML = html.cn;
         enName.innerHTML = html.en;
@@ -159,7 +164,7 @@ export class TagTip {
             if (this.inputElement.value.endsWith(' ')) {
                 length++;
             }
-            this.inputElement.value = `${this.inputElement.value.slice(0, 0 - length)}${tag.search} `;
+            this.inputElement.value = `${this.inputElement.value.slice(0, 0 - length)}${this.tagging.searchTerm(tag)} `;
             this.autoCompleteList.innerHTML = '';
         };
         return item;

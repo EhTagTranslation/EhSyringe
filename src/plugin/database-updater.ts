@@ -1,5 +1,3 @@
-import { BehaviorSubject } from 'rxjs';
-
 import { GithubRelease, EHTDatabase } from 'interface';
 import { Logger } from 'services/logger';
 import { Service } from 'typedi';
@@ -18,8 +16,7 @@ export interface DownloadStatus {
 }
 
 export interface ReleaseCheckData {
-    old: string;
-    new: string;
+    sha: string;
     check: number;
     githubRelease: GithubRelease | null;
 }
@@ -44,25 +41,44 @@ export class DatabaseUpdater {
         this.messaging.on('update-database', async ({ force, recheck }) => {
             if (this.checked && !force) {
                 this.logger.log('跳过');
-                return false;
+                return undefined;
             }
             const version = await this.checkVersion(recheck);
-            if (version?.new && (version.new !== version.old || force)) {
+            if (version?.sha && (force || version.sha !== (await this.messaging.emit('get-tag-sha', undefined)))) {
                 await this.update();
                 this.logger.log('有新版本并更新');
-                return true;
+                return version;
             }
             this.logger.log('没有新版本');
-            return false;
+            return undefined;
         });
+        this.messaging.on('check-database', async ({ force }) => {
+            return await this.checkVersion(force);
+        });
+        this.init().catch(logger.error);
     }
 
-    lastCheckData: ReleaseCheckData = {
-        old: '',
-        new: '',
+    private async init(): Promise<void> {
+        const storage = await this.storage.get('release');
+        if (storage && storage.check > this._lastCheckData.check) {
+            Object.assign(this._lastCheckData, storage);
+        }
+    }
+
+    private readonly _lastCheckData: ReleaseCheckData = {
+        sha: '',
         check: 0,
         githubRelease: null,
     };
+    get lastCheckData(): ReleaseCheckData {
+        return this._lastCheckData;
+    }
+    set lastCheckData(value: ReleaseCheckData) {
+        if (value && value.check > this.lastCheckData.check) {
+            Object.assign(this._lastCheckData, value);
+            this.storage.set('release', this._lastCheckData).catch(this.logger.error);
+        }
+    }
     downloadStatus = { ...defaultStatus };
 
     private loadLock = false;
@@ -83,10 +99,6 @@ export class DatabaseUpdater {
                 progress: 100,
                 complete: true,
             });
-            this.lastCheckData = {
-                ...this.lastCheckData,
-                old: await this.messaging.emit('get-tag-sha', undefined),
-            };
             void sleep(2500).then(() => {
                 if (this.downloadStatus.complete) {
                     this.badge.set('', '#4A90E2');
@@ -117,25 +129,21 @@ export class DatabaseUpdater {
         void this.messaging.emit('updating-database', this.downloadStatus);
     }
 
-    async checkVersion(force = false): Promise<ReleaseCheckData | null> {
+    async checkVersion(force = false): Promise<ReleaseCheckData> {
         if (!force) {
-            // 限制每分钟最多请求1次
+            // 限制每 5 分钟最多请求 1 次
             const time = new Date().getTime();
             const lastCheckData = this.lastCheckData;
-            if (time - lastCheckData.check <= 1000 * 60 && lastCheckData.githubRelease) {
+            if (time - lastCheckData.check <= 1000 * 60 * 5 && lastCheckData.githubRelease) {
                 return lastCheckData;
             }
         }
 
-        const oldRelease = await this.storage.get('release');
         const info = await this.database.getLatestVersion();
+        if (!info.target_commitish) throw new Error('获取失败，响应有误');
 
-        if (!info.target_commitish) {
-            return null;
-        }
         this.lastCheckData = {
-            old: oldRelease?.info.target_commitish ?? '',
-            new: info.target_commitish,
+            sha: info.target_commitish,
             githubRelease: info,
             check: Date.now(),
         };

@@ -1,13 +1,13 @@
 import { browser } from 'webextension-polyfill-ts';
-import { makeTagMatchHtml } from 'utils';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { openInTab } from 'providers/utils';
 import { Messaging } from 'services/messaging';
+import { Tagging } from 'services/tagging';
 
 @Service()
 export class OmniBox {
-    constructor(readonly logger: Logger, readonly messaging: Messaging) {
+    constructor(readonly logger: Logger, readonly messaging: Messaging, readonly tagging: Tagging) {
         if (!chrome.omnibox) {
             logger.info('不支持 Omnibox');
             return;
@@ -45,9 +45,9 @@ export class OmniBox {
             .emit('suggest-tag', { term: text.trim(), limit: 5 })
             .then((suggestions) => {
                 const data = suggestions.map((suggestion) => {
-                    const html = makeTagMatchHtml(suggestion, 'match');
+                    const html = this.tagging.makeTagMatchHtml(suggestion, 'match');
                     return {
-                        content: suggestion.tag.search,
+                        content: this.tagging.searchTerm(suggestion.tag),
                         description: `${html.cn}<dim> - ${html.en}</dim>`,
                     };
                 });

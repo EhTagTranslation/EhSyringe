@@ -1,5 +1,3 @@
-import { Opaque } from 'type-fest';
-
 export interface EHTDatabase {
     head: {
         author: {
@@ -32,6 +30,8 @@ export type EHTNamespaceName =
     | 'female'
     | 'misc';
 
+export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'm' | 'f';
+
 export interface EHTNamespace {
     namespace: EHTNamespaceName;
     count: number;
@@ -45,13 +45,11 @@ export interface EHTTag {
 }
 
 export interface TagItem extends EHTTag {
-    search: string;
-    namespace: EHTNamespaceName;
+    /** 单字母表示的命名空间 */
+    ns: EHTNamespaceNameShort;
     key: string;
-    /** 标准格式标签，使用单字母命名空间名称，misc 省略 */
-    fullKey: string;
     /** 去除 emoji 和图片等的名称 */
-    cleanName: string;
+    cn: string;
 }
 
 export interface TagMap {

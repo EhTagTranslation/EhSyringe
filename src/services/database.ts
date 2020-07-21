@@ -1,7 +1,6 @@
 import { Service } from '.';
 import { GithubRelease, EHTDatabase } from 'interface';
 import { Http, Progress } from './http';
-import { downloadFile } from 'utils';
 
 @Service()
 export class Database {
@@ -13,12 +12,20 @@ export class Database {
     }
 
     async getData(version: GithubRelease, progress?: Progress): Promise<EHTDatabase> {
-        const sha = version.target_commitish;
-        return await this.http.download<EHTDatabase>(
-            `https://cdn.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.raw.json`,
-            'GET',
-            progress,
-            'json',
-        );
+        const dataJson = /<!--(.+?)-->/gis.exec(version.body);
+        if (!dataJson) throw new Error(`GitHub 发布数据无法解析，可能需要更新插件版本`);
+        try {
+            const data = JSON.parse(dataJson[1]) as Record<string, string>;
+            const sha = data.mirror;
+            if (typeof sha != 'string') throw new Error();
+            return this.http.download<EHTDatabase>(
+                `https://cdn.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
+                'GET',
+                progress,
+                'json',
+            );
+        } catch {
+            throw new Error(`GitHub 发布数据无法解析，可能需要更新插件版本`);
+        }
     }
 }
