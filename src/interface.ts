@@ -50,10 +50,12 @@ export interface TagItem extends EHTTag {
     key: string;
     /** 标准格式标签，使用单字母命名空间名称，misc 省略 */
     fullKey: string;
+    /** 去除 emoji 和图片等的名称 */
+    cleanName: string;
 }
 
 export interface TagMap {
-    [fullKey: string]: TagItem | undefined;
+    [fullKey: string]: TagItem;
 }
 
 export interface GithubRelease {
@@ -67,19 +69,4 @@ export interface GithubRelease {
     created_at: string;
     published_at: string;
     body: string;
-}
-
-export interface ReleaseCheckData {
-    old: string;
-    new: string;
-    timestamp: number;
-    githubRelease: GithubRelease | null;
-}
-
-export interface DownloadStatus {
-    run: boolean;
-    progress: number;
-    info: string;
-    complete: boolean;
-    error: boolean;
 }

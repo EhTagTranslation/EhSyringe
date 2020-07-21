@@ -1,16 +1,28 @@
 import { BehaviorSubject } from 'rxjs';
-import { browser } from 'webextension-polyfill-ts';
 
-import { DownloadStatus, ReleaseCheckData, GithubRelease } from '../interface';
-import { badgeLoading } from '../tool/badge-loading';
-import { chromeMessage } from '../tool/chrome-message';
+import { GithubRelease, EHTDatabase } from 'interface';
 import { Logger } from 'services/logger';
-import { sleep } from '../tool/promise';
-
-import { tagDatabase } from './tag-database';
-import { downloadFile } from '../utils/tool';
 import { Service } from 'typedi';
-import { messaging } from 'providers/messaging';
+import { Messaging } from 'services/messaging';
+import { Storage } from 'services/storage';
+import { Database } from 'services/database';
+import { BadgeLoading } from 'services/badge-loading';
+import { sleep } from 'utils';
+
+export interface DownloadStatus {
+    run: boolean;
+    progress: number;
+    info: string;
+    complete: boolean;
+    error: boolean;
+}
+
+export interface ReleaseCheckData {
+    old: string;
+    new: string;
+    check: number;
+    githubRelease: GithubRelease | null;
+}
 
 const defaultStatus: DownloadStatus = {
     run: false,
@@ -21,14 +33,20 @@ const defaultStatus: DownloadStatus = {
 };
 
 @Service()
-class Updater {
-    constructor(readonly logger: Logger) {
-        messaging.listen('update-database', async ({ force }) => {
+export class DatabaseUpdater {
+    constructor(
+        readonly logger: Logger,
+        readonly messaging: Messaging,
+        readonly storage: Storage,
+        readonly database: Database,
+        readonly badge: BadgeLoading,
+    ) {
+        this.messaging.on('update-database', async ({ force, recheck }) => {
             if (this.checked && !force) {
                 this.logger.log('跳过');
                 return false;
             }
-            const version = await this.checkVersion(true);
+            const version = await this.checkVersion(recheck);
             if (version?.new && (version.new !== version.old || force)) {
                 await this.update();
                 this.logger.log('有新版本并更新');
@@ -39,13 +57,13 @@ class Updater {
         });
     }
 
-    readonly lastCheckData = new BehaviorSubject<ReleaseCheckData>({
+    lastCheckData: ReleaseCheckData = {
         old: '',
         new: '',
-        timestamp: 0,
+        check: 0,
         githubRelease: null,
-    });
-    readonly downloadStatus = new BehaviorSubject<DownloadStatus>(defaultStatus);
+    };
+    downloadStatus = { ...defaultStatus };
 
     private loadLock = false;
 
@@ -56,27 +74,28 @@ class Updater {
         this.initDownloadStatus();
         try {
             const data = await this.download();
-            tagDatabase.update(data.content, data.filename.endsWith('.gz'));
+            await this.messaging.emit('update-tag', data.data);
 
-            badgeLoading.set('OK', '#00C801');
+            this.badge.set('OK', '#00C801');
             this.pushDownloadStatus({
                 run: true,
                 info: '更新完成',
                 progress: 100,
                 complete: true,
             });
-            this.lastCheckData.next({
-                ...this.lastCheckData.value,
-                old: tagDatabase.sha.value,
+            this.lastCheckData = {
+                ...this.lastCheckData,
+                old: await this.messaging.emit('get-tag-sha', undefined),
+            };
+            void sleep(2500).then(() => {
+                if (this.downloadStatus.complete) {
+                    this.badge.set('', '#4A90E2');
+                    this.initDownloadStatus();
+                }
             });
-            await sleep(2500);
-            if (this.downloadStatus.value.complete) {
-                badgeLoading.set('', '#4A90E2');
-                this.initDownloadStatus();
-            }
         } catch (err) {
             const e = err as Error;
-            logger.error(e);
+            this.logger.error(e);
             this.pushDownloadStatus({
                 run: false,
                 error: true,
@@ -86,85 +105,74 @@ class Updater {
     }
 
     private initDownloadStatus(): void {
-        this.downloadStatus.next(defaultStatus);
+        this.downloadStatus = { ...defaultStatus };
+        void this.messaging.emit('updating-database', this.downloadStatus);
     }
 
     private pushDownloadStatus(data: Partial<DownloadStatus> = {}): void {
-        this.downloadStatus.next({
-            ...this.downloadStatus.value,
+        this.downloadStatus = {
+            ...this.downloadStatus,
             ...data,
-        });
+        };
+        void this.messaging.emit('updating-database', this.downloadStatus);
     }
 
     async checkVersion(force = false): Promise<ReleaseCheckData | null> {
         if (!force) {
             // 限制每分钟最多请求1次
             const time = new Date().getTime();
-            const lastCheckData = this.lastCheckData.value;
-            if (time - lastCheckData.timestamp <= 1000 * 60 && lastCheckData.githubRelease) {
+            const lastCheckData = this.lastCheckData;
+            if (time - lastCheckData.check <= 1000 * 60 && lastCheckData.githubRelease) {
                 return lastCheckData;
             }
         }
 
-        const { sha } = await browser.storage.local.get(['sha']);
-        const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
-        const info = (await (await fetch(githubDownloadUrl)).json()) as GithubRelease;
+        const oldRelease = await this.storage.get('release');
+        const info = await this.database.getLatestVersion();
 
-        if (!info?.target_commitish) {
+        if (!info.target_commitish) {
             return null;
         }
-        this.lastCheckData.next({
-            old: sha,
+        this.lastCheckData = {
+            old: oldRelease?.info.target_commitish ?? '',
             new: info.target_commitish,
             githubRelease: info,
-            timestamp: new Date().getTime(),
-        });
+            check: Date.now(),
+        };
         this.checked = true;
-        return this.lastCheckData.value;
+        return this.lastCheckData;
     }
 
-    private async download(): Promise<{
-        release: GithubRelease;
-        filename: string;
-        content: ArrayBuffer;
-    }> {
+    private async download(): Promise<{ release: GithubRelease; data: EHTDatabase }> {
         if (this.loadLock) {
             throw new Error('已经正在下载');
         }
         this.loadLock = true;
         try {
-            badgeLoading.set('', '#4A90E2', 2);
+            this.badge.set('', '#4A90E2', 2);
             this.pushDownloadStatus({ run: true, info: '加载中' });
             const checkData = await this.checkVersion();
-            if (!checkData?.githubRelease?.assets) {
-                logger.debug('checkData', checkData);
+            if (!checkData?.githubRelease?.target_commitish) {
+                this.logger.debug('checkData', checkData);
                 throw new Error('无法获取版本信息');
             }
             const info = checkData.githubRelease;
-            const asset =
-                info.assets.find((i) => i.name === 'db.html.json.gz') ??
-                info.assets.find((i) => i.name === 'db.html.json');
-            if (!asset || !asset.browser_download_url) {
-                logger.debug('assets', info.assets);
-                throw new Error('无法获取下载地址');
-            }
-            const url = asset.browser_download_url;
-            const timer = logger.time(`开始下载 ${url}`);
+            const timer = this.logger.time(`开始下载`);
             try {
                 this.pushDownloadStatus({ info: '0%', progress: 0 });
-                badgeLoading.set('0', '#4A90E2', 1);
-                const data = await downloadFile(url, undefined, (event) => {
+                this.badge.set('0', '#4A90E2', 1);
+                const data = await this.database.getData(info, (event) => {
                     if (event.lengthComputable) {
                         const percent = Math.floor((event.loaded / event.total) * 100);
                         this.pushDownloadStatus({ info: `${percent}%`, progress: percent });
-                        badgeLoading.set(percent.toFixed(0), '#4A90E2', 1);
+                        this.badge.set(percent.toFixed(0), '#4A90E2', 1);
                     }
                 });
                 this.pushDownloadStatus({ info: '下载完成', progress: 100 });
-                badgeLoading.set('100', '#4A90E2', 1);
-                return { release: info, filename: asset.name, content: data };
+                this.badge.set('100', '#4A90E2', 1);
+                return { release: info, data };
             } catch (ex) {
-                badgeLoading.set('ERR', '#C80000');
+                this.badge.set('ERR', '#C80000');
                 throw ex;
             } finally {
                 timer.end();
@@ -174,5 +182,3 @@ class Updater {
         }
     }
 }
-
-export const updater = new Updater();

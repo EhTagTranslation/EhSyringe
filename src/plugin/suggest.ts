@@ -1,7 +1,6 @@
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
-import { EHTNamespaceName, TagItem, TagList } from 'interface';
-import { TagDatabase } from 'plugin/tag-database';
+import { EHTNamespaceName, TagItem } from 'interface';
 import { Messaging } from 'services/messaging';
 
 export interface Suggestion {
@@ -11,17 +10,23 @@ export interface Suggestion {
 
     match: {
         key?: { start: number; length: number };
-        name?: { start: number; length: number };
+        cleanName?: { start: number; length: number };
     };
 }
 
 @Service()
 export class Suggest {
-    constructor(readonly tagDatabase: TagDatabase, readonly logger: Logger, readonly messaging: Messaging) {
-        tagDatabase.tagList.subscribe((data) => (this.tagList = data));
-        messaging.listen('suggest-tag', (args) => {
+    constructor(readonly logger: Logger, readonly messaging: Messaging) {
+        messaging.on('suggest-tag', (args) => {
             return this.getSuggests(args.term, args.limit);
         });
+        this.update().catch(logger.error);
+    }
+
+    private async update(): Promise<void> {
+        const v = await this.messaging.emit('get-tag-map', { ifNotMatch: this.sha });
+        if (v.map) this.tagList = Object.values(v.map);
+        this.sha = v.sha;
     }
 
     readonly nsScore: {
@@ -63,12 +68,13 @@ export class Suggest {
         female: 'female',
     };
 
-    private tagList: TagList = [];
+    private tagList: TagItem[] = [];
+    private sha = '';
     private markTag(tag: TagItem, search: string, term: string): Suggestion {
         const key = tag.key;
-        const name = tag.name.toLowerCase();
+        const cleanName = tag.cleanName.toLowerCase();
         const keyIdx = key.indexOf(search);
-        const nameIdx = name.indexOf(search);
+        const nameIdx = cleanName.indexOf(search);
         let score = 0;
         const match: Suggestion['match'] = {};
         if (keyIdx >= 0) {
@@ -76,8 +82,8 @@ export class Suggest {
             match.key = { start: keyIdx, length: search.length };
         }
         if (nameIdx >= 0) {
-            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / name.length) * (nameIdx === 0 ? 2 : 1);
-            match.name = { start: nameIdx, length: search.length };
+            score += ((this.nsScore[tag.namespace] * (search.length + 1)) / cleanName.length) * (nameIdx === 0 ? 2 : 1);
+            match.cleanName = { start: nameIdx, length: search.length };
         }
         return {
             tag,
@@ -87,7 +93,8 @@ export class Suggest {
         };
     }
 
-    getSuggests(term: string, limit = -1): Suggestion[] {
+    async getSuggests(term: string, limit = -1): Promise<Suggestion[]> {
+        await this.update();
         if (!this.tagList.length || !term) {
             return [];
         }

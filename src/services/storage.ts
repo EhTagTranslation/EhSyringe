@@ -1,6 +1,6 @@
 import { Service } from '.';
 import { storage } from 'providers/storage';
-import { TagMap } from 'interface';
+import { TagMap, GithubRelease } from 'interface';
 
 export const enum ImageLevel {
     hide,
@@ -32,6 +32,8 @@ export interface StorageItems {
               version: number;
           }
         | undefined;
+
+    release: { info: GithubRelease; check: number } | undefined;
 }
 
 const defaults: StorageItems = {
@@ -47,6 +49,7 @@ const defaults: StorageItems = {
         tagTip: true,
     },
     database: undefined,
+    release: undefined,
 };
 
 @Service()

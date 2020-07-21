@@ -3,13 +3,13 @@ import { getEditorUrl, getFullKey } from 'utils';
 import { Service } from 'services';
 import { Logger } from 'services/logger';
 import { Storage } from 'services/storage';
-import { messaging } from 'providers/messaging';
+import { Messaging } from 'services/messaging';
 
 import './index.less';
 
 @Service()
 export class Introduce {
-    constructor(readonly logger: Logger, readonly storage: Storage) {
+    constructor(readonly logger: Logger, readonly storage: Storage, readonly messaging: Messaging) {
         this.init().catch(logger.error);
     }
     async init(): Promise<void> {
@@ -80,14 +80,14 @@ export class Introduce {
 
     async openIntroduceBox(namespace: EHTNamespaceName, tag: string, canceled: () => boolean): Promise<void> {
         const timer = this.logger.time('获取标签介绍');
-        const tagData = await messaging.emit('get-tag-list', getFullKey(namespace, tag));
+        const tagData = await this.messaging.emit('get-tag', getFullKey(namespace, tag));
         timer.log(tagData);
         timer.end();
 
         if (canceled()) {
             return;
         }
-        if (tagData && !Array.isArray(tagData)) {
+        if (tagData) {
             // language=HTML
             this.introduceBox.innerHTML = `
             <div class="ehs-title">

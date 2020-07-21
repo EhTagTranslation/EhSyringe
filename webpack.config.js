@@ -168,7 +168,6 @@ if (argv.userScript) {
         new CopyPlugin({
             patterns: [
                 { from: 'src/assets', to: 'assets' },
-                { from: 'src/template', to: 'template' },
             ],
         }),
         new WebExtensionPlugin({

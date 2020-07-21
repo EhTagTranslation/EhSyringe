@@ -1,4 +1,3 @@
-import { browser } from 'webextension-polyfill-ts';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { Storage } from 'services/storage';
@@ -7,6 +6,7 @@ import { Messaging } from 'services/messaging';
 import { Notification } from 'services/notification';
 import { Http } from 'services/http';
 import { GithubRelease } from 'interface';
+import { extInfo } from 'providers/web-ext/info';
 
 @Service()
 export class ExtensionUpdater {
@@ -18,7 +18,7 @@ export class ExtensionUpdater {
         readonly http: Http,
     ) {
         this.check().catch(logger.error);
-        messaging.listen('update-extension', () => this.check());
+        messaging.on('check-extension', () => this.check());
     }
 
     private async check(): Promise<boolean> {
@@ -30,7 +30,7 @@ export class ExtensionUpdater {
         }
 
         try {
-            const info = await browser.management.getSelf();
+            const info = await extInfo();
             const response = await this.http.json<GithubRelease>(
                 'https://api.github.com/repos/EhTagTranslation/EhSyringe/releases/latest',
             );

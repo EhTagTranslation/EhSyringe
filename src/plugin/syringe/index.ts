@@ -1,31 +1,12 @@
 import { UiTranslation } from 'services/ui-translation';
 import { Service } from 'services';
-import { TagReplace } from '../../interface';
-import { chromeMessage } from '../../tool/chrome-message';
 import { Storage, ConfigData } from 'services/storage';
 import { Logger } from 'services/logger';
+import { Messaging } from 'services/messaging';
+import { TagMap } from 'interface';
 
 import './index.less';
-
-(function (): void {
-    const tagClear = (): void => {
-        window.localStorage.removeItem('tag-list');
-        window.localStorage.removeItem('tag-replace-data');
-        window.localStorage.removeItem('tag-update-time');
-        window.localStorage.removeItem('tag-sha');
-        chrome.storage.local.remove('tagList');
-        chrome.storage.local.remove('tagReplaceData');
-        chrome.storage.local.remove('updateTime');
-        chrome.storage.local.remove('tagDB');
-        chrome.storage.local.remove('sha');
-    };
-    if ('exportFunction' in window) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
-        (window as any).exportFunction(tagClear, window, { defineAs: 'tagClear' });
-    } else {
-        Object.defineProperty(window, 'tagClear', { value: tagClear, configurable: true });
-    }
-})();
+import { DatabaseUpdater } from 'plugin/database-updater';
 
 function isNode<K extends keyof HTMLElementTagNameMap>(node: Node, nodeName: K): node is HTMLElementTagNameMap[K] {
     return node && node.nodeName === nodeName.toUpperCase();
@@ -37,11 +18,17 @@ function isText(node: Node): node is Text {
 
 @Service()
 export class Syringe {
-    constructor(readonly storage: Storage, readonly uiTranslation: UiTranslation, readonly logger: Logger) {
+    constructor(
+        readonly storage: Storage,
+        readonly uiTranslation: UiTranslation,
+        readonly logger: Logger,
+        readonly messaging: Messaging,
+    ) {
         this.init().catch(this.logger.error);
     }
 
-    tagReplace?: TagReplace;
+    tagMap?: TagMap;
+    private sha?: string;
     pendingTags: Node[] = [];
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
@@ -82,10 +69,11 @@ export class Syringe {
 
         if (this.config.translateTag) {
             const timer = this.logger.time('获取替换数据');
-            chromeMessage
-                .send('get-tagreplace', null)
+            this.messaging
+                .emit('get-tag-map', { ifNotMatch: this.sha })
                 .then((data) => {
-                    this.tagReplace = data as TagReplace;
+                    if (data.map) this.tagMap = data.map;
+                    this.sha = data.sha;
                     timer.end();
                     const pendingTags = this.pendingTags;
                     this.pendingTags = [];
@@ -149,7 +137,7 @@ export class Syringe {
             return false;
         }
 
-        if (!this.tagReplace) {
+        if (!this.tagMap) {
             // 替换列表未加载时直接返回
             this.pendingTags.push(node);
             return true;
@@ -159,16 +147,16 @@ export class Syringe {
             if (aTitle.startsWith(':')) {
                 aTitle = aTitle.slice(1);
             }
-            if (this.tagReplace[aTitle]) {
-                value = this.tagReplace[aTitle];
+            if (this.tagMap[aTitle]) {
+                value = this.tagMap[aTitle].name;
             }
         }
 
         if (!value && aId) {
             aId = aId.replace('ta_', '');
             aId = aId.replace(/_/gi, ' ');
-            if (this.tagReplace[aId]) {
-                value = this.tagReplace[aId];
+            if (this.tagMap[aId]) {
+                value = this.tagMap[aId].name;
             }
         }
 

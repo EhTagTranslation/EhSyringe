@@ -1,6 +1,7 @@
 import { Service } from '.';
 import { GithubRelease, EHTDatabase } from 'interface';
-import { Http } from './http';
+import { Http, Progress } from './http';
+import { downloadFile } from 'utils';
 
 @Service()
 export class Database {
@@ -11,10 +12,13 @@ export class Database {
         return info;
     }
 
-    async getData(version: GithubRelease): Promise<EHTDatabase> {
+    async getData(version: GithubRelease, progress?: Progress): Promise<EHTDatabase> {
         const sha = version.target_commitish;
-        return await this.http.json<EHTDatabase>(
+        return await this.http.download<EHTDatabase>(
             `https://cdn.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.raw.json`,
+            'GET',
+            progress,
+            'json',
         );
     }
 }

@@ -1,5 +1,4 @@
 import emojiRegex from 'emoji-regex';
-import { browser } from 'webextension-polyfill-ts';
 import { EHTDatabase, TagMap } from '../interface';
 import { getFullKey, getSearchTerm } from 'utils';
 import { Service } from 'typedi';
@@ -14,47 +13,46 @@ const DATA_STRUCTURE_VERSION = 7;
 
 @Service()
 export class TagDatabase {
-    readonly tagMap: TagMap = {};
-    readonly sha = '0000000000000000000000000000000000000000';
+    tagMap: TagMap = {};
+    sha = '0000000000000000000000000000000000000000';
 
     constructor(readonly storage: Storage, readonly logger: Logger, readonly messaging: Messaging) {
-        messaging.listen('get-tag', (key) => {
+        messaging.on('get-tag', (key) => {
             return this.tagMap[key];
         });
-        messaging.listen('get-tag-map', ({ ifNotMatch }) => {
-            if (ifNotMatch === this.sha) return undefined;
-            return this.tagMap;
+        messaging.on('get-tag-map', ({ ifNotMatch }) => {
+            if (ifNotMatch === this.sha) return { sha: this.sha, map: undefined };
+            return { sha: this.sha, map: this.tagMap };
+        });
+        messaging.on('get-tag-sha', () => {
+            return this.sha;
         });
         this.init().catch(logger.error);
     }
 
     private async init(): Promise<void> {
         const data = await this.storage.get('database');
-        if (dataStructureVersion !== DATA_STRUCTURE_VERSION || !tagList || !tagReplace || !sha) {
-            const timer = logger.time('数据结构变化, 重新构建数据');
-            await this.updateUseLocal();
+        this.messaging.on('update-tag', (data) => this.update(data));
+        if (!data || data.version !== DATA_STRUCTURE_VERSION || !data.map || !data.sha) {
+            const timer = this.logger.time('数据结构变化, 重新构建数据');
+            await this.messaging.emit('update-database', { force: true });
             timer.end();
         } else {
-            this.tagList.next(tagList);
-            this.tagReplace.next(tagReplace);
-            this.updateTime.next(new Date(updateTime));
-            this.sha.next(sha);
+            this.sha = data.sha;
+            this.tagMap = data.map;
         }
     }
 
-    update(data: ArrayBuffer, isGziped: boolean, updateTime: Date = new Date()): void {
-        const timer = logger.time('构建数据');
-        const tagDB = JSON.parse(
-            isGziped ? pako.ungzip(new Uint8Array(data), { to: 'string' }) : new TextDecoder('utf-8').decode(data),
-        ) as EHTDatabase;
+    update(tagDB: EHTDatabase): void {
+        const timer = this.logger.time('构建数据');
         const sha = tagDB.head.sha;
-        const tagReplace: TagReplace = {};
-        const tagList: TagList = [];
-        tagDB.data.forEach((space) => {
-            const namespace = space.namespace;
+        const map: TagMap = {};
+        const check = Date.now();
+        tagDB.data.forEach((nsData) => {
+            const namespace = nsData.namespace;
             if (namespace === 'rows') return;
-            for (const key in space.data) {
-                const t = space.data[key];
+            for (const key in nsData.data) {
+                const t = nsData.data[key];
 
                 const name = t.name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
                 const cleanName = name
@@ -67,34 +65,29 @@ export class TagDatabase {
                 const search = getSearchTerm(namespace, key);
                 const fullKey = getFullKey(namespace, key);
 
-                tagList.push({
+                map[fullKey] = {
                     ...t,
-                    name: cleanName,
+                    name: dirtyName,
+                    cleanName,
                     key,
                     fullKey,
                     namespace,
                     search,
-                });
-                tagReplace[fullKey] = dirtyName;
+                };
             }
         });
-        this.updateTime.next(updateTime.getTime() ? updateTime : undefined);
-        this.tagList.next(tagList);
-        this.tagReplace.next(tagReplace);
-        this.sha.next(sha);
+        this.tagMap = map;
+        this.sha = sha;
         timer.end();
 
         // 后台继续处理，直接返回
-        browser.storage.local
-            .set({
-                tagList,
-                tagReplace,
+        this.storage
+            .set('database', {
                 sha,
-                updateTime: updateTime.getTime() ?? undefined,
-                dataStructureVersion: DATA_STRUCTURE_VERSION,
+                map,
+                check,
+                version: DATA_STRUCTURE_VERSION,
             })
-            .catch(logger.error);
+            .catch(this.logger.error);
     }
 }
-
-export const tagDatabase = new TagDatabase();

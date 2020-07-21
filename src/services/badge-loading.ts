@@ -1,16 +1,10 @@
-import { browser } from 'webextension-polyfill-ts';
+import { Logger } from './logger';
+import { Service } from 'typedi';
+import { setBadge } from 'providers/utils';
 
-import { logger } from '../services/logger';
-
-class BadgeLoading {
-    constructor() {
-        browser.management
-            .getSelf()
-            .then((data) => {
-                this.extname = data.name || this.extname;
-            })
-            .catch(logger.error);
-    }
+@Service()
+export class BadgeLoading {
+    constructor(readonly logger: Logger) {}
 
     readonly loadingStrArr = [
         [''],
@@ -28,31 +22,21 @@ class BadgeLoading {
     extname = 'EhSyringe';
 
     private setColor(color = '#4A90E2'): void {
-        if (this.color !== color) {
-            this.color = color;
-            if (chrome.browserAction.setBadgeBackgroundColor) {
-                chrome.browserAction.setBadgeBackgroundColor({ color });
-            }
-        }
+        setBadge({ background: color });
     }
 
     private setText(text: string): void {
-        if (chrome.browserAction.setBadgeText) {
-            chrome.browserAction.setBadgeText({ text });
-        } else {
-            const title = text ? `${this.extname} (${text})` : this.extname;
-            chrome.browserAction.setTitle({ title });
-        }
+        setBadge({ text });
     }
 
-    set(text: string, color = '', loading = 0): void {
+    set(text: string, color?: string, loading = 0): void {
         if (this.index !== loading) {
             this.index = loading;
             this.loadingString = this.loadingStrArr[this.index] || [''];
             this.frame = 0;
         }
         this.text = text;
-        this.setColor(color || undefined);
+        this.setColor(color);
         if (loading) {
             if (!this.interval) {
                 this.interval = setInterval(() => {
@@ -73,5 +57,3 @@ class BadgeLoading {
         }
     }
 }
-
-export const badgeLoading = new BadgeLoading();

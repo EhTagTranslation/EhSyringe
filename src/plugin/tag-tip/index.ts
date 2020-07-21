@@ -5,13 +5,13 @@ import { makeTagMatchHtml } from 'utils';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Suggestion } from 'plugin/suggest';
-import { messaging } from 'providers/messaging';
+import { Messaging } from 'services/messaging';
 
 import './index.less';
 
 @Service()
 export class TagTip {
-    constructor(readonly storage: Storage, readonly logger: Logger) {
+    constructor(readonly storage: Storage, readonly logger: Logger, readonly messaging: Messaging) {
         this.init().catch(logger.error);
     }
 
@@ -75,7 +75,7 @@ export class TagTip {
                 if (sv.length) {
                     const svs = sv.join(' ');
                     if (!svs || svs.replace(/\s+/, '').length === 0) return;
-                    const suggestions = await messaging.emit('suggest-tag', {
+                    const suggestions = await this.messaging.emit('suggest-tag', {
                         term: svs,
                         limit: 50,
                     });

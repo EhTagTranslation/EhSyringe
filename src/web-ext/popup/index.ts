@@ -1,12 +1,14 @@
 import { html, nothing, render, svg, SVGTemplateResult, TemplateResult } from 'lit-html';
 import { browser } from 'webextension-polyfill-ts';
-
-import { background } from '../../background';
-import { DownloadStatus } from '../../interface';
-import { config, ConfigData } from '../../tool/config-manage';
 import { dateDiff } from 'utils';
+import { extInfo } from 'providers/web-ext/info';
+import { Service } from 'typedi';
+import { Container } from 'services';
+import { Logger } from 'services/logger';
 
-import './popup.less';
+import './index.less';
+import { ConfigData, Storage } from 'services/storage';
+import { Messaging } from 'services/messaging';
 
 interface PopupState {
     sha: string;
@@ -24,8 +26,9 @@ interface PopupState {
     configValue: ConfigData;
 }
 
+@Service()
 class Popup {
-    constructor() {
+    constructor(readonly logger: Logger, readonly messaging: Messaging, readonly storage: Storage) {
         window.addEventListener('click', (ev) => {
             this.openLink(ev).catch(logger.error);
         });
@@ -33,17 +36,16 @@ class Popup {
         this.getVersion();
         this.checkVersion().catch(logger.error);
         this.loadConfig().catch(logger.error);
-        browser.management
-            .getSelf()
+        extInfo()
             .then((data) => {
                 this.state.extensionVersion = `${data.version}`;
             })
             .catch(logger.error);
-        const downloadStatusSub = background.updater.downloadStatus.subscribe((data) => {
+        const sub = this.messaging.on('updating-database', (data) => {
             this.downloadStatus(data).catch(logger.error);
         });
         window.addEventListener('unload', () => {
-            downloadStatusSub.unsubscribe();
+            this.messaging.off(sub);
         });
     }
 
@@ -85,7 +87,7 @@ class Popup {
     ];
 
     async loadConfig(): Promise<void> {
-        this.configOriginal = await config.get();
+        this.configOriginal = await this.storage.get('config');
         this.state.configValue = { ...this.configOriginal };
     }
 
@@ -231,7 +233,7 @@ class Popup {
         if (key === 'introduceImageLevel') {
             this.state.configValue = {
                 ...this.state.configValue,
-                introduceImageLevel: (value as ConfigData['introduceImageLevel']) - 1,
+                introduceImageLevel: value - 1,
             };
         }
         this.state.configValue = {
@@ -435,4 +437,4 @@ class Popup {
     }
 }
 
-window.onload = () => new Popup();
+window.onload = () => Container.get(Popup);

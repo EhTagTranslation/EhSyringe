@@ -1,4 +1,4 @@
-import { Container as ContainerStatic } from 'typedi';
+import { Container as ContainerStatic, ContainerInstance } from 'typedi';
 export {
     Service,
     Inject,
@@ -9,4 +9,5 @@ export {
     ServiceMetadata,
     ServiceOptions,
 } from 'typedi';
+export type Container = ContainerInstance;
 export const Container = ContainerStatic.of('default');
