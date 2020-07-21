@@ -118,7 +118,7 @@ export class DatabaseUpdater {
 
     private initDownloadStatus(): void {
         this.downloadStatus = { ...defaultStatus };
-        void this.messaging.emit('updating-database', this.downloadStatus);
+        void this.messaging.emit('updating-database', this.downloadStatus, true);
     }
 
     private pushDownloadStatus(data: Partial<DownloadStatus> = {}): void {
@@ -126,7 +126,7 @@ export class DatabaseUpdater {
             ...this.downloadStatus,
             ...data,
         };
-        void this.messaging.emit('updating-database', this.downloadStatus);
+        void this.messaging.emit('updating-database', this.downloadStatus, true);
     }
 
     async checkVersion(force = false): Promise<ReleaseCheckData> {

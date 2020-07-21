@@ -6,6 +6,8 @@ import escapeHtml from 'escape-html';
 export class Tagging {
     readonly nsDic: { [k: string]: EHTNamespaceName } = {
         '': 'misc',
+        misc: 'misc',
+        miscellaneous: 'misc',
         r: 'reclass',
         reclass: 'reclass',
         l: 'language',

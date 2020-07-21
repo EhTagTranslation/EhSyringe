@@ -6,9 +6,10 @@ const WebpackUserScript = require('webpack-userscript');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { argv } = require('yargs');
 const glob = require('glob');
-const fs = require('fs');
 const url = require('url');
+const execa = require('execa')
 
+const dev = argv.mode === 'development';
 /** @type {import('type-fest').PackageJson} */
 const pkgJson = require('./package.json');
 
@@ -32,10 +33,9 @@ const config = {
                 use: {
                     loader: 'ts-loader',
                     options: {
-                        configFile:
-                            argv.mode === 'development'
-                                ? path.resolve(__dirname, 'tsconfig.json')
-                                : path.resolve(__dirname, 'tsconfig.build.json'),
+                        configFile: dev
+                            ? path.resolve(__dirname, 'tsconfig.json')
+                            : path.resolve(__dirname, 'tsconfig.build.json'),
                     },
                 },
                 exclude: /node_modules/,
@@ -119,11 +119,11 @@ const config = {
             resource.request = req;
         }),
     ],
-    devtool: 'inline-source-map',
     performance: {
         maxEntrypointSize: 2 * 1024 ** 2,
         maxAssetSize: 2 * 1024 ** 2,
     },
+    devtool: dev ? 'inline-source-map' : 'source-map',
 };
 
 if (argv.userScript) {
@@ -134,10 +134,8 @@ if (argv.userScript) {
             headers: {
                 name: String(pkgJson.displayName || pkgJson.name),
                 namespace: `https://github.com/EhTagTranslation/`,
-                match: ['*://e-hentai.org/*', '*://*/e-hentai.org/*', '*://exhentai.org/*', '*://*/exhentai.org/*'],
-                icon:
-                    'data:image/svg+xml;base64,' +
-                    fs.readFileSync(path.resolve(__dirname, 'src/assets/logo.svg')).toString('base64'),
+                match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
+                icon: `https://github.com/EhTagTranslation/EhSyringe/raw/${execa.commandSync('git rev-parse HEAD').stdout.trim()}/src/assets/logo.svg`,
                 updateURL: url.resolve(pkgJson.homepage, `releases/latest/download/${pkgJson.name}.meta.js`),
                 downloadURL: url.resolve(pkgJson.homepage, `releases/latest/download/${pkgJson.name}.user.js`),
                 'run-at': 'document-start',
@@ -149,8 +147,6 @@ if (argv.userScript) {
                     'GM_getValue',
                     'GM_addValueChangeListener',
                     'GM_removeValueChangeListener',
-                    'GM_addStyle',
-                    'GM_log',
                     'GM_openInTab',
                     'GM_notification',
                 ],
@@ -174,9 +170,7 @@ if (argv.userScript) {
     const vendor = argv.vender ? String(argv.vender) : undefined;
     config.plugins.push(
         new CopyPlugin({
-            patterns: [
-                { from: 'src/assets', to: 'assets' },
-            ],
+            patterns: [{ from: 'src/assets', to: 'assets' }],
         }),
         new WebExtensionPlugin({
             vendor,

@@ -1,20 +1,29 @@
 import emojiRegex from 'emoji-regex';
-import { EHTDatabase, TagMap } from '../interface';
+import { EHTDatabase, TagMap, TagItem } from '../interface';
 import { Service } from 'typedi';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map, first } from 'rxjs/operators';
 
 const emojiReg = emojiRegex();
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
 const DATA_STRUCTURE_VERSION = 7;
 
+interface Data {
+    map: TagMap;
+    sha: string;
+}
+
 @Service()
 export class TagDatabase {
-    tagMap: TagMap = {};
-    sha = '0000000000000000000000000000000000000000';
+    private readonly tagMap = new BehaviorSubject<Data | undefined>(undefined);
+    get mapView(): Observable<Data> {
+        return this.tagMap.pipe(first((v): v is Data => v != null));
+    }
 
     constructor(
         readonly storage: Storage,
@@ -23,14 +32,20 @@ export class TagDatabase {
         readonly tagging: Tagging,
     ) {
         messaging.on('get-tag', (key) => {
-            return this.tagMap[key];
+            return this.mapView.pipe(map((v) => v.map[key])).toPromise();
         });
         messaging.on('get-tag-map', ({ ifNotMatch }) => {
-            if (ifNotMatch === this.sha) return { sha: this.sha, map: undefined };
-            return { sha: this.sha, map: this.tagMap };
+            return this.mapView
+                .pipe(
+                    map((v) => {
+                        if (ifNotMatch === v.sha) return { sha: v.sha, map: undefined };
+                        return { sha: v.sha, map: v.map };
+                    }),
+                )
+                .toPromise();
         });
         messaging.on('get-tag-sha', () => {
-            return this.sha;
+            return this.mapView.pipe(map((v) => v.sha)).toPromise();
         });
         this.init().catch(logger.error);
     }
@@ -44,8 +59,7 @@ export class TagDatabase {
             await this.messaging.emit('update-database', { force: true });
             timer.end();
         } else {
-            this.sha = data.sha;
-            this.tagMap = data.map;
+            this.tagMap.next(data);
         }
     }
 
@@ -70,18 +84,17 @@ export class TagDatabase {
                     .replace(/<img(.*?)>/gi, '<img class="ehs-icon" $1>');
 
                 const fullKey = this.tagging.fullKey({ namespace, key });
-                map[fullKey] = {
+                const ehTag: TagItem = {
                     ...t,
                     name: dirtyName,
                     cn: cleanName,
                     key,
                     ns: this.tagging.ns(namespace),
                 };
+                map[fullKey] = ehTag;
             }
         });
-        this.tagMap = map;
-        this.sha = sha;
-        timer.end();
+        this.tagMap.next({ map, sha });
 
         // 后台继续处理，直接返回
         this.storage
@@ -92,5 +105,6 @@ export class TagDatabase {
                 version: DATA_STRUCTURE_VERSION,
             })
             .catch(this.logger.error);
+        timer.end();
     }
 }

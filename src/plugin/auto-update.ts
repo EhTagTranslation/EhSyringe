@@ -9,7 +9,7 @@ export class AutoUpdate {
         this.init().catch(logger.error);
     }
     private async init(): Promise<void> {
-        this.messaging.emit('check-extension', undefined).catch(this.logger.error);
+        this.messaging.emit('check-extension', undefined, true).catch(this.logger.error);
 
         const conf = await this.storage.get('config');
         if (!conf.autoUpdate) return;
