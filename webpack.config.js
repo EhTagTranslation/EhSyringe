@@ -167,7 +167,7 @@ if (argv.userScript) {
         path: path.resolve(__dirname, 'dist'),
         filename: 'script/[name].js',
     };
-    const vendor = argv.vender ? String(argv.vender) : undefined;
+    const vendor = argv.vendor ? String(argv.vendor) : undefined;
     config.plugins.push(
         new CopyPlugin({
             patterns: [{ from: 'src/assets', to: 'assets' }],
