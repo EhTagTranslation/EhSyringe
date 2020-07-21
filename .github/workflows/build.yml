@@ -1,8 +1,9 @@
 name: build
 
 on:
-    - push
-    - create
+  push:
+  create:
+  pull_request:
 
 jobs:
     build:
@@ -31,3 +32,4 @@ jobs:
                   body: |
                       [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
                   artifacts: releases/*
+                  prerelease: ${{ contains(github.event.ref, '-') }}
