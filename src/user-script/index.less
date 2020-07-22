@@ -5,21 +5,32 @@
     width: 36px;
     height: 36px;
     background: center/contain url('../assets/logo.svg');
+    z-index: 1000;
     &:hover {
         cursor: pointer;
     }
 }
 
 #eh-syringe-popup {
-    position: fixed;
+    position: absolute;
     bottom: 12px;
     right: 12px;
-    width: 240px;
-    height: 400px;
-    display: none;
     border: white solid 2px;
     border-radius: 6px;
+}
+
+#eh-syringe-popup-back {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0);
+    transition: visibility,background 0.3s;
     &.show {
-        display: block;
+        background: rgba(0, 0, 0, 0.2);
+        visibility: visible;
     }
 }

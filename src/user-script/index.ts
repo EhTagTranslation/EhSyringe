@@ -26,18 +26,20 @@ window.document.addEventListener('DOMContentLoaded', () => {
 
     const button = document.body.appendChild(document.createElement('div'));
     button.id = 'eh-syringe-popup-button';
-    const popup = document.body.appendChild(document.createElement('div'));
+    const popupBack = document.body.appendChild(document.createElement('div'));
+    popupBack.id = 'eh-syringe-popup-back';
+    const popup = popupBack.appendChild(document.createElement('div'));
     popup.id = 'eh-syringe-popup';
 
     const closeListeners = new Array<() => unknown>();
     const openListeners = new Array<() => unknown>();
     const open = (): void => {
         openListeners.forEach((l) => l());
-        popup.classList.add('show');
+        popupBack.classList.add('show');
     };
     const close = (): void => {
         closeListeners.forEach((l) => l());
-        popup.classList.remove('show');
+        popupBack.classList.remove('show');
     };
     Container.get(Popup).mount(popup, {
         close: close,
@@ -48,5 +50,8 @@ window.document.addEventListener('DOMContentLoaded', () => {
             closeListeners.push(listener);
         },
     });
-    button.onclick = open;
+    button.addEventListener('click', open);
+    popupBack.addEventListener('click', (ev) => {
+        if (ev.target === popupBack) close();
+    });
 });

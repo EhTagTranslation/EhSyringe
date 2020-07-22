@@ -355,7 +355,8 @@ export class Popup {
 
     private template(): TemplateResult {
         const state = this.state;
-        return html` <div class="popup-root ${state.showSettingPanel ? 'hide' : ''}">
+        return html` <div id="eh-syringe-popup-root">
+            <div class="popup-root ${state.showSettingPanel ? 'hide' : ''}">
                 <div class="head-buttons">
                     <div>
                         <a href="https://github.com/EhTagTranslation/EhSyringe" id="extensionVersion" class="monospace"
@@ -429,7 +430,8 @@ export class Popup {
                     </button>
                 </div>
             </div>
-            ${state.configValue ? this.settingPanelTemplate() : nothing}`;
+            ${state.configValue ? this.settingPanelTemplate() : nothing}
+        </div>`;
     }
 
     private el!: HTMLElement;
@@ -458,6 +460,7 @@ export class Popup {
             this.messaging.off(this.downloadStatusSub);
             this.downloadStatusSub = undefined;
         }
+        this.state.showSettingPanel = false;
         this.el.removeEventListener('click', this.openLink);
     }
 
