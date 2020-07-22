@@ -154,8 +154,11 @@ if (argv.userScript) {
      * @param {string} chunkName
      * @param {boolean} meta
      */
-    const fileName = (chunkName, meta = false) =>
-        chunkName === 'main' ? `${pkgJson.name}.user.js` : `${pkgJson.name}.${chunkName}.${meta ? 'meta' : 'user'}.js`;
+    const fileName = (chunkName, meta = false) => {
+        const name = chunkName === 'main' ? `${pkgJson.name}` : `${pkgJson.name}.${chunkName}`;
+        const ext = meta ? 'meta' : 'user';
+        return `${name}.${ext}.js`;
+    };
 
     config.entry = { main: path.resolve(__dirname, 'src/user-script/index.ts') };
     if (dev) {
