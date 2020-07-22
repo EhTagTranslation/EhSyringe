@@ -9,6 +9,7 @@ import { DatabaseUpdater } from 'plugin/database-updater';
 import { Suggest } from 'plugin/suggest';
 import { TagDatabase } from 'plugin/tag-database';
 import { Popup } from 'plugin/popup';
+import { packageJson } from 'info';
 
 import './index.less';
 
@@ -26,6 +27,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
 
     const button = document.body.appendChild(document.createElement('div'));
     button.id = 'eh-syringe-popup-button';
+    button.title = packageJson.displayName;
     const popupBack = document.body.appendChild(document.createElement('div'));
     popupBack.id = 'eh-syringe-popup-back';
     const popup = popupBack.appendChild(document.createElement('div'));

@@ -236,7 +236,7 @@ export class Popup {
         await this.loadConfig();
         await sleep(200);
         this.provider.close();
-        if (browser) {
+        if ('browser' in globalThis) {
             const tabs = await browser.tabs.query({ active: true });
             if (tabs?.length) {
                 const ehTabs = tabs.filter((v) => v.url && /(\/\/|\.)(e-|ex)hentai\.org/i.test(v.url));
