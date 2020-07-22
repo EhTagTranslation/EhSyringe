@@ -11,7 +11,7 @@ const semver = require('semver');
 /** @type {import('type-fest').PackageJson} */
 const pkgJson = require('./package.json');
 
-const dev = argv.mode === 'development';
+const dev = (Array.isArray(argv.mode) ? argv.mode.pop() : argv.mode) === 'development';
 const devServer = !!process.env.WEBPACK_DEV_SERVER;
 const version = semver.parse(pkgJson.version);
 version.prerelease = version.build = [];
