@@ -25,7 +25,7 @@ merge(/^\/(gallery)?torrents\.php/, undefined, {
     Completes: '完成',
     DLs: '完成',
 
-    '0 torrents were found for this gallery.': '当前画集还没有种子',
+    '0 torrents were found for this gallery.': '当前图库还没有种子',
     'Uploader:': '上传者:',
     'New Torrents:': '新种子:',
     Information: '信息',

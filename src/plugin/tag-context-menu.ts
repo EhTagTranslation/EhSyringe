@@ -5,7 +5,7 @@ import { openInTab } from 'providers/utils';
 import { Tagging } from 'services/tagging';
 
 @Service()
-export class ContextMenu implements Menu {
+export class TagContextMenu implements Menu {
     constructor(readonly tagging: Tagging) {
         this.init();
     }
