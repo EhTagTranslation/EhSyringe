@@ -16,6 +16,14 @@
         display: none;
     }
 
+    &.exclude {
+        .auto-complete-item {
+            .en-name::before {
+                content: '- ';
+            }
+        }
+    }
+
     .auto-complete-item {
         padding: 0 8px;
         line-height: 24px;
