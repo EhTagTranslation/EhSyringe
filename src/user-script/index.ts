@@ -40,7 +40,8 @@ window.document.addEventListener('DOMContentLoaded', () => {
     const closeListeners = new Array<() => unknown>();
     const openListeners = new Array<() => unknown>();
     popupBack.classList.add('close');
-    popupBack.ontransitionend = () => {
+    popupBack.ontransitionend = (ev) => {
+        if (ev.target !== popupBack) return;
         if (popupBack.classList.contains('opening')) {
             popupBack.classList.remove('opening', 'close');
             popupBack.classList.add('open');
