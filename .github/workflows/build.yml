@@ -29,8 +29,9 @@ jobs:
               if: github.event_name == 'create' && github.event.ref_type == 'tag'
               with:
                   allowUpdates: true
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  artifacts: releases/*
                   body: |
                       [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
-                  artifacts: releases/*
                   prerelease: ${{ contains(github.event.ref, '-') }}
+                  replacesArtifacts: true
+                  token: ${{ secrets.GITHUB_TOKEN }}
