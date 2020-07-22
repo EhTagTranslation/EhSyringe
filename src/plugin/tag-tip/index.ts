@@ -52,7 +52,7 @@ export class TagTip {
             });
 
         fromEvent<KeyboardEvent>(this.inputElement, 'keydown').subscribe((e) => this.keydown(e));
-        fromEvent<KeyboardEvent>(this.inputElement, 'keyup').subscribe((e) => this.functionKeyChange(e));
+        fromEvent<KeyboardEvent>(this.inputElement, 'keyup').subscribe((e) => this.checkCtrl(e));
 
         fromEvent<MouseEvent>(this.autoCompleteList, 'click').subscribe((e) => {
             this.inputElement.focus();
@@ -105,7 +105,7 @@ export class TagTip {
         this.selectedIndex = -1;
     }
 
-    functionKeyChange(e: KeyboardEvent): void {
+    checkCtrl(e: KeyboardEvent): void {
         this.ctrlKey = e.ctrlKey || e.metaKey;
         if(this.ctrlKey) {
             this.autoCompleteList.classList.add('exclude')
@@ -115,7 +115,7 @@ export class TagTip {
     }
 
     keydown(e: KeyboardEvent): void {
-        this.functionKeyChange(e);
+        this.checkCtrl(e);
         this.ctrlKey == e.ctrlKey || e.metaKey;
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
             if (e.code === 'ArrowUp') {
@@ -167,7 +167,7 @@ export class TagTip {
         const html = this.tagging.makeTagMatchHtml(suggestion, 'mark');
 
         cnName.innerHTML = html.cn;
-        enName.innerHTML = (this.ctrlKey ? '- ' : '') + html.en;
+        enName.innerHTML = html.en;
 
         item.insertBefore(cnName, null);
         item.insertBefore(enName, null);
