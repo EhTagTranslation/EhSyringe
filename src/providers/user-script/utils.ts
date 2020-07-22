@@ -9,5 +9,14 @@ export function sendNotification(info: NotificationInfo): void {
 }
 
 export function setBadge(info: Badge): void {
-    console.log('setBadge', info);
+    const badge = document.getElementById('eh-syringe-popup-badge') as HTMLDivElement;
+    if (badge) {
+        if (info.text != null) {
+            badge.innerText = info.text;
+            badge.style.visibility = info.text ? 'visible' : 'hidden';
+        }
+        if (info.background != null) {
+            badge.style.background = info.background;
+        }
+    }
 }

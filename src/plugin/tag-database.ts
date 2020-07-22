@@ -51,15 +51,16 @@ export class TagDatabase {
     }
 
     private async init(): Promise<void> {
-        const data = await this.storage.get('database');
+        const data = await this.storage.get('databaseInfo');
+        const dataMap = await this.storage.get('database');
         this.messaging.on('update-tag', (data) => this.update(data));
-        if (!data || data.version !== DATA_STRUCTURE_VERSION || !data.map || !data.sha) {
+        if (!data || data.version !== DATA_STRUCTURE_VERSION || !dataMap || !data.sha) {
             const timer = this.logger.time('数据结构变化, 重新构建数据');
             await this.storage.migrate();
             await this.messaging.emit('update-database', { force: true });
             timer.end();
         } else {
-            this.tagMap.next(data);
+            this.tagMap.next({ ...data, map: dataMap });
         }
     }
 
@@ -98,13 +99,13 @@ export class TagDatabase {
 
         // 后台继续处理，直接返回
         this.storage
-            .set('database', {
+            .set('databaseInfo', {
                 sha,
-                map,
                 check,
                 version: DATA_STRUCTURE_VERSION,
             })
             .catch(this.logger.error);
+        this.storage.set('database', map).catch(this.logger.error);
         timer.end();
     }
 }

@@ -38,30 +38,23 @@ export class Popup {
     constructor(readonly logger: Logger, readonly messaging: Messaging, readonly storage: Storage) {}
 
     private configOriginal!: ConfigData;
-    private readonly state: PopupState = new Proxy(
-        {
-            sha: '',
-            info: '',
-            updateTime: '',
-            updateTimeFull: '',
-            extensionVersion: packageJson.version,
-            newSha: '',
-            versionInfo: '',
-            updateAvailable: false,
-            updateButtonDisabled: false,
-            showSettingPanel: false,
-            progress: 0,
-            animationState: 0,
-            configValue: this.configOriginal,
-        },
-        {
-            set: (target, key, value, receiver) => {
-                const r = Reflect.set(target, key, value, receiver);
-                this.update();
-                return r;
-            },
-        },
-    );
+
+    defaults = (): PopupState => ({
+        sha: '',
+        info: '',
+        updateTime: '',
+        updateTimeFull: '',
+        extensionVersion: packageJson.version,
+        newSha: '',
+        versionInfo: '',
+        updateAvailable: false,
+        updateButtonDisabled: false,
+        showSettingPanel: false,
+        progress: 0,
+        animationState: 0,
+        configValue: { ...this.configOriginal },
+    });
+    private state!: PopupState;
 
     private testAnimationIndex = 0;
     private testAnimationList: Array<[number, number]> = [
@@ -95,7 +88,7 @@ export class Popup {
         this.state.versionInfo = '检查中...';
 
         const currentSha = await this.messaging.emit('get-tag-sha', undefined);
-        const updateTime = (await this.storage.get('database'))?.check;
+        const updateTime = (await this.storage.get('databaseInfo'))?.check;
         this.state.sha = currentSha ? currentSha.slice(0, 7) : 'N/A';
         this.state.updateTime = updateTime ? dateDiff(updateTime) : 'N/A';
         this.state.updateTimeFull = updateTime ? new Date(updateTime).toLocaleString() : 'N/A';
@@ -446,9 +439,16 @@ export class Popup {
     }
 
     private async onopen(): Promise<void> {
+        this.state = new Proxy(this.defaults(), {
+            set: (target, key, value, receiver) => {
+                const r = Reflect.set(target, key, value, receiver);
+                this.update();
+                return r;
+            },
+        });
+        await this.loadConfig();
         this.update();
         await this.checkVersion();
-        await this.loadConfig();
         if (!this.downloadStatusSub) {
             this.downloadStatusSub = this.messaging.on('updating-database', this.downloadStatus);
         }

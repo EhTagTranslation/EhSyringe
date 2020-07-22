@@ -40,6 +40,7 @@ export class ExtensionUpdater {
                 Object.defineProperty(e, 'response', response);
                 throw e;
             }
+            await this.storage.set('extensionCheck', Date.now());
             this.logger.log('检查插件更新', { current, latest });
             if (latest === current) return false;
 

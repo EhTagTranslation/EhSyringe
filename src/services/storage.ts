@@ -24,11 +24,11 @@ export interface ConfigData {
 export interface StorageItems {
     config: ConfigData;
     extensionCheck: number;
-    database:
+    database: undefined | TagMap;
+    databaseInfo:
         | undefined
         | {
               sha: string;
-              map: TagMap;
               /** 上次检查时间 */
               check: number;
               /** 插件数据结构版本 */
@@ -94,6 +94,7 @@ export class Storage {
             tagTip: true,
         },
         database: undefined,
+        databaseInfo: undefined,
         release: undefined,
     };
 }

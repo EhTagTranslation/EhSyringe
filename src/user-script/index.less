@@ -6,11 +6,23 @@
     height: 36px;
     border-radius: 36px;
     border: purple 2px solid;
-    background: center/70% no-repeat white url('../assets/logo.svg');
+    background: center/120% no-repeat white url('../assets/logo-padding.svg');
     z-index: 1000;
     &:hover {
         cursor: pointer;
     }
+}
+
+#eh-syringe-popup-badge {
+    height: 14px;
+    font-size: 12px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    background: #444;
+    color: white;
 }
 
 #eh-syringe-popup-back {
@@ -38,7 +50,7 @@
     }
     #eh-syringe-popup {
         position: absolute;
-        bottom: 12px;
+        bottom: 12px + 36px + 24px;
         right: 12px;
         border: #ca8dca solid 1px;
         background: whitesmoke;
