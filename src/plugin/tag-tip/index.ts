@@ -116,7 +116,6 @@ export class TagTip {
 
     keydown(e: KeyboardEvent): void {
         this.checkCtrl(e);
-        this.ctrlKey == e.ctrlKey || e.metaKey;
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
             if (e.code === 'ArrowUp') {
                 this.selectedIndex--;
