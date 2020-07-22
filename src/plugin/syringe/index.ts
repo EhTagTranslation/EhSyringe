@@ -66,7 +66,20 @@ export class Syringe {
             this.documentEnd = true;
         });
         const body = document.querySelector('body');
-        if (body) this.setBodyClass(body);
+        if (body) {
+            const nodes = new Array<Node>();
+            this.setBodyClass(body);
+            const nodeIterator = document.createNodeIterator(body);
+            let node = nodeIterator.nextNode();
+            while (node) {
+                nodes.push(node);
+                this.translateNode(node);
+                node = nodeIterator.nextNode();
+            }
+            this.logger.debug(`有 ${nodes.length} 个节点在注入前加载`, nodes);
+        } else {
+            this.logger.debug(`没有节点在注入前加载`);
+        }
         this.observer = new MutationObserver((mutations) =>
             mutations.forEach((mutation) =>
                 mutation.addedNodes.forEach((node1) => {
