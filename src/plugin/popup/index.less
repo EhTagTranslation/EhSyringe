@@ -5,7 +5,7 @@
     text-align: initial;
     font-size: initial;
     line-height: initial;
-    
+
     input[type='radio'],
     input[type='checkbox'] {
         position: initial;
@@ -49,6 +49,27 @@
             &:active {
                 color: #838185;
             }
+        }
+    }
+    .logo svg {
+        @sa: lighten(@accent, 30%);
+        [fill-bg] {
+            fill: @background;
+        }
+        [fill-accent] {
+            fill: @accent;
+        }
+        [fill-sa] {
+            fill: @sa;
+        }
+        [stroke-bg] {
+            stroke: @background;
+        }
+        [stroke-accent] {
+            stroke: @accent;
+        }
+        [stroke-sa] {
+            stroke: @sa;
         }
     }
 
@@ -167,7 +188,7 @@ body.ex #eh-syringe-popup-root {
         .content {
             margin: 0 16px;
             flex: auto;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .action {
