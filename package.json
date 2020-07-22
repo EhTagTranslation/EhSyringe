@@ -6,7 +6,7 @@
     "author": "EhTagTranslation",
     "scripts": {
         "prestart": "yarn clean",
-        "start": "webpack --mode=development --watch",
+        "start": "webpack-dev-server --mode=development --watch",
         "start:ext": "yarn start --web-ext",
         "start:chrome": "yarn start:ext --vendor=chrome",
         "start:firefox": "yarn start:ext --vendor=firefox",
@@ -65,6 +65,7 @@
         "web-ext": "^4.3.0",
         "webpack": "^4.43.0",
         "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0",
         "webpack-userscript": "^2.5.4",
         "webpack-webextension-plugin": "^0.2.0",
         "yargs": "^15.4.1"

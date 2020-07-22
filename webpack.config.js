@@ -8,17 +8,20 @@ const { argv } = require('yargs');
 const glob = require('glob');
 const execa = require('execa');
 const semver = require('semver');
-
-const dev = argv.mode === 'development';
 /** @type {import('type-fest').PackageJson} */
 const pkgJson = require('./package.json');
+
+const dev = argv.mode === 'development';
+const devServer = !!process.env.WEBPACK_DEV_SERVER;
 const version = semver.parse(pkgJson.version);
 version.prerelease = version.build = [];
 
-let type = '';
+/** @type {'user-script' | 'web-ext'} */
+let type;
 
 /** @type {webpack.Configuration} */
 const config = {
+    mode: dev ? 'development' : 'production',
     module: {
         rules: [
             {
@@ -126,22 +129,34 @@ const config = {
         maxAssetSize: 2 * 1024 ** 2,
     },
     devtool: dev ? 'inline-source-map' : 'source-map',
+    devServer: {
+        port: 48792,
+        inline: false,
+        writeToDisk: true,
+    },
 };
 
 if (argv.userScript) {
     type = 'user-script';
     config.entry = path.resolve(__dirname, 'src/user-script/index.ts');
+    config.output = {
+        path: path.resolve(__dirname, 'releases'),
+        filename: `${pkgJson.name}.user.js`,
+    };
     const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
+    const fileHost = devServer
+        ? `http://localhost:${config.devServer.port}`
+        : `${pkgJson.homepage}/releases/latest/download`;
     config.plugins.push(
         new WebpackUserScript({
             headers: {
                 name: String(pkgJson.displayName || pkgJson.name),
                 namespace: pkgJson.homepage,
-                version: version.format(),
+                version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
-                icon: `${pkgJson.homepage}/raw/${currentHEAD}/src/assets/logo.svg`,
-                updateURL: `${pkgJson.homepage}/releases/latest/download/${pkgJson.name}.meta.js`,
-                downloadURL: `${pkgJson.homepage}/releases/latest/download/${pkgJson.name}.user.js`,
+                icon: `https://cdn.jsdelivr.net/gh/EhTagTranslation/EhSyringe@${currentHEAD}/src/assets/logo.svg`,
+                updateURL: `${fileHost}/${pkgJson.name}.meta.js`,
+                downloadURL: `${fileHost}/${pkgJson.name}.user.js`,
                 'run-at': 'document-start',
                 grant: [
                     'unsafeWindow',
@@ -155,12 +170,9 @@ if (argv.userScript) {
                     'GM_notification',
                 ],
             },
+            proxyScript: { enable: false },
         }),
     );
-    config.output = {
-        path: path.resolve(__dirname, 'releases'),
-        filename: `${pkgJson.name}.user.js`,
-    };
 } else {
     type = 'web-ext';
     config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
@@ -190,4 +202,6 @@ if (argv.userScript) {
     );
 }
 
-module.exports = config;
+config.devServer.contentBase = config.output.path;
+
+module.exports = () => config;
