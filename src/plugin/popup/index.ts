@@ -154,7 +154,7 @@ export class Popup {
               <rect width="200" height="200"/>
           </clipPath>
       </defs>
-      <g clip-path="url(#clip)">
+      <g id="Syringe" clip-path="url(#clip)">
           <g id="PushRod" style="${PushRodStyle}">
               <g transform="translate(-39 -312)">
                   <g transform="translate(131 403)" fill-bg stroke-accent stroke-width="6">
