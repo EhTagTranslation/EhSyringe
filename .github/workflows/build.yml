@@ -28,6 +28,7 @@ jobs:
               uses: ncipollo/release-action@v1
               if: github.event_name == 'create' && github.event.ref_type == 'tag'
               with:
+                  allowUpdates: true
                   token: ${{ secrets.GITHUB_TOKEN }}
                   body: |
                       [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
