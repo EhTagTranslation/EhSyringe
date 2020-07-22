@@ -23,7 +23,8 @@ export class ImageContextMenu implements Menu {
         '*://exhentai.org/t/*.jpg',
         '*://ehgt.org/*.jpg',
         '*://ul.ehgt.org/*.jpg',
-        '*://*.hath.network*/h/*',
+        '*://*.hath.network:*/h/*',
+        '*://*.hath.network/h/*',
     ];
     readonly contexts: Context[] = ['image', 'link'];
 

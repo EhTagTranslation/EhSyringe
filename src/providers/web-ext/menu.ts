@@ -12,7 +12,7 @@ export function createMenu(info: Menu): void {
         contexts: info.contexts,
         onclick: (data: Menus.OnClickData): void => {
             info.onclick({
-                url: data.linkUrl,
+                url: data.mediaType ? data.srcUrl : data.linkUrl,
             });
         },
     });
