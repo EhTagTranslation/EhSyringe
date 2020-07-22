@@ -25,8 +25,7 @@ export class TagTip {
     autoCompleteList!: HTMLDivElement;
     delimiter = ' ';
     ctrlKey = false;
-
-
+    disableExclusionMode = false;
 
     private async init(): Promise<void> {
         const conf = await this.storage.get('config');
@@ -35,6 +34,7 @@ export class TagTip {
 
         const searchInput: HTMLInputElement | null = document.querySelector('#f_search, #newtagfield, [name=f_search]');
         if (!searchInput) return;
+        this.disableExclusionMode = searchInput.id === 'newtagfield'
         this.delimiter = location.pathname.startsWith('/g/') ? ',' : ' ';
         this.inputElement = searchInput;
         this.inputElement.autocomplete = 'off';
@@ -106,6 +106,7 @@ export class TagTip {
     }
 
     checkCtrl(e: KeyboardEvent): void {
+        if(this.disableExclusionMode) return;
         this.ctrlKey = e.ctrlKey || e.metaKey;
         if(this.ctrlKey) {
             this.autoCompleteList.classList.add('exclude')
