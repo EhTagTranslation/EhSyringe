@@ -203,7 +203,8 @@ if (argv.userScript) {
     type = 'web-ext';
     if (dev) config.devtool = 'inline-source-map';
     config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
-        obj[path.parse(el).name] = path.resolve(__dirname, el);
+        const name = path.parse(el).name;
+        if (name !== 'polyfills') obj[name] = path.resolve(__dirname, el);
         return obj;
     }, {});
     config.output = {
