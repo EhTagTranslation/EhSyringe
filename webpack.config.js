@@ -133,30 +133,45 @@ const config = {
         port: 48792,
         inline: false,
         writeToDisk: true,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        },
     },
 };
 
 if (argv.userScript) {
     type = 'user-script';
-    config.entry = path.resolve(__dirname, 'src/user-script/index.ts');
-    config.output = {
-        path: path.resolve(__dirname, 'releases'),
-        filename: `${pkgJson.name}.user.js`,
-    };
     const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
     const fileHost = devServer
         ? `http://localhost:${config.devServer.port}`
         : `${pkgJson.homepage}/releases/latest/download`;
+    /** @param {string} chunkName*/
+    const fileName = (chunkName) =>
+        chunkName === 'main' ? `${pkgJson.name}.user.js` : `${pkgJson.name}.${chunkName}.user.js`;
+
+    config.entry = { main: path.resolve(__dirname, 'src/user-script/index.ts') };
+    if (dev) {
+        config.entry.debug = path.resolve(__dirname, 'src/user-script/debug.ts');
+        config.plugins.push(
+            new webpack.DefinePlugin({
+                userScriptMainSource: JSON.stringify(`${fileHost}/${fileName('main')}`),
+            }),
+        );
+    }
+    config.output = {
+        path: path.resolve(__dirname, 'releases'),
+        filename: (data) => fileName(data.chunk.name),
+    };
     config.plugins.push(
         new WebpackUserScript({
-            headers: {
+            headers: (data) => ({
                 name: String(pkgJson.displayName || pkgJson.name),
                 namespace: pkgJson.homepage,
                 version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
                 icon: `https://cdn.jsdelivr.net/gh/EhTagTranslation/EhSyringe@${currentHEAD}/src/assets/logo.svg`,
-                updateURL: `${fileHost}/${pkgJson.name}.meta.js`,
-                downloadURL: `${fileHost}/${pkgJson.name}.user.js`,
+                updateURL: `${fileHost}/${fileName(data.chunkName)}`,
+                downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
                 'run-at': 'document-start',
                 grant: [
                     'unsafeWindow',
@@ -169,7 +184,7 @@ if (argv.userScript) {
                     'GM_openInTab',
                     'GM_notification',
                 ],
-            },
+            }),
             proxyScript: { enable: false },
         }),
     );
