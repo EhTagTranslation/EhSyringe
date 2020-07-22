@@ -14,6 +14,8 @@ const pkgJson = require('./package.json');
 const dev = (Array.isArray(argv.mode) ? argv.mode.pop() : argv.mode) === 'development';
 const devServer = !!process.env.WEBPACK_DEV_SERVER;
 const version = semver.parse(pkgJson.version);
+const repo = new URL(pkgJson.homepage).pathname.replace(/(^\/|\/$)/g, '');
+pkgJson.homepage = pkgJson.homepage.replace(/\/$/, '');
 version.prerelease = version.build = [];
 
 /** @type {'user-script' | 'web-ext'} */
@@ -130,9 +132,12 @@ const config = {
     },
     devtool: dev ? 'eval-source-map' : 'source-map',
     devServer: {
+        // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
+        // 启用 chrome://flags/#allow-insecure-localhost
+        https: true,
         port: 48792,
-        inline: false,
         writeToDisk: true,
+        allowedHosts: ['.e-hentai.org', '.exhentai.org'],
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
@@ -143,11 +148,14 @@ if (argv.userScript) {
     type = 'user-script';
     const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
     const fileHost = devServer
-        ? `http://localhost:${config.devServer.port}`
+        ? `${config.devServer.https ? 'https' : 'http'}://localhost:${config.devServer.port || 8080}`
         : `${pkgJson.homepage}/releases/latest/download`;
-    /** @param {string} chunkName*/
-    const fileName = (chunkName) =>
-        chunkName === 'main' ? `${pkgJson.name}.user.js` : `${pkgJson.name}.${chunkName}.user.js`;
+    /**
+     * @param {string} chunkName
+     * @param {boolean} meta
+     */
+    const fileName = (chunkName, meta = false) =>
+        chunkName === 'main' ? `${pkgJson.name}.user.js` : `${pkgJson.name}.${chunkName}.${meta ? 'meta' : 'user'}.js`;
 
     config.entry = { main: path.resolve(__dirname, 'src/user-script/index.ts') };
     if (dev) {
@@ -169,8 +177,8 @@ if (argv.userScript) {
                 namespace: pkgJson.homepage,
                 version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
-                icon: `https://cdn.jsdelivr.net/gh/EhTagTranslation/EhSyringe@${currentHEAD}/src/assets/logo.svg`,
-                updateURL: `${fileHost}/${fileName(data.chunkName)}`,
+                icon: `https://cdn.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
+                updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
                 downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
                 'run-at': 'document-start',
                 grant: [

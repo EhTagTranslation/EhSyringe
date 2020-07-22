@@ -24,9 +24,17 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility, opacity 0.4s;
-    &.show {
+    &.open {
         visibility: visible;
         opacity: 1;
+    }
+    &.opening {
+        visibility: visible;
+        opacity: 1;
+    }
+    &.closing {
+        visibility: visible;
+        opacity: 0;
     }
     #eh-syringe-popup {
         position: absolute;

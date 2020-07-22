@@ -33,13 +33,24 @@ window.document.addEventListener('DOMContentLoaded', () => {
 
     const closeListeners = new Array<() => unknown>();
     const openListeners = new Array<() => unknown>();
+    popupBack.classList.add('close');
+    popupBack.ontransitionend = () => {
+        if (popupBack.classList.contains('opening')) {
+            popupBack.classList.remove('opening', 'close');
+            popupBack.classList.add('open');
+        }
+        if (popupBack.classList.contains('closing')) {
+            popupBack.classList.remove('closing', 'open');
+            popupBack.classList.add('close');
+            closeListeners.forEach((l) => l());
+        }
+    };
     const open = (): void => {
         openListeners.forEach((l) => l());
-        popupBack.classList.add('show');
+        popupBack.classList.add('opening');
     };
     const close = (): void => {
-        closeListeners.forEach((l) => l());
-        popupBack.classList.remove('show');
+        popupBack.classList.add('closing');
     };
     Container.get(Popup).mount(popup, {
         close: close,
@@ -50,8 +61,10 @@ window.document.addEventListener('DOMContentLoaded', () => {
             closeListeners.push(listener);
         },
     });
-    button.addEventListener('click', open);
     popupBack.addEventListener('click', (ev) => {
-        if (ev.target === popupBack) close();
+        if (ev.target === popupBack && popupBack.classList.contains('open')) close();
+    });
+    button.addEventListener('click', () => {
+        if (popupBack.classList.contains('close')) open();
     });
 });
