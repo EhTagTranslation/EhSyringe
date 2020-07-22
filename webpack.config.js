@@ -198,6 +198,7 @@ if (argv.userScript) {
     );
 } else {
     type = 'web-ext';
+    if (dev) config.devtool = 'inline-source-map';
     config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
         obj[path.parse(el).name] = path.resolve(__dirname, el);
         return obj;

@@ -6,11 +6,10 @@
     "author": "EhTagTranslation",
     "scripts": {
         "prestart": "yarn clean",
-        "start": "webpack-dev-server --mode=development --watch",
-        "start:ext": "yarn start --web-ext",
+        "start:ext": "webpack --mode=development --watch --web-ext",
         "start:chrome": "yarn start:ext --vendor=chrome",
         "start:firefox": "yarn start:ext --vendor=firefox",
-        "start:monkey": "yarn start --user-script",
+        "start:monkey": "webpack-dev-server --mode=development --watch --user-script",
         "build": "webpack --mode=production",
         "build:ext": "yarn build --web-ext",
         "build:chrome": "yarn build:ext --vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o",
