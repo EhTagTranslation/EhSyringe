@@ -7,10 +7,13 @@ const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const { argv } = require('yargs');
 const glob = require('glob');
 const execa = require('execa');
+const semver = require('semver');
 
 const dev = argv.mode === 'development';
 /** @type {import('type-fest').PackageJson} */
 const pkgJson = require('./package.json');
+const version = semver.parse(pkgJson.version);
+version.prerelease = version.build = [];
 
 let type = '';
 
@@ -127,13 +130,14 @@ const config = {
 
 if (argv.userScript) {
     type = 'user-script';
-    config.entry = path.resolve(__dirname, 'src/user-script.ts');
+    config.entry = path.resolve(__dirname, 'src/user-script/index.ts');
     const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
     config.plugins.push(
         new WebpackUserScript({
             headers: {
                 name: String(pkgJson.displayName || pkgJson.name),
                 namespace: pkgJson.homepage,
+                version: version.format(),
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
                 icon: `${pkgJson.homepage}/raw/${currentHEAD}/src/assets/logo.svg`,
                 updateURL: `${pkgJson.homepage}/releases/latest/download/${pkgJson.name}.meta.js`,
@@ -179,7 +183,7 @@ if (argv.userScript) {
                 short_name: pkgJson.displayName,
                 description: pkgJson.description,
                 author: pkgJson.author,
-                version: pkgJson.version,
+                version: version.format(),
                 homepage_url: pkgJson.homepage,
             },
         }),

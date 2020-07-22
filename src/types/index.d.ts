@@ -12,3 +12,5 @@ declare module '*.less' {
     const value: unknown;
     export default value;
 }
+
+declare const browser: import('webextension-polyfill-ts').Browser;

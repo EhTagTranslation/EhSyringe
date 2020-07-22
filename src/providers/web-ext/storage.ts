@@ -1,4 +1,3 @@
-import { browser } from 'webextension-polyfill-ts';
 import { Storage, Listener, ListenerId } from '../common/storage';
 
 const listeners = new Map<string, Listener[]>();

@@ -1,17 +1,21 @@
-import 'polyfills';
 import { html, nothing, render, svg, SVGTemplateResult, TemplateResult } from 'lit-html';
-import { browser } from 'webextension-polyfill-ts';
 import { dateDiff, sleep } from 'utils';
 import { Service } from 'typedi';
-import { Container } from 'services';
 import { Logger } from 'services/logger';
 import { ConfigData, Storage, ImageLevel } from 'services/storage';
 import { Messaging } from 'services/messaging';
 import { openInTab } from 'providers/utils';
 import { DownloadStatus } from 'plugin/database-updater';
 import { packageJson } from 'info';
+import { MessageListener } from 'providers/common/messaging';
 
-import './popup.less';
+import './index.less';
+
+export interface PopupProvider {
+    close(): void;
+    onclose(listener: () => unknown): void;
+    onopen(listener: () => unknown): void;
+}
 
 interface PopupState {
     sha: string;
@@ -30,49 +34,34 @@ interface PopupState {
 }
 
 @Service()
-class Popup {
-    constructor(readonly logger: Logger, readonly messaging: Messaging, readonly storage: Storage) {
-        this.init().catch(logger.error);
-    }
-
-    private async init(): Promise<void> {
-        window.addEventListener('click', (ev) => {
-            this.openLink(ev);
-        });
-        this._update();
-        await this.checkVersion();
-        await this.loadConfig();
-        const sub = this.messaging.on('updating-database', (data) => {
-            this.downloadStatus(data).catch(this.logger.error);
-        });
-        window.addEventListener('unload', () => {
-            this.messaging.off(sub);
-        });
-    }
+export class Popup {
+    constructor(readonly logger: Logger, readonly messaging: Messaging, readonly storage: Storage) {}
 
     private configOriginal!: ConfigData;
-    private readonly _state: PopupState = {
-        sha: '',
-        info: '',
-        updateTime: '',
-        updateTimeFull: '',
-        extensionVersion: packageJson.version,
-        newSha: '',
-        versionInfo: '',
-        updateAvailable: false,
-        updateButtonDisabled: false,
-        showSettingPanel: false,
-        progress: 0,
-        animationState: 0,
-        configValue: this.configOriginal,
-    };
-    private state: PopupState = new Proxy(this._state, {
-        set: (target, key, value, receiver) => {
-            const r = Reflect.set(target, key, value, receiver);
-            this._update();
-            return r;
+    private readonly state: PopupState = new Proxy(
+        {
+            sha: '',
+            info: '',
+            updateTime: '',
+            updateTimeFull: '',
+            extensionVersion: packageJson.version,
+            newSha: '',
+            versionInfo: '',
+            updateAvailable: false,
+            updateButtonDisabled: false,
+            showSettingPanel: false,
+            progress: 0,
+            animationState: 0,
+            configValue: this.configOriginal,
         },
-    });
+        {
+            set: (target, key, value, receiver) => {
+                const r = Reflect.set(target, key, value, receiver);
+                this.update();
+                return r;
+            },
+        },
+    );
 
     private testAnimationIndex = 0;
     private testAnimationList: Array<[number, number]> = [
@@ -126,18 +115,18 @@ class Popup {
         }
     }
 
-    openLink(ev: MouseEvent): void {
+    private openLink = (ev: MouseEvent): void => {
         if (ev.target instanceof HTMLAnchorElement) {
             const href = ev.target.href;
             if (href && !href.startsWith(document.location.origin + document.location.pathname)) {
                 ev.preventDefault();
                 openInTab(href);
-                window.close();
+                this.provider.close();
             }
         }
-    }
+    };
 
-    async downloadStatus(data: DownloadStatus): Promise<void> {
+    private downloadStatus = async (data: DownloadStatus): Promise<void> => {
         this.state.updateButtonDisabled = data.run;
         this.state.animationState = data.run ? 1 : 0;
         this.state.info = data.info;
@@ -155,14 +144,14 @@ class Popup {
             await sleep(500);
             this.state.animationState = 1;
         }
-    }
+    };
 
     private async updateButtonClick(): Promise<void> {
         this.state.updateButtonDisabled = true;
         await this.messaging.emit('update-database', { force: true, recheck: false });
     }
 
-    _logoTemplate(progress = 0): SVGTemplateResult {
+    private logoTemplate(progress = 0): SVGTemplateResult {
         const PushRodStyle = `transform: translate(${(progress / 400) * 70}px, 0)`;
         const EnemaStyle = `transform: scaleX(${progress / 100})`;
         return svg`
@@ -228,14 +217,14 @@ class Popup {
   </svg>`;
     }
 
-    changeConfigValue<T extends keyof ConfigData>(key: T, value: ConfigData[T]): void {
+    private changeConfigValue<T extends keyof ConfigData>(key: T, value: ConfigData[T]): void {
         this.state.configValue = {
             ...this.state.configValue,
             [key]: value,
         };
     }
 
-    changeConfigUnsaved(): boolean {
+    private changeConfigUnsaved(): boolean {
         const keys = [...Object.keys(this.configOriginal), ...Object.keys(this.state.configValue)] as Array<
             keyof ConfigData
         >;
@@ -246,18 +235,18 @@ class Popup {
         await this.storage.set('config', this.state.configValue);
         await this.loadConfig();
         await sleep(200);
-        window.close();
-        if (chrome) {
+        this.provider.close();
+        if (browser) {
             const tabs = await browser.tabs.query({ active: true });
             if (tabs?.length) {
-                const ehtabs = tabs.filter((v) => v.url && /(\/\/|\.)(e-|ex)hentai\.org/i.test(v.url));
-                this.logger.log('Reload tabs', ehtabs);
-                await Promise.all(ehtabs.map((v) => browser.tabs.reload(v.id)));
+                const ehTabs = tabs.filter((v) => v.url && /(\/\/|\.)(e-|ex)hentai\.org/i.test(v.url));
+                this.logger.log('Reload tabs', ehTabs);
+                ehTabs.map((v) => browser.tabs.reload(v.id));
             }
         }
     }
 
-    _settingPanelTemplate(): TemplateResult {
+    private settingPanelTemplate(): TemplateResult {
         const state = this.state;
 
         const checkboxList: Array<{ key: keyof ConfigData; name: string }> = [
@@ -364,7 +353,7 @@ class Popup {
         `;
     }
 
-    _template(): TemplateResult {
+    private template(): TemplateResult {
         const state = this.state;
         return html` <div class="popup-root ${state.showSettingPanel ? 'hide' : ''}">
                 <div class="head-buttons">
@@ -394,7 +383,7 @@ class Popup {
                             this.testAnimation();
                         }}"
                     >
-                        ${this._logoTemplate(state.progress)}
+                        ${this.logoTemplate(state.progress)}
                     </div>
                     <div id="info">${state.info}</div>
                 </div>
@@ -440,12 +429,39 @@ class Popup {
                     </button>
                 </div>
             </div>
-            ${state.configValue ? this._settingPanelTemplate() : nothing}`;
+            ${state.configValue ? this.settingPanelTemplate() : nothing}`;
     }
 
-    _update(): void {
-        render(this._template(), document.body);
+    private el!: HTMLElement;
+    private provider!: PopupProvider;
+    private downloadStatusSub?: MessageListener;
+    mount(el: HTMLElement, provider: PopupProvider): void {
+        if (this.el != null) throw new Error('Injected twice');
+        this.el = el;
+        this.provider = provider;
+        provider.onopen(() => this.onopen());
+        provider.onclose(() => this.onclose());
+    }
+
+    private async onopen(): Promise<void> {
+        this.update();
+        await this.checkVersion();
+        await this.loadConfig();
+        if (!this.downloadStatusSub) {
+            this.downloadStatusSub = this.messaging.on('updating-database', this.downloadStatus);
+        }
+        this.el.addEventListener('click', this.openLink);
+    }
+
+    private onclose(): void {
+        if (this.downloadStatusSub) {
+            this.messaging.off(this.downloadStatusSub);
+            this.downloadStatusSub = undefined;
+        }
+        this.el.removeEventListener('click', this.openLink);
+    }
+
+    private update(): void {
+        render(this.template(), this.el);
     }
 }
-
-window.onload = () => Container.get(Popup);

@@ -1,4 +1,3 @@
-import { browser } from 'webextension-polyfill-ts';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { openInTab } from 'providers/utils';

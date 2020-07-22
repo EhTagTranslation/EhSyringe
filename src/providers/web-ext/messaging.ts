@@ -52,7 +52,7 @@ class MessagingCross extends Messaging {
             return lr ?? rr.data;
         } else {
             if (le) throw le;
-            if (rr.error && rr.handlers < 0) console.error(key, args, rr.error);
+            if (rr.error && rr.handlers < 0) console.debug(key, args, rr.error);
             if (rr.error && rr.handlers > 0) throw rr.error;
             return lr ?? rr.data;
         }

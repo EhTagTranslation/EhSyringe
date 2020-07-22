@@ -4,10 +4,10 @@ import { Storage, ConfigData } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { TagMap } from 'interface';
+import { Tagging } from 'services/tagging';
 import { packageJson } from 'info';
 
 import './index.less';
-import { Tagging } from 'services/tagging';
 
 function isNode<K extends keyof HTMLElementTagNameMap>(node: Node, nodeName: K): node is HTMLElementTagNameMap[K] {
     return node && node.nodeName === nodeName.toUpperCase();

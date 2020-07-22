@@ -1,4 +1,3 @@
-import { browser } from 'webextension-polyfill-ts';
 import { NotificationInfo } from '../common/notification';
 import { Badge } from 'providers/common/badge';
 import { packageJson } from 'info';

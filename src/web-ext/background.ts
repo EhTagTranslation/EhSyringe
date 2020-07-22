@@ -1,4 +1,4 @@
-import 'polyfills';
+import './polyfills';
 import { Container } from 'services';
 import { ExtensionUpdater } from 'plugin/extension-updater';
 import { ContextMenu } from 'plugin/context-menu';
