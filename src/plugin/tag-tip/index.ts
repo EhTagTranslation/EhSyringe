@@ -24,6 +24,8 @@ export class TagTip {
     inputElement!: HTMLInputElement;
     autoCompleteList!: HTMLDivElement;
     delimiter = ' ';
+    ctrlKey = false;
+    disableExclusionMode = false;
 
     private async init(): Promise<void> {
         const conf = await this.storage.get('config');
@@ -32,6 +34,7 @@ export class TagTip {
 
         const searchInput: HTMLInputElement | null = document.querySelector('#f_search, #newtagfield, [name=f_search]');
         if (!searchInput) return;
+        this.disableExclusionMode = searchInput.id === 'newtagfield'
         this.delimiter = location.pathname.startsWith('/g/') ? ',' : ' ';
         this.inputElement = searchInput;
         this.inputElement.autocomplete = 'off';
@@ -40,7 +43,7 @@ export class TagTip {
 
         fromEvent<KeyboardEvent>(this.inputElement, 'keyup')
             .pipe(
-                filter((e) => !new Set(['ArrowUp', 'ArrowDown', 'Enter']).has(e.code)),
+                filter((e) => !new Set(['ArrowUp', 'ArrowDown', 'Enter', 'Meta', 'Control', 'Alt']).has(e.key)),
                 map(() => this.inputElement.value),
                 // distinctUntilChanged()
             )
@@ -49,6 +52,7 @@ export class TagTip {
             });
 
         fromEvent<KeyboardEvent>(this.inputElement, 'keydown').subscribe((e) => this.keydown(e));
+        fromEvent<KeyboardEvent>(this.inputElement, 'keyup').subscribe((e) => this.checkCtrl(e));
 
         fromEvent<MouseEvent>(this.autoCompleteList, 'click').subscribe((e) => {
             this.inputElement.focus();
@@ -101,7 +105,18 @@ export class TagTip {
         this.selectedIndex = -1;
     }
 
+    checkCtrl(e: KeyboardEvent): void {
+        if(this.disableExclusionMode) return;
+        this.ctrlKey = e.ctrlKey || e.metaKey;
+        if(this.ctrlKey) {
+            this.autoCompleteList.classList.add('exclude')
+        }else {
+            this.autoCompleteList.classList.remove('exclude')
+        }
+    }
+
     keydown(e: KeyboardEvent): void {
+        this.checkCtrl(e);
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
             if (e.code === 'ArrowUp') {
                 this.selectedIndex--;
@@ -164,7 +179,8 @@ export class TagTip {
             if (this.inputElement.value.endsWith(' ')) {
                 length++;
             }
-            this.inputElement.value = `${this.inputElement.value.slice(0, 0 - length)}${this.tagging.searchTerm(tag)} `;
+            const exclude = this.ctrlKey ? '-' : '';
+            this.inputElement.value = `${this.inputElement.value.slice(0, 0 - length)}${exclude}${this.tagging.searchTerm(tag)} `;
             this.autoCompleteList.innerHTML = '';
         };
         return item;
