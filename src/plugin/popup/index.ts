@@ -446,6 +446,7 @@ export class Popup {
     }
 
     private async onopen(): Promise<void> {
+        this.state.showSettingPanel = false;
         this.update();
         await this.checkVersion();
         await this.loadConfig();
@@ -460,7 +461,6 @@ export class Popup {
             this.messaging.off(this.downloadStatusSub);
             this.downloadStatusSub = undefined;
         }
-        this.state.showSettingPanel = false;
         this.el.removeEventListener('click', this.openLink);
     }
 
