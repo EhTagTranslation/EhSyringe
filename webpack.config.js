@@ -128,7 +128,7 @@ const config = {
         maxEntrypointSize: 2 * 1024 ** 2,
         maxAssetSize: 2 * 1024 ** 2,
     },
-    devtool: dev ? 'inline-source-map' : 'source-map',
+    devtool: dev ? 'eval-source-map' : 'source-map',
     devServer: {
         port: 48792,
         inline: false,
