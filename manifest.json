@@ -16,7 +16,7 @@
         "keyword": "ex"
     },
     "background": {
-        "scripts": ["script/background.js"]
+        "scripts": ["script/vendor.js", "script/background.js"]
     },
     "browser_action": {
         "default_icon": {
@@ -30,7 +30,7 @@
     "content_scripts": [
         {
             "matches": ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
-            "js": ["script/page.js"],
+            "js": ["script/vendor.js", "script/page.js"],
             "run_at": "document_start"
         }
     ],

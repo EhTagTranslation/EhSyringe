@@ -34,7 +34,7 @@ export class TagTip {
 
         const searchInput: HTMLInputElement | null = document.querySelector('#f_search, #newtagfield, [name=f_search]');
         if (!searchInput) return;
-        this.disableExclusionMode = searchInput.id === 'newtagfield'
+        this.disableExclusionMode = searchInput.id === 'newtagfield';
         this.delimiter = location.pathname.startsWith('/g/') ? ',' : ' ';
         this.inputElement = searchInput;
         this.inputElement.autocomplete = 'off';
@@ -106,12 +106,12 @@ export class TagTip {
     }
 
     checkCtrl(e: KeyboardEvent): void {
-        if(this.disableExclusionMode) return;
+        if (this.disableExclusionMode) return;
         this.ctrlKey = e.ctrlKey || e.metaKey;
-        if(this.ctrlKey) {
-            this.autoCompleteList.classList.add('exclude')
-        }else {
-            this.autoCompleteList.classList.remove('exclude')
+        if (this.ctrlKey) {
+            this.autoCompleteList.classList.add('exclude');
+        } else {
+            this.autoCompleteList.classList.remove('exclude');
         }
     }
 
@@ -180,7 +180,10 @@ export class TagTip {
                 length++;
             }
             const exclude = this.ctrlKey ? '-' : '';
-            this.inputElement.value = `${this.inputElement.value.slice(0, 0 - length)}${exclude}${this.tagging.searchTerm(tag)} `;
+            this.inputElement.value = `${this.inputElement.value.slice(
+                0,
+                0 - length,
+            )}${exclude}${this.tagging.searchTerm(tag)} `;
             this.autoCompleteList.innerHTML = '';
         };
         return item;

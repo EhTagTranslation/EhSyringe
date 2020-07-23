@@ -4,11 +4,12 @@ const WebExtensionPlugin = require('webpack-webextension-plugin');
 const webpack = require('webpack');
 const WebpackUserScript = require('webpack-userscript');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { argv } = require('yargs');
 const glob = require('glob');
 const execa = require('execa');
 const semver = require('semver');
-/** @type {import('type-fest').PackageJson} */
+/** @type {import('./src/info').packageJson} */
 const pkgJson = require('./package.json');
 
 const dev = (Array.isArray(argv.mode) ? argv.mode.pop() : argv.mode) === 'development';
@@ -142,6 +143,7 @@ const config = {
             'Access-Control-Allow-Origin': '*',
         },
     },
+    optimization: {},
 };
 
 if (argv.userScript) {
@@ -176,7 +178,7 @@ if (argv.userScript) {
     config.plugins.push(
         new WebpackUserScript({
             headers: (data) => ({
-                name: String(pkgJson.displayName || pkgJson.name),
+                name: pkgJson.displayName || pkgJson.name,
                 namespace: pkgJson.homepage,
                 version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
@@ -201,6 +203,10 @@ if (argv.userScript) {
     );
 } else {
     type = 'web-ext';
+    config.optimization.splitChunks = {
+        name: 'vendor',
+        chunks: 'all',
+    };
     if (dev) config.devtool = 'inline-source-map';
     config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
         const name = path.parse(el).name;
@@ -215,6 +221,12 @@ if (argv.userScript) {
     config.plugins.push(
         new CopyPlugin({
             patterns: [{ from: 'src/assets', to: 'assets' }],
+        }),
+        new HtmlWebpackPlugin({
+            title: pkgJson.displayName,
+            filename: 'assets/popup.html',
+            template: 'src/web-ext/popup.html',
+            chunks: ['popup'],
         }),
         new WebExtensionPlugin({
             vendor,
