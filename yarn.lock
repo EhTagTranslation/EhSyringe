@@ -156,10 +156,10 @@
   resolved "https://registry.npm.taobao.org/@types/anymatch/download/@types/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
   integrity sha1-M2utwb7sudrMOL6izzKt9ieoQho=
 
-"@types/chrome@^0.0.121":
-  version "0.0.121"
-  resolved "https://registry.npm.taobao.org/@types/chrome/download/@types/chrome-0.0.121.tgz#bd00eefe0148d0918f1b61e4d49abfc1b3dd064d"
-  integrity sha1-vQDu/gFI0JGPG2Hk1Jq/wbPdBk0=
+"@types/chrome@^0.0.122":
+  version "0.0.122"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.122.tgz#65265d3854f511c2c1e779148e97982ee00b460f"
+  integrity sha512-xHmT1AlBwKAVpQmv+/5gUsB1FXLUiizIZI6bIM52DJDtEhv97FkryHkohjw2HZqAGLOxuJ3kae7YfgWIZ+hMrg==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
