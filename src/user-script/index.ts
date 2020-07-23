@@ -36,6 +36,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
     setBadge({ text: '' });
     const popupBack = document.body.appendChild(document.createElement('div'));
     popupBack.id = 'eh-syringe-popup-back';
+    popupBack.lang = 'cmn-Hans';
     const popup = popupBack.appendChild(document.createElement('div'));
     popup.id = 'eh-syringe-popup';
 
