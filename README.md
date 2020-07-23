@@ -52,10 +52,8 @@ E 站注射器，将中文翻译注入到 E 站体内。
 |                                              **搜索提示/补全**                                              |                                               **标签数据更新**                                               |
 | ![GIF](https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif) | ![进度](https://user-images.githubusercontent.com/5716100/62783460-10019500-baef-11e9-8368-a48fa40dc47d.gif) |
 
-## Q&A
-
-Q: 旧版中复制磁力链功能会增加吗?
-
-A: 目前插件只专注于标签相关功能, 你可以油猴子安装 <https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03> 来获得这个功能
+## 小工具
+* 复制磁力链 <https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03>
+* 阅读状态 <https://gist.github.com/xioxin/d8dbe82cbf762bb10652cdfd9fda3d93>
 
 ## [更新日志](CHANGELOG.md)
