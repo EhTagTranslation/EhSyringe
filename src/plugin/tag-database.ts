@@ -86,12 +86,13 @@ export class TagDatabase {
 
                 const fullKey = this.tagging.fullKey({ namespace, key });
                 const ehTag: TagItem = {
-                    ...t,
+                    ns: this.tagging.ns(namespace),
+                    key,
                     name: dirtyName,
                     cn: cleanName,
-                    key,
-                    ns: this.tagging.ns(namespace),
                 };
+                if (t.intro) ehTag.intro = t.intro;
+                if (t.links) ehTag.links = t.links;
                 map[fullKey] = ehTag;
             }
         });

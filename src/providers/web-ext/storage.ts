@@ -1,4 +1,5 @@
 import { Storage, Listener, ListenerId } from '../common/storage';
+import { JsonValue } from 'type-fest';
 
 const listeners = new Map<string, Listener[]>();
 
@@ -15,7 +16,7 @@ browser.storage.onChanged.addListener((changes, area) => {
 export const storage: Storage = {
     get: async (key) => {
         const result = await browser.storage.local.get(key);
-        return result[key] as string;
+        return result[key] as JsonValue;
     },
     set: (key, value) => browser.storage.local.set({ [key]: value }),
     delete: (key) => browser.storage.local.remove(key),

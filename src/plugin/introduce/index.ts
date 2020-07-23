@@ -103,14 +103,9 @@ export class Introduce {
                 <span class="ehs-close">×</span>
             </div>
             <div class="ehs-content">
-                ${
-                    tagData.intro ||
-                    `
-                <div class="ehs-no-intro">无介绍</div>
-                `
-                }
+                ${tagData.intro ? tagData.intro : `<div class="ehs-no-intro">无介绍</div> `}
             </div>
-            <div class="ehs-href">${tagData.links}</div>`;
+            <div class="ehs-href">${tagData.links ?? ''}</div>`;
         } else {
             const editorUrl = this.tagging.editorUrl({ namespace, key });
             // language=HTML

@@ -3,6 +3,7 @@ import { storage } from 'providers/storage';
 import { TagMap } from 'interface';
 import { ReleaseCheckData } from 'plugin/database-updater';
 import { Logger } from './logger';
+import { JsonValue } from 'type-fest';
 
 export const enum ImageLevel {
     hide,
@@ -56,12 +57,11 @@ export class Storage {
     async get<K extends keyof StorageItems>(key: K): Promise<StorageItems[K]> {
         const value = await storage.get(key);
         if (value == null) return this.defaults[key];
-        return JSON.parse(value) as StorageItems[K];
+        return value as StorageItems[K];
     }
     async set<T extends keyof StorageItems>(key: T, value: StorageItems[T] | undefined): Promise<void> {
         if (value == null) return this.delete(key);
-        const json = JSON.stringify(value);
-        return storage.set(key, json);
+        return storage.set(key, value as JsonValue);
     }
     async delete<T extends keyof StorageItems>(key: T): Promise<void> {
         return await storage.delete(key);

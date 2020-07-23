@@ -40,8 +40,8 @@ export interface EHTNamespace {
 
 export interface EHTTag {
     name: string;
-    intro: string;
-    links: string;
+    intro?: string;
+    links?: string;
 }
 
 export interface TagItem extends EHTTag {
