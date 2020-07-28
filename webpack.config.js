@@ -131,7 +131,7 @@ const config = {
         maxEntrypointSize: 2 * 1024 ** 2,
         maxAssetSize: 2 * 1024 ** 2,
     },
-    devtool: dev ? 'eval-source-map' : 'source-map',
+    devtool: 'eval-source-map',
     devServer: {
         // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
         // 启用 chrome://flags/#allow-insecure-localhost
@@ -148,6 +148,7 @@ const config = {
 
 if (argv.userScript) {
     type = 'user-script';
+    config.optimization.minimize = false;
     const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
     const fileHost = devServer
         ? `${config.devServer.https ? 'https' : 'http'}://localhost:${config.devServer.port || 8080}`
@@ -203,6 +204,9 @@ if (argv.userScript) {
     );
 } else {
     type = 'web-ext';
+    if (!dev) {
+        config.devtool = 'source-map';
+    }
     config.optimization.splitChunks = {
         name: 'vendor',
         chunks: 'all',
