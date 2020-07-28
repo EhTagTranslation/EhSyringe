@@ -338,7 +338,7 @@ export class Popup {
         return html`<div id="mainPanel" class="panel ${state.showSettingPanel ? 'hide' : ''}">
             <div class="header">
                 <div>
-                    <a href="${packageJson.homepage}" class="monospace minor">V${state.extensionVersion}</a>
+                    <a href="${packageJson.homepage}" class="monospace minor">v${state.extensionVersion}</a>
                 </div>
                 <div class="cushion"></div>
                 <div>
@@ -371,20 +371,19 @@ export class Popup {
                     <tr>
                         <th>上次更新：</th>
                         <td>
-                            <span class="monospace">${state.updateTime || ' --- '}</span>
+                            <span>${state.updateTime || ' --- '}</span>
                         </td>
                     </tr>
                     <tr>
                         <th>更新检查：</th>
                         <td>
-                            <span class="monospace ${state.updateAvailable ? 'hasNew' : ''}"
+                            <span class="${state.updateAvailable ? 'hasNew' : ''}"
                                 ><a
-                                    class="${state.updateAvailable ? '' : 'hidden'}"
+                                    class="monospace ${state.updateAvailable ? '' : 'hidden'}"
                                     href="https://github.com/EhTagTranslation/Database/tree/${state.newSha}"
                                     >${state.newSha || ''}</a
-                                ></span
+                                >${state.versionInfo}</span
                             >
-                            ${state.versionInfo}
                         </td>
                     </tr>
                 </table>
