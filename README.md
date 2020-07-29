@@ -4,8 +4,9 @@
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](https://dependabot.com)
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/total)](https://github.com/EhTagTranslation/EhSyringe/releases)
-[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/EhSyringe.chrome.zip)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/EhSyringe.chrome.zip)
-[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/EhSyringe.firefox.zip)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/EhSyringe.firefox.zip)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.chrome.zip)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.chrome.zip)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.firefox.zip)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.firefox.zip)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.user.js)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js)
 
 E 站注射器，将中文翻译注入到 E 站体内。
 
@@ -30,6 +31,11 @@ E 站注射器，将中文翻译注入到 E 站体内。
 4. 打开 Firefox 附加组件管理器 `about:addons`，点击右上角设置菜单，选择“从文件安装附加组件”，选择下载的 zip 文件
 
 参考 [Firefox 中的附加组件签名](//support.mozilla.org/kb/add-ons-signing-firefox#w_dalioucllleeyzgaauoeoeoakekikakneojdeeniko)
+
+### 用户脚本（UserScript）安装方法
+
+1. [安装一个用户脚本管理器](https://sleazyfork.org/zh-CN/help/installing-user-scripts)
+2. 前往 [sleazy fork](https://sleazyfork.org/zh-CN/scripts/407833-ehsyringe)安装最新版本
 
 ## 功能
 
