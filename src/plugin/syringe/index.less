@@ -50,42 +50,6 @@ body {
         clear: both;
         font-size: 9pt;
     }
-    /*
-
-  !* 高清箭头，没啥卵用 *!
-  #nb > div {
-    background: none;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 5px;
-      width: 0;
-      height: 0;
-      line-height: 0;
-      box-sizing: content-box;
-      border-width: 4px 0 4px 4px;
-      border-style: solid;
-      border-color: transparent transparent transparent #484848;
-    }
-  }
-  !* 高清箭头，没啥卵用 *!
-  div#gd5 img{
-    margin-left: 10px;
-    overflow: hidden;
-    margin-top: 7px;
-    left: 0;
-    top: 5px;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    box-sizing: content-box;
-    border-width: 4px 0 4px 4px;
-    border-style: solid;
-    border-color: transparent transparent transparent #484848;
-  }
-  */
 
     div.c6 {
         text-align: left;
@@ -99,36 +63,33 @@ body {
     }
 }
 
-.ehs-icon,
-.ehs-emoji {
+[ehs-icon],
+[ehs-emoji] {
     height: 1em;
     margin: 0 1px;
 }
 
 body.ehs-hide-icon {
-    .ehs-icon,
-    .ehs-emoji {
+    [ehs-icon],
+    [ehs-emoji] {
         display: none;
     }
 }
 
-//0:hide, 1:non-h 2: R18 3: R18G
-/* nsfw="R18" */
-body.ehs-image-level-0 #ehs-introduce-box .ehs-content {
-    img {
+body {
+    [ehs-tag-original] {
+        display: inline;
+    }
+    [ehs-tag-translated] {
         display: none;
     }
 }
-body.ehs-image-level-1 #ehs-introduce-box .ehs-content {
-    img[nsfw] {
+
+body.ehs-translate-tag {
+    [ehs-tag-original] {
         display: none;
     }
-}
-body.ehs-image-level-2 #ehs-introduce-box .ehs-content {
-    img[nsfw='R18G'] {
-        display: none;
+    [ehs-tag-translated] {
+        display: inline;
     }
-}
-body.ehs-image-level-3 {
-    // 所有都显示
 }

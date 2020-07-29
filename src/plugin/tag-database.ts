@@ -11,7 +11,7 @@ import { map, first } from 'rxjs/operators';
 const emojiReg = emojiRegex();
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
-const DATA_STRUCTURE_VERSION = 7;
+const DATA_STRUCTURE_VERSION = 9;
 
 interface Data {
     map: TagMap;
@@ -82,8 +82,8 @@ export class TagDatabase {
                     .replace(/<img.*?>/gi, '')
                     .trim();
                 const dirtyName = name
-                    .replace(emojiReg, '<span class="ehs-emoji">$&</span>')
-                    .replace(/<img(.*?)>/gi, '<img class="ehs-icon" $1>');
+                    .replace(emojiReg, `<span ehs-emoji>$&</span>`)
+                    .replace(/<img(.*?)>/gi, `<img ehs-icon $1>`);
 
                 const fullKey = this.tagging.fullKey({ namespace, key });
                 const ehTag: TagItem = {

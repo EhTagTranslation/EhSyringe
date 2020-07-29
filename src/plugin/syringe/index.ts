@@ -1,12 +1,10 @@
 import { UiTranslation } from 'services/ui-translation';
 import { Service } from 'services';
-import { TagItem } from 'interface';
-import { Storage, ConfigData } from 'services/storage';
+import { ConfigData } from 'services/storage';
+import { SyncStorage } from 'services/sync-storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
-import { packageJson } from 'info';
-import { Store, get, set } from 'idb-keyval';
 
 import './index.less';
 
@@ -21,16 +19,19 @@ function isText(node: Node): node is Text {
 @Service()
 export class Syringe {
     constructor(
-        readonly storage: Storage,
+        readonly storage: SyncStorage,
         readonly uiTranslation: UiTranslation,
         readonly logger: Logger,
         readonly messaging: Messaging,
         readonly tagging: Tagging,
     ) {
+        storage.async.on('config', (k, ov, nv) => {
+            if (nv) this.updateConfig(nv);
+        });
         this.init();
     }
 
-    private readonly tagMap = new Store(`${packageJson.name}_tag_map`);
+    tagMap = this.storage.get('databaseMap');
     // 存储未找到翻译的标签，待替换数据加载后重试
     private readonly pendingTags: Node[] = [];
     documentEnd = false;
@@ -40,29 +41,24 @@ export class Syringe {
 
     readonly uiData = this.uiTranslation.get();
 
+    private updateConfig(config: ConfigData): void {
+        this.config = config;
+        this.storage.set('config', config);
+        const body = document.querySelector('body');
+        if (body) this.setBodyClass(body);
+    }
+
     private getAndInitConfig(): ConfigData {
-        const key = `${packageJson.name}_config`;
-        this.storage
+        this.storage.async
             .get('config')
             .then((conf) => {
-                this.config = conf;
-                localStorage.setItem(key, JSON.stringify(conf));
+                this.updateConfig(conf);
             })
             .catch(this.logger.error);
-        const v = localStorage.getItem(key);
-        if (v) {
-            try {
-                return JSON.parse(v) as ConfigData;
-            } catch {
-                this.logger.error('解析 localStorage 配置失败');
-            }
-        }
-        return this.storage.defaults.config;
+        return this.storage.get('config');
     }
 
     private init(): void {
-        if (!(this.config.translateUi || this.config.translateTag)) return;
-
         window.document.addEventListener('DOMContentLoaded', () => {
             this.documentEnd = true;
         });
@@ -102,36 +98,38 @@ export class Syringe {
             subtree: true,
         });
 
-        if (this.config.translateTag) {
-            const timer = this.logger.time('获取替换数据');
-            get<string>('__sha__', this.tagMap)
-                .then(async (sha) => {
-                    this.logger.log(sha);
-                    const data = await this.messaging.emit('get-tag-map', { ifNotMatch: sha });
-                    const map = data.map;
-                    if (map) {
-                        await Promise.all(
-                            Object.keys(map).map((k) => {
-                                const v = map[k];
-                                return set(k, v, this.tagMap);
-                            }),
-                        );
-                        await set('__sha__', data.sha, this.tagMap);
-                        this.logger.log('替换数据已更新', data.sha);
+        const timer = this.logger.time('获取替换数据');
+        Promise.resolve()
+            .then(async () => {
+                const currentSha = this.storage.get('databaseSha');
+                const data = await this.messaging.emit('get-tag-map', { ifNotMatch: currentSha });
+                if (data.map) {
+                    const tagMap: this['tagMap'] = {};
+                    for (const key in data.map) {
+                        tagMap[key] = data.map[key].name;
                     }
-                    timer.end();
+                    this.tagMap = tagMap;
                     const pendingTags = this.pendingTags.splice(0);
                     pendingTags.forEach((t) => this.translateTagImpl(t));
-                })
-                .catch(this.logger.error);
-        }
+                    this.storage.set('databaseMap', tagMap);
+                    this.storage.set('databaseSha', data.sha);
+                    this.logger.log('替换数据已更新', data.sha);
+                }
+                timer.end();
+            })
+            .catch(this.logger.error);
     }
 
     setBodyClass(node: HTMLBodyElement): void {
         if (!node) return;
         node.classList.add(!location.host.includes('exhentai') ? 'eh' : 'ex');
+
+        node.classList.remove(...[...node.classList.values()].filter((k) => k.startsWith('ehs')));
         if (!this.config.showIcon) {
             node.classList.add('ehs-hide-icon');
+        }
+        if (this.config.translateTag) {
+            node.classList.add('ehs-translate-tag');
         }
         node.classList.add(`ehs-image-level-${this.config.introduceImageLevel}`);
     }
@@ -149,12 +147,9 @@ export class Syringe {
             this.setBodyClass(node);
         }
 
-        let handled = false;
-        if (this.config.translateTag) {
-            handled = this.translateTag(node);
-        }
+        const handled = this.translateTag(node);
         /* tag 处理过的ui不再处理*/
-        if (this.config.translateUi && !handled) {
+        if (!handled && this.config.translateUi) {
             this.translateUi(node);
         }
     }
@@ -192,28 +187,24 @@ export class Syringe {
         if (!fullKeyCandidate) return false;
         const fullKey = fullKeyCandidate;
         const text = node.textContent ?? '';
+        if (!this.tagMap) {
+            this.pendingTags.push(node);
+            return true;
+        }
+        let value = this.tagMap[fullKey];
+        if (!value) {
+            this.pendingTags.push(node);
+            return true;
+        }
+        if (!aTitle) {
+            parentElement.title = fullKey;
+        }
+        if (text[1] === ':') {
+            value = `${text[0]}:${value}`;
+        }
+        parentElement.innerHTML = `<span ehs-tag-original>${text}</span><span ehs-tag-translated>${value}</span>`;
+        parentElement.setAttribute('ehs-tag', '');
 
-        get<TagItem>(fullKey, this.tagMap)
-            .then((tag) => {
-                let value = tag?.name;
-                if (!value) {
-                    this.pendingTags.push(node);
-                    return;
-                }
-                if (!aTitle) {
-                    parentElement.title = fullKey;
-                }
-                parentElement.setAttribute('ehs-tag', text);
-                if (text[1] === ':') {
-                    value = `${text[0]}:${value}`;
-                }
-                if (value !== text) {
-                    parentElement.innerHTML = value;
-                } else {
-                    this.logger.log('翻译内容相同', value);
-                }
-            })
-            .catch(this.logger.error);
         return true;
     }
 

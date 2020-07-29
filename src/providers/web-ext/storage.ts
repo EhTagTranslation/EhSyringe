@@ -1,5 +1,6 @@
-import { Storage, Listener, ListenerId } from '../common/storage';
+import { Storage, Listener, ListenerId, SyncStorage } from '../common/storage';
 import { JsonValue } from 'type-fest';
+import { packageJson } from 'info';
 
 const listeners = new Map<string, Listener[]>();
 
@@ -38,5 +39,33 @@ export const storage: Storage = {
         const index = listenerList.indexOf((id as unknown) as Listener);
         if (index < 0) return;
         listenerList.splice(index, 1);
+    },
+};
+
+const mark = `${packageJson.name}.`;
+const syncKey = (k: string): string => mark + k;
+
+export const syncStorage: SyncStorage = {
+    get: (key) => {
+        const v = localStorage.getItem(syncKey(key));
+        if (v == null) return undefined;
+        try {
+            return JSON.parse(v) as JsonValue;
+        } catch {
+            syncStorage.delete(key);
+            return undefined;
+        }
+    },
+    set: (key, value) => localStorage.setItem(syncKey(key), JSON.stringify(value)),
+    delete: (key) => localStorage.removeItem(syncKey(key)),
+    keys: () => {
+        const keys = new Array<string>();
+        for (let index = 0; index < localStorage.length; index++) {
+            const key = localStorage.key(index);
+            if (key?.startsWith(mark)) {
+                keys.push(key.slice(mark.length));
+            }
+        }
+        return keys;
     },
 };

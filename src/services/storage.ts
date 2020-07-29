@@ -4,6 +4,7 @@ import { TagMap } from 'interface';
 import { ReleaseCheckData } from 'plugin/database-updater';
 import { Logger } from './logger';
 import { JsonValue } from 'type-fest';
+import { ListenerId, Listener } from 'providers/common/storage';
 
 export const enum ImageLevel {
     hide,
@@ -52,6 +53,7 @@ export class Storage {
                 })().catch(logger.error);
             },
         });
+        this.migrate().catch(logger.error);
     }
 
     async get<K extends keyof StorageItems>(key: K): Promise<StorageItems[K]> {
@@ -68,6 +70,17 @@ export class Storage {
     }
     async keys(): Promise<Array<keyof StorageItems>> {
         return (await storage.keys()) as Array<keyof StorageItems>;
+    }
+
+    on<T extends keyof StorageItems>(
+        key: T,
+        listener: (key: T, oldValue?: StorageItems[T] | undefined, newValue?: StorageItems[T] | undefined) => unknown,
+    ): ListenerId {
+        return storage.on(key, listener as Listener);
+    }
+
+    off<T extends keyof StorageItems>(key: T, listener: ListenerId): void {
+        return storage.off(key, listener);
     }
 
     async migrate(): Promise<void> {

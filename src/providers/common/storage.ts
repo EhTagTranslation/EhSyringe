@@ -11,3 +11,10 @@ export interface Storage {
     on(key: string, listener: Listener): ListenerId;
     off(key: string, id: ListenerId): void;
 }
+
+export interface SyncStorage {
+    get(key: string): JsonValue | undefined;
+    set(key: string, value: JsonValue): void;
+    delete(key: string): void;
+    keys(): string[];
+}

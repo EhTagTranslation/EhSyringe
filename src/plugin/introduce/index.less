@@ -137,3 +137,24 @@ body.ex {
     opacity: 0.3;
     font-weight: bold;
 }
+
+//0:hide, 1:non-h 2: R18 3: R18G
+/* nsfw="R18" */
+body.ehs-image-level-0 #ehs-introduce-box .ehs-content {
+    img {
+        display: none;
+    }
+}
+body.ehs-image-level-1 #ehs-introduce-box .ehs-content {
+    img[nsfw] {
+        display: none;
+    }
+}
+body.ehs-image-level-2 #ehs-introduce-box .ehs-content {
+    img[nsfw='R18G'] {
+        display: none;
+    }
+}
+body.ehs-image-level-3 {
+    // 所有都显示
+}
