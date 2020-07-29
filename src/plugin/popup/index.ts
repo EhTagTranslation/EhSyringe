@@ -377,13 +377,15 @@ export class Popup {
                     <tr>
                         <th>更新检查：</th>
                         <td>
-                            <span class="${state.updateAvailable ? 'hasNew' : ''}"
-                                ><a
+                            <span class="${state.updateAvailable ? 'hasNew' : ''}">
+                                ${state.versionInfo}
+                                <a
                                     class="monospace ${state.updateAvailable ? '' : 'hidden'}"
                                     href="https://github.com/EhTagTranslation/Database/tree/${state.newSha}"
-                                    >${state.newSha || ''}</a
-                                >${state.versionInfo}</span
-                            >
+                                >
+                                    ${state.newSha || ''}
+                                </a>
+                            </span>
                         </td>
                     </tr>
                 </table>
