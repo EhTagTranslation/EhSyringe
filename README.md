@@ -46,11 +46,24 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ## 截图预览
 
-|                                                **搜索列表**                                                 |                                            **详情页（标签描述）**                                            |
-| :---------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
-|                         ![image](https://i.loli.net/2019/08/09/5MPFwd7aOsvqJXb.png)                         |                         ![image](https://i.loli.net/2019/08/09/l8eNzUGi9x4LfoK.png)                          |
-|                                              **搜索提示/补全**                                              |                                               **标签数据更新**                                               |
-| ![GIF](https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif) | ![进度](https://user-images.githubusercontent.com/5716100/62783460-10019500-baef-11e9-8368-a48fa40dc47d.gif) |
+<table style="font-weight: bold; text-align: center;">
+    <tr>
+        <td><strong>搜索列表</strong></td>
+        <td><strong>详情页（标签描述）</strong></td>
+    </tr>
+    <tr>
+        <td><img src="https://i.loli.net/2019/08/09/5MPFwd7aOsvqJXb.png"></td>
+        <td><img src="https://i.loli.net/2019/08/09/l8eNzUGi9x4LfoK.png"></td>
+    </tr>
+    <tr>
+        <td><strong>搜索提示/补全</strong></td>
+        <td><strong>标签数据更新</strong></td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif"></td>
+        <td><img src="https://user-images.githubusercontent.com/5716100/62783460-10019500-baef-11e9-8368-a48fa40dc47d.gif"></td>
+    </tr>
+</table>
 
 ## 小工具
 
