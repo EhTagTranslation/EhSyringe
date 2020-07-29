@@ -35,7 +35,9 @@ E 站注射器，将中文翻译注入到 E 站体内。
 ### 用户脚本（UserScript）安装方法
 
 1. [安装一个用户脚本管理器](https://sleazyfork.org/zh-CN/help/installing-user-scripts)
-2. 前往 [sleazy fork](https://sleazyfork.org/zh-CN/scripts/407833-ehsyringe)安装最新版本
+2. 前往 [sleazy fork](https://sleazyfork.org/zh-CN/scripts/407833-ehsyringe) 安装最新版本
+
+> 也可以从 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)安装
 
 ## 功能
 
