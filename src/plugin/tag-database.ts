@@ -1,4 +1,3 @@
-import emojiRegex from 'emoji-regex';
 import { EHTDatabase, TagMap, TagItem } from '../interface';
 import { Service } from 'typedi';
 import { Storage } from 'services/storage';
@@ -8,10 +7,9 @@ import { Tagging } from 'services/tagging';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, first } from 'rxjs/operators';
 
-const emojiReg = emojiRegex();
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
-const DATA_STRUCTURE_VERSION = 9;
+const DATA_STRUCTURE_VERSION = 10;
 
 interface Data {
     map: TagMap;
@@ -76,21 +74,13 @@ export class TagDatabase {
             for (const key in nsData.data) {
                 const t = nsData.data[key];
 
-                const name = t.name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
-                const cleanName = name
-                    .replace(emojiReg, '')
-                    .replace(/<img.*?>/gi, '')
-                    .trim();
-                const dirtyName = name
-                    .replace(emojiReg, `<span ehs-emoji>$&</span>`)
-                    .replace(/<img(.*?)>/gi, `<img ehs-icon $1>`);
-
                 const fullKey = this.tagging.fullKey({ namespace, key });
+                const name = this.tagging.removePara(t.name);
                 const ehTag: TagItem = {
                     ns: this.tagging.ns(namespace),
                     key,
-                    name: dirtyName,
-                    cn: cleanName,
+                    name: name,
+                    cn: this.tagging.removeImagesAndEmoji(name),
                 };
                 if (t.intro) ehTag.intro = t.intro;
                 if (t.links) ehTag.links = t.links;

@@ -97,7 +97,7 @@ export class Introduce {
             this.introduceBox.innerHTML = `
             <div class="ehs-title">
                 <div>
-                    <div class="ehs-cn">${tagData.name}</div>
+                    <div class="ehs-cn">${this.tagging.markImagesAndEmoji(tagData.name)}</div>
                     <div class="ehs-en">${this.tagging.namespace(tagData.ns)}:${tagData.key}</div>
                 </div>
                 <span class="ehs-close">×</span>

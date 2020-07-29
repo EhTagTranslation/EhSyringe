@@ -2,6 +2,10 @@ import { Service } from 'typedi';
 import { EHTNamespaceName, EHTNamespaceNameShort } from 'interface';
 import { Suggestion } from 'plugin/suggest';
 import escapeHtml from 'escape-html';
+import emojiRegex from 'emoji-regex';
+
+const emojiReg = emojiRegex();
+
 @Service()
 export class Tagging {
     readonly nsDic: { [k: string]: EHTNamespaceName } = {
@@ -46,6 +50,19 @@ export class Tagging {
         const fns = this.namespace(ns);
         if (fns === 'misc') return '';
         return fns[0] as EHTNamespaceNameShort;
+    }
+
+    removePara(name: string): string {
+        return name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
+    }
+    markImagesAndEmoji(name: string): string {
+        return name.replace(emojiReg, `<span ehs-emoji>$&</span>`).replace(/<img(.*?)>/gi, `<img ehs-icon $1>`);
+    }
+    removeImagesAndEmoji(name: string): string {
+        return name
+            .replace(emojiReg, '')
+            .replace(/<img.*?>/gi, '')
+            .trim();
     }
 
     fullKey(tag: { namespace: string; key: string } | { ns: EHTNamespaceNameShort; key: string }): string {

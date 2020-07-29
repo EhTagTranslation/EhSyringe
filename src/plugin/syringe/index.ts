@@ -196,6 +196,7 @@ export class Syringe {
             this.pendingTags.push(node);
             return true;
         }
+        value = this.tagging.markImagesAndEmoji(value);
         if (!aTitle) {
             parentElement.title = fullKey;
         }
