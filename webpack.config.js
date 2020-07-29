@@ -181,6 +181,7 @@ if (argv.userScript) {
             headers: (data) => ({
                 name: pkgJson.displayName || pkgJson.name,
                 namespace: pkgJson.homepage,
+                license: pkgJson.license,
                 version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
                 icon: `https://cdn.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
