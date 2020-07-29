@@ -15,16 +15,6 @@ merge(/^\/g\//, undefined, {
     ' Read Later': ' 稍后再读',
     ' Added to Read Later': ' 已添加到稍后再读',
 
-    'language:': '语言:',
-    'parody:': '原作:',
-    'character:': '角色:',
-    'group:': '社团:',
-    'artist:': '作者:',
-    'female:': '女性:',
-    'male:': '男性:',
-    'misc:': '杂项:',
-    'reclass:': '重新分类:',
-
     'Posted:': '发布于:',
     'Parent:': '父级:',
     None: '无',

@@ -58,6 +58,16 @@ merge(/.*/, undefined, {
     'Delete Selected': '删除选中项',
     'Confirm Delete': '确认删除',
 
+    'language:': '语言:',
+    'parody:': '原作:',
+    'character:': '角色:',
+    'group:': '社团:',
+    'artist:': '作者:',
+    'female:': '女性:',
+    'male:': '男性:',
+    'misc:': '杂项:',
+    'reclass:': '重新分类:',
+
     'Japanese \xA0': '日文 \xA0',
     'English \xA0': '英文 \xA0',
     'Chinese \xA0': '中文 \xA0',
