@@ -57,7 +57,7 @@
         "semver": "^7.3.2",
         "style-loader": "^1.2.1",
         "ts-loader": "^8.0.1",
-        "tsconfig-paths-webpack-plugin": "^3.2.0",
+        "tsconfig-paths-webpack-plugin": "^3.3.0",
         "type-fest": "^0.16.0",
         "typescript": "^3.9.7",
         "typescript-lit-html-plugin": "^0.9.0",
