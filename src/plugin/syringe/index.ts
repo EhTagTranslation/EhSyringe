@@ -1,11 +1,12 @@
 import { UiTranslation } from 'services/ui-translation';
 import { Service } from 'services';
+import { TagItem } from 'interface';
 import { Storage, ConfigData } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
-import { TagMap } from 'interface';
 import { Tagging } from 'services/tagging';
 import { packageJson } from 'info';
+import { Store, get, set } from 'idb-keyval';
 
 import './index.less';
 
@@ -29,9 +30,9 @@ export class Syringe {
         this.init();
     }
 
-    tagMap?: TagMap;
-    private sha?: string;
-    pendingTags: Node[] = [];
+    private readonly tagMap = new Store(`${packageJson.name}_tag_map`);
+    // 存储未找到翻译的标签，待替换数据加载后重试
+    private readonly pendingTags: Node[] = [];
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
     config = this.getAndInitConfig();
@@ -103,14 +104,23 @@ export class Syringe {
 
         if (this.config.translateTag) {
             const timer = this.logger.time('获取替换数据');
-            this.messaging
-                .emit('get-tag-map', { ifNotMatch: this.sha })
-                .then((data) => {
-                    if (data.map) this.tagMap = data.map;
-                    this.sha = data.sha;
+            get<string>('__sha__', this.tagMap)
+                .then(async (sha) => {
+                    this.logger.log(sha);
+                    const data = await this.messaging.emit('get-tag-map', { ifNotMatch: sha });
+                    const map = data.map;
+                    if (map) {
+                        await Promise.all(
+                            Object.keys(map).map((k) => {
+                                const v = map[k];
+                                return set(k, v, this.tagMap);
+                            }),
+                        );
+                        await set('__sha__', data.sha, this.tagMap);
+                        this.logger.log('替换数据已更新', data.sha);
+                    }
                     timer.end();
-                    const pendingTags = this.pendingTags;
-                    this.pendingTags = [];
+                    const pendingTags = this.pendingTags.splice(0);
                     pendingTags.forEach((t) => this.translateTagImpl(t));
                 })
                 .catch(this.logger.error);
@@ -163,63 +173,55 @@ export class Syringe {
             return true;
         }
 
-        let value = '';
         const aId = parentElement.id;
         const aTitle = parentElement.title;
 
-        if (!(value || aTitle || aId)) {
-            return false;
-        }
-
-        if (!this.tagMap) {
-            // 替换列表未加载时直接返回
-            this.pendingTags.push(node);
-            return true;
-        }
-
-        if (!value && aTitle) {
+        let fullKeyCandidate: string | undefined;
+        if (aTitle) {
             const [namespace, key] = aTitle.split(':');
-            const fullKey = this.tagging.fullKey({ namespace, key });
-            if (fullKey in this.tagMap) {
-                value = this.tagMap[fullKey].name;
-            }
-        }
-
-        if (!value && aId) {
-            const [namespace, key] = aId.replace('ta_', '').replace(/_/gi, ' ').split(':');
-            const fullKey = key
+            fullKeyCandidate = this.tagging.fullKey({ namespace, key });
+        } else if (aId) {
+            let id = aId;
+            if (id.startsWith('ta_')) id = id.slice(3);
+            const [namespace, key] = id.replace(/_/gi, ' ').split(':');
+            fullKeyCandidate = key
                 ? this.tagging.fullKey({ namespace, key })
                 : this.tagging.fullKey({ namespace: '', key: namespace });
-            if (fullKey in this.tagMap) {
-                value = this.tagMap[fullKey].name;
-            }
         }
 
-        if (value) {
-            const text = node.textContent ?? '';
-            if (text[1] === ':') {
-                value = `${text[0]}:${value}`;
-            }
-            if (!parentElement.title) {
-                parentElement.title = aId || aTitle;
-            }
-            parentElement.setAttribute('ehs-tag', text);
-            if (value !== node.textContent) {
-                parentElement.innerHTML = value;
-            } else {
-                this.logger.log('翻译内容相同', value);
-            }
-            return true;
-        }
+        if (!fullKeyCandidate) return false;
+        const fullKey = fullKeyCandidate;
+        const text = node.textContent ?? '';
 
-        return false;
+        get<TagItem>(fullKey, this.tagMap)
+            .then((tag) => {
+                let value = tag?.name;
+                if (!value) {
+                    this.pendingTags.push(node);
+                    return;
+                }
+                if (!aTitle) {
+                    parentElement.title = fullKey;
+                }
+                parentElement.setAttribute('ehs-tag', text);
+                if (text[1] === ':') {
+                    value = `${text[0]}:${value}`;
+                }
+                if (value !== text) {
+                    parentElement.innerHTML = value;
+                } else {
+                    this.logger.log('翻译内容相同', value);
+                }
+            })
+            .catch(this.logger.error);
+        return true;
     }
 
     translateTag(node: Node): boolean {
-        if (!isText(node) || !node.parentElement) {
+        const parentElement = node.parentElement;
+        if (!isText(node) || !parentElement) {
             return false;
         }
-        const parentElement = node.parentElement;
         if (parentElement.nodeName === 'MARK' || parentElement.classList.contains('auto-complete-text')) {
             // 不翻译搜索提示的内容
             return true;
