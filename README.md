@@ -61,7 +61,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
     </tr>
     <tr>
         <td><img src="https://i.loli.net/2019/08/09/5MPFwd7aOsvqJXb.png"></td>
-        <td><img src="https://i.loli.net/2019/08/09/l8eNzUGi9x4LfoK.png"></td>
+        <td><img src="https://user-images.githubusercontent.com/13471233/88816673-397b6b00-d1ef-11ea-8744-3367023fa7fb.png"></td>
     </tr>
     <tr>
         <td><strong>搜索提示/补全</strong></td>
