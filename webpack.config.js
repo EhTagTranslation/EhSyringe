@@ -183,6 +183,7 @@ if (argv.userScript) {
                 namespace: pkgJson.homepage,
                 version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
                 license: pkgJson.license,
+                compatible: ['firefox >= 60', 'edge >= 16', 'chrome >= 61', 'safari >= 11', 'opera >= 48'],
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
                 icon: `https://cdn.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
                 updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
