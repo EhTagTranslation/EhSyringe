@@ -23,6 +23,32 @@ version.prerelease = version.build = [];
 /** @type {'user-script' | 'web-ext'} */
 let type;
 
+const cssLoaders = [
+    {
+        loader: 'style-loader',
+        options: {
+            insert: ':root',
+        },
+    },
+    {
+        loader: 'css-loader',
+        options: {
+            importLoaders: 1,
+        },
+    },
+    {
+        loader: 'postcss-loader',
+        options: {
+            ident: 'postcss',
+            plugins: (loader) => [
+                require('postcss-import')({ root: loader.resourcePath }),
+                require('postcss-preset-env')(),
+                require('cssnano')(),
+            ],
+        },
+    },
+];
+
 /** @type {webpack.Configuration} */
 const config = {
     mode: dev ? 'development' : 'production',
@@ -39,6 +65,7 @@ const config = {
             },
             {
                 test: /\.ts$/,
+                exclude: '/node_modules',
                 use: {
                     loader: 'ts-loader',
                     options: {
@@ -47,36 +74,12 @@ const config = {
                             : path.resolve(__dirname, 'tsconfig.build.json'),
                     },
                 },
-                exclude: /node_modules/,
             },
             {
                 test: /\.less$/,
                 exclude: '/node_modules',
                 use: [
-                    {
-                        loader: 'style-loader',
-                        options: {
-                            insert: ':root',
-                        },
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: (loader) => [
-                                require('postcss-import')({ root: loader.resourcePath }),
-                                require('postcss-cssnext')(),
-                                require('autoprefixer')(),
-                                require('cssnano')(),
-                            ],
-                        },
-                    },
+                    ...cssLoaders,
                     {
                         loader: 'less-loader',
                         options: {},
@@ -85,31 +88,7 @@ const config = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: 'style-loader',
-                        options: {
-                            insert: ':root',
-                        },
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            ident: 'postcss',
-                            plugins: (loader) => [
-                                require('postcss-import')({ root: loader.resourcePath }),
-                                require('postcss-cssnext')(),
-                                require('cssnano')(),
-                            ],
-                        },
-                    },
-                ],
+                use: [...cssLoaders],
             },
         ],
     },
