@@ -1,31 +1,56 @@
 import { Service } from '.';
 import { GithubRelease, EHTDatabase } from 'interface';
 import { Http, Progress } from './http';
+import { Logger } from './logger';
 
 @Service()
 export class Database {
-    constructor(readonly http: Http) {}
+    constructor(readonly http: Http, readonly logger: Logger) {}
     async getLatestVersion(): Promise<GithubRelease> {
         const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
         const info = this.http.json<GithubRelease>(githubDownloadUrl);
         return info;
     }
 
-    async getData(version: GithubRelease, progress?: Progress): Promise<EHTDatabase> {
+    private dataUrls(version: GithubRelease): string[] {
         const dataJson = /<!--(.+?)-->/gis.exec(version.body);
         if (!dataJson) throw new Error(`GitHub 发布数据无法解析，可能需要更新插件版本`);
         try {
             const data = JSON.parse(dataJson[1]) as Record<string, string>;
             const sha = data.mirror;
             if (typeof sha != 'string') throw new Error();
-            return this.http.download<EHTDatabase>(
+            return [
                 `https://cdn.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
-                'GET',
-                progress,
-                'json',
-            );
+                `https://gitcdn.xyz/cdn/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
+                `https://rawcdn.githack.com/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
+                `https://cdn.statically.io/gh/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
+            ];
         } catch {
             throw new Error(`GitHub 发布数据无法解析，可能需要更新插件版本`);
         }
+    }
+
+    async getData(version: GithubRelease, progress?: Progress): Promise<EHTDatabase> {
+        const urls = this.dataUrls(version);
+        const errors: Error[] = [];
+        for (const url of urls) {
+            try {
+                const result = await this.http.download<EHTDatabase>(url, 'GET', progress, 'json');
+                if (result?.head?.sha === version.target_commitish && result?.data) {
+                    this.logger.log(`从 ${url} 下载成功`);
+                    return result;
+                }
+            } catch (ex) {
+                errors.push(ex as Error);
+                this.logger.warn(`尝试从 ${url} 下载失败`, ex);
+            }
+        }
+        if (errors.length === 0) throw new Error('没有获取到有效的文件');
+        const e = errors[errors.length - 1];
+        Object.defineProperty(e, 'errors', {
+            value: errors,
+            enumerable: true,
+        });
+        throw e;
     }
 }

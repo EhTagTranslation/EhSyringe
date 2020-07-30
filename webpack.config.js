@@ -210,7 +210,7 @@ if (argv.userScript) {
         name: 'vendor',
         chunks: 'all',
     };
-    if (dev) config.devtool = 'inline-source-map';
+    config.devtool = 'inline-source-map';
     config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
         const name = path.parse(el).name;
         if (name !== 'polyfills') obj[name] = path.resolve(__dirname, el);

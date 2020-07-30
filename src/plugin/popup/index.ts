@@ -415,7 +415,7 @@ export class Popup {
         if (this.el != null) throw new Error('Injected twice');
         this.el = el;
         this.provider = provider;
-        provider.onopen(() => this.onopen());
+        provider.onopen(() => this.onopen().catch(this.logger.error));
         provider.onclose(() => this.onclose());
     }
 
@@ -423,12 +423,12 @@ export class Popup {
         this.state = new Proxy(this.defaults(), {
             set: (target, key, value, receiver) => {
                 const r = Reflect.set(target, key, value, receiver);
-                this.update();
+                this.updateView();
                 return r;
             },
         });
         await this.loadConfig();
-        this.update();
+        this.updateView();
         await this.checkVersion();
         if (!this.downloadStatusSub) {
             this.downloadStatusSub = this.messaging.on('updating-database', this.downloadStatus);
@@ -445,7 +445,7 @@ export class Popup {
         this.state.showSettingPanel = false;
     }
 
-    private update(): void {
+    private updateView(): void {
         render(this.template(), this.el);
     }
 }

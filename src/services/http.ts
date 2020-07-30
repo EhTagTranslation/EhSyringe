@@ -21,7 +21,7 @@ export class Http {
             xhr.responseType = responseType;
             xhr.onload = () => {
                 if (xhr.status >= 300) {
-                    reject(new Error(`${xhr.statusText} (${xhr.status})`));
+                    reject(new Error(`${method} ${url} ${xhr.statusText} (${xhr.status})`));
                 } else if (xhr.response instanceof ArrayBuffer && responseType === 'arraybuffer') {
                     resolve(xhr.response);
                 } else if (responseType === 'json') {

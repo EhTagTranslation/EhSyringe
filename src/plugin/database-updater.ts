@@ -45,9 +45,14 @@ export class DatabaseUpdater {
             }
             const version = await this.checkVersion(recheck);
             if (version?.sha && (force || version.sha !== (await this.messaging.emit('get-tag-sha', undefined)))) {
-                await this.update();
-                this.logger.log('有新版本并更新');
-                return version;
+                const success = await this.update();
+                if (success) {
+                    this.logger.log('有新版本并更新', version);
+                    return version;
+                } else {
+                    this.logger.log('更新新版本失败', version);
+                    return undefined;
+                }
             }
             this.logger.log('没有新版本');
             return undefined;
@@ -85,7 +90,7 @@ export class DatabaseUpdater {
 
     private checked = false;
 
-    async update(): Promise<void> {
+    async update(): Promise<boolean> {
         // 重置下载状态
         this.initDownloadStatus();
         try {
@@ -105,14 +110,17 @@ export class DatabaseUpdater {
                     this.initDownloadStatus();
                 }
             });
+            return true;
         } catch (err) {
             const e = err as Error;
             this.logger.error(e);
+            this.badge.set('ERR', '#C80000');
             this.pushDownloadStatus({
                 run: false,
                 error: true,
                 info: e?.message ? e.message : '更新失败',
             });
+            return false;
         }
     }
 
@@ -179,9 +187,6 @@ export class DatabaseUpdater {
                 this.pushDownloadStatus({ info: '下载完成', progress: 100 });
                 this.badge.set('100', '#4A90E2', 1);
                 return { release: info, data };
-            } catch (ex) {
-                this.badge.set('ERR', '#C80000');
-                throw ex;
             } finally {
                 timer.end();
             }
