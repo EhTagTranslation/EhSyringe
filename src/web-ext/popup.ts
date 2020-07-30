@@ -3,11 +3,8 @@ import { Popup } from 'plugin/popup';
 import { Container } from 'services';
 
 (async () => {
-    const current = await browser.tabs.query({ active: true });
-    if (current && current.length >= 1 && current[0].url && new URL(current[0].url).hostname.includes('exhentai')) {
-        document.body.classList.add('ex');
-    }
-    Container.get(Popup).mount(document.body, {
+    const popup = Container.get(Popup);
+    popup.mount(document.body, {
         onclose(listener) {
             window.addEventListener('unload', listener);
         },
@@ -18,4 +15,8 @@ import { Container } from 'services';
             window.close();
         },
     });
+    const current = await browser.tabs.query({ active: true });
+    if (current && current.length >= 1 && current[0].url && new URL(current[0].url).hostname.includes('exhentai')) {
+        document.body.classList.add('ex');
+    }
 })().catch(console.error);

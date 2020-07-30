@@ -222,10 +222,11 @@ export class Popup {
     }
 
     private changeConfigUnsaved(): boolean {
+        if (!this.configOriginal) return false;
         const keys = [...Object.keys(this.configOriginal), ...Object.keys(this.state.configValue)] as Array<
             keyof ConfigData
         >;
-        return !keys.every((key) => this.configOriginal[key] === this.state.configValue[key]);
+        return keys.some((key) => this.configOriginal[key] !== this.state.configValue[key]);
     }
 
     async saveConfig(): Promise<void> {
@@ -233,14 +234,6 @@ export class Popup {
         await this.loadConfig();
         await sleep(200);
         this.provider.close();
-        if ('browser' in globalThis) {
-            const tabs = await browser.tabs.query({ active: true });
-            if (tabs?.length) {
-                const ehTabs = tabs.filter((v) => v.url && /(\/\/|\.)(e-|ex)hentai\.org/i.test(v.url));
-                this.logger.log('Reload tabs', ehTabs);
-                ehTabs.map((v) => browser.tabs.reload(v.id));
-            }
-        }
     }
 
     private settingPanelTemplate(): TemplateResult {
@@ -419,11 +412,13 @@ export class Popup {
         if (this.el != null) throw new Error('Injected twice');
         this.el = el;
         this.provider = provider;
+        this.resetState();
+        this.updateView();
         provider.onopen(() => this.onopen().catch(this.logger.error));
         provider.onclose(() => this.onclose());
     }
 
-    private async onopen(): Promise<void> {
+    private resetState(): void {
         this.state = new Proxy(this.defaults(), {
             set: (target, key, value, receiver) => {
                 const r = Reflect.set(target, key, value, receiver);
@@ -431,6 +426,10 @@ export class Popup {
                 return r;
             },
         });
+    }
+
+    private async onopen(): Promise<void> {
+        this.resetState();
         await this.loadConfig();
         this.updateView();
         await sleep(0);
