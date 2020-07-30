@@ -1,7 +1,8 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebExtensionPlugin = require('webpack-webextension-plugin');
-const webpack = require('webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const WebpackUserScript = require('webpack-userscript');
 const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,7 +10,7 @@ const { argv } = require('yargs');
 const glob = require('glob');
 const execa = require('execa');
 const semver = require('semver');
-/** @type {import('./src/info').packageJson} */
+/** @type { import('./src/info').packageJson & import('type-fest').PackageJson } */
 const pkgJson = require('./package.json');
 
 const dev = (Array.isArray(argv.mode) ? argv.mode.pop() : argv.mode) === 'development';
@@ -127,10 +128,7 @@ const config = {
             resource.request = req;
         }),
     ],
-    performance: {
-        maxEntrypointSize: 2 * 1024 ** 2,
-        maxAssetSize: 2 * 1024 ** 2,
-    },
+    performance: false,
     devtool: dev ? 'eval-source-map' : 'source-map',
     devServer: {
         // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
@@ -146,8 +144,27 @@ const config = {
     optimization: {},
 };
 
+if (argv.analyze) {
+    config.plugins.push(
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+        }),
+    );
+}
+
 if (argv.userScript) {
     type = 'user-script';
+
+    // 外部脚本
+    config.externals = {
+        rxjs: 'rxjs',
+        'rxjs/operators': ['rxjs', 'operators'],
+    };
+    const externalUrls = [
+        `https://unpkg.com/core-js-bundle@${pkgJson.dependencies['core-js']}/minified.js`,
+        `https://unpkg.com/rxjs@${pkgJson.dependencies['rxjs']}/bundles/rxjs.umd.min.js`,
+    ];
+
     config.optimization.minimize = false;
     const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
     const fileHost = devServer
@@ -189,6 +206,7 @@ if (argv.userScript) {
                 updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
                 downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
                 'run-at': 'document-start',
+                require: externalUrls,
                 grant: [
                     'unsafeWindow',
                     'GM_deleteValue',

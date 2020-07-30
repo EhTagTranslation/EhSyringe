@@ -1,4 +1,3 @@
-import { EHTNamespaceName } from '../interface';
 import { Service } from 'services';
 import { createMenu, Context, Menu, OnClickData } from 'providers/menu';
 import { openInTab } from 'providers/utils';
