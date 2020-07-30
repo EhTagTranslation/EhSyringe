@@ -1,5 +1,7 @@
 
 /dist
+/releases
+
 /*.config.js
 .*.{js,ts}
 
