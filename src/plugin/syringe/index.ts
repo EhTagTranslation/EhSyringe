@@ -5,6 +5,7 @@ import { SyncStorage } from 'services/sync-storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
+import { DateTime } from 'services/date-time';
 
 import './index.less';
 
@@ -24,6 +25,7 @@ export class Syringe {
         readonly logger: Logger,
         readonly messaging: Messaging,
         readonly tagging: Tagging,
+        readonly time: DateTime,
     ) {
         storage.async.on('config', (k, ov, nv) => {
             if (nv) this.updateConfig(nv);
@@ -238,10 +240,8 @@ export class Syringe {
             reptext = reptext.replace(/(\d+) pages?/, '$1 页');
             reptext = reptext.replace(/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）');
             reptext = reptext.replace(/Average: ([\d.]+)/, '平均值：$1');
-            reptext = reptext.replace(
-                /Posted on (.*?) by:\s*/,
-                (_, t) => `评论时间：${new Date(t).toLocaleString()} \xA0作者：`,
-            );
+            reptext = reptext.replace(/Posted on (.*?) by:\s*/, `评论时间：$1 \xA0作者：`);
+            reptext = reptext.replace(/^, added (.*?)$/, `，更新于 $1`);
             reptext = reptext.replace(
                 /Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/,
                 '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。',
@@ -256,6 +256,17 @@ export class Syringe {
             reptext = reptext.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
             reptext = reptext.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
             reptext = reptext.replace(/Download original (.*?) source/, '下载原图（$1）');
+
+            reptext = reptext.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/, (t) => {
+                const date = Date.parse(t + 'Z');
+                if (!date) return t;
+                return `${this.time.diff(date, undefined, DateTime.hour)}`;
+            });
+            reptext = reptext.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d\s*UTC/i, (t) => {
+                const date = Date.parse(t);
+                if (!date) return t;
+                return `${this.time.diff(date, undefined, DateTime.hour)}`;
+            });
 
             if (reptext !== text) {
                 node.textContent = reptext;

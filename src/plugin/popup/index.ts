@@ -1,9 +1,10 @@
 import { html, nothing, render, svg, SVGTemplateResult, TemplateResult } from 'lit-html';
-import { dateDiff, sleep } from 'utils';
+import { sleep } from 'utils';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { ConfigData, Storage, ImageLevel } from 'services/storage';
 import { Messaging } from 'services/messaging';
+import { DateTime } from 'services/date-time';
 import { openInTab } from 'providers/utils';
 import { DownloadStatus } from 'plugin/database-updater';
 import { packageJson } from 'info';
@@ -21,7 +22,6 @@ interface PopupState {
     sha: string;
     updateTime: string;
     updateTimeFull: string;
-    extensionVersion: string;
     newSha: string;
     versionInfo: string;
     updateAvailable: boolean;
@@ -35,7 +35,12 @@ interface PopupState {
 
 @Service()
 export class Popup {
-    constructor(readonly logger: Logger, readonly messaging: Messaging, readonly storage: Storage) {}
+    constructor(
+        readonly logger: Logger,
+        readonly messaging: Messaging,
+        readonly storage: Storage,
+        readonly time: DateTime,
+    ) {}
 
     private configOriginal!: ConfigData;
 
@@ -44,7 +49,6 @@ export class Popup {
         info: '',
         updateTime: '',
         updateTimeFull: '',
-        extensionVersion: packageJson.version,
         newSha: '',
         versionInfo: '',
         updateAvailable: false,
@@ -90,7 +94,7 @@ export class Popup {
         const currentSha = await this.messaging.emit('get-tag-sha', undefined);
         const updateTime = (await this.storage.get('databaseInfo'))?.check;
         this.state.sha = currentSha ? currentSha.slice(0, 7) : 'N/A';
-        this.state.updateTime = updateTime ? dateDiff(updateTime) : 'N/A';
+        this.state.updateTime = updateTime ? this.time.diff(updateTime) : 'N/A';
         this.state.updateTimeFull = updateTime ? new Date(updateTime).toLocaleString() : 'N/A';
         try {
             const data = await this.messaging.emit('check-database', { force: true });
@@ -338,7 +342,7 @@ export class Popup {
         return html`<div id="mainPanel" class="panel ${state.showSettingPanel ? 'hide' : ''}">
             <div class="header">
                 <div>
-                    <a href="${packageJson.homepage}" class="monospace minor">v${state.extensionVersion}</a>
+                    <a href="${packageJson.homepage}" class="monospace minor">v${packageJson.version}</a>
                 </div>
                 <div class="cushion"></div>
                 <div>
@@ -429,6 +433,7 @@ export class Popup {
         });
         await this.loadConfig();
         this.updateView();
+        await sleep(0);
         await this.checkVersion();
         if (!this.downloadStatusSub) {
             this.downloadStatusSub = this.messaging.on('updating-database', this.downloadStatus);

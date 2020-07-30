@@ -53,6 +53,7 @@ merge(/^\/g\//, undefined, {
     'Show Tag Definition': '显示标签解释',
     'Add New Tag': '添加新标签',
 
+    'Last edited on ': '最后编辑于 ',
     'Post New Comment': '发送新评论',
 
     'A Quick Note About Tagging': '关于标签系统的简单说明',
