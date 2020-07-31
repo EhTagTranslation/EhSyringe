@@ -109,17 +109,6 @@ const config = {
     ],
     performance: false,
     devtool: dev ? 'eval-source-map' : 'source-map',
-    devServer: {
-        // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
-        // 启用 chrome://flags/#allow-insecure-localhost
-        https: true,
-        port: 48792,
-        writeToDisk: true,
-        allowedHosts: ['.e-hentai.org', '.exhentai.org'],
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-        },
-    },
     optimization: {},
 };
 
@@ -134,15 +123,31 @@ if (argv.analyze) {
 if (argv.userScript) {
     type = 'user-script';
 
+    const outputPath = path.resolve(__dirname, 'releases');
     // 外部脚本
     config.externals = {
-        rxjs: 'rxjs',
+        rxjs: ['rxjs'],
         'rxjs/operators': ['rxjs', 'operators'],
     };
     const externalUrls = [
         `https://unpkg.com/core-js-bundle@${pkgJson.dependencies['core-js']}/minified.js`,
         `https://unpkg.com/rxjs@${pkgJson.dependencies['rxjs']}/bundles/rxjs.umd.min.js`,
     ];
+
+    if (devServer) {
+        // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
+        // 启用 chrome://flags/#allow-insecure-localhost
+        config.devServer = {
+            https: true,
+            port: 48792,
+            writeToDisk: true,
+            allowedHosts: ['.e-hentai.org', '.exhentai.org'],
+            contentBase: outputPath,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            },
+        };
+    }
 
     config.optimization.minimize = false;
     const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
@@ -169,7 +174,7 @@ if (argv.userScript) {
         );
     }
     config.output = {
-        path: path.resolve(__dirname, 'releases'),
+        path: outputPath,
         filename: (data) => fileName(data.chunk.name),
     };
     config.plugins.push(
@@ -241,7 +246,5 @@ if (argv.userScript) {
         }),
     );
 }
-
-config.devServer.contentBase = config.output.path;
 
 module.exports = () => config;

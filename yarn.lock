@@ -2025,10 +2025,10 @@ css-has-pseudo@^0.10.0:
     postcss "^7.0.6"
     postcss-selector-parser "^5.0.0-rc.4"
 
-css-loader@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-4.1.0.tgz#8d1ecb1ba280438c0b80444cc44e2caef96ae81a"
-  integrity sha512-oa8XGmieQF+dfTOpv89LQ2DxkBA+HABE2I8yq5xzf1ikKv6mcwkncFWCqVrgNc4rVsTBPrt5or1pW7u5WaNiKA==
+css-loader@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-4.1.1.tgz?cache=0&sync_timestamp=1596103215615&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcss-loader%2Fdownload%2Fcss-loader-4.1.1.tgz#48342f098784e75bbfc0933dea2853314fb737d8"
+  integrity sha1-SDQvCYeE51u/wJM96ihTMU+3N9g=
   dependencies:
     camelcase "^6.0.0"
     cssesc "^3.0.0"
@@ -7174,10 +7174,17 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.4.0, rxjs@^6.6.0:
+rxjs@^6.4.0:
   version "6.6.0"
   resolved "https://registry.npm.taobao.org/rxjs/download/rxjs-6.6.0.tgz?cache=0&sync_timestamp=1593795056863&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frxjs%2Fdownload%2Frxjs-6.6.0.tgz#af2901eedf02e3a83ffa7f886240ff9018bbec84"
   integrity sha1-rykB7t8C46g/+n+IYkD/kBi77IQ=
+  dependencies:
+    tslib "^1.9.0"
+
+rxjs@^6.6.2:
+  version "6.6.2"
+  resolved "https://registry.npm.taobao.org/rxjs/download/rxjs-6.6.2.tgz?cache=0&sync_timestamp=1596155815508&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frxjs%2Fdownload%2Frxjs-6.6.2.tgz#8096a7ac03f2cc4fe5860ef6e572810d9e01c0d2"
+  integrity sha1-gJanrAPyzE/lhg725XKBDZ4BwNI=
   dependencies:
     tslib "^1.9.0"
 
@@ -8761,10 +8768,10 @@ webpack-webextension-plugin@^0.2.0:
     chalk "^2.4.1"
     ws "^7.0.0"
 
-webpack@^4.44.0:
-  version "4.44.0"
-  resolved "https://registry.npm.taobao.org/webpack/download/webpack-4.44.0.tgz?cache=0&sync_timestamp=1595633836393&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack%2Fdownload%2Fwebpack-4.44.0.tgz#3b08f88a89470175f036f4a9496b8a0428668802"
-  integrity sha1-Owj4iolHAXXwNvSpSWuKBChmiAI=
+webpack@^4.44.1:
+  version "4.44.1"
+  resolved "https://registry.npm.taobao.org/webpack/download/webpack-4.44.1.tgz?cache=0&sync_timestamp=1596094540780&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack%2Fdownload%2Fwebpack-4.44.1.tgz#17e69fff9f321b8f117d1fda714edfc0b939cc21"
+  integrity sha1-F+af/58yG48RfR/acU7fwLk5zCE=
   dependencies:
     "@webassemblyjs/ast" "1.9.0"
     "@webassemblyjs/helper-module-context" "1.9.0"
