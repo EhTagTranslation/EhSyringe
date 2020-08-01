@@ -25,7 +25,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ### Firefox 安装方法
 
-1. 前往 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)下载 zip 文件
+1. 前往 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)下载 xpi 文件
 2. 安装 Firefox 的[延长支持版（ESR）](//www.mozilla.org/firefox/organizations/)、[开发者版](//www.mozilla.org/firefox/developer/)或 [Nightly 版](//nightly.mozilla.org/)
 3. 打开 Firefox 配置编辑器（`about:config` 页），搜索 `xpinstall.signatures.required` 并将值设置为 `false`
 4. 打开 Firefox 附加组件管理器 `about:addons`，点击右上角设置菜单，选择“从文件安装附加组件”，选择下载的 zip 文件
