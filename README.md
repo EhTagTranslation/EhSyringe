@@ -5,7 +5,7 @@
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/total)](https://github.com/EhTagTranslation/EhSyringe/releases)
 [![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.chrome.zip)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.chrome.zip)
-[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.firefox.zip)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.firefox.zip)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.firefox.xpi)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.firefox.xpi)
 [![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.user.js)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js)
 
 E 站注射器，将中文翻译注入到 E 站体内。
