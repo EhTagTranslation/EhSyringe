@@ -45,7 +45,7 @@ merge(/.*/, 'upload.e-hentai.org', {
     'Not created yet': '尚未创建',
     'Not published yet': '尚未发布',
     'Uploaded Files:': '上传文件数：',
-    'Total Filesize:': '总体积：',
+    'Total Filesize:': '总文件大小：',
     'Parent Gallery:': '父级图库：',
     'Child Gallery:': '子图库：',
     'Expunged:': '删除：',

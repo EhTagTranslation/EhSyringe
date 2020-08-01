@@ -13,9 +13,11 @@ merge(/^\/(gallery)?torrents\.php/, undefined, {
     'Search Torrents': '搜索种子',
 
     Added: '添加于',
+    'Posted:': '发布于：',
     'Torrent Name': '种子名',
     Gallery: '图库 ID',
-    Size: '体积',
+    Size: '文件大小',
+    'Size:': '文件大小：',
     Seeds: '做种',
     Peers: '下载',
     'Seeds:': '做种：',
@@ -26,8 +28,8 @@ merge(/^\/(gallery)?torrents\.php/, undefined, {
     DLs: '完成',
 
     '0 torrents were found for this gallery.': '当前图库还没有种子',
-    'Uploader:': '上传者:',
-    'New Torrents:': '新种子:',
+    'Uploader:': '上传者：',
+    'New Torrents:': '新种子：',
     Information: '信息',
     'Close Window': '关闭窗口',
     'Upload Torrent': '上传种子',
