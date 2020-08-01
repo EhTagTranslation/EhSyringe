@@ -23,38 +23,57 @@ class MessagingCross extends Messaging {
             return true;
         });
     }
+
+    private async remoteHandle(key: string, args: unknown): Promise<Res> {
+        try {
+            const req: Req = { key, args };
+            const response = (await browser.runtime.sendMessage(req)) as Res;
+            if (!response) {
+                const error = new Error(chrome.runtime.lastError?.message ?? '消息发送失败');
+                Object.defineProperties(error, {
+                    request: { value: req },
+                });
+                return { handlers: -1, error };
+            } else {
+                return response;
+            }
+        } catch (ex) {
+            return { handlers: -1, error: ex as unknown };
+        }
+    }
+
     async emit(key: string, args: unknown, broadcast = false): Promise<unknown> {
         const localSize = this.handlers.get(key)?.size ?? 0;
-        const localHandled = localSize > 0 ? super.emit(key, args, broadcast) : Promise.resolve();
-        const remoteHandled = new Promise<Res>((resolve) => {
-            const req: Req = { key, args };
-            chrome.runtime.sendMessage(req, (response: Res) => {
-                if (!response) {
-                    const error = new Error(chrome.runtime.lastError?.message ?? '消息发送失败');
-                    Object.defineProperties(error, {
-                        request: { value: req },
-                    });
-                    resolve({ handlers: -1, error });
-                } else {
-                    resolve(response);
-                }
-            });
-        });
+        const localHandled = localSize > 0 ? super.emit(key, args, broadcast) : false;
+        const remoteHandled = this.remoteHandle(key, args);
         const rr = await remoteHandled;
         let lr: unknown;
         let le: Error | undefined;
-        try {
-            lr = await localHandled;
-        } catch (ex) {
-            le = ex as Error;
+        if (localHandled) {
+            try {
+                lr = await localHandled;
+            } catch (ex) {
+                le = ex as Error;
+            }
         }
         if (broadcast) {
-            return lr ?? rr.data;
+            if (localHandled) {
+                return lr ?? rr.data;
+            }
+            return rr.data;
         } else {
             if (le) throw le;
             if (rr.error && rr.handlers < 0) console.debug(key, args, rr.error);
             if (rr.error && rr.handlers > 0) throw rr.error;
-            return lr ?? rr.data;
+            if (localHandled) {
+                return lr ?? rr.data;
+            }
+            if (rr.handlers <= 0) {
+                const err = new Error(`无法处理事件 ${key}`);
+                Reflect.set(err, 'localResponse', lr);
+                Reflect.set(err, 'remoteResponse', rr);
+            }
+            return rr.data;
         }
     }
 }

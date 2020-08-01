@@ -13,7 +13,7 @@ export class Database {
     }
 
     private dataUrls(version: GithubRelease): string[] {
-        const dataJson = /<!--(.+?)-->/gis.exec(version.body);
+        const dataJson = /<!--((.|\s)+?)-->/gi.exec(version.body);
         if (!dataJson) throw new Error(`GitHub 发布数据无法解析，可能需要更新插件版本`);
         try {
             const data = JSON.parse(dataJson[1]) as Record<string, string>;

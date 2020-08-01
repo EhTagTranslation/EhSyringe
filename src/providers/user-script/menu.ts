@@ -76,7 +76,7 @@ class MenuProvider {
         const menu = this.init();
 
         const patterns = info.targetUrlPatterns.map(
-            (p) => new RegExp(`^${p.replace(/[*]/g, '.*').replace(/[?]/g, '.')}$`, 'is'),
+            (p) => new RegExp(`^${p.replace(/[.]/g, '\\.').replace(/[*]/g, '.*').replace(/[?]/g, '.')}$`, 'i'),
         );
         const el = menu.appendChild(document.createElement('menuitem'));
         el.setAttribute('label', info.title);

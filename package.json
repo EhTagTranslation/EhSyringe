@@ -1,7 +1,7 @@
 {
     "name": "ehsyringe",
     "displayName": "EhSyringe",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "description": "E 站注射器，将中文翻译注入到 E 站体内。",
     "author": "EhTagTranslation",
     "scripts": {
@@ -13,7 +13,7 @@
         "build:monkey": "yarn build --user-script",
         "build:ext": "yarn build --web-ext",
         "build:chrome": "yarn build:ext --vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o",
-        "build:firefox": "yarn build:ext --vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o",
+        "build:firefox": "yarn build:ext --vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o",
         "lint": "eslint ./src/**/*.ts",
         "format": "prettier --ignore-path .gitignore --write .",
         "clean": "rimraf dist releases"
