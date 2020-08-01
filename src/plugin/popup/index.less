@@ -5,6 +5,17 @@
     text-align: initial;
     font-size: initial;
     line-height: initial;
+    input,
+    table,
+    th,
+    td {
+        background: inherit;
+        color: inherit;
+    }
+
+    input {
+        border: none;
+    }
 
     input[type='radio'],
     input[type='checkbox'] {
@@ -25,13 +36,16 @@
 .theme(@background, @foreground, @shadow, @accent) {
     @soft-accent: softlight(@accent, @background);
     &,
-    & .panel {
+    .panel {
         background: @background;
         color: @foreground;
     }
 
     #info {
         color: @accent;
+    }
+    .hasNew {
+        color: softlight(#aa575e, @foreground);
     }
     a {
         color: @accent;
@@ -93,15 +107,15 @@
         .checkbox-item svg path {
             stroke: @accent;
         }
+
         input[type='checkbox'] {
             border: solid 2px #a09da6;
-            & :checked {
+            &:checked {
                 border: solid 2px @accent;
             }
         }
 
         input[type='range'] {
-            background: @background;
             &::-webkit-slider-runnable-track {
                 border: 1px @soft-accent solid;
             }
@@ -303,9 +317,6 @@ body.ex #eh-syringe-popup-root {
     }
     table {
         font-size: 14px;
-    }
-    .hasNew {
-        color: #a6000f;
     }
 
     #settingPanel {
