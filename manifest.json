@@ -30,6 +30,7 @@
     "content_scripts": [
         {
             "matches": ["*://exhentai.org/*", "*://e-hentai.org/*", "*://*.exhentai.org/*", "*://*.e-hentai.org/*"],
+            "exclude_matches": ["*://forums.e-hentai.org/*"],
             "js": ["script/vendor.js", "script/page.js"],
             "run_at": "document_start"
         }
