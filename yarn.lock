@@ -2831,10 +2831,10 @@ eslint@5.16.0:
     table "^5.2.3"
     text-table "^0.2.0"
 
-eslint@^7.5.0:
-  version "7.5.0"
-  resolved "https://registry.npm.taobao.org/eslint/download/eslint-7.5.0.tgz?cache=0&sync_timestamp=1595098431043&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint%2Fdownload%2Feslint-7.5.0.tgz#9ecbfad62216d223b82ac9ffea7ef3444671d135"
-  integrity sha1-nsv61iIW0iO4Ksn/6n7zREZx0TU=
+eslint@^7.6.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.6.0.tgz#522d67cfaea09724d96949c70e7a0550614d64d6"
+  integrity sha512-QlAManNtqr7sozWm5TF4wIH9gmUm2hE3vNRUvyoYAa4y1l5/jxD/PQStEjBMQtCqZmSep8UxrcecI60hOpe61w==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.10.0"
