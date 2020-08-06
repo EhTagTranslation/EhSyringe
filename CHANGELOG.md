@@ -1,9 +1,10 @@
 # 更新日志
 
-## upcoming
+## 2.0.7
 
 -   更正部分翻译
 -   排除 forums.e-hentai.org
+-   修复与 E-Hentai-Downloader 的兼容问题
 
 ## 2.0.6
 

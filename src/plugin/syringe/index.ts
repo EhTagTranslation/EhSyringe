@@ -17,6 +17,78 @@ function isText(node: Node): node is Text {
     return node.nodeType === Node.TEXT_NODE;
 }
 
+class TagNodeRef {
+    private static readonly ATTR = 'ehs-tag';
+
+    static create(node: Text, service: Syringe): TagNodeRef | boolean {
+        const parentElement = node.parentElement;
+        if (!parentElement || parentElement.hasAttribute(this.ATTR)) {
+            return true;
+        }
+        const aId = parentElement.id;
+        const aTitle = parentElement.title;
+
+        let fullKeyCandidate: string | undefined;
+        if (aTitle) {
+            const [namespace, key] = aTitle.split(':');
+            fullKeyCandidate = service.tagging.fullKey({ namespace, key });
+        } else if (aId) {
+            let id = aId;
+            if (id.startsWith('ta_')) id = id.slice(3);
+            const [namespace, key] = id.replace(/_/gi, ' ').split(':');
+            fullKeyCandidate = key
+                ? service.tagging.fullKey({ namespace, key })
+                : service.tagging.fullKey({ namespace: '', key: namespace });
+        }
+
+        if (!fullKeyCandidate) return false;
+        const fullKey = fullKeyCandidate;
+        const text = node.textContent ?? '';
+
+        return new TagNodeRef(parentElement, fullKey, text, service);
+    }
+    private constructor(
+        readonly parent: HTMLElement,
+        readonly fullKey: string,
+        readonly original: string,
+        readonly service: Syringe,
+    ) {
+        parent.setAttribute(TagNodeRef.ATTR, this.original);
+        if (!parent.hasAttribute('title')) {
+            parent.title = this.fullKey;
+        }
+    }
+
+    get alive(): boolean {
+        return !!this.parent.parentElement;
+    }
+
+    translate(): boolean {
+        if (!this.alive) return true;
+        if (!this.service.config.translateTag) {
+            this.parent.innerText = this.original;
+            return true;
+        }
+        if (!this.service.tagMap) {
+            return false;
+        }
+        let value = this.service.tagMap[this.fullKey];
+        if (!value) {
+            return false;
+        }
+        if (this.service.config.showIcon) {
+            value = this.service.tagging.markImagesAndEmoji(value);
+        } else {
+            value = this.service.tagging.removeImagesAndEmoji(value);
+        }
+        if (this.original[1] === ':') {
+            value = `${this.original[0]}:${value}`;
+        }
+        this.parent.innerHTML = value;
+        return true;
+    }
+}
+
 @Service()
 export class Syringe {
     constructor(
@@ -34,8 +106,11 @@ export class Syringe {
     }
 
     tagMap = this.storage.get('databaseMap');
-    // 存储未找到翻译的标签，待替换数据加载后重试
-    private readonly pendingTags: Node[] = [];
+    private tags: TagNodeRef[] = [];
+    private translateTags(): void {
+        const tags = (this.tags = this.tags.filter((t) => t.alive));
+        tags.forEach((t) => t.translate());
+    }
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
     config = this.getAndInitConfig();
@@ -48,6 +123,7 @@ export class Syringe {
         this.storage.set('config', config);
         const body = document.querySelector('body');
         if (body) this.setBodyClass(body);
+        if (this.tagMap) this.translateTags();
     }
 
     private getAndInitConfig(): ConfigData {
@@ -111,8 +187,7 @@ export class Syringe {
                         tagMap[key] = data.map[key].name;
                     }
                     this.tagMap = tagMap;
-                    const pendingTags = this.pendingTags.splice(0);
-                    pendingTags.forEach((t) => this.translateTagImpl(t));
+                    this.translateTags();
                     this.storage.set('databaseMap', tagMap);
                     this.storage.set('databaseSha', data.sha);
                     this.logger.log('替换数据已更新', data.sha);
@@ -163,54 +238,6 @@ export class Syringe {
         return node.classList.contains('gt') || node.classList.contains('gtl') || node.classList.contains('gtw');
     }
 
-    // 实际进行替换，必须保证 node 是标签节点
-    private translateTagImpl(node: Node): boolean {
-        const parentElement = node.parentElement;
-        if (!parentElement || parentElement.hasAttribute('ehs-tag')) {
-            return true;
-        }
-
-        const aId = parentElement.id;
-        const aTitle = parentElement.title;
-
-        let fullKeyCandidate: string | undefined;
-        if (aTitle) {
-            const [namespace, key] = aTitle.split(':');
-            fullKeyCandidate = this.tagging.fullKey({ namespace, key });
-        } else if (aId) {
-            let id = aId;
-            if (id.startsWith('ta_')) id = id.slice(3);
-            const [namespace, key] = id.replace(/_/gi, ' ').split(':');
-            fullKeyCandidate = key
-                ? this.tagging.fullKey({ namespace, key })
-                : this.tagging.fullKey({ namespace: '', key: namespace });
-        }
-
-        if (!fullKeyCandidate) return false;
-        const fullKey = fullKeyCandidate;
-        const text = node.textContent ?? '';
-        if (!this.tagMap) {
-            this.pendingTags.push(node);
-            return true;
-        }
-        let value = this.tagMap[fullKey];
-        if (!value) {
-            this.pendingTags.push(node);
-            return true;
-        }
-        value = this.tagging.markImagesAndEmoji(value);
-        if (!aTitle) {
-            parentElement.title = fullKey;
-        }
-        if (text[1] === ':') {
-            value = `${text[0]}:${value}`;
-        }
-        parentElement.innerHTML = `<span ehs-tag-original>${text}</span><span ehs-tag-translated>${value}</span>`;
-        parentElement.setAttribute('ehs-tag', '');
-
-        return true;
-    }
-
     translateTag(node: Node): boolean {
         const parentElement = node.parentElement;
         if (!isText(node) || !parentElement) {
@@ -226,7 +253,13 @@ export class Syringe {
             return false;
         }
 
-        return this.translateTagImpl(node);
+        const ref = TagNodeRef.create(node, this);
+
+        if (typeof ref == 'boolean') return ref;
+
+        ref.translate();
+        this.tags.push(ref);
+        return true;
     }
 
     translateUi(node: Node): void {
