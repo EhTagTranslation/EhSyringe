@@ -54,6 +54,7 @@ class TagNodeRef {
         readonly service: Syringe,
     ) {
         parent.setAttribute(TagNodeRef.ATTR, this.original);
+        parent.setAttribute('lang', 'en');
         if (!parent.hasAttribute('title')) {
             parent.title = this.fullKey;
         }
@@ -67,6 +68,7 @@ class TagNodeRef {
         if (!this.alive) return true;
         if (!this.service.config.translateTag) {
             this.parent.innerText = this.original;
+            this.parent.setAttribute('lang', 'en');
             return true;
         }
         if (!this.service.tagMap) {
@@ -85,6 +87,7 @@ class TagNodeRef {
             value = `${this.original[0]}:${value}`;
         }
         this.parent.innerHTML = value;
+        this.parent.setAttribute('lang', 'cmn-Hans');
         return true;
     }
 }
@@ -122,7 +125,7 @@ export class Syringe {
         this.config = config;
         this.storage.set('config', config);
         const body = document.querySelector('body');
-        if (body) this.setBodyClass(body);
+        if (body) this.setBodyAttrs(body);
         if (this.tagMap) this.translateTags();
     }
 
@@ -143,7 +146,7 @@ export class Syringe {
         const body = document.querySelector('body');
         if (body) {
             const nodes = new Array<Node>();
-            this.setBodyClass(body);
+            this.setBodyAttrs(body);
             const nodeIterator = document.createNodeIterator(body);
             let node = nodeIterator.nextNode();
             while (node) {
@@ -197,7 +200,7 @@ export class Syringe {
             .catch(this.logger.error);
     }
 
-    setBodyClass(node: HTMLBodyElement): void {
+    setBodyAttrs(node: HTMLBodyElement): void {
         if (!node) return;
         node.classList.add(!location.host.includes('exhentai') ? 'eh' : 'ex');
 
@@ -207,6 +210,11 @@ export class Syringe {
         }
         if (this.config.translateTag) {
             node.classList.add('ehs-translate-tag');
+        }
+        if (this.config.translateUi) {
+            node.setAttribute('lang', 'cmn-Hans');
+        } else {
+            node.setAttribute('lang', 'en');
         }
         node.classList.add(`ehs-image-level-${this.config.introduceImageLevel}`);
     }
@@ -221,7 +229,7 @@ export class Syringe {
         }
 
         if (isNode(node, 'body')) {
-            this.setBodyClass(node);
+            this.setBodyAttrs(node);
         }
 
         const handled = this.translateTag(node);
