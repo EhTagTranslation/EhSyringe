@@ -45,6 +45,7 @@ merge(/^\/g\//, undefined, {
 
     'Vote+': '顶',
     'Vote-': '踩',
+    'Withdraw Vote': '撤销投票',
 
     'Vote Up': '顶',
     'Vote Down': '踩',
