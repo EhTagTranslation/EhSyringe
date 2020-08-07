@@ -151,67 +151,71 @@ export class Popup {
     private logoTemplate(progress = 0): SVGTemplateResult {
         const PushRodStyle = `transform: translate(${(progress / 400) * 70}px, 0)`;
         const EnemaStyle = `transform: scaleX(${progress / 100})`;
-        return svg`
-    <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-      <defs>
-          <clipPath id="clip">
-              <rect width="200" height="200"/>
-          </clipPath>
-      </defs>
-      <g id="Syringe" clip-path="url(#clip)">
-          <g id="PushRod" style="${PushRodStyle}">
-              <g transform="translate(-39 -312)">
-                  <g transform="translate(131 403)" fill-bg stroke-accent stroke-width="6">
-                      <rect width="78" height="18" rx="6" stroke="none"/>
-                      <rect x="3" y="3" width="72" height="12" rx="3" fill="none"/>
-                  </g>
-                  <g transform="translate(203 391)" fill-bg stroke-accent stroke-width="6">
-                      <rect width="18" height="43" rx="9" stroke="none"/>
-                      <rect x="3" y="3" width="12" height="37" rx="6" fill="none"/>
-                  </g>
-              </g>
-          </g>
-          <g transform="translate(56 85)" fill-bg stroke-accent stroke-width="6">
-              <rect width="83" height="30" rx="6" stroke="none"/>
-              <rect x="3" y="3" width="77" height="24" rx="3" fill="none"/>
-          </g>
-          <g id="Enema" style="${EnemaStyle}">
-              <rect width="70" height="27" transform="translate(61 86)" fill-sa/>
-          </g>
-          <path id="Enema2" d="M27.426,86.36s5.65.007,13.6.006S57.64,83.357,57.64,83.357L38.015,102.982,24.409,89.377l3.015-3.015Z" transform="translate(107.906 10.036) rotate(45)" fill-sa/>
-          <g transform="translate(-39 -312)">
-              <g transform="translate(95 397)" fill="none" stroke-accent stroke-width="6">
-                  <rect width="83" height="30" rx="6" stroke="none"/>
-                  <rect x="3" y="3" width="77" height="24" rx="3" fill="none"/>
-              </g>
-              <g transform="translate(82 403)" fill-sa stroke-accent stroke-width="6">
-                  <rect width="19" height="18" rx="6" stroke="none"/>
-                  <rect x="3" y="3" width="13" height="12" rx="3" fill="none"/>
-              </g>
-              <rect width="29" height="6" rx="3" transform="translate(58 409)" fill-accent/>
-              <g transform="translate(172 381)" fill-bg stroke-accent stroke-width="6">
-                  <rect width="18" height="62" rx="9" stroke="none"/>
-                  <rect x="3" y="3" width="12" height="56" rx="6" fill="none"/>
-              </g>
-              <g transform="translate(119 398)" fill-bg stroke-accent stroke-width="3">
-                  <rect width="4" height="11" rx="2" stroke="none"/>
-                  <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none"/>
-              </g>
-              <g transform="translate(131 398)" fill-bg stroke-accent stroke-width="3">
-                  <rect width="4" height="11" rx="2" stroke="none"/>
-                  <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none"/>
-              </g>
-              <g transform="translate(144 398)" fill-bg stroke-accent stroke-width="3">
-                  <rect width="4" height="11" rx="2" stroke="none"/>
-                  <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none"/>
-              </g>
-              <g transform="translate(156 398)" fill-bg stroke-accent stroke-width="3">
-                  <rect width="4" height="11" rx="2" stroke="none"/>
-                  <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none"/>
-              </g>
-          </g>
-      </g>
-  </svg>`;
+        return svg`<svg width="160" height="160" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <defs>
+                <clipPath id="clip">
+                    <rect width="200" height="200" />
+                </clipPath>
+            </defs>
+            <g id="Syringe" clip-path="url(#clip)">
+                <g id="PushRod" style="${PushRodStyle}">
+                    <g transform="translate(-39 -312)">
+                        <g transform="translate(131 403)" fill-bg stroke-accent stroke-width="6">
+                            <rect width="78" height="18" rx="6" stroke="none" />
+                            <rect x="3" y="3" width="72" height="12" rx="3" fill="none" />
+                        </g>
+                        <g transform="translate(203 391)" fill-bg stroke-accent stroke-width="6">
+                            <rect width="18" height="43" rx="9" stroke="none" />
+                            <rect x="3" y="3" width="12" height="37" rx="6" fill="none" />
+                        </g>
+                    </g>
+                </g>
+                <g transform="translate(56 85)" fill-bg stroke-accent stroke-width="6">
+                    <rect width="83" height="30" rx="6" stroke="none" />
+                    <rect x="3" y="3" width="77" height="24" rx="3" fill="none" />
+                </g>
+                <g id="Enema" style="${EnemaStyle}">
+                    <rect width="70" height="27" transform="translate(61 86)" fill-sa />
+                </g>
+                <path
+                    id="Enema2"
+                    d="M27.426,86.36s5.65.007,13.6.006S57.64,83.357,57.64,83.357L38.015,102.982,24.409,89.377l3.015-3.015Z"
+                    transform="translate(107.906 10.036) rotate(45)"
+                    fill-sa
+                />
+                <g transform="translate(-39 -312)">
+                    <g transform="translate(95 397)" fill="none" stroke-accent stroke-width="6">
+                        <rect width="83" height="30" rx="6" stroke="none" />
+                        <rect x="3" y="3" width="77" height="24" rx="3" fill="none" />
+                    </g>
+                    <g transform="translate(82 403)" fill-sa stroke-accent stroke-width="6">
+                        <rect width="19" height="18" rx="6" stroke="none" />
+                        <rect x="3" y="3" width="13" height="12" rx="3" fill="none" />
+                    </g>
+                    <rect width="29" height="6" rx="3" transform="translate(58 409)" fill-accent />
+                    <g transform="translate(172 381)" fill-bg stroke-accent stroke-width="6">
+                        <rect width="18" height="62" rx="9" stroke="none" />
+                        <rect x="3" y="3" width="12" height="56" rx="6" fill="none" />
+                    </g>
+                    <g transform="translate(119 398)" fill-bg stroke-accent stroke-width="3">
+                        <rect width="4" height="11" rx="2" stroke="none" />
+                        <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none" />
+                    </g>
+                    <g transform="translate(131 398)" fill-bg stroke-accent stroke-width="3">
+                        <rect width="4" height="11" rx="2" stroke="none" />
+                        <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none" />
+                    </g>
+                    <g transform="translate(144 398)" fill-bg stroke-accent stroke-width="3">
+                        <rect width="4" height="11" rx="2" stroke="none" />
+                        <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none" />
+                    </g>
+                    <g transform="translate(156 398)" fill-bg stroke-accent stroke-width="3">
+                        <rect width="4" height="11" rx="2" stroke="none" />
+                        <rect x="1.5" y="1.5" width="1" height="8" rx="0.5" fill="none" />
+                    </g>
+                </g>
+            </g>
+        </svg>`;
     }
 
     private changeConfigValue<T extends keyof ConfigData>(key: T, value: ConfigData[T]): void {

@@ -23,6 +23,7 @@ version.prerelease = version.build = [];
 /** @type {'user-script' | 'web-ext'} */
 let type;
 
+/** @type {webpack.RuleSetUseItem[]} */
 const cssLoaders = [
     {
         loader: 'style-loader',
@@ -40,11 +41,16 @@ const cssLoaders = [
         loader: 'postcss-loader',
         options: {
             ident: 'postcss',
-            plugins: (loader) => [
-                require('postcss-import')({ root: loader.resourcePath }),
-                require('postcss-preset-env')(),
-                require('cssnano')(),
-            ],
+            plugins: (loader) => {
+                const plugins = [
+                    require('postcss-import')({ root: loader.resourcePath }),
+                    require('postcss-preset-env')(),
+                ];
+                if (config.optimization.minimize !== false) {
+                    plugins.push(require('cssnano')());
+                }
+                return plugins;
+            },
         },
     },
 ];
@@ -186,7 +192,7 @@ if (argv.userScript) {
                 license: pkgJson.license,
                 compatible: ['firefox >= 60', 'edge >= 16', 'chrome >= 61', 'safari >= 11', 'opera >= 48'],
                 match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
-                exclude: ['/^https?:\/\/forums\.e-hentai\.org\//'],
+                exclude: ['*://forums.e-hentai.org/*'],
                 icon: `https://cdn.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
                 updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
                 downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
