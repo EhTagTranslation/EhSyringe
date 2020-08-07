@@ -76,7 +76,7 @@
         "lit-html": "^1.2.1",
         "normalize.css": "^8.0.1",
         "rxjs": "^6.6.2",
-        "tslib": "^2.0.0",
+        "tslib": "^2.0.1",
         "typedi": "^0.8.0",
         "webextension-polyfill-ts": "^0.19.0"
     }
