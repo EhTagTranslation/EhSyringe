@@ -4,6 +4,7 @@ merge(/^\/archiver\.php/, undefined, {
     'Current Funds:': '现有资金',
     'Estimated Size: \xA0 ': '预计大小： ',
     'Download Cost: \xA0 ': '下载费用： ',
+    'Insufficient Funds': '余额不足',
     'Download Original Archive': '下载原始档案',
     'Download Resample Archive': '下载重采样档案',
     'H@H Downloader': 'H@H 下载器',
