@@ -35,7 +35,7 @@
         "@types/tampermonkey": "^4.0.0",
         "@typescript-eslint/eslint-plugin": "^3.10.1",
         "@typescript-eslint/parser": "^3.10.1",
-        "copy-webpack-plugin": "^6.0.3",
+        "copy-webpack-plugin": "^6.0.4",
         "css-loader": "^4.2.2",
         "cssnano": "^4.1.10",
         "eslint": "^7.7.0",
