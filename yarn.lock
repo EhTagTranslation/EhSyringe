@@ -74,11 +74,6 @@
   resolved "https://registry.npm.taobao.org/@csstools/convert-colors/download/@csstools/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha1-rUldxBsS511YjG24uYNPCPoTHrc=
 
-"@emmetio/extract-abbreviation@0.1.6":
-  version "0.1.6"
-  resolved "https://registry.npm.taobao.org/@emmetio/extract-abbreviation/download/@emmetio/extract-abbreviation-0.1.6.tgz#e4a9856c1057f0aff7d443b8536477c243abe28c"
-  integrity sha1-5KmFbBBX8K/31EO4U2R3wkOr4ow=
-
 "@eslint/eslintrc@^0.1.3":
   version "0.1.3"
   resolved "https://registry.npm.taobao.org/@eslint/eslintrc/download/@eslint/eslintrc-0.1.3.tgz#7d1a2b2358552cc04834c0979bd4275362e37085"
@@ -4601,11 +4596,6 @@ json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
-jsonc-parser@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.npm.taobao.org/jsonc-parser/download/jsonc-parser-1.0.3.tgz#1d53d7160e401a783dbceabaad82473f80e6ad7e"
-  integrity sha1-HVPXFg5AGng9vOq6rYJHP4DmrX4=
-
 jsonfile@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npm.taobao.org/jsonfile/download/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
@@ -8264,31 +8254,6 @@ typedi@^0.8.0:
   resolved "https://registry.npm.taobao.org/typedi/download/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
   integrity sha1-2OIDvR1BqW4rClxilRR9dLKy0D4=
 
-typescript-lit-html-plugin@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.npm.taobao.org/typescript-lit-html-plugin/download/typescript-lit-html-plugin-0.9.0.tgz#013ac13407bf7b09410b544f9c11497cdc93a187"
-  integrity sha1-ATrBNAe/ewlBC1RPnBFJfNyToYc=
-  dependencies:
-    typescript-styled-plugin "^0.13.0"
-    typescript-template-language-service-decorator "^2.2.0"
-    vscode-html-languageservice "^2.1.10"
-    vscode-languageserver-types "^3.13.0"
-
-typescript-styled-plugin@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.npm.taobao.org/typescript-styled-plugin/download/typescript-styled-plugin-0.13.0.tgz#e5d3d1293b9b85cffd473f01a7f4917ad6035ee5"
-  integrity sha1-5dPRKTubhc/9Rz8Bp/SRetYDXuU=
-  dependencies:
-    typescript-template-language-service-decorator "^2.0.0"
-    vscode-css-languageservice "^3.0.12"
-    vscode-emmet-helper "1.2.11"
-    vscode-languageserver-types "^3.13.0"
-
-typescript-template-language-service-decorator@^2.0.0, typescript-template-language-service-decorator@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.npm.taobao.org/typescript-template-language-service-decorator/download/typescript-template-language-service-decorator-2.2.0.tgz#4ee6d580f307fb9239978e69626f2775b8a59b2a"
-  integrity sha1-TubVgPMH+5I5l45pYm8ndbilmyo=
-
 typescript@^4.0.2:
   version "4.0.2"
   resolved "https://registry.npm.taobao.org/typescript/download/typescript-4.0.2.tgz?cache=0&sync_timestamp=1599204616130&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
@@ -8510,47 +8475,6 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz?cache=0&sync_timestamp=1589344261391&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvm-browserify%2Fdownload%2Fvm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
-
-vscode-css-languageservice@^3.0.12:
-  version "3.0.13"
-  resolved "https://registry.npm.taobao.org/vscode-css-languageservice/download/vscode-css-languageservice-3.0.13.tgz#1788735b65fde54181ea458e6a52cc2bd6dd9126"
-  integrity sha1-F4hzW2X95UGB6kWOalLMK9bdkSY=
-  dependencies:
-    vscode-languageserver-types "^3.13.0"
-    vscode-nls "^4.0.0"
-
-vscode-emmet-helper@1.2.11:
-  version "1.2.11"
-  resolved "https://registry.npm.taobao.org/vscode-emmet-helper/download/vscode-emmet-helper-1.2.11.tgz#4de78223666bf917eb6dc4b225b6c40f6901950c"
-  integrity sha1-TeeCI2Zr+RfrbcSyJbbED2kBlQw=
-  dependencies:
-    "@emmetio/extract-abbreviation" "0.1.6"
-    jsonc-parser "^1.0.0"
-    vscode-languageserver-types "^3.6.0-next.1"
-
-vscode-html-languageservice@^2.1.10:
-  version "2.1.12"
-  resolved "https://registry.npm.taobao.org/vscode-html-languageservice/download/vscode-html-languageservice-2.1.12.tgz#b4f9e23cac6fea74d4c9825fb4a4ef9bf313785e"
-  integrity sha1-tPniPKxv6nTUyYJftKTvm/MTeF4=
-  dependencies:
-    vscode-languageserver-types "^3.13.0"
-    vscode-nls "^4.0.0"
-    vscode-uri "^1.0.6"
-
-vscode-languageserver-types@^3.13.0, vscode-languageserver-types@^3.6.0-next.1:
-  version "3.15.1"
-  resolved "https://registry.npm.taobao.org/vscode-languageserver-types/download/vscode-languageserver-types-3.15.1.tgz#17be71d78d2f6236d414f0001ce1ef4d23e6b6de"
-  integrity sha1-F75x140vYjbUFPAAHOHvTSPmtt4=
-
-vscode-nls@^4.0.0:
-  version "4.1.2"
-  resolved "https://registry.npm.taobao.org/vscode-nls/download/vscode-nls-4.1.2.tgz#ca8bf8bb82a0987b32801f9fddfdd2fb9fd3c167"
-  integrity sha1-yov4u4KgmHsygB+f3f3S+5/TwWc=
-
-vscode-uri@^1.0.6:
-  version "1.0.8"
-  resolved "https://registry.npm.taobao.org/vscode-uri/download/vscode-uri-1.0.8.tgz#9769aaececae4026fb6e22359cb38946580ded59"
-  integrity sha1-l2mq7OyuQCb7biI1nLOJRlgN7Vk=
 
 watchpack-chokidar2@^2.0.0:
   version "2.0.0"

@@ -14,11 +14,6 @@
         "noImplicitReturns": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "importHelpers": true,
-        "plugins": [
-            {
-                "name": "typescript-lit-html-plugin"
-            }
-        ]
+        "importHelpers": true
     }
 }

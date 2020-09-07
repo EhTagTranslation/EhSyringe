@@ -269,7 +269,7 @@ export class Popup {
                                         type="checkbox"
                                         @change=${(e: Event) =>
                                             this.changeConfigValue(item.key, (e.target as HTMLInputElement).checked)}
-                                        ?checked="${this.state.configValue[item.key]}"
+                                        ?checked="${this.state.configValue[item.key] as boolean}"
                                     />
                                     ${item.name}
                                     <svg
@@ -303,7 +303,7 @@ export class Popup {
                                     this.changeConfigValue('introduceImageLevel', value + 1);
                                     this.changeConfigValue('introduceImageLevel', value);
                                 }}
-                                .value="${state.configValue.introduceImageLevel * 100}"
+                                .value="${String(state.configValue.introduceImageLevel * 100)}"
                             />
                         </div>
                         <div class="range-label">
