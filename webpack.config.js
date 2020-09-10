@@ -40,16 +40,8 @@ const cssLoaders = [
     {
         loader: 'postcss-loader',
         options: {
-            ident: 'postcss',
-            plugins: (loader) => {
-                const plugins = [
-                    require('postcss-import')({ root: loader.resourcePath }),
-                    require('postcss-preset-env')(),
-                ];
-                if (config.optimization.minimize !== false) {
-                    plugins.push(require('cssnano')());
-                }
-                return plugins;
+            postcssOptions: {
+                plugins: ['postcss-import', 'postcss-preset-env', 'cssnano'],
             },
         },
     },
