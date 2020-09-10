@@ -65,7 +65,7 @@
         "webpack-dev-server": "^3.11.0",
         "webpack-userscript": "^2.5.6",
         "webpack-webextension-plugin": "^0.2.0",
-        "yargs": "^15.4.1"
+        "yargs": "^16.0.3"
     },
     "dependencies": {
         "core-js": "^3.6.5",
