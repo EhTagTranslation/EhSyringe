@@ -77,5 +77,6 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 -   复制磁力链 <https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03>
 -   阅读状态 <https://gist.github.com/xioxin/d8dbe82cbf762bb10652cdfd9fda3d93>
+-   漫画其他翻译版本快捷跳转按钮 <https://gist.github.com/xioxin/7e01fc41aa3747dba4dcb45306d9a80b>
 
 ## [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
