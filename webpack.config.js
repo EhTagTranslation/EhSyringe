@@ -64,14 +64,16 @@ const config = {
             {
                 test: /\.ts$/,
                 exclude: '/node_modules',
-                use: {
-                    loader: 'ts-loader',
-                    options: {
-                        configFile: dev
-                            ? path.resolve(__dirname, 'tsconfig.json')
-                            : path.resolve(__dirname, 'tsconfig.build.json'),
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                            plugins: ['@babel/plugin-transform-runtime'],
+                        },
                     },
-                },
+                    'ts-loader',
+                ],
             },
             {
                 test: /\.less$/,

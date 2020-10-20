@@ -1,7 +1,0 @@
-{
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "target": "ES6",
-        "removeComments": true
-    }
-}
