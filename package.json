@@ -65,7 +65,7 @@
         "web-ext": "^5.3.0",
         "webpack": "^4.44.2",
         "webpack-bundle-analyzer": "^3.9.0",
-        "webpack-cli": "^3.3.12",
+        "webpack-cli": "^4.1.0",
         "webpack-dev-server": "^3.11.0",
         "webpack-userscript": "^2.5.6",
         "webpack-webextension-plugin": "^0.2.0",
