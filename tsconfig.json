@@ -1,8 +1,9 @@
 {
     "include": ["src/**/*"],
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "ES2018",
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
         "jsx": "react",
         "baseUrl": "src",
         "resolveJsonModule": true,

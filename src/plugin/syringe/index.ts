@@ -303,8 +303,8 @@ export class Syringe {
                 if (!date) return t;
                 return `${this.time.diff(date, undefined, DateTime.hour)}`;
             });
-            reptext = reptext.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d\s*UTC/i, (t) => {
-                const date = Date.parse(t);
+            reptext = reptext.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d/i, (t) => {
+                const date = Date.parse(t + 'Z');
                 if (!date) return t;
                 return `${this.time.diff(date, undefined, DateTime.hour)}`;
             });
