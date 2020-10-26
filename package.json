@@ -82,6 +82,6 @@
         "rxjs": "^6.6.3",
         "tslib": "^2.0.3",
         "typedi": "^0.8.0",
-        "webextension-polyfill-ts": "^0.20.0"
+        "webextension-polyfill-ts": "^0.21.0"
     }
 }

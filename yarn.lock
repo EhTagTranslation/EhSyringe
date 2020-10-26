@@ -9409,10 +9409,10 @@ web-ext@^5.3.0:
     yargs "15.4.1"
     zip-dir "1.0.2"
 
-webextension-polyfill-ts@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.npm.taobao.org/webextension-polyfill-ts/download/webextension-polyfill-ts-0.20.0.tgz#1f83bf745492a9eb394f0e18fa229e0a9e8c645d"
-  integrity sha1-H4O/dFSSqes5Tw4Y+iKeCp6MZF0=
+webextension-polyfill-ts@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill-ts/-/webextension-polyfill-ts-0.21.0.tgz#de07984177b585d12e7189abfab9fb1e3fbfa048"
+  integrity sha512-x1Bbr4XVYcIUIQRNWulWHBIgKTJOhzfkcaaVraTOlvVqYiIz+pMAamrK6XKnOlWNZEybDa2DkZgidpriPSXFGw==
   dependencies:
     webextension-polyfill "^0.6.0"
 
