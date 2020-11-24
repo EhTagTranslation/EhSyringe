@@ -60,16 +60,16 @@
         "style-loader": "^2.0.0",
         "ts-loader": "^8.0.7",
         "tsconfig-paths-webpack-plugin": "^3.2.0",
-        "type-fest": "^0.18.0",
+        "type-fest": "^0.19.0",
         "typescript": "^4.0.5",
         "url-loader": "^4.1.1",
         "web-ext": "^5.3.0",
         "webpack": "^4.44.2",
-        "webpack-bundle-analyzer": "^3.9.0",
+        "webpack-bundle-analyzer": "^4.1.0",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0",
         "webpack-userscript": "^2.5.6",
-        "webpack-webextension-plugin": "^0.2.0",
+        "webpack-webextension-plugin": "^0.3.0",
         "yargs": "^16.1.0"
     },
     "dependencies": {
@@ -82,6 +82,6 @@
         "rxjs": "^6.6.3",
         "tslib": "^2.0.3",
         "typedi": "^0.8.0",
-        "webextension-polyfill-ts": "^0.21.0"
+        "webextension-polyfill-ts": "^0.22.0"
     }
 }
