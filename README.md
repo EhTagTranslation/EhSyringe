@@ -35,7 +35,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 ### 用户脚本（UserScript）安装方法
 
 1. [安装一个用户脚本管理器](//sleazyfork.org/help/installing-user-scripts)
-2. 前往 [sleazy fork](//sleazyfork.org/scripts/407833-ehsyringe) 安装最新版本
+2. 前往 [sleazy fork](//sleazyfork.org/scripts/407833) 安装最新版本
 
 > 也可以从 [Release 页面](../../releases)安装
 
@@ -75,6 +75,6 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ## 小工具
 
--   用户脚本脚本小工具合集 <../../../UserScripts>
+-   用户脚本脚本小工具合集 [EhTagTranslation/UserScripts](../../../UserScripts)
 
 ## [更新日志](CHANGELOG.md)
