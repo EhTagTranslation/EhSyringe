@@ -1,4 +1,5 @@
 # EhSyringe 用户脚本版
+[comment]: <> (这个文件因为是用来做 GreasyFork 外链的简介的，所以不能用相对地址)
 
 E 站注射器，将中文翻译注入到 E 站体内。
 
@@ -28,7 +29,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   在加载 DOM 过程替换翻译, 页面加载完直接是中文不会闪烁
 
 扩展版安装方式请参见项目首页  
-https://github.com/EhTagTranslation/EhSyringe
+<https://github.com/EhTagTranslation/EhSyringe>
 
 ## 截图预览
 
@@ -57,7 +58,6 @@ https://github.com/EhTagTranslation/EhSyringe
 
 ## 小工具
 
--   复制磁力链 <https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03>
--   阅读状态 <https://gist.github.com/xioxin/d8dbe82cbf762bb10652cdfd9fda3d93>
+-   用户脚本脚本小工具合集 <https://github.com/EhTagTranslation/UserScripts>
 
 ## [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)

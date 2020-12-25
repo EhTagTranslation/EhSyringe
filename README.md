@@ -1,31 +1,31 @@
 # EhSyringe
 
-[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/build/badge.svg)](https://github.com/EhTagTranslation/EhSyringe/actions)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](https://dependabot.com)
+[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/build/badge.svg)](../../actions)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](//dependabot.com)
 
-[![GitHub All Releases](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/total)](https://github.com/EhTagTranslation/EhSyringe/releases)
-[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.chrome.zip)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.chrome.zip)
-[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.firefox.xpi)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.firefox.xpi)
-[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.user.js)](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js)
+[![GitHub All Releases](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/total)](../../releases)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.chrome.zip)](../../releases/latest/download/ehsyringe.chrome.zip)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.firefox.xpi)](../../releases/latest/download/ehsyringe.firefox.xpi)
+[![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.user.js)](../../releases/latest/download/ehsyringe.user.js)
 
 E 站注射器，将中文翻译注入到 E 站体内。
 
 这一针打下去你就会说中文了。
 
-![image](https://user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
+![image](//user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
 
 ## 安装
 
 ### Chrome 安装方法
 
-1. 前往 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)下载 zip 文件并解压
+1. 前往 [Release 页面](../../releases)下载 zip 文件并解压
 2. 打开 Chrome 扩展程序管理器 `chrome://extensions`
 3. 勾选 `开发者模式`
 4. 点击 `加载已解压的扩展程序`，选择本扩展所在目录
 
 ### Firefox 安装方法
 
-1. 前往 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)下载 xpi 文件
+1. 前往 [Release 页面](../../releases)下载 xpi 文件
 2. 安装 Firefox 的[延长支持版（ESR）](//www.mozilla.org/firefox/organizations/)、[开发者版](//www.mozilla.org/firefox/developer/)或 [Nightly 版](//nightly.mozilla.org/)
 3. 打开 Firefox 配置编辑器（`about:config` 页），搜索 `xpinstall.signatures.required` 并将值设置为 `false`
 4. 打开 Firefox 附加组件管理器 `about:addons`，点击右上角设置菜单，选择“从文件安装附加组件”，选择下载的 zip 文件
@@ -34,17 +34,17 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ### 用户脚本（UserScript）安装方法
 
-1. [安装一个用户脚本管理器](https://sleazyfork.org/zh-CN/help/installing-user-scripts)
-2. 前往 [sleazy fork](https://sleazyfork.org/zh-CN/scripts/407833-ehsyringe) 安装最新版本
+1. [安装一个用户脚本管理器](//sleazyfork.org/help/installing-user-scripts)
+2. 前往 [sleazy fork](//sleazyfork.org/scripts/407833-ehsyringe) 安装最新版本
 
-> 也可以从 [Release 页面](https://github.com/EhTagTranslation/EhSyringe/releases)安装
+> 也可以从 [Release 页面](../../releases)安装
 
 ## 功能
 
 -   全站翻译（大部分)
 -   TAG 翻译
 -   TAG 介绍
--   TAG 翻译数据更新（当前数据库包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](https://ehtt.now.sh/list/all) 条标签翻译）
+-   TAG 翻译数据更新（当前数据库包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](//ehtt.now.sh/list/all) 条标签翻译）
 -   搜索框 TAG 输入提示
 
 ## 特点
@@ -75,8 +75,6 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ## 小工具
 
--   复制磁力链 <https://gist.github.com/xioxin/588cfcbc9d4a50e797c1cacb0a620a03>
--   阅读状态 <https://gist.github.com/xioxin/d8dbe82cbf762bb10652cdfd9fda3d93>
--   漫画其他翻译版本快捷跳转按钮 <https://gist.github.com/xioxin/7e01fc41aa3747dba4dcb45306d9a80b>
+-   用户脚本脚本小工具合集 <../../../UserScripts>
 
-## [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
+## [更新日志](CHANGELOG.md)
