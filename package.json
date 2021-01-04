@@ -47,7 +47,7 @@
         "eslint-plugin-prettier": "^3.3.0",
         "execa": "^5.0.0",
         "file-loader": "^6.2.0",
-        "html-webpack-plugin": "^4.5.0",
+        "html-webpack-plugin": "^4.5.1",
         "less": "^4.0.0",
         "less-loader": "^7.2.0",
         "postcss": "^8.2.1",
