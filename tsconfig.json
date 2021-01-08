@@ -1,7 +1,7 @@
 {
     "include": ["src/**/*"],
     "compilerOptions": {
-        "target": "ESNext",
+        "target": "ES2018",
         "module": "ESNext",
         "moduleResolution": "Node",
         "jsx": "react",
