@@ -8408,10 +8408,10 @@ typedarray@^0.0.6:
   resolved "https://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typedi@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.npm.taobao.org/typedi/download/typedi-0.8.0.tgz#d8e203bd1d41a96e2b0a5c6295147d74b2b2d03e"
-  integrity sha1-2OIDvR1BqW4rClxilRR9dLKy0D4=
+typedi@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.9.0.tgz#61c4d8b4bad4d4dd8569a90883aff071eea4dbcd"
+  integrity sha512-5ewNW4F21aIAJXFj0qSNceFC6+C4JbJ9G2OSuQHtVWzYvF7Gco49lfZxvAE1l7ZTtYAZHFj8gqqRcJy4q4dVxw==
 
 typescript@^4.1.3:
   version "4.1.3"
