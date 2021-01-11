@@ -48,7 +48,7 @@
         "execa": "^5.0.0",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^4.5.1",
-        "less": "^4.0.0",
+        "less": "^4.1.0",
         "less-loader": "^7.2.0",
         "postcss": "^8.2.3",
         "postcss-import": "^14.0.0",
