@@ -81,7 +81,7 @@
         "normalize.css": "^8.0.1",
         "rxjs": "^6.6.3",
         "tslib": "^2.1.0",
-        "typedi": "^0.8.0",
+        "typedi": "^0.9.1",
         "webextension-polyfill-ts": "^0.22.0"
     }
 }
