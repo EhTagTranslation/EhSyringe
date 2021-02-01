@@ -8748,10 +8748,10 @@ web-ext@^5.5.0:
     yargs "15.4.1"
     zip-dir "1.0.2"
 
-webextension-polyfill-ts@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.npm.taobao.org/webextension-polyfill-ts/download/webextension-polyfill-ts-0.22.0.tgz#86cfd7bab4d9d779d98c8340983f4b691b2343f3"
-  integrity sha1-hs/XurTZ13nZjINAmD9LaRsjQ/M=
+webextension-polyfill-ts@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill-ts/-/webextension-polyfill-ts-0.24.0.tgz#bd40232b5fa8cd3de6701bac6507904fe57e16ab"
+  integrity sha512-JUHpVzu8WeDVFsVeyzi1Hsd7N2ylKXMlQPAfpYGktzflzwFXlvqiA48UnaH5rmv/CTQEHI0T3qfK3wVBW6nbUA==
   dependencies:
     webextension-polyfill "^0.7.0"
 
