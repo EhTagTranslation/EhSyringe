@@ -8905,10 +8905,10 @@ webpack-webextension-plugin@^0.3.0:
     strip-ansi "^6.0.0"
     ws "~7.4.0"
 
-webpack@^5.18.0:
-  version "5.18.0"
-  resolved "https://registry.npm.taobao.org/webpack/download/webpack-5.18.0.tgz#bbcf13094aa0da0534d513f27d7ee72d74e499c6"
-  integrity sha1-u88TCUqg2gU01RPyfX7nLXTkmcY=
+webpack@^5.19.0:
+  version "5.19.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.19.0.tgz#1a5fee84dd63557e68336b0774ac4a1c81aa2c73"
+  integrity sha512-egX19vAQ8fZ4cVYtA9Y941eqJtcZAK68mQq87MMv+GTXKZOc3TpKBBxdGX+HXUYlquPxiluNsJ1VHvwwklW7CQ==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"
