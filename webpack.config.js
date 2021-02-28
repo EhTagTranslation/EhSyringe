@@ -38,7 +38,7 @@ const cssLoaders = [
 
 module.exports = async (env = {}, argv = {}) => {
     const dev = argv.mode === 'development';
-    const devServer = !!process.env.WEBPACK_DEV_SERVER;
+    const devServer = !!env.WEBPACK_SERVE;
     const version = semver.parse(pkgJson.version);
     const repo = new URL(pkgJson.homepage).pathname.replace(/(^\/|\/$)/g, '');
     pkgJson.homepage = pkgJson.homepage.replace(/\/$/, '');

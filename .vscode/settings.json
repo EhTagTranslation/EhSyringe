@@ -1,5 +1,4 @@
 {
-    "eslint.enable": true,
     "eslint.lintTask.enable": true,
     "eslint.format.enable": true,
     "eslint.packageManager": "yarn",

@@ -9,8 +9,6 @@ extends:
     - eslint:recommended
     - plugin:@typescript-eslint/recommended
     - plugin:@typescript-eslint/recommended-requiring-type-checking
-    - prettier
-    - prettier/@typescript-eslint
     - plugin:prettier/recommended
 rules:
     'prettier/prettier': [1]
