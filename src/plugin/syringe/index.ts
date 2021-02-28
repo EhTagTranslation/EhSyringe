@@ -297,6 +297,7 @@ export class Syringe {
             reptext = reptext.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
             reptext = reptext.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
             reptext = reptext.replace(/Download original (.*?) source/, '下载原图（$1）');
+            reptext = reptext.replace(/All schedule times are in UTC. As a reference, the current UTC time is (.*?)\./, (s, t) => `所有计划时间均为 UTC。作为参考，现在的 UTC 时间是 ${t.replace(/\s/g, '\xA0')}。`)
 
             reptext = reptext.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/, (t) => {
                 const date = Date.parse(t + 'Z');
