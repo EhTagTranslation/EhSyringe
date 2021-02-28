@@ -24,6 +24,11 @@ merge(/^\/uconfig\.php/, undefined, {
         ' 仅使用默认端口的客户端（可能稍慢。当防火墙或代理阻止非标准接口的流量时启用此项。）',
     ' No (Donator only. You will not be able to browse as many pages, enable only if having severe problems.)':
         ' 否（仅限赞助者。配额消耗会加快，只有出现问题时才启用。）',
+    'You appear to be browsing the site from ': '你看起来正在 ',
+    ' or use a VPN or proxy in this country, which means the site will try to load images from H@H clients in this general geographic region. If this is incorrect, or if you want to use a different region for any reason (like if you are using a split tunneling VPN), you can select a different country below.':
+        ' 浏览此网页，或是使用了一个来自此处的 VPN，这意味着网站将尝试通过在此区域的 H@H 客户端加载图片。如果该结果不正确，或你想通过其他地区的 H@H 客户端加载图片（例如你正在使用分割隧道 VPN），你可以在下方选择一个不同的区域。',
+    '\n\t\tBrowsing Country: ': '浏览区域：',
+    'Auto-Detect': '自动',
 
     'Image Size Settings': '图片大小设置',
     'Normally, images are resampled to 1280 pixels of horizontal resolution for online viewing. You can alternatively select one of the following resample resolutions. To avoid murdering the staging servers, resolutions above 1280x are temporarily restricted to donators, people with any hath perk, and people with a UID below 3,000,000.':
@@ -143,6 +148,8 @@ merge(/^\/uconfig\.php/, undefined, {
         '页面加载时 (页面加载时间更长，但是显示的时候无需等待)',
     'You can set a default thumbnail configuration for all galleries you visit.': '图库页面缩略图设置。',
     'Size: ': '大小：',
+    ' Normal': ' 普通',
+    ' Large': ' 大图',
     'Rows:': '行数：',
 
     'Thumbnail Scaling': '缩略图缩放',
