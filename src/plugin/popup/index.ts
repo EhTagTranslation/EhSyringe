@@ -257,7 +257,14 @@ export class Popup {
                     <div>设置</div>
                     <div class="cushion"></div>
                     <div>
-                        <a @click="${() => (this.state.showSettingPanel = false)}" href="#">✕</a>
+                        <a
+                            href="#"
+                            @click="${(ev: Event) => {
+                                state.showSettingPanel = false;
+                                ev.preventDefault();
+                            }}"
+                            >✕</a
+                        >
                     </div>
                 </div>
                 <form id="settingForm" class="content">
@@ -306,7 +313,7 @@ export class Popup {
                                 .value="${String(state.configValue.introduceImageLevel * 100)}"
                             />
                         </div>
-                        <div class="range-label">
+                        <div class="range-label" @click="${(ev: Event) => ev.preventDefault()}">
                             <a href="#" @click="${() => this.changeConfigValue('introduceImageLevel', ImageLevel.hide)}"
                                 >禁用</a
                             >
@@ -343,7 +350,13 @@ export class Popup {
                 </div>
                 <div class="cushion"></div>
                 <div>
-                    <a id="settingSwitch" href="#" @click="${() => (state.showSettingPanel = !state.showSettingPanel)}"
+                    <a
+                        id="settingSwitch"
+                        href="#"
+                        @click="${(ev: Event) => {
+                            state.showSettingPanel = true;
+                            ev.preventDefault();
+                        }}"
                         >设置</a
                     >
                 </div>
