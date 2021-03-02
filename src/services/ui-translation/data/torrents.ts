@@ -11,6 +11,7 @@ merge(/^\/(gallery)?torrents\.php/, undefined, {
     '\nNote that you cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.\n':
         '注意：你不能直接把种子添加到此页面。请在图库中上传。',
     'Search Torrents': '搜索种子',
+    'Advanced Gallery/Torrent Search': '高级图库和种子搜索',
 
     Added: '添加于',
     'Posted:': '发布于：',

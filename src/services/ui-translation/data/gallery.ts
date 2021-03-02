@@ -7,6 +7,7 @@ merge(/^\/g\//, undefined, {
     'Archive Download': '存档下载',
     'Torrent Download': '种子下载',
     'Petition to Expunge': '申请删除',
+    'Show Expunge Log': '显示删除日志',
     'Petition to Rename': '申请重命名',
     'Rename Petition Sent': '已发送的重命名申请',
     'Show Gallery Stats': '查看统计',
@@ -83,4 +84,32 @@ merge(/^\/g\//, undefined, {
     '. If you have any comments, suggestions or questions about tagging, this is where you should take it.':
         '的地方。如果您对标签有任何意见、建议或问题，可在此处讨论。',
     'Alright Already': '好的',
+
+    'Back to Gallery': '返回图库',
+    'Report Type': '举报类型',
+    '[Select a complaint type...]': '[请选择一个举报类型...]',
+    'DMCA/Copyright Infringement': 'DMCA / 侵犯版权',
+    'Child Pornography': '儿童色情',
+    'Other Illicit Content': '其他非法内容',
+    'Watched Tag Galleries': '标签订阅',
+});
+
+merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
+    'Submit New Expunge Petition': '提交新的删除申请',
+    'Specify a valid objective reason why this gallery should be expunged.': '请说明要删除此库的客观原因。',
+    ' None / Withdraw Petition.': '无 / 撤回删除申请。',
+    ' This gallery is a duplicate of equal or lower quality of an earlier posted gallery.':
+        '此图库是之前发布的图库的质量相同或较低的副本。',
+    ' A newer higher-quality and clearly marked copy of this gallery has been uploaded.':
+        '这个图库的更高质量和标记清楚的副本已上传。',
+    ' This gallery contains either illicit content like child porn or anything else that has been banned.':
+        '这个图库包含非法内容，如儿童色情或其他任何禁止的内容。',
+    'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.':
+        '在此处输入删除的详细原因。请注意，“我讨厌此内容/艺术家/上传者”等主观理由是无效的，并且可能导致帐户处罚/限制。',
+    'Enter the URL of the conflicting gallery, if applicable.': '如有必要，在此处输入冲突图库的 URL。',
+    'Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.':
+        '请输入清除原因和备注。它应包括副本的位置或违反的特定规则。',
+    'No expunge petitions have been filed for this gallery': '此图库尚未有删除申诉',
+    'Create New Petition': '提交新申请',
+    Back: '返回',
 });

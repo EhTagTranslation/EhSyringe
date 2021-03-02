@@ -1,10 +1,12 @@
 import './data/archiver';
 import './data/common';
 import './data/exchange';
+import './data/favorites';
 import './data/gallery';
 import './data/gallerypopups';
 import './data/hathperks';
 import './data/home';
+import './data/image';
 import './data/login';
 import './data/logs';
 import './data/news';

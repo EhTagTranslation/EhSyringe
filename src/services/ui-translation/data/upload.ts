@@ -1,6 +1,6 @@
 import { merge } from '../helper';
 
-merge(/.*/, 'upload.e-hentai.org', {
+const data = {
     'Published Galleries': '发布图库',
     'Empty Galleries': '空图库',
     'Unpublished Galleries': '未发布的图库',
@@ -30,15 +30,13 @@ merge(/.*/, 'upload.e-hentai.org', {
     'The main english or romanized title for this gallery.': '这个图库的主标题, 英文或者罗马音',
     'Japanese Script Title': '日文标题',
     'The original title in Japanese script, if applicable.': '原始的日文标题（如果有）',
-
     'Gallery Folder': '图库文件夹',
     'The folder this gallery will be displayed under in the gallery list. This is only used to help you organize your gallery uploads.':
         '图库文件夹仅在我的图库列表中显示，仅用于帮助整理上传的图库.',
-
+    'or new folder: ': '或新建文件夹：',
+    'Uploader Comment': '上传者评论',
     'Any comments or additional relevant information for this gallery. This will always show up as the topmost comment, and cannot be voted down.':
         '关于此图库的任何评论或其他相关信息。将始终显示在评论的最顶部，并且不能投票。',
-
-    'or new folder: ': '或新建文件夹：',
 
     'Date Added:': '添加时间：',
     'Date Posted:': '发布时间：',
@@ -49,20 +47,37 @@ merge(/.*/, 'upload.e-hentai.org', {
     'Parent Gallery:': '父级图库：',
     'Child Gallery:': '子图库：',
     'Expunged:': '删除：',
-    'No (Unpublished)': 'No (尚未发布)',
+    'Visible:': '可见：',
+    'No (Unpublished)': '否 (尚未发布)',
     'Show Public Gallery': '查看图库',
     'Show Gallery Stats': '查看统计',
     'Delete Gallery': '删除图库',
 
     'Make this gallery publicly available as:': '将图库发布到：',
-
     'I have read and agree with the ': '我已阅读并同意',
-    'Publish Gallery': '发布图库',
+
     'Upload Files': '上传文件',
+    'Accepted Images: JPG < 20 MB, PNG < 50 MB, GIF < 10 MB. Accepted Archive Formats: RAR, ZIP. Max Resolution: 20000 x 20000.':
+        '图像：JPG < 20 MB, PNG < 50 MB, GIF < 10 MB；归档：RAR, ZIP。最大分辨率：20000 x 20000。',
+    'Max 2,000 files and 10 GB per gallery. You should upload no more than 500MB at a time, less if you have a slow connection.':
+        '每个图库最多包含 2000 张图片或 10GB。一次上传的大小不应超过500MB，如果连接速度较慢，可以尝试以更小归档上传。',
     'Start Upload': '开始上传',
     'Select one or more image or archive files and click Start Upload to add files to this gallery.':
-        '选择一个或多个图像或存档文件，然后点击“开始上传”，以添加文件到此图库。',
+        '选择一个或多个图像或归档文件，然后点击“开始上传”，以添加文件到此图库。',
     '\n\t\tNo files have been added yet\n\t\t': '尚未添加任何文件',
+    'You have added a total of ': '你目前添加了 ',
+    ' image so far.': ' 张图片。',
+    'Revert All Changes': '撤销所有更改',
+    'Apply with Standard Sort': '使用标准排序',
+    'Apply with Natural Sort': '使用自然排序',
+    'Apply with Current Ordering': '使用当前顺序',
+    'Using Standard Sort will reorder the gallery with numbers in lexicographic order (1, 10, 11, 12, 2). Unless numbers are zero-padded, this can lead to unexpected results.':
+        '使用标准排序将按字典顺序（1, 10, 11, 12, 2）排序此图库中的图片。如果数字不包含前导 0，此操作将导致错误的结果。',
+    'Using Natural Sort will reorder the gallery with numbers in natural ascending order (8, 9, 10, 11, 12) regardless of whether they are padded or not.':
+        '使用自然排序将按数字递增顺序（8, 9, 10, 11, 12）排序此图库中的图片，不论是否存在前导 0。',
+
+    'Publish Gallery': '发布图库',
+
     'Folder Name': '文件夹名称',
     'Display Order': '显示顺序',
     '(No folders have been added yet.)': '（尚未添加文件夹）',
@@ -71,4 +86,7 @@ merge(/.*/, 'upload.e-hentai.org', {
     'Save Changes': '保存更改',
     Delete: '删除',
     'New folder name': '新文件夹名称',
-});
+};
+
+merge(/^\/upload\//, undefined, data);
+merge(/^\//, 'upload.e-hentai.org', data);
