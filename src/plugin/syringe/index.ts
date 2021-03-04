@@ -270,85 +270,75 @@ export class Syringe {
         return true;
     }
 
+    private translateUiText(text: string): string | undefined {
+        const plain = this.uiData.plainReplacements.get(text);
+        if (plain != null) return plain;
+
+        let repText = text;
+        for (const [k, v] of this.uiData.regexReplacements) {
+            repText = repText.replace(k, v as any);
+        }
+
+        repText = repText.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/g, (t) => {
+            const date = Date.parse(t + 'Z');
+            if (!date) return t;
+            return `${this.time.diff(date, undefined, DateTime.hour)}`;
+        });
+        repText = repText.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d/gi, (t) => {
+            const date = Date.parse(t + ' UTC');
+            if (!date) return t;
+            return `${this.time.diff(date, undefined, DateTime.hour)}`;
+        });
+        if (repText !== text) return repText;
+
+        return undefined;
+    }
+
     translateUi(node: Node): void {
-        const text = node.textContent ?? '';
         if (isText(node)) {
-            if (this.uiData[text]) {
-                node.textContent = this.uiData[text];
-                return;
+            const text = node.textContent ?? '';
+            const translation = this.translateUiText(text);
+            if (translation != null) {
+                node.textContent = translation;
             }
-            let reptext = text;
-            reptext = reptext.replace(/(\d+) pages?/, '$1 页');
-            reptext = reptext.replace(/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）');
-            reptext = reptext.replace(/Average: ([\d.]+)/, '平均值：$1');
-            reptext = reptext.replace(/Posted on (.*?) by:\s*/, `评论时间：$1 \xA0作者：`);
-            reptext = reptext.replace(/^, added (.*?)$/, `，更新于 $1`);
-            reptext = reptext.replace(
-                /Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/,
-                '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果。',
-            );
-            reptext = reptext.replace(/Showing ([\d,]+) results?/, '共 $1 个结果');
-            reptext = reptext.replace(/Rate as ([\d.]+) stars?/, '$1 星');
-            reptext = reptext.replace(/([\d,]+) torrent was found for this gallery./, '找到了 $1 个种子。');
-            reptext = reptext.replace(
-                /([\d,]+) \/ ([\d,]+) favorite note slots? used./,
-                '已经使用了 $1 个备注，共 $2 个。',
-            );
-            reptext = reptext.replace(/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果');
-            reptext = reptext.replace(/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果');
-            reptext = reptext.replace(/Download original (.*?) source/, '下载原图（$1）');
-            reptext = reptext.replace(/All schedule times are in UTC. As a reference, the current UTC time is (.*?)\./, (s, t) => `所有计划时间均为 UTC。作为参考，现在的 UTC 时间是 ${t.replace(/\s/g, '\xA0')}。`)
-
-            reptext = reptext.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/, (t) => {
-                const date = Date.parse(t + 'Z');
-                if (!date) return t;
-                return `${this.time.diff(date, undefined, DateTime.hour)}`;
-            });
-            reptext = reptext.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d/i, (t) => {
-                const date = Date.parse(t + ' UTC');
-                if (!date) return t;
-                return `${this.time.diff(date, undefined, DateTime.hour)}`;
-            });
-
-            if (reptext !== text) {
-                node.textContent = reptext;
-                return;
-            }
+            return;
         } else if (isNode(node, 'input') || isNode(node, 'textarea')) {
-            if (this.uiData[node.placeholder]) {
-                node.placeholder = this.uiData[node.placeholder];
-                return;
-            }
-            if (node.type === 'submit' || node.type === 'button') {
-                if (this.uiData[node.value]) {
-                    node.value = this.uiData[node.value];
-                    return;
+            if (node.placeholder) {
+                const translation = this.translateUiText(node.placeholder);
+                if (translation != null) {
+                    node.placeholder = translation;
                 }
             }
-        } else if (isNode(node, 'optgroup')) {
-            if (this.uiData[node.label]) {
-                node.label = this.uiData[node.label];
-                return;
+            if (node.type === 'submit' || node.type === 'button') {
+                const translation = this.translateUiText(node.value);
+                if (translation != null) {
+                    node.value = translation;
+                }
             }
-        } else if (isNode(node, 'a') && node?.parentElement?.parentElement?.id === 'nb') {
-            if (this.uiData[text]) {
-                node.textContent = this.uiData[text];
-                return;
+            return;
+        } else if (isNode(node, 'optgroup')) {
+            const translation = this.translateUiText(node.label);
+            if (translation != null) {
+                node.label = translation;
+            }
+            return;
+        }
+
+        if (isNode(node, 'a') && node?.parentElement?.parentElement?.id === 'nb') {
+            const translation = this.translateUiText(node.textContent ?? '');
+            if (translation != null) {
+                node.textContent = translation;
             }
         }
 
-        if (isNode(node, 'p')) {
+        if (isNode(node, 'p') && node.classList.contains('gpc')) {
             /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
-            if (node.classList.contains('gpc')) {
-                node.style.display = 'none';
-                const p = document.createElement('p');
-                p.textContent = text.replace(
-                    /Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/,
-                    '$1 - $2，共 $3 张图片',
-                );
-                p.className = 'gpc-translate';
-                node.parentElement?.insertBefore(p, node);
-            }
+            const text = node.textContent ?? '';
+            const p = document.createElement('p');
+            p.textContent = text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图片');
+            p.className = 'gpc-translate';
+            node.parentElement?.insertBefore(p, node);
+            node.style.display = 'none';
         }
 
         if (isNode(node, 'div')) {
