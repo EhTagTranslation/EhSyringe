@@ -44,7 +44,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   全站翻译（大部分)
 -   TAG 翻译
 -   TAG 介绍
--   TAG 翻译数据更新（当前数据库包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](//ehtt.now.sh/list/all) 条标签翻译）
+-   TAG 翻译数据更新（当前[数据库](https://ehtt.now.sh/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](//ehtt.now.sh/list/all) 条标签翻译）
 -   搜索框 TAG 输入提示
 
 ## 特点
