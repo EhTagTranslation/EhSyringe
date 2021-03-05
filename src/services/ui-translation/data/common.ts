@@ -47,19 +47,7 @@ merge(
         'Terms of Service': '服务条款',
         ' before participating with or uploading any content to this site.': '后再使用该网站或上传资源。',
 
-        'Enter new tags, separated with comma': '输入新标签, 用逗号分隔',
         'Search Keywords': '搜索关键词',
-
-        'Enter a single tag to flag, watch or hide': '输入要标记、关注或隐藏的标签',
-        ' Watched': ' 关注',
-        ' Hidden': ' 隐藏',
-        ' Enable': '启用',
-        'Action:': '操作：',
-        Save: '保存',
-        '#default': '#默认',
-        'Select All': '全选',
-        'Delete Selected': '删除选中项',
-        'Confirm Delete': '确认删除',
 
         'language:': '语言:',
         'parody:': '原作:',
@@ -180,29 +168,16 @@ merge(
         'Show Expunged': '显示被删除的图库',
         'File Search': '文件搜索',
 
-        'There are newer versions of this gallery available:': '此图库有更新的版本可用：',
         'Next Page >': '下一页 >',
     },
     [
-        [/(\d+) pages?/, '$1 页'],
-        [/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）'],
-        [/Average: ([\d.]+)/, '平均值：$1'],
-        [/Posted on (.*?) by:\s*/, `评论时间：$1 \xA0作者：`],
-        [/^, added (.*?)$/, `，更新于 $1`],
+        [/^(\d+) pages?$/, '$1 页'],
         [
             /Showing ([\d,]+) results?\. Your filters excluded ([\d,]+) galler(ies|y) from this page/,
             '共 $1 个结果，你的过滤器已从此页面移除 $2 个结果',
         ],
         [/Showing ([\d,]+) results?/, '共 $1 个结果'],
-        [/Rate as ([\d.]+) stars?/, '$1 星'],
-        [/([\d,]+) torrent was found for this gallery\./, '找到了 $1 个种子。'],
-        [/([\d,]+) \/ ([\d,]+) favorite note slots? used\./, '已经使用了 $1 个备注，共 $2 个。'],
         [/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果'],
         [/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果'],
-        [/Download original (.*?) source/, '下载原图（$1）'],
-        [
-            /All schedule times are in UTC\. As a reference, the current UTC time is (.*?)\./,
-            (s, t) => `所有计划时间均为 UTC。作为参考，现在的 UTC 时间是 ${t.replace(/\s/g, '\xA0')}。`,
-        ],
     ],
 );
