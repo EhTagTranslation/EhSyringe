@@ -39,8 +39,8 @@ E 站注射器，将中文翻译注入到 E 站体内。
         <td><strong>详情页（标签描述）</strong></td>
     </tr>
     <tr>
-        <td><img src="https://i.loli.net/2019/08/09/5MPFwd7aOsvqJXb.png"></td>
-        <td><img src="https://user-images.githubusercontent.com/13471233/88816673-397b6b00-d1ef-11ea-8744-3367023fa7fb.png"></td>
+        <td><img src="https://user-images.githubusercontent.com/13471233/110159103-356a9800-7e25-11eb-9335-233c051b3ea5.png"></td>
+        <td><img src="https://user-images.githubusercontent.com/13471233/110159105-37345b80-7e25-11eb-89d6-a16ae2e8edd3.png"></td>
     </tr>
     <tr>
         <td><strong>搜索提示/补全</strong></td>
@@ -48,7 +48,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
     </tr>
     <tr>
         <td><img src="https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif"></td>
-        <td><img src="https://user-images.githubusercontent.com/13471233/110157438-2256c880-7e23-11eb-87b8-ae9a71a64d01.gif"></td>
+        <td><img src="https://user-images.githubusercontent.com/13471233/110159090-31d71100-7e25-11eb-9b48-71720eb319f2.gif"></td>
     </tr>
 </table>
 
