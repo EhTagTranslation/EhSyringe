@@ -29,8 +29,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   通过图片右键菜单搜索所有相关图库
 -   在加载 DOM 过程替换翻译, 页面加载完直接是中文不会闪烁
 
-扩展版安装方式请参见项目首页  
-<https://github.com/EhTagTranslation/EhSyringe>
+扩展版安装方式请参见[项目首页 https://github.com/EhTagTranslation/EhSyringe](https://github.com/EhTagTranslation/EhSyringe)。
 
 ## 截图预览
 
@@ -55,7 +54,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ## 反馈
 
-为便于追踪问题，请勿使用 GreasyFork 的评论系统，请直接到[项目页面](https://github.com/EhTagTranslation/EhSyringe/issues)进行反馈
+为便于追踪问题，请勿使用 GreasyFork 的评论系统，请直接到[项目页面](https://github.com/EhTagTranslation/EhSyringe/issues)进行反馈。
 
 ## 小工具
 
