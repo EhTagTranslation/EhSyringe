@@ -9,8 +9,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const glob = require('glob');
 const execa = require('execa');
 const semver = require('semver');
+
 /** @type { import('./src/info').packageJson & import('type-fest').PackageJson } */
 const pkgJson = require('./package.json');
+const manifestJson = require('./manifest.json');
 
 /** @type {webpack.RuleSetUseItem[]} */
 const cssLoaders = [
@@ -173,12 +175,13 @@ module.exports = async (env = {}, argv = {}) => {
             new WebpackUserScript({
                 headers: (data) => ({
                     name: pkgJson.displayName || pkgJson.name,
+                    description: manifestJson.description,
                     namespace: pkgJson.homepage,
                     version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
                     license: pkgJson.license,
                     compatible: ['firefox >= 60', 'edge >= 16', 'chrome >= 61', 'safari >= 11', 'opera >= 48'],
-                    match: ['*://e-hentai.org/*', '*://*.e-hentai.org/*', '*://exhentai.org/*', '*://*.exhentai.org/*'],
-                    exclude: ['*://forums.e-hentai.org/*'],
+                    match: manifestJson.content_scripts[0].matches,
+                    exclude: manifestJson.content_scripts[0].exclude_matches,
                     icon: `https://cdn.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
                     updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
                     downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
