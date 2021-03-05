@@ -48,7 +48,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
     </tr>
     <tr>
         <td><img src="https://user-images.githubusercontent.com/5716100/60812493-310b5900-a1c4-11e9-85f7-1d4212765156.gif"></td>
-        <td><img src="https://user-images.githubusercontent.com/5716100/62783460-10019500-baef-11e9-8368-a48fa40dc47d.gif"></td>
+        <td><img src="https://user-images.githubusercontent.com/13471233/110157438-2256c880-7e23-11eb-87b8-ae9a71a64d01.gif"></td>
     </tr>
 </table>
 
