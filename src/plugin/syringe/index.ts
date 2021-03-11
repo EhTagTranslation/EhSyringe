@@ -9,12 +9,15 @@ import { DateTime } from 'services/date-time';
 
 import './index.less';
 
-function isNode<K extends keyof HTMLElementTagNameMap>(node: Node, nodeName: K): node is HTMLElementTagNameMap[K] {
-    return node && node.nodeName === nodeName.toUpperCase();
+function isNode<K extends keyof HTMLElementTagNameMap>(
+    node: Node | undefined,
+    nodeName: K,
+): node is HTMLElementTagNameMap[K] {
+    return node instanceof HTMLElement && node.localName === nodeName;
 }
 
-function isText(node: Node): node is Text {
-    return node.nodeType === Node.TEXT_NODE;
+function isText(node: Node | undefined): node is Text {
+    return node != null && node.nodeType === Node.TEXT_NODE;
 }
 
 class TagNodeRef {
@@ -308,8 +311,7 @@ export class Syringe {
                 if (translation != null) {
                     node.placeholder = translation;
                 }
-            }
-            if (node.type === 'submit' || node.type === 'button') {
+            } else if (node.type === 'submit' || node.type === 'button') {
                 const translation = this.translateUiText(node.value);
                 if (translation != null) {
                     node.value = translation;
