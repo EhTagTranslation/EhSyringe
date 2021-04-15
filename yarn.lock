@@ -1058,10 +1058,10 @@
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
 
-"@types/node@*", "@types/node@^14.14.34":
-  version "14.14.34"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.34.tgz#07935194fc049069a1c56c0c274265abeddf88da"
-  integrity sha1-B5NRlPwEkGmhxWwMJ0Jlq+3fiNo=
+"@types/node@*", "@types/node@^14.14.39":
+  version "14.14.39"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.39.tgz#9ef394d4eb52953d2890e4839393c309aa25d2d1"
+  integrity sha512-Qipn7rfTxGEDqZiezH+wxqWYR8vcXq5LRpZrETD19Gs4o8LbklbmqotSUsMU+s5G3PJwMRDfNEYoxrcBwIxOuw==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
