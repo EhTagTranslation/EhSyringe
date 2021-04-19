@@ -82,7 +82,7 @@ export class Tagging {
     editorUrl(tag: { namespace: string; key: string } | { ns: EHTNamespaceNameShort; key: string }): string {
         const namespace = 'namespace' in tag ? this.namespace(tag.namespace) : this.namespace(tag.ns);
         const key = tag.key.toLowerCase();
-        return `https://ehtt.now.sh/edit/${namespace}/${encodeURIComponent(key)}`;
+        return `https://ehtt.vercel.app/edit/${namespace}/${encodeURIComponent(key)}`;
     }
 
     readonly namespaceTranslate: Record<EHTNamespaceName, string> = {
