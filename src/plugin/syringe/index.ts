@@ -81,11 +81,7 @@ class TagNodeRef {
         if (!value) {
             return false;
         }
-        if (this.service.config.showIcon) {
-            value = this.service.tagging.markImagesAndEmoji(value);
-        } else {
-            value = this.service.tagging.removeImagesAndEmoji(value);
-        }
+        value = this.service.tagging.markImagesAndEmoji(value);
         if (this.original[1] === ':') {
             value = `${this.original[0]}:${value}`;
         }
