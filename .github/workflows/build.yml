@@ -2,6 +2,10 @@ name: build
 
 on:
     push:
+        branches:
+            - master
+    create:
+        tags:
     pull_request:
 
 jobs:
@@ -22,10 +26,21 @@ jobs:
                   yarn build:monkey
             - uses: actions/upload-artifact@v2
               with:
+                  name: releases
                   path: releases/*
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        if: github.event_name == 'create' && github.event.ref_type == 'tag'
+
+        steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: releases
+                  path: releases/
             - name: publish to github release
               uses: ncipollo/release-action@v1
-              if: github.event.ref_type == 'tag'
               with:
                   allowUpdates: true
                   artifacts: releases/*
