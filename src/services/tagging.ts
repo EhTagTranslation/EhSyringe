@@ -56,7 +56,9 @@ export class Tagging {
         return name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
     }
     markImagesAndEmoji(name: string): string {
-        return name.replace(emojiReg, `<span ehs-emoji>$&</span>`).replace(/<img(.*?)>/gi, `<img ehs-icon $1>`);
+        return name
+            .replace(emojiReg, `<span ehs-emoji>$&</span>`)
+            .replace(/<img(.*?)>/gi, `<img onerror="this.style.display='none'" ehs-icon $1>`);
     }
     removeImagesAndEmoji(name: string): string {
         return name
