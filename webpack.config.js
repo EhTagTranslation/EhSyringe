@@ -102,6 +102,9 @@ module.exports = async (env = {}, argv = {}) => {
                 req = req.replace('providers/', `providers/${type}/`);
                 resource.request = req;
             }),
+            new webpack.DefinePlugin({
+                __type: JSON.stringify(type),
+            }),
         ],
         performance: false,
         devtool: dev ? 'eval-source-map' : 'source-map',
@@ -125,7 +128,7 @@ module.exports = async (env = {}, argv = {}) => {
         };
         const externalUrls = [
             `https://unpkg.com/core-js-bundle@${pkgJson.dependencies['core-js']}/minified.js`,
-            `https://unpkg.com/rxjs@${pkgJson.dependencies['rxjs']}/bundles/rxjs.umd.min.js`,
+            `https://unpkg.com/rxjs@${pkgJson.dependencies['rxjs']}/dist/bundles/rxjs.umd.min.js`,
         ];
 
         if (devServer) {

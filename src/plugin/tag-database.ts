@@ -4,8 +4,8 @@ import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map, first } from 'rxjs/operators';
+import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
@@ -20,7 +20,7 @@ interface Data {
 export class TagDatabase {
     private readonly tagMap = new BehaviorSubject<Data | undefined>(undefined);
     get mapView(): Observable<Data> {
-        return this.tagMap.pipe(first((v): v is Data => v != null));
+        return this.tagMap.pipe(filter((v): v is Data => v != null));
     }
 
     constructor(
@@ -30,20 +30,20 @@ export class TagDatabase {
         readonly tagging: Tagging,
     ) {
         messaging.on('get-tag', (key) => {
-            return this.mapView.pipe(map((v) => v.map[key])).toPromise();
+            return firstValueFrom(this.mapView.pipe(map((v) => v.map[key])));
         });
         messaging.on('get-tag-map', ({ ifNotMatch }) => {
-            return this.mapView
-                .pipe(
+            return firstValueFrom(
+                this.mapView.pipe(
                     map((v) => {
                         if (ifNotMatch === v.sha) return { sha: v.sha, map: undefined };
                         return { sha: v.sha, map: v.map };
                     }),
-                )
-                .toPromise();
+                ),
+            );
         });
         messaging.on('get-tag-sha', () => {
-            return this.mapView.pipe(map((v) => v.sha)).toPromise();
+            return firstValueFrom(this.mapView.pipe(map((v) => v.sha)));
         });
         this.init().catch(logger.error);
     }

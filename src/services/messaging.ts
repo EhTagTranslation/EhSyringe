@@ -33,7 +33,7 @@ type Res<T extends MessageKey> = MessageMap[T][1];
 export class Messaging {
     constructor(readonly logger: Logger) {}
     on<K extends MessageKey>(key: K, listener: (args: Req<K>) => Promise<Res<K>> | Res<K>): MessageListener {
-        this.logger.log(`注册事件`, key);
+        this.logger.log(`监听事件`, key);
         return messaging.on(key, listener as (args: unknown) => Promise<Res<K>> | Res<K>);
     }
     off(listener: MessageListener): boolean {

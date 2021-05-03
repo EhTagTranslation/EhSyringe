@@ -19,8 +19,8 @@ export class Multicast {
         return this.listeners.delete(listener);
     }
 
-    handle = async (request: unknown): Promise<unknown> => {
-        const promises = [...this.listeners.keys()].map((l) => Promise.resolve(l(request)));
+    async handle(request: unknown): Promise<unknown> {
+        const promises = [...this.listeners.keys()].map((listener) => Promise.resolve(listener(request)));
         let first: unknown, all: unknown[] | undefined;
         try {
             first = await Promise.race(promises);
@@ -33,7 +33,7 @@ export class Multicast {
             if (all) Object.defineProperty(error, 'replies', { value: all, enumerable: true });
             throw error;
         }
-    };
+    }
 }
 
 export class Messaging {
@@ -53,7 +53,7 @@ export class Messaging {
         if (!handler) return false;
         return handler.remove(listener.value);
     }
-    emit(key: string, args: unknown, broadcast = false): Promise<unknown> {
+    async emit(key: string, args: unknown, broadcast = false): Promise<unknown> {
         const handler = this.handlers.get(key);
         if (!handler || handler.size === 0) {
             if (broadcast) return Promise.resolve();
@@ -61,7 +61,12 @@ export class Messaging {
         }
         const handles = handler.handle(args);
         if (broadcast) {
-            return handles.catch(console.error);
+            try {
+                return await handles;
+            } catch (ex) {
+                console.error(ex);
+                return;
+            }
         }
         return handles;
     }
