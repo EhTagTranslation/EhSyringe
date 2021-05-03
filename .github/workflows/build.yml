@@ -2,7 +2,6 @@ name: build
 
 on:
     push:
-    create:
     pull_request:
 
 jobs:
@@ -26,7 +25,7 @@ jobs:
                   path: releases/*
             - name: publish to github release
               uses: ncipollo/release-action@v1
-              if: github.event_name == 'create' && github.event.ref_type == 'tag'
+              if: github.event.ref_type == 'tag'
               with:
                   allowUpdates: true
                   artifacts: releases/*
