@@ -28,6 +28,7 @@ jobs:
               with:
                   name: releases
                   path: releases/*
+
     deploy:
         needs: build
         runs-on: ubuntu-latest
