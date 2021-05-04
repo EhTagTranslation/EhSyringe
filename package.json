@@ -70,7 +70,7 @@
         "webpack-dev-server": "^3.11.2",
         "webpack-userscript": "^2.5.7",
         "webpack-webextension-plugin": "^0.3.0",
-        "yargs": "^17.0.0"
+        "yargs": "^17.0.1"
     },
     "dependencies": {
         "core-js": "^3.11.1",
