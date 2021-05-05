@@ -1027,10 +1027,10 @@
   resolved "https://registry.npm.taobao.org/@trysound/sax/download/@trysound/sax-0.1.1.tgz#3348564048e7a2d7398c935d466c0414ebb6a669"
   integrity sha1-M0hWQEjnotc5jJNdRmwEFOu2pmk=
 
-"@types/chrome@^0.0.136":
-  version "0.0.136"
-  resolved "https://registry.nlark.com/@types/chrome/download/@types/chrome-0.0.136.tgz#7c011b9f997b0156f25a140188a0c5689d3f368f"
-  integrity sha1-fAEbn5l7AVbyWhQBiKDFaJ0/No8=
+"@types/chrome@^0.0.137":
+  version "0.0.137"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.137.tgz#5ea73ee6e874880ecdfaccd5b378c541c7da87ec"
+  integrity sha512-rMJOMqdX+RvVcl/F8VV6amYkZVkGj9KXM1EWGi5XxB/xdNB47CwBwInaMKFm+mgftdO9XWR1m4zgHiR6nrIX5w==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
