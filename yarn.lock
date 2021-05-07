@@ -5546,7 +5546,7 @@ onetime@^5.1.0, onetime@^5.1.2:
 
 open@7.4.2:
   version "7.4.2"
-  resolved "https://registry.nlark.com/open/download/open-7.4.2.tgz?cache=0&sync_timestamp=1619533119358&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fopen%2Fdownload%2Fopen-7.4.2.tgz#b8147e26dcf3e426316c730089fd71edd29c2321"
+  resolved "https://registry.nlark.com/open/download/open-7.4.2.tgz?cache=0&sync_timestamp=1620403721777&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fopen%2Fdownload%2Fopen-7.4.2.tgz#b8147e26dcf3e426316c730089fd71edd29c2321"
   integrity sha1-uBR+Jtzz5CYxbHMAif1x7dKcIyE=
   dependencies:
     is-docker "^2.0.0"
@@ -7824,18 +7824,18 @@ type-detect@^4.0.8:
 
 type-fest@^0.20.2:
   version "0.20.2"
-  resolved "https://registry.npm.taobao.org/type-fest/download/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
+  resolved "https://registry.nlark.com/type-fest/download/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha1-G/IH9LKPkVg2ZstfvTJ4hzAc1fQ=
 
 type-fest@^0.8.1:
   version "0.8.1"
-  resolved "https://registry.npm.taobao.org/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
+  resolved "https://registry.nlark.com/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
 
-type-fest@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/type-fest/download/type-fest-1.0.2.tgz#3f9c39982859f385c77c38b7e5f1432b8a3661c6"
-  integrity sha1-P5w5mChZ84XHfDi35fFDK4o2YcY=
+type-fest@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.nlark.com/type-fest/download/type-fest-1.1.0.tgz#e7eba55da6a46d5c23c05021de5f5af30d1d7978"
+  integrity sha1-5+ulXaakbVwjwFAh3l9a8w0deXg=
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
