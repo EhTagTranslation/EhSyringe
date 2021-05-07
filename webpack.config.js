@@ -121,15 +121,6 @@ module.exports = async (env = {}, argv = {}) => {
 
     if (type === 'user-script') {
         const outputPath = path.resolve(__dirname, 'releases');
-        // 外部脚本
-        config.externals = {
-            rxjs: ['rxjs'],
-            'rxjs/operators': ['rxjs', 'operators'],
-        };
-        const externalUrls = [
-            `https://unpkg.com/core-js-bundle@${pkgJson.dependencies['core-js']}/minified.js`,
-            `https://unpkg.com/rxjs@${pkgJson.dependencies['rxjs']}/dist/bundles/rxjs.umd.min.js`,
-        ];
 
         if (devServer) {
             // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
@@ -161,7 +152,12 @@ module.exports = async (env = {}, argv = {}) => {
             return `${name}.${ext}.js`;
         };
 
-        config.entry = { main: path.resolve(__dirname, 'src/user-script/index.ts') };
+        config.entry = {
+            main: [
+                path.resolve(__dirname, 'src/user-script/polyfills.ts'),
+                path.resolve(__dirname, 'src/user-script/index.ts'),
+            ],
+        };
         if (dev) {
             config.entry.debug = path.resolve(__dirname, 'src/user-script/debug.ts');
             config.plugins.push(
@@ -189,7 +185,6 @@ module.exports = async (env = {}, argv = {}) => {
                     updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
                     downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
                     'run-at': 'document-start',
-                    require: externalUrls,
                     grant: [
                         'unsafeWindow',
                         'GM_deleteValue',
