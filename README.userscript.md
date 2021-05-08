@@ -15,6 +15,17 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   TAG 介绍
 -   TAG 翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](https://ehtt.vercel.app/list/all) 条标签翻译）
 -   搜索框 TAG 输入提示
+-   支持 Via、ALook 等支持自定义脚本的手机浏览器，使用以下代码加载插件：
+    ```js
+    (function () {
+        if (/(^|\.)e[-x]hentai\.org$/i.test(location.hostname) && !document.getElementById('EhSyringe-Script')) {
+            var script = document.createElement('script');
+            script.id = 'EhSyringe-Script';
+            script.src = 'https://sleazyfork.org/scripts/407833-ehsyringe/code/EhSyringe.user.js';
+            document.documentElement.append(script);
+        }
+    })();
+    ```
 
 ## 特点
 
