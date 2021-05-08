@@ -4149,6 +4149,11 @@ icss-utils@^5.0.0, icss-utils@^5.1.0:
   resolved "https://registry.npm.taobao.org/icss-utils/download/icss-utils-5.1.0.tgz?cache=0&sync_timestamp=1605801297051&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ficss-utils%2Fdownload%2Ficss-utils-5.1.0.tgz#c6be6858abd013d768e98366ae47e25d5887b1ae"
   integrity sha1-xr5oWKvQE9do6YNmrkfiXViHsa4=
 
+idb-keyval@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.npm.taobao.org/idb-keyval/download/idb-keyval-5.0.5.tgz#1b02984dcf42ad4aa290bf9f10935b485419df34"
+  integrity sha1-GwKYTc9CrUqikL+fEJNbSFQZ3zQ=
+
 ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.npm.taobao.org/ignore/download/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
@@ -4896,14 +4901,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npm.taobao.org/lines-and-columns/download/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lit-element@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.nlark.com/lit-element/download/lit-element-2.5.1.tgz#3fa74b121a6cd22902409ae3859b7847d01aa6b6"
-  integrity sha1-P6dLEhps0ikCQJrjhZt4R9AaprY=
-  dependencies:
-    lit-html "^1.1.1"
-
-lit-html@^1.1.1, lit-html@^1.4.1:
+lit-html@^1.4.1:
   version "1.4.1"
   resolved "https://registry.nlark.com/lit-html/download/lit-html-1.4.1.tgz#0c6f3ee4ad4eb610a49831787f0478ad8e9ae5e0"
   integrity sha1-DG8+5K1OthCkmDF4fwR4rY6a5eA=

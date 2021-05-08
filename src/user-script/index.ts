@@ -85,11 +85,22 @@ function main(): void {
     }
 }
 
+function isValidHost(): boolean {
+    const hostname = location.hostname;
+    if (!hostname.endsWith('e-hentai.org') && !hostname.endsWith('exhentai.org')) {
+        return false;
+    }
+    if (hostname.endsWith('forums.e-hentai.org')) {
+        return false;
+    }
+    return true;
+}
+
 // 为轻型用户脚本实现添加简单过滤
 const LOADED_KEY = `EhTagTranslation:EhSyringeLoaded`;
 if (!(LOADED_KEY in window)) {
     Object.defineProperty(window, LOADED_KEY, { value: true });
-    if (location.hostname.endsWith('e-hentai.org') || location.hostname.endsWith('exhentai.org')) {
+    if (isValidHost()) {
         main();
     }
 }

@@ -45,7 +45,11 @@ export class DatabaseUpdater {
             }
             const version = await this.checkVersion(recheck);
             if (version?.sha && (force || version.sha !== (await this.messaging.emit('get-tag-sha', undefined)))) {
-                const success = await this.update();
+                await this.updating;
+                const updating = this.update();
+                this.updating = updating;
+                const success = await updating;
+                this.updating = undefined;
                 if (success) {
                     this.logger.log('有新版本并更新', version);
                     return version;
@@ -86,9 +90,9 @@ export class DatabaseUpdater {
     }
     downloadStatus = { ...defaultStatus };
 
-    private loadLock = false;
-
     private checked = false;
+
+    private updating?: Promise<boolean>;
 
     async update(): Promise<boolean> {
         // 重置下载状态
@@ -160,38 +164,30 @@ export class DatabaseUpdater {
     }
 
     private async download(): Promise<{ release: GithubRelease; data: EHTDatabase }> {
-        if (this.loadLock) {
-            throw new Error('已经正在下载');
+        this.badge.set('', '#4A90E2', 2);
+        this.pushDownloadStatus({ run: true, info: '加载中' });
+        const checkData = await this.checkVersion();
+        if (!checkData?.githubRelease?.target_commitish) {
+            this.logger.debug('checkData', checkData);
+            throw new Error('无法获取版本信息');
         }
-        this.loadLock = true;
+        const info = checkData.githubRelease;
+        const timer = this.logger.time(`开始下载`);
         try {
-            this.badge.set('', '#4A90E2', 2);
-            this.pushDownloadStatus({ run: true, info: '加载中' });
-            const checkData = await this.checkVersion();
-            if (!checkData?.githubRelease?.target_commitish) {
-                this.logger.debug('checkData', checkData);
-                throw new Error('无法获取版本信息');
-            }
-            const info = checkData.githubRelease;
-            const timer = this.logger.time(`开始下载`);
-            try {
-                this.pushDownloadStatus({ info: '0%', progress: 0 });
-                this.badge.set('0', '#4A90E2', 1);
-                const data = await this.database.getData(info, (event) => {
-                    if (event.lengthComputable) {
-                        const percent = Math.floor((event.loaded / event.total) * 100);
-                        this.pushDownloadStatus({ info: `${percent}%`, progress: percent });
-                        this.badge.set(percent.toFixed(0), '#4A90E2', 1);
-                    }
-                });
-                this.pushDownloadStatus({ info: '下载完成', progress: 100 });
-                this.badge.set('100', '#4A90E2', 1);
-                return { release: info, data };
-            } finally {
-                timer.end();
-            }
+            this.pushDownloadStatus({ info: '0%', progress: 0 });
+            this.badge.set('0', '#4A90E2', 1);
+            const data = await this.database.getData(info, (event) => {
+                if (event.lengthComputable) {
+                    const percent = Math.floor((event.loaded / event.total) * 100);
+                    this.pushDownloadStatus({ info: `${percent}%`, progress: percent });
+                    this.badge.set(percent.toFixed(0), '#4A90E2', 1);
+                }
+            });
+            this.pushDownloadStatus({ info: '下载完成', progress: 100 });
+            this.badge.set('100', '#4A90E2', 1);
+            return { release: info, data };
         } finally {
-            this.loadLock = false;
+            timer.end();
         }
     }
 }

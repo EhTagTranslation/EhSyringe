@@ -76,7 +76,7 @@
         "core-js": "^3.12.0",
         "emoji-regex": "^9.2.2",
         "escape-html": "^1.0.3",
-        "lit-element": "^2.5.1",
+        "idb-keyval": "^5.0.5",
         "lit-html": "^1.4.1",
         "normalize.css": "^8.0.1",
         "rxjs": "^7.0.0",
