@@ -62,6 +62,11 @@ export class TagDatabase {
             this.tagMap.next({ ...data, map: dataMap });
         }
         this.logger.log('标签数据库初始化完成');
+        this.tagMap.subscribe({
+            next: () => {
+                void this.messaging.emit('tag-updated', undefined, true);
+            },
+        });
     }
 
     update(tagDB: EHTDatabase): void {

@@ -51,33 +51,33 @@ class TagNodeRef {
         return new TagNodeRef(parentElement, fullKey, text, service);
     }
     private constructor(
-        readonly parent: HTMLElement,
+        readonly node: HTMLElement,
         readonly fullKey: string,
         readonly original: string,
         readonly service: Syringe,
     ) {
-        parent.setAttribute(TagNodeRef.ATTR, this.original);
-        parent.setAttribute('lang', 'en');
-        if (!parent.hasAttribute('title')) {
-            parent.title = this.fullKey;
+        node.setAttribute(TagNodeRef.ATTR, this.original);
+        node.setAttribute('lang', 'en');
+        if (!node.hasAttribute('title')) {
+            node.title = this.fullKey;
         }
     }
 
     get alive(): boolean {
-        return !!this.parent.parentElement;
+        return !!this.node.parentElement;
     }
 
-    translate(): boolean {
+    translate(tagMap: Record<string, string> | undefined): boolean {
         if (!this.alive) return true;
         if (!this.service.config.translateTag) {
-            this.parent.innerText = this.original;
-            this.parent.setAttribute('lang', 'en');
+            this.node.innerText = this.original;
+            this.node.setAttribute('lang', 'en');
             return true;
         }
-        if (!this.service.tagMap) {
+        if (!tagMap) {
             return false;
         }
-        let value = this.service.tagMap[this.fullKey];
+        let value = tagMap[this.fullKey];
         if (!value) {
             return false;
         }
@@ -85,8 +85,8 @@ class TagNodeRef {
         if (this.original[1] === ':') {
             value = `${this.original[0]}:${value}`;
         }
-        this.parent.innerHTML = value;
-        this.parent.setAttribute('lang', 'cmn-Hans');
+        this.node.innerHTML = value;
+        this.node.setAttribute('lang', 'cmn-Hans');
         return true;
     }
 }
@@ -107,11 +107,15 @@ export class Syringe {
         this.init();
     }
 
-    tagMap = this.storage.get('databaseMap');
     private tags: TagNodeRef[] = [];
-    private translateTags(): void {
-        const tags = (this.tags = this.tags.filter((t) => t.alive));
-        tags.forEach((t) => t.translate());
+    private tagMap?: Record<string, string>;
+    private translateTags(tagMap?: Record<string, string>): void {
+        const tags = this.tags.filter((t) => t.alive);
+        this.tags = tags;
+        tagMap ??= this.tagMap;
+        tagMap ??= this.storage.get('databaseMap');
+        this.tagMap = tagMap;
+        tags.forEach((t) => t.translate(tagMap));
     }
     documentEnd = false;
     readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
@@ -125,7 +129,7 @@ export class Syringe {
         this.storage.set('config', config);
         const body = document.querySelector('body');
         if (body) this.setBodyAttrs(body);
-        if (this.tagMap) this.translateTags();
+        this.translateTags();
     }
 
     private getAndInitConfig(): ConfigData {
@@ -178,25 +182,42 @@ export class Syringe {
             subtree: true,
         });
 
-        const timer = this.logger.time('获取替换数据');
-        Promise.resolve()
-            .then(async () => {
+        this.updateTagMap();
+        this.messaging.on('tag-updated', () => this.updateTagMap());
+    }
+
+    private updatingTagMap?: Promise<void>;
+    private updateTagMap(): void {
+        if (this.updatingTagMap) return;
+        let updatingTagMap;
+        updatingTagMap = (async () => {
+            const timer = this.logger.time('获取替换数据');
+            try {
                 const currentSha = this.storage.get('databaseSha');
                 const data = await this.messaging.emit('get-tag-map', { ifNotMatch: currentSha });
                 if (data.map) {
-                    const tagMap: this['tagMap'] = {};
+                    const tagMap: Record<string, string> = {};
                     for (const key in data.map) {
                         tagMap[key] = data.map[key].name;
                     }
-                    this.tagMap = tagMap;
-                    this.translateTags();
+                    this.translateTags(tagMap);
                     this.storage.set('databaseMap', tagMap);
                     this.storage.set('databaseSha', data.sha);
                     this.logger.log('替换数据已更新', data.sha);
+                } else {
+                    this.logger.log('替换数据已经最新', data.sha);
                 }
+            } catch (ex) {
+                this.logger.error(ex);
+            } finally {
                 timer.end();
-            })
-            .catch(this.logger.error);
+                if (this.updatingTagMap === updatingTagMap) {
+                    this.updatingTagMap = undefined;
+                    updatingTagMap = undefined;
+                }
+            }
+        })();
+        this.updatingTagMap = updatingTagMap;
     }
 
     setBodyAttrs(node: HTMLBodyElement): void {
@@ -264,7 +285,7 @@ export class Syringe {
 
         if (typeof ref == 'boolean') return ref;
 
-        ref.translate();
+        ref.translate(this.tagMap);
         this.tags.push(ref);
         return true;
     }

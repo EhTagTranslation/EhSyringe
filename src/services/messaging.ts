@@ -20,6 +20,7 @@ export interface MessageMap {
     'check-database': [{ force: boolean }, ReleaseCheckData];
     'update-database': [{ force?: boolean; recheck?: boolean }, ReleaseCheckData | undefined];
     'update-tag': [EHTDatabase, void];
+    'tag-updated': [void, void];
     'updating-database': [DownloadStatus, void];
     'check-extension': [void, boolean];
 }
