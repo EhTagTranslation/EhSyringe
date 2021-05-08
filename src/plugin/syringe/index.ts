@@ -222,7 +222,7 @@ export class Syringe {
 
     setBodyAttrs(node: HTMLBodyElement): void {
         if (!node) return;
-        node.classList.add(!location.host.includes('exhentai') ? 'eh' : 'ex');
+        node.classList.add(!location.hostname.endsWith('exhentai.org') ? 'eh' : 'ex');
 
         node.classList.remove(...[...node.classList.values()].filter((k) => k.startsWith('ehs')));
         if (!this.config.showIcon) {

@@ -17,7 +17,7 @@ export class UiTranslation {
         const path = url.pathname + url.search;
         this.logger.log('获取 UI 翻译：', path);
         dataMaps
-            .filter((d) => d.regex.test(path) && (d.hosts?.includes(location.host) ?? true))
+            .filter((d) => d.regex.test(path) && (d.hosts?.includes(location.hostname) ?? true))
             .forEach((d) => {
                 for (const [k, v] of d.plainReplacements) {
                     results.plainReplacements.set(k, v);
