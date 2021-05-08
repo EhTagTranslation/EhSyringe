@@ -39,6 +39,19 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 > 也可以从 [Release 页面](../../releases)安装
 
+> 如果你使用的是 Via、ALook 等对用户脚本支持不完善的浏览器，可以考虑使用以下代码加载插件
+>
+> ```js
+> (function () {
+>     if (/(^|\.)e[-x]hentai\.org$/i.test(location.hostname) && !document.getElementById('EhSyringe-Script')) {
+>         var script = document.createElement('script');
+>         script.id = 'EhSyringe-Script';
+>         script.src = 'https://sleazyfork.org/scripts/407833-ehsyringe/code/EhSyringe.user.js';
+>         document.documentElement.append(script);
+>     }
+> })();
+> ```
+
 ## 功能
 
 -   全站翻译（大部分)
