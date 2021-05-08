@@ -35,11 +35,11 @@ E 站注射器，将中文翻译注入到 E 站体内。
 ### 用户脚本（UserScript）安装方法
 
 1. [安装一个用户脚本管理器](//sleazyfork.org/help/installing-user-scripts)
-2. 前往 [sleazy fork](//sleazyfork.org/scripts/407833) 安装最新版本
+2. 前往 [Sleazy Fork](//sleazyfork.org/scripts/407833) 安装最新版本
 
 > 也可以从 [GitHub Release](../../releases/latest/download/ehsyringe.user.js) 安装
 
-> 如果你使用的是 Via、ALook 等对用户脚本支持不完善的浏览器，可以考虑使用以下代码加载插件
+> 如果你使用的是 Via、Alook 等对用户脚本支持不完善的浏览器，可以考虑使用以下代码加载插件
 >
 > ```js
 > (function () {
