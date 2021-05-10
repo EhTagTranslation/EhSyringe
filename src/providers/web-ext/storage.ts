@@ -29,14 +29,14 @@ export const storage: Storage = {
             listeners.set(key, listenerList);
         }
         listenerList.push(listener);
-        return (listener as unknown) as ListenerId;
+        return listener as unknown as ListenerId;
     },
     off: (key, id) => {
         const listenerList = listeners.get(key);
         if (!listenerList || listenerList.length === 0) {
             return;
         }
-        const index = listenerList.indexOf((id as unknown) as Listener);
+        const index = listenerList.indexOf(id as unknown as Listener);
         if (index < 0) return;
         listenerList.splice(index, 1);
     },

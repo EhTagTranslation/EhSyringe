@@ -42,10 +42,10 @@ export const storage: Storage = GP_POLYFILLED
               on: (key, listener) => {
                   const id = listenerId++;
                   listeners.set(id, { name: key, listener });
-                  return (id as unknown) as ListenerId;
+                  return id as unknown as ListenerId;
               },
               off: (key, id) => {
-                  listeners.delete((id as unknown) as number);
+                  listeners.delete(id as unknown as number);
               },
           };
           return storage;
@@ -55,8 +55,8 @@ export const storage: Storage = GP_POLYFILLED
           set: (key, value) => Promise.resolve(GM_setValue(key, value)),
           delete: (key) => Promise.resolve(GM_deleteValue(key)),
           keys: () => Promise.resolve(GM_listValues().filter((k) => !k.startsWith(syncMark))),
-          on: (key, listener) => (GM_addValueChangeListener(key, listener) as unknown) as ListenerId,
-          off: (key, id) => GM_removeValueChangeListener((id as unknown) as number),
+          on: (key, listener) => GM_addValueChangeListener(key, listener) as unknown as ListenerId,
+          off: (key, id) => GM_removeValueChangeListener(id as unknown as number),
       };
 
 const syncKey = (k: string): string => syncMark + k;

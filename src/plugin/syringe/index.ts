@@ -296,6 +296,7 @@ export class Syringe {
 
         let repText = text;
         for (const [k, v] of this.uiData.regexReplacements) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             repText = repText.replace(k, v as any);
         }
 
