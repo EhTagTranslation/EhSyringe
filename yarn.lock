@@ -900,12 +900,12 @@
 
 "@devicefarmer/adbkit-logcat@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@devicefarmer/adbkit-logcat/download/@devicefarmer/adbkit-logcat-1.1.0.tgz#866d3406dc9f3791446adfe3ae622ffc48607db4"
+  resolved "https://registry.nlark.com/@devicefarmer/adbkit-logcat/download/@devicefarmer/adbkit-logcat-1.1.0.tgz#866d3406dc9f3791446adfe3ae622ffc48607db4"
   integrity sha1-hm00BtyfN5FEat/jrmIv/EhgfbQ=
 
 "@devicefarmer/adbkit-monkey@~1.0.1":
   version "1.0.1"
-  resolved "https://registry.npm.taobao.org/@devicefarmer/adbkit-monkey/download/@devicefarmer/adbkit-monkey-1.0.1.tgz#7d225e5fdbdad8d6772453390ecab3f1b0eb72b1"
+  resolved "https://registry.nlark.com/@devicefarmer/adbkit-monkey/download/@devicefarmer/adbkit-monkey-1.0.1.tgz#7d225e5fdbdad8d6772453390ecab3f1b0eb72b1"
   integrity sha1-fSJeX9va2NZ3JFM5Dsqz8bDrcrE=
   dependencies:
     async "~0.2.9"
@@ -1083,7 +1083,7 @@
 
 "@types/har-format@*":
   version "1.2.5"
-  resolved "https://registry.npm.taobao.org/@types/har-format/download/@types/har-format-1.2.5.tgz#4f6648814d0fdcb6a510e3364a9db439a753c4b1"
+  resolved "https://registry.nlark.com/@types/har-format/download/@types/har-format-1.2.5.tgz#4f6648814d0fdcb6a510e3364a9db439a753c4b1"
   integrity sha1-T2ZIgU0P3LalEOM2Sp20OadTxLE=
 
 "@types/html-minifier-terser@^5.0.0":
@@ -1439,7 +1439,7 @@ ajv-keywords@^3.1.0, ajv-keywords@^3.5.2:
 
 ajv-merge-patch@4.1.0:
   version "4.1.0"
-  resolved "https://registry.npm.taobao.org/ajv-merge-patch/download/ajv-merge-patch-4.1.0.tgz#cd580e5860ac53431d6aa901fa3d5e2eb2b74a6c"
+  resolved "https://registry.nlark.com/ajv-merge-patch/download/ajv-merge-patch-4.1.0.tgz#cd580e5860ac53431d6aa901fa3d5e2eb2b74a6c"
   integrity sha1-zVgOWGCsU0MdaqkB+j1eLrK3Smw=
   dependencies:
     fast-json-patch "^2.0.6"
