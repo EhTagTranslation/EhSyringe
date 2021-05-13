@@ -85,7 +85,12 @@ const data = {
     'Save and Auto-Reorder': '保存并自动排序',
     'Save Changes': '保存更改',
     Delete: '删除',
+    Cancel: '取消',
     'New folder name': '新文件夹名称',
+
+    'Please confirm that you wish to delete the gallery:': '请确认要删除以下图库',
+    'Gallery not found.': '图库未找到。',
+    'You do not have access to change that item.': '你没有更改此条目的权限',
 };
 
 merge(/^\/upload\//, undefined, data);
