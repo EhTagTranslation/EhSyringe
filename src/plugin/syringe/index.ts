@@ -58,6 +58,7 @@ class TagNodeRef {
     ) {
         node.setAttribute(TagNodeRef.ATTR, this.original);
         node.setAttribute('lang', 'en');
+        Object.defineProperty(node, 'ehs', { value: this });
         if (!node.hasAttribute('title')) {
             node.title = this.fullKey;
         }
