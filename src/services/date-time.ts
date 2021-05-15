@@ -1,15 +1,20 @@
 import { Service } from '.';
 
+const base: Record<string, unknown> = {
+    hourCycle: 'h23',
+};
+
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
     year: 'numeric',
     month: 'numeric',
     day: 'numeric',
+    ...base,
 });
 
 const timeFormatter = new Intl.DateTimeFormat(undefined, {
     hour: 'numeric',
     minute: 'numeric',
-    hour12: false,
+    ...base,
 });
 
 const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
@@ -18,7 +23,7 @@ const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-    hour12: false,
+    ...base,
 });
 
 const noYearDateTimeFormatter = new Intl.DateTimeFormat(undefined, {
@@ -26,7 +31,7 @@ const noYearDateTimeFormatter = new Intl.DateTimeFormat(undefined, {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-    hour12: false,
+    ...base,
 });
 
 @Service()
