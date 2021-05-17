@@ -50,3 +50,10 @@ jobs:
                   prerelease: ${{ contains(github.event.ref, '-') }}
                   replacesArtifacts: true
                   token: ${{ secrets.GITHUB_TOKEN }}
+            - name: push to release branch
+              uses: ad-m/github-push-action@v0.6.0
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: release
+                  force: true
+                  directory: releases/
