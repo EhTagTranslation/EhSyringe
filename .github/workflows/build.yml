@@ -40,7 +40,7 @@ jobs:
               with:
                   name: releases
                   path: releases/
-            - name: publish to github release
+            - name: Publish to github release
               uses: ncipollo/release-action@v1.8.5
               with:
                   allowUpdates: true
@@ -50,15 +50,15 @@ jobs:
                   prerelease: ${{ contains(github.event.ref, '-') }}
                   replacesArtifacts: true
                   token: ${{ secrets.GITHUB_TOKEN }}
-            - name: commit release mirror
+            - name: Commit release mirror
               run: >
-                   cd ./releases
-                   && git init
-                   && git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-                   && git config user.name  'github-actions[bot]'
-                   && git add .
-                   && git commit -am 'Release for https://github.com/EhTagTranslation/EhSyringe/tree/${{ github.event.ref }}'
-            - name: push to release branch
+                  cd ./releases
+                  && git init
+                  && git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+                  && git config user.name  'github-actions[bot]'
+                  && git add .
+                  && git commit -am 'Release for https://github.com/EhTagTranslation/EhSyringe/tree/${{ github.event.ref }}'
+            - name: Push to release branch
               uses: ad-m/github-push-action@v0.6.0
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
