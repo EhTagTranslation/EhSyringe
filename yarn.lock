@@ -7830,10 +7830,10 @@ type-fest@^0.8.1:
   resolved "https://registry.nlark.com/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
 
-type-fest@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.nlark.com/type-fest/download/type-fest-1.1.1.tgz#210251e7f57357a1457269e6b34837fed067ac2c"
-  integrity sha1-IQJR5/VzV6FFcmnms0g3/tBnrCw=
+type-fest@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-1.1.2.tgz#0de29c10ea673e089eb8d4afb788928a72ed7594"
+  integrity sha512-q++CYzCt8xYVqKnPfJi5o3rMx83MxN4h+hqp/4+5+J7MrbmV5qwVk6epQ4tKp7pGIF9TDmbmunHSW8UtacKnBQ==
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
