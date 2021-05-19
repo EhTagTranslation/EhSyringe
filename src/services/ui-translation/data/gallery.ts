@@ -120,6 +120,11 @@ merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
         '此图库是之前发布的图库的质量相同或较低的副本。',
     ' A newer higher-quality and clearly marked copy of this gallery has been uploaded.':
         '这个图库的更高质量和标记清楚的副本已上传。',
+    ' This gallery contains either illicit content like child porn or anything else forbidden by the ':
+        '这个图库包含非法内容，如儿童色情或其他列于',
+    ', or otherwise falls under the ': '的禁止内容，或列于',
+    'Expunge Guidelines': '删除指南',
+    ' (specify below).': '的内容（在下方详细描述）。',
     ' This gallery contains either illicit content like child porn or anything else that has been banned.':
         '这个图库包含非法内容，如儿童色情或其他任何禁止的内容。',
     'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.':

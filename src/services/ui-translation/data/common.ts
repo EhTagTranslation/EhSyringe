@@ -9,11 +9,11 @@ merge(
         Watched: '关注',
         Popular: '流行',
         Torrents: '种子',
-        Home: '首页',
+        Home: '主页',
 
         Settings: '设置',
         'My ': '我的',
-        'My Home': '我的首页',
+        'My Home': '我的主页',
         Favorites: '收藏',
         Uploads: '上传',
         Toplists: '排行榜',
