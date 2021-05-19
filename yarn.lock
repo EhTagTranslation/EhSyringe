@@ -7745,10 +7745,10 @@ tough-cookie@~2.5.0:
     psl "^1.1.28"
     punycode "^2.1.1"
 
-ts-loader@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.nlark.com/ts-loader/download/ts-loader-9.1.2.tgz#ba9b9abb05a514e8ff825791a3f6fcf793272728"
-  integrity sha1-upuauwWlFOj/gleRo/b895MnJyg=
+ts-loader@^9.2.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-9.2.0.tgz#0d9feeef60081729ab999af7c322651158de2a0c"
+  integrity sha512-9MlaeNNEk5juw5YL3Xfkvz2gGTsRcXMqfTEAW2mLFWNVsuQEa4jZc4lFB1UZjmA5cyPriCRmOFx+XKV47p5OZg==
   dependencies:
     chalk "^4.1.0"
     enhanced-resolve "^5.0.0"
