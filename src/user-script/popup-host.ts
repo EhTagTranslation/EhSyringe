@@ -19,12 +19,12 @@ function clamp(value: number, min: number, max: number): number {
     return value;
 }
 
-const clampX = (value: number): number => clamp(value, 4, document.body.clientWidth - 44);
-const clampY = (value: number): number => clamp(value, 4, document.body.clientHeight - 44);
+const clampX = (value: number): number => clamp(value, 4, document.documentElement.clientWidth - 44);
+const clampY = (value: number): number => clamp(value, 4, document.documentElement.clientHeight - 44);
 
 function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
-    const initX = clampX(getNumber(`eh-popup-button-x`, 0.02) * document.body.clientWidth);
-    const initY = clampY(getNumber(`eh-popup-button-y`, 0.02) * document.body.clientHeight);
+    const initX = clampX(getNumber(`eh-popup-button-x`, 0.02) * document.documentElement.clientWidth);
+    const initY = clampY(getNumber(`eh-popup-button-y`, 0.02) * document.documentElement.clientHeight);
 
     // set the element's init position:
     el.style.bottom = `${initY}px`;
@@ -75,8 +75,8 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
         const finalY = clampY(Number.parseFloat(el.style.bottom));
         el.style.right = `${finalX}px`;
         el.style.bottom = `${finalY}px`;
-        localStorage.setItem(`eh-popup-button-x`, String(finalX / document.body.clientWidth));
-        localStorage.setItem(`eh-popup-button-y`, String(finalY / document.body.clientHeight));
+        localStorage.setItem(`eh-popup-button-x`, String(finalX / document.documentElement.clientWidth));
+        localStorage.setItem(`eh-popup-button-y`, String(finalY / document.documentElement.clientHeight));
     }
 
     function elementClick(e: MouseEvent): void {
