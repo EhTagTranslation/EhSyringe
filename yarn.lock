@@ -1050,9 +1050,9 @@
     "@types/estree" "*"
 
 "@types/eslint@*":
-  version "7.2.12"
-  resolved "https://registry.nlark.com/@types/eslint/download/@types/eslint-7.2.12.tgz?cache=0&sync_timestamp=1622077402049&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Feslint%2Fdownload%2F%40types%2Feslint-7.2.12.tgz#fefaa48a4db2415b621fe315e4baeedde525927e"
-  integrity sha1-/vqkik2yQVtiH+MV5Lru3eUlkn4=
+  version "7.2.13"
+  resolved "https://registry.nlark.com/@types/eslint/download/@types/eslint-7.2.13.tgz?cache=0&sync_timestamp=1622583210245&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Feslint%2Fdownload%2F%40types%2Feslint-7.2.13.tgz#e0ca7219ba5ded402062ad6f926d491ebb29dd53"
+  integrity sha1-4MpyGbpd7UAgYq1vkm1JHrsp3VM=
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -5166,22 +5166,17 @@ micromatch@^4.0.0, micromatch@^4.0.2:
     braces "^3.0.1"
     picomatch "^2.2.3"
 
-mime-db@1.47.0:
-  version "1.47.0"
-  resolved "https://registry.nlark.com/mime-db/download/mime-db-1.47.0.tgz?cache=0&sync_timestamp=1622433567590&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmime-db%2Fdownload%2Fmime-db-1.47.0.tgz#8cb313e59965d3c05cfbf898915a267af46a335c"
-  integrity sha1-jLMT5Zll08Bc+/iYkVomevRqM1w=
-
-"mime-db@>= 1.43.0 < 2":
+mime-db@1.48.0, "mime-db@>= 1.43.0 < 2":
   version "1.48.0"
   resolved "https://registry.nlark.com/mime-db/download/mime-db-1.48.0.tgz?cache=0&sync_timestamp=1622433567590&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmime-db%2Fdownload%2Fmime-db-1.48.0.tgz#e35b31045dd7eada3aaad537ed88a33afbef2d1d"
   integrity sha1-41sxBF3X6to6qtU37YijOvvvLR0=
 
 mime-types@^2.1.12, mime-types@^2.1.27, mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24:
-  version "2.1.30"
-  resolved "https://registry.nlark.com/mime-types/download/mime-types-2.1.30.tgz#6e7be8b4c479825f85ed6326695db73f9305d62d"
-  integrity sha1-bnvotMR5gl+F7WMmaV23P5MF1i0=
+  version "2.1.31"
+  resolved "https://registry.nlark.com/mime-types/download/mime-types-2.1.31.tgz?cache=0&sync_timestamp=1622569304088&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmime-types%2Fdownload%2Fmime-types-2.1.31.tgz#a00d76b74317c61f9c2db2218b8e9f8e9c5c9e6b"
+  integrity sha1-oA12t0MXxh+cLbIhi46fjpxcnms=
   dependencies:
-    mime-db "1.47.0"
+    mime-db "1.48.0"
 
 mime@1.6.0, mime@^1.4.1:
   version "1.6.0"
@@ -7842,10 +7837,10 @@ type-fest@^0.8.1:
   resolved "https://registry.nlark.com/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
 
-type-fest@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.nlark.com/type-fest/download/type-fest-1.1.3.tgz#ea1a602e98e5a968a56a289886a52f04c686fc81"
-  integrity sha1-6hpgLpjlqWilaiiYhqUvBMaG/IE=
+type-fest@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.nlark.com/type-fest/download/type-fest-1.2.0.tgz#4cdf38ef9b047922c26038080cb269752ae359a2"
+  integrity sha1-TN8475sEeSLCYDgIDLJpdSrjWaI=
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
@@ -8428,19 +8423,19 @@ write-file-atomic@^3.0.0:
 
 ws@7.4.3:
   version "7.4.3"
-  resolved "https://registry.nlark.com/ws/download/ws-7.4.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fws%2Fdownload%2Fws-7.4.3.tgz#1f9643de34a543b8edb124bdcbc457ae55a6e5cd"
+  resolved "https://registry.nlark.com/ws/download/ws-7.4.3.tgz#1f9643de34a543b8edb124bdcbc457ae55a6e5cd"
   integrity sha1-H5ZD3jSlQ7jtsSS9y8RXrlWm5c0=
 
 ws@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.nlark.com/ws/download/ws-6.2.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fws%2Fdownload%2Fws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
-  integrity sha1-RC/fCkftZPWbal2P8TD0dI7VJPs=
+  version "6.2.2"
+  resolved "https://registry.nlark.com/ws/download/ws-6.2.2.tgz#dd5cdbd57a9979916097652d78f1cc5faea0c32e"
+  integrity sha1-3Vzb1XqZeZFgl2UtePHMX66gwy4=
   dependencies:
     async-limiter "~1.0.0"
 
 ws@^7.3.1, ws@~7.4.0:
   version "7.4.6"
-  resolved "https://registry.nlark.com/ws/download/ws-7.4.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fws%2Fdownload%2Fws-7.4.6.tgz#5654ca8ecdeee47c33a9a4bf6d28e2be2980377c"
+  resolved "https://registry.nlark.com/ws/download/ws-7.4.6.tgz#5654ca8ecdeee47c33a9a4bf6d28e2be2980377c"
   integrity sha1-VlTKjs3u5HwzqaS/bSjivimAN3w=
 
 xdg-basedir@^4.0.0:
