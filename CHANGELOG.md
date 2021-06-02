@@ -1,8 +1,14 @@
 # 更新日志
 
+## 2.4.0
+
+-   [UserScript] 支持 popup 按钮调整位置
+-   添加部分翻译
+-   修复时间显示错误
+
 ## 2.3.3
 
--   调整域名策略
+-   [UserScript] 调整域名策略
 
 ## 2.3.2
 
@@ -10,7 +16,7 @@
 
 ## 2.3.0
 
--   用户脚本版支持 Via、ALook 等浏览器
+-   [UserScript] 用户脚本版支持 Via、ALook 等浏览器
 
 ## 2.2.1
 
@@ -41,8 +47,8 @@
 ## 2.0.7
 
 -   更正部分翻译
--   排除 forums.e-hentai.org
--   修复与 E-Hentai-Downloader 的兼容问题
+-   [UserScript] 排除 forums.e-hentai.org
+-   [UserScript] 修复与 E-Hentai-Downloader 的兼容问题
 
 ## 2.0.6
 
@@ -51,7 +57,7 @@
 ## 2.0.5
 
 -   优化时间显示
--   使用外部模块减小用户脚本尺寸
+-   [UserScript] 使用外部模块减小用户脚本尺寸
 
 ## 2.0.4
 
@@ -68,11 +74,11 @@
 
 ## 2.0.1
 
--   添加兼容性标识
+-   [UserScript] 添加兼容性标识
 
 ## 2.0.0
 
--   用户脚本支持
+-   [UserScript] 用户脚本支持
 -   修改样式
 -   优化标签更新速度
 -   自动完成时支持按住 <kbd>Ctrl</kbd> 键进入排除模式 (#232)
