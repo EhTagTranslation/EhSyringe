@@ -45,7 +45,7 @@
         "eslint": "^7.27.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^3.4.0",
-        "execa": "^5.0.1",
+        "execa": "^5.1.1",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.3.1",
         "less": "^4.1.1",
