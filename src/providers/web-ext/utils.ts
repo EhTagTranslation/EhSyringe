@@ -32,15 +32,15 @@ export function sendNotification(info: NotificationInfo): void {
 
 export function setBadge(info: Badge): void {
     if (info.background && chrome.browserAction.setBadgeBackgroundColor) {
-        chrome.browserAction.setBadgeBackgroundColor({ color: info.background });
+        void chrome.browserAction.setBadgeBackgroundColor({ color: info.background });
     }
     if (info.text != null) {
         if (chrome.browserAction.setBadgeText) {
-            chrome.browserAction.setBadgeText({ text: info.text });
+            void chrome.browserAction.setBadgeText({ text: info.text });
         } else if (chrome.browserAction.setTitle) {
             const extname = packageJson.displayName;
             const title = info.text ? `${extname} (${info.text})` : extname;
-            chrome.browserAction.setTitle({ title });
+            void chrome.browserAction.setTitle({ title });
         }
     }
 }
