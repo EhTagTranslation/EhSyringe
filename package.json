@@ -32,7 +32,7 @@
         "@babel/core": "^7.14.3",
         "@babel/plugin-transform-runtime": "^7.14.3",
         "@babel/preset-env": "^7.14.4",
-        "@types/chrome": "^0.0.144",
+        "@types/chrome": "^0.0.147",
         "@types/escape-html": "^1.0.1",
         "@types/node": "^15.12.1",
         "@types/tampermonkey": "^4.0.0",
