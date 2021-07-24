@@ -12,6 +12,7 @@ import './data/login';
 import './data/logs';
 import './data/mytags';
 import './data/news';
+import './data/search';
 import './data/stats';
 import './data/toplist';
 import './data/torrents';

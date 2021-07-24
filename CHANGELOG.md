@@ -1,5 +1,10 @@
 # 更新日志
 
+## 2.5.0
+
+-   [WebExtension] 记住 OmniBox 搜索站点
+-   添加部分翻译
+
 ## 2.4.0
 
 -   [UserScript] 支持 popup 按钮调整位置

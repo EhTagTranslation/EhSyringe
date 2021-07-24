@@ -38,6 +38,8 @@ export interface StorageItems {
           };
 
     release: undefined | ReleaseCheckData;
+    /** omnibox 默认打开的页面 */
+    origin: 'https://e-hentai.org' | 'https://exhentai.org';
 }
 
 @Service()
@@ -109,5 +111,6 @@ export class Storage {
         database: undefined,
         databaseInfo: undefined,
         release: undefined,
+        origin: 'https://e-hentai.org',
     };
 }
