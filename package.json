@@ -34,7 +34,7 @@
         "@babel/preset-env": "^7.14.8",
         "@types/chrome": "^0.0.148",
         "@types/escape-html": "^1.0.1",
-        "@types/node": "^16.4.1",
+        "@types/node": "^16.4.3",
         "@types/tampermonkey": "^4.0.2",
         "@typescript-eslint/eslint-plugin": "^4.28.4",
         "@typescript-eslint/parser": "^4.28.4",
