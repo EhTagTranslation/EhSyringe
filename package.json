@@ -37,7 +37,7 @@
         "@types/node": "^16.4.1",
         "@types/tampermonkey": "^4.0.2",
         "@typescript-eslint/eslint-plugin": "^4.28.4",
-        "@typescript-eslint/parser": "^4.28.4",
+        "@typescript-eslint/parser": "^4.28.5",
         "babel-loader": "^8.2.2",
         "copy-webpack-plugin": "^9.0.1",
         "css-loader": "^6.2.0",
