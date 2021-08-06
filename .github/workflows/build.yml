@@ -41,7 +41,7 @@ jobs:
                   name: releases
                   path: releases/
             - name: Publish to github release
-              uses: ncipollo/release-action@v1.8.6
+              uses: ncipollo/release-action@v1.8.8
               with:
                   allowUpdates: true
                   artifacts: releases/*
