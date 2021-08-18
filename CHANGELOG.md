@@ -1,5 +1,9 @@
 # 更新日志
 
+## 2.5.1
+
+-   [UserScript] 修复图标消失 (FIX #581)
+
 ## 2.5.0
 
 -   [WebExtension] 记住 OmniBox 搜索站点
