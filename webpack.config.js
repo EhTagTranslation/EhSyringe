@@ -55,13 +55,8 @@ module.exports = async (env = {}, argv = {}) => {
         module: {
             rules: [
                 {
-                    include: [path.resolve(__dirname, 'src/resources'), path.resolve(__dirname, 'src/assets')],
-                    use: {
-                        loader: 'url-loader',
-                        options: {
-                            name: '[folder]/[name].[hash:8].[ext]',
-                        },
-                    },
+                    include: [path.resolve(__dirname, 'src/assets')],
+                    type: 'asset',
                 },
                 {
                     test: /\.ts$/,
