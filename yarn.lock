@@ -1114,10 +1114,10 @@
   resolved "https://registry.nlark.com/@types/minimatch/download/@types/minimatch-3.0.5.tgz#1001cc5e6a3704b83c236027e77f2f58ea010f40"
   integrity sha1-EAHMXmo3BLg8I2An538vWOoBD0A=
 
-"@types/node@*", "@types/node@^16.6.1":
-  version "16.6.1"
-  resolved "https://registry.nlark.com/@types/node/download/@types/node-16.6.1.tgz#aee62c7b966f55fc66c7b6dfa1d58db2a616da61"
-  integrity sha1-ruYse5ZvVfxmx7bfodWNsqYW2mE=
+"@types/node@*", "@types/node@^16.7.0":
+  version "16.7.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.0.tgz#f0374c4e89d1fc1ef705caad3021ba34c1a9294c"
+  integrity sha512-e66BrnjWQ3BRBZ2+iA5e85fcH9GLNe4S0n1H0T3OalK2sXg5XWEFTO4xvmGrYQ3edy+q6fdOh5t0/HOY8OAqBg==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -3409,14 +3409,6 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-file-loader@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.npm.taobao.org/file-loader/download/file-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"
-  integrity sha1-uu98+OGEDfMl5DkLRISHlIDuvk0=
-  dependencies:
-    loader-utils "^2.0.0"
-    schema-utils "^3.0.0"
-
 file-uri-to-path@1.0.0:
   version "1.0.0"
   resolved "https://registry.nlark.com/file-uri-to-path/download/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
@@ -4821,15 +4813,6 @@ loader-utils@^1.4.0:
     big.js "^5.2.2"
     emojis-list "^3.0.0"
     json5 "^1.0.1"
-
-loader-utils@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npm.taobao.org/loader-utils/download/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
-  integrity sha1-5MrOW4FtQloWa18JfhDNErNgZLA=
-  dependencies:
-    big.js "^5.2.2"
-    emojis-list "^3.0.0"
-    json5 "^2.1.2"
 
 locate-path@^3.0.0:
   version "3.0.0"
@@ -7863,15 +7846,6 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.nlark.com/urix/download/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
-
-url-loader@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.npm.taobao.org/url-loader/download/url-loader-4.1.1.tgz#28505e905cae158cf07c92ca622d7f237e70a4e2"
-  integrity sha1-KFBekFyuFYzwfJLKYi1/I35wpOI=
-  dependencies:
-    loader-utils "^2.0.0"
-    mime-types "^2.1.27"
-    schema-utils "^3.0.0"
 
 url-parse-lax@^3.0.0:
   version "3.0.0"
