@@ -123,9 +123,13 @@ module.exports = async (env = {}, argv = {}) => {
             config.devServer = {
                 https: true,
                 port: 48792,
-                writeToDisk: true,
                 allowedHosts: ['.e-hentai.org', '.exhentai.org'],
-                contentBase: outputPath,
+                static: {
+                    directory: outputPath,
+                },
+                devMiddleware: {
+                    writeToDisk: true,
+                },
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                 },
@@ -163,6 +167,7 @@ module.exports = async (env = {}, argv = {}) => {
         }
         config.output = {
             path: outputPath,
+            publicPath: '/',
             filename: (data) => fileName(data.chunk.name),
         };
         config.plugins.push(
