@@ -1,5 +1,9 @@
 # 更新日志
 
+## 2.5.2
+
+-   [UserScript] AdGuard 支持 (FIX #597)
+
 ## 2.5.1
 
 -   [UserScript] 修复图标消失 (FIX #581)

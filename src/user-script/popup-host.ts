@@ -31,7 +31,9 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
     el.style.right = `${initX}px`;
 
     let mouseX = 0,
-        mouseY = 0;
+        mouseY = 0,
+        startX = 0,
+        startY = 0;
 
     el.addEventListener('mousedown', dragMouseDown, { passive: false });
     el.addEventListener('click', elementClick, { passive: false });
@@ -41,10 +43,10 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
     function dragMouseDown(e: MouseEvent): void {
         e.preventDefault();
         // get the mouse cursor position at startup:
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+        startX = mouseX = e.clientX;
+        startY = mouseY = e.clientY;
         moved = false;
-        document.addEventListener('mouseup', closeDragElement, { passive: true });
+        document.addEventListener('mouseup', closeDragElement, { passive: false });
         document.addEventListener('mousemove', elementDrag, { passive: false });
     }
 
@@ -63,7 +65,10 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
         // set the element's new position:
         el.style.right = `${nextX}px`;
         el.style.bottom = `${nextY}px`;
-        moved = true;
+
+        if (Math.abs(mouseX - startX) + Math.abs(mouseY - startY) > 10) {
+            moved = true;
+        }
     }
 
     function closeDragElement(e: MouseEvent): void {
