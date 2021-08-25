@@ -1128,10 +1128,10 @@
   resolved "https://registry.nlark.com/@types/retry/download/@types/retry-0.12.1.tgz#d8f1c0d0dc23afad6dc16a9e993a0865774b4065"
   integrity sha1-2PHA0Nwjr61twWqemToIZXdLQGU=
 
-"@types/tampermonkey@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.nlark.com/@types/tampermonkey/download/@types/tampermonkey-4.0.2.tgz#e28f8ee330538401e7cc1746c4da784d9d374c16"
-  integrity sha1-4o+O4zBThAHnzBdGxNp4TZ03TBY=
+"@types/tampermonkey@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@types/tampermonkey/-/tampermonkey-4.0.3.tgz#50235f6b828f2f67172b5acc5017a463bc62cbed"
+  integrity sha512-Dx9A7OneFeVgdRbI0C9FC9hBo5aWvX42/rYDmMjmugsKO5x+iKQ0JbPMjBSjXRgeQ4pNvvMJKnvlBxZzcwxqag==
 
 "@types/webextension-polyfill@^0.8.0":
   version "0.8.0"
