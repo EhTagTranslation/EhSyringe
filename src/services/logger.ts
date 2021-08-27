@@ -12,10 +12,7 @@ export class Logger {
     readonly log: (message: string, ...optionalParams: unknown[]) => void = console.log.bind(console, this.prefix);
     readonly info: (message: string, ...optionalParams: unknown[]) => void = console.info.bind(console, this.prefix);
     readonly warn: (message: string, ...optionalParams: unknown[]) => void = console.warn.bind(console, this.prefix);
-    readonly error: (message: string | Error, ...optionalParams: unknown[]) => void = console.error.bind(
-        console,
-        this.prefix,
-    );
+    readonly error: (message: unknown, ...optionalParams: unknown[]) => void = console.error.bind(console, this.prefix);
     readonly debug: (message: unknown, ...optionalParams: unknown[]) => void = console.debug.bind(console, this.prefix);
     readonly time = (label: string): Timer => {
         const pLabel = `${this.prefix} ${label}`;

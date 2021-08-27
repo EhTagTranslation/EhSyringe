@@ -38,11 +38,11 @@ class MessagingCross extends Messaging {
                 return response;
             }
         } catch (ex) {
-            return { handlers: -1, error: ex as unknown };
+            return { handlers: -1, error: ex };
         }
     }
 
-    async emit(key: string, args: unknown, broadcast = false): Promise<unknown> {
+    override async emit(key: string, args: unknown, broadcast = false): Promise<unknown> {
         const localSize = this.handlers.get(key)?.size ?? 0;
         const localHandled = localSize > 0 ? super.emit(key, args, broadcast) : false;
         const remoteHandled = this.remoteHandle(key, args);

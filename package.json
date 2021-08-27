@@ -34,8 +34,8 @@
         "@babel/preset-env": "^7.15.0",
         "@types/chrome": "^0.0.154",
         "@types/escape-html": "^1.0.1",
-        "@types/node": "^16.7.1",
-        "@types/tampermonkey": "^4.0.2",
+        "@types/node": "^16.7.2",
+        "@types/tampermonkey": "^4.0.3",
         "@types/webextension-polyfill": "^0.8.0",
         "@typescript-eslint/eslint-plugin": "^4.29.3",
         "@typescript-eslint/parser": "^4.29.3",
@@ -61,7 +61,7 @@
         "ts-loader": "^9.2.5",
         "tsconfig-paths-webpack-plugin": "^3.5.1",
         "type-fest": "^2.1.0",
-        "typescript": "^4.3.5",
+        "typescript": "^4.4.2",
         "web-ext": "^6.3.0",
         "webpack": "^5.51.1",
         "webpack-bundle-analyzer": "^4.4.2",
@@ -72,7 +72,7 @@
         "yargs": "^17.1.1"
     },
     "dependencies": {
-        "core-js": "^3.16.2",
+        "core-js": "^3.16.3",
         "emoji-regex": "^9.2.2",
         "escape-html": "^1.0.3",
         "idb-keyval": "^5.1.3",

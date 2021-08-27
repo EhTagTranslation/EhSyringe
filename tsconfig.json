@@ -13,6 +13,8 @@
         "allowJs": true,
         "strict": true,
         "noImplicitReturns": true,
+        "noImplicitOverride": true,
+        "useUnknownInCatchVariables": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "importHelpers": true

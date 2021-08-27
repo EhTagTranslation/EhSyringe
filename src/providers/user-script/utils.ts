@@ -36,7 +36,7 @@ const _openInTab =
         return {
             close() {
                 opened?.close();
-                this.onclosed?.();
+                this.onclose?.();
                 this.closed = true;
             },
             closed: false,
