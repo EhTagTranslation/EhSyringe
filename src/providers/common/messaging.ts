@@ -26,8 +26,7 @@ export class Multicast {
             first = await Promise.race(promises);
             all = await Promise.all(promises);
             return first;
-        } catch (ex) {
-            const error = ex as unknown;
+        } catch (error) {
             Object.defineProperty(error, 'request', { value: request, enumerable: true });
             if (first) Object.defineProperty(error, 'firstReply', { value: first, enumerable: true });
             if (all) Object.defineProperty(error, 'replies', { value: all, enumerable: true });
