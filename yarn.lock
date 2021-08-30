@@ -2853,10 +2853,10 @@ eslint-plugin-no-unsanitized@3.1.5:
   resolved "https://registry.nlark.com/eslint-plugin-no-unsanitized/download/eslint-plugin-no-unsanitized-3.1.5.tgz#7e1ee74cf41ae59fec48c2ee2e21a7dcb86965fb"
   integrity sha1-fh7nTPQa5Z/sSMLuLiGn3LhpZfs=
 
-eslint-plugin-prettier@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.nlark.com/eslint-plugin-prettier/download/eslint-plugin-prettier-3.4.1.tgz#e9ddb200efb6f3d05ffe83b1665a716af4a387e5"
-  integrity sha1-6d2yAO+289Bf/oOxZlpxavSjh+U=
+eslint-plugin-prettier@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-4.0.0.tgz#8b99d1e4b8b24a762472b4567992023619cb98e0"
+  integrity sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
