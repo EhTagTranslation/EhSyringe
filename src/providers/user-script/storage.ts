@@ -78,12 +78,12 @@ class GmAsyncStorage implements Storage {
 }
 
 const GM_ALL_DEFINED =
-    !!GM_getValue &&
-    !!GM_setValue &&
-    !!GM_deleteValue &&
-    !!GM_listValues &&
-    !!GM_addValueChangeListener &&
-    !!GM_removeValueChangeListener;
+    typeof GM_getValue == 'function' &&
+    typeof GM_setValue == 'function' &&
+    typeof GM_deleteValue == 'function' &&
+    typeof GM_listValues == 'function' &&
+    typeof GM_addValueChangeListener == 'function' &&
+    typeof GM_removeValueChangeListener == 'function';
 export const storage: Storage = GM_ALL_DEFINED ? new GmAsyncStorage() : new AsyncPolyfill();
 
 abstract class SyncStorageBase implements SyncStorage {
@@ -157,5 +157,9 @@ class GMSyncStorage extends SyncStorageBase {
     }
 }
 
-const GM_ALL_SYNC_DEFINED = !!GM_getValue && !!GM_setValue && !!GM_deleteValue && !!GM_listValues;
+const GM_ALL_SYNC_DEFINED =
+    typeof GM_getValue == 'function' &&
+    typeof GM_setValue == 'function' &&
+    typeof GM_deleteValue == 'function' &&
+    typeof GM_listValues == 'function';
 export const syncStorage: SyncStorage = GM_ALL_SYNC_DEFINED ? new GMSyncStorage() : new SyncPolyfill();
