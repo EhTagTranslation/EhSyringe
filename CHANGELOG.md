@@ -1,5 +1,10 @@
 # 更新日志
 
+## 2.5.3
+
+-   [UserScript] 修复脚本加载失败问题 (FIX #613)
+-   增加翻译（感谢 @Matcha-sama）
+
 ## 2.5.2
 
 -   [UserScript] AdGuard 支持 (FIX #597)
