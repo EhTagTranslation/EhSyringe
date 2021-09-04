@@ -8,11 +8,11 @@ merge(/^\/hathperks\.php/, undefined, {
     ', which grant beneficial effects on E-Hentai Galleries and in the HentaiVerse.':
         '，这对 E-Hentai 和 HentaiVerse 产生了有益的影响。',
 
-    'If running H@H is not an option, you can also you can exchange Credits for Hath at the ':
+    'If running H@H is not an option, you can exchange Credits for Hath at the ':
         '如果你不能运行 H@H，你可以在这里用 Credits 交换 Hath：',
 
     'While the Hath Perks for the HentaiVerse cannot be obtained in any other way, most of the ones that are specific for Galleries will also get unlocked by making a donation on the ':
-        '尽管用于 HentaiVerse 游戏的 Hath Perks 不能用其他方法获取，但关于图库的大部分  Hath Perks 也可以通过',
+        '尽管用于 HentaiVerse 游戏的 Hath Perks 不能用其他方法获取，但关于图库的大部分 Hath Perks 也可以通过',
     'Donation Screen': '捐赠',
     '. These will be refunded if you buy them for Hath, and later make a qualifying donation. There is also an option to "adopt" H@H clients that will grant you Hath over time as if you were running it yourself.':
         '获取。如果您已经用 Hath 购买，在符合条件的捐赠后将获得退款。还有一个“领养” H@H 客户端的选项，它会随着时间的推移而授予您 Hath，就好像您自己运行它一样。',

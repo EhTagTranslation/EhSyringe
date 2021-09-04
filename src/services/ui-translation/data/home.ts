@@ -18,10 +18,10 @@ merge(/^\/home\.php/, undefined, {
     seedmins: '做种时长',
     'Show My Torrents': '显示我的种子',
     'If you misplace any of your personalized torrents, hit the button below to reset your key.':
-        '如果你错误地分发了私有种子，请点击下面的按钮重置你的 KEY。',
+        '如果你错误地分发了私有种子，请点击下面的按钮重置你的 Key。',
     'This will immediately invalidate all of your personalized torrents in play.': '这将立即注销你全部的私有种子。',
-    'Your current key is: ': '你当前的 KEY 是：',
-    'Reset Torrent Key': '重置种子 KEY',
+    'Your current key is: ': '你当前的 Key 是：',
+    'Reset Torrent Key': '重置种子 Key',
 
     'Total GP Gained': '获得的总 GP',
     'GP from gallery visits': 'GP 来自图库浏览',
