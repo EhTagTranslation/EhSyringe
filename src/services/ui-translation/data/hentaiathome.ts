@@ -132,8 +132,6 @@ merge(
         'You can set a custom name for this client here. This will be used in the various listings this client appears in.':
             '您可以在此处为此客户端设置自定义名称。这将用于该客户端出现的各种列表中。',
         'Maximum Burst Speed': '最大猝发速率',
-        'This is the maximum speed the client is allowed to use, measured in kilobytes per second. Must be at least 500 KB/s':
-            '这是允许客户端使用的最大速度。必须至少为 500KB/s',
         'Actual utilization will reach at most 80% of this over time, unless you also set an hourly limit below.':
             '随着时间的推移，实际利用率最多将达到该值的 80%，除非您还在下方设置了每小时限制。',
         'Turning off the client-side throttle saves some CPU and may make you test higher, but could make the traffic more bursty.':
@@ -145,8 +143,6 @@ merge(
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space you wish to reserve for this client. The reserved space must always be available.':
             '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
-        'This must be at least 5 GB. We recommend at least 1 GB disk per 25 KByte/s bandwidth, or 5 GB for every MBit/s, but more is always better.':
-            '至少为 5GB。我们建议每 25KB/s 带宽至少 1GB 磁盘，或每 Mbps 带宽 5GB 磁盘，但越多越好。',
         'Static Range allocation is limited to 1 per 250 MB of disk space.':
             '静态范围分配限制为每 250MB 磁盘空间 1 组。',
         'Verify cache integrity on next startup': '下次启动时验证缓存完整性',
@@ -158,8 +154,6 @@ merge(
         'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next the the client starts.':
             '如果您认为您的客户端 Key 已被泄露，您可以通过选中项来重置密钥。下次客户端启动时，您必须重新输入密钥。',
         'Hourly Bandwidth Limit': '每小时流量限制',
-        'The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least 300 MB if set.':
-            '此客户端每小时允许发送的 MB 数。保留为 0 表示仅限制最大速度。如果设置，必须至少为 300 MB。',
         'Not Set': '未设置',
         ' MBytes/hour': ' MB/小时',
         'Minimum space to leave on disk': '在磁盘上留下的最小空间',
@@ -195,14 +189,28 @@ merge(
         'Run in low-memory mode. This will somewhat reduce memory requirements, but will lead to increased disk activity.':
             '在低内存模式下运行。这会在一定程度上减少内存需求，但会导致磁盘活动增加。',
         'Use this client as your designated H@H Downloader. Only necessary if you have multiple clients. (H@H 1.3+ required)':
-            '将此客户端用作您指定的 H@H 下载器。仅当您有多个客户时才需要。（需要 H@H 1.3+）',
+            '将此客户端用作您指定的 H@H 下载器。仅当您有多个客户端时才需要。（需要 H@H 1.3+）',
         '\n\t\tNote that any changes you make here will be applied the next time your client pings the server, which usually happens every five minutes. Some changes will not be applied until next restart. If you are changing the Port Number or reseting your key, you should exit Hentai@Home before hitting the button below.\n\t\t':
             '请注意，您在此处所做的任何更改将在您的客户端下次 ping 服务器时应用，这通常每五分钟发生一次。某些更改直到下次重新启动时才会应用。如果您正在更改端口号或重置您的 Key，您应该在点击下面的按钮之前退出 Hentai@Home。',
 
         'Apply Settings': '应用设置',
         '[Back to Overview]': '[回到总览]',
     },
-    [[/^(\d+\.*\d*)\s*MB\/hour$/, '$1 MB/小时']],
+    [
+        [
+            /This is the maximum speed the client is allowed to use, measured in kilobytes per second. Must be at least (\d+\.*\d*)\s*([MGTP]B)\/s/,
+            '这是允许客户端使用的最大速度。必须至少为 $1$2/s。',
+        ],
+        [
+            /^This must be at least (\d+\.*\d*)\s*([MGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
+            '至少为 $1$2。我们建议为每 25KB/s 带宽保留至少 1GB 磁盘，或每 Mbps 带宽 5GB 磁盘，但越多越好。',
+        ],
+        [
+            /The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least (\d+\.*\d*)\s*([MGTP]B) if set./,
+            '此客户端每小时允许发送的 MB 数。保留为 0 表示仅限制最大速度。如果设置，必须至少为 $1$2。',
+        ],
+        [/^(\d+\.*\d*)\s*([MGTP]B)\/hour$/, '$1 $2/小时'],
+    ],
 );
 
 merge(
