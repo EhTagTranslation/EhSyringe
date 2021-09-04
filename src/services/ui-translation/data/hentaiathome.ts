@@ -198,18 +198,18 @@ merge(
     },
     [
         [
-            /This is the maximum speed the client is allowed to use, measured in kilobytes per second. Must be at least (\d+\.*\d*)\s*([MGTP]B)\/s/,
+            /^This is the maximum speed the client is allowed to use, measured in kilobytes per second\. Must be at least (\d+\.*\d*)\s*([KMGTP]B)\/s$/,
             '这是允许客户端使用的最大速度。必须至少为 $1$2/s。',
         ],
         [
-            /^This must be at least (\d+\.*\d*)\s*([MGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
+            /^This must be at least (\d+\.*\d*)\s*([KMGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
             '至少为 $1$2。我们建议为每 25KB/s 带宽保留至少 1GB 磁盘，或每 Mbps 带宽 5GB 磁盘，但越多越好。',
         ],
         [
-            /The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least (\d+\.*\d*)\s*([MGTP]B) if set./,
+            /The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least (\d+\.*\d*)\s*([KMGTP]B) if set./,
             '此客户端每小时允许发送的 MB 数。保留为 0 表示仅限制最大速度。如果设置，必须至少为 $1$2。',
         ],
-        [/^(\d+\.*\d*)\s*([MGTP]B)\/hour$/, '$1 $2/小时'],
+        [/^(\d+\.*\d*)\s*([KMGTP]B)\/hour$/, '$1 $2/小时'],
     ],
 );
 
