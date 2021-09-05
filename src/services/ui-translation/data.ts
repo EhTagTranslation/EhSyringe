@@ -8,6 +8,7 @@ import './data/hathperks';
 import './data/hentaiathome';
 import './data/home';
 import './data/image';
+import './data/lofi';
 import './data/login';
 import './data/logs';
 import './data/mytags';

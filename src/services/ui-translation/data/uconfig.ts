@@ -82,7 +82,7 @@ merge(/^\/uconfig\.php/, undefined, {
     ' parody': ' 原作',
     ' character': ' 角色',
     ' group': ' 社团',
-    ' artist': ' 作者',
+    ' artist': ' 艺术家',
     ' male': ' 男性',
     ' female': ' 女性',
 
@@ -100,18 +100,18 @@ merge(/^\/uconfig\.php/, undefined, {
         '如果您希望以图库列表中的某些语言隐藏图库并进行搜索，请从下面的列表中选择它们。',
     'Note that matching galleries will never appear regardless of your search query.':
         '请注意，无论搜索查询如何，匹配的图库都不会出现。',
-    Original: '原始语言',
-    Translated: '翻译版',
-    Rewrite: '改编版',
+    Original: '原始',
+    Translated: '翻译',
+    Rewrite: '重写',
     All: '所有',
-    Japanese: '日文',
-    English: '英文',
-    Chinese: '中文',
+    Japanese: '日语',
+    English: '英语',
+    Chinese: '汉语',
     Dutch: '荷兰语',
     French: '法语',
     German: '德语',
-    Hungarian: '匈牙利',
-    Italian: '意呆利',
+    Hungarian: '匈牙利语',
+    Italian: '意大利语',
     Korean: '韩语',
     Polish: '波兰语',
     Portuguese: '葡萄牙语',
@@ -119,7 +119,7 @@ merge(/^\/uconfig\.php/, undefined, {
     Spanish: '西班牙语',
     Thai: '泰语',
     Vietnamese: '越南语',
-    'N/A': '无效',
+    'N/A': '无语言',
     Other: '其他',
 
     'Excluded Uploaders': '屏蔽的上传者',
@@ -180,7 +180,7 @@ merge(/^\/uconfig\.php/, undefined, {
     'This setting can be used if you have a H@H client running on your local network with the same public IP you browse the site with. Some routers are buggy and cannot route requests back to its own IP; this allows you to work around this problem.':
         '如果你本地安装了 H@H 客户端，本地 IP 与浏览网站的公共 IP 相同，一些路由器不支持回流导致无法访问到自己，你可以设置这里来解决。',
     'If you are running the client on the same PC you browse from, use the loopback address (127.0.0.1:port). If the client is running on another computer on your network, use its local network IP. Some browser configurations prevent external web sites from accessing URLs with local network IPs, the site must then be whitelisted for this to work.':
-        '如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址(127.0.0.1:端口号)。如果客户端在网络上的其他计算机运行，请使用那台机器的内网 IP。某些浏览器的配置可能阻止外部网站访问本地网络，你必须将网站列入白名单才能工作。',
+        '如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址（127.0.0.1:端口号）。如果客户端在网络上的其他计算机运行，请使用那台机器的内网 IP。某些浏览器的配置可能阻止外部网站访问本地网络，你必须将网站列入白名单才能工作。',
 
     'Original Images': '原始图像',
     'Use original images instead of the resampled versions where applicable?':

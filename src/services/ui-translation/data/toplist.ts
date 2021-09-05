@@ -31,10 +31,10 @@ merge(/^\/(toplist|home)\.php/, undefined, {
     'Cleanup Past Month': '清理月排行',
     'Cleanup Yesterday': '清理日排行',
 
-    'Rating & Reviewing All-Time': '打分 & 评论总排行',
-    'Rating & Reviewing Past Year': '打分 & 评论年排行',
-    'Rating & Reviewing Past Month': '打分 & 评论月排行',
-    'Rating & Reviewing Yesterday': '打分 & 评论日排行',
+    'Rating & Reviewing All-Time': '评分 & 评论总排行',
+    'Rating & Reviewing Past Year': '评分 & 评论年排行',
+    'Rating & Reviewing Past Month': '评分 & 评论月排行',
+    'Rating & Reviewing Yesterday': '评分 & 评论日排行',
 });
 
 merge(/^\/toplist\.php/, undefined, {
@@ -45,7 +45,7 @@ merge(/^\/toplist\.php/, undefined, {
     'Hentai@Home Toplists': 'Hentai@Home 排行',
     'EHTracker Toplists': '做种排行',
     'Cleanup Toplists': '清理排行',
-    'Rating & Reviewing Toplists': '打分 & 评论排行',
+    'Rating & Reviewing Toplists': '评分 & 评论排行',
 });
 
 merge(/^\/toplist\.php\?tl=1/, undefined, {
