@@ -3722,12 +3722,12 @@ icss-utils@^5.0.0, icss-utils@^5.1.0:
   resolved "https://registry.npm.taobao.org/icss-utils/download/icss-utils-5.1.0.tgz#c6be6858abd013d768e98366ae47e25d5887b1ae"
   integrity sha1-xr5oWKvQE9do6YNmrkfiXViHsa4=
 
-idb-keyval@^5.1.5:
-  version "5.1.5"
-  resolved "https://registry.nlark.com/idb-keyval/download/idb-keyval-5.1.5.tgz#be11174bac0cb756dba4cc86fb36b6cd63f5ce6d"
-  integrity sha1-vhEXS6wMt1bbpMyG+za2zWP1zm0=
+idb-keyval@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/idb-keyval/-/idb-keyval-6.0.1.tgz#f05e5fb67fee20cc51cc394425c44f1fcb3bccc2"
+  integrity sha512-P31GNg/TpD/HOpmeS2rV92+8Tdg/P3foF6zyTb/Tiujx1AQzoYNh3vTgU1gEf5CohYsrf0hnrtjRVT/eq8P0Xw==
   dependencies:
-    safari-14-idb-fix "^1.0.6"
+    safari-14-idb-fix "^2.0.2"
 
 ignore@^4.0.6:
   version "4.0.6"
@@ -6161,10 +6161,10 @@ rxjs@^7.3.0:
   dependencies:
     tslib "~2.1.0"
 
-safari-14-idb-fix@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.nlark.com/safari-14-idb-fix/download/safari-14-idb-fix-1.0.6.tgz#cbaabc33a4500c44b5c432d6c525b0ed9b68bb65"
-  integrity sha1-y6q8M6RQDES1xDLWxSWw7Ztou2U=
+safari-14-idb-fix@^2.0.2:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/safari-14-idb-fix/-/safari-14-idb-fix-2.0.3.tgz#d6ea1b8f1b74b3b4f30913ae971e2de8eb4ca900"
+  integrity sha512-0GTmL1Vfg9bt2BQTdM2Xxhbi5QOwl9QEGk8s1oHJw8Lyr+cpGw1/kpS7rhsyWQIV4ils0WvjRTzYRuJtMAAhtg==
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
