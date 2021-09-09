@@ -1,4 +1,5 @@
 import './data/archiver';
+import './data/bitcoin';
 import './data/common';
 import './data/exchange';
 import './data/favorites';
