@@ -6920,10 +6920,10 @@ type-fest@^0.20.2:
   resolved "https://registry.nlark.com/type-fest/download/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha1-G/IH9LKPkVg2ZstfvTJ4hzAc1fQ=
 
-type-fest@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.nlark.com/type-fest/download/type-fest-2.2.0.tgz#046d9b65ab5083e691ac4c7c264b54207046a755"
-  integrity sha1-BG2bZatQg+aRrEx8JktUIHBGp1U=
+type-fest@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.3.1.tgz#80170f6f74929fef59251107d2e4175faf743a50"
+  integrity sha512-gaUs9+6d/aNSYsgC/aNnuporKL2Ic7ckfoNoaWAextvwr0K/QMq4fiEhhawensM7AysdmUZDRjcDgbFF7XQL2w==
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
