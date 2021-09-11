@@ -8,6 +8,7 @@ merge(
         All: '全部',
         Seeded: '有种',
         Unseeded: '无种',
+        Expunged: '已删除',
         ' \xA0 \xA0 \xA0 \xA0 Show: ': ' |  显示：',
         'All Torrents': '全部种子',
         'Only My Torrents': '我的种子',
