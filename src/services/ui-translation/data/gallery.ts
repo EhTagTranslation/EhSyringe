@@ -107,7 +107,7 @@ merge(
         '(And if you choose to ignore this warning, you lose all rights to complain about it.)': '(如果你选择无视这一警告，你就失去了所有投诉的权利。)',
         'View Gallery': '浏览图库',
         'Get Me Outta Here': '带我离开这里',
-        'Never Warn Me Again': '不要再警告我了',
+        'Never Warn Me Again': '不再提醒',
         'This gallery has been removed or is unavailable.': '该图库已被删除或无法使用。',
         'You will be redirected to the front page momentarily.': '即将跳转到首页。',
         '(Click here to continue)': '（点击这里继续）',
