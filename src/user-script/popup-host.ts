@@ -94,9 +94,9 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
 }
 
 export function createPopup(): void {
-    if( window.location.href.includes("hentai.org/mpv/") ||
-        window.location.href.includes("hentai.org/archiver.php") || 
-        window.location.href.includes("hentai.org/gallerytorrents.php")) {
+    if( /^\/mpv\//i.test(location.pathname) ||
+        location.pathname == '/archiver.php' ||
+        location.pathname == '/gallerytorrents.php') {
         return;
     }
     const button = document.body.appendChild(document.createElement('div'));
