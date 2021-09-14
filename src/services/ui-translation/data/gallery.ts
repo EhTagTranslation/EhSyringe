@@ -111,7 +111,7 @@ merge(
         'This gallery has been removed or is unavailable.': '该图库已被删除或无法使用。',
         'You will be redirected to the front page momentarily.': '即将跳转到首页。',
         '(Click here to continue)': '（点击这里继续）',
-        'Please wait...': '请稍后...',
+        'Please wait...': '请稍候...',
         'Gallery not found. If you just added this gallery, you may have to wait a short while before it becomes available.': '没有找到图库。如果你刚刚添加了这个图库，你可能需要等待一小段时间才会变得可用。',
         'Sorry about that.': '很抱歉。'
     },
