@@ -62,26 +62,30 @@ merge(
         'Make sure this is less than or equal to your connection speed.': '请确保这个速度小于等于您的链接速度。',
         'Must be at least 1000 KB/s': '不小于 1000 KB/s',
         'Max Transfer per Hour': '每小时最大传输量',
-        'The maximum total outgoing data transfer the client can use per hour.': '客户端每小时可使用的最大传出数据总量。',
-        'Must be at least 300 MB/hour, or 0 for unlimited.': '必须至少为 300 MB/小时，填 0 表示无限制',
+        'The maximum total outgoing data transfer the client can use per hour.':
+            '客户端每小时可使用的最大传出数据总量。',
+        'Must be at least 300 MB/hour, or 0 for unlimited.': '必须至少为 300MB/小时，填 0 表示无限制',
         'Disk Cache Size': '磁盘缓存大小',
         'The maximum allowed disk space usage for the image cache.': '允许缓存占用的最大磁盘空间。',
-        ' Must be at least 10 GB. More is better, but space must be dedicated.': '至少为 10 GB。越多越好，但空间必须专用。',
+        ' Must be at least 10 GB. More is better, but space must be dedicated.':
+            '至少为 10GB。越多越好，但空间必须专用。',
         'Speed Test': '速度测试结果',
         'Go to ': '前往 ',
-        ' and run a test against your closest server. After the test completes, paste the result URL here.\n\t\t\t': 
-            '使用距离最近的测速服务器进行测试。将测速结果URL粘贴在此处。\n\t\t\t',
-        'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80 Mbit/s 上传速度',
+        ' and run a test against your closest server. After the test completes, paste the result URL here.\n\t\t\t':
+            '使用距离最近的测速服务器进行测试。将测速结果 URL 粘贴在此处。\n\t\t\t',
+        'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80Mbps 上传速度',
         AND: '和',
         ' DOWNLOAD speed required.': '下载速度',
         'Submit Application': '提交申请',
-        'If this is a headless server that cannot run speedtest, contact ': '如果无法运行speedtest的无头服务器，请联系',
-        'BOTH measurements of my test above is at least 80 Mbit/s *': '我的测速两个值均大于 80 Mbit/s *',
-        'This client will be run on a computer that is online more or less constantly **': '这个客户端将在一台经常在线的计算机上运行 **',
-        'If your connection speed is below the requirement, the resources taken up by tracking the client outweight those saved by having it in the network.': 
+        'If this is a headless server that cannot run speedtest, contact ':
+            '如果是一台无法运行 SpeedTest 的无头服务器，请联系 ',
+        'BOTH measurements of my test above is at least 80 Mbit/s *': '我的测速两个值均大于 80Mbps *',
+        'This client will be run on a computer that is online more or less constantly **':
+            '这个客户端将在一台经常在线的计算机上运行 **',
+        'If your connection speed is below the requirement, the resources taken up by tracking the client outweight those saved by having it in the network.':
             '如果链接速度低于要求，追踪客户端所消耗的资源将超过您客户端的贡献。',
-        'This does not mean that you cannot restart the computer for updates or turn it off when you go on a vacation. It does however mean that if you shut it down at night, running H@H is not possible.': 
-            '您可以重启计算机进行系统更新，或者在去度假时关闭它。但是如果您每晚都需要关闭它，那它不适合运行 H@H 。',
+        'This does not mean that you cannot restart the computer for updates or turn it off when you go on a vacation. It does however mean that if you shut it down at night, running H@H is not possible.':
+            '您可以重启计算机进行系统更新，或者在去度假时关闭它。但是如果您每晚都需要关闭它，那它不适合运行 H@H。',
 
         'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and make sure to keep your client running. Having the client set to the wrong country will make it perform worse than it would otherwise do.':
             '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并确保您的客户端保持运行。位于错误的国家/地区的客户端的性能表现将不如预期。',
@@ -125,7 +129,7 @@ merge(
         'Client Name': '客户端名称',
         'You can set a custom name for this client here. This will be used in the various listings this client appears in.':
             '您可以在此处为此客户端设置自定义名称。这将用于该客户端出现的各种列表中。',
-        'Maximum Burst Speed': '最大猝发速率',
+        'Maximum Burst Speed': '最大并发速率',
         'Actual utilization will reach at most 80% of this over time, unless you also set an hourly limit below.':
             '随着时间的推移，实际利用率最多将达到该值的 80%，除非您还在下方设置了每小时限制。',
         'Turning off the client-side throttle saves some CPU and may make you test higher, but could make the traffic more bursty.':
@@ -212,7 +216,7 @@ merge(
     undefined,
     {
         'The scheduler allows you to specify periods of time where the client is operating with lower speed limits. The speed limit cannot be set higher than the default entry. To change the default entry, alter the Maximum Burst Speed on the Settings page.':
-            '运行计划允许您指定客户端以较低速度限制运行的时间段。速度限制不能高于默认规则。要更改默认规则，请更改设置页面上的“最大猝发速率”。',
+            '运行计划允许您指定客户端以较低速度限制运行的时间段。速度限制不能高于默认规则。要更改默认规则，请更改设置页面上的“最大并发速率”。',
         'To add a new scheduling entry, simply use the row at the bottom. Enter the required values and make sure that Active is checked, then hit Apply Schedule. Repeat to add more than one entry. You can have up to 9 entries per client, excluding the default entry. In case of overlap, the schedule with the highest granularity will always be applied.':
             '要添加新的规则，只需使用最后一行。输入所需的值并确保选中“启用”，然后点击“保存运行计划”。重复以上步骤以添加多个规则。在默认规则之外，每个客户端最多可以有 9 个规则。在重叠的情况下，将始终应用具有最高粒度的规则。',
         Active: '启用',
@@ -225,7 +229,7 @@ merge(
         Sun: '日',
         'Start Hour': '开始时间',
         'End Hour': '结束时间',
-        'Burst Speed': '猝发速率',
+        'Burst Speed': '并发速率',
 
         'Delete Rule': '删除规则',
         'Add Rule': '添加规则',

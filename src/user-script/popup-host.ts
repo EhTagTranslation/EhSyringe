@@ -94,9 +94,11 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
 }
 
 export function createPopup(): void {
-    if( /^\/mpv\//i.test(location.pathname) ||
+    if (
+        /^\/mpv\//i.test(location.pathname) ||
         location.pathname === '/archiver.php' ||
-        location.pathname === '/gallerytorrents.php') {
+        location.pathname === '/gallerytorrents.php'
+    ) {
         return;
     }
     const button = document.body.appendChild(document.createElement('div'));
