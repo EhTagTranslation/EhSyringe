@@ -18,10 +18,10 @@ merge(
         'Your Bitcoin (BTC) Donation Wallet Address': '您的比特币（BTC）捐赠钱包地址',
         'If your wallet cannot send to this address, ': '如果您的钱包无法发送到此地址，',
         'switch to legacy addresses': '切换到旧地址',
-        'We automatically ': '我们会自动',
-        ' when the old one is used. You will still be credited if you reuse recent addresses, but please use the currently displayed address whenever possible.':
-            ' 当旧的地址被使用时。如果你重复使用之前的地址，仍然会被计入，但请尽可能使用当前显示的地址。',
+        'We automatically ': '当旧的地址被使用时，我们会自动',
         'generate a new address': '生成一个新的地址',
+        ' when the old one is used. You will still be credited if you reuse recent addresses, but please use the currently displayed address whenever possible.':
+            ' 。如果你重复使用之前的地址，仍然会被计入，但请尽可能使用当前显示的地址。',
         'Send a Bitcoin (BTC) Wallet Address PM': '向PM发送比特币（BTC）钱包地址',
         'You can use this form to send a private message from the gallery system with your wallet address. This guarantees that a given wallet address belongs to you and that it exists in the E-Hentai system.':
             '你可以使用这个表格，从画廊系统中发送一个私人信息，并附上你的钱包地址。这保证了一个给定的钱包地址属于你，并且它存在于 E-Hentai 系统中。',
