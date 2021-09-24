@@ -100,6 +100,6 @@ merge(
     },
     [
         [/Refunded (.*?) Hath/, '退还 $1 Hath'],
-        [/^\$(.*?) Donation/, '捐赠 $$1'],
+        [/^(\$.*?) Donation/, '捐赠 $1'],
     ],
 );
