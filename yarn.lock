@@ -2263,10 +2263,10 @@ core-js@3.17.2:
   resolved "https://registry.nlark.com/core-js/download/core-js-3.17.2.tgz#f960eae710dc62c29cca93d5332e3660e289db10"
   integrity sha1-+WDq5xDcYsKcypPVMy42YOKJ2xA=
 
-core-js@^3.17.3:
-  version "3.17.3"
-  resolved "https://registry.nlark.com/core-js/download/core-js-3.17.3.tgz#8e8bd20e91df9951e903cabe91f9af4a0895bc1e"
-  integrity sha1-jovSDpHfmVHpA8q+kfmvSgiVvB4=
+core-js@^3.18.1:
+  version "3.18.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.1.tgz#289d4be2ce0085d40fc1244c0b1a54c00454622f"
+  integrity sha512-vJlUi/7YdlCZeL6fXvWNaLUPh/id12WXj3MbkMw5uOyF0PfWPBNOCNbs53YqgrvtujLNlt9JQpruyIKkUZ+PKA==
 
 core-util-is@1.0.2:
   version "1.0.2"
