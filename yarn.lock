@@ -1118,10 +1118,15 @@
   resolved "https://registry.nlark.com/@types/minimatch/download/@types/minimatch-3.0.5.tgz?cache=0&sync_timestamp=1629708301760&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fminimatch%2Fdownload%2F%40types%2Fminimatch-3.0.5.tgz#1001cc5e6a3704b83c236027e77f2f58ea010f40"
   integrity sha1-EAHMXmo3BLg8I2An538vWOoBD0A=
 
-"@types/node@*", "@types/node@^16.10.1":
+"@types/node@*":
   version "16.10.1"
   resolved "https://registry.npmmirror.com/@types/node/download/@types/node-16.10.1.tgz#f3647623199ca920960006b3dccf633ea905f243"
   integrity sha1-82R2IxmcqSCWAAaz3M9jPqkF8kM=
+
+"@types/node@^16.10.2":
+  version "16.10.2"
+  resolved "https://registry.npmmirror.com/@types/node/download/@types/node-16.10.2.tgz?cache=0&sync_timestamp=1632924206312&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.10.2.tgz#5764ca9aa94470adb4e1185fe2e9f19458992b2e"
+  integrity sha1-V2TKmqlEcK204Rhf4unxlFiZKy4=
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -6182,10 +6187,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rxjs@^7.3.0:
-  version "7.3.0"
-  resolved "https://registry.nlark.com/rxjs/download/rxjs-7.3.0.tgz#39fe4f3461dc1e50be1475b2b85a0a88c1e938c6"
-  integrity sha1-Of5PNGHcHlC+FHWyuFoKiMHpOMY=
+rxjs@^7.3.1:
+  version "7.3.1"
+  resolved "https://registry.npmmirror.com/rxjs/download/rxjs-7.3.1.tgz#cc375521f9e238b474fe552b0b9fd1be33d08099"
+  integrity sha1-zDdVIfniOLR0/lUrC5/RvjPQgJk=
   dependencies:
     tslib "~2.1.0"
 
@@ -7303,10 +7308,10 @@ webpack-webextension-plugin@^0.4.1:
     strip-ansi "^6.0.0"
     ws "7.5.1"
 
-webpack@^5.54.0:
-  version "5.54.0"
-  resolved "https://registry.npmmirror.com/webpack/download/webpack-5.54.0.tgz#629f0cd14c7a4340af758a3c7cef25c50670ae4d"
-  integrity sha1-Yp8M0Ux6Q0CvdYo8fO8lxQZwrk0=
+webpack@^5.56.0:
+  version "5.56.0"
+  resolved "https://registry.npmmirror.com/webpack/download/webpack-5.56.0.tgz?cache=0&sync_timestamp=1633098014689&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fwebpack%2Fdownload%2Fwebpack-5.56.0.tgz#91a04de09c85765002818678538c319b6e461324"
+  integrity sha1-kaBN4JyFdlACgYZ4U4wxm25GEyQ=
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.50"
