@@ -62,10 +62,10 @@ export class Introduce {
         });
     }
 
-    introduceBox!: HTMLDivElement;
-    tagList!: HTMLDivElement;
+    private introduceBox!: HTMLDivElement;
+    private tagList!: HTMLDivElement;
 
-    target: HTMLAnchorElement | null = null;
+    private target: HTMLAnchorElement | null = null;
 
     private findTarget(node: Node | null): HTMLAnchorElement | null {
         const isTarget = (n: Node): n is HTMLAnchorElement =>
@@ -81,6 +81,13 @@ export class Introduce {
             node = node.parentNode;
         }
         return null;
+    }
+
+    private onImageError(ev: Event): void {
+        const target = ev.target as HTMLImageElement;
+        // eslint-disable-next-line @typescript-eslint/unbound-method
+        target.removeEventListener('error', this.onImageError);
+        target.referrerPolicy = '';
     }
 
     async openIntroduceBox(namespace: EHTNamespaceName, key: string, canceled: () => boolean): Promise<void> {
@@ -128,6 +135,12 @@ export class Introduce {
                 </div>
             </div>`;
         }
+
+        this.introduceBox.querySelectorAll('img').forEach((img) => {
+            img.referrerPolicy = 'no-referrer';
+            // eslint-disable-next-line @typescript-eslint/unbound-method
+            img.addEventListener('error', this.onImageError);
+        });
     }
 
     closeIntroduceBox(): void {
