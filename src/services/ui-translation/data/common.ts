@@ -38,6 +38,7 @@ merge(
 
         'Show Advanced Options': '显示高级选项',
         'Show File Search': '文件搜索',
+        'Hide File Search': '隐藏文件搜索',
         'E-Hentai Galleries: The Free Hentai Doujinshi, Manga and Image Gallery System':
             'E-Hentai: 一个免费的绅士同人志、漫画和图片的图库系统',
         'Visit the E-Hentai Forums': '前往 E-Hentai 论坛',
