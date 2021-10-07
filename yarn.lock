@@ -1346,22 +1346,22 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@webpack-cli/configtest@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.nlark.com/@webpack-cli/configtest/download/@webpack-cli/configtest-1.0.4.tgz#f03ce6311c0883a83d04569e2c03c6238316d2aa"
-  integrity sha1-8DzmMRwIg6g9BFaeLAPGI4MW0qo=
+"@webpack-cli/configtest@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@webpack-cli/configtest/-/configtest-1.1.0.tgz#8342bef0badfb7dfd3b576f2574ab80c725be043"
+  integrity sha512-ttOkEkoalEHa7RaFYpM0ErK1xc4twg3Am9hfHhL7MVqlHebnkYd2wuI/ZqTDj0cVzZho6PdinY0phFZV3O0Mzg==
 
-"@webpack-cli/info@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.nlark.com/@webpack-cli/info/download/@webpack-cli/info-1.3.0.tgz#9d78a31101a960997a4acd41ffd9b9300627fe2b"
-  integrity sha1-nXijEQGpYJl6Ss1B/9m5MAYn/is=
+"@webpack-cli/info@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@webpack-cli/info/-/info-1.4.0.tgz#b9179c3227ab09cbbb149aa733475fcf99430223"
+  integrity sha512-F6b+Man0rwE4n0409FyAJHStYA5OIZERxmnUfLVwv0mc0V1wLad3V7jqRlMkgKBeAq07jUvglacNaa6g9lOpuw==
   dependencies:
     envinfo "^7.7.3"
 
-"@webpack-cli/serve@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.nlark.com/@webpack-cli/serve/download/@webpack-cli/serve-1.5.2.tgz#ea584b637ff63c5a477f6f21604b5a205b72c9ec"
-  integrity sha1-6lhLY3/2PFpHf28hYEtaIFtyyew=
+"@webpack-cli/serve@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@webpack-cli/serve/-/serve-1.6.0.tgz#2c275aa05c895eccebbfc34cfb223c6e8bd591a2"
+  integrity sha512-ZkVeqEmRpBV2GHvjjUZqEai2PpUbuq8Bqd//vEYsp63J8WyexI8ppCqVS3Zs0QADf6aWuPdU+0XsPI647PVlQA==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -2093,15 +2093,15 @@ colord@^2.0.1, colord@^2.6:
   resolved "https://registry.npmmirror.com/colord/download/colord-2.8.0.tgz#64fb7aa03de7652b5a39eee50271a104c2783b12"
   integrity sha1-ZPt6oD3nZStaOe7lAnGhBMJ4OxI=
 
-colorette@^1.2.1, colorette@^1.2.2:
+colorette@^1.2.2:
   version "1.4.0"
   resolved "https://registry.npmmirror.com/colorette/download/colorette-1.4.0.tgz?cache=0&sync_timestamp=1633259783543&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcolorette%2Fdownload%2Fcolorette-1.4.0.tgz#5190fbb87276259a86ad700bff2c6d6faa3fca40"
   integrity sha1-UZD7uHJ2JZqGrXAL/yxtb6o/ykA=
 
-colorette@^2.0.10:
-  version "2.0.14"
-  resolved "https://registry.npmmirror.com/colorette/download/colorette-2.0.14.tgz?cache=0&sync_timestamp=1633259783543&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcolorette%2Fdownload%2Fcolorette-2.0.14.tgz#1629bb27a13cd719ff37d66bc341234af564122e"
-  integrity sha1-Fim7J6E81xn/N9Zrw0EjSvVkEi4=
+colorette@^2.0.10, colorette@^2.0.14:
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/colorette/-/colorette-2.0.15.tgz#8e634aa0429b110d24be82eac4d42f5ea65ab2d5"
+  integrity sha512-lIFQhufWaVvwi4wOlX9Gx5b0Nmw3XAZ8HzHNH9dfxhe+JaKNTmX6QLk4o7UHyI+tUY8ClvyfaHUm5bf61O3psA==
 
 columnify@1.5.4:
   version "1.5.4"
@@ -7190,16 +7190,16 @@ webpack-bundle-analyzer@^4.4.2:
     sirv "^1.0.7"
     ws "^7.3.1"
 
-webpack-cli@^4.8.0:
-  version "4.8.0"
-  resolved "https://registry.nlark.com/webpack-cli/download/webpack-cli-4.8.0.tgz#5fc3c8b9401d3c8a43e2afceacfa8261962338d1"
-  integrity sha1-X8PIuUAdPIpD4q/OrPqCYZYjONE=
+webpack-cli@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-4.9.0.tgz#dc43e6e0f80dd52e89cbf73d5294bcd7ad6eb343"
+  integrity sha512-n/jZZBMzVEl4PYIBs+auy2WI0WTQ74EnJDiyD98O2JZY6IVIHJNitkYp/uTXOviIOMfgzrNvC9foKv/8o8KSZw==
   dependencies:
     "@discoveryjs/json-ext" "^0.5.0"
-    "@webpack-cli/configtest" "^1.0.4"
-    "@webpack-cli/info" "^1.3.0"
-    "@webpack-cli/serve" "^1.5.2"
-    colorette "^1.2.1"
+    "@webpack-cli/configtest" "^1.1.0"
+    "@webpack-cli/info" "^1.4.0"
+    "@webpack-cli/serve" "^1.6.0"
+    colorette "^2.0.14"
     commander "^7.0.0"
     execa "^5.0.0"
     fastest-levenshtein "^1.0.12"
