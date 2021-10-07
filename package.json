@@ -30,7 +30,7 @@
     "homepage": "https://github.com/EhTagTranslation/EhSyringe",
     "devDependencies": {
         "@babel/core": "^7.15.5",
-        "@babel/plugin-transform-runtime": "^7.15.0",
+        "@babel/plugin-transform-runtime": "^7.15.8",
         "@babel/preset-env": "^7.15.6",
         "@types/chrome": "^0.0.158",
         "@types/escape-html": "^1.0.1",
