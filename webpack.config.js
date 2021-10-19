@@ -124,6 +124,8 @@ module.exports = async (env = {}, argv = {}) => {
                 https: true,
                 port: 48792,
                 allowedHosts: ['.e-hentai.org', '.exhentai.org'],
+                liveReload: false,
+                hot: false,
                 static: {
                     directory: outputPath,
                 },
@@ -132,6 +134,9 @@ module.exports = async (env = {}, argv = {}) => {
                 },
                 headers: {
                     'Access-Control-Allow-Origin': '*',
+                },
+                client: {
+                    webSocketURL: 'wss://localhost:48792/ws',
                 },
             };
         }
