@@ -5,7 +5,7 @@
     "description": "E 站注射器，将中文翻译注入到 E 站体内。",
     "author": "EhTagTranslation",
     "scripts": {
-        "start:monkey": "yarn clean && webpack serve --mode=development --env type=user-script",
+        "start:monkey": "webpack serve --mode=development --env type=user-script",
         "start:ext": "webpack --mode=development --watch --env type=web-ext",
         "start:chrome": "yarn start:ext --env vendor=chrome",
         "start:firefox": "yarn start:ext --env vendor=firefox",
