@@ -3,7 +3,7 @@ import { filter, map } from 'rxjs/operators';
 import { Service } from 'services';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
-import { Suggestion } from 'plugin/suggest';
+import type { Suggestion } from 'plugin/suggest';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
 

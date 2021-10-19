@@ -1,4 +1,4 @@
-import { Storage, ListenerId, SyncStorage, Listener } from '../common/storage';
+import type { Storage, ListenerId, SyncStorage, Listener } from '../common/storage';
 import { get, set, del, keys, createStore } from 'idb-keyval';
 import type { JsonValue } from 'type-fest';
 

@@ -1,5 +1,5 @@
-import { Menu } from '../common/menu';
-import { Menus } from 'webextension-polyfill';
+import type { Menu } from '../common/menu';
+import type { Menus } from 'webextension-polyfill';
 export * from '../common/menu';
 
 export function createMenu(info: Menu): void {

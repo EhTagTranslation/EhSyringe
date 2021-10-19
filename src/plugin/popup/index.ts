@@ -6,9 +6,9 @@ import { ConfigData, Storage, ImageLevel } from 'services/storage';
 import { Messaging } from 'services/messaging';
 import { DateTime } from 'services/date-time';
 import { openInTab } from 'providers/utils';
-import { DownloadStatus } from 'plugin/database-updater';
+import type { DownloadStatus } from 'plugin/database-updater';
 import { packageJson } from 'info';
-import { MessageListener } from 'providers/common/messaging';
+import type { MessageListener } from 'providers/common/messaging';
 
 import './index.less';
 

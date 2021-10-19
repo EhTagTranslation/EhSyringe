@@ -1,4 +1,4 @@
-import { Opaque } from 'type-fest';
+import type { Opaque } from 'type-fest';
 
 export type MessageListener = Opaque<{ key: string; value: Listener }, Messaging>;
 

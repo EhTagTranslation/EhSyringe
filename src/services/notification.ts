@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import { NotificationInfo } from 'providers/common/notification';
+import type { NotificationInfo } from 'providers/common/notification';
 import { sendNotification } from 'providers/utils';
 
 @Service()

@@ -1,4 +1,4 @@
-import { Opaque, JsonValue } from 'type-fest';
+import type { Opaque, JsonValue } from 'type-fest';
 
 export type ListenerId = Opaque<unknown, Listener>;
 export type Listener = (key: string, oldValue?: JsonValue, newValue?: JsonValue) => unknown;

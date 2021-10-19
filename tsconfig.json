@@ -14,7 +14,8 @@
         "strict": true,
         "noImplicitReturns": true,
         "noImplicitOverride": true,
-        "useUnknownInCatchVariables": true,
+        "importsNotUsedAsValues": "error",
+        "isolatedModules": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "importHelpers": true

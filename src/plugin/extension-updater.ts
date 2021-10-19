@@ -5,7 +5,7 @@ import { openInTab } from 'providers/utils';
 import { Messaging } from 'services/messaging';
 import { Notification } from 'services/notification';
 import { Http } from 'services/http';
-import { GithubRelease } from 'interface';
+import type { GithubRelease } from 'interface';
 import { packageJson } from 'info';
 
 @Service()

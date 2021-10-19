@@ -1,10 +1,10 @@
 import { Service } from '.';
 import { storage } from 'providers/storage';
-import { TagMap } from 'interface';
-import { ReleaseCheckData } from 'plugin/database-updater';
+import type { TagMap } from 'interface';
+import type { ReleaseCheckData } from 'plugin/database-updater';
 import { Logger } from './logger';
-import { JsonValue } from 'type-fest';
-import { ListenerId, Listener } from 'providers/common/storage';
+import type { JsonValue } from 'type-fest';
+import type { ListenerId, Listener } from 'providers/common/storage';
 
 export const enum ImageLevel {
     hide,

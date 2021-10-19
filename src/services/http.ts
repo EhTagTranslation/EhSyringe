@@ -14,7 +14,7 @@ export class Http {
         method = 'GET',
         progress?: Progress,
         responseType: 'json' | 'arraybuffer' = 'arraybuffer',
-    ): Promise<ArrayBuffer> {
+    ): Promise<unknown> {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.open(method, url);

@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
-import { EHTNamespaceName, EHTNamespaceNameShort } from 'interface';
-import { Suggestion } from 'plugin/suggest';
+import type { EHTNamespaceName, EHTNamespaceNameShort } from 'interface';
+import type { Suggestion } from 'plugin/suggest';
 import escapeHtml from 'escape-html';
 import emojiRegex from 'emoji-regex';
 

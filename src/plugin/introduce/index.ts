@@ -1,4 +1,4 @@
-import { EHTNamespaceName } from 'interface';
+import type { EHTNamespaceName } from 'interface';
 import { Service } from 'services';
 import { Logger } from 'services/logger';
 import { Storage } from 'services/storage';

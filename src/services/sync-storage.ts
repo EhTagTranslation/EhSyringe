@@ -1,7 +1,7 @@
 import { Service } from '.';
 import { syncStorage } from 'providers/storage';
 import { Logger } from './logger';
-import { JsonValue } from 'type-fest';
+import type { JsonValue } from 'type-fest';
 import { ConfigData, Storage } from './storage';
 import { packageJson } from 'info';
 

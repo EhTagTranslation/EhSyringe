@@ -1,5 +1,5 @@
-import { NotificationInfo } from '../common/notification';
-import { Badge } from 'providers/common/badge';
+import type { NotificationInfo } from '../common/notification';
+import type { Badge } from 'providers/common/badge';
 import { packageJson } from 'info';
 
 export function openInTab(url: string): void {

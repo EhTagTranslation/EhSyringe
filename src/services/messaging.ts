@@ -1,10 +1,10 @@
-import { TagItem, EHTDatabase, TagMap } from 'interface';
-import { Suggestion } from 'plugin/suggest';
+import type { TagItem, EHTDatabase, TagMap } from 'interface';
+import type { Suggestion } from 'plugin/suggest';
 import { Service } from 'typedi';
 import { Logger } from './logger';
 import { messaging } from 'providers/messaging';
-import { DownloadStatus, ReleaseCheckData } from 'plugin/database-updater';
-import { MessageListener } from 'providers/common/messaging';
+import type { DownloadStatus, ReleaseCheckData } from 'plugin/database-updater';
+import type { MessageListener } from 'providers/common/messaging';
 
 export interface MessageMap {
     'get-tag': [string, TagItem | undefined];

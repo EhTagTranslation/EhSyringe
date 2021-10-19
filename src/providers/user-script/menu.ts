@@ -1,4 +1,4 @@
-import { Menu, Context } from '../common/menu';
+import type { Menu, Context } from '../common/menu';
 import icon from 'assets/logo.svg';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';

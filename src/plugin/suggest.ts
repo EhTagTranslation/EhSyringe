@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
-import { EHTNamespaceName, TagItem } from 'interface';
+import type { EHTNamespaceName, TagItem } from 'interface';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
 

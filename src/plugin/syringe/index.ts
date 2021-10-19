@@ -1,6 +1,6 @@
 import { UiTranslation } from 'services/ui-translation';
 import { Service } from 'services';
-import { ConfigData } from 'services/storage';
+import type { ConfigData } from 'services/storage';
 import { SyncStorage } from 'services/sync-storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
@@ -298,7 +298,7 @@ export class Syringe {
         let repText = text;
         for (const [k, v] of this.uiData.regexReplacements) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            repText = repText.replace(k, v as any);
+            repText = repText.replace(k, v as (substring: string, ...args: any[]) => string);
         }
 
         repText = repText.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/g, (t) => {

@@ -1,4 +1,4 @@
-import { Menu } from './common/menu';
+import type { Menu } from './common/menu';
 
 export * from './common/menu';
 

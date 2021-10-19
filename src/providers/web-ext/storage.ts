@@ -1,5 +1,5 @@
-import { Storage, Listener, ListenerId, SyncStorage } from '../common/storage';
-import { JsonValue } from 'type-fest';
+import type { Storage, Listener, ListenerId, SyncStorage } from '../common/storage';
+import type { JsonValue } from 'type-fest';
 import { packageJson } from 'info';
 
 const listeners = new Map<string, Listener[]>();
@@ -10,7 +10,7 @@ browser.storage.onChanged.addListener((changes, area) => {
         const listener = listeners.get(key);
         if (!listener || listener.length === 0) continue;
         const element = changes[key];
-        listener.forEach((l) => l(key, element.oldValue, element.newValue));
+        listener.forEach((l) => l(key, element.oldValue as JsonValue, element.newValue as JsonValue));
     }
 });
 

@@ -6,3 +6,5 @@ request.send(null);
 if (request.status === 200) {
     eval(request.responseText);
 }
+
+export {};

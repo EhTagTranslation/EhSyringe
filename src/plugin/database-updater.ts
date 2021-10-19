@@ -1,4 +1,4 @@
-import { GithubRelease, EHTDatabase } from 'interface';
+import type { GithubRelease, EHTDatabase } from 'interface';
 import { Logger } from 'services/logger';
 import { Service } from 'typedi';
 import { Messaging } from 'services/messaging';

@@ -1,4 +1,4 @@
-import { EHTDatabase, TagMap, TagItem } from '../interface';
+import type { EHTDatabase, TagMap, TagItem } from '../interface';
 import { Service } from 'typedi';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';

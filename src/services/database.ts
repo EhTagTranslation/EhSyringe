@@ -1,5 +1,5 @@
 import { Service } from '.';
-import { GithubRelease, EHTDatabase } from 'interface';
+import type { GithubRelease, EHTDatabase } from 'interface';
 import { Http, Progress } from './http';
 import { Logger } from './logger';
 
