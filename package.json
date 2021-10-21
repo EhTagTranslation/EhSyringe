@@ -39,7 +39,7 @@
         "@types/webextension-polyfill": "^0.8.0",
         "@typescript-eslint/eslint-plugin": "^5.1.0",
         "@typescript-eslint/parser": "^5.1.0",
-        "babel-loader": "^8.2.2",
+        "babel-loader": "^8.2.3",
         "copy-webpack-plugin": "^9.0.1",
         "css-loader": "^6.4.0",
         "cssnano": "^5.0.8",
