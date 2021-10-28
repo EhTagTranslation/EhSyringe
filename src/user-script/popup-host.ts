@@ -97,7 +97,8 @@ export function createPopup(): void {
     if (
         /^\/mpv\//i.test(location.pathname) ||
         location.pathname === '/archiver.php' ||
-        location.pathname === '/gallerytorrents.php'
+        location.pathname === '/gallerytorrents.php' ||
+        location.pathname === '/gallerypopups.php'
     ) {
         return;
     }
