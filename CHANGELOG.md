@@ -1,5 +1,9 @@
 # 更新日志
 
+## upcoming
+
+-   [UserScript] 弹窗排除 `/gallerypopups.php`
+
 ## 2.5.8
 
 -   修复图片无法显示问题
