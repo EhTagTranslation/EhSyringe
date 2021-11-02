@@ -39,7 +39,7 @@
         "babel-loader": "^8.2.3",
         "copy-webpack-plugin": "^9.0.1",
         "css-loader": "^6.5.0",
-        "cssnano": "^5.0.8",
+        "cssnano": "^5.0.9",
         "eslint": "^8.1.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^4.0.0",

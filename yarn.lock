@@ -2131,10 +2131,10 @@ color-name@~1.1.4:
   resolved "https://registry.nlark.com/color-name/download/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
 
-colord@^2.0.1, colord@^2.6:
+colord@^2.9.1:
   version "2.9.1"
-  resolved "https://registry.npmmirror.com/colord/download/colord-2.9.1.tgz#c961ea0efeb57c9f0f4834458f26cb9cc4a3f90e"
-  integrity sha1-yWHqDv61fJ8PSDRFjybLnMSj+Q4=
+  resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.1.tgz#c961ea0efeb57c9f0f4834458f26cb9cc4a3f90e"
+  integrity sha512-4LBMSt09vR0uLnPVkOUBnmxgoaeN4ewRbx801wY/bXcltXfpR/G46OdWn96XpYmCWuYvO46aBZP4NgX8HpNAcw==
 
 colorette@^2.0.10, colorette@^2.0.14:
   version "2.0.16"
@@ -2429,16 +2429,16 @@ cssesc@^3.0.0:
   resolved "https://registry.nlark.com/cssesc/download/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=
 
-cssnano-preset-default@^5.1.4:
-  version "5.1.4"
-  resolved "https://registry.nlark.com/cssnano-preset-default/download/cssnano-preset-default-5.1.4.tgz?cache=0&sync_timestamp=1629280558765&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcssnano-preset-default%2Fdownload%2Fcssnano-preset-default-5.1.4.tgz#359943bf00c5c8e05489f12dd25f3006f2c1cbd2"
-  integrity sha1-NZlDvwDFyOBUifEt0l8wBvLBy9I=
+cssnano-preset-default@^5.1.5:
+  version "5.1.5"
+  resolved "https://registry.yarnpkg.com/cssnano-preset-default/-/cssnano-preset-default-5.1.5.tgz#6effb7175ee5d296f95330e137587e27ee974d44"
+  integrity sha512-fF00UI+d3PWkGfMd62geqmoUe5h+LOhGE2GH4Fqq3beNKdCU1LWwLUyIcu4/A72lWv0737cHey5zhhWw3rW0sA==
   dependencies:
     css-declaration-sorter "^6.0.3"
     cssnano-utils "^2.0.1"
     postcss-calc "^8.0.0"
-    postcss-colormin "^5.2.0"
-    postcss-convert-values "^5.0.1"
+    postcss-colormin "^5.2.1"
+    postcss-convert-values "^5.0.2"
     postcss-discard-comments "^5.0.1"
     postcss-discard-duplicates "^5.0.1"
     postcss-discard-empty "^5.0.1"
@@ -2446,7 +2446,7 @@ cssnano-preset-default@^5.1.4:
     postcss-merge-longhand "^5.0.2"
     postcss-merge-rules "^5.0.2"
     postcss-minify-font-values "^5.0.1"
-    postcss-minify-gradients "^5.0.2"
+    postcss-minify-gradients "^5.0.3"
     postcss-minify-params "^5.0.1"
     postcss-minify-selectors "^5.1.0"
     postcss-normalize-charset "^5.0.1"
@@ -2461,7 +2461,7 @@ cssnano-preset-default@^5.1.4:
     postcss-ordered-values "^5.0.2"
     postcss-reduce-initial "^5.0.1"
     postcss-reduce-transforms "^5.0.1"
-    postcss-svgo "^5.0.2"
+    postcss-svgo "^5.0.3"
     postcss-unique-selectors "^5.0.1"
 
 cssnano-utils@^2.0.1:
@@ -2469,12 +2469,12 @@ cssnano-utils@^2.0.1:
   resolved "https://registry.nlark.com/cssnano-utils/download/cssnano-utils-2.0.1.tgz#8660aa2b37ed869d2e2f22918196a9a8b6498ce2"
   integrity sha1-hmCqKzfthp0uLyKRgZapqLZJjOI=
 
-cssnano@^5.0.8:
-  version "5.0.8"
-  resolved "https://registry.npmmirror.com/cssnano/download/cssnano-5.0.8.tgz#39ad166256980fcc64faa08c9bb18bb5789ecfa9"
-  integrity sha1-Oa0WYlaYD8xk+qCMm7GLtXiez6k=
+cssnano@^5.0.9:
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-5.0.9.tgz#bd03168835c0883c16754085704f57861a32d99c"
+  integrity sha512-Y4olTKBKsPKl5izpcXHRDiB/1rVdbIDM4qVXgEKBt466kYT42SEEsnCYOQFFXzEkUYV8pJNCII9JKzb8KfDk+g==
   dependencies:
-    cssnano-preset-default "^5.1.4"
+    cssnano-preset-default "^5.1.5"
     is-resolvable "^1.1.0"
     lilconfig "^2.0.3"
     yaml "^1.10.2"
@@ -4790,11 +4790,6 @@ nan@^2.14.0:
   resolved "https://registry.nlark.com/nan/download/nan-2.15.0.tgz#3f34a473ff18e15c1b5626b62903b5ad6e665fee"
   integrity sha1-PzSkc/8Y4VwbVia2KQO1rW5mX+4=
 
-nanocolors@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.npmmirror.com/nanocolors/download/nanocolors-0.1.12.tgz#8577482c58cbd7b5bb1681db4cf48f11a87fd5f6"
-  integrity sha1-hXdILFjL17W7FoHbTPSPEah/1fY=
-
 nanoid@^3.1.28, nanoid@^3.1.30:
   version "3.1.30"
   resolved "https://registry.npmmirror.com/nanoid/download/nanoid-3.1.30.tgz#63f93cc548d2a113dc5dfbc63bfa09e2b9b64362"
@@ -5348,20 +5343,20 @@ postcss-color-rebeccapurple@^4.0.1:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-postcss-colormin@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.nlark.com/postcss-colormin/download/postcss-colormin-5.2.0.tgz#2b620b88c0ff19683f3349f4cf9e24ebdafb2c88"
-  integrity sha1-K2ILiMD/GWg/M0n0z54k69r7LIg=
+postcss-colormin@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/postcss-colormin/-/postcss-colormin-5.2.1.tgz#6e444a806fd3c578827dbad022762df19334414d"
+  integrity sha512-VVwMrEYLcHYePUYV99Ymuoi7WhKrMGy/V9/kTS0DkCoJYmmjdOMneyhzYUxcNgteKDVbrewOkSM7Wje/MFwxzA==
   dependencies:
     browserslist "^4.16.6"
     caniuse-api "^3.0.0"
-    colord "^2.0.1"
+    colord "^2.9.1"
     postcss-value-parser "^4.1.0"
 
-postcss-convert-values@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.nlark.com/postcss-convert-values/download/postcss-convert-values-5.0.1.tgz#4ec19d6016534e30e3102fdf414e753398645232"
-  integrity sha1-TsGdYBZTTjDjEC/fQU51M5hkUjI=
+postcss-convert-values@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/postcss-convert-values/-/postcss-convert-values-5.0.2.tgz#879b849dc3677c7d6bc94b6a2c1a3f0808798059"
+  integrity sha512-KQ04E2yadmfa1LqXm7UIDwW1ftxU/QWZmz6NKnHnUvJ3LEYbbcX6i329f/ig+WnEByHegulocXrECaZGLpL8Zg==
   dependencies:
     postcss-value-parser "^4.1.0"
 
@@ -5543,12 +5538,12 @@ postcss-minify-font-values@^5.0.1:
   dependencies:
     postcss-value-parser "^4.1.0"
 
-postcss-minify-gradients@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.nlark.com/postcss-minify-gradients/download/postcss-minify-gradients-5.0.2.tgz?cache=0&sync_timestamp=1629280469128&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-minify-gradients%2Fdownload%2Fpostcss-minify-gradients-5.0.2.tgz#7c175c108f06a5629925d698b3c4cf7bd3864ee5"
-  integrity sha1-fBdcEI8GpWKZJdaYs8TPe9OGTuU=
+postcss-minify-gradients@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/postcss-minify-gradients/-/postcss-minify-gradients-5.0.3.tgz#f970a11cc71e08e9095e78ec3a6b34b91c19550e"
+  integrity sha512-Z91Ol22nB6XJW+5oe31+YxRsYooxOdFKcbOqY/V8Fxse1Y3vqlNRpi1cxCqoACZTQEhl+xvt4hsbWiV5R+XI9Q==
   dependencies:
-    colord "^2.6"
+    colord "^2.9.1"
     cssnano-utils "^2.0.1"
     postcss-value-parser "^4.1.0"
 
@@ -5810,13 +5805,13 @@ postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4, postcss-selector
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
-postcss-svgo@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.nlark.com/postcss-svgo/download/postcss-svgo-5.0.2.tgz#bc73c4ea4c5a80fbd4b45e29042c34ceffb9257f"
-  integrity sha1-vHPE6kxagPvUtF4pBCw0zv+5JX8=
+postcss-svgo@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/postcss-svgo/-/postcss-svgo-5.0.3.tgz#d945185756e5dfaae07f9edb0d3cae7ff79f9b30"
+  integrity sha512-41XZUA1wNDAZrQ3XgWREL/M2zSw8LJPvb5ZWivljBsUQAGoEKMYm6okHsTjJxKYI4M75RQEH4KYlEM52VwdXVA==
   dependencies:
     postcss-value-parser "^4.1.0"
-    svgo "^2.3.0"
+    svgo "^2.7.0"
 
 postcss-unique-selectors@^5.0.1:
   version "5.0.1"
@@ -6774,17 +6769,17 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-svgo@^2.3.0:
-  version "2.7.0"
-  resolved "https://registry.npmmirror.com/svgo/download/svgo-2.7.0.tgz?cache=0&sync_timestamp=1633354062790&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsvgo%2Fdownload%2Fsvgo-2.7.0.tgz#e164cded22f4408fe4978f082be80159caea1e2d"
-  integrity sha1-4WTN7SL0QI/kl48IK+gBWcrqHi0=
+svgo@^2.7.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-2.8.0.tgz#4ff80cce6710dc2795f0c7c74101e6764cfccd24"
+  integrity sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==
   dependencies:
     "@trysound/sax" "0.2.0"
     commander "^7.2.0"
     css-select "^4.1.3"
     css-tree "^1.1.3"
     csso "^4.2.0"
-    nanocolors "^0.1.12"
+    picocolors "^1.0.0"
     stable "^0.1.8"
 
 table@^6.0.9:
