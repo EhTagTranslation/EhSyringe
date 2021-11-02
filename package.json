@@ -4,6 +4,13 @@
     "version": "2.5.8",
     "description": "E 站注射器，将中文翻译注入到 E 站体内。",
     "author": "EhTagTranslation",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EhTagTranslation/EhSyringe.git"
+    },
+    "license": "MIT",
+    "bugs": "https://github.com/EhTagTranslation/EhSyringe/issues",
+    "homepage": "https://github.com/EhTagTranslation/EhSyringe",
     "scripts": {
         "start:monkey": "webpack serve --mode=development --env type=user-script",
         "start:ext": "webpack --mode=development --watch --env type=web-ext",
@@ -18,16 +25,6 @@
         "format": "prettier --ignore-path .gitignore --write .",
         "clean": "rimraf dist releases"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/EhTagTranslation/EhSyringe.git"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/EhTagTranslation/EhSyringe/issues"
-    },
-    "readme": "https://github.com/EhTagTranslation/EhSyringe",
-    "homepage": "https://github.com/EhTagTranslation/EhSyringe",
     "devDependencies": {
         "@babel/core": "^7.16.0",
         "@babel/plugin-transform-runtime": "^7.16.0",

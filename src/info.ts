@@ -1,4 +1,4 @@
-import pkg from '../package.json';
+import _packageJson from '../package.json';
 
 interface MyPackageJson {
     name: string;
@@ -11,11 +11,8 @@ interface MyPackageJson {
         url: string;
     };
     license: string;
-    bugs: {
-        url: string;
-    };
-    readme: string;
+    bugs: string;
     homepage: string;
 }
 
-export const packageJson = pkg as MyPackageJson;
+export const packageJson: MyPackageJson = _packageJson;
