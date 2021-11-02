@@ -1175,10 +1175,10 @@
   resolved "https://registry.nlark.com/@types/trusted-types/download/@types/trusted-types-2.0.2.tgz?cache=0&sync_timestamp=1629709559751&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Ftrusted-types%2Fdownload%2F%40types%2Ftrusted-types-2.0.2.tgz#fc25ad9943bcac11cceb8168db4f275e0e72e756"
   integrity sha1-/CWtmUO8rBHM64Fo208nXg5y51Y=
 
-"@types/webextension-polyfill@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.nlark.com/@types/webextension-polyfill/download/@types/webextension-polyfill-0.8.0.tgz#6c40740eec531de412f6ceba27bb2cad4a24907c"
-  integrity sha1-bEB0DuxTHeQS9s66J7ssrUokkHw=
+"@types/webextension-polyfill@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@types/webextension-polyfill/-/webextension-polyfill-0.8.1.tgz#9f29dbc894128cb8fdeea3d6b083696a418c867a"
+  integrity sha512-FH1EwaQLzET/Bdy05yIcgMD2nlXchA1vnfC+QvQYMNW0RcTIDrNaVOOqmOY1nGRf0NaHZQmvfMy6cJV4nY7j2w==
 
 "@types/yauzl@2.9.2":
   version "2.9.2"
