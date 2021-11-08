@@ -34,7 +34,7 @@
         "@types/node": "^16.11.6",
         "@types/tampermonkey": "^4.0.5",
         "@types/webextension-polyfill": "^0.8.1",
-        "@typescript-eslint/eslint-plugin": "^5.3.0",
+        "@typescript-eslint/eslint-plugin": "^5.3.1",
         "@typescript-eslint/parser": "^5.3.0",
         "babel-loader": "^8.2.3",
         "copy-webpack-plugin": "^9.0.1",
