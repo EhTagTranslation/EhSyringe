@@ -1,18 +1,22 @@
-const path = require('path');
-const webpack = require('webpack');
-const CopyPlugin = require('copy-webpack-plugin');
-const WebExtensionPlugin = require('webpack-webextension-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const WebpackUserScript = require('webpack-userscript');
-const { TsconfigPathsPlugin } = require('tsconfig-paths-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const glob = require('glob');
-const execa = require('execa');
-const semver = require('semver');
+import path from 'path';
+import fs from 'fs-extra';
+import webpack from 'webpack';
+import CopyPlugin from 'copy-webpack-plugin';
+import WebExtensionPlugin from 'webpack-webextension-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import WebpackUserScript from 'webpack-userscript';
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import glob from 'glob';
+import { execaCommandSync } from 'execa';
+import semver from 'semver';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 
 /** @type { import('./src/info').packageJson & import('type-fest').PackageJson } */
-const pkgJson = require('./package.json');
-const manifestJson = require('./manifest.json');
+const pkgJson = fs.readJSONSync(path.resolve(__dirname, './package.json'));
+const manifestJson = fs.readJSONSync(path.resolve(__dirname, './manifest.json'));
 
 /** @type {webpack.RuleSetUseItem[]} */
 const cssLoaders = [
@@ -38,7 +42,7 @@ const cssLoaders = [
     },
 ];
 
-module.exports = async (env = {}, argv = {}) => {
+export default async (env = {}, argv = {}) => {
     const dev = argv.mode === 'development';
     const devServer = !!env.WEBPACK_SERVE;
     const version = semver.parse(pkgJson.version);
@@ -142,7 +146,7 @@ module.exports = async (env = {}, argv = {}) => {
         }
 
         config.optimization.minimize = false;
-        const currentHEAD = execa.commandSync('git rev-parse HEAD').stdout.trim();
+        const currentHEAD = execaCommandSync('git rev-parse HEAD').stdout.trim();
         const fileHost = devServer
             ? `${config.devServer.https ? 'https' : 'http'}://localhost:${config.devServer.port || 8080}`
             : `${pkgJson.homepage}/releases/latest/download`;
