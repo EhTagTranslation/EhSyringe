@@ -1,7 +1,8 @@
 # 更新日志
 
-## upcoming
+## 2.6.0
 
+-   更新依赖，使用 ESM
 -   [UserScript] 弹窗排除 `/gallerypopups.php`
 
 ## 2.5.8
