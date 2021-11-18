@@ -1,7 +1,6 @@
 # EhSyringe
 
 [![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/build/badge.svg)](../../actions)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=EhTagTranslation/EhSyringe)](//dependabot.com)
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/total)](../../releases)
 [![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.chrome.zip)](../../releases/latest/download/ehsyringe.chrome.zip)
