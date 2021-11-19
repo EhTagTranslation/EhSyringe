@@ -51,7 +51,7 @@
         "postcss": "^8.3.11",
         "postcss-import": "^14.0.2",
         "postcss-loader": "^6.2.0",
-        "postcss-preset-env": "^7.0.0",
+        "postcss-preset-env": "^7.0.1",
         "prettier": "^2.4.1",
         "rimraf": "^3.0.2",
         "semver": "^7.3.5",
