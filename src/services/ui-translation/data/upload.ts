@@ -31,8 +31,8 @@ const data = {
     'Japanese Script Title': '日文标题',
     'The original title in Japanese script, if applicable.': '原始的日文标题（如果有）',
     'Gallery Folder': '图库文件夹',
-    'The folder this gallery will be displayed under in the gallery list. This is only used to help you organize your gallery uploads.':
-        '图库文件夹仅在我的图库列表中显示，仅用于帮助整理上传的图库.',
+    'The folder this gallery will be displayed under in the uploader gallery list. This is only used to help you organize your gallery uploads.':
+        '图库文件夹仅在上传者的图库列表中显示，仅用于帮助整理上传的图库.',
     'or new folder: ': '或新建文件夹：',
     'Uploader Comment': '上传者评论',
     'Any comments or additional relevant information for this gallery. This will always show up as the topmost comment, and cannot be voted down.':
@@ -57,10 +57,10 @@ const data = {
     'I have read and agree with the ': '我已阅读并同意',
 
     'Upload Files': '上传文件',
-    'Accepted Images: JPG < 20 MB, PNG < 50 MB, GIF < 10 MB. Accepted Archive Formats: RAR, ZIP. Max Resolution: 20000 x 20000.':
-        '图像：JPG < 20 MB, PNG < 50 MB, GIF < 10 MB；归档：RAR, ZIP。最大分辨率：20000 x 20000。',
-    'Max 2,000 files and 10 GB per gallery. You should upload no more than 500MB at a time, less if you have a slow connection.':
-        '每个图库最多包含 2000 张图片或 10GB。一次上传的大小不应超过500MB，如果连接速度较慢，可以尝试以更小归档上传。',
+    'Accepted Images: JPG < 20 MB, PNG < 50 MB, GIF < 10 MB. Accepted Archive Formats: ZIP. Max Resolution: 20000 x 20000.':
+        '图像：JPG < 20 MB, PNG < 50 MB, GIF < 10 MB；归档：ZIP。最大分辨率：20000 x 20000。',
+    'Max 2,000 files and 10 GB per gallery. Do not upload more than 500MB at a time, less if you have a slow connection.':
+        '每个图库最多包含 2000 张图片或 10GB。一次上传的大小不应超过 500MB，如果连接速度较慢，可以尝试以更小归档上传。',
     'Start Upload': '开始上传',
     'Select one or more image or archive files and click Start Upload to add files to this gallery.':
         '选择一个或多个图像或归档文件，然后点击“开始上传”，以添加文件到此图库。',
@@ -93,5 +93,5 @@ const data = {
     'You do not have access to change that item.': '你没有更改此条目的权限',
 };
 
-merge(/^\/upload\//, undefined, data);
-merge(/^\//, 'upload.e-hentai.org', data);
+merge(/^\/upld\//, undefined, data);
+merge(/^\//, 'upld.e-hentai.org', data);
