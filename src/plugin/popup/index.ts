@@ -74,7 +74,7 @@ export class Popup {
     ];
 
     async loadConfig(): Promise<void> {
-        this.configOriginal = await this.storage.get('config');
+        this.configOriginal = { ...this.storage.defaults.config, ...(await this.storage.get('config')) };
         this.state.configValue = { ...this.configOriginal };
     }
 
@@ -246,6 +246,7 @@ export class Popup {
         const checkboxList: Array<{ key: keyof ConfigData; name: string }> = [
             { key: 'translateUi', name: '翻译界面' },
             { key: 'translateTag', name: '翻译标签' },
+            { key: 'translateTimestamp', name: '翻译时间戳' },
             { key: 'showIntroduce', name: '标签介绍' },
             { key: 'showIcon', name: '显示标签图标' },
             { key: 'tagTip', name: '搜索提示' },
@@ -291,15 +292,15 @@ export class Popup {
                             </div>
                         `,
                     )}
-                    <p class="checkbox-item">
-                        介绍图片:
-                        <span
-                            >${['禁用', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][
-                                state.configValue.introduceImageLevel
-                            ]}</span
-                        >
-                    </p>
                     <div class="image-level">
+                        <p class="range-title">
+                            介绍图片:
+                            <span
+                                >${['隐藏全部', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][
+                                    state.configValue.introduceImageLevel
+                                ]}</span
+                            >
+                        </p>
                         <div class="range-box">
                             <input
                                 type="range"

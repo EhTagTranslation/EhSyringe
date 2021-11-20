@@ -301,16 +301,18 @@ export class Syringe {
             repText = repText.replace(k, v as (substring: string, ...args: any[]) => string);
         }
 
-        repText = repText.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/g, (t) => {
-            const date = Date.parse(t + 'Z');
-            if (!date) return t;
-            return `${this.time.diff(date, undefined, DateTime.hour)}`;
-        });
-        repText = repText.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d/gi, (t) => {
-            const date = Date.parse(t + ' UTC');
-            if (!date) return t;
-            return `${this.time.diff(date, undefined, DateTime.hour)}`;
-        });
+        if (this.config.translateTimestamp !== false) {
+            repText = repText.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/g, (t) => {
+                const date = Date.parse(t + 'Z');
+                if (!date) return t;
+                return `${this.time.diff(date, undefined, DateTime.hour)}`;
+            });
+            repText = repText.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d/gi, (t) => {
+                const date = Date.parse(t + ' UTC');
+                if (!date) return t;
+                return `${this.time.diff(date, undefined, DateTime.hour)}`;
+            });
+        }
         if (repText !== text) return repText;
 
         return undefined;

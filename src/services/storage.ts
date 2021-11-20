@@ -16,6 +16,7 @@ export const enum ImageLevel {
 export interface ConfigData {
     translateUi: boolean;
     translateTag: boolean;
+    translateTimestamp: boolean;
     showIntroduce: boolean;
     showIcon: boolean;
     introduceImageLevel: ImageLevel;
@@ -102,6 +103,7 @@ export class Storage {
         config: {
             translateUi: true,
             translateTag: true,
+            translateTimestamp: true,
             showIntroduce: true,
             showIcon: true,
             introduceImageLevel: ImageLevel.r18g,
