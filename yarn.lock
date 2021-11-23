@@ -1175,10 +1175,10 @@
   resolved "https://registry.npmmirror.com/@types/trusted-types/download/@types/trusted-types-2.0.2.tgz#fc25ad9943bcac11cceb8168db4f275e0e72e756"
   integrity sha1-/CWtmUO8rBHM64Fo208nXg5y51Y=
 
-"@types/webextension-polyfill@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.npmmirror.com/@types/webextension-polyfill/download/@types/webextension-polyfill-0.8.1.tgz#9f29dbc894128cb8fdeea3d6b083696a418c867a"
-  integrity sha1-nynbyJQSjLj97qPWsINpakGMhno=
+"@types/webextension-polyfill@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@types/webextension-polyfill/-/webextension-polyfill-0.8.2.tgz#d909371d332ce3e1a94684624deb0a8693eee900"
+  integrity sha512-Pd+p5AQx6s78jr4gDC2p3vbw+uxP2DLLqE9iAJJpZ+OUqDm3txr6uN2wUBEwjVgZTNdBHPsxawGvPCTipF2s6w==
 
 "@types/yauzl@2.9.2":
   version "2.9.2"
