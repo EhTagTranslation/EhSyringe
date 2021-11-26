@@ -48,7 +48,7 @@
         "html-webpack-plugin": "^5.5.0",
         "less": "^4.1.2",
         "less-loader": "^10.2.0",
-        "postcss": "^8.3.11",
+        "postcss": "^8.4.3",
         "postcss-import": "^14.0.2",
         "postcss-loader": "^6.2.0",
         "postcss-preset-env": "^7.0.1",
