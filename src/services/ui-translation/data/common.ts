@@ -96,7 +96,7 @@ merge(
         'Only Show Galleries With Torrents': '只显示有种子的图库',
         'Search Low-Power Tags': '搜索低权重标签',
         'Search Downvoted Tags': '搜索投票移除了的标签',
-        'Show Expunged Galleries': '显示已删除的库',
+        'Search Expunged Galleries': '搜索已删除的图库',
         'Minimum Rating:': '最低评分',
         'Between ': '介于 ',
         ' and ': ' 和 ',
