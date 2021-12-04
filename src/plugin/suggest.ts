@@ -33,16 +33,16 @@ export class Suggest {
     readonly nsScore: {
         [k in EHTNamespaceName]: number;
     } = {
-        female: 5,
-        male: 4.995,
-        mixed: 4.5,
-        language: 1,
-        other: 1.5,
-        artist: 3,
-        cosplayer: 2.7,
-        group: 2.5,
-        parody: 4,
-        character: 3.5,
+        other: 10,
+        female: 9,
+        male: 8.5,
+        mixed: 8,
+        language: 2,
+        artist: 2.5,
+        cosplayer: 2.4,
+        group: 2.2,
+        parody: 3.3,
+        character: 2.8,
         reclass: 1,
         rows: 0,
     };
