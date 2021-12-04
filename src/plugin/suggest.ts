@@ -45,6 +45,7 @@ export class Suggest {
         character: 2.8,
         reclass: 1,
         rows: 0,
+        temp: 0.1,
     };
 
     private tagList: TagItem[] = [];

@@ -30,7 +30,8 @@ export type EHTNamespaceName =
     | 'male'
     | 'female'
     | 'mixed'
-    | 'other';
+    | 'other'
+    | 'temp';
 
 export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'cos' | 'm' | 'f' | 'x' | 'o';
 

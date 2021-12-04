@@ -58,11 +58,12 @@ const shortNsDic: Record<EHTNamespaceName, EHTNamespaceNameShort> = {
     female: 'f',
     mixed: 'x',
     other: 'o',
+    temp: '',
 };
 @Service()
 export class Tagging {
     namespace(ns: string): EHTNamespaceName {
-        if (!ns) return 'other';
+        if (!ns) return 'temp';
         if (ns in nsDic) return nsDic[ns];
         ns = ns.toLowerCase();
         if (ns in nsDic) return nsDic[ns];
@@ -70,7 +71,7 @@ export class Tagging {
         if (ns in nsDic) return nsDic[ns];
         ns = ns[0];
         if (ns in nsDic) return nsDic[ns];
-        return 'other';
+        return 'temp';
     }
     ns(ns: string): EHTNamespaceNameShort {
         const fns = this.namespace(ns);
@@ -112,7 +113,9 @@ export class Tagging {
         return `https://ehtt.vercel.app/edit/${namespace}/${encodeURIComponent(key)}`;
     }
 
-    readonly namespaceTranslate: Record<EHTNamespaceName | 'temp', string> = {
+    readonly suggestUrl = 'https://forums.e-hentai.org/index.php?showtopic=246656';
+
+    readonly namespaceTranslate: Record<EHTNamespaceName, string> = {
         rows: '行名',
         artist: '艺术家',
         cosplayer: 'Coser',

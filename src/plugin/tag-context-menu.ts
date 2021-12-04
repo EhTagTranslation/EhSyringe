@@ -33,7 +33,7 @@ export class TagContextMenu implements Menu {
             return;
         }
         const seg = info.url.split('/').pop()?.replace(/\+/g, ' ').split(':') ?? [];
-        const namespace = seg.length <= 1 ? 'other' : (seg[0] as EHTNamespaceName);
+        const namespace = seg.length <= 1 ? 'temp' : (seg[0] as EHTNamespaceName);
         const key = seg.pop() ?? '';
         openInTab(this.tagging.editorUrl({ namespace, key }));
     };

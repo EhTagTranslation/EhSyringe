@@ -99,6 +99,7 @@ export class Introduce {
         if (canceled()) {
             return;
         }
+        const editorUrl = this.tagging.editorUrl({ namespace, key });
         if (tagData) {
             // language=HTML
             this.introduceBox.innerHTML = `
@@ -110,11 +111,18 @@ export class Introduce {
                 <span class="ehs-close">×</span>
             </div>
             <div class="ehs-content">
-                ${tagData.intro ? tagData.intro : `<div class="ehs-no-intro">无介绍</div> `}
+                ${
+                    tagData.intro
+                        ? tagData.intro
+                        : `
+                    <div class="ehs-no-intro">
+                        <h3>无介绍</h3>
+                        <center><a href="${editorUrl}" target="_blank">提供介绍</a></center>
+                    </div> `
+                }
             </div>
             <div class="ehs-href">${tagData.links ?? ''}</div>`;
         } else {
-            const editorUrl = this.tagging.editorUrl({ namespace, key });
             // language=HTML
             this.introduceBox.innerHTML = `
             <div class="ehs-title">
@@ -126,12 +134,18 @@ export class Introduce {
             </div>
             <div class="ehs-content">
                 <div class="ehs-no-translation">
-                    <div class="text">
-                        该标签尚未翻译
-                    </div>
-                    <div class="button">
+                    <h3>该标签尚未翻译</h3>
+                ${
+                    namespace === 'temp'
+                        ? `
+                    <p>
+                        该标签尚未正式添加至 EH 标签系统。在提供翻译前，需要在 <a href="${this.tagging.suggestUrl}" target="_blank">EH 论坛</a>发帖将该标签移动到合适的命名空间。
+                    </p>`
+                        : `
+                    <center>
                         <a href="${editorUrl}" target="_blank">提供翻译</a>
-                    </div>
+                    </center>`
+                }
                 </div>
             </div>`;
         }
@@ -161,7 +175,7 @@ export class Introduce {
         const m = /'(.*)'/gi.exec(target.getAttribute('onclick') ?? '');
         if (!m?.[1]) return;
         const m2 = m[1].split(':');
-        let namespace: EHTNamespaceName = 'other';
+        let namespace: EHTNamespaceName = 'temp';
         let tag = '';
         if (m2.length === 1) {
             tag = m2[0];
