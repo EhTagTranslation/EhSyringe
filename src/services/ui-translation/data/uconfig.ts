@@ -83,8 +83,11 @@ merge(/^\/uconfig\.php/, undefined, {
     ' character': ' 角色',
     ' group': ' 社团',
     ' artist': ' 艺术家',
+    ' cosplayer': ' Coser',
     ' male': ' 男性',
     ' female': ' 女性',
+    ' mixed:': ' 混合',
+    ' other:': ' 其他',
 
     'Tag Filtering Threshold': '标签筛选阈值',
     'You can soft filter tags by adding them to ': '你可以通过将标签加入「',
