@@ -35,9 +35,11 @@ export class Suggest {
     } = {
         female: 5,
         male: 4.995,
-        misc: 4.5,
+        mixed: 4.5,
         language: 1,
+        other: 1.5,
         artist: 3,
+        cosplayer: 2.7,
         group: 2.5,
         parody: 4,
         character: 3.5,

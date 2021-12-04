@@ -55,9 +55,12 @@ merge(
         'character:': '角色：',
         'group:': '社团：',
         'artist:': '艺术家：',
+        'cosplayer:': 'Coser：',
         'female:': '女性：',
         'male:': '男性：',
-        'misc:': '杂项：',
+        'mixed:': '混合：',
+        'other:': '其他：',
+        'temp:': '临时：',
 
         'Japanese \xA0': '日语 \xA0',
         'English \xA0': '英语 \xA0',

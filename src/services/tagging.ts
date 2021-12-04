@@ -5,51 +5,76 @@ import escapeHtml from 'escape-html';
 import emojiRegex from 'emoji-regex';
 
 const emojiReg = emojiRegex();
+const nsDic: { [k: string]: EHTNamespaceName } = {
+    r: 'reclass',
+    reclass: 'reclass',
 
+    l: 'language',
+    language: 'language',
+    lang: 'language',
+
+    o: 'other',
+    other: 'other',
+
+    p: 'parody',
+    parody: 'parody',
+    series: 'parody',
+
+    c: 'character',
+    char: 'character',
+    character: 'character',
+
+    cos: 'cosplayer',
+    coser: 'cosplayer',
+    cosplayer: 'cosplayer',
+
+    g: 'group',
+    group: 'group',
+    creator: 'group',
+    circle: 'group',
+
+    a: 'artist',
+    artist: 'artist',
+
+    m: 'male',
+    male: 'male',
+
+    f: 'female',
+    female: 'female',
+
+    x: 'mixed',
+    mixed: 'mixed',
+};
+const shortNsDic: Record<EHTNamespaceName, EHTNamespaceNameShort> = {
+    rows: '',
+    reclass: 'r',
+    language: 'l',
+    parody: 'p',
+    character: 'c',
+    group: 'g',
+    artist: 'a',
+    cosplayer: 'cos',
+    male: 'm',
+    female: 'f',
+    mixed: 'x',
+    other: 'o',
+};
 @Service()
 export class Tagging {
-    readonly nsDic: { [k: string]: EHTNamespaceName } = {
-        '': 'misc',
-        misc: 'misc',
-        miscellaneous: 'misc',
-        r: 'reclass',
-        reclass: 'reclass',
-        l: 'language',
-        language: 'language',
-        lang: 'language',
-        p: 'parody',
-        parody: 'parody',
-        series: 'parody',
-        c: 'character',
-        char: 'character',
-        character: 'character',
-        g: 'group',
-        group: 'group',
-        creator: 'group',
-        circle: 'group',
-        a: 'artist',
-        artist: 'artist',
-        m: 'male',
-        male: 'male',
-        f: 'female',
-        female: 'female',
-    };
-
     namespace(ns: string): EHTNamespaceName {
-        if (!ns) return 'misc';
-        if (ns in this.nsDic) return this.nsDic[ns];
+        if (!ns) return 'other';
+        if (ns in nsDic) return nsDic[ns];
         ns = ns.toLowerCase();
-        if (ns in this.nsDic) return this.nsDic[ns];
+        if (ns in nsDic) return nsDic[ns];
         ns = ns.trim();
-        if (ns in this.nsDic) return this.nsDic[ns];
+        if (ns in nsDic) return nsDic[ns];
         ns = ns[0];
-        if (ns in this.nsDic) return this.nsDic[ns];
-        return 'misc';
+        if (ns in nsDic) return nsDic[ns];
+        return 'other';
     }
     ns(ns: string): EHTNamespaceNameShort {
         const fns = this.namespace(ns);
-        if (fns === 'misc') return '';
-        return fns[0] as EHTNamespaceNameShort;
+        return shortNsDic[fns];
     }
 
     removePara(name: string): string {
@@ -87,17 +112,20 @@ export class Tagging {
         return `https://ehtt.vercel.app/edit/${namespace}/${encodeURIComponent(key)}`;
     }
 
-    readonly namespaceTranslate: Record<EHTNamespaceName, string> = {
+    readonly namespaceTranslate: Record<EHTNamespaceName | 'temp', string> = {
         rows: '行名',
         artist: '艺术家',
+        cosplayer: 'Coser',
         parody: '原作',
         character: '角色',
         group: '团队',
         language: '语言',
+        other: '其他',
         female: '女',
         male: '男',
+        mixed: '混',
         reclass: '重新分类',
-        misc: '杂项',
+        temp: '临时',
     };
 
     makeTagMatchHtml(suggestion: Suggestion, markTag = 'mark'): { en: string; cn: string } {

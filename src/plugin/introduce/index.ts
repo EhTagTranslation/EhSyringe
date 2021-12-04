@@ -161,7 +161,7 @@ export class Introduce {
         const m = /'(.*)'/gi.exec(target.getAttribute('onclick') ?? '');
         if (!m?.[1]) return;
         const m2 = m[1].split(':');
-        let namespace: EHTNamespaceName = 'misc';
+        let namespace: EHTNamespaceName = 'other';
         let tag = '';
         if (m2.length === 1) {
             tag = m2[0];

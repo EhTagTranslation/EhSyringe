@@ -26,11 +26,13 @@ export type EHTNamespaceName =
     | 'character'
     | 'group'
     | 'artist'
+    | 'cosplayer'
     | 'male'
     | 'female'
-    | 'misc';
+    | 'mixed'
+    | 'other';
 
-export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'm' | 'f';
+export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'cos' | 'm' | 'f' | 'x' | 'o';
 
 export interface EHTNamespace {
     namespace: EHTNamespaceName;
