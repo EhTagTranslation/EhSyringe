@@ -38,7 +38,7 @@
         "@typescript-eslint/eslint-plugin": "^5.7.0",
         "@typescript-eslint/parser": "^5.7.0",
         "babel-loader": "^8.2.3",
-        "copy-webpack-plugin": "^10.1.0",
+        "copy-webpack-plugin": "^10.2.0",
         "css-loader": "^6.5.1",
         "cssnano": "^5.0.12",
         "eslint": "^8.4.1",
