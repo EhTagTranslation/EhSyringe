@@ -35,6 +35,7 @@ merge(
         // 'Cosplay': '',
         'Asian Porn': '亚洲色情',
         Misc: '杂项',
+        Private: '私有',
 
         'Show Advanced Options': '显示高级选项',
         'Show File Search': '文件搜索',
