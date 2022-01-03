@@ -122,7 +122,8 @@ merge(
         [/Average: ([\d.]+)/, '平均值：$1'],
         [/Rate as ([\d.]+) stars?/, '$1 星'],
         [/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）'],
-        [/Posted on (.*?) by:\s*/, `评论时间：$1 \xA0作者：`],
+        [/^Posted on (.*?) by:\s*/, `评论时间：$1 \xA0作者：`],
+        [/^Posted on (.*?)\s*/, `评论时间：$1`],
         [/^, added (.*?)$/, `，更新于 $1`],
         [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '],
         [

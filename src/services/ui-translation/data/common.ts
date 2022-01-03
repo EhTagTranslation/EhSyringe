@@ -89,6 +89,7 @@ merge(
         Published: '发布时间',
         Title: '标题',
         Uploader: '上传者',
+        '(Disowned)': '(已放弃)',
 
         'Search Gallery Name': '搜索名称',
         'Search Gallery Tags': '搜索标签',
