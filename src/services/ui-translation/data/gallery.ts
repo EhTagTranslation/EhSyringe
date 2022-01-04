@@ -157,3 +157,87 @@ merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
     'Create New Petition': '提交新申请',
     Back: '返回',
 });
+
+merge(/\/g\/\d*?\/[0-9a-f]\//, undefined, {
+    'E-Hentai Downloader ': 'E-Hentai 下载器 ',
+    'Estimated Limits Cost: 22': '',
+    'Download Archive': '下载档案',
+    ' Number Images': ' 图像编号',
+    'Pages Range ': '页面范围 ',
+    'File Name ': '文件名 ',
+    'Path Name ': '路径 ',
+    'Basic': '基本',
+    'Advanced': '高级',
+    'Feedback': '反馈',
+    ' Number images (001：01.jpg, 002：01_theme.jpg, 003：02.jpg...) (Separator ': ' 图像编号 (001：01.jpg, 002：01_theme.jpg, 003：02.jpg...) (分隔符 ',
+    ' Number images with original page number if pages range is set': ' 如果设置了页面范围，则使用原始页码对图像进行编号',
+    ' Retry automatically when images download failed': ' 图像下载失败后自动重试',
+    ' Get downloaded images automatically when canceled downloading': ' 取消下载时自动获取下载的图像',
+    'Set Zip file name as ': '将Zip文件名设置为 ',
+    ' Show inputs to recheck file name and folder name before downloading': '下载前显示重新检查文件名和文件夹名的输入',
+    ' Never show notification if torrents are available': ' 如果种子可用就不显示通知',
+    ' show download progress in title': ' 在标题中显示下载进度',
+    'Never': '从不',
+    'Always': '总是',
+    'When current tab is not focused': '当前标签页处于后台时',
+    ' Disable requesting and showing image limits': ' 不显示图像限制',
+    ' Disable pre-calculating image limits cost': ' 不显示估计所需成本',
+    '* Available templates: ': '* 可用模板: ',
+    'Gallery GID': '画廊 GID',
+    'Gallery token': '画廊 token',
+    'Gallery title': '画廊标题',
+    'Gallery sub-title': '画廊副标题,
+    'Gallery category': '画廊类别',
+    'Gallery uploader': '画廊上传者',
+    ' Stream files and create Zip with file descriptors ': ' 流式传输文件并使用文件描述符创建Zip ',
+    ' Force download resized image (never download original image) ': ' 强制下载非原图(从不下载原始图像) ',
+    ' Never get new image URL when failed to download image ': ' 下载图像失败时，不要获取新的图像网址 ',
+    ' Never send "nl" GET parameter when getting new image URL ': ' 获取新图像网址时，不带上"nl"参数 ',
+    ' Never show warning when downloading a large gallery (>= 300 MB) ': ' 下载大型画廊时从不显示警告(>= 300 MB) ',
+    ' Play silent music during the process to avoid downloading freeze ': ' 在下载过程中播放无声音频，避免下载冻结 ',
+    'Record and save gallery info as ': '将画廊信息记录并保存为',
+    'File info.txt', '文件 info.txt',
+    'Zip comment': 'Zip 评论',
+    '...which includes ': '...包括 ',
+    'Title & Gallery Link': '标题和画廊链接',
+    'Metadatas': '元数据',
+    'Page Links': '页面链接',
+    ' Replace forbidden characters with full-width characters instead of dash (-)', ' 用全角字符代替破折号(-)，替换禁用字符',
+    ' Force drop downloaded images data when pausing download': ' 暂停下载时强制删除下载的图像数据',
+    ' Save as CBZ (Comic book archive) file': ' 另存为CBZ(漫画存档)文件',
+    ' Pass cookies manually when downloading images ': ' 下载图像时手动传递 cookie ',
+    ' Force as logged in (actual login state: yes, uid: 3829023) ': ' 强制登录(实际登录状态: 是，uid: 3829023) ',
+    '(1) This may reduce memory usage but some decompress softwares may not support the Zip file. See ': '(1) 这可能会减少内存使用，但某些解压缩软件可能不支持Zip文件。看 ',
+    'for more info.': '了解更多信息。',
+    '(3) If enabled you can save larger Zip files (probably ~1GB).': '(3) 如果启用，您可以保存更大的 Zip 文件（可能约 1GB）',
+    '(4) If enabled will play slient music to avoid downloading freeze when page is in background': '(4) 如果启用将播放无声音频以避免页面在后台时下载冻结',
+    '(See issue)': '(请看这里)',
+    '. Only needed if you have the problem, because the audio-playing icon maybe annoying.': '。只有遇到问题时才需要，因为音频播放图标可能很烦人。',
+    'Comic book archive': '漫画存档',
+    'is a file type to archive comic images, you can open it with some comic viewer like CDisplay/CDisplayEX, or just extract it as a Zip file. To keep the order of images, you can also enable numbering images.': '是一种存档漫画图像的文件类型，您可以使用 CDisplay/CDisplayEX 等漫画查看器打开它，或者将其解压缩为 Zip 文件。为了保持图像的顺序，您还可以启用对图像进行编号。'
+    "(6) If you cannot original images, but you've already logged in and your account is not blocked or used up your limits, it may caused by your cookies is not sent to the server. This feature may helps you to pass your current cookies to the download request, but please enable it ONLY if you cannot download any original images.": '(6) 如果您无法下载原始图像，但是您已经登录并且您的帐户没有被阻止或用完您的限制，这可能是由于您的cookie没有发送到服务器。此功能可以帮助您将当前的 cookie 传递给下载请求，但仅当您无法下载任何原始图像时才启用它。',
+    "(7) If you have already logged in, but the script detects that you're not logged in, you can enable this to skip login check. Please note that if you are not logged in actually, the script will not work as expect.": '(7) 如果您已经登录，但脚本检测到您没有登录，您可以启用此功能以跳过登录检查。请注意，如果您没有实际登录，脚本将不会像预期的那样工作。',
+    'Save': '保存',
+    'Cancel': '取消',
+}, [
+    [/Estimated Limits Cost: (\d+)/, '估计所需成本: $1'],
+    [/Image Limits: (\d*?\/\d+)/, '图像限制: $1'],
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
