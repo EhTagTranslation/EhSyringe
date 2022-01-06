@@ -6880,10 +6880,10 @@ type-fest@^0.20.2:
   resolved "https://registry.npmmirror.com/type-fest/download/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha1-G/IH9LKPkVg2ZstfvTJ4hzAc1fQ=
 
-type-fest@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.npmmirror.com/type-fest/download/type-fest-2.8.0.tgz#39d7c9f9c508df8d6ce1cf5a966b0e6568dcc50d"
-  integrity sha512-O+V9pAshf9C6loGaH0idwsmugI2LxVNR7DtS40gVo2EXZVYFgz9OuNtOhgHLdHdapOEWNdvz9Ob/eeuaWwwlxA==
+type-fest@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.9.0.tgz#7a2d430dd966f52b6bc723da2aaa2c9867530551"
+  integrity sha512-uC0hJKi7eAGXUJ/YKk53RhnKxMwzHWgzf4t92oz8Qez28EBgVTfpDTB59y9hMYLzc/Wl85cD7Tv1hLZZoEJtrg==
 
 type-is@~1.6.18:
   version "1.6.18"
