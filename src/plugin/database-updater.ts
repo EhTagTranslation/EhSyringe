@@ -176,12 +176,10 @@ export class DatabaseUpdater {
         try {
             this.pushDownloadStatus({ info: '0%', progress: 0 });
             this.badge.set('0', '#4A90E2', 1);
-            const data = await this.database.getData(info, (event) => {
-                if (event.lengthComputable) {
-                    const percent = Math.floor((event.loaded / event.total) * 100);
-                    this.pushDownloadStatus({ info: `${percent}%`, progress: percent });
-                    this.badge.set(percent.toFixed(0), '#4A90E2', 1);
-                }
+            const data = await this.database.getData(info, (progress) => {
+                const percent = Math.floor(progress * 100);
+                this.pushDownloadStatus({ info: `${percent}%`, progress: percent });
+                this.badge.set(percent.toFixed(0), '#4A90E2', 1);
             });
             this.pushDownloadStatus({ info: '下载完成', progress: 100 });
             this.badge.set('100', '#4A90E2', 1);

@@ -59,6 +59,19 @@ export interface TagMap {
     [fullKey: string]: TagItem;
 }
 
+export interface GitHubAsset {
+    url: string;
+    id: number;
+    node_id: string;
+    name: string;
+    label: string;
+    size: number;
+    download_count: number;
+    created_at: string;
+    updated_at: string;
+    browser_download_url: string;
+}
+
 export interface GithubRelease {
     url: string;
     html_url: string;
@@ -70,4 +83,5 @@ export interface GithubRelease {
     created_at: string;
     published_at: string;
     body: string;
+    assets: GitHubAsset[];
 }

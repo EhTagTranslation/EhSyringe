@@ -30,12 +30,22 @@ export class Database {
         }
     }
 
-    async getData(version: GithubRelease, progress?: Progress): Promise<EHTDatabase> {
+    async getData(version: GithubRelease, progress?: (p: number) => void): Promise<EHTDatabase> {
         const urls = this.dataUrls(version);
+        const asset = version.assets.find((asset) => asset.name === 'db.html.json');
         const errors: Error[] = [];
         for (const url of urls) {
             try {
-                const result = await this.http.download<EHTDatabase>(url, 'GET', progress, 'json');
+                const result = await this.http.download<EHTDatabase>(
+                    url,
+                    'GET',
+                    (ev) => {
+                        const total = ev.lengthComputable ? ev.total : asset != null ? asset.size : 0;
+                        if (total > 0) progress?.(ev.loaded / total);
+                        else progress?.(0);
+                    },
+                    'json',
+                );
                 if (result?.head?.sha === version.target_commitish && result?.data) {
                     this.logger.log(`从 ${url} 下载成功`);
                     return result;
