@@ -24,6 +24,10 @@ merge(/^\/uconfig\.php/, undefined, {
         ' 仅使用默认端口的客户端（可能稍慢。当防火墙或代理阻止非标准接口的流量时启用此项。）',
     ' No (Donator only. You will not be able to browse as many pages, enable only if having severe problems.)':
         ' 否（仅限赞助者。配额消耗会加快，只有出现问题时才启用。）',
+    ' No [Modern/HTTPS] (Donator only. You will not be able to browse as many pages. Recommended only if having severe problems.)':
+        ' 否 [现代/HTTPS]（仅限赞助者。配额消耗会加快，只有出现严重的问题时才启用。）',
+    ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)':
+        ' 否 [传统/HTTP]（仅限赞助者。可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用。）',
     'You appear to be browsing the site from ': '你看起来正在 ',
     ' or use a VPN or proxy in this country, which means the site will try to load images from H@H clients in this general geographic region. If this is incorrect, or if you want to use a different region for any reason (like if you are using a split tunneling VPN), you can select a different country below.':
         ' 浏览此网页，或是使用了一个来自此处的 VPN，这意味着网站将尝试通过在此区域的 H@H 客户端加载图片。如果该结果不正确，或你想通过其他地区的 H@H 客户端加载图片（例如你正在使用分割隧道 VPN），你可以在下方选择一个不同的区域。',
