@@ -22,8 +22,6 @@ merge(/^\/uconfig\.php/, undefined, {
     ' Any client (Recommended)': ' 所有客户端（推荐）',
     ' Default port clients only (Can be slower. Enable if behind firewall/proxy that blocks outgoing non-standard ports.)':
         ' 仅使用默认端口的客户端（可能稍慢。当防火墙或代理阻止非标准接口的流量时启用此项。）',
-    ' No (Donator only. You will not be able to browse as many pages, enable only if having severe problems.)':
-        ' 否（仅限赞助者。配额消耗会加快，只有出现问题时才启用。）',
     ' No [Modern/HTTPS] (Donator only. You will not be able to browse as many pages. Recommended only if having severe problems.)':
         ' 否 [现代/HTTPS]（仅限赞助者。配额消耗会加快，只有出现严重的问题时才启用。）',
     ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)':
