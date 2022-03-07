@@ -71,7 +71,7 @@
     },
     "dependencies": {
         "core-js": "^3.21.1",
-        "emoji-regex": "^10.0.0",
+        "emoji-regex": "^10.0.1",
         "escape-html": "^1.0.3",
         "idb-keyval": "^6.1.0",
         "lit-html": "^2.2.0",
