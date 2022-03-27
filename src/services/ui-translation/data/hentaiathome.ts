@@ -186,8 +186,8 @@ merge(
             '停止向磁盘写入日志记录。这将少量减少磁盘活动。错误仍然被记录。',
         'Run in low-memory mode. This will somewhat reduce memory requirements, but will lead to increased disk activity.':
             '在低内存模式下运行。这会在一定程度上减少内存需求，但会导致磁盘活动增加。',
-        'Use this client as your designated H@H Downloader. Only necessary if you have multiple clients. (H@H 1.3+ required)':
-            '将此客户端用作您指定的 H@H 下载器。仅当您有多个客户端时才需要。（需要 H@H 1.3+）',
+        'Use this client as your designated H@H Downloader. Only necessary if you have multiple clients.':
+            '将此客户端用作您指定的 H@H 下载器。仅当您有多个客户端时才需要。',
         '\n\t\tNote that any changes you make here will be applied the next time your client pings the server, which usually happens every five minutes. Some changes will not be applied until next restart. If you are changing the Port Number or reseting your key, you should exit Hentai@Home before hitting the button below.\n\t\t':
             '请注意，您在此处所做的任何更改将在您的客户端下次 ping 服务器时应用，这通常每五分钟发生一次。某些更改直到下次重新启动时才会应用。如果您正在更改端口号或重置您的 Key，您应该在点击下面的按钮之前退出 Hentai@Home。',
 
