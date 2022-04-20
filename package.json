@@ -37,7 +37,7 @@
         "@types/webextension-polyfill": "^0.8.3",
         "@typescript-eslint/eslint-plugin": "^5.20.0",
         "@typescript-eslint/parser": "^5.20.0",
-        "babel-loader": "^8.2.4",
+        "babel-loader": "^8.2.5",
         "copy-webpack-plugin": "^10.2.4",
         "css-loader": "^6.7.1",
         "cssnano": "^5.1.7",
@@ -70,7 +70,7 @@
         "yargs": "^17.4.1"
     },
     "dependencies": {
-        "core-js": "^3.22.0",
+        "core-js": "^3.22.1",
         "emoji-regex": "^10.1.0",
         "escape-html": "^1.0.3",
         "idb-keyval": "^6.1.0",

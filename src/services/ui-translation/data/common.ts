@@ -42,7 +42,7 @@ merge(
         'E-Hentai Galleries: The Free Hentai Doujinshi, Manga and Image Gallery System':
             'E-Hentai: 一个免费的绅士同人志、漫画和图片的图库系统',
         'Now With Layers': '有了洋葱网址',
-        'Onion': '洋葱网址',
+        Onion: '洋葱网址',
         'Visit the E-Hentai Forums': '前往 E-Hentai 论坛',
         'Play the HentaiVerse Minigame': '玩 HentaiVerse 小游戏',
         'Lo-Fi Version': '低保真版',
