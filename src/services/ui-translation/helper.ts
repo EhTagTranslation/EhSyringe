@@ -10,7 +10,7 @@ export interface DataMap extends Replacements {
     readonly hosts?: readonly string[];
 }
 
-export const dataMaps = new Array<DataMap>();
+export const dataMaps: DataMap[] = [];
 
 export function merge(
     regex: RegExp,

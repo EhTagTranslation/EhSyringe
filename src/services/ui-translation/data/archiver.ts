@@ -25,3 +25,9 @@ merge(/^\/archiver\.php/, undefined, {
     'Please wait...': '请稍候...',
     Close: '取消',
 });
+
+merge(/^\/archive\//, '*.hath.network', {
+    'The file was successfully prepared, and is ready for download.': '该文件已准备就绪，可供下载',
+    'Click Here To Start Downloading': '点击这里开始下载',
+    'You can also copy this link to a download manager.': '你也可以将此链接复制到下载软件中',
+});

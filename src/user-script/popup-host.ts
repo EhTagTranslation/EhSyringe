@@ -1,4 +1,5 @@
 import { Container } from 'services';
+import { isHathNetwork } from 'utils/hosts';
 import { Popup } from 'plugin/popup';
 import { packageJson } from 'info';
 import { setBadge } from 'providers/utils';
@@ -94,14 +95,15 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
 }
 
 function shouldShowPopup(): boolean {
+    if (isHathNetwork(location.hostname)) return false;
     if (
         /^\/mpv\//i.test(location.pathname) ||
         location.pathname === '/archiver.php' ||
         location.pathname === '/gallerytorrents.php' ||
         location.pathname === '/gallerypopups.php'
-    ) {
+    )
         return false;
-    }
+
     return true;
 }
 
