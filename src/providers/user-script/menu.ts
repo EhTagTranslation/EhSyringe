@@ -65,7 +65,7 @@ class MenuProvider {
         return (this.menu = menu);
     }
 
-    readonly infoLists = new Array<MenuInfo>();
+    readonly infoLists: MenuInfo[] = [];
 
     menu?: HTMLMenuElement;
 

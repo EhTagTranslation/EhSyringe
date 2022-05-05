@@ -149,7 +149,7 @@ export class Syringe {
         });
         const body = document.querySelector('body');
         if (body) {
-            const nodes = new Array<Node>();
+            const nodes: Node[] = [];
             this.setBodyAttrs(body);
             const nodeIterator = document.createNodeIterator(body);
             let node = nodeIterator.nextNode();

@@ -123,8 +123,8 @@ export function createPopup(): void {
     const popup = popupBack.appendChild(document.createElement('div'));
     popup.id = 'eh-syringe-popup';
 
-    const closeListeners = new Array<() => unknown>();
-    const openListeners = new Array<() => unknown>();
+    const closeListeners: Array<() => unknown> = [];
+    const openListeners: Array<() => unknown> = [];
     popupBack.classList.add('close');
     popupBack.ontransitionend = (ev) => {
         if (ev.target !== popupBack) return;

@@ -59,7 +59,7 @@ export const syncStorage: SyncStorage = {
     set: (key, value) => localStorage.setItem(syncKey(key), JSON.stringify(value)),
     delete: (key) => localStorage.removeItem(syncKey(key)),
     keys: () => {
-        const keys = new Array<string>();
+        const keys = [];
         for (let index = 0; index < localStorage.length; index++) {
             const key = localStorage.key(index);
             if (key?.startsWith(mark)) {
