@@ -35,22 +35,22 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
         startX = 0,
         startY = 0;
 
-    el.addEventListener('mousedown', dragMouseDown, { passive: false });
+    el.addEventListener('pointerdown', dragMouseDown, { passive: false });
     el.addEventListener('click', elementClick, { passive: false });
 
     let moved = false;
 
-    function dragMouseDown(e: MouseEvent): void {
+    function dragMouseDown(e: PointerEvent): void {
         e.preventDefault();
         // get the mouse cursor position at startup:
         startX = mouseX = e.clientX;
         startY = mouseY = e.clientY;
         moved = false;
-        document.addEventListener('mouseup', closeDragElement, { passive: false });
-        document.addEventListener('mousemove', elementDrag, { passive: false });
+        document.addEventListener('pointerup', closeDragElement, { passive: false });
+        document.addEventListener('pointermove', elementDrag, { passive: false });
     }
 
-    function elementDrag(e: MouseEvent): void {
+    function elementDrag(e: PointerEvent): void {
         e.preventDefault();
         const currentX = Number.parseFloat(el.style.right);
         const currentY = Number.parseFloat(el.style.bottom);
@@ -71,11 +71,11 @@ function dragButton(el: HTMLElement, click: (e: MouseEvent) => void): void {
         }
     }
 
-    function closeDragElement(e: MouseEvent): void {
+    function closeDragElement(e: PointerEvent): void {
         e.preventDefault();
         // stop moving when mouse button is released:
-        document.removeEventListener('mouseup', closeDragElement);
-        document.removeEventListener('mousemove', elementDrag);
+        document.removeEventListener('pointerup', closeDragElement);
+        document.removeEventListener('pointermove', elementDrag);
         const finalX = clampX(Number.parseFloat(el.style.right));
         const finalY = clampY(Number.parseFloat(el.style.bottom));
         el.style.right = `${finalX}px`;
