@@ -24,6 +24,7 @@ export class Database {
                 `https://gitcdn.xyz/cdn/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
                 `https://rawcdn.githack.com/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
                 `https://cdn.statically.io/gh/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
+                `https://raw.githubusercontent.com/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`
             ];
         } catch {
             throw new Error(`GitHub 发布数据无法解析，可能需要更新插件版本`);
