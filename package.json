@@ -27,7 +27,7 @@
         "clean": "rimraf dist releases"
     },
     "devDependencies": {
-        "@babel/core": "^7.18.0",
+        "@babel/core": "^7.18.2",
         "@babel/plugin-transform-runtime": "^7.18.0",
         "@babel/preset-env": "^7.18.0",
         "@types/chrome": "^0.0.188",
