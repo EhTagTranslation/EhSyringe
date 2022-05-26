@@ -74,7 +74,7 @@
         "emoji-regex": "^10.1.0",
         "escape-html": "^1.0.3",
         "idb-keyval": "^6.1.0",
-        "lit-html": "^2.2.4",
+        "lit-html": "^2.2.5",
         "rxjs": "^7.5.5",
         "tslib": "^2.4.0",
         "typedi": "^0.10.0",
