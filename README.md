@@ -25,16 +25,16 @@ E 站注射器，将中文翻译注入到 E 站体内。
 ### Firefox 安装方法
 
 1. 前往 [Release 页面](../../releases)下载 xpi 文件
-2. 安装 Firefox 的[延长支持版（ESR）](//www.mozilla.org/firefox/organizations/)、[开发者版](//www.mozilla.org/firefox/developer/)或 [Nightly 版](//nightly.mozilla.org/)
+2. 安装 Firefox 的[延长支持版（ESR）](https://www.mozilla.org/firefox/organizations/)、[开发者版](https://www.mozilla.org/firefox/developer/)或 [Nightly 版](https://nightly.mozilla.org/)
 3. 打开 Firefox 配置编辑器（`about:config` 页），搜索 `xpinstall.signatures.required` 并将值设置为 `false`
 4. 打开 Firefox 附加组件管理器 `about:addons`，点击右上角设置菜单，选择“从文件安装附加组件”，选择下载的 zip 文件
 
-参考 [Firefox 中的附加组件签名](//support.mozilla.org/kb/add-ons-signing-firefox#w_dalioucllleeyzgaauoeoeoakekikakneojdeeniko)
+参考 [Firefox 中的附加组件签名](https://support.mozilla.org/kb/add-ons-signing-firefox#w_dalioucllleeyzgaauoeoeoakekikakneojdeeniko)
 
 ### 用户脚本（UserScript）安装方法
 
-1. [安装一个用户脚本管理器](//sleazyfork.org/help/installing-user-scripts)
-2. 前往 [Sleazy Fork](//sleazyfork.org/scripts/407833) 安装最新版本
+1. [安装一个用户脚本管理器](https://sleazyfork.org/help/installing-user-scripts)
+2. 前往 [Sleazy Fork](https://sleazyfork.org/scripts/407833) 安装最新版本
 
 > 也可以从 [GitHub Release](../../releases/latest/download/ehsyringe.user.js) 安装
 
@@ -56,7 +56,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   全站翻译（大部分)
 -   TAG 翻译
 -   TAG 介绍
--   TAG 翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](//ehtt.vercel.app/list/all) 条标签翻译）
+-   TAG 翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](https://ehtt.vercel.app/list/all) 条标签翻译）
 -   搜索框 TAG 输入提示
 
 ## 特点
