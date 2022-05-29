@@ -190,7 +190,7 @@ export default async (env = {}, argv = {}) => {
                     compatible: ['firefox >= 60', 'edge >= 16', 'chrome >= 61', 'safari >= 11', 'opera >= 48'],
                     match: manifestJson.content_scripts[0].matches,
                     exclude: manifestJson.content_scripts[0].exclude_matches,
-                    icon: `https://cdn.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
+                    icon: `https://fastly.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
                     updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
                     downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
                     'run-at': 'document-start',
