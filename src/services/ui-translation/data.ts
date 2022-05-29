@@ -14,6 +14,7 @@ import './data/login';
 import './data/logs';
 import './data/mytags';
 import './data/news';
+import './data/popular';
 import './data/search';
 import './data/stats';
 import './data/toplist';
