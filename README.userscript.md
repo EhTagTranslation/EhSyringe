@@ -1,12 +1,31 @@
-# EhSyringe 用户脚本版
+# EhSyringe
 
 <!-- 这个文件因为是用来做 GreasyFork 外链的简介的，所以不能用相对地址 -->
+
+[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/build/badge.svg)](https://github.com/EhTagTranslation/EhSyringe/actions)
 
 E 站注射器，将中文翻译注入到 E 站体内。
 
 这一针打下去你就会说中文了。
 
 ![image](https://user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
+
+## 安装
+
+> 也可以从 [GitHub Release](https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js) 安装
+
+> 如果你使用的是 Via、Alook 等对用户脚本支持不完善的浏览器，可以考虑使用以下代码加载插件
+>
+> ```js
+> (function () {
+>     if (/(^|\.)e[-x]hentai\.org$/i.test(location.hostname) && !document.getElementById('EhSyringe-Script')) {
+>         var script = document.createElement('script');
+>         script.id = 'EhSyringe-Script';
+>         script.src = 'https://sleazyfork.org/scripts/407833-ehsyringe/code/EhSyringe.user.js';
+>         document.documentElement.append(script);
+>     }
+> })();
+> ```
 
 ## 功能
 
@@ -15,18 +34,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   TAG 介绍
 -   TAG 翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](https://ehtt.vercel.app/list/all) 条标签翻译）
 -   搜索框 TAG 输入提示
--   支持 Via、Alook 等支持自定义脚本的手机浏览器，使用以下代码加载插件：
-
-```js
-(function () {
-    if (/(^|\.)e[-x]hentai\.org$/i.test(location.hostname) && !document.getElementById('EhSyringe-Script')) {
-        var script = document.createElement('script');
-        script.id = 'EhSyringe-Script';
-        script.src = 'https://sleazyfork.org/scripts/407833-ehsyringe/code/EhSyringe.user.js';
-        document.documentElement.append(script);
-    }
-})();
-```
+-   支持 Via、Alook 等支持自定义脚本的手机浏览器
 
 ## 特点
 

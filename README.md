@@ -58,11 +58,12 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   TAG 介绍
 -   TAG 翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.herokuapp.com/database/all/~badge)](https://ehtt.vercel.app/list/all) 条标签翻译）
 -   搜索框 TAG 输入提示
+-   支持 Via、Alook 等支持自定义脚本的手机浏览器
 
 ## 特点
 
--   在加载 DOM 过程替换翻译, 页面加载完直接是中文不会闪烁
 -   兼容 E-Hentai-Downloader 及熊猫书签
+-   在加载 DOM 过程替换翻译, 页面加载完直接是中文不会闪烁
 
 ## 截图预览
 
