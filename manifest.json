@@ -17,10 +17,7 @@
         "keyword": "ex"
     },
     "background": {
-        "scripts": [
-            "script/vendor.js",
-            "script/background.js"
-        ]
+        "scripts": ["script/vendor.js", "script/background.js"]
     },
     "browser_action": {
         "default_icon": {
@@ -40,13 +37,8 @@
                 "*://*.e-hentai.org/*",
                 "*://*.hath.network/*"
             ],
-            "exclude_matches": [
-                "*://forums.e-hentai.org/*"
-            ],
-            "js": [
-                "script/vendor.js",
-                "script/page.js"
-            ],
+            "exclude_matches": ["*://forums.e-hentai.org/*"],
+            "js": ["script/vendor.js", "script/page.js"],
             "run_at": "document_start"
         }
     ],

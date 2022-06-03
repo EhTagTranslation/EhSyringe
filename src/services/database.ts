@@ -1,6 +1,6 @@
 import { Service } from '.';
 import type { GithubRelease, EHTDatabase } from 'interface';
-import { Http, Progress } from './http';
+import { Http } from './http';
 import { Logger } from './logger';
 
 @Service()
