@@ -97,6 +97,7 @@ merge(
         'Back to Gallery': '返回图库',
 
         'Pending Expunge Petition': '待处理的删除请求',
+        'Active Expunge Petition': '完成的删除请求',
 
         'Submitted:': '提交于：',
         'Expunge Type:': '删除类型：',
@@ -105,11 +106,11 @@ merge(
         'Expunge Reason:': '删除原因：',
         'Conflict Gallery:': '冲突图库：',
 
-        'This petition will be ': '该情愿即将',
+        'This petition will be ': '该请求即将',
         ACTIVATED: '激活',
         ' in approximately ': '剩余',
         ' unless sufficiently downvoted.': '，除非有足够的否决票。',
-        'This petition was ': '该情愿已被',
+        'This petition was ': '该请求已被',
 
         'Report Type': '举报类型',
         '[Select a complaint type...]': '[请选择一个举报类型...]',
