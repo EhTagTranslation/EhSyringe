@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import webpack from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
-import WebExtensionPlugin from 'webpack-webextension-plugin';
+import _WebExtensionPlugin from '@webextension-toolbox/webpack-webextension-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackUserScript from 'webpack-userscript';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
@@ -11,6 +11,9 @@ import glob from 'glob';
 import { execaCommandSync } from 'execa';
 import semver from 'semver';
 import { fileURLToPath } from 'url';
+
+/** @type {typeof _WebExtensionPlugin} */
+const WebExtensionPlugin = _WebExtensionPlugin.default;
 
 const __dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 
