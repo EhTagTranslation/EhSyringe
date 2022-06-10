@@ -65,6 +65,7 @@ div#gd5 {
         }
     }
     .ehs-close {
+        user-select: none;
         cursor: pointer;
         font-size: 16px;
         opacity: 0.8;
@@ -73,6 +74,9 @@ div#gd5 {
         text-align: center;
         &:hover {
             opacity: 1;
+        }
+        &::after {
+            content: '\00d7';
         }
     }
     .ehs-content {
