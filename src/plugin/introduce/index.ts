@@ -101,12 +101,13 @@ export class Introduce {
         }
         const editorUrl = this.tagging.editorUrl({ namespace, key });
         if (tagData) {
+            const tagEn = `${this.tagging.namespace(tagData.ns)}:${tagData.key}`;
             // language=HTML
             this.introduceBox.innerHTML = `
             <div class="ehs-title">
-                <div>
+                <div title=${`${this.tagging.removeImagesAndEmoji(tagData.name)}\n${tagEn}`}>
                     <div class="ehs-cn">${this.tagging.markImagesAndEmoji(tagData.name)}</div>
-                    <div class="ehs-en">${this.tagging.namespace(tagData.ns)}:${tagData.key}</div>
+                    <div class="ehs-en">${tagEn}</div>
                 </div>
                 <span class="ehs-close">×</span>
             </div>
@@ -126,7 +127,7 @@ export class Introduce {
             // language=HTML
             this.introduceBox.innerHTML = `
             <div class="ehs-title">
-                <div>
+                <div title="${namespace}:${key}">
                     <div class="ehs-cn">${namespace}:${key}</div>
                     <div class="ehs-en">该标签尚未翻译</div>
                 </div>
