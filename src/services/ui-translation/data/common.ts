@@ -108,7 +108,7 @@ merge(
         'Between ': '介于 ',
         ' and ': ' 和 ',
         ' pages': ' 页',
-        // 'Hide Advanced Options': '隐藏高级选项',
+        'Hide Advanced Options': '隐藏高级选项',
         'Disable default filters for: ': '禁用默认筛选器',
         Language: '语言',
         Tags: '标签',
