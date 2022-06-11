@@ -118,7 +118,7 @@ export class Tagging {
     readonly namespaceTranslate: Record<EHTNamespaceName, string> = {
         rows: '行名',
         artist: '艺术家',
-        cosplayer: 'Coser',
+        cosplayer: '偶像',
         parody: '原作',
         character: '角色',
         group: '团队',

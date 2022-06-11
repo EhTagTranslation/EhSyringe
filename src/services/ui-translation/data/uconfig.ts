@@ -85,7 +85,7 @@ merge(/^\/uconfig\.php/, undefined, {
     ' character': ' 角色',
     ' group': ' 社团',
     ' artist': ' 艺术家',
-    ' cosplayer': ' Coser',
+    ' cosplayer': ' 偶像',
     ' male': ' 男性',
     ' female': ' 女性',
     ' mixed': ' 混合',
