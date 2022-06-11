@@ -22,3 +22,4 @@ import './data/torrents';
 import './data/uconfig';
 import './data/upload';
 import './data/watched';
+import './data/thirdparty';
