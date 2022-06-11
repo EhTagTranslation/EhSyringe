@@ -10,6 +10,7 @@ merge(
         'Archive Download': '存档下载',
         'Torrent Download': '种子下载',
         'Petition to Expunge': '申请删除',
+        'Expunge Petition Sent': '删除请求已发送',
         'Show Expunge Log': '显示删除日志',
         'Petition to Rename': '申请重命名',
         'Rename Petition Sent': '已发送的重命名申请',
@@ -94,6 +95,23 @@ merge(
         'Alright Already': '好的',
 
         'Back to Gallery': '返回图库',
+
+        'Pending Expunge Petition': '待处理的删除请求',
+        'Active Expunge Petition': '完成的删除请求',
+
+        'Submitted:': '提交于：',
+        'Expunge Type:': '删除类型：',
+        Replaced: '重复',
+        Forbidden: '违规内容',
+        'Expunge Reason:': '删除原因：',
+        'Conflict Gallery:': '冲突图库：',
+
+        'This petition will be ': '该请求即将',
+        ACTIVATED: '激活',
+        ' in approximately ': '剩余',
+        ' unless sufficiently downvoted.': '，除非有足够的否决票。',
+        'This petition was ': '该请求已被',
+
         'Report Type': '举报类型',
         '[Select a complaint type...]': '[请选择一个举报类型...]',
         'DMCA/Copyright Infringement': 'DMCA / 侵犯版权',
@@ -154,6 +172,9 @@ merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
     'Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.':
         '请输入清除原因和备注。它应包括副本的位置或违反的特定规则。',
     'No expunge petitions have been filed for this gallery': '此图库尚未有删除申诉',
+    'You must specify a valid expunge type to start new expunge petition.':
+        '你必须选择一个删除类型来创建新的删除申请。',
+    'You must provide a reason to start a new expunge petition.': '你必须提供一个理由来创建一个新的删除申请。',
     'Create New Petition': '提交新申请',
     Back: '返回',
 });

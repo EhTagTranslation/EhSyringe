@@ -38,6 +38,9 @@ merge(
         Private: '私有',
 
         'Show Advanced Options': '显示高级选项',
+        'The keyword ': '关键词 ',
+        ' is too common, and was therefore skipped. Use an exact search, combine it with other words by using quotes, or turn off tag searching.':
+            ' 过于常见，因此被忽略。通过引号将其与其他词汇组合起来，或者关闭标签搜索',
         'Show File Search': '文件搜索',
         'E-Hentai Galleries: The Free Hentai Doujinshi, Manga and Image Gallery System':
             'E-Hentai: 一个免费的绅士同人志、漫画和图片的图库系统',
@@ -105,7 +108,7 @@ merge(
         'Between ': '介于 ',
         ' and ': ' 和 ',
         ' pages': ' 页',
-        // 'Hide Advanced Options': '隐藏高级选项',
+        'Hide Advanced Options': '隐藏高级选项',
         'Disable default filters for: ': '禁用默认筛选器',
         Language: '语言',
         Tags: '标签',
