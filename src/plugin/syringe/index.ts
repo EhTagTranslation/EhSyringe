@@ -144,9 +144,9 @@ export class Syringe {
     }
     
     private codePatch(): void {
-        let script = document.createElement("script");
+        const script = document.createElement("script");
         script.innerText = `function toggle_advsearch_pane(b) { getComputedStyle(document.querySelector('#advdiv')).display == 'block' ? hide_advsearch_pane(b) : show_advsearch_pane(b)}`;
-        document.querySelector('body').appendChild(script);
+        document.querySelector('body')?.appendChild(script);
     }
 
     private init(): void {
