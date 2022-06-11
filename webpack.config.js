@@ -151,7 +151,9 @@ export default async (env = {}, argv = {}) => {
         config.optimization.minimize = false;
         const currentHEAD = execaCommandSync('git rev-parse HEAD').stdout.trim();
         const fileHost = devServer
-            ? `${config.devServer.https ? 'https' : 'http'}://localhost:${config.devServer.port || 8080}`
+            ? `${config.devServer.https ? 'https' : 'http'}://${config.devServer.host || 'localhost'}:${
+                  config.devServer.port || 8080
+              }`
             : `${pkgJson.homepage}/releases/latest/download`;
         /**
          * @param {string} chunkName

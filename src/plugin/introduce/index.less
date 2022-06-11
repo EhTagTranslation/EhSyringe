@@ -1,12 +1,22 @@
 #gmid {
-    display: flex;
-    #gd3,
+    display: grid;
+    grid:
+        'gd3 spa spa' auto
+        'gd3 gd4 gd5' auto
+        / auto 1fr auto;
+    #gd3 {
+        grid-area: gd3;
+    }
+    #spa {
+        grid-area: spa;
+        width: auto;
+    }
     #gd4 {
-        flex: none;
+        grid-area: gd4;
+        width: auto;
     }
     #gd5 {
-        flex: auto;
-        width: auto;
+        grid-area: gd5;
     }
 }
 
@@ -22,17 +32,13 @@ div#gd5 {
 
 #ehs-introduce-box {
     position: absolute;
-    left: 0px;
-    top: 0px;
-    bottom: 0;
-    right: -5px;
+    inset: 0 -5px 0 0;
     overflow: auto;
-    background: #edebdf;
     text-align: left;
     display: flex;
-    flex-direction: column;
-    border-radius: 0 0 5px 0;
-
+    flex-flow: column;
+    border-radius: 0 0 6px 0;
+    background: #edebdf;
     .ehs-title {
         flex: none;
         margin: 0 8px;
@@ -82,9 +88,16 @@ div#gd5 {
     .ehs-content {
         flex: auto;
         overflow: auto;
-        padding: 8px;
+        margin: 4px 0;
+        padding: 4px 8px;
+        scrollbar-width: thin;
+        scrollbar-color: #5c0d12 transparent;
+
         &::-webkit-scrollbar {
-            width: 2px;
+            width: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #5c0d12;
         }
         abbr[title] {
             padding: 0 1px;
@@ -115,11 +128,18 @@ div#gd5 {
 body.ex {
     #ehs-introduce-box {
         background: #4f535b;
+        border-radius: 0;
         .ehs-title {
             border-bottom: 1px solid #000;
         }
         .ehs-href {
             border-top: 1px solid #000;
+        }
+        .ehs-content {
+            scrollbar-color: #000 transparent;
+            &::-webkit-scrollbar-thumb {
+                background: #000;
+            }
         }
     }
 }
