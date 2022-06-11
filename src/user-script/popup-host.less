@@ -13,11 +13,11 @@
     &:hover {
         cursor: pointer;
     }
-}
 
-body.ex #eh-syringe-popup-button {
-    background-color: rgb(187, 187, 187);
-    border-color: rgb(146, 106, 146);
+    body.ex & {
+        background-color: rgb(187, 187, 187);
+        border-color: rgb(146, 106, 146);
+    }
 }
 
 #eh-syringe-popup-badge {
@@ -55,14 +55,19 @@ body.ex #eh-syringe-popup-button {
         visibility: visible;
         opacity: 0;
     }
-    #eh-syringe-popup {
-        position: absolute;
-        bottom: 12px + 36px + 24px;
-        right: 12px;
-        border: #ca8dca solid 1px;
-        box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px 2px;
-        background: whitesmoke;
-        border-radius: 6px;
-        overflow: hidden;
+}
+
+#eh-syringe-popup {
+    position: absolute;
+    bottom: 12px + 36px + 24px;
+    right: 12px;
+    border: #ca8dca solid 1px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px 2px;
+    background: rgb(240, 240, 240);
+    border-radius: 6px;
+    overflow: hidden;
+
+    body.ex & {
+        background: rgb(49, 49, 49);
     }
 }
