@@ -70,7 +70,7 @@
         "yargs": "^17.5.1"
     },
     "dependencies": {
-        "core-js": "^3.22.8",
+        "core-js": "^3.23.0",
         "emoji-regex": "^10.1.0",
         "escape-html": "^1.0.3",
         "idb-keyval": "^6.1.0",
