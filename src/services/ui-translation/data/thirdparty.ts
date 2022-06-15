@@ -127,7 +127,7 @@ merge(
         'eg. -10,12,14-20,27,30-40/2,50-60/3,70-': '例如：-10,12,14-20,27,30-40/2,50-60/3,70-',
 
         // todo: 替换元素的 title, 可能由于有换行的原因, 目前无法正确替换
-        // "1 point per 0.1 MB since August 2019, less than 0.1 MB will also be counted.\nDuring peak hours, downloading original images will cost GPs. The GP cost is the same as resetting viewing limits.\nEstimated GP cost is a bit more than using offical archive download, in case the sum of each images will be larger than the packed.": 
+        // "1 point per 0.1 MB since August 2019, less than 0.1 MB will also be counted.\nDuring peak hours, downloading original images will cost GPs. The GP cost is the same as resetting viewing limits.\nEstimated GP cost is a bit more than using offical archive download, in case the sum of each images will be larger than the packed.":
         //     '自2019年8月起，1 point 每 0.1 MB，不足 0.1 MB 也计算在内。\n高峰期下载原始图像将消费GP，GP成本与重置查看限制相同。\n预计GP成本比使用官方存档下载略高，因为每个图像的总和会比打包更大。',
 
         Save: '保存',

@@ -142,9 +142,9 @@ export class Syringe {
             .catch(this.logger.error);
         return this.storage.get('config');
     }
-    
+
     private codePatch(): void {
-        const script = document.createElement("script");
+        const script = document.createElement('script');
         script.innerText = `function toggle_advsearch_pane(b) { getComputedStyle(document.querySelector('#advdiv')).display == 'block' ? hide_advsearch_pane(b) : show_advsearch_pane(b)}`;
         document.querySelector('body')?.appendChild(script);
     }
