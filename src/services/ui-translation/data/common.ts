@@ -38,6 +38,7 @@ merge(
         Private: '私有',
 
         'Show Advanced Options': '显示高级选项',
+        'Hide Advanced Options': '隐藏高级选项',
         'The keyword ': '关键词 ',
         ' is too common, and was therefore skipped. Use an exact search, combine it with other words by using quotes, or turn off tag searching.':
             ' 过于常见，因此被忽略。通过引号将其与其他词汇组合起来，或者关闭标签搜索',
@@ -108,7 +109,6 @@ merge(
         'Between ': '介于 ',
         ' and ': ' 和 ',
         ' pages': ' 页',
-        'Hide Advanced Options': '隐藏高级选项',
         'Disable default filters for: ': '禁用默认筛选器',
         Language: '语言',
         Tags: '标签',
@@ -167,6 +167,8 @@ merge(
         'You have encountered a monster!': '你遇到了怪物！',
         'Click here to fight in the HentaiVerse.': '点击这里进入 HentaiVerse 战斗',
 
+        'File Search': '文件搜索',
+        'Hide File Search': '隐藏文件搜索',
         'If you want to combine a file search with a category/keyword search, upload the file first.':
             '如果要将文件和类别、关键词结合搜索，请先上传文件。',
         'Select a file to upload, then hit File Search. All public galleries containing this exact file will be displayed.':
@@ -176,7 +178,6 @@ merge(
         'Use Similarity Scan': '使用相似性查询',
         'Only Search Covers': '仅搜索封面',
         'Show Expunged': '显示被删除的图库',
-        'File Search': '文件搜索',
     },
     [
         [/^(\d+) pages?$/, '$1 页'],

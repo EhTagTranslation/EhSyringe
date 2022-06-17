@@ -145,12 +145,19 @@ export class Syringe {
 
     private codePatch(): void {
         const script = document.createElement('script');
-        script.innerText = `function toggle_advsearch_pane(b) { getComputedStyle(document.querySelector('#advdiv')).display == 'block' ? hide_advsearch_pane(b) : show_advsearch_pane(b)}`;
-        document.querySelector('body')?.appendChild(script);
+        script.innerText = `
+        function toggle_advsearch_pane(b) {
+            document.getElementById('advdiv').style.display == 'none' ? show_advsearch_pane(b) : hide_advsearch_pane(b)
+        }
+        function toggle_filesearch_pane(b) {
+            document.getElementById("fsdiv").style.display == 'none' ? show_filesearch_pane(b) : hide_filesearch_pane(b)
+        }
+        `;
+        document.body.appendChild(script);
     }
 
     private init(): void {
-        window.document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             this.documentEnd = true;
             this.codePatch();
         });
