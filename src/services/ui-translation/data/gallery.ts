@@ -5,12 +5,14 @@ merge(
     undefined,
     {
         'No tags have been added for this gallery yet.': '当前图库还没有标签',
+        'This gallery has been replaced; tags can no longer be added on this version.':
+            '当前图库已被替换，不允许在该版本添加新的标签',
 
         'Report Gallery': '举报图库',
         'Archive Download': '存档下载',
         'Torrent Download': '种子下载',
         'Petition to Expunge': '申请删除',
-        'Expunge Petition Sent': '删除请求已发送',
+        'Expunge Petition Sent': '删除申请已发送',
         'Show Expunge Log': '显示删除日志',
         'Petition to Rename': '申请重命名',
         'Rename Petition Sent': '已发送的重命名申请',
@@ -26,6 +28,7 @@ merge(
         'Visible:': '显示:',
         Yes: '是',
         'No (Expunged)': '否（已删除）',
+        'No (Deleted)': '否（已移除）',
         'No (Replaced)': '否（已被替换）',
         'Language:': '语言:',
         'File Size:': '文件大小:',
@@ -96,27 +99,6 @@ merge(
 
         'Back to Gallery': '返回图库',
 
-        'Pending Expunge Petition': '待处理的删除请求',
-        'Active Expunge Petition': '完成的删除请求',
-
-        'Submitted:': '提交于：',
-        'Expunge Type:': '删除类型：',
-        Replaced: '重复',
-        Forbidden: '违规内容',
-        'Expunge Reason:': '删除原因：',
-        'Conflict Gallery:': '冲突图库：',
-
-        'This petition will be ': '该请求即将',
-        ACTIVATED: '激活',
-        ' in approximately ': '剩余',
-        ' unless sufficiently downvoted.': '，除非有足够的否决票。',
-        'This petition was ': '该请求已被',
-
-        'Report Type': '举报类型',
-        '[Select a complaint type...]': '[请选择一个举报类型...]',
-        'DMCA/Copyright Infringement': 'DMCA / 侵犯版权',
-        'Child Pornography': '儿童色情',
-        'Other Illicit Content': '其他非法内容',
         'Watched Tag Galleries': '标签订阅',
         'Content Warning': '内容警告',
         'This gallery has been flagged as ': '这幅画已被标记为',
@@ -140,41 +122,111 @@ merge(
         [/Average: ([\d.]+)/, '平均值：$1'],
         [/Rate as ([\d.]+) stars?/, '$1 星'],
         [/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）'],
-        [/^Posted on (.*?) by:\s*/, `评论时间：$1 \xA0作者：`],
-        [/^Posted on (.*?)\s*/, `评论时间：$1`],
-        [/^, added (.*?)$/, `，更新于 $1`],
+        [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*/, `评论时间：$1 \xA0作者：`],
+        [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, `评论时间：$1`],
+        [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, `，更新于 $1`],
         [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '],
         [
             /^This gallery is unavailable due to a copyright claim by (.*)\.$/,
-            '由于 $1 提出的版权要求，这个画廊无法使用。',
+            '由于 $1 提出的版权要求，这个图库无法使用。',
         ],
     ],
 );
 
-merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
-    'Submit New Expunge Petition': '提交新的删除申请',
-    'Specify a valid objective reason why this gallery should be expunged.': '请说明要删除此库的客观原因。',
-    ' None / Withdraw Petition.': '无 / 撤回删除申请。',
-    ' This gallery is a duplicate of equal or lower quality of an earlier posted gallery.':
-        '此图库是之前发布的图库的质量相同或较低的副本。',
-    ' A newer higher-quality and clearly marked copy of this gallery has been uploaded.':
-        '这个图库的更高质量和标记清楚的副本已上传。',
-    ' This gallery contains either illicit content like child porn or anything else forbidden by the ':
-        '这个图库包含非法内容，如儿童色情或其他列于',
-    ', or otherwise falls under the ': '的禁止内容，或列于',
-    'Expunge Guidelines': '删除指南',
-    ' (specify below).': '的内容（在下方详细描述）。',
-    ' This gallery contains either illicit content like child porn or anything else that has been banned.':
-        '这个图库包含非法内容，如儿童色情或其他任何禁止的内容。',
-    'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.':
-        '在此处输入删除的详细原因。请注意，“我讨厌此内容/艺术家/上传者”等主观理由是无效的，并且可能导致帐户处罚/限制。',
-    'Enter the URL of the conflicting gallery, if applicable.': '如有必要，在此处输入冲突图库的 URL。',
-    'Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.':
-        '请输入清除原因和备注。它应包括副本的位置或违反的特定规则。',
-    'No expunge petitions have been filed for this gallery': '此图库尚未有删除申诉',
-    'You must specify a valid expunge type to start new expunge petition.':
-        '你必须选择一个删除类型来创建新的删除申请。',
-    'You must provide a reason to start a new expunge petition.': '你必须提供一个理由来创建一个新的删除申请。',
-    'Create New Petition': '提交新申请',
-    Back: '返回',
-});
+merge(
+    /^\/g\/\w+\/\w+\/.*act=expunge/,
+    undefined,
+    {
+        'Pending Expunge Petition': '待处理的删除申请',
+        'Active Expunge Petition': '完成的删除申请',
+        'Rejected Expunge Petition': '否决的删除申请',
+
+        'Submitted:': '提交于：',
+        'Expunge Type:': '删除类型：',
+        'Expunge Reason:': '删除原因：',
+        'Conflict Gallery:': '冲突图库：',
+
+        ' None / Withdraw Petition.': '无 / 撤回删除申请。',
+        Replaced: '已替换',
+        ' A newer higher-quality and clearly marked copy of this gallery has been uploaded.':
+            '这个图库的更高质量和标记清楚的副本已上传。',
+        Duplicate: '重复',
+        ' This gallery is a duplicate of equal or lower quality of an earlier posted gallery.':
+            '此图库是之前发布的图库的质量相同或较低的副本。',
+        Forbidden: '违规内容',
+        ' This gallery contains either illicit content like child porn or anything else that has been banned.':
+            '这个图库包含非法内容，如儿童色情或其他任何禁止的内容。',
+        ' This gallery contains either illicit content like child porn or anything else forbidden by the ':
+            '这个图库包含非法内容，如儿童色情或其他列于',
+        ', or otherwise falls under the ': '的禁止内容，或列于',
+        'Expunge Guidelines': '删除指南',
+        ' (specify below).': '的内容（在下方详细描述）。',
+
+        'Submit New Expunge Petition': '提交新的删除申请',
+        'Specify a valid objective reason why this gallery should be expunged.': '请说明要删除此库的客观原因。',
+        'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.':
+            '在此处输入删除的详细原因。请注意，“我讨厌此内容/艺术家/上传者”等主观理由是无效的，并且可能导致帐户处罚/限制。',
+        'Enter the URL of the conflicting gallery, if applicable.': '如有必要，在此处输入冲突图库的 URL。',
+        'Enter an explanation for this expunge here. It should include the location of the duplicate or the specific rule being violated.':
+            '请输入清除原因和备注。它应包括副本的位置或违反的特定规则。',
+        'No expunge petitions have been filed for this gallery': '此图库尚未有删除申诉',
+        'You must specify a valid expunge type to start new expunge petition.':
+            '你必须选择一个删除类型来创建新的删除申请。',
+        'You must provide a reason to start a new expunge petition.': '你必须提供一个理由来创建一个新的删除申请。',
+        'Create New Petition': '提交新申请',
+        Back: '返回',
+
+        ', who added:': '，并评论',
+        'Add a comment with this vote (optional)': '为投票添加一个评论（可选）',
+        'Vote +': '支持',
+        'Vote -': '反对',
+
+        'You have already voted ': '你已为此申请投出',
+        ' this expunge petition.': '票',
+        FOR: '支持',
+        AGAINST: '反对',
+
+        'This petition will be ': '该申请即将',
+        ' in approximately ': '剩余 ',
+        ' unless sufficiently downvoted.': '，除非有足够的否决票。',
+        'This petition was ': '该申请已被',
+        ACTIVATED: '激活',
+        REJECTED: '否决',
+        'New expunges for this gallery can currently only be started by trusted users.':
+            '目前只有可信用户能够为该图库提交新的删除申请',
+        'You cannot currently start an expunge for this gallery.': '目前无法为该图库提交新的删除申请',
+        'This petition is being processed and can no longer be voted on.': '该申请正在处理，无法继续投票',
+
+        'This expunge petition is active and prevents the gallery from being listed by default.':
+            '该删除申请已激活，图库已在列表中默认隐藏',
+        'If you have an objective reason for why this gallery should not have been expunged, you can initiate an appeal below.':
+            '如果您有客观原因说明不应该删除此画廊，您可以在下方提出申诉',
+        'Appeals must not be submitted if the gallery should be expunged but the wrong expunge type was used.':
+            '如果画廊应该被删除但使用了错误的删除类型，则不得提交申诉',
+        'Note that submitting invalid appeals can lead to account restrictions/penalities.':
+            '请注意，提交无效申诉可能会导致帐户限制/处罚',
+        'Enter a valid reason for why this expunge petition should be revoked here.':
+            '请在此处输入应撤销此删除申请的正当理由',
+        'Create New Appeal': '创建新申诉',
+    },
+    [
+        [/^on (\d\d\d\d-\d\d-\d\d \d\d:\d\d) by (.*), who added:$/, `投票于 $1 由 $2 ，并评论`],
+        [/^on (\d\d\d\d-\d\d-\d\d \d\d:\d\d) by (.*)$/, `投票于 $1 由 $2`],
+        [/^(\d+) minutes?$/, '$1 分钟'],
+        [/^(\d\d\d\d-\d\d-\d\d \d\d:\d\d) by (.*)$/, `$1 由 $2`],
+        [/^ on (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, `于 $1`],
+    ],
+);
+
+merge(
+    /^\/g\/\w+\/\w+\/.*report=/,
+    undefined,
+    {
+        'Report Type': '举报类型',
+        '[Select a complaint type...]': '[请选择一个举报类型...]',
+        'DMCA/Copyright Infringement': 'DMCA / 侵犯版权',
+        'Child Pornography': '儿童色情',
+        'Other Illicit Content': '其他非法内容',
+    },
+    [],
+);

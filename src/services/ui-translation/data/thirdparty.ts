@@ -106,14 +106,14 @@ merge(
         ' Force download resized image (never download original image) ': ' 强制下载非原图(从不下载原始图像) ',
         ' Never get new image URL when failed to download image ': ' 下载图像失败时，不要获取新的图像网址 ',
         ' Never send "nl" GET parameter when getting new image URL ': ' 获取新图像网址时，不带上"nl"参数 ',
-        ' Never show warning when downloading a large gallery (>= 300 MB) ': ' 下载大型画廊时从不显示警告(>= 300 MB) ',
+        ' Never show warning when downloading a large gallery (>= 300 MB) ': ' 下载大型图库时从不显示警告(>= 300 MB) ',
         ' Play silent music during the process to avoid downloading freeze ':
             ' 在下载过程中播放无声音频，避免下载冻结 ',
-        'Record and save gallery info as ': '将画廊信息记录并保存为',
+        'Record and save gallery info as ': '将图库信息记录并保存为',
         'File info.txt': '文件 info.txt',
         'Zip comment': 'Zip 评论',
         '...which includes ': '...包括 ',
-        'Title & Gallery Link': '标题和画廊链接',
+        'Title & Gallery Link': '标题和图库链接',
         Metadatas: '元数据',
         'Page Links': '页面链接',
         ' Replace forbidden characters with full-width characters instead of dash (-)':

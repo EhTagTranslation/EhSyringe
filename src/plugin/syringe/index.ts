@@ -321,11 +321,14 @@ export class Syringe {
                 if (!date) return t;
                 return `${this.time.diff(date, undefined, DateTime.hour)}`;
             });
-            repText = repText.replace(/\d\d \w{2,10} \d\d\d\d, \d\d:\d\d/gi, (t) => {
-                const date = Date.parse(t + ' UTC');
-                if (!date) return t;
-                return `${this.time.diff(date, undefined, DateTime.hour)}`;
-            });
+            repText = repText.replace(
+                /\d\d (January|February|March|April|May|June|July|August|September|October|November|December) \d\d\d\d, \d\d:\d\d/gi,
+                (t) => {
+                    const date = Date.parse(t + ' UTC');
+                    if (!date) return t;
+                    return `${this.time.diff(date, undefined, DateTime.hour)}`;
+                },
+            );
         }
         if (repText !== text) return repText;
 

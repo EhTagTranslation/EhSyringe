@@ -32,7 +32,7 @@ merge(
         'Send a Bitcoin (BTC) Wallet Address PM': '私信发送比特币（BTC）钱包地址',
         'Send a Bitcoin Cash (BCH) Wallet Address PM': '私信发送比特币现金（BCH）钱包地址',
         'You can use this form to send a private message from the gallery system with your wallet address. This guarantees that a given wallet address belongs to you and that it exists in the E-Hentai system.':
-            '你可以使用这个表单，以画廊系统（Gallery System）的名义发送一条包含钱包地址的私信。这保证了该钱包地址属于你，并且存在于 E-Hentai 系统中。',
+            '你可以使用这个表单，以图库系统（Gallery System）的名义发送一条包含钱包地址的私信。这保证了该钱包地址属于你，并且存在于 E-Hentai 系统中。',
         'Member name: ': '收件人：',
         Send: '发送',
         'You already sent a wallet message to that member.': '你已经向该用户发送了包含钱包地址的私信',
