@@ -34,6 +34,8 @@ merge(
         'File Size:': '文件大小:',
         'Length:': '页数:',
         'Favorited:': '收藏:',
+        Never: '从未',
+        Once: '1 次',
         'Rating:': '评分:',
         'Not Yet Rated': '还没有评分',
         'Average:': '平均:',
@@ -118,7 +120,7 @@ merge(
         'Sorry about that.': '很抱歉。',
     },
     [
-        [/^(\d+) times?$/, '$1 次'],
+        [/^(\d+) times$/, '$1 次'],
         [/Average: ([\d.]+)/, '平均值：$1'],
         [/Rate as ([\d.]+) stars?/, '$1 星'],
         [/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）'],
@@ -175,6 +177,9 @@ merge(
         'You must provide a reason to start a new expunge petition.': '你必须提供一个理由来创建一个新的删除申请。',
         'Create New Petition': '提交新申请',
         Back: '返回',
+
+        'You cannot start additional expunges on this gallery.': '你不能为该图库创建更多删除申请',
+        'Cancel Expunge Petition': '撤回删除申请',
 
         ', who added:': '，并评论',
         'Add a comment with this vote (optional)': '为投票添加一个评论（可选）',
