@@ -44,7 +44,7 @@
         "cssnano": "^5.1.12",
         "eslint": "^8.18.0",
         "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-prettier": "^4.1.0",
+        "eslint-plugin-prettier": "^4.2.1",
         "execa": "^6.1.0",
         "html-webpack-plugin": "^5.5.0",
         "less": "^4.1.3",
