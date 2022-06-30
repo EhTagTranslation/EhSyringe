@@ -96,8 +96,8 @@ merge(
         ' Show inputs to recheck file name and folder name before downloading':
             '下载前显示重新检查文件名和文件夹名的输入',
         ' Never show notification if torrents are available': ' 如果种子可用就不显示通知',
-        ' show download progress in title': ' 在标题中显示下载进度',
-        Never: '从不',
+        ' show download progress in title': ' 在标签栏中显示下载进度',
+        // Never: '从不', // 与页面中收藏 Never 从未 冲突。有好的冲突解决的方案时再修改。
         Always: '总是',
         'When current tab is not focused': '当前标签页处于后台时',
         ' Disable requesting and showing image limits': ' 不显示图像限制',
