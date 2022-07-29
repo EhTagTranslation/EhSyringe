@@ -15,7 +15,7 @@
     "json.schemas": [
         {
             "fileMatch": ["manifest.json"],
-            "url": "http://json.schemastore.org/webextension"
+            "url": "http://json.schemastore.org/chrome-manifest.json"
         }
     ],
     "cSpell.words": ["Tampermonkey", "ehgt", "ehsyringe", "exhentai", "hentai", "omnibox", "typedi"]
