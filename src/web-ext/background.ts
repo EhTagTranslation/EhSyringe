@@ -8,7 +8,7 @@ import { TagDatabase } from 'plugin/tag-database';
 import { TagContextMenu } from 'plugin/tag-context-menu';
 import { ImageContextMenu } from 'plugin/image-context-menu';
 
-Object.defineProperty(window, 'Container', { value: Container, enumerable: true });
+Object.defineProperty(globalThis, 'Container', { value: Container, enumerable: true });
 
 Container.get(ExtensionUpdater);
 Container.get(DatabaseUpdater);

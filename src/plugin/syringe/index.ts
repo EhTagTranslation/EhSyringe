@@ -145,15 +145,9 @@ export class Syringe {
 
     private codePatch(): void {
         const script = document.createElement('script');
-        script.innerText = `
-        function toggle_advsearch_pane(b) {
-            document.getElementById('advdiv').style.display == 'none' ? show_advsearch_pane(b) : hide_advsearch_pane(b)
-        }
-        function toggle_filesearch_pane(b) {
-            document.getElementById("fsdiv").style.display == 'none' ? show_filesearch_pane(b) : hide_filesearch_pane(b)
-        }
-        `;
+        script.src = new URL('./inject.js', import.meta.url).href;
         document.body.appendChild(script);
+        console.log(script);
     }
 
     private init(): void {
