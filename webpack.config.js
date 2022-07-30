@@ -224,7 +224,7 @@ export default async (env = {}, argv = {}) => {
         config.output = {
             path: path.resolve(__dirname, 'dist'),
             filename: 'script/[name].js',
-            publicPath: '',
+            publicPath: '/',
         };
         const vendor = env.vendor ? String(env.vendor) : undefined;
         config.plugins.push(
