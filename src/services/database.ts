@@ -44,9 +44,9 @@ export class Database {
                 const result = await this.http.download<EHTDatabase>(
                     url,
                     'GET',
-                    (ev) => {
-                        const total = ev.lengthComputable ? ev.total : asset != null ? asset.size : 0;
-                        if (total > 0) progress?.(ev.loaded / total);
+                    (loaded) => {
+                        const total = asset != null ? asset.size : 0;
+                        if (total > 0) progress?.(loaded / total);
                         else progress?.(0);
                     },
                     'json',

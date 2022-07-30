@@ -1,5 +1,5 @@
 import { Service } from '.';
-export type Progress = (ev: ProgressEvent) => void;
+export type Progress = (loaded: number) => void;
 
 @Service()
 export class Http {
@@ -9,32 +9,37 @@ export class Http {
     }
     download(url: string, method?: string, progress?: Progress, responseType?: 'arraybuffer'): Promise<ArrayBuffer>;
     download<T>(url: string, method?: string, progress?: Progress, responseType?: 'json'): Promise<T>;
-    download(
+    async download(
         url: string,
         method = 'GET',
         progress?: Progress,
         responseType: 'json' | 'arraybuffer' = 'arraybuffer',
     ): Promise<unknown> {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open(method, url);
-            xhr.responseType = responseType;
-            xhr.onload = () => {
-                if (xhr.status >= 300) {
-                    reject(new Error(`${method} ${url} ${xhr.statusText} (${xhr.status})`));
-                } else if (xhr.response instanceof ArrayBuffer && responseType === 'arraybuffer') {
-                    resolve(xhr.response);
-                } else if (responseType === 'json') {
-                    resolve(xhr.response);
-                } else {
-                    reject(new Error('数据无法解析'));
-                }
-            };
-            xhr.onerror = () => {
-                reject('加载失败');
-            };
-            if (progress) xhr.onprogress = progress;
-            xhr.send();
-        });
+        const res = await fetch(url, { method, redirect: 'follow', cache: 'no-cache' });
+        if (res.status >= 300 || !res.body) {
+            throw new Error(`${method} ${url} ${res.statusText} (${res.status})`);
+        }
+        const dataCache = [];
+        let receivedSize = 0;
+        const reader = res.body.getReader();
+        for (;;) {
+            const data = await reader.read();
+            if (data.done) break;
+            dataCache.push(data.value);
+            receivedSize += data.value.byteLength;
+            progress?.(receivedSize);
+            console.log(data);
+        }
+
+        const data = new Uint8Array(receivedSize);
+        let pos = 0;
+        for (const piece of dataCache) {
+            data.set(piece, pos);
+            pos += piece.byteLength;
+        }
+        if (responseType === 'arraybuffer') {
+            return data.buffer;
+        }
+        return JSON.parse(new TextDecoder().decode(data)) as unknown;
     }
 }
