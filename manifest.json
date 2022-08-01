@@ -17,7 +17,8 @@
         "keyword": "ex"
     },
     "background": {
-        "service_worker": "script/background.js"
+        "__chrome__service_worker": "script/background.js",
+        "__firefox__scripts": ["script/background.js"]
     },
     "action": {
         "default_icon": {
