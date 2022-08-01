@@ -31,13 +31,13 @@ export function sendNotification(info: NotificationInfo): void {
 }
 
 export function setBadge(info: Badge): void {
-    if (info.background && chrome.action.setBadgeBackgroundColor) {
+    if (info.background && typeof chrome.action.setBadgeBackgroundColor == 'function') {
         void chrome.action.setBadgeBackgroundColor({ color: info.background });
     }
     if (info.text != null) {
-        if (chrome.action.setBadgeText) {
+        if (typeof chrome.action.setBadgeText == 'function') {
             void chrome.action.setBadgeText({ text: info.text });
-        } else if (chrome.action.setTitle) {
+        } else if (typeof chrome.action.setTitle == 'function') {
             const extname = packageJson.displayName;
             const title = info.text ? `${extname} (${info.text})` : extname;
             void chrome.action.setTitle({ title });
