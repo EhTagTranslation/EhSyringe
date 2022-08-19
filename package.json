@@ -30,7 +30,7 @@
         "@babel/core": "^7.18.10",
         "@babel/plugin-transform-runtime": "^7.18.10",
         "@babel/preset-env": "^7.18.10",
-        "@types/chrome": "^0.0.193",
+        "@types/chrome": "^0.0.195",
         "@types/escape-html": "^1.0.2",
         "@types/node": "^18.7.6",
         "@types/tampermonkey": "^4.0.5",
