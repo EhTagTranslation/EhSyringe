@@ -28,7 +28,7 @@
     },
     "devDependencies": {
         "@babel/core": "^7.19.0",
-        "@babel/plugin-transform-runtime": "^7.18.10",
+        "@babel/plugin-transform-runtime": "^7.19.1",
         "@babel/preset-env": "^7.19.0",
         "@types/chrome": "^0.0.196",
         "@types/escape-html": "^1.0.2",
