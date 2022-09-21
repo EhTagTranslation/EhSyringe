@@ -155,6 +155,8 @@ merge(
         Duplicate: '重复',
         ' This gallery is a duplicate of equal or lower quality of an earlier posted gallery.':
             '此图库是之前发布的图库的质量相同或较低的副本。',
+        ' Content has been defaced by adding content-obstructing scanmarks, censorship or advertisements beyond what is present in the original artist release, or has been intentionally degraded to the point where legibility is an issue.':
+            '画廊内容被污损，添加了与内容无关的扫描水印、审查或广告，超出了原作者发布的内容或被故意降低画质，以至于影响了易读性。',
         Forbidden: '违规内容',
         ' This gallery contains either illicit content like child porn or anything else that has been banned.':
             '这个图库包含非法内容，如儿童色情或其他任何禁止的内容。',
