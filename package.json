@@ -75,7 +75,7 @@
         "escape-html": "^1.0.3",
         "idb-keyval": "^6.2.0",
         "lit-html": "^2.3.1",
-        "rxjs": "^7.5.6",
+        "rxjs": "^7.5.7",
         "tslib": "^2.4.0",
         "typedi": "^0.10.0",
         "webextension-polyfill": "^0.10.0"
