@@ -60,15 +60,11 @@ merge(
         'Max Burst Speed': '最大并发速率',
         'The maximum outgoing speed you want to allow for this client.': '此客户端允许的最大出站（上传）速度。',
         'Make sure this is less than or equal to your connection speed.': '请确保这个速度小于等于您的链接速度。',
-        'Must be at least 1000 KB/s': '不小于 1000 KB/s',
         'Max Transfer per Hour': '每小时最大传输量',
         'The maximum total outgoing data transfer the client can use per hour.':
             '客户端每小时可使用的最大传出数据总量。',
-        'Must be at least 300 MB/hour, or 0 for unlimited.': '必须至少为 300MB/小时，填 0 表示无限制',
         'Disk Cache Size': '磁盘缓存大小',
         'The maximum allowed disk space usage for the image cache.': '允许缓存占用的最大磁盘空间。',
-        ' Must be at least 10 GB. More is better, but space must be dedicated.':
-            '至少为 10GB。越多越好，但空间必须专用。',
         'Speed Test': '速度测试结果',
         'Go to ': '前往 ',
         ' and run a test against your closest server. After the test completes, paste the result URL here.\n\t\t\t':
@@ -79,9 +75,9 @@ merge(
         'Submit Application': '提交申请',
         'If this is a headless server that cannot run speedtest, contact ':
             '如果是一台无法运行 SpeedTest 的无头服务器，请联系 ',
-        'BOTH measurements of my test above is at least 80 Mbit/s *': '我的测速两个值均大于 80Mbps *',
-        'This client will be run on a computer that is online more or less constantly **':
-            '这个客户端将在一台经常在线的计算机上运行 **',
+        'BOTH measurements in my test above are at least 80 Mbit/s *': '我的测速两个值均大于 80Mbps *',
+        'This client will be run on a computer/server that is online 24/7 **':
+            '这个客户端将在一台 24 小时在线的计算机/服务器上运行 **',
         'If your connection speed is below the requirement, the resources taken up by tracking the client outweight those saved by having it in the network.':
             '如果链接速度低于要求，追踪客户端所消耗的资源将超过您客户端的贡献。',
         'This does not mean that you cannot restart the computer for updates or turn it off when you go on a vacation. It does however mean that if you shut it down at night, running H@H is not possible.':
@@ -107,7 +103,20 @@ merge(
         'Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
             'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
     },
-    [[/^(\d+\.?\d*\s*[KMGT]B) per week$/i, '每周 $1']],
+    [
+        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/hour$/, '$1$2/小时'],
+        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/s$/, '$1$2/s'],
+        [/^(\d+\.*\d*)?\s*([KMGTP]B) per week$/i, '每周 $1$2'],
+        [/^Must be at least (\d+\.*\d*)?\s*([KMGTP]B)\/s$/i, '不小于 $1$2/s'],
+        [
+            /^Must be at least (\d+\.*\d*)?\s*([KMGTP]B)\/hour, or 0 for unlimited.$/i,
+            '必须至少为 $1$2/小时，填 0 表示无限制',
+        ],
+        [
+            /^ Must be at least (\d+\.*\d*)?\s*([KMGTP]B). More is better, but space must be dedicated.$/i,
+            '至少为 $1$2。越多越好，但空间必须专用。',
+        ],
+    ],
 );
 
 merge(
@@ -207,7 +216,8 @@ merge(
             /The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least (\d+\.*\d*)\s*([KMGTP]B) if set./,
             '此客户端每小时允许发送的 MB 数。保留为 0 表示仅限制最大速度。如果设置，必须至少为 $1$2。',
         ],
-        [/^(\d+\.*\d*)\s*([KMGTP]B)\/hour$/, '$1 $2/小时'],
+        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/hour$/, '$1$2/小时'],
+        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/s$/, '$1$2/s'],
     ],
 );
 
