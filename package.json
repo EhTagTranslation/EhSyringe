@@ -32,7 +32,7 @@
         "@babel/preset-env": "^7.19.4",
         "@types/chrome": "^0.0.199",
         "@types/escape-html": "^1.0.2",
-        "@types/node": "^18.11.3",
+        "@types/node": "^18.11.5",
         "@types/tampermonkey": "^4.0.5",
         "@types/webextension-polyfill": "^0.9.1",
         "@typescript-eslint/eslint-plugin": "^5.40.1",
