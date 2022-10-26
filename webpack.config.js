@@ -215,10 +215,6 @@ export default async (env = {}, argv = {}) => {
             }),
         );
     } else {
-        config.optimization.splitChunks = {
-            name: 'vendor',
-            chunks: 'all',
-        };
         config.devtool = 'inline-source-map';
         config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
             const name = path.parse(el).name;
@@ -228,6 +224,7 @@ export default async (env = {}, argv = {}) => {
         config.output = {
             path: path.resolve(__dirname, 'dist'),
             filename: 'script/[name].js',
+            publicPath: '/',
         };
         const vendor = env.vendor ? String(env.vendor) : undefined;
         config.plugins.push(
