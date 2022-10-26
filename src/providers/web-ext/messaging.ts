@@ -1,6 +1,6 @@
 import { Messaging } from '../common/messaging';
 
-type Res = { handlers: number; data?: unknown; error?: unknown };
+type Res = { handlers: number; data?: unknown; error?: Error };
 type Req = { key: string; args: unknown };
 
 class MessagingCross extends Messaging {
@@ -17,7 +17,7 @@ class MessagingCross extends Messaging {
                 .then((res) => {
                     sendResponse({ handlers: handlers.size, data: res });
                 })
-                .catch((error: unknown) => {
+                .catch((error: Error) => {
                     sendResponse({ handlers: handlers.size, error });
                 });
             return true;
@@ -38,7 +38,7 @@ class MessagingCross extends Messaging {
                 return response;
             }
         } catch (ex) {
-            return { handlers: -1, error: ex };
+            return { handlers: -1, error: ex as Error };
         }
     }
 
