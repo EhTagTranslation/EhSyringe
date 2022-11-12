@@ -188,7 +188,7 @@ merge(/^\/uconfig\.php/, undefined, {
         '如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址（127.0.0.1:端口号）。如果客户端在网络上的其他计算机运行，请使用那台机器的内网 IP。某些浏览器的配置可能阻止外部网站访问本地网络，你必须将网站列入白名单才能工作。',
 
     'Original Images': '原始图像',
-    'Use original images instead of the resampled versions where applicable?':
+    'Use original images instead of the resampled versions where available?':
         '当可用的时候，使用原始图像代替压缩过的版本？',
     ' Yup, I can take it': '好的，我可以接受更多的配额消耗',
 
