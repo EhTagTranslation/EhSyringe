@@ -51,21 +51,32 @@ export class Suggest {
     private tagList: TagItem[] = [];
     private sha = '';
     private markTag(tag: TagItem, search: string, term: string): Suggestion {
-        const key = tag.key;
-        const cn = tag.cn.toLowerCase();
-        const keyIdx = key.indexOf(search);
-        const nameIdx = cn.indexOf(search);
-        const ns = this.tagging.namespace(tag.ns);
         let score = 0;
+        const ns = this.tagging.namespace(tag.ns);
         const match: Suggestion['match'] = {};
+
+        const key = tag.key;
+        const keyIdx = tag.key.indexOf(search);
         if (keyIdx >= 0) {
             score += ((this.nsScore[ns] * (search.length + 1)) / key.length) * (keyIdx === 0 ? 2 : 1);
             match.key = { start: keyIdx, end: keyIdx + search.length };
         }
+
+        const name = tag.cn.toLowerCase();
+        const nameIdx = name.indexOf(search);
         if (nameIdx >= 0) {
-            score += ((this.nsScore[ns] * (search.length + 1)) / cn.length) * (nameIdx === 0 ? 2 : 1);
+            score += ((this.nsScore[ns] * (search.length + 1)) / name.length) * (nameIdx === 0 ? 2 : 1);
             match.cn = { start: nameIdx, end: nameIdx + search.length };
         }
+
+        if (tag.introSearch) {
+            const intro = tag.introSearch;
+            const introIdx = intro.indexOf(search);
+            if (introIdx >= 0) {
+                score += ((this.nsScore[ns] * (search.length + 1)) / intro.length) * 0.5;
+            }
+        }
+
         return {
             tag,
             term,
@@ -75,10 +86,11 @@ export class Suggest {
     }
 
     async getSuggests(term: string, limit = -1): Promise<Suggestion[]> {
+        if (!term) return [];
         await this.update();
-        if (!this.tagList.length || !term) {
-            return [];
-        }
+        if (!this.tagList.length) return [];
+
+        const timer = this.logger.time(`搜索：${term}`);
         let sTerm = term.toLowerCase();
         const col = sTerm.indexOf(':');
         let tagList = this.tagList;
@@ -89,13 +101,17 @@ export class Suggest {
                 tagList = tagList.filter((tag) => tag.ns === ns);
             }
         }
-        let suggestions = tagList.map((tag) => this.markTag(tag, sTerm, term)).filter((st) => st.score > 0);
-        if (term) {
-            suggestions = suggestions.sort((st1, st2) => st2.score - st1.score);
+        let suggestions = [];
+        for (const tag of tagList) {
+            const st = this.markTag(tag, sTerm, term);
+            if (st.score > 0) suggestions.push(st);
         }
+        suggestions.sort((st1, st2) => st2.score - st1.score);
         if (limit > 0) {
             suggestions = suggestions.slice(0, limit);
         }
+        this.logger.debug(`搜索：${term}`, suggestions);
+        timer.end();
         return suggestions;
     }
 }

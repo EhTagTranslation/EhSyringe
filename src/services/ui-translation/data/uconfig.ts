@@ -99,6 +99,9 @@ merge(/^\/uconfig\.php/, undefined, {
     'Tag Watching Threshold': '标签订阅阈值',
     'Recently uploaded galleries will be included on the watched screen if it has at least one watched tag with positive weight, and the sum of weights on its watched tags add up to this value or higher. This threshold can be set between 0 and 9999.':
         '你可以通过将标签加入「我的标签」并设置一个正权重来关注它们。如果一个最近上传的作品所有标签的权重之和高于设定值，则它将会被包含在「关注」里。这个值可以设定为 0 ~ 9999。',
+    'Show Filtered Removal Count': '显示过滤数量',
+    'Show the "Your default filters removed XX galleries from this page" readout?':
+        '显示“你的过滤器已从此页面移除 XX 个结果”的消息？',
 
     'Excluded Languages': '排除语言',
     'If you wish to hide galleries in certain languages from the gallery list and searches, select them from the list below.':

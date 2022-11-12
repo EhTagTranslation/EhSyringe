@@ -81,15 +81,23 @@ export class Tagging {
     removePara(name: string): string {
         return name.replace(/^<p>(.+?)<\/p>$/, '$1').trim();
     }
-    markImagesAndEmoji(name: string): string {
-        return name
+    markImagesAndEmoji(text: string): string {
+        return text
             .replace(emojiReg, `<span ehs-emoji>$&</span>`)
             .replace(/<img(.*?)>/gi, `<img onerror="this.style.display='none'" ehs-icon $1>`);
     }
-    removeImagesAndEmoji(name: string): string {
-        return name
+    removeImagesAndEmoji(text: string): string {
+        return text
             .replace(emojiReg, '')
             .replace(/<img.*?>/gi, '')
+            .trim();
+    }
+    removeHtmlTags(text: string): string {
+        return text
+            .replace(/<abbr title="(\w+:)?([^"]+)" ns="(\w+)">/gi, '($3:$2)')
+            .replace(/<(img|a).*?>/gi, '')
+            .replace(/<(p|strong|em|abbr)>/gi, '')
+            .replace(/<\/(a|p|strong|em|abbr)>/gi, '')
             .trim();
     }
 

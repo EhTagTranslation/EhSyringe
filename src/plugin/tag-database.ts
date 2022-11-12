@@ -9,7 +9,7 @@ import { map, filter } from 'rxjs/operators';
 
 /* 数据存储结构版本, 如果不同 系统会自动执行 storageTagData 重新构建数据*/
 /* 注意这是本地数据结构, 主要用于 storageTagData内解析方法发生变化, 重新加载数据的, 与线上无关*/
-const DATA_STRUCTURE_VERSION = 11;
+const DATA_STRUCTURE_VERSION = 12;
 
 interface Data {
     map: TagMap;
@@ -87,9 +87,16 @@ export class TagDatabase {
                     key,
                     name: name,
                     cn: this.tagging.removeImagesAndEmoji(name),
+                    introSearch: '',
                 };
-                if (t.intro) ehTag.intro = t.intro;
-                if (t.links) ehTag.links = t.links;
+                if (t.intro) {
+                    ehTag.intro = t.intro;
+                    ehTag.introSearch += '\0' + this.tagging.removeHtmlTags(t.intro).toLowerCase();
+                }
+                if (t.links) {
+                    ehTag.links = t.links;
+                    ehTag.introSearch += '\0' + this.tagging.removeHtmlTags(t.links).toLowerCase();
+                }
                 map[fullKey] = ehTag;
             }
         });
