@@ -91,7 +91,7 @@ export class Suggest {
         if (!this.tagList.length) return [];
 
         const timer = this.logger.time(`搜索：${term}`);
-        let sTerm = term.toLowerCase();
+        let sTerm = term.toLowerCase().normalize();
         const col = sTerm.indexOf(':');
         let tagList = this.tagList;
         if (col >= 1) {
