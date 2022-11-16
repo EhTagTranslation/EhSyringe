@@ -156,7 +156,7 @@ merge(
         ' This gallery is a duplicate of equal or lower quality of an earlier posted gallery.':
             '此图库是之前发布的图库的质量相同或较低的副本。',
         ' Content has been defaced by adding content-obstructing scanmarks, censorship or advertisements beyond what is present in the original artist release, or has been intentionally degraded to the point where legibility is an issue.':
-            '画廊内容被污损，添加了与内容无关的扫描水印、审查或广告，超出了原作者发布的内容或被故意降低画质，以至于影响了易读性。',
+            '图库内容被污损，添加了与内容无关的扫描水印、审查或广告，超出了原作者发布的内容或被故意降低画质，以至于影响了易读性。',
         Forbidden: '违规内容',
         ' This gallery contains either illicit content like child porn or anything else that has been banned.':
             '这个图库包含非法内容，如儿童色情或其他任何禁止的内容。',
@@ -207,9 +207,9 @@ merge(
         'This expunge petition is active and prevents the gallery from being listed by default.':
             '该删除申请已激活，图库已在列表中默认隐藏',
         'If you have an objective reason for why this gallery should not have been expunged, you can initiate an appeal below.':
-            '如果您有客观原因说明不应该删除此画廊，您可以在下方提出申诉',
+            '如果您有客观原因说明不应该删除此图库，您可以在下方提出申诉',
         'Appeals must not be submitted if the gallery should be expunged but the wrong expunge type was used.':
-            '如果画廊应该被删除但使用了错误的删除类型，则不得提交申诉',
+            '如果图库应该被删除但使用了错误的删除类型，则不得提交申诉',
         'Note that submitting invalid appeals can lead to account restrictions/penalities.':
             '请注意，提交无效申诉可能会导致帐户限制/处罚',
         'Enter a valid reason for why this expunge petition should be revoked here.':

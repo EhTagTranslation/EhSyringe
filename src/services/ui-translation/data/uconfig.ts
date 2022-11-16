@@ -91,7 +91,7 @@ merge(/^\/uconfig\.php/, undefined, {
     ' mixed': ' 混合',
     ' other': ' 其他',
 
-    'Tag Filtering Threshold': '标签筛选阈值',
+    'Tag Filtering Threshold': '标签过滤阈值',
     'You can soft filter tags by adding them to ': '你可以通过将标签加入「',
     ' with a negative weight. If a gallery has tags that add up to weight below this value, it is filtered from view. This threshold can be set between 0 and -9999.':
         '」并设置一个负权重来软过滤它们。如果一个作品所有的标签权重之和低于设定值，此作品将从视图中被过滤。这个值可以设定为 0 ~ -9999。',
@@ -100,7 +100,7 @@ merge(/^\/uconfig\.php/, undefined, {
     'Recently uploaded galleries will be included on the watched screen if it has at least one watched tag with positive weight, and the sum of weights on its watched tags add up to this value or higher. This threshold can be set between 0 and 9999.':
         '你可以通过将标签加入「我的标签」并设置一个正权重来关注它们。如果一个最近上传的作品所有标签的权重之和高于设定值，则它将会被包含在「关注」里。这个值可以设定为 0 ~ 9999。',
     'Show Filtered Removal Count': '显示过滤数量',
-    'Show the "Your default filters removed XX galleries from this page" readout?':
+    'Show the "Your custom filters removed XX galleries from this page" readout?':
         '显示“你的过滤器已从此页面移除 XX 个结果”的消息？',
 
     'Excluded Languages': '排除语言',
