@@ -2,10 +2,6 @@ name: build
 
 on:
     push:
-        branches:
-            - master
-    create:
-        tags:
     pull_request:
 
 jobs:
@@ -32,7 +28,7 @@ jobs:
     deploy:
         needs: build
         runs-on: ubuntu-latest
-        if: github.event_name == 'create' && github.event.ref_type == 'tag'
+        if: startsWith(github.event.ref, "refs/tags/")
 
         steps:
             - name: Download artifact
