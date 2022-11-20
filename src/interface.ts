@@ -53,6 +53,8 @@ export interface TagItem extends EHTTag {
     key: string;
     /** 去除 emoji 和图片等的名称 */
     cn: string;
+    /** 用于搜索的简介 */
+    introSearch?: string;
 }
 
 export interface TagMap {

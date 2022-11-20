@@ -8,9 +8,9 @@ merge(/^\/favorites\.php/, undefined, {
     ' Tags': ' 标签',
     ' Note': ' 备注',
 
-    '\n\t\tOrder: \xA0': '排序：',
-    'Use Posted': '发布时间',
-    'Use Favorited': '收藏时间',
+    'Order: ': '排序：',
+    'Published Time': '发布时间',
+    'Favorited Time': '收藏时间',
 
     'Favorited:': '收藏于：',
 

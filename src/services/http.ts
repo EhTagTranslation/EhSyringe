@@ -28,7 +28,6 @@ export class Http {
             dataCache.push(data.value);
             receivedSize += data.value.byteLength;
             progress?.(receivedSize);
-            console.log(data);
         }
 
         const data = new Uint8Array(receivedSize);
