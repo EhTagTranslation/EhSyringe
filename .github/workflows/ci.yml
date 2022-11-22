@@ -1,4 +1,4 @@
-name: build
+name: ci
 
 on:
     push:
@@ -23,7 +23,7 @@ jobs:
             - uses: actions/upload-artifact@v3
               with:
                   name: releases
-                  path: releases/*
+                  path: releases/
 
     deploy:
         needs: build
