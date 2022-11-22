@@ -29,7 +29,7 @@ export class TagContextMenu implements Menu {
     readonly contexts: Context[] = ['link'];
 
     readonly onclick = (info: OnClickData): void => {
-        if (!info.url || !info.url.includes('/tag/')) {
+        if (!info.url?.includes('/tag/')) {
             return;
         }
         const seg = info.url.split('/').pop()?.replace(/\+/g, ' ').split(':') ?? [];
