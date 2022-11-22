@@ -1,7 +1,9 @@
-name: build
+name: ci
 
 on:
     push:
+        branches-ignore: [release]
+        tags: ['*']
     pull_request:
 
 jobs:
@@ -23,7 +25,7 @@ jobs:
             - uses: actions/upload-artifact@v3
               with:
                   name: releases
-                  path: releases/*
+                  path: releases/
 
     deploy:
         needs: build
