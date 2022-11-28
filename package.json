@@ -34,7 +34,7 @@
         "@types/escape-html": "^1.0.2",
         "@types/node": "^18.11.9",
         "@types/tampermonkey": "^4.0.5",
-        "@types/webextension-polyfill": "^0.9.1",
+        "@types/webextension-polyfill": "^0.9.2",
         "@typescript-eslint/eslint-plugin": "^5.44.0",
         "@typescript-eslint/parser": "^5.44.0",
         "@webextension-toolbox/webpack-webextension-plugin": "^2.1.3",
