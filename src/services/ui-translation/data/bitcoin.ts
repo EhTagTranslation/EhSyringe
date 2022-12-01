@@ -4,17 +4,17 @@ merge(
     /^\/bitcoin\.php/,
     undefined,
     {
-        'Generate an address first...': '请先生成地址',
         'Bitcoin Donation': '比特币捐款',
 
-        '\n\t\tBitcoin (BTC) and Bitcoin Cash (BCH) are decentralized virtual currencies. This page allows you to donate these coins from an exchange service or a local wallet, track the confirmation process of the transaction, and apply the donated coins as a USD donation or Adopt-a-Server slots. This is not a custodial wallet; all coins sent to these addresses are considered donated to this site and cannot be withdrawn. ':
-            '\n\t\t比特币（BTC）和比特币现金（BCH）是去中心化的虚拟货币。这个页面允许你从交易所或本地钱包捐赠并跟踪交易过程，并将捐赠的虚拟货币作为美元捐赠或领养服务器。这不是一个保管钱包；所有发送到这些地址的虚拟货币都被认为是捐赠给本网站的，不能撤回。',
+        '\n\t\tBitcoin (BTC) and Bitcoin Cash (BCH) are decentralized virtual currencies. This page allows you to donate these coins from an exchange service or a local wallet, track the confirmation process of the transaction, and apply the donated coins as a USD donation or Adopt-a-Server slots. This is not a custodial service; all coins sent to these addresses are considered donated to this site and cannot be withdrawn. ':
+            '\n\t\t比特币（BTC）和比特币现金（BCH）是去中心化的虚拟货币。这个页面允许你从交易所或本地钱包捐赠并跟踪交易过程，并将捐赠的虚拟货币作为美元捐赠或领养服务器。这不是一个保管服务；所有发送到这些地址的虚拟货币都被认为是捐赠给本网站的，不能撤回。',
         'Read this thread for more information about donating and how to buy coins':
             '阅读帖子，了解更多关于捐赠和如何购买虚拟货币的信息',
 
         ' Bitcoin (BTC)': ' 比特币（BTC）',
         ' Bitcoin Cash (BCH)': ' 比特币现金（BCH）',
 
+        'Generate an address first...': '请先生成地址',
         'Your Bitcoin (BTC) Donation Wallet Address': '您的比特币（BTC）捐赠钱包地址',
         'IMPORTANT: ONLY USE THIS ADDRESS FOR BITCOIN (BTC)': '重要提示：仅将此地址用于比特币（BTC）',
         'BITCOIN CASH (BCH) SENT TO THIS ADDRESS WILL BE LOST': '发送到此地址的比特币现金（BCH）将丢失 ',

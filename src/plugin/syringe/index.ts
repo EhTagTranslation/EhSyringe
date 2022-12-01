@@ -348,6 +348,12 @@ export class Syringe {
             }
             return;
         } else if (isNode(node, 'input') || isNode(node, 'textarea')) {
+            if (node.title) {
+                const translation = this.translateUiText(node.title);
+                if (translation != null) {
+                    node.title = translation;
+                }
+            }
             if (node.placeholder) {
                 const translation = this.translateUiText(node.placeholder);
                 if (translation != null) {

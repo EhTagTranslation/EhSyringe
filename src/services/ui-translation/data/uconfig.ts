@@ -59,14 +59,19 @@ merge(/^\/uconfig\.php/, undefined, {
     ' Auto Select Resample, Auto Start': ' 自动选择压缩画质，自动下载',
 
     'Front Page Settings': '首页设置',
-    'Which display mode would you like to use on the front and search pages?': '你想在搜索页面显示哪种样式？',
+    'Which display mode would you like to use on the front and search pages?': '你想在首页和搜索页面显示哪种样式？',
     'What categories would you like to show by default on the front page and in searches?':
-        '你希望在首页上看到哪些类别？',
+        '你希望在首页和搜索页面上看到哪些类别？',
+    ' Minimal': ' 最小化',
+    ' Minimal+': ' 最小化 + 关注标签',
+    ' Compact': ' 紧凑 + 标签',
+    ' Extended': ' 扩展',
+    ' Thumbnail': ' 缩略图',
 
     Favorites: '收藏',
     'Here you can choose and rename your favorite categories.': '在这里你可以重命名你的收藏夹。',
     'You can also select your default sort order for galleries on your favorites page. Note that favorites added prior to the March 2016 revamp did not store a timestamp, and will use the gallery posted time regardless of this setting.':
-        '你也可以选择收藏夹中默认排序。请注意，2016 年 3 月改版之前加入收藏夹的图库并未保存收藏时间，会以图库发布时间代替。',
+        '你也可以选择收藏夹默认排序。请注意，2016 年 3 月改版之前加入收藏夹的图库并未保存收藏时间，会以图库发布时间代替。',
     ' By last gallery update time': '以最新的图库更新时间排序',
     ' By favorited time': '以收藏时间排序',
 
@@ -74,11 +79,11 @@ merge(/^\/uconfig\.php/, undefined, {
     'By default, galleries that you have rated will appear with red stars for ratings of 2 stars and below, green for ratings between 2.5 and 4 stars, and blue for ratings of 4.5 or 5 stars. You can customize this by entering your desired color combination below.':
         '默认设置下，你评为 2 星及以下的图库显示为红星，2.5 ~ 4 星显示为绿星，4.5 ~ 5 星显示为蓝星。你可以将其设定为其他颜色组合。',
     'Each letter represents one star. The default RRGGB means R(ed) for the first and second star, G(reen) for the third and fourth, and B(lue) for the fifth. You can also use (Y)ellow for the normal stars. Any five-letter R/G/B/Y combo works.':
-        '每一个字幕代表一颗星, 默认的 RRGGB 表示第一第二颗星显示为红色 R(ed)，第三第四颗星显示是绿色 G(reen)，第五颗星显示为蓝色 B(lue)。你也可以使用黄色 (Y)ellow，R/G/B/Y 任何五个组合都是有效的。',
+        '每一个字幕代表一颗星, 默认的 RRGGB 表示第一第二颗星显示为红色 R(ed)，第三第四颗星显示是绿色 G(reen)，第五颗星显示为蓝色 B(lue)。你也可以使用黄色 (Y)ellow，R/G/B/Y 中任何五个字母组合都是有效的。',
 
     'Tag Namespaces': '标签组',
     'If you want to exclude certain namespaces from a default tag search, you can check those below. Note that this does not prevent galleries with tags in these namespaces from appearing, it just makes it so that when searching tags, it will forego those namespaces.':
-        '如果要从默认标签搜索中排除某些标签组，可以检查以下内容。请注意，这不会阻止在这些标签组中的标签的展示区出现，它只是在搜索标签时排除这些标签组。',
+        '如果要从默认标签搜索中排除某些标签组，可以勾选以下内容。请注意，这不会阻止这些标签组中的标签在展示区出现，它只是在搜索标签时排除这些标签组。',
     ' reclass': ' 重新分类',
     ' language': ' 语言',
     ' parody': ' 原作',
@@ -98,14 +103,16 @@ merge(/^\/uconfig\.php/, undefined, {
 
     'Tag Watching Threshold': '标签订阅阈值',
     'Recently uploaded galleries will be included on the watched screen if it has at least one watched tag with positive weight, and the sum of weights on its watched tags add up to this value or higher. This threshold can be set between 0 and 9999.':
-        '你可以通过将标签加入「我的标签」并设置一个正权重来关注它们。如果一个最近上传的作品所有标签的权重之和高于设定值，则它将会被包含在「关注」里。这个值可以设定为 0 ~ 9999。',
+        '你可以通过将标签加入「我的标签」并设置一个正权重来关注它们。如果一个最近上传的作品所有已关注标签的权重之和大于等于设定值，则它将会被包含在「关注」里。这个值可以设定为 0 ~ 9999。',
     'Show Filtered Removal Count': '显示过滤数量',
+    'Show the "Your default filters removed XX galleries from this page" readout?':
+        '显示“你的过滤器已从此页面移除 XX 个结果”的消息？',
     'Show the "Your custom filters removed XX galleries from this page" readout?':
         '显示“你的过滤器已从此页面移除 XX 个结果”的消息？',
 
     'Excluded Languages': '排除语言',
     'If you wish to hide galleries in certain languages from the gallery list and searches, select them from the list below.':
-        '如果您希望以图库列表中的某些语言隐藏图库并进行搜索，请从下面的列表中选择它们。',
+        '如果您希望在图库列表和搜索结果中隐藏某些语言的图库，请从下面的列表中选择它们。',
     'Note that matching galleries will never appear regardless of your search query.':
         '请注意，无论搜索查询如何，匹配的图库都不会出现。',
     Original: '原始',
@@ -132,9 +139,9 @@ merge(/^\/uconfig\.php/, undefined, {
 
     'Excluded Uploaders': '屏蔽的上传者',
     'If you wish to hide galleries from certain uploaders from the gallery list and searches, add them below. Put one username per line.':
-        '如果你希望在图库中和搜索中隐藏某个上传者的话，请把他们的用户名填写在下方，每行一个。',
+        '如果您希望在图库列表和搜索结果中隐藏某些上传者上传的图库，请把他们的用户名填写在下方，每行一个。',
     'Note that galleries from these uploaders will never appear regardless of your search query.':
-        '注意：无论你如何搜索，这些上传者都不会出现。',
+        '请注意，无论搜索查询如何，这些上传者上传的图库都不会出现。',
     'You are currently using ': '已使用 ',
     ' of ': '/',
     ' exclusion slots.\n': '。',
@@ -145,7 +152,6 @@ merge(/^\/uconfig\.php/, undefined, {
     ' 25 results': '25 个',
     ' 50 results': '50 个',
     ' 100 results': '100 个',
-    ' 200 results': '200 个',
 
     'Thumbnail Settings': '缩略图设置',
     'How would you like the mouse-over thumbnails on the front page to load when using List Mode?':
