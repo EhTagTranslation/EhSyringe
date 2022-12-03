@@ -15,21 +15,25 @@ export class TagContextMenu implements Menu {
     }
     readonly documentUrlPatterns = [
         '*://exhentai.org/*',
+        '*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*',
         '*://e-hentai.org/*',
         '*://*.exhentai.org/*',
+        '*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*',
         '*://*.e-hentai.org/*',
     ];
     readonly title = '提交标签翻译';
     readonly targetUrlPatterns = [
         '*://exhentai.org/tag/*',
+        '*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/tag/*',
         '*://e-hentai.org/tag/*',
         '*://*.exhentai.org/tag/*',
+        '*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/tag/*',
         '*://*.e-hentai.org/tag/*',
     ];
     readonly contexts: Context[] = ['link'];
 
     readonly onclick = (info: OnClickData): void => {
-        if (!info.url || !info.url.includes('/tag/')) {
+        if (!info.url?.includes('/tag/')) {
             return;
         }
         const seg = info.url.split('/').pop()?.replace(/\+/g, ' ').split(':') ?? [];

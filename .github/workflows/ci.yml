@@ -1,7 +1,9 @@
-name: build
+name: ci
 
 on:
     push:
+        branches-ignore: [release]
+        tags: ['*']
     pull_request:
 
 jobs:
@@ -23,7 +25,7 @@ jobs:
             - uses: actions/upload-artifact@v3
               with:
                   name: releases
-                  path: releases/*
+                  path: releases/
 
     deploy:
         needs: build
@@ -45,7 +47,6 @@ jobs:
                       [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
                   prerelease: ${{ contains(github.event.ref, '-') }}
                   replacesArtifacts: true
-                  token: ${{ secrets.GITHUB_TOKEN }}
             - name: Commit release mirror
               run: >
                   cd ./releases
@@ -55,9 +56,8 @@ jobs:
                   && git add .
                   && git commit -am 'Release for https://github.com/EhTagTranslation/EhSyringe/tree/${{ github.event.ref }}'
             - name: Push to release branch
-              uses: ad-m/github-push-action@v0.6.0
+              uses: ad-m/github-push-action@master
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
                   branch: release
                   force: true
                   directory: releases/
