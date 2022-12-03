@@ -35,7 +35,7 @@ merge(
         'Play the HentaiVerse Minigame': '玩 HentaiVerse 小游戏',
         'Lo-Fi Version': '低保真版',
         'Terms of Service': '服务条款',
-        'Advertise': '广告',
+        Advertise: '广告',
         Onion: '洋葱网址',
 
         'E-Hentai Galleries: The Free Hentai Doujinshi, Manga and Image Gallery System':
@@ -88,11 +88,11 @@ merge(
         ' Only Search Covers': '仅搜索封面',
 
         'The keyword ': '关键词 ',
-        ' is short and will be searched as an exact tag only.':
-            ' 太短，因此只会搜索精确匹配的标签。',
+        ' is short and will be searched as an exact tag only.': ' 太短，因此只会搜索精确匹配的标签。',
         'The term ': '关键词 ',
-            ' uses unsupported syntax or is otherwise not valid.': ' 无效或使用了不支持的语法。',
-        'The provided date is invalid or outside the range of posted galleries.': '提供的日期无效或超出已发布图库的日期范围。',
+        ' uses unsupported syntax or is otherwise not valid.': ' 无效或使用了不支持的语法。',
+        'The provided date is invalid or outside the range of posted galleries.':
+            '提供的日期无效或超出已发布图库的日期范围。',
         'No hits found': '什么也没有',
         'Disable Filters': '禁用过滤器',
 
