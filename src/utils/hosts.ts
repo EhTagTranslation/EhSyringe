@@ -4,7 +4,12 @@ export function isEh(hostname: string): boolean {
 }
 
 export function isEx(hostname: string): boolean {
-    return hostname === 'exhentai.org' || hostname.endsWith('.exhentai.org');
+    return (
+        hostname === 'exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion' ||
+        hostname.endsWith('.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion') ||
+        hostname === 'exhentai.org' ||
+        hostname.endsWith('.exhentai.org')
+    );
 }
 
 export function isHathNetwork(hostname: string): boolean {

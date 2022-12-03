@@ -130,7 +130,12 @@ export default async (env = {}, argv = {}) => {
             config.devServer = {
                 https: true,
                 port: 48792,
-                allowedHosts: ['.e-hentai.org', '.exhentai.org', '.hath.network'],
+                allowedHosts: [
+                    '.e-hentai.org',
+                    '.exhentai.org',
+                    '.hath.network',
+                    '.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion',
+                ],
                 liveReload: false,
                 hot: false,
                 static: {

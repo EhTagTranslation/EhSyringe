@@ -32,8 +32,10 @@
         {
             "matches": [
                 "*://exhentai.org/*",
+                "*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
                 "*://e-hentai.org/*",
                 "*://*.exhentai.org/*",
+                "*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
                 "*://*.e-hentai.org/*",
                 "*://*.hath.network/*"
             ],
@@ -48,8 +50,10 @@
         "storage",
         "contextMenus",
         "*://exhentai.org/*",
+        "*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
         "*://e-hentai.org/*",
         "*://*.exhentai.org/*",
+        "*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
         "*://*.e-hentai.org/*",
         "*://*.hath.network/*"
     ]

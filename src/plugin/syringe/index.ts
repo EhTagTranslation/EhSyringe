@@ -6,6 +6,7 @@ import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
 import { DateTime } from 'services/date-time';
+import { isEx, isEh } from 'utils/hosts';
 
 import './index.less';
 
@@ -241,7 +242,18 @@ export class Syringe {
 
     setBodyAttrs(node: HTMLBodyElement): void {
         if (!node) return;
-        node.classList.add(!location.hostname.endsWith('exhentai.org') ? 'eh' : 'ex');
+        if (isEx(location.hostname)) {
+            node.classList.add('ex');
+        } else if (isEh(location.hostname)) {
+            node.classList.add('eh');
+        } else if ('matchMedia' in window) {
+            const matchesDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (matchesDarkTheme) {
+                node.classList.add('ex');
+            } else {
+                node.classList.add('eh');
+            }
+        }
 
         node.classList.remove(...[...node.classList.values()].filter((k) => k.startsWith('ehs')));
         if (!this.config.showIcon) {
