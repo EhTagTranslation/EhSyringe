@@ -93,6 +93,8 @@ merge(
         ' uses unsupported syntax or is otherwise not valid.': ' 无效或使用了不支持的语法。',
         'The provided date is invalid or outside the range of posted galleries.':
             '提供的日期无效或超出已发布图库的日期范围。',
+        'The page range maximum cannot be below 10.': '页数最大值至少为 10。',
+        'Your page range filter is too narrow.': '页数范围差至少为 20。',
         'No hits found': '什么也没有',
         'Disable Filters': '禁用过滤器',
 
