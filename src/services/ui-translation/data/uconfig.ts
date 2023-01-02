@@ -58,15 +58,17 @@ merge(/^\/uconfig\.php/, undefined, {
     ' Auto Select Resample, Manual Start': ' 自动选择压缩画质，手动下载',
     ' Auto Select Resample, Auto Start': ' 自动选择压缩画质，自动下载',
 
-    'Front Page Settings': '首页设置',
+    'Front Page / Search Settings': '首页 / 搜索设置',
     'Which display mode would you like to use on the front and search pages?': '你想在首页和搜索页面显示哪种样式？',
-    'What categories would you like to show by default on the front page and in searches?':
-        '你希望在首页和搜索页面上看到哪些类别？',
     ' Minimal': ' 最小化',
     ' Minimal+': ' 最小化 + 关注标签',
     ' Compact': ' 紧凑 + 标签',
     ' Extended': ' 扩展',
     ' Thumbnail': ' 缩略图',
+    'What categories would you like to show by default on the front page and in searches?':
+        '你希望在首页和搜索页面上看到哪些类别？',
+    'Which display style would you like for the search range indicator?': '你希望搜索范围指示器采用哪种显示样式？',
+    ' Disabled': ' 禁用',
 
     Favorites: '收藏',
     'Here you can choose and rename your favorite categories.': '在这里你可以重命名你的收藏夹。',

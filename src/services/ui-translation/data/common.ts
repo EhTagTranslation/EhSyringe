@@ -168,6 +168,7 @@ merge(
         [/^(\d+) pages?$/, '$1 页'],
         [/Found about ([\d,]+) results?./, '找到约 $1 个结果。'],
         [/Found ([\d,]+) results?./, '找到 $1 个结果。'],
+        [/Found thousands of results./, '找到数千结果。'],
         [/Found many results./, '找到许多结果。'],
         [/Your custom filters removed ([\d,]+) galler(ies|y) from this page./, '你的过滤器已从此页面移除 $1 个结果。'],
         [/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果'],

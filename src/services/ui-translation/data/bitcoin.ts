@@ -17,7 +17,7 @@ merge(
         'Generate an address first...': '请先生成地址',
         'Your Bitcoin (BTC) Donation Wallet Address': '您的比特币（BTC）捐赠钱包地址',
         'IMPORTANT: ONLY USE THIS ADDRESS FOR BITCOIN (BTC)': '重要提示：仅将此地址用于比特币（BTC）',
-        'BITCOIN CASH (BCH) SENT TO THIS ADDRESS WILL BE LOST': '发送到此地址的比特币现金（BCH）将丢失 ',
+        'OTHER CRYPTO SENT TO THIS ADDRESS WILL BE LOST': '发送到此地址的其它类型加密货币都将丢失 ',
         'Your Bitcoin Cash (BCH) Donation Wallet Address': '你的比特币现金（BCH）捐赠钱包地址',
 
         'If your wallet cannot send to this address, ': '如果您的钱包无法发送到此地址，',
@@ -38,14 +38,15 @@ merge(
         'You already sent a wallet message to that member.': '你已经向该用户发送了包含钱包地址的私信',
         'Member not found.': '用户未找到',
 
-        'Recent Bitcoin (BTC) Transactions': '最近的比特币（BTC）交易',
-        'Recent Bitcoin Cash (BCH) Transactions': '最近的比特币现金（BCH）交易',
-        'Transactions will typically show up here in less than two minutes.': '交易通常会在两分钟内显示在这里。',
-        'They are then ': '然后它们会被',
-        ' until they are included in a block and reach two confirmations. This typically takes less than an hour.':
-            '直到他们被纳入一个区块并达到两个确认。通常需要不到一个小时。',
+        'Recent Bitcoin (BTC) Donations': '最近的比特币（BTC）捐赠',
+        'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金（BCH）捐赠',
+        'New donations will typically show up here in less than two minutes.': '新的捐赠通常会在两分钟内显示在这里。',
+        'It will show as ': '它会显示为',
+        ' until it has been included in a block and has two confirmations. This typically takes less than an hour, but can take longer in some cases. When it has been marked as ':
+            '直到他们被纳入一个区块并达到两个确认。这通常不到一个小时，但在某些情况下可能需要更长时间。只有当状态显示为',
+        ', you can apply it below to make it take effect.': '时才可以通过下方按钮完成捐赠。',
         'No transactions in the past year.': '在过去一年中没有交易',
-        Pending: '等待',
+        Pending: '等待中',
         Accepted: '已接受',
 
         'Available To Apply: ': '可用余额：',
