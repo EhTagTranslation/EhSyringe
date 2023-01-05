@@ -7,18 +7,18 @@ merge(
         'Bitcoin Donation': '比特币捐款',
 
         '\n\t\tBitcoin (BTC) and Bitcoin Cash (BCH) are decentralized virtual currencies. This page allows you to donate these coins from an exchange service or a local wallet, track the confirmation process of the transaction, and apply the donated coins as a USD donation or Adopt-a-Server slots. This is not a custodial service; all coins sent to these addresses are considered donated to this site and cannot be withdrawn. ':
-            '\n\t\t比特币（BTC）和比特币现金（BCH）是去中心化的虚拟货币。这个页面允许你从交易所或本地钱包捐赠并跟踪交易过程，并将捐赠的虚拟货币作为美元捐赠或领养服务器。这不是一个保管服务；所有发送到这些地址的虚拟货币都被认为是捐赠给本网站的，不能撤回。',
+            '\n\t\t比特币 (BTC) 和比特币现金 (BCH) 是去中心化的虚拟货币。本页面允许你从交易所或本地钱包捐赠并跟踪交易过程，并能够将捐赠的虚拟货币作为美元捐赠或领养服务器。这不是一个保管服务，所有发送到这些地址的虚拟货币都被认为是捐赠给本网站的，不能撤回。',
         'Read this thread for more information about donating and how to buy coins':
             '阅读帖子，了解更多关于捐赠和如何购买虚拟货币的信息',
 
-        ' Bitcoin (BTC)': ' 比特币（BTC）',
-        ' Bitcoin Cash (BCH)': ' 比特币现金（BCH）',
+        ' Bitcoin (BTC)': ' 比特币 (BTC)',
+        ' Bitcoin Cash (BCH)': ' 比特币现金 (BCH)',
 
         'Generate an address first...': '请先生成地址',
-        'Your Bitcoin (BTC) Donation Wallet Address': '您的比特币（BTC）捐赠钱包地址',
-        'IMPORTANT: ONLY USE THIS ADDRESS FOR BITCOIN (BTC)': '重要提示：仅将此地址用于比特币（BTC）',
+        'Your Bitcoin (BTC) Donation Wallet Address': '您的比特币 (BTC) 捐赠钱包地址',
+        'IMPORTANT: ONLY USE THIS ADDRESS FOR BITCOIN (BTC)': '重要提示：仅将此地址用于比特币 (BTC)',
         'OTHER CRYPTO SENT TO THIS ADDRESS WILL BE LOST': '发送到此地址的其它类型加密货币都将丢失 ',
-        'Your Bitcoin Cash (BCH) Donation Wallet Address': '你的比特币现金（BCH）捐赠钱包地址',
+        'Your Bitcoin Cash (BCH) Donation Wallet Address': '你的比特币现金 (BCH) 捐赠钱包地址',
 
         'If your wallet cannot send to this address, ': '如果您的钱包无法发送到此地址，',
         'switch to legacy addresses': '切换到旧地址',
@@ -29,17 +29,17 @@ merge(
 
         'You can only manually create a new address once every 24 hours.': '每 24 小时，您只能手动创建一次新地址。',
 
-        'Send a Bitcoin (BTC) Wallet Address PM': '私信发送比特币（BTC）钱包地址',
-        'Send a Bitcoin Cash (BCH) Wallet Address PM': '私信发送比特币现金（BCH）钱包地址',
+        'Send a Bitcoin (BTC) Wallet Address PM': '私信发送比特币 (BTC) 钱包地址',
+        'Send a Bitcoin Cash (BCH) Wallet Address PM': '私信发送比特币现金 (BCH) 钱包地址',
         'You can use this form to send a private message from the gallery system with your wallet address. This guarantees that a given wallet address belongs to you and that it exists in the E-Hentai system.':
-            '你可以使用这个表单，以图库系统（Gallery System）的名义发送一条包含钱包地址的私信。这保证了该钱包地址属于你，并且存在于 E-Hentai 系统中。',
+            '你可以使用此表单以图库系统 (Gallery System) 的名义发送一条包含钱包地址的私信。这能够保证该钱包地址属于你，并存在于 E-Hentai 系统中。',
         'Member name: ': '收件人：',
         Send: '发送',
         'You already sent a wallet message to that member.': '你已经向该用户发送了包含钱包地址的私信',
         'Member not found.': '用户未找到',
 
-        'Recent Bitcoin (BTC) Donations': '最近的比特币（BTC）捐赠',
-        'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金（BCH）捐赠',
+        'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
+        'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
         'New donations will typically show up here in less than two minutes.': '新的捐赠通常会在两分钟内显示在这里。',
         'It will show as ': '它会显示为',
         ' until it has been included in a block and has two confirmations. This typically takes less than an hour, but can take longer in some cases. When it has been marked as ':
@@ -77,15 +77,14 @@ merge(
         'never drop sharply, but adjusts slowly over time if the real-world rate is more than 10% below the site rate.':
             '如果现实世界的汇率比网站的低 10% 以上，网站的汇率不会急剧下降，会随着时间的推移缓慢调整。',
         'The conversion rates right now are ': '现在的汇率是：',
-        ' for Bitcoin, and ': '（比特币 BTC） ',
-        ' for Bitcoin Cash.': '（比特币现金 BCH）',
+        ' for Bitcoin, and ': ' (比特币 BTC) ',
+        ' for Bitcoin Cash.': ' (比特币现金 BCH)',
 
         'Donation Level': '捐赠等级',
         'EXP Bonus': '经验加成',
         'Daily Bonus': '每日奖金',
         'Daily Hath': '每日 Hath',
         'Free Archives': '免费档案配额',
-        None: '无',
         'You did not donate anything yet, but we still love you.': '你还没有捐赠，但我们仍然爱你。',
         'Bronze Star': '铜星',
         'Awarded for a total donation of $20.': '授予的总捐赠额为 $20',
@@ -109,8 +108,8 @@ merge(
         'Awarded for a total donation of $1000.': '授予的总捐赠额为 $1000',
         '100 GB / week': '100 GB / 周',
 
-        'Bitcoin (BTC) Spending History': '比特币（BTC）的消费历史',
-        'Bitcoin Cash (BCH) Spending History': '比特币现金（BCH）的消费历史',
+        'Bitcoin (BTC) Spending History': '比特币 (BTC) 消费历史',
+        'Bitcoin Cash (BCH) Spending History': '比特币现金 (BCH) 消费历史',
         'No BCH have been applied yet.': '目前还没使用 BCH。',
         'No BTC have been applied yet.': '目前还没使用 BTC。',
         'Donation Log': '捐赠日志',
@@ -121,6 +120,6 @@ merge(
     [
         [/Refunded (.*?) Hath/, '退还 $1 Hath'],
         [/^(\$.*?) Donation/, '捐赠 $1'],
-        [/^A wallet address PM was sent to user (.+?) \(uid=(\d+)\)$/, '你的钱包地址已私信发送给 $1（UID $2）'],
+        [/^A wallet address PM was sent to user (.+?) \(uid=(\d+)\)$/, '你的钱包地址已私信发送给 $1 (UID $2)'],
     ],
 );

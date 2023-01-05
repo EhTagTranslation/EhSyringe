@@ -7,10 +7,10 @@ merge(
         'The Hath Exchange': 'Hath 交易',
         'The GP Exchange': 'GP 交易',
 
-        'Last 8 Hours (per kGP)': '最近 8 小时（每 kGP）',
-        'Last 24 Hours (per kGP)': '最近 24 小时（每 kGP）',
-        'Last 8 Hours (per Hath)': '最近 8 小时（每 Hath）',
-        'Last 24 Hours (per Hath)': '最近 24 小时（每 Hath）',
+        'Last 8 Hours (per kGP)': '最近 8 小时 (每 kGP)',
+        'Last 24 Hours (per kGP)': '最近 24 小时 (每 kGP)',
+        'Last 8 Hours (per Hath)': '最近 8 小时 (每 Hath)',
+        'Last 24 Hours (per Hath)': '最近 24 小时 (每 Hath)',
 
         'Buy Hath': '买进 Hath',
         'Sell Hath': '卖出 Hath',
