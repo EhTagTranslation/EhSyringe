@@ -98,13 +98,14 @@ export class Suggest {
             const ns = this.tagging.ns(sTerm.slice(0, col));
             if (ns) {
                 sTerm = sTerm.slice(col + 1);
-                // 如果是 f:"xxx 格式 移除掉引号
-                if(sTerm.slice(0, 1) == '"') {
-                    sTerm = sTerm.slice(1);
-                }
                 tagList = tagList.filter((tag) => tag.ns === ns);
             }
         }
+        
+        if(sTerm.slice(0, 1) == '"') {
+            sTerm = sTerm.slice(1);
+        }
+        
         let suggestions = [];
         for (const tag of tagList) {
             const st = this.markTag(tag, sTerm, term);
