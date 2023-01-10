@@ -73,17 +73,27 @@ export class TagTip {
     }
 
     async search(value: string): Promise<void> {
-        // todo: 增加自定义分隔符
         value = this.inputElement.value = value.replace(/  +/gm, ' ');
-        const values = value.match(/(\S+:".+?"|".+?"|\S+:\S+|\S+)/gim) ?? [];
+
+        // [^\s,] 空白字符和逗号以外的字符 (用于支持逗号)
+        // (?:"|$) 非捕获分组, 引号或文本结束  (用于匹配不完整的引号)
+
+        // [^\s,]+:".+?(?:"|$)     NS:"ab cd"     NS:"ab c...
+        // ".+?(?:"|$)]            "ab cd"        "ab c...
+        // [^\s,]+:[^\s,]+         NS:abcd
+        // [^\s,]+                 abcd
+
+        const values = value.match(/([^\s,]+:".+?(?:"|$)|".+?(?:"|$)]|[^\s,]+:[^\s,]+|[^\s,]+)/gim) ?? [];
+        console.log("values", values);
         const result: Suggestion[] = [];
         const used = new Set();
         await Promise.all(
             values.map(async (v, i) => {
                 const sv = values.slice(i);
                 if (sv.length) {
-                    const svs = sv.join(' ');
+                    const svs = sv.join(this.delimiter);
                     if (!svs || svs.replace(/\s+/, '').length === 0) return;
+
                     const suggestions = await this.messaging.emit('suggest-tag', {
                         term: svs,
                         limit: 50,
@@ -176,14 +186,14 @@ export class TagTip {
 
         item.onclick = () => {
             let length = suggestion.term.length;
-            if (this.inputElement.value.endsWith(' ')) {
+            if (this.inputElement.value.endsWith(this.delimiter)) {
                 length++;
             }
             const exclude = this.ctrlKey ? '-' : '';
             this.inputElement.value = `${this.inputElement.value.slice(
                 0,
                 0 - length,
-            )}${exclude}${this.tagging.searchTerm(tag)} `;
+            )}${exclude}${this.tagging.searchTerm(tag)}${this.delimiter}`;
             this.autoCompleteList.innerHTML = '';
         };
         return item;
