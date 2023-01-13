@@ -53,12 +53,12 @@ merge(
         'Apply for H@H participation': '参与申请 H@H',
         'For information on how to participate in the Hentai@Home Project, please refer to the ':
             '有关如何参与 Hentai@Home 项目的信息，请参阅 ',
-        'Hentai@Home Project FAQ': 'Hentai@Home 项目常见问题解答（英文）',
+        'Hentai@Home Project FAQ': 'Hentai@Home 项目常见问题解答 (英文)',
         '. Make sure that you have read and understand this BEFORE you submit an application. If you need to add more than one client, or if you have a headless server that cannot run SpeedTest, you have to ':
             '。在提交申请之前，请确保您已阅读并理解此内容。如果您需要添加多个客户端，或者您有一台无法运行 SpeedTest 的无头服务器，则必须',
         '. Otherwise, use the form below.': '。否则，请使用下面的表格。',
         'Max Burst Speed': '最大并发速率',
-        'The maximum outgoing speed you want to allow for this client.': '此客户端允许的最大出站（上传）速度。',
+        'The maximum outgoing speed you want to allow for this client.': '此客户端允许的最大出站 (上传) 速度。',
         'Make sure this is less than or equal to your connection speed.': '请确保这个速度小于等于您的链接速度。',
         'Max Transfer per Hour': '每小时最大传输量',
         'The maximum total outgoing data transfer the client can use per hour.':
@@ -93,13 +93,13 @@ merge(
         'Client Download': '客户端下载',
         'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
         '. You can find the release notes for this version ': '。该版本的发行说明见',
-        here: '发行说明（英文）',
+        here: '发行说明 (英文)',
 
         File: '文件',
         Size: '大小',
 
         'Please verify that the size and cryptographic hashes correspond to the file you download. For more information about file validation, see these links: ':
-            '请验证您下载的文件的大小和哈希值与上方给出的数值相对应。有关文件验证的更多信息，请参阅以下链接（英文）：',
+            '请验证您下载的文件的大小和哈希值与上方给出的数值相对应。有关文件验证的更多信息，请参阅以下链接 (英文)：',
         'Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
             'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
     },
@@ -131,7 +131,7 @@ merge(
 
         'Port for Incoming Connections': '监听端口',
         'Can be 443 (recommended) or most numbers between 1024 and 65534.':
-            '可以使用 443（推荐）或 1024~65534 的大部分端口。',
+            '可以使用 443 (推荐) 或 1024~65534 的大部分端口。',
         'This port must be opened in your firewall, and forwarded from any NAT-based cable/ADSL modems/routers you connect to the Internet through.':
             '该端口必须在您的防火墙中打开，并从您连接到 Internet 的任何基于 NAT 的电缆/ADSL 调制解调器/路由器转发。',
         'Note: The port cannot be changed while the client is running.': '注意：客户端运行时不能更改端口。',
@@ -146,7 +146,7 @@ merge(
         ' KBytes/s': ' KB/s',
         'Disable Client-Side Speed Limit': '禁用客户端侧速度限制',
         'Warning: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. You should not set this higher than the upstream bandwidth of your Internet connection.':
-            '警告：1 KB/s 或 KBps（千字节每秒）相当于 8 Kb/s 或 Kbps（千比特每秒）。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
+            '警告：1 KB/s 或 KBps (千字节每秒) 相当于 8 Kb/s 或 Kbps (千比特每秒)。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space you wish to reserve for this client. The reserved space must always be available.':
             '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
@@ -248,7 +248,7 @@ merge(
         '[Back to Settings]': '[回到设置]',
     },
     [
-        [/^Modify Schedule for Client (\d+) \((.*?)\)$/, '修改客户端 $1（$2）的运行计划'],
+        [/^Modify Schedule for Client (\d+) \((.*?)\)$/, '修改客户端 $1 ($2) 的运行计划'],
         [
             /^All schedule times are in UTC\. As a reference, the current UTC time is (.*?)\.$/,
             (s, t) => `所有计划时间均为 UTC。作为参考，现在的 UTC 时间是 ${t.replace(/\s/g, '\xA0')}。`,

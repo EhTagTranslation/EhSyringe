@@ -3,7 +3,6 @@ import { merge } from '../helper';
 merge(/^\/uconfig\.php/, undefined, {
     'Selected Profile:': '当前配置：',
     'Settings were updated': '设置更新完毕',
-    Rename: '重命名',
     'Create New': '新建',
     'Delete Profile': '删除配置',
     'Set as Default': '设为默认',
@@ -19,16 +18,16 @@ merge(/^\/uconfig\.php/, undefined, {
     'Image Load Settings': '图片加载设置',
     'Do you wish to load images through the Hentai@Home Network, if available?':
         '如果可用，是否希望通过 Hentai@Home 网络加载图像？',
-    ' Any client (Recommended)': ' 所有客户端（推荐）',
+    ' Any client (Recommended)': ' 所有客户端 (推荐)',
     ' Default port clients only (Can be slower. Enable if behind firewall/proxy that blocks outgoing non-standard ports.)':
-        ' 仅使用默认端口的客户端（可能稍慢。当防火墙或代理阻止非标准接口的流量时启用此项。）',
+        ' 仅使用默认端口的客户端 (可能稍慢。当防火墙或代理阻止非标准接口的流量时启用此项。)',
     ' No [Modern/HTTPS] (Donator only. You will not be able to browse as many pages. Recommended only if having severe problems.)':
-        ' 否 [现代/HTTPS]（仅限赞助者。配额消耗会加快，只有出现严重的问题时才启用。）',
+        ' 否 [现代/HTTPS] (仅限赞助者。配额消耗会加快，只有出现严重的问题时才启用。)',
     ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)':
-        ' 否 [传统/HTTP]（仅限赞助者。可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用。）',
+        ' 否 [传统/HTTP] (仅限赞助者。可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用。)',
     'You appear to be browsing the site from ': '你看起来正在 ',
     ' or use a VPN or proxy in this country, which means the site will try to load images from H@H clients in this general geographic region. If this is incorrect, or if you want to use a different region for any reason (like if you are using a split tunneling VPN), you can select a different country below.':
-        ' 浏览此网页，或是使用了一个来自此处的 VPN，这意味着网站将尝试通过在此区域的 H@H 客户端加载图片。如果该结果不正确，或你想通过其他地区的 H@H 客户端加载图片（例如你正在使用分割隧道 VPN），你可以在下方选择一个不同的区域。',
+        ' 浏览此网页，或是使用了一个来自此处的 VPN，这意味着网站将尝试通过在此区域的 H@H 客户端加载图片。如果该结果不正确，或你想通过其他地区的 H@H 客户端加载图片 (例如你正在使用分割隧道 VPN)，你可以在下方选择一个不同的区域。',
     '\n\t\tBrowsing Country: ': '浏览区域：',
     'Auto-Detect': '自动',
 
@@ -37,7 +36,7 @@ merge(/^\/uconfig\.php/, undefined, {
         '通常情况，图像将重采样到 1280 像素宽度以用于在线浏览，您也可以选择以下重新采样分辨率。' +
         '但是为了避免负载过高，高于 1280 像素将只供给于赞助者、特殊贡献者，以及 UID 小于 3,000,000 的用户。',
     'While the site will automatically scale down images to fit your screen width, you can also manually restrict the maximum display size of an image. Like the automatic scaling, this does not resample the image, as the resizing is done browser-side. (0 = no limit)':
-        '虽然图片会自动根据窗口缩小，你也可以手动设置最大大小，图片并没有重新采样（0 为不限制）',
+        '虽然图片会自动根据窗口缩小，你也可以手动设置最大大小，图片并没有重新采样 (0 为不限制)',
     'Horizontal:': '宽/横向',
     'Vertical:': '高/纵向',
     ' pixels': ' 像素',
@@ -45,13 +44,13 @@ merge(/^\/uconfig\.php/, undefined, {
     'Gallery Name Display': '图库的名字显示',
     'Many galleries have both an English/Romanized title and a title in Japanese script. Which gallery name would you like as default?':
         '很多图库都同时拥有英文或者日文标题，你想默认显示哪一个？',
-    ' Default Title': '默认标题（英文）',
-    ' Japanese Title (if available)': '日文标题（如果有）',
+    ' Default Title': '默认标题 (英文)',
+    ' Japanese Title (if available)': '日文标题 (如果有)',
 
     'Archiver Settings': '归档设置',
     'The default behavior for the Archiver is to confirm the cost and selection for original or resampled archive, then present a link that can be clicked or copied elsewhere. You can change this behavior here.':
-        '默认归档下载方式为手动选择（原画质或压缩画质），然后手动复制或点击下载链接。你可以修改归档下载方式。',
-    ' Manual Select, Manual Start (Default)': ' 手动选择，手动下载（默认）',
+        '默认归档下载方式为手动选择 (原画质或压缩画质)，然后手动复制或点击下载链接。你可以修改归档下载方式。',
+    ' Manual Select, Manual Start (Default)': ' 手动选择，手动下载 (默认)',
     ' Manual Select, Auto Start': ' 手动选择，自动下载',
     ' Auto Select Original, Manual Start': ' 自动选择原始画质，手动下载',
     ' Auto Select Original, Auto Start': ' 自动选择原始画质，自动下载',
@@ -107,8 +106,6 @@ merge(/^\/uconfig\.php/, undefined, {
     'Recently uploaded galleries will be included on the watched screen if it has at least one watched tag with positive weight, and the sum of weights on its watched tags add up to this value or higher. This threshold can be set between 0 and 9999.':
         '你可以通过将标签加入「我的标签」并设置一个正权重来关注它们。如果一个最近上传的作品所有已关注标签的权重之和大于等于设定值，则它将会被包含在「关注」里。这个值可以设定为 0 ~ 9999。',
     'Show Filtered Removal Count': '显示过滤数量',
-    'Show the "Your default filters removed XX galleries from this page" readout?':
-        '显示“你的过滤器已从此页面移除 XX 个结果”的消息？',
     'Show the "Your custom filters removed XX galleries from this page" readout?':
         '显示“你的过滤器已从此页面移除 XX 个结果”的消息？',
 
@@ -150,7 +147,7 @@ merge(/^\/uconfig\.php/, undefined, {
 
     'Search Result Count': '搜索结果数',
     'How many results would you like per page for the index/search page and torrent search pages? (Hath Perk: Paging Enlargement Required)':
-        '搜索页面每页显示多少条数据？（Hath Perk：需要「页面扩大」）',
+        '搜索页面每页显示多少条数据？ (Hath Perk：需要「页面扩大」)',
     ' 25 results': '25 个',
     ' 50 results': '50 个',
     ' 100 results': '100 个',
@@ -196,7 +193,7 @@ merge(/^\/uconfig\.php/, undefined, {
     'This setting can be used if you have a H@H client running on your local network with the same public IP you browse the site with. Some routers are buggy and cannot route requests back to its own IP; this allows you to work around this problem.':
         '如果你本地安装了 H@H 客户端，本地 IP 与浏览网站的公共 IP 相同，一些路由器不支持回流导致无法访问到自己，你可以设置这里来解决。',
     'If you are running the client on the same PC you browse from, use the loopback address (127.0.0.1:port). If the client is running on another computer on your network, use its local network IP. Some browser configurations prevent external web sites from accessing URLs with local network IPs, the site must then be whitelisted for this to work.':
-        '如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址（127.0.0.1:端口号）。如果客户端在网络上的其他计算机运行，请使用那台机器的内网 IP。某些浏览器的配置可能阻止外部网站访问本地网络，你必须将网站列入白名单才能工作。',
+        '如果在同一台电脑上访问网站和运行客户端，请使用本地回环地址 (127.0.0.1:端口号)。如果客户端在网络上的其他计算机运行，请使用那台机器的内网 IP。某些浏览器的配置可能阻止外部网站访问本地网络，你必须将网站列入白名单才能工作。',
 
     'Original Images': '原始图像',
     'Use original images instead of the resampled versions where available?':

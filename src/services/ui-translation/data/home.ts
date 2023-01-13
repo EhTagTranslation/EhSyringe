@@ -32,8 +32,8 @@ merge(/^\/home\.php/, undefined, {
     Toplists: '排行榜',
     '\n\t\t\tYou are currently not featured on any toplists...\n\t\t': '您当前没有上榜……',
     'You are currently: ': '你现在是：',
-    'on the ': '（在',
-    ' toplist': '榜）',
+    'on the ': ' (在',
+    ' toplist': '榜)',
 
     'Moderation Power': '愿力',
     'Current Moderation Power': '当前愿力',
@@ -45,5 +45,5 @@ merge(/^\/home\.php/, undefined, {
     'Forum Activity': '论坛活跃',
     'Uploads/H@H': '上传 / H@H',
     'Account Age': '账户资历',
-    '(capped to 25)': '（不超过 25）',
+    '(capped to 25)': '(不超过 25)',
 });

@@ -19,7 +19,7 @@ merge(
         cancel: '取消',
 
         'Locating archive server and preparing file for download...': '找到存档服务器并准备下载文件...',
-        '(this can take several minutes)': '（这可能需要几分钟的时间）',
+        '(this can take several minutes)': '(这可能需要几分钟的时间)',
         'Please wait...': '请稍候...',
         Close: '取消',
 
