@@ -29,7 +29,7 @@ merge(
         'Your Active Clients': '您的活动客户端',
         'To add more clients, ': '要添加更多客户端，请',
         'PM Tenboro': '联系 Tenboro',
-        '. Make sure to read the requirements first to make sure that you qualify. Include the specs for the client in the message, and specify whether it is a home connection or a VPS/Dedicated. Each client requires its own unique public IPv4 address to run, and must either be reachable directly from the Internet, or have a port forwarded. These are technical requirements, and it is not possible to make any exceptions.':
+        '. Make sure to read the requirements first to make sure that you qualify. Include the specs for the client in the message, and specify whether it is a home connection or a VPS/Dedicated. Each client requires its own unique public IPv4 address to run, and must either be reachable directly from the internet, or have a port forwarded. These are technical requirements, and it is not possible to make any exceptions.':
             '。请务必先阅读要求以确保您符合资格。在消息中包含客户端的规格，并说明它是家庭连接还是 VPS/独立服务器。每个客户端都需要拥有唯一的公共 IPv4 地址才能运行，并且必须可以直接从 Internet 访问，或者使用端口转发。这些都是技术要求，不可能有任何例外。',
 
         Client: '客户端',
@@ -57,9 +57,9 @@ merge(
         '. Make sure that you have read and understand this BEFORE you submit an application. If you need to add more than one client, or if you have a headless server that cannot run SpeedTest, you have to ':
             '。在提交申请之前，请确保您已阅读并理解此内容。如果您需要添加多个客户端，或者您有一台无法运行 SpeedTest 的无头服务器，则必须',
         '. Otherwise, use the form below.': '。否则，请使用下面的表格。',
-        'Max Burst Speed': '最大并发速率',
-        'The maximum outgoing speed you want to allow for this client.': '此客户端允许的最大出站 (上传) 速度。',
-        'Make sure this is less than or equal to your connection speed.': '请确保这个速度小于等于您的链接速度。',
+        'Max Outgoing Speed': '最大出站速率',
+        'The maximum outgoing speed you want to use for this client.': '此客户端允许的最大出站 (上传) 速度。',
+        'This should be less than or equal to your connection speed.': '此速度应当小于等于您的连接速度。',
         'Max Transfer per Hour': '每小时最大传输量',
         'The maximum total outgoing data transfer the client can use per hour.':
             '客户端每小时可使用的最大传出数据总量。',
@@ -132,40 +132,43 @@ merge(
         'Port for Incoming Connections': '监听端口',
         'Can be 443 (recommended) or most numbers between 1024 and 65534.':
             '可以使用 443 (推荐) 或 1024~65534 的大部分端口。',
-        'This port must be opened in your firewall, and forwarded from any NAT-based cable/ADSL modems/routers you connect to the Internet through.':
-            '该端口必须在您的防火墙中打开，并从您连接到 Internet 的任何基于 NAT 的电缆/ADSL 调制解调器/路由器转发。',
+        'This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.':
+            '该端口必须在您的防火墙中打开，并从您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
         'Note: The port cannot be changed while the client is running.': '注意：客户端运行时不能更改端口。',
         'Client Name': '客户端名称',
         'You can set a custom name for this client here. This will be used in the various listings this client appears in.':
             '您可以在此处为此客户端设置自定义名称。这将用于该客户端出现的各种列表中。',
-        'Maximum Burst Speed': '最大并发速率',
-        'Actual utilization will reach at most 80% of this over time, unless you also set an hourly limit below.':
+        'Maximum Upload Rate': '最大上传速率',
+        'This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least 2000 KB/s':
+            '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 2000 KB/s。',
+        'Actual utilization will generally reach at most 80% of this over time, less if you also set an hourly limit below.':
             '随着时间的推移，实际利用率最多将达到该值的 80%，除非您还在下方设置了每小时限制。',
-        'Turning off the client-side throttle saves some CPU and may make you test higher, but could make the traffic more bursty.':
-            '关闭客户端侧速度限制可以节省一些 CPU 并可能使您的测试更高，但可能会使流量更加突发。',
+        'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will however increase CPU usage and can affect the performance of the client. Intended for home networks; you should enable this if H@H noticeably affects your network performance.':
+            '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但是，这将增加 CPU 使用率，并可能影响客户端的性能。此选项适用于家庭网络，如果 H@H 显著影响您的网络性能，则应启用此功能。',
         ' KBytes/s': ' KB/s',
-        'Disable Client-Side Speed Limit': '禁用客户端侧速度限制',
-        'Warning: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. You should not set this higher than the upstream bandwidth of your Internet connection.':
+        ' Enable Client-Side Speed Limit (recommended for home networks)': ' 启用客户端侧速度限制 (家庭网络推荐开启)',
+        'Warning: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
             '警告：1 KB/s 或 KBps (千字节每秒) 相当于 8 Kb/s 或 Kbps (千比特每秒)。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space you wish to reserve for this client. The reserved space must always be available.':
             '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
         'Static Range allocation is limited to 1 per 250 MB of disk space.':
             '静态范围分配限制为每 250MB 磁盘空间 1 组。',
-        'Verify cache integrity on next startup': '下次启动时验证缓存完整性',
-        'Remove static ranges if necessary': '如有必要，删除静态范围',
+        ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
+        ' Remove static ranges if necessary': ' 如有必要，删除静态范围',
 
         'Advanced Settings': '高级设置',
         'The settings below are optional advanced settings.': '以下设置项为可选的高级设置',
         'Reset Client Key': '重置客户端 Key',
         'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next the the client starts.':
             '如果您认为您的客户端 Key 已被泄露，您可以通过选中项来重置密钥。下次客户端启动时，您必须重新输入密钥。',
+        ' Reset Client Key': ' 重置客户端 Key',
         'Hourly Bandwidth Limit': '每小时流量限制',
         'Not Set': '未设置',
         ' MBytes/hour': ' MB/小时',
         'Minimum space to leave on disk': '在磁盘上留下的最小空间',
-        'If this value is set, the client will stop running if the free space on the disk decreases below this value.':
-            '如果设置了此值，则如果磁盘上的可用空间减少到低于此值，客户端将停止运行。',
+        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GB even if this is not set.':
+            '如果设置了此值，则如果磁盘上的可用空间减少到低于此值，客户端将停止运行。即使未设置，如果可用空间低于 1GB，客户端也会退出。',
         'Note that even if this is not set, the client will exit if free space drops below 1 GB.':
             '请注意，即使未设置，如果可用空间低于 1GB，客户端也会退出。',
         'No Limit': '无限制',
@@ -175,11 +178,13 @@ merge(
             '运行计划允许您指定客户端以较低速度限制运行的时间段。',
         'Click here to modify the schedule of this client': '修改此客户端的运行计划',
         'Static Ranges': '静态范围',
-        'Over time, your client is assigned a number of static ranges that indicate specific, permanently assigned ranges of files it is able to serve. This toggle will reset this set of ranges.':
-            '随着时间的推移，您的客户端将被分配数组静态范围，这些范围指示它能够提供服务的特定的、永久分配的多组文件。此开关将重置这些范围。',
+        'Over time, your client is assigned a number of permanently assigned ranges of files it is able to serve. This toggle will reset this set of ranges. ':
+            '随着时间的推移，您的客户端将被分配一个永久分配的文件范围，这些范围指示它能够提供服务的特定的、永久分配的多组文件。此开关将重置这些范围。',
+        'DO NOT DO THIS unless you lost your cache. It will NOT fix any other client issues.':
+            '除非您丢失了缓存，否则不要执行此操作。它不会修复任何其他客户端问题。',
         'This client currently has ': '此客户端当前被分配了 ',
         ' static range(s) assigned.': ' 组静态范围',
-        'Reset Static Ranges': '重置静态范围',
+        ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
         ' reset your static ranges ': '重置您的静态范围，',
@@ -191,14 +196,14 @@ merge(
             '重置静态范围，否则客户端将遇到严重的信任问题。',
         'Miscellaneous Toggles': '杂项开关',
         'Various toggles to optimize client behavior.': '用于优化客户端行为的各种开关。',
-        'Disable logging to disk. This will reduce disk activity by a small amount. Errors are still logged.':
-            '停止向磁盘写入日志记录。这将少量减少磁盘活动。错误仍然被记录。',
-        'Run in low-memory mode. This will somewhat reduce memory requirements, but will lead to increased disk activity.':
-            '在低内存模式下运行。这会在一定程度上减少内存需求，但会导致磁盘活动增加。',
-        'Use this client as your designated H@H Downloader. Only necessary if you have multiple clients.':
-            '将此客户端用作您指定的 H@H 下载器。仅当您有多个客户端时才需要。',
-        '\n\t\tNote that any changes you make here will be applied the next time your client pings the server, which usually happens every five minutes. Some changes will not be applied until next restart. If you are changing the Port Number or reseting your key, you should exit Hentai@Home before hitting the button below.\n\t\t':
-            '请注意，您在此处所做的任何更改将在您的客户端下次 ping 服务器时应用，这通常每五分钟发生一次。某些更改直到下次重新启动时才会应用。如果您正在更改端口号或重置您的 Key，您应该在点击下面的按钮之前退出 Hentai@Home。',
+        ' Disable logging to disk. This will reduce disk activity by a small amount. Errors are still logged.':
+            ' 停止向磁盘写入日志记录。这将少量减少磁盘活动。错误仍然被记录。',
+        ' Run in low-memory mode. This will somewhat reduce memory requirements, but will lead to increased disk activity.':
+            ' 在低内存模式下运行。这会在一定程度上减少内存需求，但会导致磁盘活动增加。',
+        ' Use this client as your designated H@H Downloader. Only necessary if you have multiple clients.':
+            ' 将此客户端用作您指定的 H@H 下载器。仅当您有多个客户端时才需要。',
+        '\n\t\tChanges will be applied within roughly two minutes. Changes to disk space will not take effect until next restart.\n\t\t':
+            '更改将在大约两分钟内生效。对磁盘空间的更改将在下次重新启动时生效。',
 
         'Apply Settings': '应用设置',
         '[Back to Overview]': '[回到总览]',
