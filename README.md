@@ -91,3 +91,16 @@ E 站注射器，将中文翻译注入到 E 站体内。
 -   用户脚本脚本小工具合集 [EhTagTranslation/UserScripts](../../../UserScripts)
 
 ## [更新日志](CHANGELOG.md)
+
+## 开发
+
+### 开发指南
+
+- UI 翻译位于 `src/services/ui-translation/data`
+
+### 发布新版本
+
+1. 编辑 `CHANGELOG.md` 并添加至 git 暂存区
+2. 运行 `yarn version` 更新版本号
+3. 运行 `git push --follow-tags` 推送新版本
+4. 等待 GitHub Actions 自动编译并发布新版本
