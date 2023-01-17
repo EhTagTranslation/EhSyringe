@@ -1409,10 +1409,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/tampermonkey@^4.0.8":
-  version "4.0.8"
-  resolved "https://registry.npmmirror.com/@types/tampermonkey/-/tampermonkey-4.0.8.tgz#02b0bd05de96723e242037e220bb792470f14fb4"
-  integrity sha512-MeXIznLZHYlY8JBDj6/G7NkOO2slN7hntGdtZ/h6gAjckIgbi8BbSdrGEnQWU6+R5X4IeogcmZBSpKZyeaFyug==
+"@types/tampermonkey@^4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@types/tampermonkey/-/tampermonkey-4.0.9.tgz#cb240c906ddc45bac9ef26a43e79618fb583aaac"
+  integrity sha512-I/wh1HPOHOyKLz4EoQij0eDgUVtAyNXr/23tMCaN2BS2+/c+ZxgCPEOcAPX1D8rd1MK74ka/w7/bdOn5bMX8bQ==
 
 "@types/trusted-types@^2.0.2":
   version "2.0.2"
