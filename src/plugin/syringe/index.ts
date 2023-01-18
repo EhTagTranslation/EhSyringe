@@ -352,6 +352,12 @@ export class Syringe {
     }
 
     translateUi(node: Node): void {
+        if ((isNode(node, 'input') || isNode(node, 'span')) && node.title) {
+            const translation = this.translateUiText(node.title);
+            if (translation != null) {
+                node.title = translation;
+            }
+        }
         if (isText(node)) {
             const text = node.textContent ?? '';
             const translation = this.translateUiText(text);
@@ -360,12 +366,6 @@ export class Syringe {
             }
             return;
         } else if (isNode(node, 'input') || isNode(node, 'textarea')) {
-            if (node.title) {
-                const translation = this.translateUiText(node.title);
-                if (translation != null) {
-                    node.title = translation;
-                }
-            }
             if (node.placeholder) {
                 const translation = this.translateUiText(node.placeholder);
                 if (translation != null) {

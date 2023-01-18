@@ -38,9 +38,8 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Multi-Page Viewer': '多页查看器',
     'Unlocks the Multi-Page Viewer function on E-Hentai Galleries. This allows you to view all images from a gallery on one page. (':
-        '解锁 E-Hentai 图库的多页查看器功能。这允许您在一个页面上查看库中的所有图像。（',
+        '解锁 E-Hentai 图库的多页查看器功能。这允许您在一个页面上查看库中的所有图像。(',
     demo: '演示',
-    ')': '）',
 
     'More Thumbs': '更多的缩略图',
     'Increases the maximum number of thumbnail rows to 10.': '将最大缩略图行数增加到 10。',

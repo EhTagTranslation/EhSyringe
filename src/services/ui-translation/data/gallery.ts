@@ -24,12 +24,7 @@ merge(
 
         'Posted:': '发布于:',
         'Parent:': '父级:',
-        None: '无',
         'Visible:': '显示:',
-        Yes: '是',
-        'No (Expunged)': '否（已删除）',
-        'No (Deleted)': '否（已移除）',
-        'No (Replaced)': '否（已被替换）',
         'Language:': '语言:',
         'Japanese \xA0': '日语 \xA0',
         'English \xA0': '英语 \xA0',
@@ -82,10 +77,14 @@ merge(
         'Show Tag Definition': '显示标签解释',
         'Add New Tag': '添加新标签',
         'Enter new tags, separated with comma': '输入新标签, 用逗号分隔',
+        Tag: '打标签',
 
         'Last edited on ': '最后编辑于 ',
         'Post New Comment': '发送新评论',
         'click to show all': '显示全部',
+        'Enter your comments here, then hit Post Comment. If the last comment posted is yours, this will be appended to that post.':
+            '在此输入您的评论，然后点击发表评论。如果最后一条评论是您的，则新评论会被附加到最后一条评论下。',
+        'Post Comment': '发表评论',
 
         'A Quick Note About Tagging': '关于标签系统的简单说明',
         'While tagging is relatively straight-forward, there are a number of established guidelines that determine when adding a particular tag is proper and when it is not. Before you put any significant amount of effort into it, we therefore ask that you skim through the ':
@@ -128,7 +127,7 @@ merge(
         'Never Warn Me Again': '不再提醒',
         'This gallery has been removed or is unavailable.': '该图库已被删除或无法使用。',
         'You will be redirected to the front page momentarily.': '即将跳转到首页。',
-        '(Click here to continue)': '（点击这里继续）',
+        '(Click here to continue)': '(点此继续)',
         'Please wait...': '请稍候...',
         'Gallery not found. If you just added this gallery, you may have to wait a short while before it becomes available.':
             '没有找到图库。如果你刚刚添加了这个图库，你可能需要等待一小段时间才会变得可用。',
@@ -138,7 +137,7 @@ merge(
         [/^(\d+) times$/, '$1 次'],
         [/Average: ([\d.]+)/, '平均值：$1'],
         [/Rate as ([\d.]+) stars?/, '$1 星'],
-        [/Torrent Download \(\s*(\d+)\s*\)/, '种子下载（$1）'],
+        [/Torrent Download \(\s*(\d+)\s*\)/, '种子下载 ($1)'],
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*/, `评论时间：$1 \xA0作者：`],
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, `评论时间：$1`],
         [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, `，更新于 $1`],
@@ -179,7 +178,7 @@ merge(
             '这个图库包含非法内容，如儿童色情或其他列于',
         ', or otherwise falls under the ': '的禁止内容，或列于',
         'Expunge Guidelines': '删除指南',
-        ' (specify below).': '的内容（在下方详细描述）。',
+        ' (specify below).': '的内容 (在下方详细描述)。',
 
         'Submit New Expunge Petition': '提交新的删除申请',
         'Specify a valid objective reason why this gallery should be expunged.': '请说明要删除此库的客观原因。',
@@ -199,7 +198,7 @@ merge(
         'Cancel Expunge Petition': '撤回删除申请',
 
         ', who added:': '，并评论',
-        'Add a comment with this vote (optional)': '为投票添加一个评论（可选）',
+        'Add a comment with this vote (optional)': '为投票添加一个评论 (可选)',
         'Vote +': '支持',
         'Vote -': '反对',
 
@@ -246,9 +245,61 @@ merge(
     {
         'Report Type': '举报类型',
         '[Select a complaint type...]': '[请选择一个举报类型...]',
+        Content: '内容',
         'DMCA/Copyright Infringement': 'DMCA / 侵犯版权',
         'Child Pornography': '儿童色情',
         'Other Illicit Content': '其他非法内容',
+        Technical: '技术',
+        'Excessive Updates': '频繁更新',
+        'Reversion/Split/Undisown Request': '回退/拆分/恢复所有权请求',
+
+        'If you log on with an account, we will remember your provided contact details.':
+            '如果您使用帐户登录，我们将记住您提供的联系信息。',
+        'We remember and automatically fill in any previous contact details you have entered.':
+            '我们会记住并自动填充您曾经输入的联系信息。',
+        'Your email address': '您的电子邮件地址',
+        'Please provide a working email address.': '请提供有效的电子邮件地址。',
+        'Your full legal name': '您的全名',
+        'Aliases and pseudonyms cannot be used.': '不能使用别名和假名。',
+        "Copyright holder's full name": '版权所有者的全名',
+        'Enter if you are not the copyright holder. You must be an authorized agent.':
+            '如果您不是版权所有者，请输入。您必须是授权代理。',
+        'Company Name': '公司名称',
+        Optional: '可选',
+        'Phone Number': '电话号码',
+        Address: '地址',
+        'Your contact address': '您的联系地址',
+        City: '城市',
+        'Your city of residence': '您居住的城市',
+        'State / Province': '州 / 省',
+        'Your state or province of residence, if applicable': '您居住的州或省，如果适用',
+        Country: '国家',
+        'Your country of residence': '您居住的国家',
+        'Describe the original work': '描述原作',
+        'Describe the nature of the copyrighted work.': '描述版权作品的性质。',
+        'Include links to original work or evidence of source material.':
+            '包括原作或源材料的链接。',
+        'Please describe the nature of this work and provide any relevant links.':
+            '请描述此作品的性质并提供任何相关链接。',
+        'Digital signature': '数字签名',
+        'Enter your name to sign this submission': '输入您的姓名以签署此提交',
+        Acknowledgement: '确认',
+        "By submitting this form, you attest, under penalty of perjury, that you have a good faith belief that use of the material in this report is not authorized by the copyright owner, its agent, or the law; AND you are authorized to act on behalf of the copyright owner; AND you understand that you may be liable for any damages, including costs and attorneys' fees, if you knowingly materially misrepresent reported material.":
+            '通过提交此表单，您声明，根据伪证处罚，您有充分的信心相信本报告中的材料未经版权所有者、其代理人或法律授权；并且您有权代表版权所有者行使权利；并且您了解，如果您故意提供错误的材料，您的利益可能会因此受到损害，包括支出和律师费。',
+        'Send Report': '发送报告',
+
+        'Report Details': '报告详情',
+        'Please describe the illicit content of this gallery. Include the specific pages where the content in question can be found.':
+            '请描述此画廊的非法内容。包括可以找到有问题内容的特定页面。',
+        'Details of illicit content and what pages you found it on. Using this form for copyright-related requests or anything else that is not actual illicit content can get you blocked from using this site.':
+            '非法内容的详细信息以及发现位置。如果使用此表单进行与版权相关的请求或其他任何与实际非法内容无关的请求，可能会导致您无法继续使用本网站。',
+
+        'Provide any relevant details. If the gallery has excessive updates that are not allowed under the community guidelines, it will be locked for further updates.':
+            '提供任何相关细节。画廊频繁更新不符合社区指南，会被锁定以防止继续更新。',
+        'Please provide additional details.': '请提供详细信息。',
+
+        'Provide any relevant details. If valid content has been removed from the gallery, it will be reverted. If valid content has been replaced with other valid content, it will be split into two separate galleries.':
+            '提供任何相关细节。如果画廊中的有效内容被删除，则会被恢复。如果有效内容被其他有效内容替换，将被拆分成两个单独的画廊。',
     },
     [],
 );
