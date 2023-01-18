@@ -1,5 +1,6 @@
 import { Container } from 'services';
 import { isValidHost } from 'utils/hosts';
+import { ready } from 'utils/dom';
 import { Introduce } from 'plugin/introduce';
 import { TagTip } from 'plugin/tag-tip';
 import { Syringe } from 'plugin/syringe';
@@ -28,11 +29,7 @@ function main(): void {
         createPopup();
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', start);
-    } else {
-        setTimeout(start);
-    }
+    ready(start);
 }
 
 // 为轻型用户脚本实现添加简单过滤

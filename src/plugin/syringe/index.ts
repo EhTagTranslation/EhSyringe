@@ -1,12 +1,13 @@
-import { UiTranslation } from 'services/ui-translation';
+import { isEx, isEh } from 'utils/hosts';
+import { ready } from 'utils/dom';
 import { Service } from 'services';
+import { UiTranslation } from 'services/ui-translation';
 import type { ConfigData } from 'services/storage';
 import { SyncStorage } from 'services/sync-storage';
 import { Logger } from 'services/logger';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
 import { DateTime } from 'services/date-time';
-import { isEx, isEh } from 'utils/hosts';
 
 import './index.less';
 
@@ -162,7 +163,7 @@ export class Syringe {
     }
 
     private init(): void {
-        document.addEventListener('DOMContentLoaded', () => {
+        ready(() => {
             this.documentEnd = true;
             this.codePatch();
         });
