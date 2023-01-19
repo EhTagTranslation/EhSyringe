@@ -156,6 +156,8 @@ merge(
         'Pending Expunge Petition': '待处理的删除申请',
         'Active Expunge Petition': '完成的删除申请',
         'Rejected Expunge Petition': '否决的删除申请',
+        'Active Expunge Petition (Pending Appeal)': '完成的删除申请 (申诉中)',
+        'Revoked Expunge Petition': '撤销的删除申请',
 
         'Submitted:': '提交于：',
         'Expunge Type:': '删除类型：',
@@ -179,6 +181,7 @@ merge(
         ', or otherwise falls under the ': '的禁止内容，或列于',
         'Expunge Guidelines': '删除指南',
         ' (specify below).': '的内容 (在下方详细描述)。',
+        Defaced: '污损',
 
         'Submit New Expunge Petition': '提交新的删除申请',
         'Specify a valid objective reason why this gallery should be expunged.': '请说明要删除此库的客观原因。',
@@ -209,7 +212,8 @@ merge(
 
         'This petition will be ': '该申请即将',
         ' in approximately ': '剩余 ',
-        ' unless sufficiently downvoted.': '，除非有足够的否决票。',
+        ' unless sufficiently upvoted.': '，除非有足够的支持票。',
+        ' unless sufficiently downvoted.': '，除非有足够的反对票。',
         'This petition was ': '该申请已被',
         ACTIVATED: '激活',
         REJECTED: '否决',
@@ -229,6 +233,11 @@ merge(
         'Enter a valid reason for why this expunge petition should be revoked here.':
             '请在此处输入应撤销此删除申请的正当理由',
         'Create New Appeal': '创建新申诉',
+
+        'Appeal Reason:': '申诉原因：',
+        'An appeal has been submitted for this expunge petition.': '已针对该删除申请提出申诉。',
+        ' this appeal.': '票',
+        REVOKED: '撤销',
     },
     [
         [/^on (\d\d\d\d-\d\d-\d\d \d\d:\d\d) by (.*), who added:$/, `投票于 $1 由 $2 ，并评论`],
