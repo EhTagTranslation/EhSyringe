@@ -100,7 +100,7 @@ merge(/^\/uconfig\.php/, undefined, {
         '请注意，无论搜索查询如何，匹配的图库都不会出现。',
     Original: '原始',
     Translated: '翻译',
-    Rewrite: '重写',
+    Rewrite: '改写',
     All: '所有',
     Japanese: '日语',
     English: '英语',

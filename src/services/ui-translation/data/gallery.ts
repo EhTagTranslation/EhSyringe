@@ -131,6 +131,7 @@ merge(
         [/^Rate as ([\d.]+) stars?$/, '$1 星'],
         [/^Torrent Download \((\d+)\)$/, '种子下载 ($1)'],
         [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, '，更新于 $1'],
+        [/^Page (\d+): /, '第 $1 页：'],
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*$/, '评论时间：$1 \xA0作者：'],
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, '评论时间：$1'],
         [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '],
