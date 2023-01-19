@@ -353,7 +353,7 @@ export class Syringe {
     }
 
     translateUi(node: Node): void {
-        if ((isNode(node, 'input') || isNode(node, 'span') || isNode(node, 'label')) && node.title) {
+        if (node instanceof HTMLElement && node.title) {
             const translation = this.translateUiText(node.title);
             if (translation != null) {
                 node.title = translation;
@@ -398,7 +398,7 @@ export class Syringe {
             /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
             const text = node.textContent ?? '';
             const p = document.createElement('p');
-            p.textContent = text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图片');
+            p.textContent = text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图像');
             p.className = 'gpc-translate';
             node.parentElement?.insertBefore(p, node);
             node.style.display = 'none';

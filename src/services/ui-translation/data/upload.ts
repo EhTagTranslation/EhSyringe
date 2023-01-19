@@ -15,13 +15,13 @@ const data = {
     'Public Category': '发布类别',
     'Available Actions': '操作',
     View: '查看',
-    Stats: '统计',
     Manage: '管理',
     Publish: '发布',
     Disown: '脱离关系',
     'Collapse Open Folders': '折叠文件夹',
     '+ All': '+ 全选',
     '- All': '- 全不选',
+    'Loading folder, please wait...': '正在加载文件夹，请稍候...',
     'Set public category for selected galleries: ': '设置选中的发布分类: ',
     'Move selected galleries to folder: ': '移动到文件夹: ',
     Go: '执行',
@@ -34,24 +34,25 @@ const data = {
     'Create Folder': '创建文件夹',
     'Save and Auto-Reorder': '保存并自动排序',
     'Save Changes': '保存更改',
+    'Saving...': '保存中...',
 
     'New Gallery': '新图库',
 
     'Main Gallery Title': '主标题',
-    'The main english or romanized title for this gallery.': '这个图库的主标题, 英文或者罗马音',
+    'The main english or romanized title for this gallery.': '图库的主标题 (英文或者罗马音)。',
     'Main gallery title (English Script)': '主标题 (英语)',
 
     'Japanese Script Title': '日文标题',
-    'The original title in Japanese script, if applicable.': '原始的日文标题 (如果有)',
+    'The original title in Japanese script, if applicable.': '原始的日文标题 (如果有)。',
     'Original gallery title (Japanese Script) (Optional)': '原始标题 (日语) (可选)',
 
     'Gallery Category': '图库分类',
-    'The publicly listed category for this gallery.': '图库在公开列表中的所属分类。',
+    'The publicly listed category for this gallery.': '图库在公开列表中所属的分类。',
     '(Private / Unlisted)': '(私有 / 不公开)',
 
     'Gallery Language': '图库语言',
     'The primary language for this gallery. Can only be changed here for new unpublished galleries; set with tags for published/updated galleries.':
-        '此图库的主要语言。仅新建立且未发布的图库可更改此选项。使用标签系统为已发布/更新的图库设置此项。',
+        '图库的主要语言。仅新建立且未发布的图库可更改此选项，已发布/已更新的图库需要通过标签系统更改。',
     Common: '常见',
     'Japanese / Other': '日语 / 其他',
     Chinese: '汉语',
@@ -64,7 +65,7 @@ const data = {
     Textless: '无字',
     Speechless: '无言',
     'Text Cleaned': '文字清除',
-    Others: '其它',
+    Others: '其他',
     Albanian: '阿尔巴尼亚语',
     Arabic: '阿拉伯语',
     Bulgarian: '保加利亚语',
@@ -95,19 +96,22 @@ const data = {
     Ukrainian: '乌克兰语',
     Vietnamese: '越南语',
     'Official / Textless': '官方 / 无字',
+    'This was officially published in this language, or the gallery has no text.': '官方发布于此语言，或者图库无字',
     Translated: '翻译',
+    'This is a fan translation based on the original text.': '基于原始文字翻译',
     Rewrite: '重写',
+    'This is a fan rewrite with new made-up text.': '使用新的文字重写',
 
     'Gallery Folder': '图库文件夹',
     'The folder this gallery will be displayed under in the uploader gallery list. This is only used to help you organize your gallery uploads.':
-        '图库文件夹仅在上传者的图库列表中显示，仅用于帮助整理上传的图库.',
+        '图库文件夹仅在上传者的图库列表中显示，仅用于帮助整理上传的图库。',
     Unsorted: '未分类',
     'or new folder: ': '或新建文件夹：',
 
     'Uploader Comment': '上传者评论',
     'Any comments or additional relevant information for this gallery. This will always show up as the topmost comment, and cannot be voted down.':
         '关于此图库的任何评论或其他相关信息。将始终显示在评论的最顶部，并且不能投票。',
-    'You can write an optional uploader comment here.': '你可以在这里写一个上传者评论。(可选)',
+    'You can write an optional uploader comment here.': '您可以在此处添加上传者评论。(可选)',
 
     'Date Added:': '添加时间：',
     'Not created yet': '尚未创建',
@@ -131,25 +135,28 @@ const data = {
 
     'Upload Files': '上传文件',
     'Accepted Images: JPG < 20 MB, PNG < 50 MB, GIF < 10 MB. Accepted Archive Formats: ZIP. Max Resolution: 20000 x 20000.':
-        '图片：JPG < 20 MB, PNG < 50 MB, GIF < 10 MB；归档：ZIP。最大分辨率：20000 x 20000。',
+        '图像：JPG < 20 MB, PNG < 50 MB, GIF < 10 MB；归档：ZIP。最大分辨率：20000 x 20000。',
     'Max 2,000 files and 10 GB per gallery. Do not upload more than 500MB at a time, less if you have a slow connection.':
-        '每个图库最多包含 2000 张图片或 10GB。一次上传的大小不应超过 500MB，如果连接速度较慢，可以尝试以更小归档上传。',
+        '每个图库最多包含 2000 张图像或 10 GB。一次上传的大小不应超过 500 MB，如果连接速度较慢，可以尝试以更小归档上传。',
     'Start Upload': '开始上传',
     'Select one or more image or archive files and click Start Upload to add files to this gallery.':
-        '选择一个或多个图片或归档文件，然后点击“开始上传”，以添加文件到此图库。',
+        '选择一个或多个图像或归档文件，然后点击“开始上传”，以添加文件到此图库。',
+    'Uploading...': '上传中...',
+    'Starting upload...': '开始上传...',
+    'Finished processing ': '已处理 ',
+    ' of ': ' / ',
+    ' uploaded file, added ': ' 个文件，已添加 ',
+    'Processing...': '正在处理...',
+    'Processing ': '正在处理 ',
+    'Finishing backend sync...': '正在完成后端同步...',
     '\n\t\tNo files have been added yet\n\t\t': '尚未添加任何文件',
     'Added ': '已添加 ',
-    ' new image to the gallery. You have added a total of ': ' 张图片。你目前总共添加了 ',
-    ' new images to the gallery. You have added a total of ': ' 张图片。你目前总共添加了 ',
-    'You have added a total of ': '你目前添加了 ',
-    ' image so far.': ' 张图片。',
-    ' images so far.': ' 张图片。',
     'Revert Changes': '撤销更改',
     'Apply Changes': '应用更改',
 
     'Automatic Resorting': '自动排序',
     'Select a sorting method...': '选择排序方式...',
-    'Remove Exact Duplicates': '删除完全重复的图片',
+    'Remove Exact Duplicates': '删除完全重复的图像',
     'Natural Sort': '自然排序',
     'Lexical Sort': '字典排序',
     'Time Added (Recent First), then Natural Sort': '按添加时间 (最近的在前)，然后按自然排序',
@@ -160,44 +167,59 @@ const data = {
     'Time Added (Recent Last), then Current Order': '按添加时间 (最近的在后)，然后按当前顺序',
     'Perform Auto-Sort': '执行自动排序',
     'Natural Sort will sort filenames with numbers in natural ascending order (8, 9, 10, 11, 12) regardless of padding. This is the recommended auto-sorting method.':
-        '使用自然排序将按数字递增顺序 (8, 9, 10, 11, 12) 排序此图库中的图片。这是推荐的自动排序方式。',
+        '自然排序将按数字递增顺序 (8, 9, 10, 11, 12) 排序此图库中的图像。这是推荐的自动排序方式。',
     'Lexical Sort will sort filenames with numbers in strict lexicographic order (1, 10, 11, 12, 2). Unless numbers are zero-padded, this can lead to unexpected results.':
-        '使用字典排序将按字典顺序 (1, 10, 11, 12, 2) 排序此图库中的图片。如果数字不包含前导 0，此操作将导致错误的结果。',
+        '字典排序将按字典顺序 (1, 10, 11, 12, 2) 排序此图库中的图像。若数字不包含前导 0，使用此方式会导致错误的结果。',
     'Time Added Sort will sort the pages based on the creation time of the gallery to which they were first added. For example, sorting by Time Added (Recent First) will sort any files that were added to the current gallery first, followed by the files first added to the previous version of the gallery, and so on.':
-        '按添加时间排序将按照图片第一次添加到图库的时间进行排序。例如，按添加时间 (最近的在前) 排序将按照图片第一次添加到当前图库的时间进行排序，然后按照图片第一次添加到上一个版本图库的时间进行排序，以此类推。',
+        '按添加时间排序将按照图像第一次添加到图库的时间进行排序。例如，按添加时间 (最近的在前) 排序将按照图像第一次添加到当前图库的时间进行排序，然后按照图像第一次添加到上一个版本图库的时间进行排序，以此类推。',
     'Note that you can always delete the updated gallery and start over if you make a mistake.':
-        '请注意，如果你犯了错误，你可以随时删除更新后的图库并重新开始。',
+        '请注意，如果您犯了错误，可以随时删除更新后的图库并重新开始。',
 
-    'Please confirm that you wish to publish the gallery:': '请确认你希望发布的图库：',
+    'Please confirm that you wish to publish the gallery:': '请确认您希望发布图库：',
     'Doing so will lock it for new file additions and modifications. If you wish to add or replace files in this gallery later, a copy will be created for this purpose. Published galleries can no longer be deleted, but you can disown them after a week.':
-        '发布后将锁定图库，不再允许添加或修改图片。如果你希望在发布后继续添加或替换图片，则需要创建一个此图库的新版本。发布后的图库不能被删除，但你可以在一周后与此图库脱离关系。',
+        '发布后将锁定图库，不再允许添加或修改图像。如果您希望在发布后继续添加或替换图像，则需要创建一个图库的新副本。发布后的图库无法删除，但您可以在一周后与其脱离关系。',
+    'The gallery was successfully published. It will take a few minutes before it becomes publicly listed.':
+        '图库已成功发布，将在几分钟后被列入公共图库列表。',
+    'You will be returned to the Management Interface momentarily.': '您将在几秒后返回管理界面。',
+    '(Click here to continue)': '(点此继续)',
+    'Please wait...': '请稍候...',
 
     'This gallery has been published, and images can therefore no longer be added, deleted or rearranged.':
-        '此图库已经发布，因此不能再添加、删除或重新排序图片。',
+        '此图库已经发布，因此不能再添加、删除或重新排序图像。',
     'You can create an editable copy of this gallery by clicking the button below. This new version will be linked in':
-        '你可以通过点击下方的按钮来创建一个此图库的可编辑副本。新的副本',
+        '您可以通过点击下方的按钮来创建一个此图库的可编辑副本。新的副本',
     'as a child gallery of the currently published one, and will also link back to the old gallery as its parent.\n':
-        '将作为子图库关联到当前图库，同时新图库也会将当前图库关联为父级图库。',
+        '将作为子图库关联到当前图库，同时新图库也会将当前图库关联为父图库。',
     'The old gallery will remain until the new one is published. Updates that remove valid content will be reverted.':
         '旧图库将保留到新图库发布。恶意删除有效内容的更改会被还原。',
-    'Create New Version': '创建一个新版本',
+    'Create New Version': '创建新版本',
 
     'A new version of the gallery was successfully created. The previous version will remain publicly listed while you make updates to this version.':
         '新版本的图库已成功创建。旧版本将保留到新版本发布。',
     'To cancel and keep the previous version, simply delete this gallery.': '要取消并保留旧版本，只需删除此图库。',
 
-    'Please confirm that you wish to delete this unpublished gallery.': '请确认你希望删除此未发布的图库。',
+    'Please confirm that you wish to delete this unpublished gallery.': '请确认您希望删除此未发布的图库。',
     'This action cannot be undone.': '此操作无法撤销。',
+    'The gallery was successfully deleted.': '图库已成功删除。',
 
     'Please confirm that you wish to disown this gallery. You will no longer be publicly listed as the uploader unless the gallery was published in the last week, and you will not be able to make further changes to it.':
-        '请确认，你希望与此图库脱离关系，你将不再被公开列为上传者，除非该图库发布未满一周。并且你将不能再对其进行修改。',
+        '请确认，您希望与此图库脱离关系。在一周后，您将不再被公开列为上传者。并且您将不能再对其进行修改。',
 
     'Gallery not found.': '图库未找到。',
-
-    'Please confirm that you wish to delete the gallery:': '请确认要删除以下图库',
-    'You do not have access to change that item.': '你没有更改此条目的权限',
-    'Go To Gallery': '查看图库',
+    'You cannot publish an empty gallery.': '您不能发布一个空图库',
+    'You must agree with the Terms of Service to continue.': '您必须同意服务条款才能继续',
+    'You must give the gallery a title to continue.': '您必须给图库命名才能继续',
+    'Apply or revert the active reorder before continuing.': '您必须应用或还原当前的排序才能继续',
 };
 
-merge(/^\/upld\//, undefined, data);
-merge(/^\//, 'upld.e-hentai.org', data);
+const regexData: Array<[RegExp, string]> = [
+    [/^Uploading: (\d+)%$/, '上传中：$1%'],
+    [/^ images? so far\.$/, ' 张图像。'],
+    [/^ images? so far$/, ' 张图像'],
+    [/^ new images? to the gallery. /, ' 张新图像。'],
+    [/You have added a total of $/, '您目前总共添加了 '],
+];
+
+merge(/^\/upld\//, undefined, data, regexData);
+merge(/^\//, 'upld.e-hentai.org', data, regexData);
+merge(/^\//, 'upload.e-hentai.org', data, regexData);

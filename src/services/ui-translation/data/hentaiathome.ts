@@ -20,11 +20,11 @@ merge(
         '\n\tCurrent Network Load shows how much raw bandwidth is currently used to serve images. This includes requests served by H@H as well as direct requests from the image servers.':
             '当前网络负载显示当前用于提供图像的原始带宽量。这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
         '\n\tH@H Miss% shows the percentage of requests for the region that would have gone to a H@H client if one was available, but where no client was ready to serve the request.':
-            'H@H 丢包率%显示［如果该区域有一个 H@H 客户端可用，请求将会发送到 H@H 客户端，但没有客户端能为该请求提供服务］的百分比。',
+            'H@H 丢包率%显示［如果此区域有一个 H@H 客户端可用，请求将会发送到 H@H 客户端，但没有客户端能为此请求提供服务］的百分比。',
         '\n\tCoverage denotes the average number of times a static file range partition can be found within a given region, indicating the total available storage capacity.':
-            '覆盖率可以理解为［在该区域内，一组文件的平均存在次数］，代表着总可用存储容量。',
+            '覆盖率可以理解为［在此区域内，一组文件的平均存在次数］，代表着总可用存储容量。',
         '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region for the last 24 hours.':
-            '点击/GB 显示过去 24 小时内该地区所有在线客户端分配的每 GB 磁盘空间每分钟的平均点击次数。',
+            '点击/GB 显示过去 24 小时内此地区所有在线客户端分配的每 GB 磁盘空间每分钟的平均点击次数。',
 
         'Your Active Clients': '您的活动客户端',
         'To add more clients, ': '要添加更多客户端，请',
@@ -70,15 +70,15 @@ merge(
         'Go to ': '前往 ',
         ' and run a test against your closest server. After the test completes, paste the result URL here.\n\t\t\t':
             '使用距离最近的测速服务器进行测试。将测速结果 URL 粘贴在此处。\n\t\t\t',
-        'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80 Mbps 上传速度',
+        'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80 Mbps 上传速度 ',
         AND: '和',
-        ' DOWNLOAD speed required.': '下载速度',
+        ' DOWNLOAD speed required.': ' 下载速度',
         'Submit Application': '提交申请',
         'If this is a headless server that cannot run speedtest, contact ':
             '如果是一台无法运行 SpeedTest 的无头服务器，请联系 ',
         'BOTH measurements in my test above are at least 80 Mbit/s *': '我的测速两个值均大于 80 Mbps *',
         'This client will be run on a computer/server that is online 24/7 **':
-            '这个客户端将在一台 24 小时在线的计算机/服务器上运行 **',
+            '此客户端将在一台 24 小时在线的计算机/服务器上运行 **',
         'If your connection speed is below the requirement, the resources taken up by tracking the client outweight those saved by having it in the network.':
             '如果链接速度低于要求，追踪客户端所消耗的资源将超过您客户端的贡献。',
         'This does not mean that you cannot restart the computer for updates or turn it off when you go on a vacation. It does however mean that if you shut it down at night, running H@H is not possible.':
@@ -93,7 +93,7 @@ merge(
 
         'Client Download': '客户端下载',
         'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
-        '. You can find the release notes for this version ': '。该版本的发行说明见',
+        '. You can find the release notes for this version ': '。此版本的发行说明见',
         here: '发行说明 (英文)',
 
         File: '文件',
@@ -106,17 +106,17 @@ merge(
             'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
     },
     [
-        [/^([\d\.]+) \/ min$/, '$1 / 分钟'],
-        [/^([\d\.]+) \/ day$/, '$1 / 天'],
-        [/^([\d\.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
-        [/^([\d\.]+) ([KMGTP]B) per week$/i, '每周 $1 $2'],
-        [/^Must be at least ([\d\.]+) ([KMGTP]B)\/s$/i, '不小于 $1 $2/s'],
+        [/^([\d.]+) \/ min$/, '$1 / 分钟'],
+        [/^([\d.]+) \/ day$/, '$1 / 天'],
+        [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
+        [/^([\d.]+) ([KMGTP]B) per week$/i, '每周 $1 $2'],
+        [/^Must be at least ([\d.]+) ([KMGTP]B)\/s$/i, '不小于 $1 $2/s'],
         [
-            /^Must be at least ([\d\.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/i,
+            /^Must be at least ([\d.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/i,
             '必须至少为 $1 $2/小时，填 0 表示无限制',
         ],
         [
-            /^ Must be at least ([\d\.]+) ([KMGTP]B). More is better, but space must be dedicated.$/i,
+            /^ Must be at least ([\d.]+) ([KMGTP]B). More is better, but space must be dedicated.$/i,
             '至少为 $1 $2。越多越好，但空间必须专用。',
         ],
     ],
@@ -136,20 +136,23 @@ merge(
         'Can be 443 (recommended) or most numbers between 1024 and 65534.':
             '可以使用 443 (推荐) 或 1024~65534 的大部分端口。',
         'This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.':
-            '该端口必须在您的防火墙中打开，并从您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
+            '此端口必须在您的防火墙中打开，并经由您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
         'Note: The port cannot be changed while the client is running.': '注意：客户端运行时不能更改端口。',
+
         'Client Name': '客户端名称',
         'You can set a custom name for this client here. This will be used in the various listings this client appears in.':
-            '您可以在此处为此客户端设置自定义名称。这将用于该客户端出现的各种列表中。',
+            '您可以在这里为此客户端设置自定义名称。它会用于此客户端出现的各种列表中。',
+
         'Maximum Upload Rate': '最大上传速率',
         'Actual utilization will generally reach at most 80% of this over time, less if you also set an hourly limit below.':
-            '随着时间的推移，实际利用率最多将达到该值的 80%，除非您还在下方设置了每小时限制。',
+            '随着时间的推移，实际利用率最多将达到此值的 80%，除非您还在下方设置了每小时限制。',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will however increase CPU usage and can affect the performance of the client. Intended for home networks; you should enable this if H@H noticeably affects your network performance.':
-            '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但是，这将增加 CPU 使用率，并可能影响客户端的性能。此选项适用于家庭网络，如果 H@H 显著影响您的网络性能，则应启用此功能。',
+            '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，并可能影响客户端性能。此选项适用于家庭网络，如果 H@H 显著影响您的网络性能，则应启用此功能。',
         ' KBytes/s': ' KB/s',
-        ' Enable Client-Side Speed Limit (recommended for home networks)': ' 启用客户端侧速度限制 (家庭网络推荐开启)',
+        ' Enable Client-Side Speed Limit (recommended for home networks)': ' 启用客户端侧速度限制 (家庭网络建议开启)',
         'Warning: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
             '警告：1 KB/s 或 KBps (千字节每秒) 相当于 8 Kb/s 或 Kbps (千比特每秒)。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
+
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space you wish to reserve for this client. The reserved space must always be available.':
             '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
@@ -160,29 +163,30 @@ merge(
 
         'Advanced Settings': '高级设置',
         'The settings below are optional advanced settings.': '以下设置项为可选的高级设置',
+
         'Reset Client Key': '重置客户端 Key',
-        'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next the the client starts.':
-            '如果您认为您的客户端 Key 已被泄露，您可以通过选中项来重置密钥。下次客户端启动时，您必须重新输入密钥。',
+        'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next time the client starts.':
+            '如果您认为您的客户端 Key 已泄露，可以通过选中复选框来重置密钥。下次客户端启动时，您必须重新输入密钥。',
         ' Reset Client Key': ' 重置客户端 Key',
+
         'Hourly Bandwidth Limit': '每小时流量限制',
         'Not Set': '未设置',
         ' MBytes/hour': ' MB/小时',
-        'Minimum space to leave on disk': '在磁盘上留下的最小空间',
+
+        'Minimum space to leave on disk': '最小磁盘预留空间',
         'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GB even if this is not set.':
-            '如果设置了此值，则如果磁盘上的可用空间减少到低于此值，客户端将停止运行。即使未设置，如果可用空间低于 1 GB，客户端也会退出。',
-        'Note that even if this is not set, the client will exit if free space drops below 1 GB.':
-            '请注意，即使未设置，如果可用空间低于 1 GB，客户端也会退出。',
-        'No Limit': '无限制',
+            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GB 时，客户端也会退出。',
 
         Scheduler: '运行计划',
         'The scheduler allows you to specify periods of time where the client is operating with lower speed limits.':
             '运行计划允许您指定客户端以较低速度限制运行的时间段。',
         'Click here to modify the schedule of this client': '修改此客户端的运行计划',
+
         'Static Ranges': '静态范围',
         'Over time, your client is assigned a number of permanently assigned ranges of files it is able to serve. This toggle will reset this set of ranges. ':
-            '随着时间的推移，您的客户端将被分配一个永久分配的文件范围，这些范围指示它能够提供服务的特定的、永久分配的多组文件。此开关将重置这些范围。',
+            '随着时间的推移，您的客户端会被分配到一段永久指定的文件范围用于提供服务。此复选框用于重置这些范围。',
         'DO NOT DO THIS unless you lost your cache. It will NOT fix any other client issues.':
-            '除非您丢失了缓存，否则不要执行此操作。它不会修复任何其他客户端问题。',
+            '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。',
         'This client currently has ': '此客户端当前被分配了 ',
         ' static range(s) assigned.': ' 组静态范围',
         ' Reset Static Ranges': ' 重置静态范围',
@@ -195,35 +199,36 @@ merge(
         always: '必须',
         ' be reset if the cache has been cleared for whatever reason, or the client will encounter serious trust issues.':
             '重置静态范围，否则客户端将遇到严重的信任问题。',
+
         'Miscellaneous Toggles': '杂项开关',
         'Various toggles to optimize client behavior.': '用于优化客户端行为的各种开关。',
         ' Disable logging to disk. This will reduce disk activity by a small amount. Errors are still logged.':
-            ' 停止向磁盘写入日志记录。这将少量减少磁盘活动。错误仍然被记录。',
+            ' 停止向磁盘写入日志。启用后能轻微减少磁盘活动。错误仍会被记录。',
         ' Run in low-memory mode. This will somewhat reduce memory requirements, but will lead to increased disk activity.':
-            ' 在低内存模式下运行。这会在一定程度上减少内存需求，但会导致磁盘活动增加。',
+            ' 以低内存模式运行。启用后能在一定程度上减少内存占用，但会导致磁盘活动增加。',
         ' Use this client as your designated H@H Downloader. Only necessary if you have multiple clients.':
-            ' 将此客户端用作您指定的 H@H 下载器。仅当您有多个客户端时才需要。',
+            ' 将此客户端用作指定的 H@H 下载器。仅当您有多个客户端时才需要。',
+
         '\n\t\tChanges will be applied within roughly two minutes. Changes to disk space will not take effect until next restart.\n\t\t':
             '更改将在大约两分钟内生效。对磁盘空间的更改将在下次重新启动时生效。',
-
         'Apply Settings': '应用设置',
-        '[Back to Overview]': '[回到总览]',
+        '[Back to Overview]': '[返回总览]',
     },
     [
         [
-            /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d\.]+) ([KMGTP]B)\/s$/,
+            /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d.]+) ([KMGTP]B)\/s$/,
             '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 $1 $2/s。',
         ],
         [
-            /^This must be at least ([\d\.]+) ([KMGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
+            /^This must be at least ([\d.]+) ([KMGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
             '至少为 $1 $2。我们建议为每 25 KB/s 带宽保留至少 1 GB 磁盘，或每 Mbps 带宽 5 GB 磁盘，但越多越好。',
         ],
         [
-            /The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least ([\d\.]+) ([KMGTP]B) if set./,
-            '此客户端每小时允许发送的 MB 数。保留为 0 表示仅限制最大速度。如果设置，必须至少为 $1 $2。',
+            /^The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least ([\d.]+) ([KMGTP]B) if set.$/,
+            '此客户端每小时允许发送的最大数据量。保留为 0 表示仅限制最大速度。若设置，则必须至少为 $1 $2。',
         ],
-        [/^([\d\.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
-        [/^([\d\.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
+        [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
+        [/^([\d.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
     ],
 );
 
@@ -251,12 +256,12 @@ merge(
         'Add Rule': '添加规则',
         'Save Schedule': '保存运行计划',
 
-        '[Back to Settings]': '[回到设置]',
+        '[Back to Settings]': '[返回设置]',
     },
     [
         [/^Modify Schedule for Client (\d+) \((.*?)\)$/, '修改客户端 $1 ($2) 的运行计划'],
         [
-            /^All schedule times are in UTC\. As a reference, the current UTC time is (.*?)\.$/,
+            /^All schedule times are in UTC. As a reference, the current UTC time is (.*?)\.$/,
             (s, t) => `所有计划时间均为 UTC。作为参考，现在的 UTC 时间是 ${t.replace(/\s/g, '\xA0')}。`,
         ],
     ],

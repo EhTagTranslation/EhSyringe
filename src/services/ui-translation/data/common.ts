@@ -5,14 +5,14 @@ merge(
     undefined,
     {
         'Front Page': '首页',
-        Watched: '关注',
-        Popular: '流行',
+        Watched: '订阅',
+        Popular: '热门',
         Torrents: '种子',
         Favorites: '收藏',
         'My ': '我的',
         Home: '主页',
         Uploads: '上传',
-        Toplists: '排行榜',
+        Toplists: '排行',
         Bounties: '悬赏',
         News: '新闻',
         Forums: '论坛',
@@ -39,7 +39,7 @@ merge(
         Onion: '洋葱网址',
 
         'E-Hentai Galleries: The Free Hentai Doujinshi, Manga and Image Gallery System':
-            'E-Hentai: 一个免费的绅士同人志、漫画和图片的图库系统',
+            'E-Hentai: 一个免费的绅士同人志、漫画和图像的图库系统',
         'Now With Layers': '有了洋葱网址',
 
         Doujinshi: '同人志',
@@ -49,7 +49,6 @@ merge(
         Western: '西方',
         'Non-H': '无H',
         'Image Set': '图集',
-        // 'Cosplay': '',
         'Asian Porn': '亚洲色情',
         Misc: '杂项',
         Private: '私有',
@@ -72,19 +71,19 @@ merge(
         '4 Stars': '4 星',
         '5 Stars': '5 星',
         'Disable custom filters for:': '禁用自定义过滤器：',
-        ' Language': '语言',
-        ' Uploader': '上传者',
-        ' Tags': '标签',
+        ' Language': ' 语言',
+        ' Uploader': ' 上传者',
+        ' Tags': ' 标签',
 
         'Show File Search': '显示文件搜索',
         'Hide File Search': '隐藏文件搜索',
         'Select a file to upload, then hit File Search. All public galleries containing this exact file will be displayed.':
-            '选择要搜索的图片文件后点击“文件搜索”。将列出包含此文件的所有公开图库。',
+            '请选择要搜索的图像文件后点击“文件搜索”。将列出包含此文件的所有公开图库。',
         'File Search': '文件搜索',
         'For color images, the system can also perform a similarity lookup to find resampled images.':
-            '对于彩色图片，系统还可以执行相似性查询以找到重采样过的图片。',
-        ' Use Similarity Scan': '使用相似性查询',
-        ' Only Search Covers': '仅搜索封面',
+            '对于彩色图像，系统还可以执行相似性查询以找到重采样过的图像。',
+        ' Use Similarity Scan': ' 使用相似性查询',
+        ' Only Search Covers': ' 仅搜索封面',
 
         'The keyword ': '关键词 ',
         ' is short and will be searched as an exact tag only.': ' 太短，因此只会搜索精确匹配的标签。',
@@ -110,15 +109,15 @@ merge(
         'Last >>': '末页 >>',
         'date or offset': '日期或偏移量',
         'Enter a year or date in YYYY, (YY)YY-MM or (YY)YY-MM-DD format to seek to, or the number of days to jump backwards or forwards, or a number followed by w, m and y to jump weeks, months or years respectively.':
-            '输入要跳转的年份或日期，格式为 YYYY，(YY)YY-MM 或 (YY)YY-MM-DD；或者输入要向前或向后跳转的天数，输入数字后可以加 w，m，y 分别跳转周，月，年',
+            '请输入要跳转的年份或日期，格式为 YYYY，(YY)YY-MM 或 (YY)YY-MM-DD；\r或者输入要向前或向后跳转的天数，输入数字后可以加 w，m，y 分别跳转周，月，年',
         'Set the date to seek from or to.': '设置要跳转的日期',
         'Use Date Selector': '日期选择器',
 
-        Minimal: ' 最小化',
-        'Minimal+': ' 最小化 + 关注标签',
-        Compact: ' 紧凑 + 标签',
-        Extended: ' 扩展',
-        Thumbnail: ' 缩略图',
+        Minimal: '最小化',
+        'Minimal+': '最小化 + 关注标签',
+        Compact: '紧凑 + 标签',
+        Extended: '扩展',
+        Thumbnail: '缩略图',
 
         Published: '发布时间',
         Title: '标题',
@@ -143,10 +142,10 @@ merge(
             '回想一下你迄今为止的旅程，你发现你更聪明了。',
         'You gain ': '你获得了 ',
         ' EXP, ': ' 经验, ',
-        ' Credits!': ' Credits!',
+        ' GP and ': ' GP 和 ',
 
         'You have encountered a monster!': '你遇到了怪物！',
-        'Click here to fight in the HentaiVerse.': '点击这里进入 HentaiVerse 战斗',
+        'Click here to fight in the HentaiVerse.': '点击此处进入 HentaiVerse 战斗',
 
         'Favorites 0': '收藏夹 0',
         'Favorites 1': '收藏夹 1',
@@ -172,15 +171,18 @@ merge(
         'No (Expunged)': '否 (已删除)',
         'No (Deleted)': '否 (已移除)',
         'No (Replaced)': '否 (已替换)',
+
+        'The site is currently in Read Only/Failover Mode. Some functionality will not be available. Details may be available on ':
+            '网站当前处于只读/故障转移模式，部分功能会不可用。详情请关注 ',
+        'The site is currently in Read Only Mode. This page is therefore not available.': '网站当前处于只读模式，因此本页面不可用。',
+        'This content is not available in Russia.RU': '此内容在俄罗斯 (RU) 不可用',
     },
     [
         [/^(\d+) pages?$/, '$1 页'],
-        [/Found about ([\d,]+) results?./, '找到约 $1 个结果。'],
-        [/Found ([\d,]+\+?) results?./, '找到 $1 个结果。'],
-        [/Found thousands of results./, '找到数千结果。'],
-        [/Found many results./, '找到许多结果。'],
-        [/Your custom filters removed ([\d,]+) galler(ies|y) from this page./, '你的过滤器已从此页面移除 $1 个结果。'],
-        [/Showing results for ([\d,]+) watched tags?/, '订阅的 $1 个标签的结果'],
-        [/Showing ([\d,]+)-([\d,]+) of ([\d,]+)/, '$1 - $2，共 $3 个结果'],
+        [/^Found about ([\d,]+) results?./, '找到约 $1 个结果。'],
+        [/^Found ([\d,]+\+?) results?./, '找到 $1 个结果。'],
+        [/^Found thousands of results./, '找到数千结果。'],
+        [/^Found many results./, '找到许多结果。'],
+        [/\s?Your custom filters removed ([\d,]+) galler(ies|y) from this page.\s?/, '您的过滤器已从此页面移除 $1 个结果。'],
     ],
 );
