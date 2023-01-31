@@ -1,5 +1,6 @@
 import './data/archiver';
 import './data/bitcoin';
+import './data/bounty';
 import './data/common';
 import './data/exchange';
 import './data/favorites';
@@ -17,6 +18,7 @@ import './data/news';
 import './data/popular';
 import './data/search';
 import './data/stats';
+import './data/tools';
 import './data/toplist';
 import './data/torrents';
 import './data/uconfig';

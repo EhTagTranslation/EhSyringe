@@ -21,7 +21,7 @@ const data = {
     Disown: '脱离关系',
     'Collapse Open Folders': '折叠文件夹',
     '+ All': '+ 全选',
-    '- All': '- 反选',
+    '- All': '- 全不选',
     'Set public category for selected galleries: ': '设置选中的发布分类: ',
     'Move selected galleries to folder: ': '移动到文件夹: ',
     Go: '执行',

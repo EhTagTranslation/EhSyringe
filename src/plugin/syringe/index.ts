@@ -353,7 +353,7 @@ export class Syringe {
     }
 
     translateUi(node: Node): void {
-        if ((isNode(node, 'input') || isNode(node, 'span')) && node.title) {
+        if ((isNode(node, 'input') || isNode(node, 'span') || isNode(node, 'label')) && node.title) {
             const translation = this.translateUiText(node.title);
             if (translation != null) {
                 node.title = translation;

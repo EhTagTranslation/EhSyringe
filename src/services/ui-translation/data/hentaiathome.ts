@@ -63,19 +63,20 @@ merge(
         'Max Transfer per Hour': '每小时最大传输量',
         'The maximum total outgoing data transfer the client can use per hour.':
             '客户端每小时可使用的最大传出数据总量。',
+        ' MB/hour': ' MB/小时',
         'Disk Cache Size': '磁盘缓存大小',
         'The maximum allowed disk space usage for the image cache.': '允许缓存占用的最大磁盘空间。',
         'Speed Test': '速度测试结果',
         'Go to ': '前往 ',
         ' and run a test against your closest server. After the test completes, paste the result URL here.\n\t\t\t':
             '使用距离最近的测速服务器进行测试。将测速结果 URL 粘贴在此处。\n\t\t\t',
-        'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80Mbps 上传速度',
+        'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80 Mbps 上传速度',
         AND: '和',
         ' DOWNLOAD speed required.': '下载速度',
         'Submit Application': '提交申请',
         'If this is a headless server that cannot run speedtest, contact ':
             '如果是一台无法运行 SpeedTest 的无头服务器，请联系 ',
-        'BOTH measurements in my test above are at least 80 Mbit/s *': '我的测速两个值均大于 80Mbps *',
+        'BOTH measurements in my test above are at least 80 Mbit/s *': '我的测速两个值均大于 80 Mbps *',
         'This client will be run on a computer/server that is online 24/7 **':
             '这个客户端将在一台 24 小时在线的计算机/服务器上运行 **',
         'If your connection speed is below the requirement, the resources taken up by tracking the client outweight those saved by having it in the network.':
@@ -97,6 +98,7 @@ merge(
 
         File: '文件',
         Size: '大小',
+        'Source Code': '源代码',
 
         'Please verify that the size and cryptographic hashes correspond to the file you download. For more information about file validation, see these links: ':
             '请验证您下载的文件的大小和哈希值与上方给出的数值相对应。有关文件验证的更多信息，请参阅以下链接 (英文)：',
@@ -104,17 +106,18 @@ merge(
             'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
     },
     [
-        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/hour$/, '$1$2/小时'],
-        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/s$/, '$1$2/s'],
-        [/^(\d+\.*\d*)?\s*([KMGTP]B) per week$/i, '每周 $1$2'],
-        [/^Must be at least (\d+\.*\d*)?\s*([KMGTP]B)\/s$/i, '不小于 $1$2/s'],
+        [/^([\d\.]+) \/ min$/, '$1 / 分钟'],
+        [/^([\d\.]+) \/ day$/, '$1 / 天'],
+        [/^([\d\.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
+        [/^([\d\.]+) ([KMGTP]B) per week$/i, '每周 $1 $2'],
+        [/^Must be at least ([\d\.]+) ([KMGTP]B)\/s$/i, '不小于 $1 $2/s'],
         [
-            /^Must be at least (\d+\.*\d*)?\s*([KMGTP]B)\/hour, or 0 for unlimited.$/i,
-            '必须至少为 $1$2/小时，填 0 表示无限制',
+            /^Must be at least ([\d\.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/i,
+            '必须至少为 $1 $2/小时，填 0 表示无限制',
         ],
         [
-            /^ Must be at least (\d+\.*\d*)?\s*([KMGTP]B). More is better, but space must be dedicated.$/i,
-            '至少为 $1$2。越多越好，但空间必须专用。',
+            /^ Must be at least ([\d\.]+) ([KMGTP]B). More is better, but space must be dedicated.$/i,
+            '至少为 $1 $2。越多越好，但空间必须专用。',
         ],
     ],
 );
@@ -139,8 +142,6 @@ merge(
         'You can set a custom name for this client here. This will be used in the various listings this client appears in.':
             '您可以在此处为此客户端设置自定义名称。这将用于该客户端出现的各种列表中。',
         'Maximum Upload Rate': '最大上传速率',
-        'This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least 2000 KB/s':
-            '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 2000 KB/s。',
         'Actual utilization will generally reach at most 80% of this over time, less if you also set an hourly limit below.':
             '随着时间的推移，实际利用率最多将达到该值的 80%，除非您还在下方设置了每小时限制。',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will however increase CPU usage and can affect the performance of the client. Intended for home networks; you should enable this if H@H noticeably affects your network performance.':
@@ -153,7 +154,7 @@ merge(
         'How much disk space you wish to reserve for this client. The reserved space must always be available.':
             '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
         'Static Range allocation is limited to 1 per 250 MB of disk space.':
-            '静态范围分配限制为每 250MB 磁盘空间 1 组。',
+            '静态范围分配限制为每 250 MB 磁盘空间 1 组。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
         ' Remove static ranges if necessary': ' 如有必要，删除静态范围',
 
@@ -168,9 +169,9 @@ merge(
         ' MBytes/hour': ' MB/小时',
         'Minimum space to leave on disk': '在磁盘上留下的最小空间',
         'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GB even if this is not set.':
-            '如果设置了此值，则如果磁盘上的可用空间减少到低于此值，客户端将停止运行。即使未设置，如果可用空间低于 1GB，客户端也会退出。',
+            '如果设置了此值，则如果磁盘上的可用空间减少到低于此值，客户端将停止运行。即使未设置，如果可用空间低于 1 GB，客户端也会退出。',
         'Note that even if this is not set, the client will exit if free space drops below 1 GB.':
-            '请注意，即使未设置，如果可用空间低于 1GB，客户端也会退出。',
+            '请注意，即使未设置，如果可用空间低于 1 GB，客户端也会退出。',
         'No Limit': '无限制',
 
         Scheduler: '运行计划',
@@ -210,19 +211,19 @@ merge(
     },
     [
         [
-            /^This is the maximum speed the client is allowed to use, measured in kilobytes per second\. Must be at least (\d+\.*\d*)\s*([KMGTP]B)\/s$/,
-            '这是允许客户端使用的最大速度。必须至少为 $1$2/s。',
+            /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d\.]+) ([KMGTP]B)\/s$/,
+            '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 $1 $2/s。',
         ],
         [
-            /^This must be at least (\d+\.*\d*)\s*([KMGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
-            '至少为 $1$2。我们建议为每 25KB/s 带宽保留至少 1GB 磁盘，或每 Mbps 带宽 5GB 磁盘，但越多越好。',
+            /^This must be at least ([\d\.]+) ([KMGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
+            '至少为 $1 $2。我们建议为每 25 KB/s 带宽保留至少 1 GB 磁盘，或每 Mbps 带宽 5 GB 磁盘，但越多越好。',
         ],
         [
-            /The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least (\d+\.*\d*)\s*([KMGTP]B) if set./,
-            '此客户端每小时允许发送的 MB 数。保留为 0 表示仅限制最大速度。如果设置，必须至少为 $1$2。',
+            /The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least ([\d\.]+) ([KMGTP]B) if set./,
+            '此客户端每小时允许发送的 MB 数。保留为 0 表示仅限制最大速度。如果设置，必须至少为 $1 $2。',
         ],
-        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/hour$/, '$1$2/小时'],
-        [/^(\d+\.*\d*)?\s*([KMGTP]B)\/s$/, '$1$2/s'],
+        [/^([\d\.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
+        [/^([\d\.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
     ],
 );
 
