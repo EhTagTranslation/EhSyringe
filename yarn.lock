@@ -1283,10 +1283,10 @@
     "@types/filesystem" "*"
     "@types/har-format" "*"
 
-"@types/chrome@^0.0.210":
-  version "0.0.210"
-  resolved "https://registry.npmmirror.com/@types/chrome/-/chrome-0.0.210.tgz#6bc137e111cf42857af5012d47c036adc079616e"
-  integrity sha512-VSjQu1k6a/rAfuqR1Gi/oxHZj4+t6+LG+GobNI3ZWI6DQ+fmphNSF6TrLHG6BYK2bXc9Gb4c1uXFKRRVLaGl5Q==
+"@types/chrome@^0.0.211":
+  version "0.0.211"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.211.tgz#2e52cd17a2a3f2d807e1fc1457c271f6120c6730"
+  integrity sha512-Ps5gqXg50M9YddHgnvFGKHNb9KZdP/e2zerZ/pn/tDet0O9hZ4oZCSXUfPdRW9Xl8XaGjujvyORkTwuvlARXQQ==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
