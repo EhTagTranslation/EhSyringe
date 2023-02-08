@@ -34,7 +34,7 @@ merge(
         'Expunge Submitted:': '删除提交时间：',
         'Appeal Submitted:': '申诉提交时间：',
         'Expunge Type:': '删除类型：',
-        'Conflict Gallery:': '冲突画廊：',
+        'Conflict Gallery:': '冲突图库：',
         'Expunge Activated:': '删除生效时间：',
         'Expunge Rejected:': '删除拒绝时间：',
         'Expunge Revoked:': '删除撤销时间：',
@@ -99,10 +99,11 @@ merge(
 
         Tag: '标签',
         Score: '权重',
-        Gallery: '画廊',
+        Gallery: '图库',
         Timestamp: '时间',
     },
     [
-        [/Showing (\d+) recent tags:/, '最近 $1 个标签：'],
+        [/^Showing (\d+) recent tags:$/, '最近 $1 个标签：'],
+        [/^Showing the last (\d+) of (\d+) recent tags:$/, '最近 $2 个标签中的最后 $1 个：'],
     ],
 );

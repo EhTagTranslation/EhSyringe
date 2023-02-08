@@ -19,7 +19,7 @@ export class ImageContextMenu implements Menu {
         '*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*',
         '*://*.e-hentai.org/*',
     ];
-    readonly title = '显示所有包含此图片的图库';
+    readonly title = '显示所有包含此图像的图库';
     readonly targetUrlPatterns = [
         '*://exhentai.org/t/*.jpg',
         '*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/t/*.jpg',

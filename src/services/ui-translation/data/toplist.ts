@@ -49,9 +49,7 @@ merge(/^\/toplist\.php/, undefined, {
 });
 
 merge(/^\/toplist\.php\?tl=1/, undefined, {
-    Published: '发布时间',
     Name: '标题',
-    Uploader: '上传者',
 });
 
 merge(/^\/toplist\.php\?tl=[2-7]/, undefined, {

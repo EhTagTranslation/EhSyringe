@@ -1,13 +1,16 @@
 import { merge } from '../helper';
 
 merge(/^\/home\.php/, undefined, {
-    'Image Limits': '图片限制',
+    'Image Limits': '图像限制',
     'You are currently at ': '当前：',
     ' towards a limit of ': '，限制为 ',
-    '. This regenerates at a rate of ': '，每分钟回复 ',
-    ' per minute.': ' 点',
     'Reset Cost: ': '重置限制花费：',
     'Reset Limit': '重置限制',
+    'Nothing to reset.': '没有可重置的限制。',
+    'Image limit was successfully reset.': '图像限制已成功重置。',
+    'You will be returned to the Management Interface momentarily.': '您将在几秒后返回管理界面。',
+    '(Click here to continue)': '(点此继续)',
+    'Please wait...': '请稍候...',
 
     EHTracker: 'EH 种子服务器',
     ' uploaded': '上传量',
@@ -18,9 +21,9 @@ merge(/^\/home\.php/, undefined, {
     seedmins: '做种时长',
     'Show My Torrents': '显示我的种子',
     'If you misplace any of your personalized torrents, hit the button below to reset your key.':
-        '如果你错误地分发了私有种子，请点击下面的按钮重置你的 Key。',
-    'This will immediately invalidate all of your personalized torrents in play.': '这将立即注销你全部的私有种子。',
-    'Your current key is: ': '你当前的 Key 是：',
+        '如果您错误地分发了私有种子，请点击下面的按钮重置您的 Key。',
+    'This will immediately invalidate all of your personalized torrents in play.': '这会立即注销您全部的私有种子。',
+    'Your current key is: ': '您当前的 Key 是：',
     'Reset Torrent Key': '重置种子 Key',
 
     'Total GP Gained': '获得的总 GP',
@@ -29,9 +32,8 @@ merge(/^\/home\.php/, undefined, {
     'GP from archive downloads': 'GP 来自存档下载',
     'GP from Hentai@Home': 'GP 来自 Hentai@Home',
 
-    Toplists: '排行榜',
-    '\n\t\t\tYou are currently not featured on any toplists...\n\t\t': '您当前没有上榜……',
-    'You are currently: ': '你现在是：',
+    '\n\t\t\tYou are currently not featured on any toplists...\n\t\t': '您当前没有上榜...',
+    'You are currently: ': '您现在是：',
     'on the ': ' (在',
     ' toplist': '榜)',
 
@@ -41,7 +43,6 @@ merge(/^\/home\.php/, undefined, {
     Awards: '奖励',
     Tagging: '打标签',
     Level: '等级',
-    Donations: '捐赠',
     'Forum Activity': '论坛活跃',
     'Uploads/H@H': '上传 / H@H',
     'Account Age': '账户资历',

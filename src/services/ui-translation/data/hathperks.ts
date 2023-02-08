@@ -2,23 +2,24 @@ import { merge } from '../helper';
 
 merge(/^\/hathperks\.php/, undefined, {
     'By running the Hentai@Home client, you will over time gain special bonus points known as ':
-        '通过运行 Hentai@Home 客户端，您将随着时间的推移获得特殊的奖励积分，即 ',
+        '通过运行 Hentai@Home 客户端，您会随着时间的推移获得特殊的奖励积分，即 ',
     '. These are rewards for people who help keeping this site free, fast and responsive by donating bandwidth and computer resources, and can be exchanged here for ':
-        '。这是给予捐献带宽和计算机资源，帮助网站保持自由与快速的奖励，可以在这里交换 ',
+        '。这是给予捐献带宽和计算机资源，帮助网站保持自由与快速的人的奖励，可以在本页面兑换 ',
     ', which grant beneficial effects on E-Hentai Galleries and in the HentaiVerse.':
-        '，这对 E-Hentai 和 HentaiVerse 产生了有益的影响。',
+        '，以提升 E-Hentai 和 HentaiVerse 体验。',
 
     'If running H@H is not an option, you can exchange Credits for Hath at the ':
-        '如果你不能运行 H@H，你可以在这里用 Credits 交换 Hath：',
+        '如果您无法运行 H@H，可以在这里使用 Credits 交换 Hath：',
 
     'While the Hath Perks for the HentaiVerse cannot be obtained in any other way, most of the ones that are specific for Galleries will also get unlocked by making a donation on the ':
-        '尽管用于 HentaiVerse 游戏的 Hath Perks 不能用其他方法获取，但关于图库的大部分 Hath Perks 也可以通过',
+        '虽然用于 HentaiVerse 的 Hath Perks 不能通过其他方法获取，但关于图库的大部分 Hath Perks 还可以通过',
     'Donation Screen': '捐赠',
     '. These will be refunded if you buy them for Hath, and later make a qualifying donation. There is also an option to "adopt" H@H clients that will grant you Hath over time as if you were running it yourself.':
-        '获取。如果您已经用 Hath 购买，在符合条件的捐赠后将获得退款。还有一个“领养” H@H 客户端的选项，它会随着时间的推移而授予您 Hath，就好像您自己运行它一样。',
+        '获取。如果您已经使用 Hath 购买，在达成符合条件的捐赠后将获得退款。此外还有一个“领养” H@H 客户端的选项，它会随着时间的推移而授予您 Hath，就好像自己运行它一样。',
 
-    'You currently have ': '你现在拥有 ',
+    'You currently have ': '您现在拥有 ',
     ' Hath.': ' Hath。',
+    ' Activated!': ' 已激活！',
 
     Description: '描述',
     Obtained: '已获得',
@@ -38,7 +39,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Multi-Page Viewer': '多页查看器',
     'Unlocks the Multi-Page Viewer function on E-Hentai Galleries. This allows you to view all images from a gallery on one page. (':
-        '解锁 E-Hentai 图库的多页查看器功能。这允许您在一个页面上查看库中的所有图像。(',
+        '解锁 E-Hentai 图库的多页查看器功能。这允许您在一个页面上查看图库中的所有图像。(',
     demo: '演示',
 
     'More Thumbs': '更多的缩略图',
@@ -49,11 +50,11 @@ merge(/^\/hathperks\.php/, undefined, {
     'Further increases the maximum number of thumbnail rows to 40.': '将最大缩略图行数增加到 40。',
 
     'More Pages': '更多页面',
-    'Increases all limits on how many pages you can view by a factor of two.': '将图片限制变为原来的 2 倍。',
+    'Increases all limits on how many pages you can view by a factor of two.': '将图像限制变为原来的 2 倍。',
     'Lots of Pages': '超多页面',
-    'Increases all limits on how many pages you can view by a factor of five.': '将图片限制变为原来的 5 倍。',
+    'Increases all limits on how many pages you can view by a factor of five.': '将图像限制变为原来的 5 倍。',
     'Too Many Pages': '全部页面',
-    'Increases all limits on how many pages you can view by a factor of ten.': '将图片限制变为原来的 10 倍。',
+    'Increases all limits on how many pages you can view by a factor of ten.': '将图像限制变为原来的 10 倍。',
 
     'More Favorite Notes I': '更多收藏备注 I',
     'Increases the number of favorite note slots to 10000.': '将收藏备注限制增加到 10000。',
@@ -62,39 +63,39 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Paging Enlargement I': '页面扩大 I',
     'Increases the number of results you can show per page on the index, search and torrent pages to 50.':
-        '将主页、搜索和种子页面的结果数量变为 50。',
+        '将索引、搜索和种子页面的结果数量变为 50。',
     'Paging Enlargement II': '页面扩大 II',
     'Increases the number of results you can show per page on the index, search and torrent pages to 100.':
-        '将主页、搜索和种子页面的结果数量变为 100。',
+        '将索引、搜索和种子页面的结果数量变为 100。',
 
     // https://ehwiki.org/wiki/Hath_Perks/Chinese
     'Postage Paid': '邮费已付',
     'You no longer have to pay postage or CoD fees on messages sent through MoogleMail.':
-        '你使用莫古利邮局可免收邮费和货到付款手续费。',
+        '您使用莫古利邮局可免收邮费和货到付款手续费。',
 
     'Vigorous Vitality': '生机勃勃',
-    'Increases your base health by 10%.': '增加你的基础生命值 10%。',
+    'Increases your base health by 10%.': '增加您的基础生命值 10%。',
 
     'Effluent Ether': '溢流以太',
-    'Increases your base mana by 10%.': '增加你的基础魔力值 10%。',
+    'Increases your base mana by 10%.': '增加您的基础魔力值 10%。',
 
     'Suffusive Spirit': '心灵坚强',
-    'Increases your base spirit by 10%.': '增加你的基础灵力值 10%。',
+    'Increases your base spirit by 10%.': '增加您的基础灵力值 10%。',
 
     'Resplendent Regeneration': '辉煌再起',
-    'Increases your in-combat regeneration by 50%.': '增强你战斗中的再生能力 50%。',
+    'Increases your in-combat regeneration by 50%.': '增强您战斗中的再生能力 50%。',
 
     'Enigma Energizer': '谜之劲量',
     'Doubles the bonus from the riddlemaster, and increases duration to 50 turns.':
         '加倍御谜士的奖励，持续回合数增加至 50 回合。',
 
     'Yakety Sax': '叶克蒂·萨克斯',
-    'Monsters will never catch you when fleeing.': '你逃跑时不会被怪物抓到。',
+    'Monsters will never catch you when fleeing.': '您逃跑时不会被怪物抓到。',
 
     'Soul Catcher': '灵魂捕手',
     'Get ten free soul fragments per day.': '每天可得到十片免费的灵魂碎片。',
     'These are added automatically if you have opened HV at some point during the past 30 days.':
-        '如果你最近 30 天内还有开启游戏将会自动增加。',
+        '如果您最近 30 天内还有开启游戏将会自动增加。',
 
     'Extra Strength Formula': '特强配方',
     'Happy Pills are twice as effective at improving monster morale.': '快乐药丸会加倍恢复怪物的士气值。',
@@ -115,23 +116,23 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Eminent Elementalist': '元素大师',
     'Increases effective Elemental Magic Proficiency by 10% of your natural base proficiency.':
-        '你自身的基础元素魔法熟练度的 10% 会增加到有效熟练度里。',
+        '您自身的基础元素魔法熟练度的 10% 会增加到有效熟练度里。',
 
     'Divine Warmage': '圣战法师',
     'Increases effective Divine Magic Proficiency by 10% of your natural base proficiency.':
-        '你自身的基础神圣魔法熟练度的 10% 会增加到有效熟练度里。',
+        '您自身的基础神圣魔法熟练度的 10% 会增加到有效熟练度里。',
 
     'Death and Decay': '死亡凋零',
     'Increases effective Forbidden Magic Proficiency by 10% of your natural base proficiency.':
-        '你自身的基础黑暗魔法熟练度的 10% 会增加到有效熟练度里。',
+        '您自身的基础黑暗魔法熟练度的 10% 会增加到有效熟练度里。',
 
     'Evil Enchantress': '邪恶的女巫',
     'Increases effective Deprecating Magic Proficiency by 10% of your natural base proficiency.':
-        '你自身的基础减益魔法熟练度的 10% 会增加到有效熟练度里。',
+        '您自身的基础减益魔法熟练度的 10% 会增加到有效熟练度里。',
 
     'Force of Nature': '大自然的力量',
     'Increases effective Supportive Magic Proficiency by 10% of your natural base proficiency.':
-        '你自身的基础增益魔法熟练度的 10% 会增加到有效熟练度里。',
+        '您自身的基础增益魔法熟练度的 10% 会增加到有效熟练度里。',
 
     'Manehattan Project': '曼哈顿计划',
     'Significantly boosts the damage output of the Orbital Friendship Cannon.':
@@ -139,11 +140,11 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Follower of Snowflake': '雪花的信徒',
     'Displays your unyielding devotion to Snowflake, the Goddess of Loot and Harvest.':
-        '雪花 ─ 专司战利品与收获的女神。宣示你对她不屈不挠的奉献精神。',
+        '雪花 ─ 专司战利品与收获的女神。宣示您对她不屈不挠的奉献精神。',
 
     'Thinking Cap': '深思',
     'Increases EXP gain by 25%. For calculation purposes, this bonus is added to the HentaiVerse training bonus.':
-        '所有取得的经验值提升 25%。为计算方便，这个奖励被合并到 HentaiVerse 训练奖励。',
+        '所有取得的经验值提升 25%。为计算方便，此奖励被合并到 HentaiVerse 训练奖励。',
     'Mentats': '晶算师',
     'Increases this EXP bonus to 50%.': '提升经验值奖励至 50%。',
     'Learning Chip': '学习晶片',
@@ -153,7 +154,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Innate Arcana I': '天赋奥术 I',
     'Unlocks the first auto-cast slot in the HentaiVerse, with a 10% upkeep reduction bonus. This allows you to select a spell that will be cast automatically.':
-        '在 HentaiVerse 解锁第一个自动施法栏，附赠 10% 维持量折扣奖励。此能力能让你选择一种咒语自动施放。',
+        '在 HentaiVerse 解锁第一个自动施法栏，附赠 10% 维持量折扣奖励。此能力能让您选择一种咒语自动施放。',
     'Innate Arcana II': '天赋奥术 II',
     'Unlocks a second auto-cast slot, and reduces total upkeep by 20%.': '解锁第二个自动施法栏，和 20% 总维持量折扣。',
     'Innate Arcana III': '天赋奥术 III',
@@ -165,7 +166,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Crystarium I': '水晶矿脉 I',
     'Whenever a monster drops a crystal in the HentaiVerse, you will receive an additional bonus crystal.':
-        '在 HentaiVerse 里每当一只怪物掉落一颗水晶时，你将会再获得一颗水晶作为追加奖励。',
+        '在 HentaiVerse 里每当一只怪物掉落一颗水晶时，您将会再获得一颗水晶作为追加奖励。',
     'Crystarium II': '水晶矿脉 II',
     'Further increases the number of crystals received per drop to three.':
         '进一步提高水晶掉落数量至三倍。',
@@ -188,7 +189,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Hoarder I': '囤积者 I',
     'The first 200 equips placed in storage do not count towards your equipment limit.':
-        '放置于仓库的前 200 件装备不计入你的装备数量限制。',
+        '放置于仓库的前 200 件装备不计入您的装备数量限制。',
     'Hoarder II': '囤积者 II',
     'Increases the equipment storage allowance to 400 equips.': '将装备数量限制增加到 400。',
     'Hoarder III': '囤积者 III',
@@ -200,13 +201,13 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Repair Bear Mk.1': '修理熊 Mk.1',
     'The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times. This reduces effective equipment wear by half.':
-        '莫古利动力学的最新发明，修理熊会随侍在侧帮助你的装备随时保持良好状态。有效装备耗损程度将减少一半。',
+        '莫古利动力学的最新发明，修理熊会随侍在侧帮助您的装备随时保持良好状态。有效装备耗损程度将减少一半。',
     'Repair Bear Mk.2': '修理熊 Mk.2',
     'Further hones the skills of your Repair Bear, making it better at maintaining your equipment. Effective equipment wear is reduced to 25% of normal.':
-        '进一步磨练你的修理熊的技巧，使它精于维护你的装备。有效装备耗损程度减少为正常值的 25%。',
+        '进一步磨练您的修理熊的技巧，使它精于维护您的装备。有效装备耗损程度减少为正常值的 25%。',
     'Repair Bear Mk.3': '修理熊 Mk.3',
     'Trains your Repair Bear to the penultimate level, making those pesky forge visits (almost) a distant memory. Effective equipment wear is reduced to 10% of normal.':
-        '将你的修理熊培训至完全体，让那些烦人的锻造次数 (几乎) 成为遥远的记忆。有效装备耗损程度减少为正常值的 10%。',
+        '将您的修理熊培训至完全体，让那些烦人的锻造次数 (几乎) 成为遥远的记忆。有效装备耗损程度减少为正常值的 10%。',
     'Repair Bear Mk.4': '修理熊 Mk.4',
     'The pinnacle of Repair Bear Technology, providing the ultimate in-the-field preventive equipment maintenance. Equipment wear is fully eliminated, and defeat durability loss is cut by half.':
         '修理熊科技的顶尖之作，提供这门领域最高端的预防性装备维护技术。装备耗损完全消除，被击倒时的耐久度损耗减半。',

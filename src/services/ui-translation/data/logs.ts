@@ -8,4 +8,5 @@ merge(/^\/logs\.php/, undefined, {
     From: '来自',
     Topic: '主题',
     Comment: '附言',
+    'Show Older >': '下一页 >',
 });

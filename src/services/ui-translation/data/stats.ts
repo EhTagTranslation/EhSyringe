@@ -2,23 +2,22 @@ import { merge } from '../helper';
 
 merge(/^\/stats\.php/, undefined, {
     'Visitor Statistics': '访客统计',
+
     'This gallery has had a total of ': '此图库共计有 ',
     ' visit(s).': ' 名访客。',
+    Ranking: '名次',
+    Score: '分数',
     'Galleries All-Time': '所有时间',
     'Galleries Past Year': '年排行',
     'Galleries Past Month': '月排行',
     'Galleries Yesterday': '日排行',
     'Not in top 1000': '1000 名以外',
-    Ranking: '名次',
-    Score: '分数',
+
+    'Yearly Stats': '年度统计',
     Visits: '访问',
     Hits: '点击',
-    'Yearly Stats': '年度统计',
+
     'Last 12 Months': '最近 12 个月',
-    'Daily Stats': '每日统计',
-    'The number of total visits on your galleries.': '图库总访问次数',
-    'The number of total image accesses on your galleries.': '图库中图片访问次数',
-    'Back To Gallery': '返回图库',
     Jan: '1 月',
     Feb: '2 月',
     Mar: '3 月',
@@ -31,6 +30,8 @@ merge(/^\/stats\.php/, undefined, {
     Oct: '10 月',
     Nov: '11 月',
     Dec: '12 月',
+
+    'Daily Stats': '每日统计',
     '1st': '1 日',
     '2nd': '2 日',
     '3rd': '3 日',
@@ -62,4 +63,8 @@ merge(/^\/stats\.php/, undefined, {
     '29th': '29 日',
     '30th': '30 日',
     '31st': '31 日',
+
+    'The number of total visits on your galleries.': '图库总访问次数',
+    'The number of total image accesses on your galleries.': '图库中图像访问次数',
+    'Back To Gallery': '返回图库',
 });
