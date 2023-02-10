@@ -11,10 +11,10 @@ import { DateTime } from 'services/date-time';
 
 import './index.less';
 
-function isNode<K extends keyof HTMLElementTagNameMap>(
+function isElement<K extends keyof HTMLElementTagNameMap | undefined = undefined>(
     node: Node | undefined,
-    nodeName: K,
-): node is HTMLElementTagNameMap[K] {
+    nodeName?: K,
+): node is K extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[K] : HTMLElement {
     return node instanceof HTMLElement && node.localName === nodeName;
 }
 
@@ -182,23 +182,27 @@ export class Syringe {
         } else {
             this.logger.debug(`没有节点在注入前加载`);
         }
-        this.observer = new MutationObserver((mutations) =>
-            mutations.forEach((mutation) =>
-                mutation.addedNodes.forEach((node1) => {
-                    this.translateNode(node1);
-                    if (this.documentEnd && node1.childNodes) {
-                        const nodeIterator = document.createNodeIterator(node1);
-                        let node = nodeIterator.nextNode();
-                        while (node) {
-                            this.translateNode(node);
-                            node = nodeIterator.nextNode();
+        this.observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.type === 'attributes') {
+                    this.translateNode(mutation.target);
+                } else {
+                    for (const node of mutation.addedNodes) {
+                        this.translateNode(node);
+                        if (this.documentEnd && node.childNodes) {
+                            const nodeIterator = document.createNodeIterator(node);
+                            let childNode = nodeIterator.nextNode();
+                            while (childNode) {
+                                this.translateNode(childNode);
+                                childNode = nodeIterator.nextNode();
+                            }
                         }
                     }
-                }),
-            ),
-        );
+                }
+            }
+        });
         this.observer.observe(window.document, {
-            attributes: true,
+            attributeFilter: ['title', 'placeholder', 'label', 'value'],
             childList: true,
             subtree: true,
         });
@@ -280,7 +284,7 @@ export class Syringe {
             return;
         }
 
-        if (isNode(node, 'body')) {
+        if (isElement(node, 'body')) {
             this.setBodyAttrs(node);
         }
 
@@ -353,12 +357,6 @@ export class Syringe {
     }
 
     translateUi(node: Node): void {
-        if (node instanceof HTMLElement && node.title) {
-            const translation = this.translateUiText(node.title);
-            if (translation != null) {
-                node.title = translation;
-            }
-        }
         if (isText(node)) {
             const text = node.textContent ?? '';
             const translation = this.translateUiText(text);
@@ -366,7 +364,14 @@ export class Syringe {
                 node.textContent = translation;
             }
             return;
-        } else if (isNode(node, 'input') || isNode(node, 'textarea')) {
+        }
+        if (isElement(node) && node.title) {
+            const translation = this.translateUiText(node.title);
+            if (translation != null) {
+                node.title = translation;
+            }
+        }
+        if (isElement(node, 'input') || isElement(node, 'textarea')) {
             if (node.placeholder) {
                 const translation = this.translateUiText(node.placeholder);
                 if (translation != null) {
@@ -379,7 +384,8 @@ export class Syringe {
                 }
             }
             return;
-        } else if (isNode(node, 'optgroup')) {
+        }
+        if (isElement(node, 'optgroup')) {
             const translation = this.translateUiText(node.label);
             if (translation != null) {
                 node.label = translation;
@@ -387,14 +393,15 @@ export class Syringe {
             return;
         }
 
-        if (isNode(node, 'a') && node?.parentElement?.parentElement?.id === 'nb') {
+        // 导航链接，一体化处理，不再处理文本节点（原文使用子元素和媒体查询实现页面宽度改变时文本自动更改为缩写）
+        if (isElement(node, 'a') && node?.parentElement?.parentElement?.id === 'nb') {
             const translation = this.translateUiText(node.textContent ?? '');
             if (translation != null) {
                 node.textContent = translation;
             }
         }
 
-        if (isNode(node, 'p') && node.classList.contains('gpc')) {
+        if (isElement(node, 'p') && node.classList.contains('gpc')) {
             /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
             const text = node.textContent ?? '';
             const p = document.createElement('p');
@@ -404,7 +411,7 @@ export class Syringe {
             node.style.display = 'none';
         }
 
-        if (isNode(node, 'div')) {
+        if (isElement(node, 'div')) {
             /* E-Hentai-Downloader 兼容处理 */
             if (node.id === 'gdd') {
                 const div = document.createElement('div');
