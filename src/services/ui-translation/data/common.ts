@@ -136,6 +136,8 @@ merge(
         'other:': '其他：',
         'temp:': '临时：',
         '(Disowned)': '(已放弃)',
+        'No torrents available': '无可用种子',
+        'Show torrents': '查看种子',
 
         'It is the dawn of a new day!': '新的一天开始了！',
         'Reflecting on your journey so far, you find that you are a little wiser.':

@@ -15,7 +15,7 @@ function isElement<K extends keyof HTMLElementTagNameMap | undefined = undefined
     node: Node | undefined,
     nodeName?: K,
 ): node is K extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[K] : HTMLElement {
-    return node instanceof HTMLElement && node.localName === nodeName;
+    return node instanceof HTMLElement && (nodeName == null || node.localName === nodeName);
 }
 
 function isText(node: Node | undefined): node is Text {
@@ -357,6 +357,12 @@ export class Syringe {
     }
 
     translateUi(node: Node): void {
+        if (isElement(node) && node.title) {
+            const translation = this.translateUiText(node.title);
+            if (translation != null) {
+                node.title = translation;
+            }
+        }
         if (isText(node)) {
             const text = node.textContent ?? '';
             const translation = this.translateUiText(text);
@@ -364,12 +370,6 @@ export class Syringe {
                 node.textContent = translation;
             }
             return;
-        }
-        if (isElement(node) && node.title) {
-            const translation = this.translateUiText(node.title);
-            if (translation != null) {
-                node.title = translation;
-            }
         }
         if (isElement(node, 'input') || isElement(node, 'textarea')) {
             if (node.placeholder) {

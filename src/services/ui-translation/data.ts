@@ -10,6 +10,7 @@ import './data/hathperks';
 import './data/hentaiathome';
 import './data/home';
 import './data/image';
+import './data/karma';
 import './data/lofi';
 import './data/login';
 import './data/logs';

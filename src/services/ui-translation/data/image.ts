@@ -20,5 +20,8 @@ merge(
         'Show galleries with this image': '显示所有包含此图像的图库',
         'Get forum link to image': '生成用于论坛的图像链接',
     },
-    [[/^Download original (.*?) source$/, '下载原图 ($1)']],
+    [
+        [/^Page (\d+) - /, '第 $1 页 - '],
+        [/^Download original (.*?) source$/, '下载原图 ($1)'],
+    ],
 );

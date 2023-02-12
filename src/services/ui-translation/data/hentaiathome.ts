@@ -104,20 +104,35 @@ merge(
             '请验证您下载的文件的大小和哈希值与上方给出的数值相对应。有关文件验证的更多信息，请参阅以下链接 (英文)：',
         'Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
             'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
+
+        'Unfortunately, we cannot accept clients with less than 80 Mbit/s outgoing speed.': '抱歉，我们无法接受出站速率低于 80 Mbps 的客户端。',
+        'Unfortunately, we cannot accept clients that are frequently offline.': '抱歉，我们无法接受经常离线的客户端。',
     },
     [
         [/^([\d.]+) \/ min$/, '$1 / 分钟'],
         [/^([\d.]+) \/ day$/, '$1 / 天'],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
-        [/^([\d.]+) ([KMGTP]B) per week$/i, '每周 $1 $2'],
-        [/^Must be at least ([\d.]+) ([KMGTP]B)\/s$/i, '不小于 $1 $2/s'],
+        [/^([\d.]+) ([KMGTP]B) per week$/, '每周 $1 $2'],
+        [/^Must be at least ([\d.]+) ([KMGTP]B)\/s$/, '不小于 $1 $2/s'],
         [
-            /^Must be at least ([\d.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/i,
+            /^Must be at least ([\d.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/,
             '必须至少为 $1 $2/小时，填 0 表示无限制',
         ],
         [
-            /^ Must be at least ([\d.]+) ([KMGTP]B). More is better, but space must be dedicated.$/i,
+            /^ Must be at least ([\d.]+) ([KMGTP]B). More is better, but space must be dedicated.$/,
             '至少为 $1 $2。越多越好，但空间必须专用。',
+        ],
+        [
+            /^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/,
+            '最大出站速率必须至少为 $1 $2/s。',
+        ],
+        [
+            /^Transfer Limit must be 0 or at least ([\d.]+) ([KMGTP]B)\/hour.$/,
+            '传输量必须至少为 $1 $2/小时。',
+        ],
+        [
+            /^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/,
+            '磁盘空间必须至少为 $1 $2。',
         ],
     ],
 );
