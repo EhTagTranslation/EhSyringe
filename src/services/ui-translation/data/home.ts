@@ -4,6 +4,7 @@ merge(/^\/home\.php/, undefined, {
     'Image Limits': '图像限制',
     'You are currently at ': '当前：',
     ' towards a limit of ': '，限制为 ',
+    '.': '。',
     'Reset Cost: ': '重置限制花费：',
     'Reset Limit': '重置限制',
     'Nothing to reset.': '没有可重置的限制。',

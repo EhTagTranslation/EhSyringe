@@ -25,6 +25,8 @@ merge(
         'Thai \xA0': '泰语 \xA0',
         'Vietnamese \xA0': '越南语 \xA0',
         'This gallery has been translated from the original language text.': '此图库已从原始语言翻译',
+        'This gallery is a rewrite, which means that a new text has been made up based on the visual content, but with little regard to the original language text.':
+            '此图库存在内容改写，这意味着根据视觉内容创作了新的文本，与原始文本关联不大',
         'File Size:': '文件大小：',
         'Length:': '页数：',
         'Favorited:': '收藏：',

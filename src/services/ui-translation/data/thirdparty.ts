@@ -41,7 +41,7 @@ merge(
         ' Show inputs to recheck file name and folder name before downloading': ' 显示文件名和文件夹名的输入框以供确认',
         ' Never show notification if torrents are available': ' 不显示有种子可用的提示',
         // Never: '从不', // 与页面中收藏 Never 从未 冲突。有好的冲突解决的方案时再修改。
-        'When current tab is not focused': '当前标签页处于后台时',
+        'When current tab is not focused': '当前标签页失去焦点时',
         Always: '总是',
         ' show download progress in title': ' 在标题栏中显示下载进度',
         ' Disable requesting and showing image limits': ' 不显示图像配额',
@@ -128,8 +128,8 @@ merge(
             '此标记代表图库的分类名称，且输出的字符串为大写',
         'You can find it at the left of the gallery page.': '您可以在图库左侧找到它',
 
-        'Pause (Downloading images will keep downloading)': '暂停 (下载中的图像将继续下载)',
-        'Pause (Downloading images will be aborted)': '暂停 (下载中的图像将中断下载)',
+        'Pause (Downloading images will keep downloading)': '暂停 (下载中的图像会继续下载)',
+        'Pause (Downloading images will be aborted)': '暂停 (下载中的图像会中断下载)',
         Resume: '继续',
         'Not download? Click here to download': '还未下载？点此开始',
 
@@ -146,8 +146,8 @@ merge(
         'Fetch images failed.': '获取图像失败。',
         'Generating Zip file...': '生成 Zip 文件...',
         'Generating Blob object...': '生成 Blob 对象...',
-        'Tags:': '标签:',
-        'Uploader Comment:': '上传者评论:',
+        'Tags:': '标签：',
+        'Uploader Comment:': '上传者评论：',
     },
     [
         [/^Image Limits: (\d+)\/(\d+)$/, '图像配额：$1/$2'],
@@ -170,10 +170,11 @@ merge(
         ],
         [/^Start downloading at /, '下载开始于 '],
         [/^Finish downloading at /, '下载完成于 '],
-        [/^Fetching Gallery Pages URL \((\d+)\/(\d+|\?)\) ... $/, '获取图库页面 URL ($1/$2) ... '],
+        [/^Fetching Gallery Pages URL /, '获取图库页面 URL '],
+        [/^Retrying /, '重试中 '],
         [/^Failed! /, '失败！'],
-        [/^Category: /, '分类: '],
-        [/^Uploader: /, '上传者: '],
-        [/^Rating: /, '评分: '],
+        [/^Category: /, '分类：'],
+        [/^Uploader: /, '上传者：'],
+        [/^Rating: /, '评分：'],
     ],
 );
