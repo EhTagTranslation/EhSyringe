@@ -34,7 +34,7 @@ merge(
         'Posted Date:': '发布日期：',
         'Bounty Status:': '悬赏状态：',
         'Min Hunter Rank:': '最低等级要求：',
-        'Unranked': '未评级',
+        Unranked: '未评级',
         'Current Reward:': '当前赏金：',
         '< Prev 10': '< 上一页',
         'Next 10 >': '下一页 >',
@@ -86,7 +86,8 @@ merge(
         claimed: '认领',
         ', the original poster of the bounty has seven days to accept or dispute it. If there is a dispute or the acceptance period expires, a Bounty Moderator will decide the outcome of the bounty.':
             '，悬赏发布者有七天时间来选择接受认领或提出质疑。如果出现争议或接受期限过期，将由悬赏版主裁定悬赏的结果。',
-        'A rejected claim cannot be resubmitted, and will affect your rank.': '被拒绝的认领不能重新提交，并且会影响您的等级。',
+        'A rejected claim cannot be resubmitted, and will affect your rank.':
+            '被拒绝的认领不能重新提交，并且会影响您的等级。',
         'You have not yet accepted or claimed this bounty.': '您尚未接受或认领此悬赏。',
         'Your rank (Unranked) is insufficient to accept this bounty.': '您的等级 (未评级) 不足以接受此悬赏。',
         'For accepting a bounty, you can enter a short comment here. For claiming a bounty, you must enter all the necessary details for where the bounty can be found.':
@@ -105,7 +106,8 @@ merge(
         ' or ': ' 或 ',
         '.': '。',
         'Submit Additional Reward': '提交额外赏金',
-        'You must enter a minimum additional reward of 5000 C or 1 Hath.': '您必须输入最低额外赏金 (5000 C 或 1 Hath)。',
+        'You must enter a minimum additional reward of 5000 C or 1 Hath.':
+            '您必须输入最低额外赏金 (5000 C 或 1 Hath)。',
         'You can no longer add rewards for this bounty.\n\n\t\t': '您无法再为此悬赏增加赏金。',
         'Grant Date': '授予日期',
         Amount: '赏金',
@@ -125,7 +127,8 @@ merge(
         'Comments from Bounty Poster:': '悬赏发布者评论：',
         '(No comment was given.)': '(未提供评论)',
         'This claim has been accepted, and the bounty has been closed.\n\t': '此认领已被接受，悬赏已关闭。',
-        'This claim has been disputed, and is pending ruling by a Bounty Moderator.\n\t': '此认领存在争议，正在等待悬赏版主裁决。'
+        'This claim has been disputed, and is pending ruling by a Bounty Moderator.\n\t':
+            '此认领存在争议，正在等待悬赏版主裁决。',
     },
     [
         [/^Showing /, '正在显示'],

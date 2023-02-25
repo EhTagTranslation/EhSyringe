@@ -96,7 +96,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ### 开发指南
 
-- UI 翻译位于 `src/services/ui-translation/data`
+-   UI 翻译位于 `src/services/ui-translation/data`
 
 ### 发布新版本
 

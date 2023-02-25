@@ -26,7 +26,8 @@ merge(
         Original: '原图',
         Free: '免费',
 
-        'You must have a H@H client assigned to your account to use this feature.': '您必须拥有 H@H 客户端才能使用此功能',
+        'You must have a H@H client assigned to your account to use this feature.':
+            '您必须拥有 H@H 客户端才能使用此功能',
         'Your H@H client appears to be offline.': '您的 H@H 客户端处于离线状态',
         'Turn it on, then try again.': '请启动 H@H 客户端后重试',
         'Downloads should start processing within a couple of minutes.': '下载会在几分钟内开始',

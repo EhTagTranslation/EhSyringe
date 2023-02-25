@@ -110,6 +110,9 @@ merge(
         [/^(\d+) GB \/ week$/, '$1 GB / 周'],
         [/^Catgirl Lv.(\d)$/, '猫娘 Lv.$1'],
         [/^Insufficient (BCH|BTC) available.\s?/, '$1 余额不足。'],
-        [/You have ([\d.]+) (BCH|BTC) pending, but these need to be confirmed first.$/, '您有 $1 $2 待确认，请等到确认完成后再操作。'],
+        [
+            /You have ([\d.]+) (BCH|BTC) pending, but these need to be confirmed first.$/,
+            '您有 $1 $2 待确认，请等到确认完成后再操作。',
+        ],
     ],
 );

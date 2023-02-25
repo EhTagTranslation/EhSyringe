@@ -38,8 +38,7 @@ merge(
         'Set folder name as ': '将文件夹名称设置为 ',
         ' (if you don\'t want to create folder, use "': ' (如果不想创建文件夹请使用 "',
         'Set Zip file name as ': '将 Zip 文件名设置为 ',
-        ' Show inputs to recheck file name and folder name before downloading':
-            ' 显示文件名和文件夹名的输入框以供确认',
+        ' Show inputs to recheck file name and folder name before downloading': ' 显示文件名和文件夹名的输入框以供确认',
         ' Never show notification if torrents are available': ' 不显示有种子可用的提示',
         // Never: '从不', // 与页面中收藏 Never 从未 冲突。有好的冲突解决的方案时再修改。
         'When current tab is not focused': '当前标签页处于后台时',
@@ -153,13 +152,22 @@ merge(
     [
         [/^Image Limits: (\d+)\/(\d+)$/, '图像配额：$1/$2'],
         [/^Estimated Limits Cost: (\d+)$/, '预计成本：$1'],
-        [/^...or (\d+) \+ (\d+) GP if you don't have enough viewing limits.\n/, '...或者 $1 + $2 GP (如果您没有足够的图像配额)\r'],
+        [
+            /^...or (\d+) \+ (\d+) GP if you don't have enough viewing limits.\n/,
+            '...或者 $1 + $2 GP (如果您没有足够的图像配额)\r',
+        ],
         [
             /1 point per 0.1 MB since August 2019, less than 0.1 MB will also be counted.\nDuring peak hours, downloading original images will cost GPs. The GP cost is the same as resetting viewing limits.\nEstimated GP cost is a bit more than using offical archive download, in case the sum of each images will be larger than the packed.$/,
-            '自 2019 年 8 月起，每 0.1 MB 消耗一点配额，不足 0.1 MB 也计算在内。\r高峰期下载原图将消耗 GP，数量与重置图像限制所需的相同。\rGP 成本预计会比直接使用官方归档下载略高，因为每张图像的体积总和比压缩包大。'
+            '自 2019 年 8 月起，每 0.1 MB 消耗一点配额，不足 0.1 MB 也计算在内。\r高峰期下载原图将消耗 GP，数量与重置图像限制所需的相同。\rGP 成本预计会比直接使用官方归档下载略高，因为每张图像的体积总和比压缩包大。',
         ],
-        [/^ Force as logged in \(actual login state: (\w+?), uid: (-?\d+)\) $/, ' 强制登录 (实际登录状态: $1，uid: $2) '],
-        [/^Total: (\d+) \| Downloading: (\d+) \| Succeed: (\d+) \| Failed: (\d+)$/, '总计：$1 | 下载中：$2 | 成功：$3 | 失败：$4'],
+        [
+            /^ Force as logged in \(actual login state: (\w+?), uid: (-?\d+)\) $/,
+            ' 强制登录 (实际登录状态: $1，uid: $2) ',
+        ],
+        [
+            /^Total: (\d+) \| Downloading: (\d+) \| Succeed: (\d+) \| Failed: (\d+)$/,
+            '总计：$1 | 下载中：$2 | 成功：$3 | 失败：$4',
+        ],
         [/^Start downloading at /, '下载开始于 '],
         [/^Finish downloading at /, '下载完成于 '],
         [/^Fetching Gallery Pages URL \((\d+)\/(\d+|\?)\) ... $/, '获取图库页面 URL ($1/$2) ... '],

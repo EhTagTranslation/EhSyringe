@@ -135,8 +135,7 @@ merge(/^\/hathperks\.php/, undefined, {
         '您自身的基础增益魔法熟练度的 10% 会增加到有效熟练度里。',
 
     'Manehattan Project': '曼哈顿计划',
-    'Significantly boosts the damage output of the Orbital Friendship Cannon.':
-        '大幅提升「友情小马炮」的杀伤力。',
+    'Significantly boosts the damage output of the Orbital Friendship Cannon.': '大幅提升「友情小马炮」的杀伤力。',
 
     'Follower of Snowflake': '雪花的信徒',
     'Displays your unyielding devotion to Snowflake, the Goddess of Loot and Harvest.':
@@ -145,7 +144,7 @@ merge(/^\/hathperks\.php/, undefined, {
     'Thinking Cap': '深思',
     'Increases EXP gain by 25%. For calculation purposes, this bonus is added to the HentaiVerse training bonus.':
         '所有取得的经验值提升 25%。为计算方便，此奖励被合并到 HentaiVerse 训练奖励。',
-    'Mentats': '晶算师',
+    Mentats: '晶算师',
     'Increases this EXP bonus to 50%.': '提升经验值奖励至 50%。',
     'Learning Chip': '学习晶片',
     'Increases this EXP bonus to 75%.': '提升经验值奖励至 75%。',
@@ -168,17 +167,13 @@ merge(/^\/hathperks\.php/, undefined, {
     'Whenever a monster drops a crystal in the HentaiVerse, you will receive an additional bonus crystal.':
         '在 HentaiVerse 里每当一只怪物掉落一颗水晶时，您将会再获得一颗水晶作为追加奖励。',
     'Crystarium II': '水晶矿脉 II',
-    'Further increases the number of crystals received per drop to three.':
-        '进一步提高水晶掉落数量至三倍。',
+    'Further increases the number of crystals received per drop to three.': '进一步提高水晶掉落数量至三倍。',
     'Crystarium III': '水晶矿脉 III',
-    'Further increases the number of crystals received per drop to five.':
-        '进一步提高水晶掉落数量至五倍。',
+    'Further increases the number of crystals received per drop to five.': '进一步提高水晶掉落数量至五倍。',
     'Crystarium IV': '水晶矿脉 IV',
-    'Further increases the number of crystals received per drop to seven.':
-        '进一步提高水晶掉落数量至七倍。',
+    'Further increases the number of crystals received per drop to seven.': '进一步提高水晶掉落数量至七倍。',
     'Crystarium V': '水晶矿脉 V',
-    'Further increases the number of crystals received per drop to ten.':
-        '进一步提高水晶掉落数量至十倍。',
+    'Further increases the number of crystals received per drop to ten.': '进一步提高水晶掉落数量至十倍。',
 
     'Tokenizer I': '令牌技师 I',
     'Doubles the chance of random mob token drops.': '打怪的令牌掉落率变成双倍。',

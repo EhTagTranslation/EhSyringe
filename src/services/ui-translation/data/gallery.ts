@@ -135,10 +135,7 @@ merge(
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*$/, '评论时间：$1 \xA0作者：'],
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, '评论时间：$1'],
         [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '],
-        [
-            /^This gallery is unavailable due to a copyright claim by (.*)\.$/,
-            '由于 $1 提出的版权要求，此图库无法使用',
-        ],
+        [/^This gallery is unavailable due to a copyright claim by (.*)\.$/, '由于 $1 提出的版权要求，此图库无法使用'],
     ],
 );
 
@@ -270,8 +267,7 @@ merge(
         'Your country of residence': '您居住的国家',
         'Describe the original work': '描述原作',
         'Describe the nature of the copyrighted work.': '描述版权作品的性质。',
-        'Include links to original work or evidence of source material.':
-            '包括原作或源材料的链接。',
+        'Include links to original work or evidence of source material.': '包括原作或源材料的链接。',
         'Please describe the nature of this work and provide any relevant links.':
             '请描述此作品的性质并提供任何相关链接。',
         'Digital signature': '数字签名',

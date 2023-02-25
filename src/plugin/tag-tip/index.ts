@@ -84,7 +84,6 @@ export class TagTip {
         // [^\s,]+                 abcd
 
         const values = value.match(/([^\s,]+:".+?(?:"|$)|".+?(?:"|$)]|[^\s,]+:[^\s,]+|[^\s,]+)/gim) ?? [];
-        console.log("values", values);
         const result: Suggestion[] = [];
         const used = new Set();
         await Promise.all(

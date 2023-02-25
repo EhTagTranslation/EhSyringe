@@ -176,7 +176,8 @@ merge(
 
         'The site is currently in Read Only/Failover Mode. Some functionality will not be available. Details may be available on ':
             '网站当前处于只读/故障转移模式，部分功能会不可用。详情请关注 ',
-        'The site is currently in Read Only Mode. This page is therefore not available.': '网站当前处于只读模式，因此本页面不可用。',
+        'The site is currently in Read Only Mode. This page is therefore not available.':
+            '网站当前处于只读模式，因此本页面不可用。',
         'This content is not available in Russia.RU': '此内容在俄罗斯 (RU) 不可用',
     },
     [
@@ -185,6 +186,9 @@ merge(
         [/^Found ([\d,]+\+?) results?./, '找到 $1 个结果。'],
         [/^Found thousands of results./, '找到数千结果。'],
         [/^Found many results./, '找到许多结果。'],
-        [/\s?Your custom filters removed ([\d,]+) galler(ies|y) from this page.\s?/, '您的过滤器已从此页面移除 $1 个结果。'],
+        [
+            /\s?Your custom filters removed ([\d,]+) galler(ies|y) from this page.\s?/,
+            '您的过滤器已从此页面移除 $1 个结果。',
+        ],
     ],
 );

@@ -6,5 +6,5 @@ merge(/^\/karma\.php/, undefined, {
     ' with ': ' ',
     ' karma.': ' karma。',
     '\n\tIf you wish, you can leave a short message below.\n': '\n\t如果您愿意，可以在下方简短留言。\n',
-    'Imbue': '赋予',
+    Imbue: '赋予',
 });
