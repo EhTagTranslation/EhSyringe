@@ -8,7 +8,7 @@ merge(
 
         'H@H Region': 'H@H 地区',
         'Current Network Load': '当前网络负载',
-        'H@H Miss%': 'H@H 丢包率%',
+        'H@H Miss%': 'H@H 缓存未命中%',
         Coverage: '覆盖率',
         'Hits/GB': '点击/GB',
         Quality: '质量',
@@ -20,11 +20,11 @@ merge(
         '\n\tCurrent Network Load shows how much raw bandwidth is currently used to serve images. This includes requests served by H@H as well as direct requests from the image servers.':
             '当前网络负载显示当前用于提供图像的原始带宽量。这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
         '\n\tH@H Miss% shows the percentage of requests for the region that would have gone to a H@H client if one was available, but where no client was ready to serve the request.':
-            'H@H 丢包率%显示［如果此区域有一个 H@H 客户端可用，请求将会发送到 H@H 客户端，但没有客户端能为此请求提供服务］的百分比。',
+            'H@H 缓存未命中% 显示此区域没有 H@H 客户端能为 H@H 请求提供服务的百分比。',
         '\n\tCoverage denotes the average number of times a static file range partition can be found within a given region, indicating the total available storage capacity.':
-            '覆盖率可以理解为［在此区域内，一组文件的平均存在次数］，代表着总可用存储容量。',
+            '覆盖率表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
         '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region for the last 24 hours.':
-            '点击/GB 显示过去 24 小时内此地区所有在线客户端分配的每 GB 磁盘空间每分钟的平均点击次数。',
+            '点击/GB 显示过去 24 小时内此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均点击次数。',
 
         'Your Active Clients': '您的活动客户端',
         'To add more clients, ': '要添加更多客户端，请',
@@ -105,7 +105,8 @@ merge(
         'Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
             'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
 
-        'Unfortunately, we cannot accept clients with less than 80 Mbit/s outgoing speed.': '抱歉，我们无法接受出站速率低于 80 Mbps 的客户端。',
+        'Unfortunately, we cannot accept clients with less than 80 Mbit/s outgoing speed.':
+            '抱歉，我们无法接受出站速率低于 80 Mbps 的客户端。',
         'Unfortunately, we cannot accept clients that are frequently offline.': '抱歉，我们无法接受经常离线的客户端。',
     },
     [
@@ -114,26 +115,14 @@ merge(
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B) per week$/, '每周 $1 $2'],
         [/^Must be at least ([\d.]+) ([KMGTP]B)\/s$/, '不小于 $1 $2/s'],
-        [
-            /^Must be at least ([\d.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/,
-            '必须至少为 $1 $2/小时，填 0 表示无限制',
-        ],
+        [/^Must be at least ([\d.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/, '必须至少为 $1 $2/小时，填 0 表示无限制'],
         [
             /^ Must be at least ([\d.]+) ([KMGTP]B). More is better, but space must be dedicated.$/,
             '至少为 $1 $2。越多越好，但空间必须专用。',
         ],
-        [
-            /^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/,
-            '最大出站速率必须至少为 $1 $2/s。',
-        ],
-        [
-            /^Transfer Limit must be 0 or at least ([\d.]+) ([KMGTP]B)\/hour.$/,
-            '传输量必须至少为 $1 $2/小时。',
-        ],
-        [
-            /^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/,
-            '磁盘空间必须至少为 $1 $2。',
-        ],
+        [/^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/, '最大出站速率必须至少为 $1 $2/s。'],
+        [/^Transfer Limit must be 0 or at least ([\d.]+) ([KMGTP]B)\/hour.$/, '传输量必须至少为 $1 $2/小时。'],
+        [/^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/, '磁盘空间必须至少为 $1 $2。'],
     ],
 );
 
