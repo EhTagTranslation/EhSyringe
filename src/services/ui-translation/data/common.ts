@@ -91,11 +91,13 @@ merge(
         ' uses unsupported syntax or is otherwise not valid.': ' 无效或使用了不支持的语法。',
         'The provided date is invalid or outside the range of posted galleries.':
             '提供的日期无效或超出已发布图库的日期范围。',
+        'The page range minimum cannot be above 1000.': '页数最小值最多为 1000。',
         'The page range maximum cannot be below 10.': '页数最大值至少为 10。',
         'Your page range filter is too narrow.': '页数范围差至少为 20。',
         'You provided too many keywords. Use fewer keywords, or combine keywords with quotes. (Ignored ':
             '使用的关键词过多。请减少关键词或使用引号组合关键词。(已忽略 ',
         'No hits found': '什么也没有',
+        'No unfiltered results found.': '没有未过滤的结果',
         'Disable Filters': '禁用过滤器',
 
         '<< First': '<< 首页',
@@ -143,8 +145,13 @@ merge(
         'Reflecting on your journey so far, you find that you are a little wiser.':
             '回想一下你迄今为止的旅程，你发现你更聪明了。',
         'You gain ': '你获得了 ',
-        ' EXP, ': ' 经验, ',
+        ' EXP, ': ' 经验，',
+        ' Credits, ': ' Credits，',
+        ' Credits!': ' Credits！',
+        ' Credits and ': ' Credits 和 ',
+        ' GP!': ' GP！',
         ' GP and ': ' GP 和 ',
+        ' Hath!': ' Hath！',
 
         'You have encountered a monster!': '你遇到了怪物！',
         'Click here to fight in the HentaiVerse.': '点击此处进入 HentaiVerse 战斗',

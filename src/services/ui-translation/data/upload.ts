@@ -39,7 +39,7 @@ const data = {
     'New Gallery': '新图库',
 
     'Main Gallery Title': '主标题',
-    'The main english or romanized title for this gallery.': '图库的主标题 (英文或者罗马音)。',
+    'The main english or romanized title for this gallery.': '图库的主标题 (英文或罗马音)。',
     'Main gallery title (English Script)': '主标题 (英语)',
 
     'Japanese Script Title': '日文标题',
@@ -145,7 +145,6 @@ const data = {
     'Starting upload...': '开始上传...',
     'Finished processing ': '已处理 ',
     ' of ': ' / ',
-    ' uploaded file, added ': ' 个文件，已添加 ',
     'Processing...': '正在处理...',
     'Processing ': '正在处理 ',
     'Finishing backend sync...': '正在完成后端同步...',
@@ -203,9 +202,11 @@ const data = {
     'The gallery was successfully deleted.': '图库已成功删除。',
 
     'Please confirm that you wish to disown this gallery. You will no longer be publicly listed as the uploader unless the gallery was published in the last week, and you will not be able to make further changes to it.':
-        '请确认，您希望与此图库脱离关系。在一周后，您将不再被公开列为上传者。并且您将不能再对其进行修改。',
+        '请确认您希望与此图库脱离关系。在一周后，您将不再被公开列为上传者。并且您将不能再对其进行修改。',
 
     'Gallery not found.': '图库未找到。',
+    'Rate limitation for new posters is in effect. You have to wait a while before you can post more galleries.':
+        '针对新上传者的图库发布速率限制已生效，您必须等待一段时间才能继续发布图库。',
     'You cannot publish an empty gallery.': '您不能发布一个空图库',
     'You must agree with the Terms of Service to continue.': '您必须同意服务条款才能继续',
     'You must give the gallery a title to continue.': '您必须给图库命名才能继续',
@@ -217,7 +218,9 @@ const regexData: Array<[RegExp, string]> = [
     [/^ images? so far\.$/, ' 张图像。'],
     [/^ images? so far$/, ' 张图像'],
     [/^ new images? to the gallery. /, ' 张新图像。'],
+    [/^ uploaded files?, added $/, ' 个文件，已添加 '],
     [/You have added a total of $/, '您目前总共添加了 '],
+    [/^Category of (.*?) can no longer be changed.$/, '无法更改 $1 的分类。'],
 ];
 
 merge(/^\/upld\//, undefined, data, regexData);

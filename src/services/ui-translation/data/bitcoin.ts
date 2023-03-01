@@ -23,10 +23,10 @@ merge(
 
         'If your wallet cannot send to this address, ': '如果您的钱包无法发送到此地址，请',
         'switch to legacy addresses': '切换到传统地址',
-        'We automatically ': '当旧的地址被使用时，我们会自动',
-        'generate a new address': '生成一个新的地址',
+        'We automatically ': '当旧地址被使用时，我们会自动',
+        'generate a new address': '生成一个新地址',
         ' when the old one is used. You will still be credited if you reuse recent addresses, but please use the currently displayed address whenever possible.':
-            ' 。如果您重复使用最近的地址，仍然会被计入，但请尽可能使用当前显示的地址。',
+            '。如果您重复使用最近的地址，仍然会被计入，但请尽可能使用当前显示的地址。',
 
         'You can only manually create a new address once every 24 hours.': '每 24 小时，您只能手动创建一次新地址。',
 
@@ -41,13 +41,13 @@ merge(
 
         'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
         'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
-        'New donations will typically show up here in less than two minutes.': '新的捐赠通常会在两分钟内显示在下方。',
-        'It will show as ': '它们会被标记为 ',
+        'New donations will typically show up here in less than two minutes.': '新的捐赠通常会在两分钟内显示在这里。',
+        'It will show as ': '新的交易在被纳入一个区块并达到两个确认之前会处于 ',
         ' until it has been included in a block and has two confirmations. This typically takes less than an hour, but can take longer in some cases. When it has been marked as ':
-            '，直到被纳入一个区块并达到两个确认。这通常不需要一小时，但在某些情况下可能会花费更长时间。只有当状态变更为 ',
-        ', you can apply it below to make it take effect.': ' 时才可以通过下方按钮完成捐赠。',
-        'No transactions in the past year.': '在过去一年中没有交易',
-        Pending: '等待中',
+            ' 状态。这通常不需要一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为 ',
+        ', you can apply it below to make it take effect.': ' 时才能通过下方按钮完成捐赠。',
+        'No transactions in the past year.': '在过去一年内没有交易',
+        Pending: '待定',
         Accepted: '已接受',
 
         'Available To Apply: ': '可用余额：',
@@ -71,7 +71,7 @@ merge(
         '3 Year @ $5/month $180': '3 年 @ $5/月 $180',
 
         'The donated coins are applied as the equivalent value in USD at the time of your choosing, using an inflated rate which is':
-            '捐赠的虚拟货币在您使用时会以最近平均历史价格作为汇率转换为等值的美元。',
+            '捐赠的虚拟货币在您使用时会以最近平均历史价格作为汇率转换为美元。',
         'calculated from the recent average historic value. In order to minimize unexpected price fluctuations, the site rate will':
             '为减少意外的价格波动，网站的汇率永远不会急剧下降，',
         'never drop sharply, but adjusts slowly over time if the real-world rate is more than 10% below the site rate.':
