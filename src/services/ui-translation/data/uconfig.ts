@@ -230,7 +230,8 @@ merge(
         'Solomon Islands': 'Solomon Islands (所罗门群岛)',
         Somalia: 'Somalia (索马里)',
         'South Africa': 'South Africa (南非)',
-        'South Georgia and the South Sandwich Islands': 'South Georgia and the South Sandwich Islands (南乔治亚岛和南桑威奇群岛)',
+        'South Georgia and the South Sandwich Islands':
+            'South Georgia and the South Sandwich Islands (南乔治亚岛和南桑威奇群岛)',
         'South Korea': 'South Korea (韩国)',
         'South Sudan': 'South Sudan (南苏丹)',
         Spain: 'Spain (西班牙)',
@@ -303,7 +304,8 @@ merge(
         ' Auto Select Resample, Auto Start': ' 自动选择重采样画质，自动下载',
 
         'Front Page / Search Settings': '首页 / 搜索设置',
-        'Which display mode would you like to use on the front and search pages?': '您希望首页和搜索页面使用哪种显示模式？',
+        'Which display mode would you like to use on the front and search pages?':
+            '您希望首页和搜索页面使用哪种显示模式？',
         ' Minimal': ' 最小化',
         ' Minimal+': ' 最小化 + 关注标签',
         ' Compact': ' 紧凑 + 标签',
@@ -403,7 +405,7 @@ merge(
             '在扩展和缩略图列表模式下，图库缩略图可以缩放为 75% 到 150% 之间的自定义值。',
 
         'Viewport Override': '移动端虚拟宽度',
-        'px': ' px',
+        px: ' px',
         'Allows you to override the virtual width of the site for mobile devices. This is normally determined automatically by your device based on its DPI. Sensible values at 100% thumbnail scale are between 640 and 1400.':
             '允许您覆盖移动设备的虚拟宽度，默认是根据 DPI 自动计算的，100% 缩略图比例下的合理值在 640 到 1400 之间。',
 
