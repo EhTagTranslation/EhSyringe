@@ -196,6 +196,7 @@ merge(
         ' this expunge petition.': '票',
         ' this appeal.': '票',
         'This petition will be ': '此申请将被',
+        'This appeal will take effect in approximately ': '此申请将被撤销，除非在 ',
         ACTIVATED: '激活',
         REJECTED: '否决',
         REVOKED: '撤销',
