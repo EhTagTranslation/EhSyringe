@@ -191,11 +191,12 @@ merge(
         [/^(\d+) pages?$/, '$1 页'],
         [/^Found about ([\d,]+) results?./, '找到约 $1 个结果。'],
         [/^Found ([\d,]+\+?) results?./, '找到 $1 个结果。'],
+        [/^Found hundreds of results./, '找到数百结果。'],
         [/^Found thousands of results./, '找到数千结果。'],
         [/^Found many results./, '找到许多结果。'],
         [
-            /\s?Your custom filters removed ([\d,]+) galler(ies|y) from this page.\s?/,
-            '您的过滤器已从此页面移除 $1 个结果。',
+            /\s?Filtered ([\d,]+) galler(ies|y) from this page.\s?/,
+            '已从此页面移除 $1 个结果。',
         ],
     ],
 );
