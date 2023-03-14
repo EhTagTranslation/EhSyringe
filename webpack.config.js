@@ -221,7 +221,7 @@ export default async (env = {}, argv = {}) => {
         );
     } else {
         config.devtool = 'inline-source-map';
-        config.entry = glob.sync('src/web-ext/**/*.ts').reduce(function (obj, el) {
+        config.entry = (await glob('src/web-ext/**/*.ts')).reduce(function (obj, el) {
             const name = path.parse(el).name;
             if (name !== 'polyfills') obj[name] = path.resolve(__dirname, el);
             return obj;
