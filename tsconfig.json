@@ -13,8 +13,7 @@
         "strict": true,
         "noImplicitReturns": true,
         "noImplicitOverride": true,
-        "importsNotUsedAsValues": "error",
-        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "importHelpers": true

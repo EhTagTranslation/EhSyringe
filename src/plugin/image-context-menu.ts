@@ -1,5 +1,5 @@
 import { Service } from 'services';
-import { createMenu, Context, Menu, OnClickData } from 'providers/menu';
+import { createMenu, type Context, type Menu, type OnClickData } from 'providers/menu';
 import { openInTab } from 'providers/utils';
 
 @Service()
