@@ -1335,10 +1335,10 @@
     "@types/filesystem" "*"
     "@types/har-format" "*"
 
-"@types/chrome@^0.0.224":
-  version "0.0.224"
-  resolved "https://registry.npmmirror.com/@types/chrome/-/chrome-0.0.224.tgz#0138497299eaaf261d61ece62d7d6af3868ce856"
-  integrity sha512-YkL7q3KDV7OAKgVCBNIfH73rnjNMbIzAYHzTa2DKhSK/2z0Wf/n8yJnK/UoW+lvuYJJR4LtAkG3YvsIZTy7BOA==
+"@types/chrome@^0.0.225":
+  version "0.0.225"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.225.tgz#3d8f9ffe8141385389862607dfee2d7b0915fd90"
+  integrity sha512-acSFQN7X0/fjF6PSP0Ki9TlwWsEeJeh5WclMYilJSHHp+ayLDMD/YeSIUzsodwLKPZQ9h8SyiL13/pPab8M4RA==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
