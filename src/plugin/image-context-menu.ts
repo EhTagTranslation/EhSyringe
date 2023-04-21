@@ -1,5 +1,5 @@
 import { Service } from 'services';
-import { createMenu, Context, Menu, OnClickData } from 'providers/menu';
+import { createMenu, type Context, type Menu, type OnClickData } from 'providers/menu';
 import { openInTab } from 'providers/utils';
 
 @Service()
@@ -19,7 +19,7 @@ export class ImageContextMenu implements Menu {
         '*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*',
         '*://*.e-hentai.org/*',
     ];
-    readonly title = '显示所有包含此图片的图库';
+    readonly title = '显示所有包含此图像的图库';
     readonly targetUrlPatterns = [
         '*://exhentai.org/t/*.jpg',
         '*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/t/*.jpg',

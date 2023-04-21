@@ -101,11 +101,11 @@ export class Suggest {
                 tagList = tagList.filter((tag) => tag.ns === ns);
             }
         }
-        
-        if(sTerm.slice(0, 1) == '"') {
+
+        if (sTerm.slice(0, 1) === '"') {
             sTerm = sTerm.slice(1);
         }
-        
+
         let suggestions = [];
         for (const tag of tagList) {
             const st = this.markTag(tag, sTerm, term);

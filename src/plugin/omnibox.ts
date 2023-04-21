@@ -3,7 +3,7 @@ import { Logger } from 'services/logger';
 import { openInTab } from 'providers/utils';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
-import { Storage, StorageItems } from 'services/storage';
+import { Storage, type StorageItems } from 'services/storage';
 
 @Service()
 export class OmniBox {

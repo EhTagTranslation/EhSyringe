@@ -1,8 +1,8 @@
-import { html, nothing, render, svg, SVGTemplateResult, TemplateResult } from 'lit-html';
+import { html, nothing, render, svg, type SVGTemplateResult, type TemplateResult } from 'lit-html';
 import { sleep } from 'utils';
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
-import { ConfigData, Storage, ImageLevel } from 'services/storage';
+import { type ConfigData, Storage, ImageLevel } from 'services/storage';
 import { Messaging } from 'services/messaging';
 import { DateTime } from 'services/date-time';
 import { openInTab } from 'providers/utils';

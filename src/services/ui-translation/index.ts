@@ -1,6 +1,6 @@
 import { Logger } from 'services/logger';
 import { isValidHost } from 'utils/hosts';
-import { dataMaps, Replacements, Replacer } from './helper';
+import { dataMaps, type Replacements, type Replacer } from './helper';
 import { Service } from '..';
 import './data';
 

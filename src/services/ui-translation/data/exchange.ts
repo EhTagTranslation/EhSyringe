@@ -18,12 +18,12 @@ merge(
         'Sell GP': '卖出 GP',
 
         '\n\t\t\t\tCount: ': '数量：',
-        ' Hath \xA0\n\t\t\t\tBid Price/Hath: ': 'Hath \xA0 买入单价：',
-        ' Hath \xA0\n\t\t\t\tAsk Price/Hath: ': 'Hath \xA0 卖出单价：',
+        ' Hath \xA0\n\t\t\t\tBid Price/Hath: ': ' Hath \xA0 买入单价：',
+        ' Hath \xA0\n\t\t\t\tAsk Price/Hath: ': ' Hath \xA0 卖出单价：',
         'Buy Hath!': '买进 Hath',
         'Sell Hath!': '卖出 Hath',
-        ' kGP \xA0\n\t\t\t\tBid Price/kGP: ': 'kGP \xA0 买入单价：',
-        ' kGP \xA0\n\t\t\t\tAsk Price/kGP: ': 'kGP \xA0 卖出单价：',
+        ' kGP \xA0\n\t\t\t\tBid Price/kGP: ': ' kGP \xA0 买入单价：',
+        ' kGP \xA0\n\t\t\t\tAsk Price/kGP: ': ' kGP \xA0 卖出单价：',
         'Buy GP!': '买进 GP',
         'Sell GP!': '卖出 GP',
 

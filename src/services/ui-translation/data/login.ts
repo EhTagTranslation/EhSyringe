@@ -5,6 +5,6 @@ merge(/^\/bounce_login\.php/, undefined, {
     'User:': '用户：',
     'Pass:': '密码：',
     'Login!': '登录',
-    '\xA0or\xA0': '或',
+    '\xA0or\xA0': ' 或 ',
     Register: '注册',
 });

@@ -46,12 +46,11 @@ merge(/^\/toplist\.php/, undefined, {
     'EHTracker Toplists': '做种排行',
     'Cleanup Toplists': '清理排行',
     'Rating & Reviewing Toplists': '评分 & 评论排行',
+    'Error: Non-existing toplist.': '错误：排行榜不存在。',
 });
 
 merge(/^\/toplist\.php\?tl=1/, undefined, {
-    Published: '发布时间',
     Name: '标题',
-    Uploader: '上传者',
 });
 
 merge(/^\/toplist\.php\?tl=[2-7]/, undefined, {

@@ -16,5 +16,5 @@ merge(
         'Delete Selected': '删除选中收藏',
         'Change Category': '移动到',
     },
-    [[/Note: /, '备注：']],
+    [[/^Note: /, '备注：']],
 );
