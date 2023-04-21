@@ -194,14 +194,8 @@ merge(
         [/^Found hundreds of results./, '找到数百结果。'],
         [/^Found thousands of results./, '找到数千结果。'],
         [/^Found many results./, '找到许多结果。'],
-        [
-            /\s?Filtered ([\d,]+) galler(ies|y) from this page.\s?/,
-            '已从此页面过滤 $1 个结果。',
-        ],
-        [
-            /\s?Excluded ([\d,]+) galler(ies|y) from this page.\s?/,
-            '已从此页面排除 $1 个结果。',
-        ],
+        [/\s?Filtered ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面过滤 $1 个结果。'],
+        [/\s?Excluded ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面排除 $1 个结果。'],
         [
             /\s?Excluded ([\d,]+) galler(ies|y) and filtered ([\d,]+) galler(ies|y) from this page.\s?/,
             '已从此页面排除 $1 个结果，过滤 $3 个结果。',
