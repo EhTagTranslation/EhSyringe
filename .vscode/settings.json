@@ -1,25 +1,21 @@
 {
-    "eslint.lintTask.enable": true,
-    "eslint.format.enable": true,
-    "eslint.packageManager": "yarn",
-    "eslint.validate": ["typescript"],
-    "editor.tabSize": 4,
-    "files.eol": "\n",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "typescript.tsdk": "node_modules/typescript/lib",
+    "cSpell.words": ["Tampermonkey", "ehgt", "ehsyringe", "exhentai", "hentai", "omnibox", "typedi"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.tabSize": 4,
+    "files.eol": "\n",
     "json.schemas": [
         {
             "fileMatch": ["manifest.json"],
             "url": "http://json.schemastore.org/chrome-manifest.json"
         }
     ],
-    "cSpell.words": ["Tampermonkey", "ehgt", "ehsyringe", "exhentai", "hentai", "omnibox", "typedi"]
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
