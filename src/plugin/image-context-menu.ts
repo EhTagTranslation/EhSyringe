@@ -1,6 +1,7 @@
 import { Service } from 'services';
 import { createMenu, type Context, type Menu, type OnClickData } from 'providers/menu';
 import { openInTab } from 'providers/utils';
+import { EH, EHGT, EX, EXU, HATH, isEhGt, isUnion } from 'utils/hosts';
 
 @Service()
 export class ImageContextMenu implements Menu {
@@ -12,21 +13,21 @@ export class ImageContextMenu implements Menu {
         createMenu(this);
     }
     readonly documentUrlPatterns = [
-        '*://exhentai.org/*',
-        '*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*',
-        '*://e-hentai.org/*',
-        '*://*.exhentai.org/*',
-        '*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*',
-        '*://*.e-hentai.org/*',
+        `*://${EX}/*`,
+        `*://${EXU}/*`,
+        `*://${EH}/*`,
+        `*://*.${EX}/*`,
+        `*://*.${EXU}/*`,
+        `*://*.${EH}/*`,
     ];
-    readonly title = '显示所有包含此图像的图库';
+    readonly title = `显示所有包含此图像的图库`;
     readonly targetUrlPatterns = [
-        '*://exhentai.org/t/*.jpg',
-        '*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/t/*.jpg',
-        '*://ehgt.org/*.jpg',
-        '*://ul.ehgt.org/*.jpg',
-        '*://*.hath.network:*/h/*',
-        '*://*.hath.network/h/*',
+        `*://${EX}/t/*.jpg`,
+        `*://${EXU}/t/*.jpg`,
+        `*://${EHGT}/*.jpg`,
+        `*://ul.${EHGT}/*.jpg`,
+        `*://*.${HATH}:*/h/*`,
+        `*://*.${HATH}/h/*`,
     ];
     readonly contexts: Context[] = ['image', 'link'];
 
@@ -35,10 +36,9 @@ export class ImageContextMenu implements Menu {
         const url = new URL(info.url);
         const match = /[a-f0-9]{40}/i.exec(url.pathname);
         if (!match) return;
-        let base = 'https://exhentai.org';
-        if (url.hostname.includes('ehgt.org')) base = 'https://e-hentai.org';
-        else if (url.hostname.includes('exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion'))
-            base = 'http://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion';
+        let base = `https://${EX}`;
+        if (isEhGt(url.hostname)) base = `https://${EH}`;
+        else if (isUnion(url.hostname)) base = `http://${EXU}`;
         openInTab(`${base}/?f_shash=${match[0]}`);
     };
 }

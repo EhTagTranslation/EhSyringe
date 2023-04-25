@@ -9,7 +9,7 @@ function hostMatches(hostname: string, hosts: readonly string[] | undefined): bo
     for (const candidate of hosts) {
         if (hostname === candidate) return true;
         if (candidate.includes('*')) {
-            const reg = new RegExp(`^${candidate.replace(/\./g, '\\.').replace(/\*/g, '.*')}$`);
+            const reg = new RegExp(`^${candidate.replace(/\\/g, '\\\\').replace(/\./g, '\\.').replace(/\*/g, '.*')}$`);
             if (reg.test(hostname)) return true;
         }
     }
