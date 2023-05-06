@@ -18,12 +18,12 @@ jobs:
             - uses: pnpm/action-setup@v2
               with:
                   version: 8
-            # - uses: actions/cache@v3
-            #   name: Setup pnpm cache
-            #   with:
-            #       path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-            #       key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-            #       restore-keys: pnpm-store
+            - uses: actions/cache@v3
+              name: Setup pnpm cache
+              with:
+                  path: ${{ env.PNPM_HOME }}/store
+                  key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: pnpm-store
             - name: Install
               run: pnpm install
             - name: Build
