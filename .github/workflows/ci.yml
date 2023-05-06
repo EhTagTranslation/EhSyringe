@@ -18,13 +18,13 @@ jobs:
             - name: Install
               uses: pnpm/action-setup@v2
               with:
-                    version: 8
-                    run-install: true
-            - name: yarn build
+                  version: 8
+                  run_install: true
+            - name: Build
               run: |
-                  yarn build:firefox
-                  yarn build:chrome
-                  yarn build:monkey
+                  pnpm run build:firefox
+                  pnpm run build:chrome
+                  pnpm run build:monkey
             - uses: actions/upload-artifact@v3
               with:
                   name: releases
