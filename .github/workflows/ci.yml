@@ -28,7 +28,7 @@ jobs:
               run: pnpm install
             - name: Build
               run: |
-                  ls $PNPM_HOME
+                  ls $PNPM_HOME/store
                   pnpm run build:firefox
                   pnpm run build:chrome
                   pnpm run build:monkey
