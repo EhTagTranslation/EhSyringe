@@ -15,13 +15,20 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 18
-            - name: Install
-              uses: pnpm/action-setup@v2
+            - uses: pnpm/action-setup@v2
               with:
                   version: 8
-                  run_install: true
+            # - uses: actions/cache@v3
+            #   name: Setup pnpm cache
+            #   with:
+            #       path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            #       key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+            #       restore-keys: pnpm-store
+            - name: Install
+              run: pnpm install
             - name: Build
               run: |
+                  ls $PNPM_HOME
                   pnpm run build:firefox
                   pnpm run build:chrome
                   pnpm run build:monkey
