@@ -12,20 +12,11 @@ jobs:
 
         steps:
             - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - name: Install
+              uses: NullVoxPopuli/action-setup-pnpm@v2
               with:
                   node-version: 18
-            - uses: pnpm/action-setup@v2
-              with:
-                  version: 8
-            - uses: actions/cache@v3
-              name: Setup pnpm cache
-              with:
-                  path: ${{ env.PNPM_HOME }}/store
-                  key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-                  restore-keys: pnpm-store-
-            - name: Install
-              run: pnpm install
+                  pnpm-version: 8
             - name: Build
               run: |
                   pnpm run build:firefox
