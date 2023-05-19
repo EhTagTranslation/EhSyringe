@@ -41,9 +41,8 @@ merge(
 
         'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
         'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
-        'New donations will typically show up here in less than two minutes.': '新的捐赠通常会在两分钟内显示在这里。',
-        'It will show as ': '新的交易在被纳入一个区块并达到两个确认之前会处于 ',
-        ' until it has been included in a block and has two confirmations. This typically takes less than an hour, but can take longer in some cases. When it has been marked as ':
+        'New donations will typically show up here in less than two minutes. It will show as ': '新的捐赠通常会在两分钟内显示在这里。在被纳入一个区块并达到两个确认之前会处于 ',
+        ' until it has been included in a block and has two confirmations. This usually takes less than an hour, but can take longer in some cases. When it has been marked as ':
             ' 状态。这通常不需要一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为 ',
         ', you can apply it below to make it take effect.': ' 时才能通过下方按钮完成捐赠。',
         'No transactions in the past year.': '在过去一年内没有交易',
@@ -70,12 +69,10 @@ merge(
         '2 Year @ $6/month $144': '2 年 @ $6/月 $144',
         '3 Year @ $5/month $180': '3 年 @ $5/月 $180',
 
-        'The donated coins are applied as the equivalent value in USD at the time of your choosing, using an inflated rate which is':
-            '捐赠的虚拟货币在您使用时会以最近平均历史价格作为汇率转换为美元。',
-        'calculated from the recent average historic value. In order to minimize unexpected price fluctuations, the site rate will':
-            '为减少意外的价格波动，网站的汇率永远不会急剧下降，',
-        'never drop sharply, but adjusts slowly over time if the real-world rate is more than 10% below the site rate.':
-            '但如果实际汇率比网站的低 10% 以上，则会随着时间推移缓慢调整。',
+        'Donated coins are applied as the equivalent value in USD at the time of your choosing, using the site rate which is calculated from recent real-world value.':
+            '捐赠的虚拟货币在您使用时会以最近平均历史价格作为网站的汇率转换为美元。',
+        'The site rate will never drop sharply, it adjusts slowly over time if the real-world value is higher than or less than 90% of the site rate.':
+            '网站的汇率永远不会急剧下降，只有当实际汇率高于网站汇率，或低于网站汇率的 90% 时，才会随着时间推移缓慢调整。',
         'The conversion rates right now are ': '当前汇率：',
         ' for Bitcoin, and ': ' (比特币) \xA0 ',
         ' for Bitcoin Cash.': ' (比特币现金)',
@@ -96,11 +93,9 @@ merge(
 
         'Bitcoin (BTC) Spending History': '比特币 (BTC) 消费历史',
         'Bitcoin Cash (BCH) Spending History': '比特币现金 (BCH) 消费历史',
-        'No BCH have been applied yet.': '目前还没使用 BCH',
-        'No BTC have been applied yet.': '目前还没使用 BTC',
-        'Donation Log': '捐赠日志',
-        'Adopt-a-Server Log': '服务器领养日志',
-        'No adopted slots': '目前还没有领养',
+        'No coins have been applied yet': '目前还没有使用虚拟货币',
+        'Adopt-a-Server Slots': '服务器领养日志',
+        'No slots have been adopted yet': '目前还没有领养',
     },
     [
         [/^Refunded (.*?) Hath/, '已退还 $1 Hath'],
