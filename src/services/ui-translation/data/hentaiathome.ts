@@ -187,10 +187,10 @@ merge(
         'Click here to modify the schedule of this client': '修改此客户端的运行计划',
 
         'Static Ranges': '静态范围',
-        'Over time, your client is assigned a number of permanently assigned ranges of files it is able to serve. This toggle will reset this set of ranges. ':
-            '随着时间的推移，您的客户端会被分配到一段永久指定的文件范围用于提供服务。此复选框用于重置这些范围。',
-        'DO NOT DO THIS unless you lost your cache. It will NOT fix any other client issues.':
-            '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。',
+        'Your client will be assigned ranges of files to cache and serve. This toggle clears these ranges. ':
+            '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
+        'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
+            '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
         'This client currently has ': '此客户端当前被分配了 ',
         ' static range(s) assigned.': ' 组静态范围',
         ' Reset Static Ranges': ' 重置静态范围',

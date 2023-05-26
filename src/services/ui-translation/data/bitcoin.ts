@@ -4,7 +4,7 @@ merge(
     /^\/bitcoin\.php/,
     undefined,
     {
-        'Bitcoin Donation': '比特币捐款',
+        'Bitcoin Donation': '比特币捐赠',
 
         '\n\t\tBitcoin (BTC) and Bitcoin Cash (BCH) are decentralized virtual currencies. This page allows you to donate these coins from an exchange service or a local wallet, track the confirmation process of the transaction, and apply the donated coins as a USD donation or Adopt-a-Server slots. This is not a custodial service; all coins sent to these addresses are considered donated to this site and cannot be withdrawn. ':
             '\n\t\t比特币 (BTC) 和比特币现金 (BCH) 是去中心化的虚拟货币。本页面允许您从交易所或本地钱包捐赠并跟踪交易过程，并能够将捐赠的虚拟货币作为美元捐赠或领养服务器。这不是一个保管服务，所有发送到这些地址的虚拟货币都被认为是捐赠给本网站的，无法撤回。',
@@ -41,8 +41,7 @@ merge(
 
         'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
         'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
-        'New donations will typically show up here in less than two minutes. It will show as ':
-            '新的捐赠通常会在两分钟内显示在这里。在被纳入一个区块并达到两个确认之前会处于 ',
+        'New donations will typically show up here in less than two minutes. It will show as ': '新的捐赠通常会在两分钟内显示在这里，但在被纳入一个区块并达到两个确认之前会处于 ',
         ' until it has been included in a block and has two confirmations. This usually takes less than an hour, but can take longer in some cases. When it has been marked as ':
             ' 状态。这通常不需要一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为 ',
         ', you can apply it below to make it take effect.': ' 时才能通过下方按钮完成捐赠。',
@@ -51,14 +50,15 @@ merge(
         Accepted: '已接受',
 
         'Available To Apply: ': '可用余额：',
-        ' \xA0 \xA0 \xA0 Donation Total: ': ' \xA0 \xA0 \xA0 总捐款额：',
+        ' \xA0 \xA0 \xA0 Donation Total: ': ' \xA0 \xA0 \xA0 捐赠总额：',
         ' \xA0 \xA0 \xA0 Adopt-a-Server Days: ': ' \xA0 \xA0 \xA0 领养服务器天数：',
 
         'Current Conversion Rate: ': '当前汇率：',
 
-        'Apply BTC as Donation': '使用 BTC 捐款',
-        'Apply BCH as Donation': '使用 BCH 捐款',
-        'Apply Donation': '我要捐款',
+        'Apply BTC as Donation': '使用 BTC 捐赠',
+        'Apply BCH as Donation': '使用 BCH 捐赠',
+        'use max': '最大',
+        'Apply Donation': '我要捐赠',
 
         'Apply BCH as Adopt-a-Server': '使用 BCH 领养服务器',
         'Apply BTC as Adopt-a-Server': '使用 BTC 领养服务器',
@@ -69,6 +69,7 @@ merge(
         '1 Year @ $7/month $84': '1 年 @ $7/月 $84',
         '2 Year @ $6/month $144': '2 年 @ $6/月 $144',
         '3 Year @ $5/month $180': '3 年 @ $5/月 $180',
+        'Purchase Slots': '我要领养',
 
         'Donated coins are applied as the equivalent value in USD at the time of your choosing, using the site rate which is calculated from recent real-world value.':
             '捐赠的虚拟货币在您使用时会以最近平均历史价格作为网站的汇率转换为美元。',
@@ -94,15 +95,15 @@ merge(
 
         'Bitcoin (BTC) Spending History': '比特币 (BTC) 消费历史',
         'Bitcoin Cash (BCH) Spending History': '比特币现金 (BCH) 消费历史',
-        'No coins have been applied yet': '目前还没有使用虚拟货币',
+        'No coins have been applied yet': '目前还没有使用此类虚拟货币',
         'Adopt-a-Server Slots': '服务器领养日志',
-        'No slots have been adopted yet': '目前还没有领养',
+        'No slots have been adopted yet': '目前还没有领养服务器',
     },
     [
         [/^Refunded (.*?) Hath/, '已退还 $1 Hath'],
         [/^(\$.*?) Donation$/, '捐赠 $1'],
         [/^A wallet address PM was sent to user (.+?) \(uid=(\d+)\)$/, '您的钱包地址已私信发送给 $1 (UID $2)。'],
-        [/^Awarded for a total donation of (\$\d+).$/, '授予的总捐赠额为 $1。'],
+        [/^Awarded for a total donation of (\$\d+).$/, '授予的捐赠总额为 $1。'],
         [/^(\d+) GB \/ week$/, '$1 GB / 周'],
         [/^Catgirl Lv.(\d)$/, '猫娘 Lv.$1'],
         [/^Insufficient (BCH|BTC) available.\s?/, '$1 余额不足。'],
