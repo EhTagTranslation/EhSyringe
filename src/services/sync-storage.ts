@@ -14,7 +14,10 @@ export interface SyncStorageItems {
 
 @Service()
 export class SyncStorage {
-    constructor(readonly logger: Logger, readonly async: Storage) {
+    constructor(
+        readonly logger: Logger,
+        readonly async: Storage,
+    ) {
         const oldVer = this.get('version');
         if (packageJson.version !== oldVer) {
             this.migrate();

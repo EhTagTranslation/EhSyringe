@@ -5,7 +5,10 @@ import { Logger } from './logger';
 
 @Service()
 export class Database {
-    constructor(readonly http: Http, readonly logger: Logger) {}
+    constructor(
+        readonly http: Http,
+        readonly logger: Logger,
+    ) {}
     async getLatestVersion(): Promise<GithubRelease> {
         const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
         const info = this.http.json<GithubRelease>(githubDownloadUrl);

@@ -41,7 +41,8 @@ merge(
 
         'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
         'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
-        'New donations will typically show up here in less than two minutes. It will show as ': '新的捐赠通常会在两分钟内显示在这里。在被纳入一个区块并达到两个确认之前会处于 ',
+        'New donations will typically show up here in less than two minutes. It will show as ':
+            '新的捐赠通常会在两分钟内显示在这里。在被纳入一个区块并达到两个确认之前会处于 ',
         ' until it has been included in a block and has two confirmations. This usually takes less than an hour, but can take longer in some cases. When it has been marked as ':
             ' 状态。这通常不需要一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为 ',
         ', you can apply it below to make it take effect.': ' 时才能通过下方按钮完成捐赠。',

@@ -1,37 +1,37 @@
 root: true
 parserOptions:
-    project: tsconfig.json
+  project: tsconfig.json
 extends:
-    - eslint:recommended
-    - plugin:@typescript-eslint/recommended
-    - plugin:@typescript-eslint/recommended-requiring-type-checking
-    - plugin:prettier/recommended
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - plugin:prettier/recommended
 rules:
-    'prettier/prettier': [1]
-    '@typescript-eslint/array-type': [1, { default: array-simple }]
-    '@typescript-eslint/explicit-function-return-type':
-        - 2
-        - allowExpressions: true
-    '@typescript-eslint/no-extraneous-class':
-        - 1
-        - allowWithDecorator: true
-          allowStaticOnly: true
-    '@typescript-eslint/no-parameter-properties':
-        - 1
-        - allows: [protected readonly, private readonly, public readonly, readonly]
-    '@typescript-eslint/no-throw-literal': [2]
-    'no-unused-vars': [0]
-    '@typescript-eslint/no-unused-vars':
-        - 1
-        - varsIgnorePattern: ^_
-          argsIgnorePattern: ^_
-    '@typescript-eslint/prefer-for-of': [1]
-    '@typescript-eslint/prefer-function-type': [1]
-    '@typescript-eslint/prefer-nullish-coalescing': [1]
-    '@typescript-eslint/prefer-optional-chain': [1]
-    '@typescript-eslint/ban-types':
-        - 1
-        - types:
-              object: false
-    no-void: [1, { allowAsStatement: true }]
-    eqeqeq: [1, smart]
+  'prettier/prettier': [1]
+  '@typescript-eslint/array-type': [1, { default: array-simple }]
+  '@typescript-eslint/explicit-function-return-type':
+    - 2
+    - allowExpressions: true
+  '@typescript-eslint/no-extraneous-class':
+    - 1
+    - allowWithDecorator: true
+      allowStaticOnly: true
+  '@typescript-eslint/no-parameter-properties':
+    - 1
+    - allows: [protected readonly, private readonly, public readonly, readonly]
+  '@typescript-eslint/no-throw-literal': [2]
+  'no-unused-vars': [0]
+  '@typescript-eslint/no-unused-vars':
+    - 1
+    - varsIgnorePattern: ^_
+      argsIgnorePattern: ^_
+  '@typescript-eslint/prefer-for-of': [1]
+  '@typescript-eslint/prefer-function-type': [1]
+  '@typescript-eslint/prefer-nullish-coalescing': [1]
+  '@typescript-eslint/prefer-optional-chain': [1]
+  '@typescript-eslint/ban-types':
+    - 1
+    - types:
+        object: false
+  no-void: [1, { allowAsStatement: true }]
+  eqeqeq: [1, smart]

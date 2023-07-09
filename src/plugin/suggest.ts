@@ -17,7 +17,11 @@ export interface Suggestion {
 
 @Service()
 export class Suggest {
-    constructor(readonly logger: Logger, readonly messaging: Messaging, readonly tagging: Tagging) {
+    constructor(
+        readonly logger: Logger,
+        readonly messaging: Messaging,
+        readonly tagging: Tagging,
+    ) {
         messaging.on('suggest-tag', (args) => {
             return this.getSuggests(args.term, args.limit);
         });
