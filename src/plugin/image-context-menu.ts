@@ -24,6 +24,8 @@ export class ImageContextMenu implements Menu {
     readonly targetUrlPatterns = [
         `*://${EX}/t/*.jpg`,
         `*://${EXU}/t/*.jpg`,
+        `*://s.${EX}/t/*.jpg`,
+        `*://s.${EXU}/t/*.jpg`,
         `*://${EHGT}/*.jpg`,
         `*://ul.${EHGT}/*.jpg`,
         `*://*.${HATH}:*/h/*`,
