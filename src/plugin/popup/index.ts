@@ -425,7 +425,7 @@ export class Popup {
 
     private el!: HTMLElement;
     private provider!: PopupProvider;
-    private downloadStatusSub?: MessageListener;
+    private downloadStatusSub?: MessageListener<'updating-database', DownloadStatus, void>;
     mount(el: HTMLElement, provider: PopupProvider): void {
         if (this.el != null) throw new Error('Injected twice');
         this.el = el;

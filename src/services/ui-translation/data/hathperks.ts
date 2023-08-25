@@ -30,8 +30,7 @@ merge(/^\/hathperks\.php/, undefined, {
     'Free with a $100 donation.': '捐赠 $100 免费解锁',
 
     'Ads-Be-Gone': '广告不见了',
-    'Makes ads be gone.':
-        '让广告消失。',
+    'Makes ads be gone.': '让广告消失。',
 
     'Source Nexus': '原始之力',
     'Unlocks the Original Images functionality on E-Hentai Galleries. This allows you to browse most files with the original, non-resampled version.':
