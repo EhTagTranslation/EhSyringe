@@ -151,16 +151,15 @@ merge(/^\/hathperks\.php/, undefined, {
     'Increases this EXP bonus to 100%.': '提升经验值奖励至 100%。',
 
     'Innate Arcana I': '天赋奥术 I',
-    'Unlocks the first auto-cast slot in the HentaiVerse, with a 10% upkeep reduction bonus. This allows you to select a spell that will be cast automatically.':
-        '在 HentaiVerse 解锁第一个自动施法栏，附赠 10% 维持量折扣奖励。此能力能让您选择一种咒语自动施放。',
+    'Applies a 10% upkeep discount on autocast spells.': '维持自动施法所需魔力减少10%。',
     'Innate Arcana II': '天赋奥术 II',
-    'Unlocks a second auto-cast slot, and reduces total upkeep by 20%.': '解锁第二个自动施法栏，和 20% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 20%.': '维持自动施法所需魔力减少20%。',
     'Innate Arcana III': '天赋奥术 III',
-    'Unlocks a third auto-cast slot, and reduces total upkeep by 30%.': '解锁第三个自动施法栏，和 30% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 30%.': '维持自动施法所需魔力减少30%。',
     'Innate Arcana IV': '天赋奥术 IV',
-    'Unlocks a fourth auto-cast slot, and reduces total upkeep by 40%.': '解锁第四个自动施法栏，和 40% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 40%.': '维持自动施法所需魔力减少40%。',
     'Innate Arcana V': '天赋奥术 V',
-    'Unlocks a fifth auto-cast slot, and reduces total upkeep by 50%.': '解锁第五个自动施法栏，和 50% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 50%.': '维持自动施法所需魔力减少50%。',
 
     'Crystarium I': '水晶矿脉 I',
     'Whenever a monster drops a crystal in the HentaiVerse, you will receive an additional bonus crystal.':
