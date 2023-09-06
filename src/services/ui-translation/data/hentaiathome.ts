@@ -158,10 +158,10 @@ merge(
             '警告：1 KB/s 或 KBps (千字节每秒) 相当于 8 Kb/s 或 Kbps (千比特每秒)。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
 
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
-        'How much disk space you wish to reserve for this client. The reserved space must always be available.':
-            '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
-        'Static Range allocation is limited to 1 per 250 MB of disk space.':
-            '静态范围分配限制为每 250 MB 磁盘空间 1 组。',
+        'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.':
+            '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现得更好。保留空间必须始终可用。',
+        'Static Range allocation is limited to 1 per 250 MiB of disk space.':
+            '静态范围分配限制为每 250 MiB 磁盘空间 1 组。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
         ' Remove static ranges if necessary': ' 如有必要，删除静态范围',
 
@@ -178,8 +178,8 @@ merge(
         ' MBytes/hour': ' MB/小时',
 
         'Minimum space to leave on disk': '最小磁盘预留空间',
-        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GB even if this is not set.':
-            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GB 时，客户端也会退出。',
+        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB even if this is not set.':
+            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GiB 时，客户端也会退出。',
 
         Scheduler: '运行计划',
         'The scheduler allows you to specify periods of time where the client is operating with lower speed limits.':
@@ -192,7 +192,7 @@ merge(
         'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
             '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
         'This client currently has ': '此客户端当前被分配了 ',
-        ' static range(s) assigned.': ' 组静态范围',
+        ' static range(s) assigned:': ' 组静态范围：',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
