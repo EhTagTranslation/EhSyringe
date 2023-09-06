@@ -84,12 +84,21 @@ merge(
         'This does not mean that you cannot restart the computer for updates or turn it off when you go on a vacation. It does however mean that if you shut it down at night, running H@H is not possible.':
             '您可以重启计算机进行系统更新，或者在去度假时关闭它。但是如果您每晚都需要关闭它，那它不适合运行 H@H。',
 
-        'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and make sure to keep your client running. Having the client set to the wrong country will make it perform worse than it would otherwise do.':
-            '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并确保您的客户端保持运行。位于错误的国家/地区的客户端的性能表现将不如预期。',
+        'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ':
+            '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
+        'make sure to keep your client running':
+            '确保您的客户端保持运行',
+        '. Having the client set to the wrong country will make it perform worse than it would otherwise do.':
+            '。位于错误的国家/地区的客户端的性能表现将不如预期。',
 
         'Free Archive Quota: ': '免费的存档配额：',
-        ', measured in a 168-hour sliding window. The cap is updated once every hour. Clients must have been running for more than 24 hours with a hitrate above 1 to qualify.':
-            '，按照最近 168 小时的在线时间进行计算。上限每小时更新一次。客户端必须保持运行超过 24 小时且点击率高于 1 才能获得资格。',
+        ', measured in a 168-hour sliding window. Clients must be ':
+            '，按照最近 168 小时的在线时间进行计算。客户端必须保持',
+        'healthy':
+            '健康',
+        ' and must have been running for more than 24 hours straight to qualify.':
+            '并运行超过 24 小时才能获得资格。',
+
 
         'Client Download': '客户端下载',
         'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
@@ -154,14 +163,14 @@ merge(
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，并可能影响客户端性能。此选项适用于家庭网络，如果 H@H 显著影响您的网络性能，则应启用此功能。',
         ' KBytes/s': ' KB/s',
         ' Enable Client-Side Speed Limit (recommended for home networks)': ' 启用客户端侧速度限制 (家庭网络建议开启)',
-        'Warning: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
-            '警告：1 KB/s 或 KBps (千字节每秒) 相当于 8 Kb/s 或 Kbps (千比特每秒)。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
+        'Note: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
+            '注意：1 KB/s 或 KBps (千字节每秒) 相当于 8 Kb/s 或 Kbps (千比特每秒)。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
 
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
-        'How much disk space you wish to reserve for this client. The reserved space must always be available.':
-            '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
-        'Static Range allocation is limited to 1 per 250 MB of disk space.':
-            '静态范围分配限制为每 250 MB 磁盘空间 1 组。',
+        'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.':
+            '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现的越好。保留空间必须始终可用。',
+        'Static Range allocation is limited to 1 per 250 MiB of disk space.':
+            '静态范围分配限制为每 250 MiB 磁盘空间 1 组。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
         ' Remove static ranges if necessary': ' 如有必要，删除静态范围',
 
@@ -178,8 +187,8 @@ merge(
         ' MBytes/hour': ' MB/小时',
 
         'Minimum space to leave on disk': '最小磁盘预留空间',
-        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GB even if this is not set.':
-            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GB 时，客户端也会退出。',
+        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB even if this is not set.':
+            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GiB 时，客户端也会退出。',
 
         Scheduler: '运行计划',
         'The scheduler allows you to specify periods of time where the client is operating with lower speed limits.':
@@ -192,7 +201,7 @@ merge(
         'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
             '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
         'This client currently has ': '此客户端当前被分配了 ',
-        ' static range(s) assigned.': ' 组静态范围',
+        ' static range(s) assigned: P1 = ': ' 组静态范围：P1 = ',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
