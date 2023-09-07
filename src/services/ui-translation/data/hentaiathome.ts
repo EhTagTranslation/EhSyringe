@@ -146,10 +146,8 @@ merge(
         'New Value: ': '新值：',
 
         'Port for Incoming Connections': '监听端口',
-        'Can be 443 (recommended) or most numbers between 1024 and 65534.':
-            '可以使用 443 (推荐) 或 1024~65534 的大部分端口。',
-        'This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.':
-            '此端口必须在您的防火墙中打开，并经由您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
+        'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.':
+            '可以使用 443 (推荐) 或 1024~65534 的大部分端口。此端口必须在您的防火墙中打开，并经由您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
         'Note: The port cannot be changed while the client is running.': '注意：客户端运行时不能更改端口。',
 
         'Client Name': '客户端名称',
@@ -157,10 +155,8 @@ merge(
             '您可以在这里为此客户端设置自定义名称。它会用于此客户端出现的各种列表中。',
 
         'Maximum Upload Rate': '最大上传速率',
-        'Actual utilization will generally reach at most 80% of this over time, less if you also set an hourly limit below.':
-            '随着时间的推移，实际利用率最多将达到此值的 80%，除非您还在下方设置了每小时限制。',
-        'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will however increase CPU usage and can affect the performance of the client. Intended for home networks; you should enable this if H@H noticeably affects your network performance.':
-            '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，并可能影响客户端性能。此选项适用于家庭网络，如果 H@H 显著影响您的网络性能，则应启用此功能。',
+        'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
+            '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
         ' KBytes/s': ' KB/s',
         ' Enable Client-Side Speed Limit (recommended for home networks)': ' 启用客户端侧速度限制 (家庭网络建议开启)',
         'Note: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
@@ -193,7 +189,7 @@ merge(
         Scheduler: '运行计划',
         'The scheduler allows you to specify periods of time where the client is operating with lower speed limits.':
             '运行计划允许您指定客户端以较低速度限制运行的时间段。',
-        'Click here to modify the schedule of this client': '修改此客户端的运行计划',
+        'Click here to set a bandwidth schedule for this client': '单击此处为此客户端设置带宽计划',
 
         'Static Ranges': '静态范围',
         'Your client will be assigned ranges of files to cache and serve. This toggle clears these ranges. ':
@@ -221,15 +217,15 @@ merge(
         ' Use this client as your designated H@H Downloader. Only necessary if you have multiple clients.':
             ' 将此客户端用作指定的 H@H 下载器。仅当您有多个客户端时才需要。',
 
-        '\n\t\tChanges will be applied within roughly two minutes. Changes to disk space will not take effect until next restart.\n\t\t':
-            '更改将在大约两分钟内生效。对磁盘空间的更改将在下次重新启动时生效。',
+        '\n\t\tChanges will be applied within roughly two minutes. If you decrease the disk cache space, it will not take effect until next restart.\n\t\t':
+            '更改将在大约两分钟内生效。如果减少了磁盘缓存空间，则需要重新启动才会生效。',
         'Apply Settings': '应用设置',
         '[Back to Overview]': '[返回总览]',
     },
     [
         [
-            /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d.]+) ([KMGTP]B)\/s$/,
-            '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 $1 $2/s。',
+            /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d.]+) ([KMGTP]B)\/s. Actual utilization will be at most 80% of this over time.$/,
+            '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 $1 $2/s。随着时间的推移，利用率最多会达到此值的 80%。',
         ],
         [
             /^This must be at least ([\d.]+) ([KMGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
@@ -239,9 +235,9 @@ merge(
             /^The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least ([\d.]+) ([KMGTP]B) if set.$/,
             '此客户端每小时允许发送的最大数据量。保留为 0 表示仅限制最大速度。若设置，则必须至少为 $1 $2。',
         ],
+        [/^ static range\(s\) assigned: P(\d+) = $/, ' 组静态范围：P$1 = '],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
-        [/^ static range\(s\) assigned: P(\d+) = $/, ' 组静态范围：P$1 = '],
     ],
 );
 
