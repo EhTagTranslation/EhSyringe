@@ -201,7 +201,6 @@ merge(
         'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
             '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
         'This client currently has ': '此客户端当前被分配了 ',
-        ' static range(s) assigned: P1 = ': ' 组静态范围：P1 = ',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
@@ -242,6 +241,7 @@ merge(
         ],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
+        [/^ static range\(s\) assigned: P(\d+) = $/, ' 组静态范围：P$1 = '],
     ],
 );
 
