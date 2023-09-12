@@ -200,11 +200,6 @@ merge(
         'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB even if this is not set.':
             '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GiB 时，客户端也会退出。',
 
-        Scheduler: '运行计划',
-        'The scheduler allows you to specify periods of time where the client is operating with lower speed limits.':
-            '运行计划允许您指定客户端以较低速度限制运行的时间段。',
-        'Click here to set a bandwidth schedule for this client': '单击此处为此客户端设置带宽计划',
-
         'Reset Static Ranges': '重置静态范围',
         'Your client will be assigned ranges of files to cache and serve. This toggle clears these ranges. ':
             '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
@@ -257,40 +252,5 @@ merge(
         [/^ static range\(s\) assigned: P(\d+) = $/, ' 组静态范围：P$1 = '],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
-    ],
-);
-
-merge(
-    /^\/hentaiathome\.php\?.*act=schedule/,
-    undefined,
-    {
-        'The scheduler allows you to specify periods of time where the client is operating with lower speed limits. The speed limit cannot be set higher than the default entry. To change the default entry, alter the Maximum Burst Speed on the Settings page.':
-            '运行计划允许您指定客户端以较低速度限制运行的时间段。速度限制不能高于默认规则。要更改默认规则，请更改设置页面上的“最大并发速率”。',
-        'To add a new scheduling entry, simply use the row at the bottom. Enter the required values and make sure that Active is checked, then hit Apply Schedule. Repeat to add more than one entry. You can have up to 9 entries per client, excluding the default entry. In case of overlap, the schedule with the highest granularity will always be applied.':
-            '要添加新的规则，只需使用最后一行。输入所需的值并确保选中“启用”，然后点击“保存运行计划”。重复以上步骤以添加多个规则。在默认规则之外，每个客户端最多可以有 9 个规则。在重叠的情况下，将始终应用具有最高粒度的规则。',
-        Active: '启用',
-        Mon: '一',
-        Tue: '二',
-        Wed: '三',
-        Thu: '四',
-        Fri: '五',
-        Sat: '六',
-        Sun: '日',
-        'Start Hour': '开始时间',
-        'End Hour': '结束时间',
-        'Burst Speed': '并发速率',
-
-        'Delete Rule': '删除规则',
-        'Add Rule': '添加规则',
-        'Save Schedule': '保存运行计划',
-
-        '[Back to Settings]': '[返回设置]',
-    },
-    [
-        [/^Modify Schedule for Client (\d+) \((.*?)\)$/, '修改客户端 $1 ($2) 的运行计划'],
-        [
-            /^All schedule times are in UTC. As a reference, the current UTC time is (.*?)\.$/,
-            (s, t) => `所有计划时间均为 UTC。作为参考，现在的 UTC 时间是 ${t.replace(/\s/g, '\xA0')}。`,
-        ],
     ],
 );
