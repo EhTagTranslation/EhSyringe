@@ -30,23 +30,22 @@ merge(/^\/hathperks\.php/, undefined, {
     'Free with a $100 donation.': '捐赠 $100 免费解锁',
 
     'Ads-Be-Gone': '广告不见了',
-    'Unlocks the display ads toggle for E-Hentai Galleries on the User Settings page. This will allow you to browse E-Hentai Galleries sans ads, and still retain your conscience.':
-        '移除 E-Hentai 的广告，不需要昧着良心使用广告屏蔽插件。',
+    'Makes ads be gone.': '让广告消失。',
 
     'Source Nexus': '原始之力',
-    'Unlocks the Original Images functionality on E-Hentai Galleries. This allows you to browse the original, non-resampled version of a gallery directly.':
-        '解锁 E-Hentai 图库的原始图像功能。这允许您直接浏览图库的原始非重采样版本。',
+    'Unlocks the Original Images functionality on E-Hentai Galleries. This allows you to browse most files with the original, non-resampled version.':
+        '解锁 E-Hentai 图库的原始图像功能，这允许您直接浏览大部分图像的原始非重采样版本。',
 
     'Multi-Page Viewer': '多页查看器',
     'Unlocks the Multi-Page Viewer function on E-Hentai Galleries. This allows you to view all images from a gallery on one page. (':
-        '解锁 E-Hentai 图库的多页查看器功能。这允许您在一个页面上查看图库中的所有图像。(',
+        '解锁 E-Hentai 图库的多页查看器功能，这允许您在单个页面上查看图库中的所有图像。(',
     demo: '演示',
 
-    'More Thumbs': '更多的缩略图',
+    'More Thumbs': '更多缩略图',
     'Increases the maximum number of thumbnail rows to 10.': '将最大缩略图行数增加到 10。',
-    'Thumbs Up': '超多的缩略图',
+    'Thumbs Up': '超多缩略图',
     'Further increases the maximum number of thumbnail rows to 20.': '将最大缩略图行数增加到 20。',
-    'All Thumbs': '全部的缩略图',
+    'All Thumbs': '全部缩略图',
     'Further increases the maximum number of thumbnail rows to 40.': '将最大缩略图行数增加到 40。',
 
     'More Pages': '更多页面',
@@ -152,16 +151,15 @@ merge(/^\/hathperks\.php/, undefined, {
     'Increases this EXP bonus to 100%.': '提升经验值奖励至 100%。',
 
     'Innate Arcana I': '天赋奥术 I',
-    'Unlocks the first auto-cast slot in the HentaiVerse, with a 10% upkeep reduction bonus. This allows you to select a spell that will be cast automatically.':
-        '在 HentaiVerse 解锁第一个自动施法栏，附赠 10% 维持量折扣奖励。此能力能让您选择一种咒语自动施放。',
+    'Applies a 10% upkeep discount on autocast spells.': '维持自动施法所需魔力减少10%。',
     'Innate Arcana II': '天赋奥术 II',
-    'Unlocks a second auto-cast slot, and reduces total upkeep by 20%.': '解锁第二个自动施法栏，和 20% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 20%.': '维持自动施法所需魔力减少20%。',
     'Innate Arcana III': '天赋奥术 III',
-    'Unlocks a third auto-cast slot, and reduces total upkeep by 30%.': '解锁第三个自动施法栏，和 30% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 30%.': '维持自动施法所需魔力减少30%。',
     'Innate Arcana IV': '天赋奥术 IV',
-    'Unlocks a fourth auto-cast slot, and reduces total upkeep by 40%.': '解锁第四个自动施法栏，和 40% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 40%.': '维持自动施法所需魔力减少40%。',
     'Innate Arcana V': '天赋奥术 V',
-    'Unlocks a fifth auto-cast slot, and reduces total upkeep by 50%.': '解锁第五个自动施法栏，和 50% 总维持量折扣。',
+    'Increases the upkeep discount on autocast spells to 50%.': '维持自动施法所需魔力减少50%。',
 
     'Crystarium I': '水晶矿脉 I',
     'Whenever a monster drops a crystal in the HentaiVerse, you will receive an additional bonus crystal.':

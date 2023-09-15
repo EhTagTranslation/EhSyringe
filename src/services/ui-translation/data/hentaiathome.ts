@@ -84,12 +84,21 @@ merge(
         'This does not mean that you cannot restart the computer for updates or turn it off when you go on a vacation. It does however mean that if you shut it down at night, running H@H is not possible.':
             '您可以重启计算机进行系统更新，或者在去度假时关闭它。但是如果您每晚都需要关闭它，那它不适合运行 H@H。',
 
-        'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and make sure to keep your client running. Having the client set to the wrong country will make it perform worse than it would otherwise do.':
-            '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并确保您的客户端保持运行。位于错误的国家/地区的客户端的性能表现将不如预期。',
+        'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ':
+            '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
+        'make sure to keep your client running':
+            '确保您的客户端保持运行',
+        '. Having the client set to the wrong country will make it perform worse than it would otherwise do.':
+            '。位于错误的国家/地区的客户端的性能表现将不如预期。',
 
         'Free Archive Quota: ': '免费的存档配额：',
-        ', measured in a 168-hour sliding window. The cap is updated once every hour. Clients must have been running for more than 24 hours with a hitrate above 1 to qualify.':
-            '，按照最近 168 小时的在线时间进行计算。上限每小时更新一次。客户端必须保持运行超过 24 小时且点击率高于 1 才能获得资格。',
+        ', measured in a 168-hour sliding window. Clients must be ':
+            '，按照最近 168 小时的在线时间进行计算。客户端必须保持',
+        'healthy':
+            '健康',
+        ' and must have been running for more than 24 hours straight to qualify.':
+            '并运行超过 24 小时才能获得资格。',
+
 
         'Client Download': '客户端下载',
         'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
@@ -130,17 +139,15 @@ merge(
     /^\/hentaiathome\.php\?.*act=settings/,
     undefined,
     {
-        'Client ID#:': '客户端 ID：',
+        'Client ID:': '客户端 ID：',
         'Client Key:': '客户端 Key：',
 
         'Current Value: ': '现值：',
         'New Value: ': '新值：',
 
         'Port for Incoming Connections': '监听端口',
-        'Can be 443 (recommended) or most numbers between 1024 and 65534.':
-            '可以使用 443 (推荐) 或 1024~65534 的大部分端口。',
-        'This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.':
-            '此端口必须在您的防火墙中打开，并经由您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
+        'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.':
+            '可以使用 443 (推荐) 或 1024~65534 的大部分端口。此端口必须在您的防火墙中打开，并经由您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
         'Note: The port cannot be changed while the client is running.': '注意：客户端运行时不能更改端口。',
 
         'Client Name': '客户端名称',
@@ -148,22 +155,28 @@ merge(
             '您可以在这里为此客户端设置自定义名称。它会用于此客户端出现的各种列表中。',
 
         'Maximum Upload Rate': '最大上传速率',
-        'Actual utilization will generally reach at most 80% of this over time, less if you also set an hourly limit below.':
-            '随着时间的推移，实际利用率最多将达到此值的 80%，除非您还在下方设置了每小时限制。',
-        'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will however increase CPU usage and can affect the performance of the client. Intended for home networks; you should enable this if H@H noticeably affects your network performance.':
-            '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，并可能影响客户端性能。此选项适用于家庭网络，如果 H@H 显著影响您的网络性能，则应启用此功能。',
+        'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
+            '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
+        'Static Range allocation is limited to 1 per 5 KB/s.': '每 1 组静态范围至少 5 KB/s。',
         ' KBytes/s': ' KB/s',
-        ' Enable Client-Side Speed Limit (recommended for home networks)': ' 启用客户端侧速度限制 (家庭网络建议开启)',
-        'Warning: 1 KB/s or KBps (Kilo Bytes per Second) is equivalent to 8 Kb/s or Kbps (Kilo Bits per Second). Internet speeds are typically advertised as the latter, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
-            '警告：1 KB/s 或 KBps (千字节每秒) 相当于 8 Kb/s 或 Kbps (千比特每秒)。Internet 速度通常被宣传为后者，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
+        ' Enable Client-Side Speed Limit (recommended only for home networks)': ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
+        'Note: 1 KB/s or KBps (Kilo': '注意：1 KB/s 或 KBps (千',
+        'bytes': '字节',
+        ' per Second) is equivalent to 8 Kb/s or Kbps (Kilo': '每秒) 相当于 8 Kb/s 或 Kbps (千',
+        'bits': '比特',
+        ' per Second). Internet speeds are typically advertised as the latter (Mbps or Mbit/s), and this is also what Speedtest uses, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
+            '每秒)。Internet 速度通常被宣传为后者（Mbps 或 Mbit/s），Speedtest也使用这种表示方式，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
+        'To reduce the upload rate for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
+            '降低该客户端的上传速率需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
-        'How much disk space you wish to reserve for this client. The reserved space must always be available.':
-            '您希望为此客户端保留多少磁盘空间。 保留空间必须始终可用。',
-        'Static Range allocation is limited to 1 per 250 MB of disk space.':
-            '静态范围分配限制为每 250 MB 磁盘空间 1 组。',
+        'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.':
+            '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现的越好。保留空间必须始终可用。',
+        'Static Range allocation is limited to 1 per 250 MiB.':
+            '静态范围分配限制为每 250 MiB 磁盘空间 1 组。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
-        ' Remove static ranges if necessary': ' 如有必要，删除静态范围',
+        'To reduce the disk space for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
+            '降低该客户端所需的磁盘空间需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
         'Advanced Settings': '高级设置',
         'The settings below are optional advanced settings.': '以下设置项为可选的高级设置',
@@ -173,26 +186,26 @@ merge(
             '如果您认为您的客户端 Key 已泄露，可以通过选中复选框来重置密钥。下次客户端启动时，您必须重新输入密钥。',
         ' Reset Client Key': ' 重置客户端 Key',
 
-        'Hourly Bandwidth Limit': '每小时流量限制',
-        'Not Set': '未设置',
-        ' MBytes/hour': ' MB/小时',
+        'Monthly Data Transfer Target': '每月数据流量限制',
+        'Unlimited': '无限',
+        ' GB per month': ' GB 每月',
+        'If you have a monthly data cap, you can provide it here. If the system detects that you are likely to exceed this target, it will reduce the priority of ranges on your client to reduce the load, but it is not guaranteed to stay below this value. Leave at 0 to limit with max speed alone. Must be at least 1000 GB if set.':
+            '如果你有每月数据限额，请在此设置。如果系统检测到你可能超过此限额，它将会降低客户端上的静态范围的优先度，以降低网络负载，但并不能保证低于设定值。保留为 0 表示仅限制最大速度。最低限制为 1000 GB。',
+        'Static Range allocation is limited to 1 per 5 GB.': '每 1 组静态范围至少 5 GB。',
+        'To reduce the monthly data transfer target for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
+            '降低该客户端的每月数据流量限制需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
-        'Minimum space to leave on disk': '最小磁盘预留空间',
-        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GB even if this is not set.':
-            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GB 时，客户端也会退出。',
+        'Minimum Free Disk Space': '磁盘最小剩余空间',
+        'Use Default': '默认',
+        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB even if this is not set.':
+            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GiB 时，客户端也会退出。',
 
-        Scheduler: '运行计划',
-        'The scheduler allows you to specify periods of time where the client is operating with lower speed limits.':
-            '运行计划允许您指定客户端以较低速度限制运行的时间段。',
-        'Click here to modify the schedule of this client': '修改此客户端的运行计划',
-
-        'Static Ranges': '静态范围',
-        'Over time, your client is assigned a number of permanently assigned ranges of files it is able to serve. This toggle will reset this set of ranges. ':
-            '随着时间的推移，您的客户端会被分配到一段永久指定的文件范围用于提供服务。此复选框用于重置这些范围。',
-        'DO NOT DO THIS unless you lost your cache. It will NOT fix any other client issues.':
-            '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。',
+        'Reset Static Ranges': '重置静态范围',
+        'Your client will be assigned ranges of files to cache and serve. This toggle clears these ranges. ':
+            '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
+        'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
+            '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
         'This client currently has ': '此客户端当前被分配了 ',
-        ' static range(s) assigned.': ' 组静态范围',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
@@ -213,60 +226,31 @@ merge(
         ' Use this client as your designated H@H Downloader. Only necessary if you have multiple clients.':
             ' 将此客户端用作指定的 H@H 下载器。仅当您有多个客户端时才需要。',
 
-        '\n\t\tChanges will be applied within roughly two minutes. Changes to disk space will not take effect until next restart.\n\t\t':
-            '更改将在大约两分钟内生效。对磁盘空间的更改将在下次重新启动时生效。',
+        'Changes will be applied within roughly two minutes. If you decrease the disk cache space, it will not take effect until next restart.':
+            '更改将在大约两分钟内生效。如果减少了磁盘缓存空间，则需要重新启动才会生效。',
+        ' Allow removing static ranges if necessary (client must be shut down)': '必要时允许移除静态范围（需要重启客户端）',
         'Apply Settings': '应用设置',
         '[Back to Overview]': '[返回总览]',
     },
     [
         [
-            /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d.]+) ([KMGTP]B)\/s$/,
-            '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 $1 $2/s。',
+            /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d.]+) ([KMGTP]B)\/s. Actual utilization will be at most 80% of this over time.$/,
+            '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 $1 $2/s。随着时间的推移，利用率最多会达到此值的 80%。',
         ],
         [
-            /^This must be at least ([\d.]+) ([KMGTP]B)\. We recommend at least 1 GB disk per 25 KByte\/s bandwidth, or 5 GB for every MBit\/s, but more is always better.$/,
-            '至少为 $1 $2。我们建议为每 25 KB/s 带宽保留至少 1 GB 磁盘，或每 Mbps 带宽 5 GB 磁盘，但越多越好。',
+            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 250 MiB of disk space, so you cannot reduce it below ([\d.]+) GiB without removing ranges.$/,
+            '此客户端已分配 $1 组静态范围。每组需要至少 250 MiB 磁盘空间，所以您无法减少至低于 $2 GiB，除非移除静态范围。',
         ],
         [
-            /^The number of megabytes this client is allowed to send every hour. Leave at 0 to limit with max speed alone. Must be at least ([\d.]+) ([KMGTP]B) if set.$/,
-            '此客户端每小时允许发送的最大数据量。保留为 0 表示仅限制最大速度。若设置，则必须至少为 $1 $2。',
+            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 5 KB\/s of upload rate, so you cannot reduce it below ([\d.]+) KB\/s without removing ranges.$/,
+            '此客户端已分配 $1 组静态范围。每组需要至少 5 KB\/s 上传速率，所以您无法减少至低于 $2 KB\/s，除非移除静态范围。',
         ],
+        [
+            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 5 GB of monthly data transfer, so you cannot reduce it below ([\d.]+) GB without removing ranges.$/,
+            '此客户端已分配 $1 组静态范围。每组需要至少 5 GB 的每月数据流量，所以您无法减少至低于 $2 GB，除非移除静态范围。',
+        ],
+        [/^ static range\(s\) assigned: P(\d+) = $/, ' 组静态范围：P$1 = '],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
-    ],
-);
-
-merge(
-    /^\/hentaiathome\.php\?.*act=schedule/,
-    undefined,
-    {
-        'The scheduler allows you to specify periods of time where the client is operating with lower speed limits. The speed limit cannot be set higher than the default entry. To change the default entry, alter the Maximum Burst Speed on the Settings page.':
-            '运行计划允许您指定客户端以较低速度限制运行的时间段。速度限制不能高于默认规则。要更改默认规则，请更改设置页面上的“最大并发速率”。',
-        'To add a new scheduling entry, simply use the row at the bottom. Enter the required values and make sure that Active is checked, then hit Apply Schedule. Repeat to add more than one entry. You can have up to 9 entries per client, excluding the default entry. In case of overlap, the schedule with the highest granularity will always be applied.':
-            '要添加新的规则，只需使用最后一行。输入所需的值并确保选中“启用”，然后点击“保存运行计划”。重复以上步骤以添加多个规则。在默认规则之外，每个客户端最多可以有 9 个规则。在重叠的情况下，将始终应用具有最高粒度的规则。',
-        Active: '启用',
-        Mon: '一',
-        Tue: '二',
-        Wed: '三',
-        Thu: '四',
-        Fri: '五',
-        Sat: '六',
-        Sun: '日',
-        'Start Hour': '开始时间',
-        'End Hour': '结束时间',
-        'Burst Speed': '并发速率',
-
-        'Delete Rule': '删除规则',
-        'Add Rule': '添加规则',
-        'Save Schedule': '保存运行计划',
-
-        '[Back to Settings]': '[返回设置]',
-    },
-    [
-        [/^Modify Schedule for Client (\d+) \((.*?)\)$/, '修改客户端 $1 ($2) 的运行计划'],
-        [
-            /^All schedule times are in UTC. As a reference, the current UTC time is (.*?)\.$/,
-            (s, t) => `所有计划时间均为 UTC。作为参考，现在的 UTC 时间是 ${t.replace(/\s/g, '\xA0')}。`,
-        ],
     ],
 );

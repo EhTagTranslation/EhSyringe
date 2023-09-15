@@ -5,7 +5,11 @@ import { Messaging } from 'services/messaging';
 
 @Service()
 export class AutoUpdate {
-    constructor(readonly logger: Logger, readonly storage: Storage, readonly messaging: Messaging) {
+    constructor(
+        readonly logger: Logger,
+        readonly storage: Storage,
+        readonly messaging: Messaging,
+    ) {
         this.init().catch(logger.error);
     }
     private async init(): Promise<void> {

@@ -42,7 +42,7 @@ class MessagingCross extends Messaging {
         }
     }
 
-    override async emit(key: string, args: unknown, broadcast = false): Promise<unknown> {
+    override async emit<K extends string, T, R>(key: K, args: T, broadcast = false): Promise<R> {
         const localSize = this.handlers.get(key)?.size ?? 0;
         const localHandled = localSize > 0 ? super.emit(key, args, broadcast) : false;
         const remoteHandled = this.remoteHandle(key, args);
@@ -58,22 +58,22 @@ class MessagingCross extends Messaging {
         }
         if (broadcast) {
             if (localHandled) {
-                return lr ?? rr.data;
+                return (lr ?? rr.data) as R;
             }
-            return rr.data;
+            return rr.data as R;
         } else {
             if (le) throw le;
             if (rr.error && rr.handlers < 0) console.debug(key, args, rr.error);
             if (rr.error && rr.handlers > 0) throw rr.error;
             if (localHandled) {
-                return lr ?? rr.data;
+                return (lr ?? rr.data) as R;
             }
             if (rr.handlers <= 0) {
                 const err = new Error(`无法处理事件 ${key}`);
                 Reflect.set(err, 'localResponse', lr);
                 Reflect.set(err, 'remoteResponse', rr);
             }
-            return rr.data;
+            return rr.data as R;
         }
     }
 }

@@ -242,14 +242,20 @@ body.ex #eh-syringe-popup-root {
             overflow: visible;
             transform: translate3d(0, 0, 0);
             border: 1px #ddd solid;
-            transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+            transition:
+                background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 
             &.primary {
-                box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                box-shadow:
+                    0 3px 1px -2px rgba(0, 0, 0, 0.2),
+                    0 2px 2px 0 rgba(0, 0, 0, 0.14),
                     0 1px 5px 0 rgba(0, 0, 0, 0.12);
             }
             &.primary:active {
-                box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                box-shadow:
+                    0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                    0 8px 10px 1px rgba(0, 0, 0, 0.14),
                     0 3px 14px 2px rgba(0, 0, 0, 0.12);
             }
             &:disabled {
@@ -262,7 +268,9 @@ body.ex #eh-syringe-popup-root {
     }
 
     #mainPanel {
-        transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1), transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
+            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
         transform: scale(1);
         &.hide {
             transform: scale(0.9);
@@ -293,7 +301,9 @@ body.ex #eh-syringe-popup-root {
         #Enema,
         #Enema2,
         #PushRod {
-            transition: width 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
+            transition:
+                width 280ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
                 transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
         }
         &.prominent {
@@ -309,7 +319,9 @@ body.ex #eh-syringe-popup-root {
                 #Enema,
                 #Enema2,
                 #PushRod {
-                    transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+                    transition:
+                        width 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
                 }
             }
         }
@@ -341,7 +353,9 @@ body.ex #eh-syringe-popup-root {
         right: 0;
         pointer-events: none;
         opacity: 0;
-        transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1), transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition:
+            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
+            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
         transform: scale(1.1);
 
         &.show {

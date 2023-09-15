@@ -1,5 +1,9 @@
-import path from 'path';
-import fs from 'fs-extra';
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { glob } from 'glob';
+import { execaCommandSync } from 'execa';
+import semver from 'semver';
 import webpack from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
 import _WebExtensionPlugin from '@webextension-toolbox/webpack-webextension-plugin';
@@ -7,10 +11,6 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import WebpackUserScript from 'webpack-userscript';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { glob } from 'glob';
-import { execaCommandSync } from 'execa';
-import semver from 'semver';
-import { fileURLToPath } from 'url';
 
 /** @type {typeof _WebExtensionPlugin} */
 const WebExtensionPlugin = _WebExtensionPlugin.default;
@@ -18,8 +18,8 @@ const WebExtensionPlugin = _WebExtensionPlugin.default;
 const __dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 
 /** @type { import('./src/info').packageJson & import('type-fest').PackageJson } */
-const pkgJson = fs.readJSONSync(path.resolve(__dirname, './package.json'));
-const manifestJson = fs.readJSONSync(path.resolve(__dirname, './manifest.json'));
+const pkgJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.json')));
+const manifestJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, './manifest.json')));
 
 /** @type {webpack.RuleSetUseItem[]} */
 const cssLoaders = [

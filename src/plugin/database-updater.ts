@@ -44,7 +44,7 @@ export class DatabaseUpdater {
                 return undefined;
             }
             const version = await this.checkVersion(recheck);
-            if (version?.sha && (force || version.sha !== (await this.messaging.emit('get-tag-sha', undefined)))) {
+            if (version?.sha && (!!force || version.sha !== (await this.messaging.emit('get-tag-sha', undefined)))) {
                 await this.updating;
                 const updating = this.update();
                 this.updating = updating;
