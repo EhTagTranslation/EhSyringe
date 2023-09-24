@@ -12,6 +12,8 @@ merge(
 
         '\nYou cannot imbue yourself with Karma!\n': '您不能赋予自己 Karma！',
 
+        'Please wait longer between karma imbue attempts.': '请在赋予 Karma 之间等待更长时间。',
+
         'You have imbued ': '你向 ',
         'Your Karma Influence Power has been drained, and is now ': '您的 Karma 影响力已消耗，现在为 ',
 
@@ -19,7 +21,7 @@ merge(
         'Time remaining before you can imbue this member again:': '距离下次可赋予此用户的时间为：',
     },
     [
-        [/^' with ([\d.]+) points? of karma.'$/, '赋予了 $1 点 Karma。'],
+        [/^ with ([\d.]+) points? of karma.$/, '赋予了 $1 点 Karma。'],
         [/^([\d.]+) days and ([\d.]+) hours$/, '$1 天 $2 小时'],
         [/^([\d.]+) hours and ([\d.]+) minutes$/, '$1 小时 $2 分钟'],
         [/^([\d.]+) days$/, '$1 天'],
