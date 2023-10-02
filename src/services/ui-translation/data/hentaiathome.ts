@@ -15,6 +15,7 @@ merge(
         'North and South America': '北美洲和南美洲',
         'Europe and Africa': '欧洲和非洲',
         'Asia and Oceania': '亚洲和大洋洲',
+        'Chinese Dominion': '中国大陆',
         Global: '全球',
 
         '\n\tCurrent Network Load shows how much raw bandwidth is currently used to serve images. This includes requests served by H@H as well as direct requests from the image servers.':
