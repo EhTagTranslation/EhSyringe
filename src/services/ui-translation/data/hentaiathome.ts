@@ -8,7 +8,7 @@ merge(
 
         'H@H Region': 'H@H 地区',
         'Current Network Load': '当前网络负载',
-        'H@H Miss%': 'H@H 缓存未命中%',
+        'Hits/sec': '点击/秒',
         Coverage: '覆盖率',
         'Hits/GB': '点击/GB',
         Quality: '质量',
