@@ -11,7 +11,16 @@ export class Database {
     ) {}
     async getLatestVersion(): Promise<GithubRelease> {
         const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
-        const info = this.http.json<GithubRelease>(githubDownloadUrl);
+        const info = await this.http.json<GithubRelease | { message: string }>(githubDownloadUrl);
+        if (!('target_commitish' in info)) {
+            if (typeof info.message != 'string') {
+                throw new Error('响应有误');
+            }
+            if (info.message.startsWith('API rate limit exceeded')) {
+                throw new Error('GitHub API 调用次数超过限制，请稍后再试');
+            }
+            throw new Error(info.message);
+        }
         return info;
     }
 

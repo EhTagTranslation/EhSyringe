@@ -152,7 +152,6 @@ export class DatabaseUpdater {
         }
 
         const info = await this.database.getLatestVersion();
-        if (!info.target_commitish) throw new Error('获取失败，响应有误');
 
         this.lastCheckData = {
             sha: info.target_commitish,
