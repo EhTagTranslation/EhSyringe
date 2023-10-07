@@ -8,9 +8,9 @@ merge(
 
         'H@H Region': 'H@H 地区',
         'Current Network Load': '当前网络负载',
-        'Hits/sec': '点击/秒',
+        'Hits/sec': '命中/秒',
         Coverage: '覆盖率',
-        'Hits/GB': '点击/GB',
+        'Hits/GB': '命中/GB',
         Quality: '质量',
         'North and South America': '北美洲和南美洲',
         'Europe and Africa': '欧洲和非洲',
@@ -25,7 +25,7 @@ merge(
         '\n\tCoverage denotes the average number of times a static file range partition can be found within a given region, indicating the total available storage capacity.':
             '覆盖率表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
         '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region for the last 24 hours.':
-            '点击/GB 显示过去 24 小时内此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均点击次数。',
+            '命中/GB 显示过去 24 小时内此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
 
         'Your Active Clients': '您的活动客户端',
         'To add more clients, ': '要添加更多客户端，请',
@@ -43,7 +43,7 @@ merge(
         Version: '版本',
         'Max Speed': '最大速度',
         Trust: '信任',
-        Hitrate: '点击率',
+        Hitrate: '命中率',
         Hathrate: 'Hath 产出率',
         Country: '国家/地区',
 
@@ -87,19 +87,15 @@ merge(
 
         'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ':
             '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
-        'make sure to keep your client running':
-            '确保您的客户端保持运行',
+        'make sure to keep your client running': '确保您的客户端保持运行',
         '. Having the client set to the wrong country will make it perform worse than it would otherwise do.':
             '。位于错误的国家/地区的客户端的性能表现将不如预期。',
 
         'Free Archive Quota: ': '免费的存档配额：',
         ', measured in a 168-hour sliding window. Clients must be ':
             '，按照最近 168 小时的在线时间进行计算。客户端必须保持',
-        'healthy':
-            '健康',
-        ' and must have been running for more than 24 hours straight to qualify.':
-            '并运行超过 24 小时才能获得资格。',
-
+        healthy: '健康',
+        ' and must have been running for more than 24 hours straight to qualify.': '并运行超过 24 小时才能获得资格。',
 
         'Client Download': '客户端下载',
         'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
@@ -160,11 +156,12 @@ merge(
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
         'Static Range allocation is limited to 1 per 5 KB/s.': '每 1 组静态范围至少 5 KB/s。',
         ' KBytes/s': ' KB/s',
-        ' Enable Client-Side Speed Limit (recommended only for home networks)': ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
+        ' Enable Client-Side Speed Limit (recommended only for home networks)':
+            ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
         'Note: 1 KB/s or KBps (Kilo': '注意：1 KB/s 或 KBps (千',
-        'bytes': '字节',
+        bytes: '字节',
         ' per Second) is equivalent to 8 Kb/s or Kbps (Kilo': '每秒) 相当于 8 Kb/s 或 Kbps (千',
-        'bits': '比特',
+        bits: '比特',
         ' per Second). Internet speeds are typically advertised as the latter (Mbps or Mbit/s), and this is also what Speedtest uses, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
             '每秒)。Internet 速度通常被宣传为后者（Mbps 或 Mbit/s），Speedtest也使用这种表示方式，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
         'To reduce the upload rate for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
@@ -173,8 +170,7 @@ merge(
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.':
             '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现的越好。保留空间必须始终可用。',
-        'Static Range allocation is limited to 1 per 250 MiB.':
-            '静态范围分配限制为每 250 MiB 磁盘空间 1 组。',
+        'Static Range allocation is limited to 1 per 250 MiB.': '静态范围分配限制为每 250 MiB 磁盘空间 1 组。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
         'To reduce the disk space for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端所需的磁盘空间需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
@@ -188,7 +184,7 @@ merge(
         ' Reset Client Key': ' 重置客户端 Key',
 
         'Monthly Data Transfer Target': '每月数据流量限制',
-        'Unlimited': '无限',
+        Unlimited: '无限',
         ' GB per month': ' GB 每月',
         'If you have a monthly data cap, you can provide it here. If the system detects that you are likely to exceed this target, it will reduce the priority of ranges on your client to reduce the load, but it is not guaranteed to stay below this value. Leave at 0 to limit with max speed alone. Must be at least 1000 GB if set.':
             '如果你有每月数据限额，请在此设置。如果系统检测到你可能超过此限额，它将会降低客户端上的静态范围的优先度，以降低网络负载，但并不能保证低于设定值。保留为 0 表示仅限制最大速度。最低限制为 1000 GB。',
@@ -229,7 +225,8 @@ merge(
 
         'Changes will be applied within roughly two minutes. If you decrease the disk cache space, it will not take effect until next restart.':
             '更改将在大约两分钟内生效。如果减少了磁盘缓存空间，则需要重新启动才会生效。',
-        ' Allow removing static ranges if necessary (client must be shut down)': '必要时允许移除静态范围（需要重启客户端）',
+        ' Allow removing static ranges if necessary (client must be shut down)':
+            '必要时允许移除静态范围（需要重启客户端）',
         'Apply Settings': '应用设置',
         '[Back to Overview]': '[返回总览]',
     },
@@ -244,7 +241,7 @@ merge(
         ],
         [
             /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 5 KB\/s of upload rate, so you cannot reduce it below ([\d.]+) KB\/s without removing ranges.$/,
-            '此客户端已分配 $1 组静态范围。每组需要至少 5 KB\/s 上传速率，所以您无法减少至低于 $2 KB\/s，除非移除静态范围。',
+            '此客户端已分配 $1 组静态范围。每组需要至少 5 KB/s 上传速率，所以您无法减少至低于 $2 KB/s，除非移除静态范围。',
         ],
         [
             /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 5 GB of monthly data transfer, so you cannot reduce it below ([\d.]+) GB without removing ranges.$/,
