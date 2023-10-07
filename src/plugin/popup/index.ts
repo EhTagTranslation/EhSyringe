@@ -108,7 +108,8 @@ export class Popup {
             }
         } catch (ex) {
             this.logger.error('获取失败', ex);
-            this.state.versionInfo = '获取失败';
+            const message = (ex instanceof Error ? ex.message : '未知错误') || '未知错误';
+            this.state.versionInfo = `获取失败：${message}`;
         }
     }
 

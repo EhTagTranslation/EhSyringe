@@ -3,15 +3,17 @@ import { merge } from '../helper';
 merge(/^\/stats\.php/, undefined, {
     'Visitor Statistics': '访客统计',
 
+    'Your galleries have had a total of ': '你的图库共计有 ',
     'This gallery has had a total of ': '此图库共计有 ',
-    ' visit(s).': ' 名访客。',
+    ' visit.': ' 名访客。',
+    ' visits.': ' 名访客。',
     Ranking: '名次',
     Score: '分数',
-    'Galleries All-Time': '所有时间',
-    'Galleries Past Year': '年排行',
-    'Galleries Past Month': '月排行',
-    'Galleries Yesterday': '日排行',
-    'Not in top 1000': '1000 名以外',
+    ' All-Time': '所有时间',
+    ' Past Year': '年排行',
+    ' Past Month': '月排行',
+    ' Yesterday': '日排行',
+    'Not in Top 1000': '1000 名以外',
 
     'Yearly Stats': '年度统计',
     Visits: '访问',
@@ -66,5 +68,5 @@ merge(/^\/stats\.php/, undefined, {
 
     'The number of total visits on your galleries.': '图库总访问次数',
     'The number of total image accesses on your galleries.': '图库中图像访问次数',
-    'Back To Gallery': '返回图库',
+    'Back to Gallery': '返回图库',
 });

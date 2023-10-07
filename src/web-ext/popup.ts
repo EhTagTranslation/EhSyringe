@@ -18,7 +18,7 @@ import { isEh, isEx } from 'utils/hosts';
     });
 
     const current = await browser.tabs.query({ active: true });
-    const currentHost = (current && current.length >= 1 && current[0].url && new URL(current[0].url).hostname) || '';
+    const currentHost = (current?.[0]?.url && new URL(current[0].url).hostname) ?? '';
 
     if (isEx(currentHost)) {
         document.body.classList.add('ex');
