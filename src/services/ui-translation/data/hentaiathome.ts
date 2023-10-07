@@ -70,10 +70,10 @@ merge(
         'Speed Test': '速度测试结果',
         'Go to ': '前往 ',
         ' and run a test against your closest server. After the test completes, paste the result URL here.\n\t\t\t':
-            '使用距离最近的测速服务器进行测试。将测速结果 URL 粘贴在此处。\n\t\t\t',
+            ' 使用距离最近的测速服务器进行测试。将测速结果 URL 粘贴在此处。',
         'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80 Mbps 上传速度 ',
         AND: '和',
-        ' DOWNLOAD speed required.': ' 下载速度',
+        ' 80 Mbit/s DOWNLOAD speed required.': ' 80 Mbps 下载速度',
         'Submit Application': '提交申请',
         'If this is a headless server that cannot run speedtest, contact ':
             '如果是一台无法运行 SpeedTest 的无头服务器，请联系 ',
