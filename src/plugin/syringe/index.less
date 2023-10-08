@@ -81,20 +81,14 @@ body.ehs-hide-icon {
     }
 }
 
-body {
-    [ehs-tag-original] {
-        display: inline;
-    }
-    [ehs-tag-translated] {
+.ehs-new-tag-complete-translate {
+    display: block;
+    &:empty {
         display: none;
     }
-}
 
-body.ehs-translate-tag {
-    [ehs-tag-original] {
-        display: none;
-    }
-    [ehs-tag-translated] {
-        display: inline;
-    }
+    margin-top: 4px;
+    font-weight: bolder;
+    opacity: 0.8;
+    pointer-events: none;
 }

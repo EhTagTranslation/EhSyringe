@@ -25,8 +25,8 @@ function isText(node: Node | undefined): node is Text {
 class TagNodeRef {
     private static readonly ATTR = 'ehs-tag';
 
-    static create(node: Text, service: Syringe): TagNodeRef | boolean {
-        const parentElement = node.parentElement;
+    static create(node: Text | HTMLElement, service: Syringe): TagNodeRef | boolean {
+        const parentElement = isText(node) ? node.parentElement : node;
         if (!parentElement || parentElement.hasAttribute(this.ATTR)) {
             return true;
         }
@@ -304,20 +304,29 @@ export class Syringe {
 
     translateTag(node: Node): boolean {
         const parentElement = node.parentElement;
-        if (!isText(node) || !parentElement) {
+
+        let ref: TagNodeRef | boolean;
+        if (parentElement?.id === 'tagname_newtagcomplete-list' && isElement(node)) {
+            // 翻译我的标签提示
+            if (node.querySelector('.ehs-new-tag-complete-translate')) return false;
+            const elTrans = document.createElement('span');
+            const tag = node.getAttribute('data-value');
+            if (!tag) return false;
+            elTrans.id = tag;
+            elTrans.classList.add('ehs-new-tag-complete-translate');
+            node.appendChild(elTrans);
+            ref = TagNodeRef.create(elTrans, this) as TagNodeRef;
+        } else if (!isText(node) || !parentElement) {
             return false;
-        }
-        if (parentElement.nodeName === 'MARK' || parentElement.classList.contains('auto-complete-text')) {
+        } else if (parentElement.nodeName === 'MARK' || parentElement.classList.contains('auto-complete-text')) {
             // 不翻译搜索提示的内容
             return true;
-        }
-
-        // 标签只翻译已知的位置
-        if (!this.isTagContainer(parentElement) && !this.isTagContainer(parentElement?.parentElement)) {
+        } else if (!this.isTagContainer(parentElement) && !this.isTagContainer(parentElement?.parentElement)) {
+            // 标签只翻译已知的位置
             return false;
+        } else {
+            ref = TagNodeRef.create(node, this);
         }
-
-        const ref = TagNodeRef.create(node, this);
 
         if (typeof ref == 'boolean') return ref;
 
