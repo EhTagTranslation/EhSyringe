@@ -3311,7 +3311,7 @@ packages:
       '@types/http-cache-semantics': 4.0.2
       get-stream: 6.0.1
       http-cache-semantics: 4.1.1
-      keyv: 4.5.3
+      keyv: 4.5.4
       mimic-response: 4.0.0
       normalize-url: 8.0.0
       responselike: 3.0.0
@@ -4951,7 +4951,7 @@ packages:
     engines: { node: '>=12.0.0' }
     dependencies:
       flatted: 3.2.9
-      keyv: 4.5.3
+      keyv: 4.5.4
       rimraf: 3.0.2
     dev: true
 
@@ -6079,9 +6079,9 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /keyv@4.5.3:
+  /keyv@4.5.4:
     resolution:
-      { integrity: sha512-QCiSav9WaX1PgETJ+SpNnx2PRRapJ/oRSXM4VO5OGYGSjrxbKPVFVhB3l2OCbLCk329N8qyAtsJjSjvVBWzEug== }
+      { integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw== }
     dependencies:
       json-buffer: 3.0.1
     dev: true
