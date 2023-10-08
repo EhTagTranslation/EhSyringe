@@ -88,7 +88,7 @@ class TagNodeRef {
         if (this.original[1] === ':') {
             value = `${this.original[0]}:${value}`;
         }
-        this.node.textContent = value;
+        this.node.innerHTML = value;
         this.node.setAttribute('lang', 'cmn-Hans');
         return true;
     }
