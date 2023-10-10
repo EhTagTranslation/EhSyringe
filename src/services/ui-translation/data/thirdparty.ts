@@ -157,8 +157,8 @@ merge(
             '...或者 $1 + $2 GP (如果您没有足够的图像配额)\r',
         ],
         [
-            /1 point per 0.1 MB since August 2019, less than 0.1 MB will also be counted.\nDuring peak hours, downloading original images will cost GPs. The GP cost is the same as resetting viewing limits.\nEstimated GP cost is a bit more than using offical archive download, in case the sum of each images will be larger than the packed.$/,
-            '自 2019 年 8 月起，每 0.1 MB 消耗一点配额，不足 0.1 MB 也计算在内。\r高峰期下载原图将消耗 GP，数量与重置图像限制所需的相同。\rGP 成本预计会比直接使用官方归档下载略高，因为每张图像的体积总和比压缩包大。',
+            /1 point per 0.1 MB since August 2019, less than 0.1 MB will also be counted.\nDuring peak hours, downloading original images will cost GPs.\nFor gallery uploaded 1 year ago, downloading original images will cost GPs since July 2023.\nThe GP cost is the same as resetting viewing limits.\nEstimated GP cost is a bit more than using offical archive download, in case the sum of each images will be larger than the packed.$/,
+            '自 2019 年 8 月起，每 0.1 MB 消耗一点配额，不足 0.1 MB 也计算在内。\r高峰期下载原图将消耗 GP，自 2023 年 7 月起，下载 1 年前上传的图库\r原图也需要消耗 GP，数量与重置图像限制所需的相同。\rGP 成本预计会比直接使用官方归档下载略高，因为每张图像的体积总和比压缩包大。',
         ],
         [
             /^ Force as logged in \(actual login state: (\w+?), uid: (-?\d+)\) $/,
