@@ -254,7 +254,7 @@ export class Popup {
             { key: 'autoUpdate', name: '自动更新' },
         ];
         return html`
-            <div id="settingPanel" class="panel ${state.showSettingPanel ? 'show' : ''}">
+            <div id="ehs-setting-panel" class="ehs-panel ${state.showSettingPanel ? 'ehs-show' : ''}">
                 <div class="header">
                     <div>设置</div>
                     <div class="cushion"></div>
@@ -345,7 +345,7 @@ export class Popup {
 
     private mainPanelTemplate(): TemplateResult {
         const state = this.state;
-        return html`<div id="mainPanel" class="panel ${state.showSettingPanel ? 'hide' : ''}">
+        return html`<div id="ehs-main-panel" class="ehs-panel ${state.showSettingPanel ? 'ehs-hide' : ''}">
             <div class="header">
                 <div>
                     <a href="${packageJson.homepage}" class="monospace minor">v${packageJson.version}</a>
