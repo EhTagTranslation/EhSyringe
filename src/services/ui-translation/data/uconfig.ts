@@ -277,10 +277,13 @@ merge(
         Zimbabwe: 'Zimbabwe (津巴布韦)',
 
         'Image Size Settings': '图像大小设置',
-        'Normally, images are resampled to 1280 pixels of horizontal resolution for online viewing. You can alternatively select one of the following resample resolutions. To avoid murdering the staging servers, resolutions above 1280x are temporarily restricted to donators, people with any hath perk, and people with a UID below 3,000,000.':
-            '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。' +
-            '但是为了避免负载过高，高于 1280 像素暂时只提供给赞助者、解锁过任意 Hath Perk 或 UID 小于 3,000,000 的用户。',
+        'Images are normally resampled to 1280 pixels of horizontal resolution for online viewing. You can select one of the following alternative resolutions.':
+            '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。',
         ' Auto': ' 自动',
+            'Use original images instead of the resampled versions? Resampled images will still be used if you select a horizonal resolution different than "Auto" above and the image in question is wider, or if the original image is larger than 10 MiB (or 4 MiB for galleries older than one year).':
+            '在阅读时优先加载原图而非重采样版本？当选择了“自动”以外的分辨率且原图宽度大于设定值，或原图大于 10 MiB (一年前发布的图库 4 MiB) 时，仍会加载重采样版本。',
+        ' Prefer resampled images': ' 优先加载重采样版本',
+        ' Prefer original images': ' 优先加载原图',
         'While the site will automatically scale down images to fit your screen width, you can also manually restrict the maximum display size of an image. Like the automatic scaling, this does not resample the image, as the resizing is done browser-side. (0 = no limit)':
             '虽然图像会自动根据窗口缩小，您也可以手动指定最大显示大小。图像仅在浏览器端缩放，并没有被重新采样。(0 为不限制)',
         'Horizontal:': '宽/横向',
@@ -304,6 +307,8 @@ merge(
         ' Auto Select Resample, Auto Start': ' 自动选择重采样画质，自动下载',
 
         'Front Page / Search Settings': '首页 / 搜索设置',
+        'What categories would you like to show by default on the front page and in searches?':
+            '您希望首页和搜索页面默认显示哪些类别？',
         'Which display mode would you like to use on the front and search pages?':
             '您希望首页和搜索页面使用哪种显示模式？',
         ' Minimal': ' 最小化',
@@ -314,14 +319,35 @@ merge(
         'Which display style would you like for the search range indicator?': '您希望搜索范围指示器采用哪种显示样式？',
         ' Normal': ' 普通',
         ' Disabled': ' 禁用',
-        'What categories would you like to show by default on the front page and in searches?':
-            '您希望首页和搜索页面默认显示哪些类别？',
 
         'Here you can choose and rename your favorite categories.': '您可以在这里重命名您的收藏夹。',
-        'You can also select your default sort order for galleries on your favorites page. Note that favorites added prior to the March 2016 revamp did not store a timestamp, and will use the gallery posted time regardless of this setting.':
-            '您还可以指定收藏夹的默认排序方式。请注意，2016 年 3 月改版之前加入收藏夹的图库并未记录收藏时间，会以图库发布时间代替。',
+        'Default sort order for galleries on your favorites page:': '收藏页面的默认排序方式？',
         ' By last gallery update time': ' 以图库最近更新时间排序',
         ' By favorited time': ' 以收藏时间排序',
+
+        'Search Result Count': '搜索结果数',
+        'How many results would you like per page for the index/search page and torrent search pages? (Hath Perk: Paging Enlargement Required)':
+            '索引和搜索页面每页显示多少条数据？ (需要 Hath Perk：「页面扩大」)',
+        ' 25 results': ' 25 个',
+        ' 50 results': ' 50 个',
+        ' 100 results': ' 100 个',
+
+        'Thumbnail Settings': '缩略图设置',
+        'How would you like the mouse-over thumbnails on the front page to load when using Minimal or Compact display mode?':
+            '在最小化和紧凑列表模式下，您希望鼠标悬停缩略图何时加载？',
+        ' On mouse-over (pages load faster, but there may be a slight delay before a thumb appears)':
+            ' 鼠标悬停时 (页面加载快，缩略图加载有延迟)',
+        ' On page load (pages take longer to load, but there is no delay for loading a thumb after the page has loaded)':
+            ' 页面加载时 (页面加载时间更长，但是显示的时候无需等待)',
+        'You can set a default thumbnail configuration for all galleries you visit.': '图库详情页缩略图设置。',
+        'Size: ': '大小：',
+        ' Large': ' 大图',
+        'Rows:': '行数：',
+
+        'Thumbnail Scaling': '缩略图缩放',
+        '%': ' %',
+        'Thumbnails on the thumbnail and extended gallery list views can be scaled to a custom value between 75% and 150%.':
+            '在扩展和缩略图列表模式下，图库缩略图可以缩放为 75% 到 150% 之间的自定义值。',
 
         Ratings: '评分',
         'By default, galleries that you have rated will appear with red stars for ratings of 2 stars and below, green for ratings between 2.5 and 4 stars, and blue for ratings of 4.5 or 5 stars. You can customize this by entering your desired color combination below.':
@@ -380,30 +406,6 @@ merge(
         ' of ': '/',
         ' exclusion slots.\n': '。',
 
-        'Search Result Count': '搜索结果数',
-        'How many results would you like per page for the index/search page and torrent search pages? (Hath Perk: Paging Enlargement Required)':
-            '索引和搜索页面每页显示多少条数据？ (需要 Hath Perk：「页面扩大」)',
-        ' 25 results': ' 25 个',
-        ' 50 results': ' 50 个',
-        ' 100 results': ' 100 个',
-
-        'Thumbnail Settings': '缩略图设置',
-        'How would you like the mouse-over thumbnails on the front page to load when using List Mode?':
-            '在最小化和紧凑列表模式下，您希望鼠标悬停缩略图何时加载？',
-        ' On mouse-over (pages load faster, but there may be a slight delay before a thumb appears)':
-            ' 鼠标悬停时 (页面加载快，缩略图加载有延迟)',
-        ' On page load (pages take longer to load, but there is no delay for loading a thumb after the page has loaded)':
-            ' 页面加载时 (页面加载时间更长，但是显示的时候无需等待)',
-        'You can set a default thumbnail configuration for all galleries you visit.': '图库详情页缩略图设置。',
-        'Size: ': '大小：',
-        ' Large': ' 大图',
-        'Rows:': '行数：',
-
-        'Thumbnail Scaling': '缩略图缩放',
-        '%': ' %',
-        'Thumbnails on the thumbnail and extended gallery list views can be scaled to a custom value between 75% and 150%.':
-            '在扩展和缩略图列表模式下，图库缩略图可以缩放为 75% 到 150% 之间的自定义值。',
-
         'Viewport Override': '移动端虚拟宽度',
         px: ' px',
         'Allows you to override the virtual width of the site for mobile devices. This is normally determined automatically by your device based on its DPI. Sensible values at 100% thumbnail scale are between 640 and 1400.':
@@ -426,15 +428,10 @@ merge(
         'Gallery Page Numbering': '图库页码',
         'Show gallery page numbers:\n\t': '在图库详情页缩略图下方显示页码：',
 
-        'Original Images': '原始图像',
-        'Use original images instead of the resampled versions where available?':
-            '如果可用，在阅读时直接加载原图而非重采样版本？',
-        ' Nope': ' 否',
-        ' Yup, I can take it': ' 好的，我可以接受更多的配额消耗',
-
         'Multi-Page Viewer': '多页查看器',
         'Always use the Multi-Page Viewer? There will still be a link to manually start it if this is left disabled.':
             '总是使用多页查看器？禁用此选项时，仍可以手动启动多页查看器。',
+        ' Nope': ' 否',
         ' Yup': ' 是',
         'Multi-Page Viewer Display Style:': '显示样式：',
         ' Align left; Only scale if image is larger than browser width': ' 左对齐；仅当图像大于浏览器宽度时缩放',
