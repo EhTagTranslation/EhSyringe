@@ -90,7 +90,7 @@ merge(
         'make sure to keep your client running': '确保您的客户端保持运行',
         '. Having the client set to the wrong country will make it perform worse than it would otherwise do. If the country is shown in ':
             '。位于错误的国家/地区的客户端的性能表现将不如预期。如果国家/地区显示为 ',
-        'red': '红色',
+        red: '红色',
         ' that means it has been moved outside of its home region and will not be assigned new ranges. Contact Tenboro if you need to change the home region.':
             '，则意味着它已被迁移出其所在地区，不会再被分配新的范围。如果您需要更改所在地区，请联系 Tenboro。',
 
