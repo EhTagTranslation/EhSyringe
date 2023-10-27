@@ -31,10 +31,9 @@ merge(
         'Credit Log': 'Credit 记录',
         'Karma Log': 'Karma 记录',
 
-        'Visit the E-Hentai Forums': '访问 E-Hentai 论坛',
-        'Play the HentaiVerse Minigame': '玩 HentaiVerse 小游戏',
-        'Lo-Fi Version': '低保真版',
-        'Terms of Service': '服务条款',
+        Front: '首页',
+        LoFi: '低保真版',
+        ToS: '服务条款',
         Advertise: '广告',
         Onion: '洋葱网址',
 
