@@ -1,7 +1,7 @@
 import { Container } from 'services';
 import { isHathNetwork } from 'utils/hosts';
 import { Popup } from 'plugin/popup';
-import { displayName } from 'info';
+import { packageJson } from 'info';
 import { setBadge } from 'providers/utils';
 
 import './popup-host.less';
@@ -113,7 +113,7 @@ export function createPopup(): void {
     }
     const button = document.body.appendChild(document.createElement('div'));
     button.id = 'eh-syringe-popup-button';
-    button.title = displayName;
+    button.title = packageJson.displayName;
     const badge = button.appendChild(document.createElement('div'));
     badge.id = 'eh-syringe-popup-badge';
     setBadge({ text: '' });

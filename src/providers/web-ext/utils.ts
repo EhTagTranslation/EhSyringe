@@ -1,6 +1,6 @@
 import type { NotificationInfo } from '../common/notification';
 import type { Badge } from 'providers/common/badge';
-import { displayName } from 'info';
+import { packageJson } from 'info';
 
 export function openInTab(url: string): void {
     void browser.tabs.create({
@@ -38,7 +38,7 @@ export function setBadge(info: Badge): void {
         if (chrome.browserAction.setBadgeText) {
             void chrome.browserAction.setBadgeText({ text: info.text });
         } else if (chrome.browserAction.setTitle) {
-            const extname = displayName;
+            const extname = packageJson.displayName;
             const title = info.text ? `${extname} (${info.text})` : extname;
             void chrome.browserAction.setTitle({ title });
         }

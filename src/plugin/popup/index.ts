@@ -7,7 +7,7 @@ import { Messaging } from 'services/messaging';
 import { DateTime } from 'services/date-time';
 import { openInTab } from 'providers/utils';
 import type { DownloadStatus } from 'plugin/database-updater';
-import { homepage, version } from 'info';
+import { packageJson } from 'info';
 import type { MessageListener } from 'providers/common/messaging';
 
 import './index.less';
@@ -348,7 +348,7 @@ export class Popup {
         return html`<div id="ehs-main-panel" class="ehs-panel ${state.showSettingPanel ? 'ehs-hide' : ''}">
             <div class="header">
                 <div>
-                    <a href="${homepage}" class="monospace minor">v${version}</a>
+                    <a href="${packageJson.homepage}" class="monospace minor">v${packageJson.version}</a>
                 </div>
                 <div class="cushion"></div>
                 <div>
