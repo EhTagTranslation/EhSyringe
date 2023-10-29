@@ -1,5 +1,10 @@
 # 更新日志
 
+## 2.12.0
+
+-   修复与 E-Hentai-Downloader 的兼容问题
+-   移除不再需要的兼容代码
+
 ## 2.11.8
 
 -   配置 webhook，自动更新 sleazyfork 脚本
