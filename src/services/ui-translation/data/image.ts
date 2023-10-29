@@ -5,7 +5,7 @@ merge(
     undefined,
     {
         'Show all galleries with this file': '显示所有包含此图像的图库',
-        'Generate a static forum image link': '生成用于论坛的图像链接',
+        'Get forum image link': '生成用于论坛的图像链接',
         'Click here if the image fails loading': '重新加载图像',
 
         'Close Image Viewer': '关闭图像查看器',
@@ -23,5 +23,6 @@ merge(
     [
         [/^Page (\d+) - /, '第 $1 页 - '],
         [/^Download original (.*?) source$/, '下载原图 ($1)'],
+        [/^Download original (.*?)B$/, '下载原图 $1B'],
     ],
 );

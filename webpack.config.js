@@ -128,7 +128,6 @@ export default async (env = {}, argv = {}) => {
             // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
             // 启用 chrome://flags/#allow-insecure-localhost
             config.devServer = {
-                https: true,
                 port: 48792,
                 allowedHosts: [
                     '.e-hentai.org',
@@ -146,9 +145,10 @@ export default async (env = {}, argv = {}) => {
                 },
                 headers: {
                     'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Private-Network': 'true',
                 },
                 client: {
-                    webSocketURL: 'wss://localhost:48792/ws',
+                    webSocketURL: 'ws://localhost:48792/ws',
                 },
             };
         }

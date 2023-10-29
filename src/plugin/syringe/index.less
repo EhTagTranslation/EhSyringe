@@ -1,3 +1,21 @@
+// 全局注入样式
+
+:root {
+    &.eh {
+        color-scheme: light;
+    }
+    &.ex {
+        color-scheme: dark;
+    }
+}
+
+:root.ehs-hide-icon {
+    [ehs-icon],
+    [ehs-emoji] {
+        display: none;
+    }
+}
+
 td.tc {
     white-space: nowrap;
 }
@@ -74,27 +92,14 @@ body {
     vertical-align: middle;
 }
 
-body.ehs-hide-icon {
-    [ehs-icon],
-    [ehs-emoji] {
+.ehs-new-tag-complete-translate {
+    display: block;
+    &:empty {
         display: none;
     }
-}
 
-body {
-    [ehs-tag-original] {
-        display: inline;
-    }
-    [ehs-tag-translated] {
-        display: none;
-    }
-}
-
-body.ehs-translate-tag {
-    [ehs-tag-original] {
-        display: none;
-    }
-    [ehs-tag-translated] {
-        display: inline;
-    }
+    margin-top: 4px;
+    font-weight: bolder;
+    opacity: 0.8;
+    pointer-events: none;
 }

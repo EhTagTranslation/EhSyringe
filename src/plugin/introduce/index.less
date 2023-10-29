@@ -126,21 +126,19 @@ div#gd5 {
     }
 }
 
-body.ex {
-    #ehs-introduce-box {
-        background: #4f535b;
-        border-radius: 0;
-        .ehs-title {
-            border-bottom: 1px solid #000;
-        }
-        .ehs-href {
-            border-top: 1px solid #000;
-        }
-        .ehs-content {
-            scrollbar-color: #000 transparent;
-            &::-webkit-scrollbar-thumb {
-                background: #000;
-            }
+:root.ex #ehs-introduce-box {
+    background: #4f535b;
+    border-radius: 0;
+    .ehs-title {
+        border-bottom: 1px solid #000;
+    }
+    .ehs-href {
+        border-top: 1px solid #000;
+    }
+    .ehs-content {
+        scrollbar-color: #000 transparent;
+        &::-webkit-scrollbar-thumb {
+            background: #000;
         }
     }
 }
@@ -159,21 +157,21 @@ body.ex {
 
 //0:hide, 1:non-h 2: R18 3: R18G
 /* nsfw="R18" */
-body.ehs-image-level-0 #ehs-introduce-box .ehs-content {
+:root.ehs-image-level-0 #ehs-introduce-box .ehs-content {
     img {
         display: none;
     }
 }
-body.ehs-image-level-1 #ehs-introduce-box .ehs-content {
+:root.ehs-image-level-1 #ehs-introduce-box .ehs-content {
     img[nsfw] {
         display: none;
     }
 }
-body.ehs-image-level-2 #ehs-introduce-box .ehs-content {
+:root.ehs-image-level-2 #ehs-introduce-box .ehs-content {
     img[nsfw='R18G'] {
         display: none;
     }
 }
-body.ehs-image-level-3 {
+:root.ehs-image-level-3 {
     // 所有都显示
 }

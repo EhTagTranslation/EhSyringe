@@ -1,14 +1,20 @@
 .eh-syringe-lite-auto-complete-list {
+    background: #f8f4ec;
+    color: #5c0d12;
+
+    :root.ex & {
+        background: #2b2b2b;
+        color: #f1f1f1;
+    }
+
     position: fixed;
     min-height: 20px;
-    background: #fff;
     text-align-last: left;
     border-radius: 4px;
     box-shadow:
         0 1px 3px 0 rgba(0, 0, 0, 0.2),
         0 1px 1px 0 rgba(0, 0, 0, 0.14),
         0 2px 1px -1px rgba(0, 0, 0, 0.12);
-    color: #202124;
     display: block;
     max-height: 50vh;
     overflow: auto;
@@ -45,11 +51,27 @@
 
         &:hover,
         &.selected {
-            background: #e8eaed;
+            background: #e8ecf3;
+
+            :root.ex & {
+                background: #3e3f40;
+            }
         }
         .en-name {
             padding: 0 8px;
             color: #5f6368;
+
+            :root.ex & {
+                color: #d9d9d9;
+            }
+        }
+    }
+
+    mark {
+        color: inherit;
+        background: #f5f500;
+        :root.ex & {
+            background: #727200;
         }
     }
 }

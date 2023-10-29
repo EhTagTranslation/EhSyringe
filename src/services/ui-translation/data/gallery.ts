@@ -156,6 +156,8 @@ merge(
         ', or otherwise falls under the ': '的禁止内容，或列于',
         'Expunge Guidelines': '删除指南',
         ' (specify below).': '的内容 (在下方详细描述)。',
+        ' This gallery contains either illicit content like child porn or anything else that has been banned.':
+            '此图库包含非法内容，如儿童色情或其他已被禁止的内容。',
         ' Content has been defaced by adding content-obstructing scanmarks, censorship or advertisements beyond what is present in the original artist release, or has been intentionally degraded to the point where legibility is an issue.':
             '图库内容被污损，添加了与内容无关的扫描水印、审查或广告，超出了原作者发布的内容或被故意降低画质，以至于影响了易读性。',
         'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.':
