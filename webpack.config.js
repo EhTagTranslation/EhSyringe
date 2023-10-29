@@ -17,7 +17,7 @@ const WebExtensionPlugin = _WebExtensionPlugin.default;
 
 const __dirname = path.resolve(fileURLToPath(import.meta.url), '../');
 
-/** @type { import('./src/info').packageJson & import('type-fest').PackageJson } */
+/** @type { import('./src/info') & import('type-fest').PackageJson } */
 const pkgJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.json')));
 const manifestJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, './manifest.json')));
 
