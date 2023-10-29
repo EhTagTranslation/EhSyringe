@@ -12,6 +12,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v3
+        with:
+          name: releases
+          path: |
+            README.md
+            README.userscript.md
+            LICENSE
       - name: Install
         uses: NullVoxPopuli/action-setup-pnpm@v2
         with:
@@ -25,11 +32,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: releases
-          path: |
-            releases/
-            README.md
-            README.userscript.md
-            LICENSE
+          path: releases/
 
   deploy:
     needs: build
