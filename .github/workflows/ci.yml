@@ -39,18 +39,24 @@ jobs:
           name: releases
           path: releases/
       - name: Draft github release
-        uses: softprops/action-gh-release@v1
+        uses: ncipollo/release-action@v1.13.0
         with:
-          draft: true
-          prerelease: ${{ contains(github.event.ref, '-') }}
+          allowUpdates: true
+          artifacts: releases/*
+          replacesArtifacts: true
+          generateReleaseNotes: true
           body: |
             [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
-          files: releases/*
-          generate_release_notes: true
+          prerelease: ${{ contains(github.event.ref, '-') }}
+          draft: true
       - name: Publish github release
-        uses: softprops/action-gh-release@v1
+        uses: ncipollo/release-action@v1.13.0
         with:
-          draft: false
+          allowUpdates: true
+          replacesArtifacts: false
+          omitBodyDuringUpdate: true
+          omitPrereleaseDuringUpdate: true
+          draft: true
       - name: Commit release mirror
         run: >
           cd ./releases
