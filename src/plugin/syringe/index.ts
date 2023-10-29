@@ -130,8 +130,7 @@ export class Syringe {
     private updateConfig(config: ConfigData): void {
         this.config = config;
         this.storage.set('config', config);
-        const body = document.querySelector('body');
-        if (body) this.setBodyAttrs(body);
+        this.setRootAttrs();
         this.translateTags();
     }
 
@@ -167,10 +166,10 @@ export class Syringe {
             this.documentEnd = true;
             this.codePatch();
         });
-        const body = document.querySelector('body');
+        this.setRootAttrs();
+        const body = document.body;
         if (body) {
             const nodes: Node[] = [];
-            this.setBodyAttrs(body);
             const nodeIterator = document.createNodeIterator(body);
             let node = nodeIterator.nextNode();
             while (node) {
@@ -201,7 +200,7 @@ export class Syringe {
                 }
             }
         });
-        this.observer.observe(window.document, {
+        this.observer.observe(document.documentElement, {
             attributeFilter: ['title', 'placeholder', 'label', 'value'],
             childList: true,
             subtree: true,
@@ -245,7 +244,8 @@ export class Syringe {
         this.updatingTagMap = updatingTagMap;
     }
 
-    setBodyAttrs(node: HTMLBodyElement): void {
+    setRootAttrs(): void {
+        const node = document.documentElement;
         if (!node) return;
         if (isEx(location.hostname)) {
             node.classList.add('ex');
@@ -282,10 +282,6 @@ export class Syringe {
             (node.parentNode && this.skipNode.has(node.parentNode.nodeName))
         ) {
             return;
-        }
-
-        if (isElement(node, 'body')) {
-            this.setBodyAttrs(node);
         }
 
         const handled = this.translateTag(node);

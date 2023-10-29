@@ -1,3 +1,21 @@
+// 全局注入样式
+
+:root {
+    &.eh {
+        color-scheme: light;
+    }
+    &.ex {
+        color-scheme: dark;
+    }
+}
+
+:root.ehs-hide-icon {
+    [ehs-icon],
+    [ehs-emoji] {
+        display: none;
+    }
+}
+
 td.tc {
     white-space: nowrap;
 }
@@ -72,13 +90,6 @@ body {
 
 [ehs-icon] {
     vertical-align: middle;
-}
-
-body.ehs-hide-icon {
-    [ehs-icon],
-    [ehs-emoji] {
-        display: none;
-    }
 }
 
 .ehs-new-tag-complete-translate {
