@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     2.11.8
+// @version     2.12.0
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 33000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@5870f8649bc8b0e6e3945d4bb98f60c26afc86e6/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@64c56540445f2138090a43a9ca301033a753ef70/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -91,7 +91,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:mediu
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_6_8_1_webpack_5_89_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_6_8_1_webpack_5_89_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root.eh{color-scheme:light}:root.ex{color-scheme:dark}:root.ehs-hide-icon [ehs-emoji],:root.ehs-hide-icon [ehs-icon]{display:none}td.tc{white-space:nowrap}div.gt,div.gtl,div.gtw{height:16px;line-height:16px;white-space:nowrap}textarea[name=expungexpl]{display:block}body h1#gj{margin:3px 4px}body div#gright{z-index:3}body .g2{padding-bottom:20px}body .gsp{padding-top:10px}body div.gt,body div.gtl,body div.gtw{height:16px;line-height:16px;overflow:hidden}body div#gmid{height:auto}body p.gpc-translate{clear:both;font-size:9pt;margin:-3px auto;padding:0 5px 5px;text-align:center}body div.c6{text-align:left}@media screen and (max-width:990px){body p.gpc-translate{margin-top:25px;visibility:hidden!important}}[ehs-emoji],[ehs-icon]{margin:0 1px!important;max-height:1.25em!important;max-width:2em!important}[ehs-icon]{vertical-align:middle}.ehs-new-tag-complete-translate{display:block;font-weight:bolder;margin-top:4px;opacity:.8;pointer-events:none}.ehs-new-tag-complete-translate:empty{display:none}", "",{"version":3,"sources":["webpack://./src/plugin/syringe/index.less"],"names":[],"mappings":"AAGI,SACI,kBAFR,CAII,SACI,iBAFR,CAMA,+DAGQ,YALR,CASA,MACI,kBAPJ,CAUA,uBAGI,WAAA,CACA,gBAAA,CACA,kBARJ,CAWA,0BACI,aATJ,CAYA,WAEQ,cAXR,CASA,gBAMQ,SAZR,CAMA,SAUQ,mBAbR,CAGA,UAcQ,gBAdR,CAAA,sCAqBQ,WAAA,CACA,gBAAA,CAFA,eAbR,CAPA,cA0BQ,WAhBR,CAVA,qBAiCQ,UAAA,CACA,aAAA,CAJA,gBAAA,CAEA,iBAAA,CADA,iBAdR,CAjBA,YAsCQ,eAlBR,CAqBI,oCAAA,qBAEQ,eAAA,CACA,2BAnBV,CACF,CAuBA,uBAII,sBAAA,CAFA,2BAAA,CACA,uBApBJ,CAwBA,WACI,qBAtBJ,CAyBA,gCACI,aAAA,CAMA,kBAAA,CADA,cAAA,CAEA,UAAA,CACA,mBA3BJ,CAoBI,sCACI,YAlBR","sourcesContent":["// 全局注入样式\n\n:root {\n    &.eh {\n        color-scheme: light;\n    }\n    &.ex {\n        color-scheme: dark;\n    }\n}\n\n:root.ehs-hide-icon {\n    [ehs-icon],\n    [ehs-emoji] {\n        display: none;\n    }\n}\n\ntd.tc {\n    white-space: nowrap;\n}\n\ndiv.gt,\ndiv.gtl,\ndiv.gtw {\n    height: 16px;\n    line-height: 16px;\n    white-space: nowrap;\n}\n\ntextarea[name='expungexpl'] {\n    display: block;\n}\n\nbody {\n    h1#gj {\n        margin: 3px 4px;\n    }\n\n    div#gright {\n        z-index: 3;\n    }\n\n    .g2 {\n        padding-bottom: 20px;\n    }\n\n    .gsp {\n        padding-top: 10px;\n    }\n\n    div.gtl,\n    div.gtw,\n    div.gt {\n        overflow: hidden;\n        height: 16px;\n        line-height: 16px;\n    }\n\n    div#gmid {\n        height: auto;\n    }\n\n    p.gpc-translate {\n        margin: -3px auto;\n        text-align: center;\n        padding: 0px 5px 5px 5px;\n        clear: both;\n        font-size: 9pt;\n    }\n\n    div.c6 {\n        text-align: left;\n    }\n\n    @media screen and (max-width: 990px) {\n        p.gpc-translate {\n            margin-top: 25px;\n            visibility: hidden !important;\n        }\n    }\n}\n\n[ehs-icon],\n[ehs-emoji] {\n    max-height: 1.25em !important;\n    max-width: 2em !important;\n    margin: 0 1px !important;\n}\n\n[ehs-icon] {\n    vertical-align: middle;\n}\n\n.ehs-new-tag-complete-translate {\n    display: block;\n    &:empty {\n        display: none;\n    }\n\n    margin-top: 4px;\n    font-weight: bolder;\n    opacity: 0.8;\n    pointer-events: none;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root.eh{color-scheme:light}:root.ex{color-scheme:dark}[hidden]{display:none}:root.ehs-hide-icon [ehs-emoji],:root.ehs-hide-icon [ehs-icon]{display:none}td.tc{white-space:nowrap}div.gt,div.gtl,div.gtw{height:16px;line-height:16px;white-space:nowrap}textarea[name=expungexpl]{display:block}body h1#gj{margin:3px 4px}body div#gright{z-index:3}body .g2{padding-bottom:20px}body .gsp{padding-top:10px}body div.gt,body div.gtl,body div.gtw{height:16px;line-height:16px;overflow:hidden}body div#gmid{height:auto}body div.c6{text-align:left}[ehs-emoji],[ehs-icon]{margin:0 1px!important;max-height:1.25em!important;max-width:2em!important}[ehs-icon]{vertical-align:middle}.ehs-new-tag-complete-translate{display:block;font-weight:bolder;margin-top:4px;opacity:.8;pointer-events:none}.ehs-new-tag-complete-translate:empty{display:none}", "",{"version":3,"sources":["webpack://./src/plugin/syringe/index.less"],"names":[],"mappings":"AAGI,SACI,kBAFR,CAII,SACI,iBAFR,CAMA,SACI,YAJJ,CAOA,+DAGQ,YANR,CAUA,MACI,kBARJ,CAWA,uBAGI,WAAA,CACA,gBAAA,CACA,kBATJ,CAYA,0BACI,aAVJ,CAaA,WAEQ,cAZR,CAUA,gBAMQ,SAbR,CAOA,SAUQ,mBAdR,CAIA,UAcQ,gBAfR,CACA,sCAqBQ,WAAA,CACA,gBAAA,CAFA,eAdR,CANA,cA0BQ,WAjBR,CATA,YA8BQ,eAlBR,CAsBA,uBAII,sBAAA,CAFA,2BAAA,CACA,uBAnBJ,CAuBA,WACI,qBArBJ,CAwBA,gCACI,aAAA,CAMA,kBAAA,CADA,cAAA,CAEA,UAAA,CACA,mBA1BJ,CAmBI,sCACI,YAjBR","sourcesContent":["// 全局注入样式\n\n:root {\n    &.eh {\n        color-scheme: light;\n    }\n    &.ex {\n        color-scheme: dark;\n    }\n}\n\n[hidden] {\n    display: none;\n}\n\n:root.ehs-hide-icon {\n    [ehs-icon],\n    [ehs-emoji] {\n        display: none;\n    }\n}\n\ntd.tc {\n    white-space: nowrap;\n}\n\ndiv.gt,\ndiv.gtl,\ndiv.gtw {\n    height: 16px;\n    line-height: 16px;\n    white-space: nowrap;\n}\n\ntextarea[name='expungexpl'] {\n    display: block;\n}\n\nbody {\n    h1#gj {\n        margin: 3px 4px;\n    }\n\n    div#gright {\n        z-index: 3;\n    }\n\n    .g2 {\n        padding-bottom: 20px;\n    }\n\n    .gsp {\n        padding-top: 10px;\n    }\n\n    div.gtl,\n    div.gtw,\n    div.gt {\n        overflow: hidden;\n        height: 16px;\n        line-height: 16px;\n    }\n\n    div#gmid {\n        height: auto;\n    }\n\n    div.c6 {\n        text-align: left;\n    }\n}\n\n[ehs-icon],\n[ehs-emoji] {\n    max-height: 1.25em !important;\n    max-width: 2em !important;\n    margin: 0 1px !important;\n}\n\n[ehs-icon] {\n    vertical-align: middle;\n}\n\n.ehs-new-tag-complete-translate {\n    display: block;\n    &:empty {\n        display: none;\n    }\n\n    margin-top: 4px;\n    font-weight: bolder;\n    opacity: 0.8;\n    pointer-events: none;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__.Z = (___CSS_LOADER_EXPORT___);
 
@@ -19313,12 +19313,12 @@ merge(/^\/g\//, undefined, {
   'Multi-Page Viewer': '多页查看器',
   'There are newer versions of this gallery available:': '此图库有更新的版本可用：',
   'Back to Gallery': '返回图库',
-  '4 rows': '4 行',
-  '10 rows': '10 行',
-  '20 rows': '20 行',
-  '40 rows': '40 行',
-  Normal: '普通',
-  Large: '大图',
+  // '4 rows': '4 行',
+  // '10 rows': '10 行',
+  // '20 rows': '20 行',
+  // '40 rows': '40 行',
+  // Normal: '普通',
+  // Large: '大图',
   'Contact Poster': '联系评论者',
   'Uploader Comment': '上传者评论',
   'Score ': '分数 ',
@@ -19343,7 +19343,7 @@ merge(/^\/g\//, undefined, {
   'View Gallery': '浏览图库',
   'Get Me Outta Here': '带我离开这里',
   'Never Warn Me Again': '不再提醒'
-}, [[/^(\d+) times$/, '$1 次'], [/^Average: ([\d.]+)$/, '平均值：$1'], [/^Rate as ([\d.]+) stars?$/, '$1 星'], [/^Torrent Download \((\d+)\)$/, '种子下载 ($1)'], [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, '，更新于 $1'], [/^Page (\d+): /, '第 $1 页：'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*$/, '评论时间：$1 \xA0作者：'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, '评论时间：$1'], [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '], [/^This gallery is unavailable due to a copyright claim by (.*)\.$/, '由于 $1 提出的版权要求，此图库无法使用']]);
+}, [[/^(\d+) times$/, '$1 次'], [/^Average: ([\d.]+)$/, '平均值：$1'], [/^Rate as ([\d.]+) stars?$/, '$1 星'], [/^Torrent Download \((\d+)\)$/, '种子下载 ($1)'], [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, '，更新于 $1'], [/^Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?$/, '$1 - $2，共 $3 张图像'], [/^Page (\d+): /, '第 $1 页：'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*$/, '评论时间：$1 \xA0作者：'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, '评论时间：$1'], [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '], [/^This gallery is unavailable due to a copyright claim by (.*)\.$/, '由于 $1 提出的版权要求，此图库无法使用']]);
 merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
   'Submit New Expunge Petition': '提交新的删除申请',
   'Specify a valid objective reason why this gallery should be expunged.': '请说明申请删除此图库的客观原因。',
@@ -20988,7 +20988,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"2.11.8","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint ./src/**/*.ts","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.23.2","@babel/plugin-transform-runtime":"^7.23.2","@babel/preset-env":"^7.23.2","@babel/runtime":"^7.23.2","@types/chrome":"^0.0.248","@types/escape-html":"^1.0.3","@types/node":"^20.8.9","@types/tampermonkey":"^4.20.4","@types/webextension-polyfill":"^0.10.5","@typescript-eslint/eslint-plugin":"^6.9.0","@typescript-eslint/parser":"^6.9.0","@webextension-toolbox/webpack-webextension-plugin":"^3.2.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^11.0.0","css-loader":"^6.8.1","cssnano":"^6.0.1","eslint":"^8.52.0","eslint-config-prettier":"^9.0.0","eslint-plugin-prettier":"^5.0.1","execa":"^8.0.1","glob":"^10.3.10","html-webpack-plugin":"^5.5.3","less":"^4.2.0","less-loader":"^11.1.3","postcss":"^8.4.31","postcss-import":"^15.1.0","postcss-loader":"^7.3.3","postcss-preset-env":"^9.2.0","prettier":"^3.0.3","rimraf":"^5.0.5","semver":"^7.5.4","style-loader":"^3.3.3","ts-loader":"^9.5.0","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.6.0","typescript":"^5.2.2","web-ext":"^7.8.0","webpack":"^5.89.0","webpack-bundle-analyzer":"^4.9.1","webpack-cli":"^5.1.4","webpack-dev-server":"^4.15.1","webpack-userscript":"^2.5.8","yargs":"^17.7.2"},"dependencies":{"core-js":"^3.33.1","emoji-regex":"^10.3.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.0.1","rxjs":"^7.8.1","tslib":"^2.6.2","typedi":"^0.10.0","webextension-polyfill":"^0.10.0"}}');
+var package_namespaceObject = JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"2.12.0","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint ./src/**/*.ts","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.23.2","@babel/plugin-transform-runtime":"^7.23.2","@babel/preset-env":"^7.23.2","@babel/runtime":"^7.23.2","@types/chrome":"^0.0.248","@types/escape-html":"^1.0.3","@types/node":"^20.8.9","@types/tampermonkey":"^4.20.4","@types/webextension-polyfill":"^0.10.5","@typescript-eslint/eslint-plugin":"^6.9.0","@typescript-eslint/parser":"^6.9.0","@webextension-toolbox/webpack-webextension-plugin":"^3.2.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^11.0.0","css-loader":"^6.8.1","cssnano":"^6.0.1","eslint":"^8.52.0","eslint-config-prettier":"^9.0.0","eslint-plugin-prettier":"^5.0.1","execa":"^8.0.1","glob":"^10.3.10","html-webpack-plugin":"^5.5.3","less":"^4.2.0","less-loader":"^11.1.3","postcss":"^8.4.31","postcss-import":"^15.1.0","postcss-loader":"^7.3.3","postcss-preset-env":"^9.2.0","prettier":"^3.0.3","rimraf":"^5.0.5","semver":"^7.5.4","style-loader":"^3.3.3","ts-loader":"^9.5.0","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.6.0","typescript":"^5.2.2","web-ext":"^7.8.0","webpack":"^5.89.0","webpack-bundle-analyzer":"^4.9.1","webpack-cli":"^5.1.4","webpack-dev-server":"^4.15.1","webpack-userscript":"^2.5.8","yargs":"^17.7.2"},"dependencies":{"core-js":"^3.33.1","emoji-regex":"^10.3.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.0.1","rxjs":"^7.8.1","tslib":"^2.6.2","typedi":"^0.10.0","webextension-polyfill":"^0.10.0"}}');
 ;// CONCATENATED MODULE: ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -21539,7 +21539,7 @@ var Syringe = /*#__PURE__*/function () {
   }, {
     key: "translateNode",
     value: function translateNode(node) {
-      if (!node.nodeName || this.skipNode.has(node.nodeName) || node.parentNode && this.skipNode.has(node.parentNode.nodeName)) {
+      if (!node.nodeName || this.skipNode.has(node.nodeName) || node.parentNode != null && this.skipNode.has(node.parentNode.nodeName) || isElement(node) && node.matches('.eh-syringe-ignore, .eh-syringe-ignore *')) {
         return;
       }
       var handled = this.translateTag(node);
@@ -21673,32 +21673,20 @@ var Syringe = /*#__PURE__*/function () {
         }
       }
       if (isElement(node, 'p') && node.classList.contains('gpc')) {
-        var _node$textContent4, _node$parentElement2;
-        /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
-        var _text = (_node$textContent4 = node.textContent) !== null && _node$textContent4 !== void 0 ? _node$textContent4 : '';
-        var p = document.createElement('p');
-        p.textContent = _text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图像');
-        p.className = 'gpc-translate';
+        var _node$parentElement2;
+        /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错 */
+        var p = node.cloneNode(true);
+        p.classList.add('eh-syringe-ignore');
+        p.hidden = true;
         (_node$parentElement2 = node.parentElement) === null || _node$parentElement2 === void 0 || _node$parentElement2.insertBefore(p, node);
-        node.style.display = 'none';
       }
-      if (isElement(node, 'div')) {
-        var _node$parentElement3;
+      if (isElement(node, 'div') && node.id === 'gdd') {
         /* E-Hentai-Downloader 兼容处理 */
-        if (node.id === 'gdd') {
-          var div = document.createElement('div');
-          div.textContent = node.textContent;
-          div.style.display = 'none';
-          node.insertBefore(div, null);
-        }
-        /* 熊猫书签 兼容处理 2 */
-        if (((_node$parentElement3 = node.parentElement) === null || _node$parentElement3 === void 0 ? void 0 : _node$parentElement3.id) === 'gdo4' && node.classList.contains('ths') && node.classList.contains('nosel')) {
-          var _div = document.createElement('div');
-          _div.textContent = node.textContent;
-          _div.style.display = 'none';
-          _div.className = 'ths';
-          node.parentElement.insertBefore(_div, node);
-        }
+        var div = document.createElement('div');
+        div.classList.add('eh-syringe-ignore');
+        div.hidden = true;
+        div.innerHTML = node.innerHTML;
+        node.prepend(div);
       }
     }
   }]);
