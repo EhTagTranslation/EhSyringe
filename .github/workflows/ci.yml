@@ -38,14 +38,19 @@ jobs:
         with:
           name: releases
           path: releases/
-      - name: Publish to github release
+      - name: Draft github release
         uses: softprops/action-gh-release@v1
         with:
+          draft: true
           prerelease: ${{ contains(github.event.ref, '-') }}
           body: |
             [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
           files: releases/*
           generate_release_notes: true
+      - name: Publish github release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
       - name: Commit release mirror
         run: >
           cd ./releases
