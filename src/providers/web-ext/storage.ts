@@ -1,6 +1,6 @@
 import type { Storage, Listener, ListenerId, SyncStorage } from '../common/storage';
 import type { JsonValue } from 'type-fest';
-import { packageJson } from 'info';
+import { name } from 'info';
 
 const listeners = new Map<string, Listener[]>();
 
@@ -42,7 +42,7 @@ export const storage: Storage = {
     },
 };
 
-const mark = `${packageJson.name}.`;
+const mark = `${name}.`;
 const syncKey = (k: string): string => mark + k;
 
 export const syncStorage: SyncStorage = {

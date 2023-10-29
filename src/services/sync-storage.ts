@@ -3,7 +3,7 @@ import { syncStorage } from 'providers/storage';
 import { Logger } from './logger';
 import type { JsonValue } from 'type-fest';
 import { type ConfigData, Storage } from './storage';
-import { packageJson } from 'info';
+import { version } from 'info';
 
 export interface SyncStorageItems {
     version: string;
@@ -19,9 +19,9 @@ export class SyncStorage {
         readonly async: Storage,
     ) {
         const oldVer = this.get('version');
-        if (packageJson.version !== oldVer) {
+        if (version !== oldVer) {
             this.migrate();
-            this.set('version', packageJson.version);
+            this.set('version', version);
         }
     }
 
@@ -52,7 +52,7 @@ export class SyncStorage {
     }
 
     readonly defaults: Readonly<SyncStorageItems> = {
-        version: packageJson.version,
+        version: version,
         databaseMap: undefined,
         databaseSha: undefined,
         config: this.async.defaults.config,

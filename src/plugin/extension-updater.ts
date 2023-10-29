@@ -6,7 +6,7 @@ import { Messaging } from 'services/messaging';
 import { Notification } from 'services/notification';
 import { Http } from 'services/http';
 import type { GithubRelease } from 'interface';
-import { packageJson } from 'info';
+import { version, displayName } from 'info';
 
 @Service()
 export class ExtensionUpdater {
@@ -33,7 +33,7 @@ export class ExtensionUpdater {
             const response = await this.http.json<GithubRelease>(
                 'https://api.github.com/repos/EhTagTranslation/EhSyringe/releases/latest',
             );
-            const current = `v${packageJson.version}`;
+            const current = `v${version}`;
             const latest = response.tag_name;
             if (typeof latest != 'string' || !latest.startsWith('v')) {
                 const e = new Error('响应格式错误');
@@ -45,7 +45,7 @@ export class ExtensionUpdater {
             if (latest === current) return false;
 
             this.notification.send({
-                title: packageJson.displayName,
+                title: displayName,
                 message: `发现新的版本 ${latest}，点击跳转到下载页面。`,
                 action: () => openInTab(response.html_url),
             });
