@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     2.11.6
+// @version     2.11.7
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 33000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@12f3b2a246e0cd0538a9e91ebf793fbe5b8d18c7/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@81d485ee7356eeb4ebcc04f060c894bf5e350c6e/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
