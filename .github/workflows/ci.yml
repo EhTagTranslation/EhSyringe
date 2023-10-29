@@ -38,7 +38,7 @@ jobs:
         with:
           name: releases
           path: releases/
-      - name: Draft github release
+      - name: Publish github release
         uses: ncipollo/release-action@v1.13.0
         with:
           allowUpdates: true
@@ -48,14 +48,6 @@ jobs:
           body: |
             [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
           prerelease: ${{ contains(github.event.ref, '-') }}
-          draft: true
-      - name: Publish github release
-        uses: ncipollo/release-action@v1.13.0
-        with:
-          allowUpdates: true
-          replacesArtifacts: false
-          omitBodyDuringUpdate: true
-          omitPrereleaseDuringUpdate: true
       - name: Commit release mirror
         run: >
           cd ./releases
