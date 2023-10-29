@@ -56,7 +56,6 @@ jobs:
           replacesArtifacts: false
           omitBodyDuringUpdate: true
           omitPrereleaseDuringUpdate: true
-          draft: true
       - name: Commit release mirror
         run: >
           cd ./releases
