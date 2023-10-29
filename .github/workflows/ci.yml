@@ -25,7 +25,11 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: releases
-          path: releases/
+          path: |
+            releases/
+            README.md
+            README.userscript.md
+            LICENSE
 
   deploy:
     needs: build
