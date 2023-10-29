@@ -47,6 +47,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: releases
+      - name: Generate checksum
+        run: |
+          sha256sum * > sha256sum.txt
+          cat sha256sum.txt
       - name: Publish github release
         uses: ncipollo/release-action@v1.13.0
         with:
