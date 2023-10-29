@@ -39,14 +39,13 @@ jobs:
           name: releases
           path: releases/
       - name: Publish to github release
-        uses: ncipollo/release-action@v1.13.0
+        uses: softprops/action-gh-release@v1
         with:
-          allowUpdates: true
-          artifacts: releases/*
+          prerelease: ${{ contains(github.event.ref, '-') }}
           body: |
             [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
-          prerelease: ${{ contains(github.event.ref, '-') }}
-          replacesArtifacts: true
+          files: releases/*
+          generate_release_notes: true
       - name: Commit release mirror
         run: >
           cd ./releases
