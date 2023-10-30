@@ -91,8 +91,9 @@ merge(
         '. Having the client set to the wrong country will make it perform worse than it would otherwise do. If the country is shown in ':
             '。位于错误的国家/地区的客户端的性能表现将不如预期。如果国家/地区显示为 ',
         red: '红色',
-        ' that means it has been moved outside of its home region and will not be assigned new ranges. Contact Tenboro if you need to change the home region.':
-            '，则意味着它已被迁移出其所在地区，不会再被分配新的范围。如果您需要更改所在地区，请联系 Tenboro。',
+        ' that means it is appears to be located outside of its home region, and ': '，则意味着它似乎位于其所在地区之外，',
+        'will not be assigned new ranges nor gain any hath': '不会再被分配新的范围，也不会获得 Hath',
+        '. Contact Tenboro if you need to change the home region.': '。如果您需要更改所在地区，请联系 Tenboro。',
 
         'Free Archive Quota: ': '免费的存档配额：',
         ', measured in a 168-hour sliding window. Clients must be ':
@@ -157,7 +158,8 @@ merge(
         'Maximum Upload Rate': '最大上传速率',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
-        'Static Range allocation is limited to 1 per 5 KB/s.': '每 1 组静态范围至少 5 KB/s。',
+        'Static Range allocation is limited to 1 per 5 KB/s. Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
+            '每 1 组静态范围至少 5 KB/s。如果设置低于 10 MB/s，则不会被分配到大容量范围。',
         ' KBytes/s': ' KB/s',
         ' Enable Client-Side Speed Limit (recommended only for home networks)':
             ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
@@ -166,7 +168,7 @@ merge(
         ' per Second) is equivalent to 8 Kb/s or Kbps (Kilo': '每秒) 相当于 8 Kb/s 或 Kbps (千',
         bits: '比特',
         ' per Second). Internet speeds are typically advertised as the latter (Mbps or Mbit/s), and this is also what Speedtest uses, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
-            '每秒)。Internet 速度通常被宣传为后者（Mbps 或 Mbit/s），Speedtest也使用这种表示方式，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
+            '每秒)。Internet 速度通常被宣传为后者 (Mbps 或 Mbit/s)，Speedtest 也使用这种表示方式，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
         'To reduce the upload rate for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端的上传速率需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
@@ -191,7 +193,8 @@ merge(
         ' GB per month': ' GB 每月',
         'If you have a monthly data cap, you can provide it here. If the system detects that you are likely to exceed this target, it will reduce the priority of ranges on your client to reduce the load, but it is not guaranteed to stay below this value. Leave at 0 to limit with max speed alone. Must be at least 1000 GB if set.':
             '如果你有每月数据限额，请在此设置。如果系统检测到你可能超过此限额，它将会降低客户端上的静态范围的优先度，以降低网络负载，但并不能保证低于设定值。保留为 0 表示仅限制最大速度。最低限制为 1000 GB。',
-        'Static Range allocation is limited to 1 per 5 GB.': '每 1 组静态范围至少 5 GB。',
+        'Static Range allocation is limited to 1 per 5 GB. Clients cannot be assigned high-capacity ranges if set below 10 TB/month.':
+            '每 1 组静态范围至少 5 GB。如果设置低于 10 TB/月，则不会被分配到大容量范围。',
         'To reduce the monthly data transfer target for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端的每月数据流量限制需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
@@ -206,6 +209,7 @@ merge(
         'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
             '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
         'This client currently has ': '此客户端当前被分配了 ',
+        ' static range(s) assigned.': ' 组静态范围。',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
@@ -229,7 +233,7 @@ merge(
         'Changes will be applied within roughly two minutes. If you decrease the disk cache space, it will not take effect until next restart.':
             '更改将在大约两分钟内生效。如果减少了磁盘缓存空间，则需要重新启动才会生效。',
         ' Allow removing static ranges if necessary (client must be shut down)':
-            '必要时允许移除静态范围（需要重启客户端）',
+            '必要时允许移除静态范围 (需要重启客户端)',
         'Apply Settings': '应用设置',
         '[Back to Overview]': '[返回总览]',
     },

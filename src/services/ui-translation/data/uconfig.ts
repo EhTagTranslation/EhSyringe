@@ -277,12 +277,15 @@ merge(
         Zimbabwe: 'Zimbabwe (津巴布韦)',
 
         'Image Size Settings': '图像大小设置',
+        'Images are normally resampled to 1280 pixels of horizontal resolution for online viewing. You can select one of the following alternative resolutions. (Resolutions above 1280x are restricted to accounts with any hath perk, a bronze star, or an UID below 3,000,000.)':
+            '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。 (高于 1280 像素只提供给解锁过任意 Hath Perk、铜星或 UID 小于 3,000,000 的用户)',
         'Images are normally resampled to 1280 pixels of horizontal resolution for online viewing. You can select one of the following alternative resolutions.':
             '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。',
         ' Auto': ' 自动',
         'Use original images instead of the resampled versions? Resampled images will still be used if you select a horizonal resolution different than "Auto" above and the image in question is wider, or if the original image is larger than 10 MiB (or 4 MiB for galleries older than one year).':
             '在阅读时优先加载原图而非重采样版本？当选择了“自动”以外的分辨率且原图宽度大于设定值，或原图大于 10 MiB (一年前发布的图库 4 MiB) 时，仍会加载重采样版本。',
         ' Prefer resampled images': ' 优先加载重采样版本',
+        ' Prefer original images (requires the Source Nexus perk or a silver star)': ' 优先加载原图 (需要 Hath Perk:「原始之力」或银星)',
         ' Prefer original images': ' 优先加载原图',
         'While the site will automatically scale down images to fit your screen width, you can also manually restrict the maximum display size of an image. Like the automatic scaling, this does not resample the image, as the resizing is done browser-side. (0 = no limit)':
             '虽然图像会自动根据窗口缩小，您也可以手动指定最大显示大小。图像仅在浏览器端缩放，并没有被重新采样。(0 为不限制)',
@@ -327,7 +330,7 @@ merge(
 
         'Search Result Count': '搜索结果数',
         'How many results would you like per page for the index/search page and torrent search pages? (Hath Perk: Paging Enlargement Required)':
-            '索引和搜索页面每页显示多少条数据？ (需要 Hath Perk：「页面扩大」)',
+            '索引和搜索页面每页显示多少条数据？ (需要 Hath Perk:「页面扩大」)',
         ' 25 results': ' 25 个',
         ' 50 results': ' 50 个',
         ' 100 results': ' 100 个',
