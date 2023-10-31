@@ -409,19 +409,23 @@ export class Syringe {
 
         if (isElement(node, 'p') && node.classList.contains('gpc')) {
             /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错 */
-            const p = node.cloneNode(true) as HTMLElement;
-            p.classList.add('eh-syringe-ignore');
-            p.hidden = true;
-            node.parentElement?.insertBefore(p, node);
+            this.cloneAndPrependElement(node);
         }
 
         if (isElement(node, 'div') && node.id === 'gdd') {
             /* E-Hentai-Downloader 兼容处理 */
-            const div = document.createElement('div');
-            div.classList.add('eh-syringe-ignore');
-            div.hidden = true;
-            div.innerHTML = node.innerHTML;
-            node.prepend(div);
+            this.cloneAndPrependElement(node.firstElementChild!);
         }
+    }
+
+    private cloneAndPrependElement<T extends Element>(el: T): T {
+        const clone = el.cloneNode(true) as T;
+        clone.classList.add('eh-syringe-ignore');
+        clone.setAttribute('hidden', '');
+        clone.querySelectorAll('[id]').forEach((node) => {
+            node.id = `ehs-clone-${node.id}`;
+        });
+        el.before(clone);
+        return clone;
     }
 }
