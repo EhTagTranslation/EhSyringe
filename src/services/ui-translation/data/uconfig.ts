@@ -282,7 +282,7 @@ merge(
         'Images are normally resampled to 1280 pixels of horizontal resolution for online viewing. You can select one of the following alternative resolutions.':
             '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。',
         ' Auto': ' 自动',
-        'Use original images instead of the resampled versions? Resampled images will still be used if you select a horizonal resolution different than "Auto" above and the image in question is wider, or if the original image is larger than 10 MiB (or 4 MiB for galleries older than one year).':
+        'Use original images instead of the resampled versions? Resampled images will still be used if you select a horizontal resolution different than "Auto" above and the image in question is wider, or if the original image is larger than 10 MiB (or 4 MiB for galleries older than one year).':
             '在阅读时优先加载原图而非重采样版本？当选择了“自动”以外的分辨率且原图宽度大于设定值，或原图大于 10 MiB (一年前发布的图库 4 MiB) 时，仍会加载重采样版本。',
         ' Prefer resampled images': ' 优先加载重采样版本',
         ' Prefer original images (requires the Source Nexus perk or a silver star)': ' 优先加载原图 (需要 Hath Perk:「原始之力」或银星)',
@@ -322,6 +322,10 @@ merge(
         'Which display style would you like for the search range indicator?': '您希望搜索范围指示器采用哪种显示样式？',
         ' Normal': ' 普通',
         ' Disabled': ' 禁用',
+
+        'Optional UI Elements': '可选 UI 元素',
+        'Some historic UI elements are now disabled by default. You can enable those here.': '一些历史 UI 元素现在默认禁用，您可以在这里重新启用它们。',
+        ' Enable thumbnail selector on gallery screen': ' 在图库详情页启用缩略图选择器',
 
         'Here you can choose and rename your favorite categories.': '您可以在这里重命名您的收藏夹。',
         'Default sort order for galleries on your favorites page:': '收藏页面的默认排序方式？',
