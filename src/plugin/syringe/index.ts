@@ -174,10 +174,12 @@ export class Syringe {
             let node = nodeIterator.nextNode();
             while (node) {
                 nodes.push(node);
-                this.translateNode(node);
                 node = nodeIterator.nextNode();
             }
-            this.logger.debug(`有 ${nodes.length} 个节点在注入前加载`, nodes);
+            this.logger.warn(`有 ${nodes.length} 个节点在注入前加载`, nodes);
+            for (const node of nodes) {
+                this.translateNode(node);
+            }
         } else {
             this.logger.debug(`没有节点在注入前加载`);
         }
