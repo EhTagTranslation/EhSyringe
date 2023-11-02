@@ -18,14 +18,12 @@ merge(
         'Chinese Dominion': '中国大陆',
         Global: '全球',
 
-        '\n\tCurrent Network Load shows how much raw bandwidth is currently used to serve images. This includes requests served by H@H as well as direct requests from the image servers.':
-            '当前网络负载显示当前用于提供图像的原始带宽量。这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
-        '\n\tH@H Miss% shows the percentage of requests for the region that would have gone to a H@H client if one was available, but where no client was ready to serve the request.':
-            'H@H 缓存未命中% 显示此区域没有 H@H 客户端能为 H@H 请求提供服务的百分比。',
-        '\n\tCoverage denotes the average number of times a static file range partition can be found within a given region, indicating the total available storage capacity.':
-            '覆盖率表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
-        '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region for the last 24 hours.':
-            '命中/GB 显示过去 24 小时内此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
+        '\n\tNetwork Load shows how much bandwidth is currently being used. This includes requests served by H@H and the image servers.':
+            '当前网络负载 显示当前使用的带宽量，这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
+        '\n\tCoverage shows the average number of times a file range is found within a region, indicating the total available storage capacity.':
+            '覆盖率 表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
+        '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
+            '命中/GB 表示此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
 
         'Your Active Clients': '您的活动客户端',
         'To add more clients, ': '要添加更多客户端，请',
@@ -102,18 +100,13 @@ merge(
         ' and must have been running for more than 24 hours straight to qualify.': '并运行超过 24 小时才能获得资格。',
 
         'Client Download': '客户端下载',
-        'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
-        '. You can find the release notes for this version ': '。此版本的发行说明见',
-        here: '发行说明 (英文)',
-
         File: '文件',
         Size: '大小',
         'Source Code': '源代码',
-
-        'Please verify that the size and cryptographic hashes correspond to the file you download. For more information about file validation, see these links: ':
-            '请验证您下载的文件的大小和哈希值与上方给出的数值相对应。有关文件验证的更多信息，请参阅以下链接 (英文)：',
-        'Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
-            'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
+        'You can find the current release notes ': '您可以在 ',
+        here: '此处',
+        '. You should verify that the size and cryptographic hash correspond to the files you download. Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
+            ' 找到当前版本的发行说明 (英文)。请验证您下载的文件的大小和哈希值与上方给出的数值相对应。Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
 
         'Unfortunately, we cannot accept clients with less than 80 Mbit/s outgoing speed.':
             '抱歉，我们无法接受出站速率低于 80 Mbps 的客户端。',

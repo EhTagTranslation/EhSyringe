@@ -46,6 +46,7 @@ merge(
         ' show download progress in title': ' 在标题栏中显示下载进度',
         ' Disable requesting and showing image limits': ' 不显示图像配额',
         ' Disable pre-calculating image limits cost': ' 不显示预计成本',
+        ' Pin download actions box at the top of the page': ' 将下载操作框固定在页面顶部',
 
         '\t\t\t\t\t\t\t* Available templates: \t\t\t\t\t\t\t': ' * 可用模板： ',
         ' Gallery GID | \t\t\t\t\t\t\t': ' 图库 GID | ',
