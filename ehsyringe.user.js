@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     2.12.1
+// @version     2.12.2
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 33000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@a25aa2baacd204af11b6e135e5dcb60a9295c44a/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@315788b4e9bd61ce624fb143fa50090c73ff281b/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -18883,9 +18883,9 @@ merge(/^\/bitcoin\.php/, undefined, {
   'No transactions in the past year.': '在过去一年内没有交易',
   Pending: '待定',
   Accepted: '已接受',
-  'Available To Apply: ': '可用余额：',
-  ' \xA0 \xA0 \xA0 Donation Total: ': ' \xA0 \xA0 \xA0 捐赠总额：',
-  ' \xA0 \xA0 \xA0 Adopt-a-Server Days: ': ' \xA0 \xA0 \xA0 领养服务器天数：',
+  'Unspent: ': '未使用：',
+  'Total All-Time Donations: ': '捐赠总额：',
+  'Total Adopt-a-Server Days: ': '领养服务器天数：',
   'Current Conversion Rate: ': '当前汇率：',
   'Apply BTC as Donation': '使用 BTC 捐赠',
   'Apply BCH as Donation': '使用 BCH 捐赠',
@@ -18901,12 +18901,11 @@ merge(/^\/bitcoin\.php/, undefined, {
   '2 Year @ $6/month $144': '2 年 @ $6/月 $144',
   '3 Year @ $5/month $180': '3 年 @ $5/月 $180',
   'Purchase Slots': '我要领养',
-  'Donated coins are applied as the equivalent value in USD at the time of your choosing, using the site rate which is calculated from recent real-world value.': '捐赠的虚拟货币在您使用时会以最近平均历史价格作为网站的汇率转换为美元。',
-  'The site rate will never drop sharply, it adjusts slowly over time if the real-world value is higher than or less than 90% of the site rate.': '网站的汇率永远不会急剧下降，只有当实际汇率高于网站汇率，或低于网站汇率的 90% 时，才会随着时间推移缓慢调整。',
+  'Donated coins are applied as the equivalent value in USD at the time of your choosing, using the site rate which is calculated from recent real-world value. The site rate will never drop sharply, it adjusts slowly over time if the real-world value is higher than or less than 90% of the site rate.': '捐赠的虚拟货币在您使用时会以最近平均历史价格作为网站的汇率转换为美元。网站的汇率永远不会急剧下降，只有当实际汇率高于网站汇率，或低于网站汇率的 90% 时，才会随着时间推移缓慢调整。',
   'The conversion rates right now are ': '当前汇率：',
   ' for Bitcoin, and ': ' (比特币) \xA0 ',
   ' for Bitcoin Cash.': ' (比特币现金)',
-  'Donation Level': '捐赠等级',
+  'Donation Tier': '捐赠等级',
   'EXP Bonus': '经验加成',
   'Daily Bonus': '每日奖励',
   'Daily Hath': '每日 Hath',
@@ -18919,11 +18918,10 @@ merge(/^\/bitcoin\.php/, undefined, {
   'Quint Star': '五星',
   'Septua Star': '七星',
   'Honorary Catgirl': '荣誉猫娘',
-  'Bitcoin (BTC) Spending History': '比特币 (BTC) 消费历史',
-  'Bitcoin Cash (BCH) Spending History': '比特币现金 (BCH) 消费历史',
-  'No coins have been applied yet': '目前还没有使用此类虚拟货币',
-  'Adopt-a-Server Slots': '服务器领养日志',
-  'No slots have been adopted yet': '目前还没有领养服务器'
+  'Recent Spending History': '近期消费记录',
+  'No coins have been applied recently': '近期没有使用此类虚拟货币',
+  'Active + Recent Adopt-a-Server Slots': '近期服务器领养记录',
+  'No slots have been adopted recently': '近期没有领养服务器'
 }, [[/^Refunded (.*?) Hath/, '已退还 $1 Hath'], [/^(\$.*?) Donation$/, '捐赠 $1'], [/^A wallet address PM was sent to user (.+?) \(uid=(\d+)\)$/, '您的钱包地址已私信发送给 $1 (UID $2)。'], [/^Awarded for a total donation of (\$\d+).$/, '授予的捐赠总额为 $1。'], [/^(\d+) GB \/ week$/, '$1 GB / 周'], [/^Catgirl Lv.(\d)$/, '猫娘 Lv.$1'], [/^Insufficient (BCH|BTC) available.\s?/, '$1 余额不足。'], [/You have ([\d.]+) (BCH|BTC) pending, but these need to be confirmed first.$/, '您有 $1 $2 待确认，请等到确认完成后再操作。']]);
 ;// CONCATENATED MODULE: ./src/services/ui-translation/data/bounty.ts
 
@@ -19061,6 +19059,7 @@ merge(/.*/, undefined, {
   'Karma Log': 'Karma 记录',
   Front: '首页',
   LoFi: '低保真版',
+  'Terms of Service': '服务条款',
   ToS: '服务条款',
   Advertise: '广告',
   Onion: '洋葱网址',
@@ -19641,10 +19640,9 @@ merge(/^\/hentaiathome\.php\??$/, undefined, {
   'Asia and Oceania': '亚洲和大洋洲',
   'Chinese Dominion': '中国大陆',
   Global: '全球',
-  '\n\tCurrent Network Load shows how much raw bandwidth is currently used to serve images. This includes requests served by H@H as well as direct requests from the image servers.': '当前网络负载显示当前用于提供图像的原始带宽量。这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
-  '\n\tH@H Miss% shows the percentage of requests for the region that would have gone to a H@H client if one was available, but where no client was ready to serve the request.': 'H@H 缓存未命中% 显示此区域没有 H@H 客户端能为 H@H 请求提供服务的百分比。',
-  '\n\tCoverage denotes the average number of times a static file range partition can be found within a given region, indicating the total available storage capacity.': '覆盖率表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
-  '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region for the last 24 hours.': '命中/GB 显示过去 24 小时内此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
+  '\n\tNetwork Load shows how much bandwidth is currently being used. This includes requests served by H@H and the image servers.': '当前网络负载 显示当前使用的带宽量，这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
+  '\n\tCoverage shows the average number of times a file range is found within a region, indicating the total available storage capacity.': '覆盖率 表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
+  '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.': '命中/GB 表示此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
   'Your Active Clients': '您的活动客户端',
   'To add more clients, ': '要添加更多客户端，请',
   'PM Tenboro': '联系 Tenboro',
@@ -19702,14 +19700,12 @@ merge(/^\/hentaiathome\.php\??$/, undefined, {
   healthy: '健康',
   ' and must have been running for more than 24 hours straight to qualify.': '并运行超过 24 小时才能获得资格。',
   'Client Download': '客户端下载',
-  'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
-  '. You can find the release notes for this version ': '。此版本的发行说明见',
-  here: '发行说明 (英文)',
   File: '文件',
   Size: '大小',
   'Source Code': '源代码',
-  'Please verify that the size and cryptographic hashes correspond to the file you download. For more information about file validation, see these links: ': '请验证您下载的文件的大小和哈希值与上方给出的数值相对应。有关文件验证的更多信息，请参阅以下链接 (英文)：',
-  'Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.': 'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
+  'You can find the current release notes ': '您可以在 ',
+  here: '此处',
+  '. You should verify that the size and cryptographic hash correspond to the files you download. Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.': ' 找到当前版本的发行说明 (英文)。请验证您下载的文件的大小和哈希值与上方给出的数值相对应。Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
   'Unfortunately, we cannot accept clients with less than 80 Mbit/s outgoing speed.': '抱歉，我们无法接受出站速率低于 80 Mbps 的客户端。',
   'Unfortunately, we cannot accept clients that are frequently offline.': '抱歉，我们无法接受经常离线的客户端。'
 }, [[/^([\d.]+) \/ min$/, '$1 / 分钟'], [/^([\d.]+) \/ day$/, '$1 / 天'], [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'], [/^([\d.]+) ([KMGTP]B) per week$/, '每周 $1 $2'], [/^Must be at least ([\d.]+) ([KMGTP]B)\/s$/, '不小于 $1 $2/s'], [/^Must be at least ([\d.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/, '必须至少为 $1 $2/小时，填 0 表示无限制'], [/^ Must be at least ([\d.]+) ([KMGTP]B). More is better, but space must be dedicated.$/, '至少为 $1 $2。越多越好，但空间必须专用。'], [/^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/, '最大出站速率必须至少为 $1 $2/s。'], [/^Transfer Limit must be 0 or at least ([\d.]+) ([KMGTP]B)\/hour.$/, '传输量必须至少为 $1 $2/小时。'], [/^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/, '磁盘空间必须至少为 $1 $2。']]);
@@ -20005,7 +20001,7 @@ merge(/^\/stats\.php/, undefined, {
 });
 ;// CONCATENATED MODULE: ./src/services/ui-translation/data/tools.ts
 
-merge(/^\/tools\.php\?.*act=track_expunge/, 'repo.e-hentai.org', {
+merge(/^\/tools\/track_expunge/, 'repo.e-hentai.org', {
   'State: \xA0 [': '状态： [',
   All: '全部',
   Expunged: '已删除',
@@ -20038,7 +20034,7 @@ merge(/^\/tools\.php\?.*act=track_expunge/, 'repo.e-hentai.org', {
   'Expunge Rejected:': '删除拒绝时间：',
   'Expunge Revoked:': '删除撤销时间：'
 }, [[/^Forbidden \(([\d+-]+)\)$/, '违规内容 ($1)'], [/^Duplicate \(([\d+-]+)\)$/, '重复 ($1)'], [/^Replaced \(([\d+-]+)\)$/, '已替换 ($1)'], [/^Defaced \(([\d+-]+)\)$/, '污损 ($1)']]);
-merge(/^\/tools\.php\?.*act=track_rename/, 'repo.e-hentai.org', {
+merge(/^\/tools\/track_rename/, 'repo.e-hentai.org', {
   '\nFilter: \xA0\n[': '状态： [',
   All: '全部',
   Renamed: '已重命名',
@@ -20056,7 +20052,7 @@ merge(/^\/tools\.php\?.*act=track_rename/, 'repo.e-hentai.org', {
   ' for ': ' 支持 ',
   'by ': '由 '
 }, []);
-merge(/^\/tools\.php\?.*act=taglist/, 'repo.e-hentai.org', {
+merge(/^\/tools\/taglist/, 'repo.e-hentai.org', {
   'Tagging data for user ': '',
   ' (uid=': ' 的标签数据 (UID = ',
   Started: '发起',
@@ -20801,6 +20797,7 @@ merge(/^\/g\//, undefined, {
   ' show download progress in title': ' 在标题栏中显示下载进度',
   ' Disable requesting and showing image limits': ' 不显示图像配额',
   ' Disable pre-calculating image limits cost': ' 不显示预计成本',
+  ' Pin download actions box at the top of the page': ' 将下载操作框固定在页面顶部',
   '\t\t\t\t\t\t\t* Available templates: \t\t\t\t\t\t\t': ' * 可用模板： ',
   ' Gallery GID | \t\t\t\t\t\t\t': ' 图库 GID | ',
   ' Gallery token | \t\t\t\t\t\t\t': ' 图库 token | ',
@@ -20994,7 +20991,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"2.12.1","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint ./src/**/*.ts","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.23.2","@babel/plugin-transform-runtime":"^7.23.2","@babel/preset-env":"^7.23.2","@babel/runtime":"^7.23.2","@types/chrome":"^0.0.248","@types/escape-html":"^1.0.3","@types/node":"^20.8.10","@types/tampermonkey":"^5.0.0","@types/webextension-polyfill":"^0.10.5","@typescript-eslint/eslint-plugin":"^6.9.1","@typescript-eslint/parser":"^6.9.1","@webextension-toolbox/webpack-webextension-plugin":"^3.2.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^11.0.0","css-loader":"^6.8.1","cssnano":"^6.0.1","eslint":"^8.52.0","eslint-config-prettier":"^9.0.0","eslint-plugin-prettier":"^5.0.1","execa":"^8.0.1","glob":"^10.3.10","html-webpack-plugin":"^5.5.3","less":"^4.2.0","less-loader":"^11.1.3","postcss":"^8.4.31","postcss-import":"^15.1.0","postcss-loader":"^7.3.3","postcss-preset-env":"^9.2.0","prettier":"^3.0.3","rimraf":"^5.0.5","semver":"^7.5.4","style-loader":"^3.3.3","ts-loader":"^9.5.0","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.6.0","typescript":"^5.2.2","web-ext":"^7.8.0","webpack":"^5.89.0","webpack-bundle-analyzer":"^4.9.1","webpack-cli":"^5.1.4","webpack-dev-server":"^4.15.1","webpack-userscript":"^2.5.8","yargs":"^17.7.2"},"dependencies":{"core-js":"^3.33.2","emoji-regex":"^10.3.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.0.1","rxjs":"^7.8.1","tslib":"^2.6.2","typedi":"^0.10.0","webextension-polyfill":"^0.10.0"}}');
+var package_namespaceObject = JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"2.12.2","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint ./src/**/*.ts","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.23.2","@babel/plugin-transform-runtime":"^7.23.2","@babel/preset-env":"^7.23.2","@babel/runtime":"^7.23.2","@types/chrome":"^0.0.248","@types/escape-html":"^1.0.3","@types/node":"^20.8.10","@types/tampermonkey":"^5.0.0","@types/webextension-polyfill":"^0.10.5","@typescript-eslint/eslint-plugin":"^6.9.1","@typescript-eslint/parser":"^6.9.1","@webextension-toolbox/webpack-webextension-plugin":"^3.2.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^11.0.0","css-loader":"^6.8.1","cssnano":"^6.0.1","eslint":"^8.52.0","eslint-config-prettier":"^9.0.0","eslint-plugin-prettier":"^5.0.1","execa":"^8.0.1","glob":"^10.3.10","html-webpack-plugin":"^5.5.3","less":"^4.2.0","less-loader":"^11.1.3","postcss":"^8.4.31","postcss-import":"^15.1.0","postcss-loader":"^7.3.3","postcss-preset-env":"^9.3.0","prettier":"^3.0.3","rimraf":"^5.0.5","semver":"^7.5.4","style-loader":"^3.3.3","ts-loader":"^9.5.0","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.6.0","typescript":"^5.2.2","web-ext":"^7.8.0","webpack":"^5.89.0","webpack-bundle-analyzer":"^4.9.1","webpack-cli":"^5.1.4","webpack-dev-server":"^4.15.1","webpack-userscript":"^2.5.8","yargs":"^17.7.2"},"dependencies":{"core-js":"^3.33.2","emoji-regex":"^10.3.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.0.1","rxjs":"^7.8.1","tslib":"^2.6.2","typedi":"^0.10.0","webextension-polyfill":"^0.10.0"}}');
 ;// CONCATENATED MODULE: ./src/info.ts
 
 var packageJson = package_namespaceObject;
