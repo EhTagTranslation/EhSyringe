@@ -57,11 +57,12 @@ merge(
         ' Gallery uploader': '图库上传者',
 
         'Set compression level as ': '压缩级别 ',
-        ' (0 ~ 9, 0 is only store, not recommended to enable)': ' (0 ~ 9, 0 为仅存储，不建议开启)',
+        ' (0 ~ 9, 0 is only store) ': ' (0 ~ 9, 0 为仅存储)',
         ' Stream files and create Zip with file descriptors ': ' 流式传输文件并使用文件描述符创建 Zip ',
         ' Force download resized image (never download original image) ': ' 强制下载重采样图像 (从不下载原图) ',
         ' Never get new image URL when failed to download image ': ' 图像下载失败时，不要获取新的图像地址 ',
         ' Never send "nl" GET parameter when getting new image URL ': ' 获取新图像地址时，不带 "nl" 参数 ',
+        ' Never show warning if image limits will probably used out on starting download': ' 开始下载时不显示图像配额可能不足的警告',
         " Never show warning when it's in peak hours now ": ' 在高峰时段下载时不显示警告 ',
         ' Never show warning when downloading a large gallery (>= 300 MB) ': ' 下载大型图库时不显示警告 (≥ 300 MB) ',
         ' Use File System to handle large Zip file': ' 使用文件系统处理大型 Zip 文件，',
@@ -84,20 +85,24 @@ merge(
         'Download original images from ': '下载原图，通过 ',
         'current origin': '当前站点',
 
-        '\t\t\t\t\t\t\t(1) This may reduce memory usage but some decompress softwares may not support the Zip file. See ':
-            ' (1) 开启压缩可以减少体积，但部分解压软件可能不支持。查看 ',
-        ' for more info.\t\t\t\t\t\t': ' 获取更多信息',
+        "\t\t\t\t\t\t\t(1) Higher compression level can get smaller file without lossing any data, but may takes more time. If you have a decent CPU you can set it higher, and if you're using macOS set it to at least 1.\t\t\t\t\t\t":
+            ' (1) 更高的压缩级别可以获得更小的文件，但可能需要更长时间。如果您的 CPU 性能较好，可以将其设置得更高；如果您使用的是 macOS，请至少设置为 1。',
 
-        '\t\t\t\t\t\t\t(2) Enable these options may save your image viewing limits ':
-            ' (2) 开启这些选项可能可以节约您的图像配额 ',
+        '\t\t\t\t\t\t\t(2) This may reduce memory usage but some decompress softwares may not support the Zip file. See ':
+            ' (2) 开启后可以减少内存占用，但部分解压软件可能不支持。查看 ',
+        ' for more info.\t\t\t\t\t\t': ' 获取更多信息。',
+
+        '\t\t\t\t\t\t\t(3) Enable these option will never let you to load from regular image server (or say force loaded from H@H). This may save your image viewing limits ':
+            ' (3) 开启这些选项可能会阻止您从源图像服务器加载图像 (即强制从 H@H 加载)，可能可以节约您的图像配额 ',
         '(See wiki)': '(请看 wiki)',
-        ', but may also cause some download problems.\t\t\t\t\t\t': '，但是可能也会导致一些下载问题。',
+        ', but may also cause some download problems, especially if your network cannot connect to specific H@H node.\t\t\t\t\t\t':
+            '，但是可能也会导致一些下载问题，尤其是在您的网络无法连接到特定的 H@H 节点时。',
 
-        '\t\t\t\t\t\t\t(3) If enabled you can save larger Zip files (probably ~1GB).\t\t\t\t\t\t':
-            ' (3) 开启后可以保存更大的 Zip 文件 (约 ~1GB)',
+        '\t\t\t\t\t\t\t(4) If enabled you can save larger Zip files (probably ~1GB).\t\t\t\t\t\t':
+            ' (4) 开启后可以保存更大的 Zip 文件 (约 ~1GB)',
 
-        '\t\t\t\t\t\t\t(4) If enabled will play slient music to avoid downloading freeze when page is in background ':
-            ' (4) 开启后会播放无声音频以避免页面在后台时下载被冻结 ',
+        '\t\t\t\t\t\t\t(5) If enabled the script will play slient music to avoid downloading freeze when page is in background ':
+            ' (5) 开启后脚本会播放无声音频以避免页面在后台时下载被冻结 ',
         '(See issue)': '(请看这里)',
         '. Only needed if you have the problem, because the audio-playing icon maybe annoying.\t\t\t\t\t\t':
             '。只有当您遇到相关问题时才需开启，因为音乐播放图标可能会很烦人。',
@@ -106,18 +111,21 @@ merge(
         ' is a file type to archive comic images, you can open it with some comic viewer like CDisplay/CDisplayEX, or just extract it as a Zip file. To keep the order of images, you can also enable numbering images.\t\t\t\t\t\t':
             ' 是一种归档漫画图像的文件类型，您可以使用 CDisplay/CDisplayEX 等漫画查看器打开它，或者直接将其视为 Zip 文件解压。为了保持图像的顺序，您还可以启用对图像进行编号。',
 
-        "\t\t\t\t\t\t\t(6) If you cannot original images, but you've already logged in and your account is not blocked or used up your limits, it may caused by your cookies is not sent to the server. This feature may helps you to pass your current cookies to the download request, but please enable it ONLY if you cannot download any original images.\t\t\t\t\t\t":
-            ' (6) 如果您无法下载原图，但是您已经登录并且您的帐户没有被阻止或用完您的限制，这可能是因为您的 cookie 没有被发送到服务器。此功能可以帮助您将当前的 cookie 传递给下载请求，但只有当您无法下载任何原图时才应该启用它。',
+        "\t\t\t\t\t\t\t(7) If you cannot original images, but you've already logged in and your account is not blocked or used up your limits, it may caused by your cookies is not sent to the server. This feature may helps you to pass your current cookies to the download request, but please enable it ONLY if you cannot download any original images.\t\t\t\t\t\t":
+            ' (7) 如果您无法下载原图，但是您已经登录并且您的帐户没有被阻止或用完您的限制，这可能是因为您的 cookie 没有被发送到服务器。此功能可以帮助您将当前的 cookie 传递给下载请求，但只有当您无法下载任何原图时才应该启用它。',
 
-        "\t\t\t\t\t\t\t(7) If you have already logged in, but the script detects that you're not logged in, you can enable this to skip login check. Please note that if you are not logged in actually, the script will not work as expect.\t\t\t\t\t\t":
-            ' (7) 如果您已经登录，但脚本检测到您没有登录，您可以启用此功能以跳过登录检查。请注意，如果您实际没有登录，则脚本不会按预期工作。',
+        "\t\t\t\t\t\t\t(8) If you have already logged in, but the script detects that you're not logged in, you can enable this to skip login check. Please note that if you are not logged in actually, the script will not work as expect.\t\t\t\t\t\t":
+            ' (8) 如果您已经登录，但脚本检测到您没有登录，您可以启用此功能以跳过登录检查。请注意，如果您实际没有登录，则脚本不会按预期工作。',
 
-        '\t\t\t\t\t\t\t(8) If you have problem to download on the same site, like account session is misleading, you can force redirect original download link to another domain. Pass cookies manually may be needed.\t\t\t\t\t\t':
-            ' (8) 如果您无法通过当前站点下载原图，例如账户会话异常，您可以强制将原始下载链接重定向到另一个域。可能需要同时开启手动传递 cookie。',
+        '\t\t\t\t\t\t\t(9) If you have problem to download on the same site, like account session is misleading, you can force redirect original download link to another domain. Pass cookies manually may be needed.\t\t\t\t\t\t':
+            ' (9) 如果您无法通过当前站点下载原图，例如账户会话异常，您可以强制将原始下载链接重定向到另一个域。可能需要同时开启手动传递 cookie。',
 
-        'eg. -10,12,14-20,27,30-40/2,50-60/3,70-': '例如 -10,12,14-20,50-60/3,70-',
-        'Download ranges of pages, split each range with comma (,)\rExample: \r-10:   Download from page 1 to 10\r12:   Download page 12\r14-20:   Download from page 14 to 20\r27:   Download page 27\r30-40/2:   Download each 2 pages in 30-40 (30, 32, 34, 36, 38, 40)\r50-60/3:   Download each 3 pages in 50-60 (50, 53, 56, 59)\r70-:   Download from page 70 to the last page':
-            '需要下载的页面范围，使用半角逗号 ( , ) 分隔\r例如：\r-10:       下载 1-10 页\r12:         下载 12 页\r14-20:    下载 14-20 页\r50-60/3: 在 50-60 范围内每隔 3 页下载 (50, 53, 56, 59)\r70-:        下载 70-最后一页',
+        "Peak Hours: It's in peak hours now, during peak hours, downloading original images of 90 days ago cost GPs":
+            '高峰时段：现在是高峰时段，下载 90 天前的原图需要消耗 GP',
+        'Ancient Gallery: Downloading original images of 1 year ago cost GPs': '久远图库：下载 1 年前的原图需要消耗 GP',
+        'eg. -10,!8,12,14-20,!15-17,30-40/2,50-60/3,70-': '例如 -10,!8,12,14-20,!15-17,50-60/3,70-',
+        'Download ranges of pages, split each range with comma (,)\rRanges prefixed with ! means negative range, pages in these range will be excluded\rExample: \r  -10:   Download from page 1 to 10\r  !8:   Exclude page 8\r  12:   Download page 12\r  14-20:   Download from page 14 to 20\r  15-17:   Exclude page 15 to 17\r  30-40/2:   Download each 2 pages in 30-40 (30, 32, 34, 36, 38, 40)\r  50-60/3:   Download each 3 pages in 50-60 (50, 53, 56, 59)\r  70-:   Download from page 70 to the last page\rPages range follows your order, a negative range can drop previous selected pages, the latter positive range can add it back\rExample: \r  !10-20:   Download every page except page 10 to 20\r  1-10,!1-8/2,!4,5:   Download page 1 to 10 but remove 1, 3, 5, 7 and 4, then add 5 back (2, 5, 6, 8, 9, 10)':
+            '需要下载的页面范围，使用半角逗号 ( , ) 分隔\r在范围前添加半角叹号 ( ! ) 表示排除此范围不下载\r例如：\r  -10:       下载 1-10 页\r  !8:          排除第 8 页\r  12:         下载第 12 页\r  14-20:    下载 14-20 页\r  !15-17:   排除 15-17 页\r  50-60/3: 在 50-60 范围内每隔 3 页下载 (50, 53, 56, 59)\r  70-:        下载 70-最后一页\r页面范围遵循输入的顺序，排除范围可以删除前面选定的页面，后面的范围也可以将其添加回来\r例如：\r  !10-20:               下载除了 10-20 页外的所有页面\r  1-10,!1-8/2,!4,5: 下载 1-10 页，但排除 1, 3, 5, 7 和 4，然后将 5 添加回来 (2, 5, 6, 8, 9, 10)',
 
         'You can find GID and token at the address bar like this: exhentai.org/g/[GID]/[Token]/':
             '您可以在地址栏中找到 GID 和 token，如 exhentai.org/g/[GID]/[Token]/',
@@ -152,7 +160,7 @@ merge(
     },
     [
         [/^Image Limits: (\d+)\/(\d+)$/, '图像配额：$1/$2'],
-        [/^Estimated Limits Cost: (\d+)$/, '预计成本：$1'],
+        [/^Estimated Costs: (\d+)$/, '预计成本：$1'],
         [
             /^...or (\d+) \+ (\d+) GP if you don't have enough viewing limits.\n/,
             '...或者 $1 + $2 GP (如果您没有足够的图像配额)\r',
