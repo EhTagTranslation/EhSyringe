@@ -187,8 +187,8 @@ merge(
         ' GB per month': ' GB 每月',
         'If you have a monthly data cap, you can provide it here. If the system detects that you are likely to exceed this target, it will reduce the priority of ranges on your client to reduce the load, but it is not guaranteed to stay below this value. Leave at 0 to limit with max speed alone. Must be at least 1000 GB if set.':
             '如果你有每月数据限额，请在此设置。如果系统检测到你可能超过此限额，它将会降低客户端上的静态范围的优先度，以降低网络负载，但并不能保证低于设定值。保留为 0 表示仅限制最大速度。最低限制为 1000 GB。',
-        'Static Range allocation is limited to 1 per 5 GB. Clients cannot be assigned high-capacity ranges if set below 10 TB/month.':
-            '每 1 组静态范围至少 5 GB。如果设置低于 10 TB/月，则不会被分配到大容量范围。',
+        'Static Range allocation is limited to 1 per 5 GB. Clients cannot be assigned high-capacity ranges if set below 5 TB/month.':
+            '每 1 组静态范围至少 5 GB。如果设置低于 5 TB/月，则不会被分配到大容量范围。',
         'To reduce the monthly data transfer target for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端的每月数据流量限制需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
@@ -229,7 +229,7 @@ merge(
         ' Allow removing static ranges if necessary (client must be shut down)':
             '必要时允许移除静态范围 (需要重启客户端)',
         'Apply Settings': '应用设置',
-        '[Back to Overview]': '[返回总览]',
+        'Back to Overview': '返回总览',
     },
     [
         [

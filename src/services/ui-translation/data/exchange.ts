@@ -16,6 +16,8 @@ merge(
         'Sell Hath': '卖出 Hath',
         'Buy GP': '买进 GP',
         'Sell GP': '卖出 GP',
+        'Update Bid!': '更新买单',
+        'Update Ask!': '更新卖单',
 
         '\n\t\t\t\tCount: ': '数量：',
         ' Hath \xA0\n\t\t\t\tBid Price/Hath: ': ' Hath \xA0 买入单价：',
@@ -27,7 +29,7 @@ merge(
         'Buy GP!': '买进 GP',
         'Sell GP!': '卖出 GP',
 
-        Spread: '挂单交易',
+        'Active Orders': '当前挂单',
         'Recent Transactions': '最近成交',
         'Bid (Buyers)': '买单',
         'Ask (Sellers)': '卖单',
