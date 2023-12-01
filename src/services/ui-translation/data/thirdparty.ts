@@ -62,7 +62,8 @@ merge(
         ' Force download resized image (never download original image) ': ' 强制下载重采样图像 (从不下载原图) ',
         ' Never get new image URL when failed to download image ': ' 图像下载失败时，不要获取新的图像地址 ',
         ' Never send "nl" GET parameter when getting new image URL ': ' 获取新图像地址时，不带 "nl" 参数 ',
-        ' Never show warning if image limits will probably used out on starting download': ' 开始下载时不显示图像配额可能不足的警告',
+        ' Never show warning if image limits will probably used out on starting download':
+            ' 开始下载时不显示图像配额可能不足的警告',
         " Never show warning when it's in peak hours now ": ' 在高峰时段下载时不显示警告 ',
         ' Never show warning when downloading a large gallery (>= 300 MB) ': ' 下载大型图库时不显示警告 (≥ 300 MB) ',
         ' Use File System to handle large Zip file': ' 使用文件系统处理大型 Zip 文件，',
