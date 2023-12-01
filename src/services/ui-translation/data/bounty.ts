@@ -49,7 +49,7 @@ merge(
         ' Hentai I don\'t have" would require an actual list; and so on. If you have any minimum quality/resolution demands, make sure to include this as well.':
             ' Hentai” 需要一个确切的列表；以此类推。如果您有任何最低质量/分辨率要求，请务必包含在内。',
         'The more precise you can define your bounty, the higher the chance you will be satisfied with its result. Keep in mind that if your bounty is vague and someone technically fulfills it (as determined by a Bounty Moderator), your posted reward is forfeit.':
-            '您的悬赏内容定义的越精确，您对其结果的满意度就会越高。请记住，如果您的悬赏内容含糊不清，而某人在技术上满足了它 (由悬赏版主裁定)，您发布的奖励会被没收。',
+            '您的悬赏内容定义的越精确，您对其结果的满意度就会越高。请记住，如果您的悬赏内容含糊不清，而某人在技术上满足了它（由悬赏版主裁定），您发布的奖励会被没收。',
         'Wanted Poster:': '悬赏海报：',
         'You can optionally upload a thumbnail, cover page, an image from an incomplete collection, or any other relevant image to further specify the bounty. (JPG/PNG)':
             '您可以选择上传缩略图、封面、不完整合集的图像或任何其他相关的图像，以进一步指定悬赏。(JPG/PNG)',
@@ -61,8 +61,8 @@ merge(
             '如果此悬赏为翻译或编辑工作，请选择相应的类型并提供源材料的链接。',
         'Otherwise, select Standard.': '否则，请选择标准。',
         'Minimum Hunter Rank:': '最低等级要求：',
-        'This is the minimum rank a Bounty Hunter needs to accept or claim this bounty. The default recommended setting will allow unranked hunters, but exclude those who have an inordinate number of rejected claims.':
-            '这是赏金猎人能够接受或认领此悬赏所需的最低等级。默认推荐设置将允许未评级的猎人，但不会包括那些曾被多次拒绝认领的猎人。',
+       'The minimum rank a Bounty Hunter needs to accept or claim this bounty.':
+            '赏金猎人能够接受或认领此悬赏所需的最低等级。',
         'Accepted Delivery:': '交付方式：',
         'These are the delivery methods you accept for this bounty. If you only want galleries posted to E-Hentai Galleries, you do not need to change this.':
             '请选择您接受的交付方式。如果您只是希望将图库发布到 E-Hentai，则无需更改此设置。',
