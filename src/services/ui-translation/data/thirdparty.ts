@@ -151,6 +151,7 @@ merge(
         'Pending...': '等待中...',
         'Downloading...': '下载中...',
         'Succeed!': '成功！',
+        'Auto Paused': '自动暂停',
         'Force Paused': '强制暂停',
         'Force Abort': '强制中止',
         'Fetch images failed.': '获取图像失败。',
@@ -158,6 +159,10 @@ merge(
         'Generating Blob object...': '生成 Blob 对象...',
         'Tags:': '标签：',
         'Uploader Comment:': '上传者评论：',
+        'You have exceeded your image viewing limits, or you need GP to download.': '您已超出图像配额，或者需要 GP 才能下载。',
+        'Reset Limits': '重置配额',
+        'Continue Download': '继续下载',
+        'Cancel Download': '取消下载',
     },
     [
         [/^Image Limits: (\d+)\/(\d+)$/, '图像配额：$1/$2'],

@@ -213,6 +213,10 @@ const data = {
     'You must agree with the Terms of Service to continue.': '您必须同意服务条款才能继续',
     'You must give the gallery a title to continue.': '您必须给图库命名才能继续',
     'Apply or revert the active reorder before continuing.': '您必须应用或还原当前的排序才能继续',
+
+    Continue: '继续',
+    'Some errors were encountered while adding files to the gallery.': '添加文件到图库时发生了一些错误。',
+    'Please review the error log above.': '请查看上方的错误日志。',
 };
 
 const regexData: Array<[RegExp, string]> = [
@@ -223,6 +227,7 @@ const regexData: Array<[RegExp, string]> = [
     [/^ uploaded files?, added $/, ' 个文件，已添加 '],
     [/You have added a total of $/, '您目前总共添加了 '],
     [/^Category of (.*?) can no longer be changed.$/, '无法更改 $1 的分类。'],
+    [/^The file (.*?) is corrupt, incomplete, too large, or not an accepted image file.$/, '文件 $1 损坏 / 不完整 / 过大或是不支持的图像文件。'],
 ];
 
 merge(/^\/upld\//, undefined, data, regexData);

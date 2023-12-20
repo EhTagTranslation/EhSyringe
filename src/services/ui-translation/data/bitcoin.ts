@@ -112,5 +112,9 @@ merge(
             /You have ([\d.]+) (BCH|BTC) pending, but these need to be confirmed first.$/,
             '您有 $1 $2 待确认，请等到确认完成后再操作。',
         ],
+        [
+            /^Bitcoin \(BTC\) transaction fees are very high right now \(estimated ([\d.]+) sat\/b\). We (strongly )?recommend using Bitcoin Cash \(BCH\) if possible.$/,
+            '当前比特币 (BTC) 的交易手续费较高 (大约 $1 sat/b)。如果可以的话，建议使用比特币现金 (BCH)。',
+        ],
     ],
 );
