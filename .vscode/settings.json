@@ -7,7 +7,7 @@
     },
     "cSpell.words": ["Tampermonkey", "ehgt", "ehsyringe", "exhentai", "hentai", "omnibox", "typedi"],
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     "editor.tabSize": 4,
     "files.eol": "\n",
