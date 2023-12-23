@@ -15,7 +15,7 @@ merge(
         ' Bitcoin Cash (BCH)': ' 比特币现金 (BCH)',
 
         'Generate an address first...': '请先生成地址',
-        'Not Created - Click To Generate': '未创建 - 点击生成',
+        'Not Created Yet - Click To Generate': '未创建 - 点击生成',
         'Your Bitcoin (BTC) Donation Wallet Address': '您的比特币 (BTC) 捐赠钱包地址',
         'IMPORTANT: ONLY USE THIS ADDRESS FOR BITCOIN (BTC)': '重要提示：只能将此地址用于比特币 (BTC)',
         'OTHER CRYPTO SENT TO THIS ADDRESS WILL BE LOST': '发送到此地址的其他类型加密货币都将丢失',
@@ -50,9 +50,9 @@ merge(
         Pending: '待定',
         Accepted: '已接受',
 
-        'Available To Apply: ': '可用余额：',
-        ' \xA0 \xA0 \xA0 Donation Total: ': ' \xA0 \xA0 \xA0 捐赠总额：',
-        ' \xA0 \xA0 \xA0 Adopt-a-Server Days: ': ' \xA0 \xA0 \xA0 领养服务器天数：',
+        'Unspent: ': '未使用：',
+        'Total All-Time Donations: ': '捐赠总额：',
+        'Total Adopt-a-Server Days: ': '领养服务器天数：',
 
         'Current Conversion Rate: ': '当前汇率：',
 
@@ -72,19 +72,20 @@ merge(
         '3 Year @ $5/month $180': '3 年 @ $5/月 $180',
         'Purchase Slots': '我要领养',
 
-        'Donated coins are applied as the equivalent value in USD at the time of your choosing, using the site rate which is calculated from recent real-world value.':
-            '捐赠的虚拟货币在您使用时会以最近平均历史价格作为网站的汇率转换为美元。',
-        'The site rate will never drop sharply, it adjusts slowly over time if the real-world value is higher than or less than 90% of the site rate.':
-            '网站的汇率永远不会急剧下降，只有当实际汇率高于网站汇率，或低于网站汇率的 90% 时，才会随着时间推移缓慢调整。',
+        'Donated coins are applied as the equivalent value in USD at the time of your choosing, using the site rate which is calculated from recent real-world value. The site rate will never drop sharply, it adjusts slowly over time if the real-world value is higher than or less than 90% of the site rate.':
+            '捐赠的虚拟货币在您使用时会以最近平均历史价格作为网站的汇率转换为美元。网站的汇率永远不会急剧下降，只有当实际汇率高于网站汇率，或低于网站汇率的 90% 时，才会随着时间推移缓慢调整。',
         'The conversion rates right now are ': '当前汇率：',
         ' for Bitcoin, and ': ' (比特币) \xA0 ',
         ' for Bitcoin Cash.': ' (比特币现金)',
 
-        'Donation Level': '捐赠等级',
+        'Donation Tier': '捐赠等级',
         'EXP Bonus': '经验加成',
         'Daily Bonus': '每日奖励',
         'Daily Hath': '每日 Hath',
         'Free Archives': '免费档案配额',
+        'EXP Bonus: ': '经验加成：',
+        ' \xA0 Free Archives: ': ' \xA0 免费档案配额：',
+        'Daily Bonus: ': '每日奖励：',
         'You did not donate anything yet, but we still love you.': '您还没有捐赠，但我们仍然爱您。',
         'Bronze Star': '铜星',
         'Silver Star': '银星',
@@ -94,11 +95,10 @@ merge(
         'Septua Star': '七星',
         'Honorary Catgirl': '荣誉猫娘',
 
-        'Bitcoin (BTC) Spending History': '比特币 (BTC) 消费历史',
-        'Bitcoin Cash (BCH) Spending History': '比特币现金 (BCH) 消费历史',
-        'No coins have been applied yet': '目前还没有使用此类虚拟货币',
-        'Adopt-a-Server Slots': '服务器领养日志',
-        'No slots have been adopted yet': '目前还没有领养服务器',
+        'Recent Spending History': '近期消费记录',
+        'No coins have been applied recently': '近期没有使用此类虚拟货币',
+        'Active + Recent Adopt-a-Server Slots': '近期服务器领养记录',
+        'No slots have been adopted recently': '近期没有领养服务器',
     },
     [
         [/^Refunded (.*?) Hath/, '已退还 $1 Hath'],
@@ -111,6 +111,10 @@ merge(
         [
             /You have ([\d.]+) (BCH|BTC) pending, but these need to be confirmed first.$/,
             '您有 $1 $2 待确认，请等到确认完成后再操作。',
+        ],
+        [
+            /^Bitcoin \(BTC\) transaction fees are very high right now \(estimated ([\d.]+) sat\/b\). We (strongly )?recommend using Bitcoin Cash \(BCH\) if possible.$/,
+            '当前比特币 (BTC) 的交易手续费较高 (大约 $1 sat/b)。如果可以的话，建议使用比特币现金 (BCH)。',
         ],
     ],
 );

@@ -174,10 +174,12 @@ export class Syringe {
             let node = nodeIterator.nextNode();
             while (node) {
                 nodes.push(node);
-                this.translateNode(node);
                 node = nodeIterator.nextNode();
             }
-            this.logger.debug(`有 ${nodes.length} 个节点在注入前加载`, nodes);
+            this.logger.warn(`有 ${nodes.length} 个节点在注入前加载`, nodes);
+            for (const node of nodes) {
+                this.translateNode(node);
+            }
         } else {
             this.logger.debug(`没有节点在注入前加载`);
         }
@@ -279,7 +281,8 @@ export class Syringe {
         if (
             !node.nodeName ||
             this.skipNode.has(node.nodeName) ||
-            (node.parentNode && this.skipNode.has(node.parentNode.nodeName))
+            (node.parentNode != null && this.skipNode.has(node.parentNode.nodeName)) ||
+            (isElement(node) && node.matches('.eh-syringe-ignore, .eh-syringe-ignore *'))
         ) {
             return;
         }
@@ -407,36 +410,24 @@ export class Syringe {
         }
 
         if (isElement(node, 'p') && node.classList.contains('gpc')) {
-            /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错*/
-            const text = node.textContent ?? '';
-            const p = document.createElement('p');
-            p.textContent = text.replace(/Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?/, '$1 - $2，共 $3 张图像');
-            p.className = 'gpc-translate';
-            node.parentElement?.insertBefore(p, node);
-            node.style.display = 'none';
+            /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错 */
+            this.cloneAndPrependElement(node);
         }
 
-        if (isElement(node, 'div')) {
+        if (isElement(node, 'div') && node.id === 'gdd') {
             /* E-Hentai-Downloader 兼容处理 */
-            if (node.id === 'gdd') {
-                const div = document.createElement('div');
-                div.textContent = node.textContent;
-                div.style.display = 'none';
-                node.insertBefore(div, null);
-            }
-
-            /* 熊猫书签 兼容处理 2 */
-            if (
-                node.parentElement?.id === 'gdo4' &&
-                node.classList.contains('ths') &&
-                node.classList.contains('nosel')
-            ) {
-                const div = document.createElement('div');
-                div.textContent = node.textContent;
-                div.style.display = 'none';
-                div.className = 'ths';
-                node.parentElement.insertBefore(div, node);
-            }
+            this.cloneAndPrependElement(node.firstElementChild!);
         }
+    }
+
+    private cloneAndPrependElement<T extends Element>(el: T): T {
+        const clone = el.cloneNode(true) as T;
+        clone.classList.add('eh-syringe-ignore');
+        clone.setAttribute('hidden', '');
+        clone.querySelectorAll('[id]').forEach((node) => {
+            node.id = `ehs-clone-${node.id}`;
+        });
+        el.before(clone);
+        return clone;
     }
 }

@@ -18,14 +18,12 @@ merge(
         'Chinese Dominion': '中国大陆',
         Global: '全球',
 
-        '\n\tCurrent Network Load shows how much raw bandwidth is currently used to serve images. This includes requests served by H@H as well as direct requests from the image servers.':
-            '当前网络负载显示当前用于提供图像的原始带宽量。这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
-        '\n\tH@H Miss% shows the percentage of requests for the region that would have gone to a H@H client if one was available, but where no client was ready to serve the request.':
-            'H@H 缓存未命中% 显示此区域没有 H@H 客户端能为 H@H 请求提供服务的百分比。',
-        '\n\tCoverage denotes the average number of times a static file range partition can be found within a given region, indicating the total available storage capacity.':
-            '覆盖率表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
-        '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region for the last 24 hours.':
-            '命中/GB 显示过去 24 小时内此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
+        '\n\tNetwork Load shows how much bandwidth is currently being used. This includes requests served by H@H and the image servers.':
+            '当前网络负载 显示当前使用的带宽量，这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
+        '\n\tCoverage shows the average number of times a file range is found within a region, indicating the total available storage capacity.':
+            '覆盖率 表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
+        '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
+            '命中/GB 表示此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
 
         'Your Active Clients': '您的活动客户端',
         'To add more clients, ': '要添加更多客户端，请',
@@ -91,8 +89,10 @@ merge(
         '. Having the client set to the wrong country will make it perform worse than it would otherwise do. If the country is shown in ':
             '。位于错误的国家/地区的客户端的性能表现将不如预期。如果国家/地区显示为 ',
         red: '红色',
-        ' that means it has been moved outside of its home region and will not be assigned new ranges. Contact Tenboro if you need to change the home region.':
-            '，则意味着它已被迁移出其所在地区，不会再被分配新的范围。如果您需要更改所在地区，请联系 Tenboro。',
+        ' that means it is appears to be located outside of its home region, and ':
+            '，则意味着它似乎位于其所在地区之外，',
+        'will not be assigned new ranges nor gain any hath': '不会再被分配新的范围，也不会获得 Hath',
+        '. Contact Tenboro if you need to change the home region.': '。如果您需要更改所在地区，请联系 Tenboro。',
 
         'Free Archive Quota: ': '免费的存档配额：',
         ', measured in a 168-hour sliding window. Clients must be ':
@@ -101,18 +101,13 @@ merge(
         ' and must have been running for more than 24 hours straight to qualify.': '并运行超过 24 小时才能获得资格。',
 
         'Client Download': '客户端下载',
-        'The current version of Hentai@Home is ': 'Hentai@Home 的当前版本是',
-        '. You can find the release notes for this version ': '。此版本的发行说明见',
-        here: '发行说明 (英文)',
-
         File: '文件',
         Size: '大小',
         'Source Code': '源代码',
-
-        'Please verify that the size and cryptographic hashes correspond to the file you download. For more information about file validation, see these links: ':
-            '请验证您下载的文件的大小和哈希值与上方给出的数值相对应。有关文件验证的更多信息，请参阅以下链接 (英文)：',
-        'Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
-            'Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
+        'You can find the current release notes ': '您可以在 ',
+        here: '此处',
+        '. You should verify that the size and cryptographic hash correspond to the files you download. Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.':
+            ' 找到当前版本的发行说明 (英文)。请验证您下载的文件的大小和哈希值与上方给出的数值相对应。Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
 
         'Unfortunately, we cannot accept clients with less than 80 Mbit/s outgoing speed.':
             '抱歉，我们无法接受出站速率低于 80 Mbps 的客户端。',
@@ -157,7 +152,8 @@ merge(
         'Maximum Upload Rate': '最大上传速率',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
-        'Static Range allocation is limited to 1 per 5 KB/s.': '每 1 组静态范围至少 5 KB/s。',
+        'Static Range allocation is limited to 1 per 5 KB/s. Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
+            '每 1 组静态范围至少 5 KB/s。如果设置低于 10 MB/s，则不会被分配到大容量范围。',
         ' KBytes/s': ' KB/s',
         ' Enable Client-Side Speed Limit (recommended only for home networks)':
             ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
@@ -166,7 +162,7 @@ merge(
         ' per Second) is equivalent to 8 Kb/s or Kbps (Kilo': '每秒) 相当于 8 Kb/s 或 Kbps (千',
         bits: '比特',
         ' per Second). Internet speeds are typically advertised as the latter (Mbps or Mbit/s), and this is also what Speedtest uses, so make sure you use the right one. Do not set this higher than the upload bandwidth of your internet connection.':
-            '每秒)。Internet 速度通常被宣传为后者（Mbps 或 Mbit/s），Speedtest也使用这种表示方式，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
+            '每秒)。Internet 速度通常被宣传为后者 (Mbps 或 Mbit/s)，Speedtest 也使用这种表示方式，因此请确保使用正确的速度。您不应将此设置为高于 Internet 连接的上行带宽。',
         'To reduce the upload rate for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端的上传速率需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
@@ -191,7 +187,8 @@ merge(
         ' GB per month': ' GB 每月',
         'If you have a monthly data cap, you can provide it here. If the system detects that you are likely to exceed this target, it will reduce the priority of ranges on your client to reduce the load, but it is not guaranteed to stay below this value. Leave at 0 to limit with max speed alone. Must be at least 1000 GB if set.':
             '如果你有每月数据限额，请在此设置。如果系统检测到你可能超过此限额，它将会降低客户端上的静态范围的优先度，以降低网络负载，但并不能保证低于设定值。保留为 0 表示仅限制最大速度。最低限制为 1000 GB。',
-        'Static Range allocation is limited to 1 per 5 GB.': '每 1 组静态范围至少 5 GB。',
+        'Static Range allocation is limited to 1 per 5 GB. Clients cannot be assigned high-capacity ranges if set below 5 TB/month.':
+            '每 1 组静态范围至少 5 GB。如果设置低于 5 TB/月，则不会被分配到大容量范围。',
         'To reduce the monthly data transfer target for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端的每月数据流量限制需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
 
@@ -206,6 +203,7 @@ merge(
         'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
             '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
         'This client currently has ': '此客户端当前被分配了 ',
+        ' static range(s) assigned.': ' 组静态范围。',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
@@ -229,9 +227,9 @@ merge(
         'Changes will be applied within roughly two minutes. If you decrease the disk cache space, it will not take effect until next restart.':
             '更改将在大约两分钟内生效。如果减少了磁盘缓存空间，则需要重新启动才会生效。',
         ' Allow removing static ranges if necessary (client must be shut down)':
-            '必要时允许移除静态范围（需要重启客户端）',
+            '必要时允许移除静态范围 (需要重启客户端)',
         'Apply Settings': '应用设置',
-        '[Back to Overview]': '[返回总览]',
+        'Back to Overview': '返回总览',
     },
     [
         [

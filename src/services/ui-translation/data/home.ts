@@ -1,14 +1,14 @@
 import { merge } from '../helper';
 
 merge(/^\/home\.php/, undefined, {
-    'Image Limits': '图像限制',
+    'Image Limits': '图像配额',
     'You are currently at ': '当前：',
     ' towards a limit of ': '，限制为 ',
     '.': '。',
     'Reset Cost: ': '重置限制花费：',
     'Reset Limit': '重置限制',
     'Nothing to reset.': '没有可重置的限制。',
-    'Image limit was successfully reset.': '图像限制已成功重置。',
+    'Image limit was successfully reset.': '图像配额已成功重置。',
     'You will be returned to the Management Interface momentarily.': '您将在几秒后返回管理界面。',
     '(Click here to continue)': '(点此继续)',
     'Please wait...': '请稍候...',

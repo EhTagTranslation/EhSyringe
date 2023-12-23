@@ -33,6 +33,7 @@ merge(
 
         Front: '首页',
         LoFi: '低保真版',
+        'Terms of Service': '服务条款',
         ToS: '服务条款',
         Advertise: '广告',
         Onion: '洋葱网址',

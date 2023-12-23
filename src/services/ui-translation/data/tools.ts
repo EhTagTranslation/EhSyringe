@@ -1,7 +1,7 @@
 import { merge } from '../helper';
 
 merge(
-    /^\/tools\.php\?.*act=track_expunge/,
+    /^\/tools\/track_expunge/,
     'repo.e-hentai.org',
     {
         'State: \xA0 [': '状态： [',
@@ -48,7 +48,7 @@ merge(
 );
 
 merge(
-    /^\/tools\.php\?.*act=track_rename/,
+    /^\/tools\/track_rename/,
     'repo.e-hentai.org',
     {
         '\nFilter: \xA0\n[': '状态： [',
@@ -74,7 +74,7 @@ merge(
 );
 
 merge(
-    /^\/tools\.php\?.*act=taglist/,
+    /^\/tools\/taglist/,
     'repo.e-hentai.org',
     {
         'Tagging data for user ': '',
