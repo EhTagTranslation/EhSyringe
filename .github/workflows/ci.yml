@@ -12,9 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
-          name: releases
+          name: docs
           path: |
             README.md
             README.userscript.md
@@ -29,7 +29,7 @@ jobs:
           pnpm run build:firefox
           pnpm run build:chrome
           pnpm run build:monkey
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: releases
           path: releases/
@@ -44,7 +44,11 @@ jobs:
         with:
           ref: release
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
+        with:
+          name: docs
+      - name: Download artifact
+        uses: actions/download-artifact@v4
         with:
           name: releases
       - name: Generate checksum
