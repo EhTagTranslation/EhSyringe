@@ -19,6 +19,7 @@ import './data/news';
 import './data/popular';
 import './data/search';
 import './data/stats';
+import './data/tagjustification';
 import './data/tools';
 import './data/toplist';
 import './data/torrents';
