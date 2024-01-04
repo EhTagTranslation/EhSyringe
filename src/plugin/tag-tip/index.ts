@@ -148,6 +148,7 @@ export class TagTip {
             }
             e.preventDefault();
             e.stopPropagation();
+            this.followSelectedScroll();
         } else if (e.code === 'Enter') {
             const children = Array.from(this.autoCompleteList.children);
             if (this.selectedIndex >= 0 && children[this.selectedIndex]) {
@@ -155,6 +156,21 @@ export class TagTip {
                 e.preventDefault();
                 e.stopPropagation();
             }
+        }
+    }
+
+    // 来自 ChatGPT
+    followSelectedScroll(): void {
+        const parentRect = this.autoCompleteList.getBoundingClientRect();
+        const elementRect = this.autoCompleteList.children[this.selectedIndex].getBoundingClientRect();
+
+        // 如果元素在可视区域下方
+        if (elementRect.bottom > parentRect.bottom) {
+            this.autoCompleteList.scrollTop += elementRect.bottom - parentRect.bottom;
+        }
+        // 如果元素在可视区域上方
+        else if (elementRect.top < parentRect.top) {
+            this.autoCompleteList.scrollTop -= parentRect.top - elementRect.top;
         }
     }
 
