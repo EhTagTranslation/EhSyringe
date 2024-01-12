@@ -46,7 +46,7 @@ export interface StorageItems {
 @Service()
 export class Storage {
     constructor(readonly logger: Logger) {
-        Object.defineProperty(globalThis, 'storage', {
+        Object.defineProperty(globalThis, '__eh_storage__', {
             value: () => {
                 (async () => {
                     const keys = await this.keys();
