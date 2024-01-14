@@ -1,6 +1,6 @@
 # EhSyringe
 
-[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/build/badge.svg)](../../actions)
+[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/ci/badge.svg)](../../actions)
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/total)](../../releases)
 [![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/EhTagTranslation/EhSyringe/latest/ehsyringe.chrome.zip)](../../releases/latest/download/ehsyringe.chrome.zip)
