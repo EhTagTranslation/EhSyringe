@@ -11,7 +11,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 这一针打下去你就会说中文了。
 
-![image](https://user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
+![Syringe](https://user-images.githubusercontent.com/5716100/62419351-be9d7400-b6b0-11e9-86d3-680436973176.png)
 
 ## 安装
 
@@ -53,7 +53,7 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ## 功能
 
--   全站翻译（大部分)
+-   全站翻译（大部分）
 -   TAG 翻译
 -   TAG 介绍
 -   TAG 翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.fly.dev/database/all/~badge)](https://ehtt.vercel.app/list/all) 条标签翻译）
