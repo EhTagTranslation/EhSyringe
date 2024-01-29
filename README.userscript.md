@@ -2,7 +2,7 @@
 
 # EhSyringe
 
-[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/build/badge.svg)](https://github.com/EhTagTranslation/EhSyringe/actions)
+[![Build Status](https://github.com/EhTagTranslation/EhSyringe/workflows/ci/badge.svg)](https://github.com/EhTagTranslation/EhSyringe/actions)
 
 E 站注射器，将中文翻译注入到 E 站体内。
 
