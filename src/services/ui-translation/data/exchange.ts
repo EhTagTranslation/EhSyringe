@@ -18,6 +18,9 @@ merge(
         'Sell GP': '卖出 GP',
         'Update Bid!': '更新买单',
         'Update Ask!': '更新卖单',
+        'Insufficient credits': 'Credits 不足',
+        'Insufficient Hath': 'Hath 不足',
+        'Insufficient GP': 'GP 不足',
 
         '\n\t\t\t\tCount: ': '数量：',
         ' Hath \xA0\n\t\t\t\tBid Price/Hath: ': ' Hath \xA0 买入单价：',
