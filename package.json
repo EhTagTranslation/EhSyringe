@@ -33,7 +33,7 @@
         "@babel/runtime-corejs3": "^7.23.9",
         "@types/chrome": "^0.0.259",
         "@types/escape-html": "^1.0.4",
-        "@types/node": "^20.11.7",
+        "@types/node": "^20.11.10",
         "@types/tampermonkey": "^5.0.2",
         "@types/webextension-polyfill": "^0.10.7",
         "@typescript-eslint/eslint-plugin": "^6.19.1",
