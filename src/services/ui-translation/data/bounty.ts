@@ -89,6 +89,9 @@ merge(
         'A rejected claim cannot be resubmitted, and will affect your rank.':
             '被拒绝的认领不能重新提交，并且会影响您的等级。',
         'You have not yet accepted or claimed this bounty.': '您尚未接受或认领此悬赏。',
+        'You have accepted this bounty.': '您已接受此悬赏。',
+        'You cannot post a blank accept/claim, or you do not have sufficient funds to claim the bounty.':
+            '您不能发布空的接受/认领请求，或者您没有足够的资金来认领悬赏。',
         'Your rank (Unranked) is insufficient to accept this bounty.': '您的等级 (未评级) 不足以接受此悬赏。',
         'For accepting a bounty, you can enter a short comment here. For claiming a bounty, you must enter all the necessary details for where the bounty can be found.':
             '接受悬赏时，您可以在此处输入简短的评论。认领悬赏时，则必须提供悬赏所需的所有详细信息。',
@@ -98,6 +101,7 @@ merge(
             '要认领悬赏，您必须支付 1000 Credits 的保证金。如果认领被接受，保证金将退还给您，但如果认领被判定无效，则会被没收。',
         'Accept Bounty': '接受悬赏',
         'Claim Bounty': '认领悬赏',
+        'Withdraw Accept/Claim': '撤回接受/认领',
 
         'You can add additional rewards as long as the bounty has not been accepted or claimed. Rewards lock in after 15 minutes and can then only be rescinded after a month or if the bounty is cancelled. You will have no saying in whether a claim is accepted or not.':
             '只要悬赏未被认领，您就可以增加额外赏金。赏金会在 15 分钟后被锁定，只能在一个月后或悬赏被取消时才能撤回。您无权决定是否接受认领。',
