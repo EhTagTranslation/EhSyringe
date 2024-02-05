@@ -147,7 +147,7 @@ export class Syringe {
     private codePatch(): void {
         // 该方案同时在 V2、V3 和 UserScript 生效
         // 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
-        const actualCode = `
+        const actualCode = /* js */ `
             window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {
                 document.getElementById('advdiv').style.display == 'none' ? show_advsearch_pane(b) : hide_advsearch_pane(b);
             }
@@ -155,10 +155,10 @@ export class Syringe {
                 document.getElementById('fsdiv').style.display == 'none' ? show_filesearch_pane(b) : hide_filesearch_pane(b);
             }
             `;
-
-        document.documentElement.setAttribute('onreset', actualCode);
-        document.documentElement.dispatchEvent(new Event('reset'));
-        document.documentElement.removeAttribute('onreset');
+        const { documentElement } = document;
+        documentElement.setAttribute('onreset', actualCode);
+        documentElement.dispatchEvent(new Event('reset'));
+        documentElement.removeAttribute('onreset');
     }
 
     private init(): void {
@@ -379,17 +379,23 @@ export class Syringe {
             }
             return;
         }
-        if (isElement(node, 'input') || isElement(node, 'textarea')) {
-            if (node.placeholder) {
-                const translation = this.translateUiText(node.placeholder);
-                if (translation != null) {
-                    node.placeholder = translation;
+        if (isElement(node, 'input') && (node.type === 'submit' || node.type === 'button' || node.type === 'reset')) {
+            // 将 input[type=submit] 等按钮替换为 button，避免 value 属性被翻译导致提交内容错误
+            const translation = this.translateUiText(node.value);
+            if (translation != null) {
+                const button = document.createElement('button');
+                for (const attr of node.attributes) {
+                    button.setAttribute(attr.name, attr.value);
                 }
-            } else if (node.type === 'submit' || node.type === 'button') {
-                const translation = this.translateUiText(node.value);
-                if (translation != null) {
-                    node.value = translation;
-                }
+                button.textContent = translation;
+                node.replaceWith(button);
+            }
+            return;
+        }
+        if ((isElement(node, 'input') || isElement(node, 'textarea')) && node.placeholder) {
+            const translation = this.translateUiText(node.placeholder);
+            if (translation != null) {
+                node.placeholder = translation;
             }
             return;
         }

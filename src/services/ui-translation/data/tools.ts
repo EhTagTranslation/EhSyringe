@@ -140,7 +140,8 @@ merge(
 
         Comments: '评论',
         'There are currently no comments for this request': '当前没有评论',
-        'If you have any (useful) information about this tag, you can submit it here.': '如果您有任何 (有用的) 关于此标签的信息，可以在此提交。',
+        'If you have any (useful) information about this tag, you can submit it here.':
+            '如果您有任何 (有用的) 关于此标签的信息，可以在此提交。',
         'Submit Comment': '提交评论',
         'Back to list': '返回列表',
 

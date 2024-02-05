@@ -159,7 +159,8 @@ merge(
         'Generating Blob object...': '生成 Blob 对象...',
         'Tags:': '标签：',
         'Uploader Comment:': '上传者评论：',
-        'You have exceeded your image viewing limits, or you need GP to download.': '您已超出图像配额，或者需要 GP 才能下载。',
+        'You have exceeded your image viewing limits, or you need GP to download.':
+            '您已超出图像配额，或者需要 GP 才能下载。',
         'Reset Limits': '重置配额',
         'Continue Download': '继续下载',
         'Cancel Download': '取消下载',

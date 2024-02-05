@@ -5,13 +5,15 @@ merge(
     undefined,
     {
         'New Tag Justification': '新建标签申请',
-        'Make sure to provide a source for each requested tag whenever possible. ': '请尽可能地为每个申请的标签提供来源。',
+        'Make sure to provide a source for each requested tag whenever possible. ':
+            '请尽可能地为每个申请的标签提供来源。',
         'Read this article on how to provide a good source.': '请阅读本文以了解如何提供良好的来源。',
         'If a source cannot be found, elaborate why you still think the tag should be added in the sources field.':
             '如果找不到来源，请在来源一栏中说明您认为应该添加此标签的理由。',
         'If you leave this page without providing the requested information, these tags will be deleted.':
             '如果您没有提供所需的信息就离开了页面，则添加的标签会被删除。',
-        'You have provided justification for all of the added tags. You can now ': '您已经为所有添加的标签提供了理由。现在您可以 ',
+        'You have provided justification for all of the added tags. You can now ':
+            '您已经为所有添加的标签提供了理由。现在您可以 ',
         'return to the gallery': '返回图库',
         ' or close this page.': ' 或关闭此页面。',
         'My Pending Tag Requests': '我的待审核标签申请',
@@ -35,8 +37,8 @@ merge(
     },
     [
         [
-            /^You still need to provide sources for (\d+) tag. If you created it by mistake, write "created by mistake" in the sources field.$/, 
+            /^You still need to provide sources for (\d+) tag. If you created it by mistake, write "created by mistake" in the sources field.$/,
             '您还需要为 $1 个标签提供来源。如果您是误添加的标签，请在来源一栏中填写 "created by mistake"。',
-        ]
+        ],
     ],
 );

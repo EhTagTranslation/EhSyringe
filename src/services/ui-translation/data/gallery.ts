@@ -104,6 +104,7 @@ merge(
         'Enter your comments here, then hit Post Comment. If the last comment posted is yours, this will be appended to that post.':
             '在此处输入您的评论，然后点击发表评论。如果最后一条评论是您的，则新评论会被附加到最后一条评论下。',
         'Post Comment': '发表评论',
+        'Your comment is too short.': '您的评论太短了。',
 
         'Gallery not found. If you just added this gallery, you may have to wait a short while before it becomes available.':
             '没有找到图库。如果您刚刚添加了此图库，可能需要等待一段时间后才能变得可用。',

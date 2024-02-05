@@ -61,7 +61,7 @@ merge(
             '如果此悬赏为翻译或编辑工作，请选择相应的类型并提供源材料的链接。',
         'Otherwise, select Standard.': '否则，请选择标准。',
         'Minimum Hunter Rank:': '最低等级要求：',
-       'The minimum rank a Bounty Hunter needs to accept or claim this bounty.':
+        'The minimum rank a Bounty Hunter needs to accept or claim this bounty.':
             '赏金猎人能够接受或认领此悬赏所需的最低等级。',
         'Accepted Delivery:': '交付方式：',
         'These are the delivery methods you accept for this bounty. If you only want galleries posted to E-Hentai Galleries, you do not need to change this.':
