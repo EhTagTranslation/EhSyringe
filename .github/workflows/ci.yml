@@ -20,9 +20,10 @@ jobs:
             README.userscript.md
             LICENSE
       - name: Install
-        uses: NullVoxPopuli/action-setup-pnpm@v2
+        uses: wyvox/action-setup-pnpm@v3
         with:
-          node-version: 18
+          node-version: 20
+          node-version-file: ''
           pnpm-version: 8
       - name: Build
         run: |
