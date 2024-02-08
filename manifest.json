@@ -39,7 +39,13 @@
                 "*://*.e-hentai.org/*",
                 "*://*.hath.network/*"
             ],
-            "exclude_matches": ["*://forums.e-hentai.org/*"],
+            "exclude_matches": [
+                "*://forums.e-hentai.org/*",
+                "*://exhentai.org/s/*",
+                "*://*.exhentai.org/s/*",
+                "*://e-hentai.org/s/*",
+                "*://*.e-hentai.org/s/*"
+            ],
             "js": ["script/page.js"],
             "run_at": "document_start"
         }
