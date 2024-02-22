@@ -380,16 +380,23 @@ export class Syringe {
             return;
         }
         if (isElement(node, 'input') && (node.type === 'submit' || node.type === 'button' || node.type === 'reset')) {
-            // 将 input[type=submit] 等按钮替换为 button，避免 value 属性被翻译导致提交内容错误
+            // 将 input[type=submit] 等按钮替换为 button[ehs-input]，避免 value 属性被翻译导致提交内容错误
             const translation = this.translateUiText(node.value);
             if (translation != null) {
                 const button = document.createElement('button');
                 for (const attr of node.attributes) {
                     button.setAttribute(attr.name, attr.value);
                 }
+                button.setAttribute('ehs-input', '');
                 button.textContent = translation;
                 node.replaceWith(button);
             }
+            return;
+        }
+        if (isElement(node, 'button') && node.hasAttribute('ehs-input')) {
+            // 响应 button[ehs-input] 的 value 变更
+            const translation = this.translateUiText(node.value);
+            node.textContent = translation ?? node.value;
             return;
         }
         if ((isElement(node, 'input') || isElement(node, 'textarea')) && node.placeholder) {
