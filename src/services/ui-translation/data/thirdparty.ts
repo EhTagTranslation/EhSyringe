@@ -147,6 +147,7 @@ merge(
         here: '此处',
         ' to force get your downloaded images.': ' 强制获取已下载的图像。',
         'Pages URL is MPV link': '页面 URL 是 MPV 链接',
+        'MPV is available, use MPV to fetch all pages.': 'MPV 可用，通过 MPV 获取所有页面。',
         'Fetching Gallery Pages URL From MPV...': '从 MPV 获取图库页面 URL...',
         'Pending...': '等待中...',
         'Downloading...': '下载中...',

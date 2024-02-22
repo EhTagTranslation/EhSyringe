@@ -50,38 +50,32 @@ merge(
         'Not available when offline': '离线状态下不可用',
 
         'Apply for H@H participation': '参与申请 H@H',
-        'For information on how to participate in the Hentai@Home Project, please refer to the ':
+        'For information on how to participate in the Hentai@Home Project, refer to the ':
             '有关如何参与 Hentai@Home 项目的信息，请参阅 ',
         'Hentai@Home Project FAQ': 'Hentai@Home 项目常见问题解答 (英文)',
-        '. Make sure that you have read and understand this BEFORE you submit an application. If you need to add more than one client, or if you have a headless server that cannot run SpeedTest, you have to ':
-            '。在提交申请之前，请确保您已阅读并理解此内容。如果您需要添加多个客户端，或者您有一台无法运行 SpeedTest 的无头服务器，则必须',
-        '. Otherwise, use the form below.': '。否则，请使用下面的表格。',
+        '. Read and understand the requirements BEFORE you submit an application. Your system and network speed must meet some minimum requirements to run H@H, and the client cannot be regularly shut down.':
+            '。在提交申请之前，请确保您已阅读并理解要求。您的系统和网络速度必须满足一些最低要求才能运行 H@H，并且客户端不能经常关闭。',
+        'If you have a headless server that cannot use the normal speedtest, use ':
+            '如果您有一台无法使用寻常 SpeedTest 的无头服务器，请使用 ',
+        ' instead.': ' 代替。',
         'Max Outgoing Speed': '最大出站速率',
         'The maximum outgoing speed you want to use for this client.': '此客户端允许的最大出站 (上传) 速度。',
         'This should be less than or equal to your connection speed.': '此速度应当小于等于您的连接速度。',
-        'Max Transfer per Hour': '每小时最大传输量',
-        'The maximum total outgoing data transfer the client can use per hour.':
-            '客户端每小时可使用的最大传出数据总量。',
-        ' MB/hour': ' MB/小时',
         'Disk Cache Size': '磁盘缓存大小',
-        'The maximum allowed disk space usage for the image cache.': '允许缓存占用的最大磁盘空间。',
+        'The maximum allowed disk space for the image cache.': '允许缓存占用的最大磁盘空间。',
+        'The allocated space must be reserved for H@H.': '分配的空间必须为 H@H 保留。',
         'Speed Test': '速度测试结果',
         'Go to ': '前往 ',
-        ' and run a test against your closest server. After the test completes, paste the result URL here.\n\t\t\t':
-            ' 使用距离最近的测速服务器进行测试。将测速结果 URL 粘贴在此处。',
-        'AT LEAST 80 Mbit/s UPLOAD ': '要求：至少 80 Mbps 上传速度 ',
+        ' and run a test against your closest server.': ' 并使用距离最近的服务器进行测试。',
+        'After the test completes, paste the result URL here.': '测试完成后，将结果 URL 粘贴在此处。',
+        'The resulting speedtest MUST show at least 80 Mbps upload ': '要求：至少 80 Mbps 上传速度 ',
         AND: '和',
-        ' 80 Mbit/s DOWNLOAD speed required.': ' 80 Mbps 下载速度',
+        ' 80 Mbps download! Old tests will be rejected.': ' 80 Mbps 下载速度，使用旧的测试结果会被拒绝。',
+        'The client MUST normally be running at all times. Clients with frequent/extensive downtime will be revoked.':
+            '正常情况下客户端必须一直运行，经常/长时间离线的客户端会被吊销。',
+        'BOTH measurements in my test above are at least 80 Mbps': '我的测速两个值均大于 80 Mbps',
+        'This client will be hosted on a system that is usually running 24/7': '此客户端将托管在一台正常情况下 24 小时运行的系统上',
         'Submit Application': '提交申请',
-        'If this is a headless server that cannot run speedtest, contact ':
-            '如果是一台无法运行 SpeedTest 的无头服务器，请联系 ',
-        'BOTH measurements in my test above are at least 80 Mbit/s *': '我的测速两个值均大于 80 Mbps *',
-        'This client will be run on a computer/server that is online 24/7 **':
-            '此客户端将在一台 24 小时在线的计算机/服务器上运行 **',
-        'If your connection speed is below the requirement, the resources taken up by tracking the client outweight those saved by having it in the network.':
-            '如果链接速度低于要求，追踪客户端所消耗的资源将超过您客户端的贡献。',
-        'This does not mean that you cannot restart the computer for updates or turn it off when you go on a vacation. It does however mean that if you shut it down at night, running H@H is not possible.':
-            '您可以重启计算机进行系统更新，或者在去度假时关闭它。但是如果您每晚都需要关闭它，那它不适合运行 H@H。',
 
         'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ':
             '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
@@ -118,14 +112,12 @@ merge(
         [/^([\d.]+) \/ day$/, '$1 / 天'],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B) per week$/, '每周 $1 $2'],
-        [/^Must be at least ([\d.]+) ([KMGTP]B)\/s$/, '不小于 $1 $2/s'],
-        [/^Must be at least ([\d.]+) ([KMGTP]B)\/hour, or 0 for unlimited.$/, '必须至少为 $1 $2/小时，填 0 表示无限制'],
+        [/^Must be at least ([\d.]+) ([KMGTP]B)\/s, which must be reserved for H@H.$/, '不小于 $1 $2/s，必须为 H@H 保留。'],
         [
-            /^ Must be at least ([\d.]+) ([KMGTP]B). More is better, but space must be dedicated.$/,
-            '至少为 $1 $2。越多越好，但空间必须专用。',
+            /^ Must be at least ([\d.]+) ([KMGTP]iB) but more is always better.$/,
+            '至少为 $1 $2，但越多越好。',
         ],
         [/^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/, '最大出站速率必须至少为 $1 $2/s。'],
-        [/^Transfer Limit must be 0 or at least ([\d.]+) ([KMGTP]B)\/hour.$/, '传输量必须至少为 $1 $2/小时。'],
         [/^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/, '磁盘空间必须至少为 $1 $2。'],
     ],
 );

@@ -4,7 +4,7 @@ merge(
     /^\/\?.*f_shash=.*$/,
     undefined,
     {
-        'Showing results for file:': '正在显示以下文件的搜索结果：',
+        'Showing galleries with file: ': '正在显示包含此文件的图库：',
         'Similarity Scan was disabled for this search. You must start a new search to alter this.':
             '在本次搜索中，相似性查询已禁用。要更改相似性查询设置，您必须重新搜索。',
         'Similarity Scan was enabled for this search. You must start a new search to alter this.':

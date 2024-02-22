@@ -29,7 +29,6 @@ const data = {
     'Folder Name': '文件夹名称',
     '(No folders have been added yet.)': '(尚未创建文件夹)',
     'Display Order': '显示顺序',
-    Delete: '删除',
     'New folder name': '新文件夹名称',
     'Create Folder': '创建文件夹',
     'Save and Auto-Reorder': '保存并自动排序',
