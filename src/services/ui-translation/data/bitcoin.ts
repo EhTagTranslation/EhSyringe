@@ -45,7 +45,7 @@ merge(
             '新的捐赠通常会在两分钟内显示在这里，但在被纳入一个区块并达到两个确认之前会处于 ',
         ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. When it has been marked as ':
             ' 状态。这通常不需要一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为 ',
-        ', you can apply it below to make it take effect.': ' 时才能通过下方按钮完成捐赠。',
+        ', you still have to apply it below to make it take effect.': ' 时才能通过下方按钮完成捐赠。',
         'No transactions in the past year.': '在过去一年内没有交易',
         Pending: '待定',
         Confirmed: '已确认',
@@ -122,6 +122,10 @@ merge(
         [
             /^Bitcoin \(BTC\) transaction fees are very high right now, with an estimated fee of ([\d.]+) sats\/vB. We strongly recommend using Bitcoin Cash \(BCH\).$/,
             '当前比特币 (BTC) 的交易手续费非常高，约 $1 sats/vB。我们强烈推荐使用比特币现金 (BCH)。',
+        ],
+        [
+            /^Bitcoin \(BTC\) transaction fees are persistently high, and currently estimated to at least ([\d.]+) sats\/vB. We recommend using Bitcoin Cash \(BCH\) if possible.$/,
+            '当前比特币 (BTC) 的交易手续费居高不下，至少为 $1 sats/vB。如果可以的话，我们建议使用比特币现金 (BCH)。',
         ],
     ],
 );
