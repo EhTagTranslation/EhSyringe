@@ -112,6 +112,7 @@ export class TagTip {
             this.autoCompleteList.insertBefore(this.tagElementItem(tag), null);
         });
         this.selectedIndex = -1;
+        this.scrollList();
     }
 
     checkCtrl(e: KeyboardEvent): void {
@@ -126,8 +127,8 @@ export class TagTip {
 
     keydown(e: KeyboardEvent): void {
         this.checkCtrl(e);
-        if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
-            if (e.code === 'ArrowUp') {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            if (e.key === 'ArrowUp') {
                 this.selectedIndex--;
                 if (this.selectedIndex < 0) {
                     this.selectedIndex = this.autoCompleteList.children.length - 1;
@@ -148,7 +149,8 @@ export class TagTip {
             }
             e.preventDefault();
             e.stopPropagation();
-        } else if (e.code === 'Enter') {
+            this.scrollList();
+        } else if (e.key === 'Enter') {
             const children = Array.from(this.autoCompleteList.children);
             if (this.selectedIndex >= 0 && children[this.selectedIndex]) {
                 (children[this.selectedIndex] as HTMLAnchorElement).click();
@@ -156,6 +158,16 @@ export class TagTip {
                 e.stopPropagation();
             }
         }
+    }
+
+    scrollList(): void {
+        if (this.selectedIndex < 0) {
+            this.autoCompleteList.scrollTop = 0;
+            return;
+        }
+        const current = this.autoCompleteList.children[this.selectedIndex];
+        if (!current) return;
+        current.scrollIntoView({ block: 'nearest', behavior: 'instant' });
     }
 
     setListPosition(): void {

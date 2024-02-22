@@ -66,14 +66,30 @@ export default async (env = {}, argv = {}) => {
                     type: 'asset',
                 },
                 {
-                    test: /\.ts$/,
-                    exclude: '/node_modules',
+                    test: /\.js$/,
+                    include: /[/\\]node_modules[/\\]/,
+                    exclude: [/[/\\]core-js(-pure)?[/\\]/],
                     use: [
                         {
                             loader: 'babel-loader',
                             options: {
+                                sourceType: 'unambiguous',
                                 presets: ['@babel/preset-env'],
-                                plugins: ['@babel/plugin-transform-runtime'],
+                                plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
+                            },
+                        },
+                    ],
+                },
+                {
+                    test: /\.ts$/,
+                    exclude: /[/\\]node_modules[/\\]/,
+                    use: [
+                        {
+                            loader: 'babel-loader',
+                            options: {
+                                sourceType: 'unambiguous',
+                                presets: ['@babel/preset-env'],
+                                plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
                             },
                         },
                         'ts-loader',
@@ -81,7 +97,7 @@ export default async (env = {}, argv = {}) => {
                 },
                 {
                     test: /\.less$/,
-                    exclude: '/node_modules',
+                    exclude: /[/\\]node_modules[/\\]/,
                     use: [...cssLoaders, 'less-loader'],
                 },
                 {

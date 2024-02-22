@@ -29,7 +29,6 @@ const data = {
     'Folder Name': '文件夹名称',
     '(No folders have been added yet.)': '(尚未创建文件夹)',
     'Display Order': '显示顺序',
-    Delete: '删除',
     'New folder name': '新文件夹名称',
     'Create Folder': '创建文件夹',
     'Save and Auto-Reorder': '保存并自动排序',
@@ -227,7 +226,10 @@ const regexData: Array<[RegExp, string]> = [
     [/^ uploaded files?, added $/, ' 个文件，已添加 '],
     [/You have added a total of $/, '您目前总共添加了 '],
     [/^Category of (.*?) can no longer be changed.$/, '无法更改 $1 的分类。'],
-    [/^The file (.*?) is corrupt, incomplete, too large, or not an accepted image file.$/, '文件 $1 损坏 / 不完整 / 过大或是不支持的图像文件。'],
+    [
+        /^The file (.*?) is corrupt, incomplete, too large, or not an accepted image file.$/,
+        '文件 $1 损坏 / 不完整 / 过大或是不支持的图像文件。',
+    ],
 ];
 
 merge(/^\/upld\//, undefined, data, regexData);

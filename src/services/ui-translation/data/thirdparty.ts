@@ -147,6 +147,7 @@ merge(
         here: '此处',
         ' to force get your downloaded images.': ' 强制获取已下载的图像。',
         'Pages URL is MPV link': '页面 URL 是 MPV 链接',
+        'MPV is available, use MPV to fetch all pages.': 'MPV 可用，通过 MPV 获取所有页面。',
         'Fetching Gallery Pages URL From MPV...': '从 MPV 获取图库页面 URL...',
         'Pending...': '等待中...',
         'Downloading...': '下载中...',
@@ -159,7 +160,8 @@ merge(
         'Generating Blob object...': '生成 Blob 对象...',
         'Tags:': '标签：',
         'Uploader Comment:': '上传者评论：',
-        'You have exceeded your image viewing limits, or you need GP to download.': '您已超出图像配额，或者需要 GP 才能下载。',
+        'You have exceeded your image viewing limits, or you need GP to download.':
+            '您已超出图像配额，或者需要 GP 才能下载。',
         'Reset Limits': '重置配额',
         'Continue Download': '继续下载',
         'Cancel Download': '取消下载',

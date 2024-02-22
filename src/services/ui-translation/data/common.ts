@@ -172,6 +172,7 @@ merge(
         Cancel: '取消',
         Close: '关闭',
         Confirm: '确定',
+        Delete: '删除',
         Save: '保存',
         None: '无',
         Yes: '是',
