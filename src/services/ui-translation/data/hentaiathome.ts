@@ -74,7 +74,8 @@ merge(
         'The client MUST normally be running at all times. Clients with frequent/extensive downtime will be revoked.':
             '正常情况下客户端必须一直运行，经常/长时间离线的客户端会被吊销。',
         'BOTH measurements in my test above are at least 80 Mbps': '我的测速两个值均大于 80 Mbps',
-        'This client will be hosted on a system that is usually running 24/7': '此客户端将托管在一台正常情况下 24 小时运行的系统上',
+        'This client will be hosted on a system that is usually running 24/7':
+            '此客户端将托管在一台正常情况下 24 小时运行的系统上',
         'Submit Application': '提交申请',
 
         'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ':
@@ -112,11 +113,11 @@ merge(
         [/^([\d.]+) \/ day$/, '$1 / 天'],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B) per week$/, '每周 $1 $2'],
-        [/^Must be at least ([\d.]+) ([KMGTP]B)\/s, which must be reserved for H@H.$/, '不小于 $1 $2/s，必须为 H@H 保留。'],
         [
-            /^ Must be at least ([\d.]+) ([KMGTP]iB) but more is always better.$/,
-            '至少为 $1 $2，但越多越好。',
+            /^Must be at least ([\d.]+) ([KMGTP]B)\/s, which must be reserved for H@H.$/,
+            '不小于 $1 $2/s，必须为 H@H 保留。',
         ],
+        [/^ Must be at least ([\d.]+) ([KMGTP]iB) but more is always better.$/, '至少为 $1 $2，但越多越好。'],
         [/^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/, '最大出站速率必须至少为 $1 $2/s。'],
         [/^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/, '磁盘空间必须至少为 $1 $2。'],
     ],
