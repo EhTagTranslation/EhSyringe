@@ -21,6 +21,11 @@ merge(
         'Please wait...': '请稍候...',
         Close: '取消',
 
+        'The file is already being processed. I will now wait for this file to finish. Please contact staff if this does not resolve itself within a few minutes.':
+            '该文件已在处理中。我将等待该文件完成。如果几分钟后问题未解决，请联系工作人员。',
+        'Click here if your browser does not continue automatically':
+            '如果您的浏览器没有自动继续，请点击此处',
+        
         'H@H Downloader': 'H@H 下载器',
         'N/A': '不适用',
         Original: '原图',
