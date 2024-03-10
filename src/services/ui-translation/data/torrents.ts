@@ -33,7 +33,9 @@ merge(
         Information: '信息',
         Expunged: '已删除',
 
-        '0 torrents were found for this gallery.': '当前图库还没有种子',
+        'There are no torrents for this gallery.': '当前图库还没有种子',
+        'There are no up-to-date torrents for this gallery.': '当前图库没有最新的种子',
+        'Outdated Torrents:': '过时种子：',
         'New Torrents:': '新种子：',
         '\n\t\tYou can add a torrent for this gallery by uploading it here. The maximum torrent file size is 10 MB.':
             '您可以在这里上传来为此图库添加种子。最大 Torrent 文件大小为 10 MB。',
