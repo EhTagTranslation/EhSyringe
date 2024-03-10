@@ -18,11 +18,11 @@ merge(
         'Not Created Yet - Click To Generate': '未创建 - 点击生成',
         'Your Bitcoin (BTC) Donation Wallet Address': '您的比特币 (BTC) 捐赠钱包地址',
         'IMPORTANT: ONLY USE THIS ADDRESS FOR BITCOIN (BTC)': '重要提示：只能将此地址用于比特币 (BTC)',
-        'OTHER CRYPTO SENT TO THIS ADDRESS WILL BE LOST': '发送到此地址的其他类型加密货币都将丢失',
+        'ANY OTHER COINS SENT TO THIS ADDRESS WILL BE LOST': '发送到此地址的其他类型加密货币都将丢失',
         'Your Bitcoin Cash (BCH) Donation Wallet Address': '您的比特币现金 (BCH) 捐赠钱包地址',
 
         'If your wallet cannot send to this address, ': '如果您的钱包无法发送到此地址，请',
-        'switch to legacy addresses': '切换到传统地址',
+        'create a legacy address': '创建传统地址',
         'We automatically ': '当旧地址被使用时，我们会自动',
         'generate a new address': '生成一个新地址',
         ' when the old one is used. You will still be credited if you reuse recent addresses, but please use the currently displayed address whenever possible.':
