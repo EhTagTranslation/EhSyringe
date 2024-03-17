@@ -7,13 +7,16 @@ export function createMenu(info: Menu): void {
         return;
     }
     browser.contextMenus.create({
+        id: info.title,
         title: info.title,
         targetUrlPatterns: info.targetUrlPatterns,
         contexts: info.contexts,
-        onclick: (data: Menus.OnClickData): void => {
-            info.onclick({
-                url: data.mediaType ? data.srcUrl : data.linkUrl,
-            });
-        },
+    });
+    browser.contextMenus.onClicked.addListener((data: Menus.OnClickData): void => {
+        if (data.menuItemId !== info.title) return;
+
+        info.onclick({
+            url: data.mediaType ? data.srcUrl : data.linkUrl,
+        });
     });
 }

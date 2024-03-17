@@ -1,10 +1,10 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 33000 条标签翻译，标签数据库持续更新中。",
-    "__firefox__applications": {
+    "__firefox__browser_specific_settings": {
         "gecko": {
             "id": "{759d5566-1dce-41ae-bae9-00dd5172c422}",
-            "strict_min_version": "57.0"
+            "strict_min_version": "106.0"
         }
     },
     "icons": {
@@ -17,9 +17,10 @@
         "keyword": "ex"
     },
     "background": {
-        "scripts": ["script/background.js"]
+        "__chrome__service_worker": "script/background.js",
+        "__firefox__scripts": ["script/background.js"]
     },
-    "browser_action": {
+    "action": {
         "default_icon": {
             "32": "assets/logo32.png",
             "16": "assets/logo16.png",
@@ -44,11 +45,8 @@
             "run_at": "document_start"
         }
     ],
-    "permissions": [
-        "activeTab",
-        "notifications",
-        "storage",
-        "contextMenus",
+    "permissions": ["activeTab", "notifications", "storage", "contextMenus"],
+    "host_permissions": [
         "*://exhentai.org/*",
         "*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
         "*://e-hentai.org/*",
