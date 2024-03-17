@@ -344,17 +344,29 @@ export class Syringe {
             repText = repText.replace(k, v as (substring: string, ...args: any[]) => string);
         }
 
-        if (this.config.translateTimestamp !== false) {
-            repText = repText.replace(/\d\d\d\d-\d\d-\d\d \d\d:\d\d/g, (t) => {
+        if (
+            this.config.translateTimestamp !== false &&
+            // 快速判断是否有可能包含时间戳
+            repText.includes(':')
+        ) {
+            repText = repText.replace(/(\d\d\d\d-[0-1][0-9]-[0-3][0-9] [0-2][0-9]:[0-5][0-9])( UTC)?/g, ($, t) => {
                 const date = Date.parse(t + 'Z');
-                if (!date) return t;
+                if (!date) return $;
                 return `${this.time.diff(date, undefined, DateTime.hour)}`;
             });
             repText = repText.replace(
-                /\d\d (January|February|March|April|May|June|July|August|September|October|November|December) \d\d\d\d, \d\d:\d\d/gi,
-                (t) => {
-                    const date = Date.parse(t + ' UTC');
-                    if (!date) return t;
+                /([0-3][0-9]|[1-9]) (January|February|March|April|May|June|July|August|September|October|November|December) (\d\d\d\d), ([0-2][0-9]:[0-5][0-9])( UTC)?/gi,
+                ($, d, m, y, t) => {
+                    const date = Date.parse(`${d} ${m} ${y}, ${t} UTC`);
+                    if (!date) return $;
+                    return `${this.time.diff(date, undefined, DateTime.hour)}`;
+                },
+            );
+            repText = repText.replace(
+                /(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), ([0-3][0-9]|[1-9])(st|nd|rd|th) of (January|February|March|April|May|June|July|August|September|October|November|December) (\d\d\d\d), ([0-2][0-9]:[0-5][0-9])( UTC)?/gi,
+                ($, _w, d, _do, m, y, t) => {
+                    const date = Date.parse(`${d} ${m} ${y}, ${t} UTC`);
+                    if (!date) return $;
                     return `${this.time.diff(date, undefined, DateTime.hour)}`;
                 },
             );
