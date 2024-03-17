@@ -84,8 +84,7 @@ merge(
         '. Having the client set to the wrong country will make it perform worse than it would otherwise do. If the country is shown in ':
             '。位于错误的国家/地区的客户端的性能表现将不如预期。如果国家/地区显示为 ',
         red: '红色',
-        ' that means it appears to be located outside of its home region, and ':
-            '，则意味着它似乎位于其所在地区之外，',
+        ' that means it appears to be located outside of its home region, and ': '，则意味着它似乎位于其所在地区之外，',
         'will not be assigned new ranges nor gain any hath': '不会再被分配新的范围，也不会获得 Hath',
         '. Contact Tenboro if you need to change the home region.': '。如果您需要更改所在地区，请联系 Tenboro。',
 
