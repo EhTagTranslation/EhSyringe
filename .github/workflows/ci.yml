@@ -21,10 +21,6 @@ jobs:
             LICENSE
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
-        with:
-          node-version: 20
-          node-version-file: ''
-          pnpm-version: 8
       - name: Build
         run: |
           pnpm run build:firefox
