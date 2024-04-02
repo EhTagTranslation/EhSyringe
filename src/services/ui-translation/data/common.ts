@@ -111,7 +111,7 @@ merge(
         'Last >>': '末页 >>',
         'date or offset': '日期或偏移量',
         'Enter a year or date in YYYY, (YY)YY-MM or (YY)YY-MM-DD format to seek to, or the number of days to jump backwards or forwards, or a number followed by w, m and y to jump weeks, months or years respectively.':
-            '请输入要跳转的年份或日期，格式为 YYYY，(YY)YY-MM 或 (YY)YY-MM-DD；\r或者输入要向前或向后跳转的天数，输入数字后可以加 w，m，y 分别跳转周，月，年',
+            '请输入要跳转的年份或日期，格式为 YYYY，(YY)YY-MM 或 (YY)YY-MM-DD；\n或者输入要向前或向后跳转的天数，输入数字后可以加 w，m，y 分别跳转周，月，年',
         'Set the date to seek from or to.': '设置要跳转的日期',
         'Use Date Selector': '日期选择器',
 

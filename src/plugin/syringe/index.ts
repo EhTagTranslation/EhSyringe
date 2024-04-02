@@ -441,14 +441,20 @@ export class Syringe {
 
         if (isElement(node, 'div') && node.id === 'gdd') {
             /* E-Hentai-Downloader 兼容处理 */
-            this.cloneAndPrependElement(node.firstElementChild!);
+            this.cloneAndPrependElement(node);
+            this.cloneAndPrependElement(node.firstElementChild!, (el) => {
+                const clone = document.createElement('div');
+                clone.textContent = el.textContent;
+                return clone;
+            });
         }
     }
 
-    private cloneAndPrependElement<T extends Element>(el: T): T {
-        const clone = el.cloneNode(true) as T;
+    private cloneAndPrependElement<E extends Element, C extends Element = E>(el: E, cloneNode?: (el: E) => C): C {
+        const clone = cloneNode ? cloneNode(el) : (el.cloneNode(true) as C);
         clone.classList.add('eh-syringe-ignore');
         clone.setAttribute('hidden', '');
+        if (clone.id) clone.id = `ehs-clone-${clone.id}`;
         clone.querySelectorAll('[id]').forEach((node) => {
             node.id = `ehs-clone-${node.id}`;
         });
