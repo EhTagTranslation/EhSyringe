@@ -71,51 +71,48 @@ button[ehs-input] {
     }
 }
 
-td.tc {
-    white-space: nowrap;
-}
-
-div.gt,
-div.gtl,
-div.gtw {
-    height: 16px;
-    line-height: 16px;
-    white-space: nowrap;
-}
-
-textarea[name='expungexpl'] {
-    display: block;
-}
-
 body {
-    h1#gj {
-        margin: 3px 4px;
-    }
-
     div#gright {
         z-index: 3;
     }
 
+    // 提交删除申请按钮
+    #expunge_new button[ehs-input][type='submit'] {
+        margin: 6px auto 2px;
+    }
+
+    // 日文标题
+    #gj {
+        margin: 3px 4px;
+    }
+
+    // 信息框
+    #gmid {
+        height: auto;
+    }
+
+    // 信息框右侧菜单
     .g2 {
         padding-bottom: 20px;
     }
-
     .gsp {
         padding-top: 10px;
     }
 
+    // 标签组名
+    td.tc {
+        white-space: nowrap;
+    }
+
+    // 标签
     div.gtl,
     div.gtw,
     div.gt {
-        overflow: hidden;
-        height: 16px;
         line-height: 16px;
+        white-space: nowrap;
     }
 
-    div#gmid {
-        height: auto;
-    }
-
+    // 评论内容
     div.c6 {
         text-align: left;
     }
