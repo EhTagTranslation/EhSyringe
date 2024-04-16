@@ -1,5 +1,9 @@
 # 更新日志
 
+## 2.12.12
+
+-   修复与 quick search artist 的兼容问题 #1256
+
 ## 2.12.11
 
 -   修复与 E-Hentai-Downloader 的兼容问题 #1237
