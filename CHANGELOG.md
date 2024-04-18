@@ -1,5 +1,10 @@
 # 更新日志
 
+## 3.0.0
+
+-   [WebExtension] 迁移至 Manifest V3
+-   [WebExtension] 修复样式问题
+
 ## 2.12.12
 
 -   修复与 quick search artist 的兼容问题 #1256
