@@ -31,16 +31,16 @@ export function sendNotification(info: NotificationInfo): void {
 }
 
 export function setBadge(info: Badge): void {
-    if (info.background && chrome.browserAction.setBadgeBackgroundColor) {
-        void chrome.browserAction.setBadgeBackgroundColor({ color: info.background });
+    if (info.background && typeof chrome.action.setBadgeBackgroundColor == 'function') {
+        void chrome.action.setBadgeBackgroundColor({ color: info.background });
     }
     if (info.text != null) {
-        if (chrome.browserAction.setBadgeText) {
-            void chrome.browserAction.setBadgeText({ text: info.text });
-        } else if (chrome.browserAction.setTitle) {
+        if (typeof chrome.action.setBadgeText == 'function') {
+            void chrome.action.setBadgeText({ text: info.text });
+        } else if (typeof chrome.action.setTitle == 'function') {
             const extname = packageJson.displayName;
             const title = info.text ? `${extname} (${info.text})` : extname;
-            void chrome.browserAction.setTitle({ title });
+            void chrome.action.setTitle({ title });
         }
     }
 }
