@@ -35,26 +35,29 @@
 // theme
 .theme(@background, @foreground, @shadow, @accent) {
     @soft-accent: softlight(@accent, @background);
-    &,
-    .ehs-panel {
+
+    & {
+        border: @accent solid 1px;
+        border-radius: 6px;
         background: @background;
         color: @foreground;
+        box-shadow: 0 0 6px 2px @shadow;
+    }
 
-        .action {
-            background: @background;
-            color: @accent;
+    .action {
+        background: @background;
+        color: @accent;
 
-            &.primary {
-                border-color: @accent;
-                background: @accent;
-                color: @background;
-            }
-            &.primary:hover {
-                background: softlight(@accent, @foreground);
-            }
-            &.primary:active {
-                background: softlight(@accent, @background);
-            }
+        &.primary {
+            border-color: @accent;
+            background: @accent;
+            color: @background;
+        }
+        &.primary:hover {
+            background: softlight(@accent, @foreground);
+        }
+        &.primary:active {
+            background: softlight(@accent, @background);
         }
     }
 
@@ -153,7 +156,7 @@
     }
 }
 
-#eh-syringe-popup-root {
+#eh-syringe-popup {
     @background: rgb(240, 240, 240);
     @foreground: #111;
     @shadow: rgba(0, 0, 0, 0.2);
@@ -161,15 +164,7 @@
     .theme(@background, @foreground, @shadow, @accent);
 }
 
-#eh-syringe-popup-host {
-    background: rgb(240, 240, 240);
-}
-
-#eh-syringe-popup-host.ex {
-    background: rgb(49, 49, 49);
-}
-
-:root.ex #eh-syringe-popup-root {
+:root.ex #eh-syringe-popup {
     @background: rgb(49, 49, 49);
     @foreground: #eee;
     @shadow: rgba(0, 0, 0, 0.2);
@@ -269,6 +264,8 @@
         transform: scale(1);
         &.ehs-hide {
             transform: scale(0.9);
+            opacity: 0;
+            pointer-events: none;
         }
     }
 

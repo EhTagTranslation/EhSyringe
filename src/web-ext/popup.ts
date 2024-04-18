@@ -1,4 +1,5 @@
 import './polyfills';
+import './popup.less';
 import { Popup } from 'plugin/popup';
 import { Container } from 'services';
 import { isEh, isEx } from 'utils/hosts';
@@ -21,15 +22,15 @@ import { isEh, isEx } from 'utils/hosts';
     const currentHost = (current?.[0]?.url && new URL(current[0].url).hostname) ?? '';
 
     if (isEx(currentHost)) {
-        document.body.classList.add('ex');
+        document.documentElement.classList.add('ex');
     } else if (isEh(currentHost)) {
-        document.body.classList.add('eh');
+        document.documentElement.classList.add('eh');
     } else if ('matchMedia' in window) {
         const matchesDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (matchesDarkTheme) {
-            document.body.classList.add('ex');
+            document.documentElement.classList.add('ex');
         } else {
-            document.body.classList.add('eh');
+            document.documentElement.classList.add('eh');
         }
     }
 })().catch(console.error);

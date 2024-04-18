@@ -41,20 +41,26 @@
     z-index: 1000;
     background: rgba(0, 0, 0, 0.3);
     visibility: hidden;
+    pointer-events: none;
     opacity: 0;
     transition:
         visibility,
         opacity 0.4s;
-    &.open {
+
+    &.open,
+    &.opening,
+    &.closing {
         visibility: visible;
+        pointer-events: initial;
+    }
+
+    &.open {
         opacity: 1;
     }
     &.opening {
-        visibility: visible;
         opacity: 1;
     }
     &.closing {
-        visibility: visible;
         opacity: 0;
     }
 }
@@ -63,13 +69,4 @@
     position: absolute;
     bottom: 12px + 36px + 24px;
     right: 12px;
-    border: #ca8dca solid 1px;
-    box-shadow: rgba(0, 0, 0, 0.5) 0 0 6px 2px;
-    background: rgb(240, 240, 240);
-    border-radius: 6px;
-    overflow: hidden;
-
-    :root.ex & {
-        background: rgb(49, 49, 49);
-    }
 }
