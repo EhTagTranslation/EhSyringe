@@ -1,6 +1,6 @@
 # 更新日志
 
-## upcoming 3.0.0
+## 3.0.0
 
 -   [WebExtension] 迁移至 Manifest V3
 -   [WebExtension] 修复样式问题
