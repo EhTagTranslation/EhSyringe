@@ -10,7 +10,7 @@ export class Database {
         readonly logger: Logger,
     ) {}
     async getLatestVersion(): Promise<GithubRelease> {
-        const githubDownloadUrl = 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
+        const githubDownloadUrl = 'https://ehtt.fly.dev/octokit/release'; //'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
         const info = await this.http.json<GithubRelease | { message: string }>(githubDownloadUrl);
         if (!('target_commitish' in info)) {
             if (typeof info.message != 'string') {

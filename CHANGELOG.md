@@ -1,9 +1,10 @@
 # 更新日志
 
-## 3.0.0
+## upcoming 3.0.0
 
 -   [WebExtension] 迁移至 Manifest V3
 -   [WebExtension] 修复样式问题
+-   使用代理访问 GitHub API #1255
 
 ## 2.12.12
 
