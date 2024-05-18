@@ -11,7 +11,7 @@
     "engines": {
         "node": "^20.12.0"
     },
-    "packageManager": "pnpm@9.0.6",
+    "packageManager": "pnpm@9.1.1",
     "license": "MIT",
     "bugs": "https://github.com/EhTagTranslation/EhSyringe/issues",
     "homepage": "https://github.com/EhTagTranslation/EhSyringe",
@@ -35,13 +35,13 @@
         "@babel/plugin-transform-runtime": "^7.24.3",
         "@babel/preset-env": "^7.24.5",
         "@babel/runtime-corejs3": "^7.24.5",
-        "@types/chrome": "^0.0.267",
+        "@types/chrome": "^0.0.268",
         "@types/escape-html": "^1.0.4",
-        "@types/node": "^20.12.10",
+        "@types/node": "^20.12.12",
         "@types/tampermonkey": "^5.0.2",
         "@types/webextension-polyfill": "^0.10.7",
-        "@typescript-eslint/eslint-plugin": "^7.8.0",
-        "@typescript-eslint/parser": "^7.8.0",
+        "@typescript-eslint/eslint-plugin": "^7.9.0",
+        "@typescript-eslint/parser": "^7.9.0",
         "@webextension-toolbox/webpack-webextension-plugin": "^3.3.1",
         "babel-loader": "^9.1.3",
         "copy-webpack-plugin": "^12.0.2",
@@ -50,18 +50,18 @@
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.3",
-        "execa": "^8.0.1",
-        "glob": "^10.3.12",
+        "execa": "^9.1.0",
+        "glob": "^10.3.15",
         "html-webpack-plugin": "^5.6.0",
         "less": "^4.2.0",
         "less-loader": "^12.2.0",
         "postcss": "^8.4.38",
         "postcss-import": "^16.1.0",
         "postcss-loader": "^8.1.1",
-        "postcss-preset-env": "^9.5.11",
+        "postcss-preset-env": "^9.5.13",
         "prettier": "^3.2.5",
-        "rimraf": "^5.0.5",
-        "semver": "^7.6.0",
+        "rimraf": "^5.0.7",
+        "semver": "^7.6.2",
         "style-loader": "^4.0.0",
         "ts-loader": "^9.5.1",
         "tsconfig-paths-webpack-plugin": "^4.1.0",
@@ -76,7 +76,7 @@
         "yargs": "^17.7.2"
     },
     "dependencies": {
-        "core-js": "^3.37.0",
+        "core-js": "^3.37.1",
         "emoji-regex": "^10.3.0",
         "escape-html": "^1.0.3",
         "idb-keyval": "^6.2.1",
@@ -84,6 +84,6 @@
         "rxjs": "^7.8.1",
         "tslib": "^2.6.2",
         "typedi": "^0.10.0",
-        "webextension-polyfill": "^0.11.0"
+        "webextension-polyfill": "^0.12.0"
     }
 }
