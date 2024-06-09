@@ -11,6 +11,17 @@ merge(
         'Read this thread for more information about donating and how to buy coins':
             '阅读此帖子以了解更多关于捐赠和如何购买虚拟货币的信息',
 
+        'Bitcoin (BTC) transaction fees can be high and unpredictable at times. It is currently ':
+            '比特币 (BTC) 的交易手续费有时会很高且不可预测。当前',
+        estimated: '预估',
+        'This is the lowest viable feerate currently required for a transaction to be mined, which is estimated by sampling the minimum feerate of transactions that would have been included in a block in the last hour, assuming an average distribution of blocks.':
+            '这是当前交易被挖掘所需的最低可行费率，通过采样最近一小时内可能被包含在区块中的交易的最低费率来估算，假设区块的分布是平均的。',
+        'average-sized': '常规金额',
+        'An average one-input two-output native segwit (P2WPKH) transaction is around 140 vB. Batched transactions from exchanges could have a lower fee. Legacy transactions and transactions spending more than one input could have a higher fee.':
+            '一个常规的单输入双输出原生隔离见证 (P2WPKH) 交易约为 140 vB。来自交易所的批量交易可能会有更低的费用。传统交易和消耗多个输入的交易可能会有更高的费用。',
+        ' transaction. We recommend using Bitcoin Cash (BCH) whenever possible, especially for smaller amounts, since it is essentially free.':
+            '交易。我们建议尽可能使用比特币现金 (BCH)，尤其是较小金额的交易，因为它的手续费基本上可忽略不计。',
+
         ' Bitcoin (BTC)': ' 比特币 (BTC)',
         ' Bitcoin Cash (BCH)': ' 比特币现金 (BCH)',
 
@@ -42,10 +53,10 @@ merge(
         'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
         'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
         'New donations will typically show up here in less than two minutes. It will show as ':
-            '新的捐赠通常会在两分钟内显示在这里，但在被纳入一个区块并达到两个确认之前会处于 ',
+            '新的捐赠通常会在两分钟内显示在这里，但在被纳入一个区块并达到两个确认之前会处于',
         ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. When it has been marked as ':
-            ' 状态。此状态一般不会超过一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为 ',
-        ', you still have to apply it below to make it take effect.': ' 时才能通过下方按钮完成捐赠。',
+            '状态。此状态一般不会超过一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为',
+        ', you still have to apply it below to make it take effect.': '时才能通过下方按钮完成捐赠。',
         'No transactions in the past year.': '在过去一年内没有交易',
         Pending: '待定',
         Confirmed: '已确认',
@@ -75,7 +86,7 @@ merge(
 
         'Donated coins are applied as their equivalent USD value at a time of your choosing, using the site rate which is calculated from recent exchange market value.':
             '捐赠的虚拟货币在您使用时会以最近的交易所市场价格作为网站的汇率转换为美元。',
-        'The site rate will never change sharply; it adjusts slowly over time if the exchange market value is higher than the site rate, or less than 90% of the site rate.':
+        'The site rate will never drop sharply; it adjusts slowly over time if the exchange market value is higher than the site rate, or less than 90% of the site rate.':
             '网站的汇率永远不会急剧下降，只有当实际交易所价格高于网站汇率，或低于网站汇率的 90% 时，才会随着时间推移缓慢调整。',
         'The conversion rates right now are ': '当前汇率：',
         ' for Bitcoin, and ': ' (比特币) \xA0 ',
@@ -115,17 +126,6 @@ merge(
             /You have ([\d.]+) (BCH|BTC) pending, but these need to be confirmed first.$/,
             '您有 $1 $2 待确认，请等到确认完成后再操作。',
         ],
-        [
-            /^Bitcoin \(BTC\) transaction fees are high right now, with an estimated fee of ([\d.]+) sats\/vB. We recommend using Bitcoin Cash \(BCH\) if possible.$/,
-            '当前比特币 (BTC) 的交易手续费较高，约 $1 sats/vB。如果可以的话，我们建议使用比特币现金 (BCH)。',
-        ],
-        [
-            /^Bitcoin \(BTC\) transaction fees are very high right now, with an estimated fee of ([\d.]+) sats\/vB. We strongly recommend using Bitcoin Cash \(BCH\).$/,
-            '当前比特币 (BTC) 的交易手续费非常高，约 $1 sats/vB。我们强烈推荐使用比特币现金 (BCH)。',
-        ],
-        [
-            /^Bitcoin \(BTC\) transaction fees are persistently high, currently estimated to at least ([\d.]+) sats\/vB. We recommend using Bitcoin Cash \(BCH\) if possible.$/,
-            '当前比特币 (BTC) 的交易手续费居高不下，至少为 $1 sats/vB。如果可以的话，我们建议使用比特币现金 (BCH)。',
-        ],
+        [/^ to at least ([\d.]+) sats\/vB, which is about \$([\d.]+) for an $/, '至少为 $1 sats/vB，约为 $$$2 每笔'],
     ],
 );
