@@ -67,6 +67,7 @@ const data = {
     Others: '其他',
     Albanian: '阿尔巴尼亚语',
     Arabic: '阿拉伯语',
+    Burmese: '缅甸语',
     Bulgarian: '保加利亚语',
     Catalan: '加泰罗尼亚语',
     Cebuano: '宿务语',
