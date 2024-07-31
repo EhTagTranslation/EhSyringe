@@ -99,7 +99,8 @@ merge(
         'No hits found': '什么也没有',
         'No unfiltered results found.': '没有未过滤的结果',
         'Disable Filters': '禁用过滤器',
-        'You cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.': '您无法直接将种子文件添加到此页面。要将种子文件上传到此系统，请在相应图库的种子页面上传。',
+        'You cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.':
+            '您无法直接将种子文件添加到此页面。要将种子文件上传到此系统，请在相应图库的种子页面上传。',
 
         '<< First': '<< 首页',
         '< Prev': '< 上一页',
