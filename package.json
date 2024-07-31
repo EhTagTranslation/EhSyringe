@@ -9,9 +9,9 @@
         "url": "git+https://github.com/EhTagTranslation/EhSyringe.git"
     },
     "engines": {
-        "node": "^20.12.0"
+        "node": "^20.15.1"
     },
-    "packageManager": "pnpm@9.1.2",
+    "packageManager": "pnpm@9.6.0",
     "license": "MIT",
     "bugs": "https://github.com/EhTagTranslation/EhSyringe/issues",
     "homepage": "https://github.com/EhTagTranslation/EhSyringe",
