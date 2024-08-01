@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.0.4
+// @version     3.0.5
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 34000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,11 +20,10 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@15a8ec2a8e52d8730099ec2193cf66bb0a2721ca/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@b292f265b56c3ac7f8d944a5514671ec5c133f00/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
-// @grant       unsafeWindow
 // @grant       GM_deleteValue
 // @grant       GM_listValues
 // @grant       GM_setValue
@@ -38,7 +37,7 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 26125:
+/***/ 57020:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
@@ -48,8 +47,8 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
-var _mapInstanceProperty = __webpack_require__(56282);
-var _concatInstanceProperty = __webpack_require__(29078);
+var _mapInstanceProperty = __webpack_require__(62220);
+var _concatInstanceProperty = __webpack_require__(84948);
 module.exports = function (cssWithMappingToString) {
   var list = [];
 
@@ -137,13 +136,13 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 95992:
+/***/ 31735:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
 
-var _sliceInstanceProperty = __webpack_require__(20402);
+var _sliceInstanceProperty = __webpack_require__(77044);
 module.exports = function (url, options) {
   if (!options) {
     options = {};
@@ -171,14 +170,14 @@ module.exports = function (url, options) {
 
 /***/ }),
 
-/***/ 95975:
+/***/ 74148:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
 
-var _JSON$stringify = __webpack_require__(93928);
-var _concatInstanceProperty = __webpack_require__(29078);
+var _JSON$stringify = __webpack_require__(46030);
+var _concatInstanceProperty = __webpack_require__(84948);
 module.exports = function (item) {
   var content = item[1];
   var cssMapping = item[3];
@@ -197,7 +196,7 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ 56978:
+/***/ 94833:
 /***/ (function(module) {
 
 "use strict";
@@ -278,13 +277,13 @@ function escapeHtml(string) {
 
 /***/ }),
 
-/***/ 12618:
+/***/ 64969:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95975);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74148);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26125);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57020);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
@@ -298,13 +297,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#gmid{display:grid;grid:\"gd3 spa spa\
 
 /***/ }),
 
-/***/ 10101:
+/***/ 94018:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95975);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74148);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26125);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57020);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
@@ -318,13 +317,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:mediu
 
 /***/ }),
 
-/***/ 90338:
+/***/ 33377:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95975);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74148);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26125);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57020);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
@@ -338,13 +337,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root{--csstools-color-scheme--dark: ;
 
 /***/ }),
 
-/***/ 29599:
+/***/ 47748:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95975);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74148);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26125);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57020);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
@@ -358,15 +357,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".eh-syringe-lite-auto-complete-list{ba
 
 /***/ }),
 
-/***/ 30105:
+/***/ 36082:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95975);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74148);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26125);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57020);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(95992);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31735);
 /* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_93_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
@@ -646,374 +645,374 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
 /***/ }),
 
-/***/ 24110:
+/***/ 349:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(73143);
 
 /***/ }),
 
-/***/ 15129:
+/***/ 15742:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19748);
 
 /***/ }),
 
-/***/ 93182:
+/***/ 50844:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(11242);
 
 /***/ }),
 
-/***/ 87598:
+/***/ 63012:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(92682);
 
 /***/ }),
 
-/***/ 42463:
+/***/ 53861:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(96979);
 
 /***/ }),
 
-/***/ 88313:
+/***/ 38327:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(38629);
 
 /***/ }),
 
-/***/ 29078:
+/***/ 84948:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(96138);
 
 /***/ }),
 
-/***/ 86017:
+/***/ 21199:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(94661);
 
 /***/ }),
 
-/***/ 12639:
+/***/ 44105:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(67363);
 
 /***/ }),
 
-/***/ 50404:
+/***/ 91410:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(75200);
 
 /***/ }),
 
-/***/ 35765:
+/***/ 7411:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(34473);
 
 /***/ }),
 
-/***/ 12473:
+/***/ 87079:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(63493);
 
 /***/ }),
 
-/***/ 50315:
+/***/ 13477:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(96111);
 
 /***/ }),
 
-/***/ 80936:
+/***/ 30802:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(49716);
 
 /***/ }),
 
-/***/ 28598:
+/***/ 95972:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(32442);
 
 /***/ }),
 
-/***/ 56282:
+/***/ 62220:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(55862);
 
 /***/ }),
 
-/***/ 20900:
+/***/ 51626:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(77872);
 
 /***/ }),
 
-/***/ 20402:
+/***/ 77044:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(3894);
 
 /***/ }),
 
-/***/ 56642:
+/***/ 94400:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19542);
 
 /***/ }),
 
-/***/ 97066:
+/***/ 17444:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(23126);
 
 /***/ }),
 
-/***/ 470:
+/***/ 75092:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(70626);
 
 /***/ }),
 
-/***/ 26872:
+/***/ 68010:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(11956);
 
 /***/ }),
 
-/***/ 21122:
+/***/ 25668:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(84718);
 
 /***/ }),
 
-/***/ 64928:
+/***/ 58038:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(55772);
 
 /***/ }),
 
-/***/ 93928:
+/***/ 46030:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(18828);
 
 /***/ }),
 
-/***/ 71168:
+/***/ 5317:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(32419);
 
 /***/ }),
 
-/***/ 98600:
+/***/ 89806:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(51116);
 
 /***/ }),
 
-/***/ 9718:
+/***/ 25452:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(95722);
 
 /***/ }),
 
-/***/ 72211:
+/***/ 83521:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(86087);
 
 /***/ }),
 
-/***/ 1366:
+/***/ 20764:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(54002);
 
 /***/ }),
 
-/***/ 94595:
+/***/ 9877:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(46495);
 
 /***/ }),
 
-/***/ 53583:
+/***/ 11949:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(14803);
 
 /***/ }),
 
-/***/ 49357:
+/***/ 22983:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(61929);
 
 /***/ }),
 
-/***/ 22568:
+/***/ 31410:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(11436);
 
 /***/ }),
 
-/***/ 9431:
+/***/ 39193:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(64131);
 
 /***/ }),
 
-/***/ 6913:
+/***/ 2687:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(70277);
 
 /***/ }),
 
-/***/ 41126:
+/***/ 38580:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(95650);
 
 /***/ }),
 
-/***/ 8013:
+/***/ 97883:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(96537);
 
 /***/ }),
 
-/***/ 31344:
+/***/ 91142:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(73140);
 
 /***/ }),
 
-/***/ 79765:
+/***/ 46995:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(50857);
 
 /***/ }),
 
-/***/ 1703:
+/***/ 79229:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(61100);
 
 /***/ }),
 
-/***/ 27701:
+/***/ 68031:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(15969);
 
 /***/ }),
 
-/***/ 48496:
+/***/ 13894:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(48452);
 
 /***/ }),
 
-/***/ 98942:
+/***/ 740:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(16106);
 
 /***/ }),
 
-/***/ 6516:
+/***/ 13798:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(51632);
 
 /***/ }),
 
-/***/ 52602:
+/***/ 56027:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(37053);
 
 /***/ }),
 
-/***/ 89880:
+/***/ 82442:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(35555);
 
 /***/ }),
 
-/***/ 87718:
+/***/ 56088:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(77050);
 
 /***/ }),
 
-/***/ 79992:
+/***/ 67450:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(33060);
 
 /***/ }),
 
-/***/ 54457:
+/***/ 74687:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(39069);
 
 /***/ }),
 
-/***/ 22123:
+/***/ 84201:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(90904);
 
 /***/ }),
 
-/***/ 80935:
+/***/ 78941:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(22972);
 
 /***/ }),
 
-/***/ 62122:
+/***/ 41824:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var _typeof = (__webpack_require__(54553)["default"]);
+var _typeof = (__webpack_require__(70023)["default"]);
 var _Object$defineProperty = __webpack_require__(30583);
 var _Symbol = __webpack_require__(67127);
 var _Object$create = __webpack_require__(27390);
@@ -1335,7 +1334,7 @@ module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.e
 
 /***/ }),
 
-/***/ 54553:
+/***/ 70023:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var _Symbol = __webpack_require__(67127);
@@ -1353,14 +1352,14 @@ module.exports = _typeof, module.exports.__esModule = true, module.exports["defa
 
 /***/ }),
 
-/***/ 18841:
+/***/ 75151:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var _globalThis = __webpack_require__(15129);
-var _typeof = __webpack_require__(54553);
+var _globalThis = __webpack_require__(15742);
+var _typeof = __webpack_require__(70023);
 // TODO(Babel 8): Remove this file.
 
-var runtime = __webpack_require__(62122)();
+var runtime = __webpack_require__(41824)();
 module.exports = runtime;
 
 // Copied from https://github.com/facebook/regenerator/blob/main/packages/runtime/runtime.js#L736=
@@ -28613,47 +28612,47 @@ var reflect = __webpack_require__(32212);
 !function() {
 "use strict";
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js
-var define_property = __webpack_require__(53583);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js
+var define_property = __webpack_require__(11949);
 var define_property_default = /*#__PURE__*/__webpack_require__.n(define_property);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/find.js
-var find = __webpack_require__(35765);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/find.js
+var find = __webpack_require__(7411);
 var find_default = /*#__PURE__*/__webpack_require__.n(find);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js
-var for_each = __webpack_require__(12473);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js
+var for_each = __webpack_require__(87079);
 var for_each_default = /*#__PURE__*/__webpack_require__.n(for_each);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js
-var splice = __webpack_require__(470);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js
+var splice = __webpack_require__(75092);
 var splice_default = /*#__PURE__*/__webpack_require__.n(splice);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js
-var index_of = __webpack_require__(80936);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js
+var index_of = __webpack_require__(30802);
 var index_of_default = /*#__PURE__*/__webpack_require__.n(index_of);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/assign.js
-var object_assign = __webpack_require__(72211);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/assign.js
+var object_assign = __webpack_require__(83521);
 var assign_default = /*#__PURE__*/__webpack_require__.n(object_assign);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/map.js
-var map = __webpack_require__(56282);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/map.js
+var map = __webpack_require__(62220);
 var map_default = /*#__PURE__*/__webpack_require__.n(map);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js
-var is_array = __webpack_require__(87598);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js
+var is_array = __webpack_require__(63012);
 var is_array_default = /*#__PURE__*/__webpack_require__.n(is_array);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/filter.js
-var filter = __webpack_require__(50404);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/filter.js
+var filter = __webpack_require__(91410);
 var filter_default = /*#__PURE__*/__webpack_require__.n(filter);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/bind.js
-var bind = __webpack_require__(88313);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/bind.js
+var bind = __webpack_require__(38327);
 var bind_default = /*#__PURE__*/__webpack_require__.n(bind);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js
-var get_prototype_of = __webpack_require__(6913);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js
+var get_prototype_of = __webpack_require__(2687);
 var get_prototype_of_default = /*#__PURE__*/__webpack_require__.n(get_prototype_of);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/includes.js
-var includes = __webpack_require__(50315);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/includes.js
+var includes = __webpack_require__(13477);
 var includes_default = /*#__PURE__*/__webpack_require__.n(includes);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js
-var set_prototype_of = __webpack_require__(8013);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js
+var set_prototype_of = __webpack_require__(97883);
 var set_prototype_of_default = /*#__PURE__*/__webpack_require__.n(set_prototype_of);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js
-var create = __webpack_require__(1366);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js
+var create = __webpack_require__(20764);
 var create_default = /*#__PURE__*/__webpack_require__.n(create);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/esm5/token.class.js
 /**
@@ -28779,8 +28778,8 @@ var CannotInstantiateValueError = /** @class */function (_super) {
   return CannotInstantiateValueError;
 }(Error);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js
-var symbol = __webpack_require__(89880);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js
+var symbol = __webpack_require__(82442);
 var symbol_default = /*#__PURE__*/__webpack_require__.n(symbol);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/esm5/empty.const.js
 
@@ -29274,8 +29273,8 @@ function Service(optionsOrServiceIdentifier) {
 
 
 var services_Container = Container.of('default');
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/ends-with.js
-var ends_with = __webpack_require__(86017);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/ends-with.js
+var ends_with = __webpack_require__(21199);
 var ends_with_default = /*#__PURE__*/__webpack_require__.n(ends_with);
 ;// CONCATENATED MODULE: ./src/utils/hosts.ts
 
@@ -29307,11 +29306,11 @@ var EH = 'e-hentai.org';
 var EXU = 'exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion';
 var EHGT = 'ehgt.org';
 var HATH = 'hath.network';
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/promise.js
-var promise = __webpack_require__(1703);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/promise.js
+var promise = __webpack_require__(79229);
 var promise_default = /*#__PURE__*/__webpack_require__.n(promise);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/set-timeout.js
-var set_timeout = __webpack_require__(6516);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/set-timeout.js
+var set_timeout = __webpack_require__(13798);
 var set_timeout_default = /*#__PURE__*/__webpack_require__.n(set_timeout);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/object/define-property.js
 var object_define_property = __webpack_require__(34893);
@@ -29319,7 +29318,7 @@ var object_define_property = __webpack_require__(34893);
 var full_symbol = __webpack_require__(18441);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/symbol/iterator.js
 var iterator = __webpack_require__(33279);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js
 
 
 function _typeof(o) {
@@ -29334,7 +29333,7 @@ function _typeof(o) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/symbol/to-primitive.js
 var to_primitive = __webpack_require__(48600);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/toPrimitive.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/toPrimitive.js
 
 
 function toPrimitive(t, r) {
@@ -29348,7 +29347,7 @@ function toPrimitive(t, r) {
   return ("string" === r ? String : Number)(t);
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/toPropertyKey.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/toPropertyKey.js
 
 
 function toPropertyKey(t) {
@@ -29356,7 +29355,7 @@ function toPropertyKey(t) {
   return "symbol" == _typeof(i) ? i : i + "";
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js
 
 
 function _defineProperties(e, r) {
@@ -29371,13 +29370,13 @@ function _createClass(e, r, t) {
   }), e;
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js
 function _classCallCheck(a, n) {
   if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js
-var concat = __webpack_require__(29078);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js
+var concat = __webpack_require__(84948);
 var concat_default = /*#__PURE__*/__webpack_require__.n(concat);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/tslib@2.6.3/node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
@@ -29817,7 +29816,7 @@ function ready(callback) {
 }
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/promise/index.js
 var full_promise = __webpack_require__(46854);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/asyncToGenerator.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/asyncToGenerator.js
 
 function asyncGeneratorStep(n, t, e, r, o, a, c) {
   try {
@@ -29845,40 +29844,40 @@ function _asyncToGenerator(n) {
   };
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/starts-with.js
-var starts_with = __webpack_require__(26872);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/starts-with.js
+var starts_with = __webpack_require__(68010);
 var starts_with_default = /*#__PURE__*/__webpack_require__.n(starts_with);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/regenerator/index.js
-var regenerator = __webpack_require__(18841);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/regenerator/index.js
+var regenerator = __webpack_require__(75151);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js
-var slice = __webpack_require__(20402);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js
+var slice = __webpack_require__(77044);
 var slice_default = /*#__PURE__*/__webpack_require__.n(slice);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js
-var from = __webpack_require__(93182);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js
+var from = __webpack_require__(50844);
 var from_default = /*#__PURE__*/__webpack_require__.n(from);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js
-var get_iterator_method = __webpack_require__(24110);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js
+var get_iterator_method = __webpack_require__(349);
 var get_iterator_method_default = /*#__PURE__*/__webpack_require__.n(get_iterator_method);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js/global-this.js
-var global_this = __webpack_require__(15129);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js/global-this.js
+var global_this = __webpack_require__(15742);
 var global_this_default = /*#__PURE__*/__webpack_require__.n(global_this);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js
-var instance_keys = __webpack_require__(28598);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js
+var instance_keys = __webpack_require__(95972);
 var keys_default = /*#__PURE__*/__webpack_require__.n(instance_keys);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/keys.js
-var object_keys = __webpack_require__(41126);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/keys.js
+var object_keys = __webpack_require__(38580);
 var object_keys_default = /*#__PURE__*/__webpack_require__.n(object_keys);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/construct.js
-var construct = __webpack_require__(27701);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/construct.js
+var construct = __webpack_require__(68031);
 var construct_default = /*#__PURE__*/__webpack_require__.n(construct);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/assertThisInitialized.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/assertThisInitialized.js
 function _assertThisInitialized(e) {
   if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   return e;
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js
 
 
 function _possibleConstructorReturn(t, e) {
@@ -29893,7 +29892,7 @@ var object_set_prototype_of = __webpack_require__(30491);
 var instance_bind = __webpack_require__(28983);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/object/get-prototype-of.js
 var object_get_prototype_of = __webpack_require__(26751);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js
 
 
 
@@ -29906,7 +29905,7 @@ function _getPrototypeOf(t) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/object/create.js
 var object_create = __webpack_require__(88316);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/setPrototypeOf.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/setPrototypeOf.js
 
 
 function _setPrototypeOf(t, e) {
@@ -29916,7 +29915,7 @@ function _setPrototypeOf(t, e) {
   }, _setPrototypeOf(t, e);
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js
 
 
 
@@ -29933,14 +29932,14 @@ function _inherits(t, e) {
   }), e && _setPrototypeOf(t, e);
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/map.js
-var core_js_stable_map = __webpack_require__(71168);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/map.js
+var core_js_stable_map = __webpack_require__(5317);
 var core_js_stable_map_default = /*#__PURE__*/__webpack_require__.n(core_js_stable_map);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/values.js
-var instance_values = __webpack_require__(64928);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/values.js
+var instance_values = __webpack_require__(58038);
 var values_default = /*#__PURE__*/__webpack_require__.n(instance_values);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/json/stringify.js
-var stringify = __webpack_require__(93928);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/json/stringify.js
+var stringify = __webpack_require__(46030);
 var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/idb-keyval@6.2.1/node_modules/idb-keyval/dist/index.js
 
@@ -30863,14 +30862,14 @@ Storage = __decorate([Service(), __metadata("design:paramtypes", [Logger])], Sto
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/array/is-array.js
 var array_is_array = __webpack_require__(59300);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/arrayLikeToArray.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/arrayLikeToArray.js
 function arrayLikeToArray_arrayLikeToArray(r, a) {
   (null == a || a > r.length) && (a = r.length);
   for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
   return n;
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js
 
 
 function _arrayWithoutHoles(r) {
@@ -30881,7 +30880,7 @@ function _arrayWithoutHoles(r) {
 var full_get_iterator_method = __webpack_require__(98717);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/array/from.js
 var array_from = __webpack_require__(29564);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js
 
 
 
@@ -30891,7 +30890,7 @@ function _iterableToArray(r) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/instance/slice.js
 var instance_slice = __webpack_require__(50580);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/unsupportedIterableToArray.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/unsupportedIterableToArray.js
 
 
 
@@ -30904,12 +30903,12 @@ function unsupportedIterableToArray_unsupportedIterableToArray(r, a) {
   }
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js
 
 
 
@@ -30918,8 +30917,8 @@ function _toConsumableArray(r) {
   return _arrayWithoutHoles(r) || _iterableToArray(r) || unsupportedIterableToArray_unsupportedIterableToArray(r) || _nonIterableSpread();
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/set.js
-var set = __webpack_require__(52602);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/set.js
+var set = __webpack_require__(56027);
 var set_default = /*#__PURE__*/__webpack_require__.n(set);
 ;// CONCATENATED MODULE: ./src/providers/common/messaging.ts
 
@@ -31141,8 +31140,8 @@ var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleE
 // EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleTagTransform.js
 var styleTagTransform = __webpack_require__(17177);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.39_typescript@5.5.3_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
-var introduce = __webpack_require__(12618);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.40_typescript@5.5.4_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
+var introduce = __webpack_require__(64969);
 ;// CONCATENATED MODULE: ./src/plugin/introduce/index.less
 
       
@@ -31170,11 +31169,11 @@ var introduce_update = injectStylesIntoStyleTag_default()(introduce/* default */
 
        /* harmony default export */ var plugin_introduce = (introduce/* default */.A && introduce/* default */.A.locals ? introduce/* default */.A.locals : undefined);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js
-var trim = __webpack_require__(21122);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js
+var trim = __webpack_require__(25668);
 var trim_default = /*#__PURE__*/__webpack_require__.n(trim);
 // EXTERNAL MODULE: ./node_modules/.pnpm/escape-html@1.0.3/node_modules/escape-html/index.js
-var escape_html = __webpack_require__(56978);
+var escape_html = __webpack_require__(94833);
 var escape_html_default = /*#__PURE__*/__webpack_require__.n(escape_html);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/emoji-regex@10.3.0/node_modules/emoji-regex/index.mjs
 /* harmony default export */ var emoji_regex = (() => {
@@ -32047,8 +32046,8 @@ var EMPTY_OBSERVER = {
 var observable = function () {
   return typeof (symbol_default()) === 'function' && (symbol_default()).observable || '@@observable';
 }();
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/reduce.js
-var reduce = __webpack_require__(20900);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/reduce.js
+var reduce = __webpack_require__(51626);
 var reduce_default = /*#__PURE__*/__webpack_require__.n(reduce);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/util/identity.js
 function identity(x) {
@@ -32185,8 +32184,8 @@ function isSubscriber(value) {
 function isInteropObservable(input) {
   return isFunction(input[observable]);
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/async-iterator.js
-var async_iterator = __webpack_require__(87718);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/async-iterator.js
+var async_iterator = __webpack_require__(56088);
 var async_iterator_default = /*#__PURE__*/__webpack_require__.n(async_iterator);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/util/isAsyncIterable.js
 
@@ -32199,8 +32198,8 @@ function isAsyncIterable(obj) {
 function createInvalidObservableTypeError(input) {
   return new TypeError("You provided " + (input !== null && _typeof(input) === 'object' ? 'an invalid object' : "'" + input + "'") + " where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable.");
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js
-var symbol_iterator = __webpack_require__(54457);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js
+var symbol_iterator = __webpack_require__(74687);
 var symbol_iterator_default = /*#__PURE__*/__webpack_require__.n(symbol_iterator);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/symbol/iterator.js
 
@@ -32533,9 +32532,9 @@ function mergeInternals(source, subscriber, project, concurrent, onBeforeNext, e
     }
   };
   var outerNext = function outerNext(value) {
-    return active < concurrent ? doInnerSub(value) : buffer.push(value);
+    return active < concurrent ? _doInnerSub(value) : buffer.push(value);
   };
-  var doInnerSub = function doInnerSub(value) {
+  var _doInnerSub = function doInnerSub(value) {
     expand && subscriber.next(value);
     active++;
     var innerComplete = false;
@@ -32556,10 +32555,10 @@ function mergeInternals(source, subscriber, project, concurrent, onBeforeNext, e
             var bufferedValue = buffer.shift();
             if (innerSubScheduler) {
               executeSchedule(subscriber, innerSubScheduler, function () {
-                return doInnerSub(bufferedValue);
+                return _doInnerSub(bufferedValue);
               });
             } else {
-              doInnerSub(bufferedValue);
+              _doInnerSub(bufferedValue);
             }
           };
           while (buffer.length && active < concurrent) {
@@ -32694,8 +32693,8 @@ function filter_filter(predicate, thisArg) {
     }));
   });
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.39_typescript@5.5.3_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
-var tag_tip = __webpack_require__(29599);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.40_typescript@5.5.4_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
+var tag_tip = __webpack_require__(47748);
 ;// CONCATENATED MODULE: ./src/plugin/tag-tip/index.less
 
       
@@ -33016,7 +33015,7 @@ var TagTip = /*#__PURE__*/function () {
 }();
 TagTip = __decorate([Service(), __metadata("design:paramtypes", [Storage, Logger, messaging_Messaging, Tagging])], TagTip);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithHoles.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithHoles.js
 
 function _arrayWithHoles(r) {
   if (array_is_array(r)) return r;
@@ -33024,7 +33023,7 @@ function _arrayWithHoles(r) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/instance/push.js
 var push = __webpack_require__(56680);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArrayLimit.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArrayLimit.js
 
 
 
@@ -33056,12 +33055,12 @@ function _iterableToArrayLimit(r, l) {
   }
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableRest.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js
 
 
 
@@ -33070,8 +33069,8 @@ function slicedToArray_slicedToArray(r, e) {
   return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || unsupportedIterableToArray_unsupportedIterableToArray(r, e) || _nonIterableRest();
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/sort.js
-var sort = __webpack_require__(97066);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/sort.js
+var sort = __webpack_require__(17444);
 var sort_default = /*#__PURE__*/__webpack_require__.n(sort);
 ;// CONCATENATED MODULE: ./src/services/ui-translation/helper.ts
 
@@ -35418,7 +35417,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.4","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.12.0"},"packageManager":"pnpm@9.1.2","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint ./src/**/*.ts","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.24.8","@babel/plugin-transform-runtime":"^7.24.7","@babel/preset-env":"^7.24.8","@babel/runtime-corejs3":"^7.24.8","@types/chrome":"^0.0.268","@types/escape-html":"^1.0.4","@types/node":"^20.14.10","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.10.7","@typescript-eslint/eslint-plugin":"^7.16.0","@typescript-eslint/parser":"^7.16.0","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.4","eslint":"^8.57.0","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.1.3","execa":"^9.3.0","glob":"^11.0.0","html-webpack-plugin":"^5.6.0","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.39","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^9.6.0","prettier":"^3.3.2","rimraf":"^6.0.1","semver":"^7.6.2","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.21.0","typescript":"^5.5.3","web-ext":"^8.2.0","webpack":"^5.93.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.0.4","webpack-userscript":"^2.5.8","yargs":"^17.7.2"},"dependencies":{"core-js":"^3.37.1","emoji-regex":"^10.3.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.1.4","rxjs":"^7.8.1","tslib":"^2.6.3","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.5","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.15.1"},"packageManager":"pnpm@9.6.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint ./src/**/*.ts","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.25.2","@babel/plugin-transform-runtime":"^7.24.7","@babel/preset-env":"^7.25.3","@babel/runtime-corejs3":"^7.25.0","@types/chrome":"^0.0.269","@types/escape-html":"^1.0.4","@types/node":"^22.0.2","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.10.7","@typescript-eslint/eslint-plugin":"^7.18.0","@typescript-eslint/parser":"^7.18.0","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.4","eslint":"^8.57.0","eslint-config-prettier":"^9.1.0","eslint-plugin-prettier":"^5.2.1","execa":"^9.3.0","glob":"^11.0.0","html-webpack-plugin":"^5.6.0","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.40","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^9.6.0","prettier":"^3.3.3","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.23.0","typescript":"^5.5.4","web-ext":"^8.2.0","webpack":"^5.93.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.0.4","webpack-userscript":"^2.5.8","yargs":"^17.7.2"},"dependencies":{"core-js":"^3.37.1","emoji-regex":"^10.3.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.1.4","rxjs":"^7.8.1","tslib":"^2.6.3","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// CONCATENATED MODULE: ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -35504,19 +35503,19 @@ var SyncStorage = /*#__PURE__*/function () {
 }();
 SyncStorage = __decorate([Service(), __metadata("design:paramtypes", [Logger, Storage])], SyncStorage);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-symbols.js
-var get_own_property_symbols = __webpack_require__(9431);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-symbols.js
+var get_own_property_symbols = __webpack_require__(39193);
 var get_own_property_symbols_default = /*#__PURE__*/__webpack_require__.n(get_own_property_symbols);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js
-var get_own_property_descriptor = __webpack_require__(49357);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js
+var get_own_property_descriptor = __webpack_require__(22983);
 var get_own_property_descriptor_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptor);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptors.js
-var get_own_property_descriptors = __webpack_require__(22568);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptors.js
+var get_own_property_descriptors = __webpack_require__(31410);
 var get_own_property_descriptors_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptors);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js
-var define_properties = __webpack_require__(94595);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js
+var define_properties = __webpack_require__(9877);
 var define_properties_default = /*#__PURE__*/__webpack_require__.n(define_properties);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/defineProperty.js
 
 
 function _defineProperty(e, r, t) {
@@ -35528,8 +35527,8 @@ function _defineProperty(e, r, t) {
   }) : e[r] = t, e;
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/date/now.js
-var date_now = __webpack_require__(42463);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/date/now.js
+var date_now = __webpack_require__(53861);
 var now_default = /*#__PURE__*/__webpack_require__.n(date_now);
 ;// CONCATENATED MODULE: ./src/services/date-time.ts
 
@@ -35624,8 +35623,8 @@ DateTime.month = DateTime_1.day * (365.25 / 12);
 DateTime.year = DateTime_1.month * 12;
 DateTime = DateTime_1 = __decorate([Service()], DateTime);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.39_typescript@5.5.3_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
-var syringe = __webpack_require__(90338);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.40_typescript@5.5.4_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
+var syringe = __webpack_require__(33377);
 ;// CONCATENATED MODULE: ./src/plugin/syringe/index.less
 
       
@@ -35693,6 +35692,16 @@ function isElement(node, nodeName) {
 }
 function isText(node) {
   return node != null && node.nodeType === Node.TEXT_NODE;
+}
+// 该方案同时在 V2、V3 和 UserScript 生效
+// 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
+function _codePatch(window) {
+  window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {
+    document.getElementById('advdiv').style.display === 'none' ? window.show_advsearch_pane(b) : window.hide_advsearch_pane(b);
+  };
+  window.toggle_filesearch_pane = function toggle_filesearch_pane(b) {
+    document.getElementById('fsdiv').style.display === 'none' ? window.show_filesearch_pane(b) : window.hide_filesearch_pane(b);
+  };
 }
 var TagNodeRef = /*#__PURE__*/function () {
   function TagNodeRef(node, fullKey, original, service) {
@@ -35838,12 +35847,9 @@ var Syringe = /*#__PURE__*/function () {
   }, {
     key: "codePatch",
     value: function codePatch() {
-      // 该方案同时在 V2、V3 和 UserScript 生效
-      // 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
-      var actualCode = /* js */"\n            window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {\n                document.getElementById('advdiv').style.display == 'none' ? show_advsearch_pane(b) : hide_advsearch_pane(b);\n            }\n            window.toggle_filesearch_pane = function toggle_filesearch_pane(b) {\n                document.getElementById('fsdiv').style.display == 'none' ? show_filesearch_pane(b) : hide_filesearch_pane(b);\n            }\n            ";
       var _document = document,
         documentElement = _document.documentElement;
-      documentElement.setAttribute('onreset', actualCode);
+      documentElement.setAttribute('onreset', ";(".concat(_codePatch.toString(), ")(window); return false;"));
       documentElement.dispatchEvent(new Event('reset'));
       documentElement.removeAttribute('onreset');
     }
@@ -36694,8 +36700,8 @@ var Database = /*#__PURE__*/function () {
 }();
 Database = __decorate([Service(), __metadata("design:paramtypes", [Http, Logger])], Database);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js
-var set_interval = __webpack_require__(98942);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js
+var set_interval = __webpack_require__(740);
 var set_interval_default = /*#__PURE__*/__webpack_require__.n(set_interval);
 ;// CONCATENATED MODULE: ./src/services/badge-loading.ts
 
@@ -37152,8 +37158,8 @@ var DatabaseUpdater = /*#__PURE__*/function () {
 }();
 DatabaseUpdater = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, Database, BadgeLoading])], DatabaseUpdater);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/object/values.js
-var object_values = __webpack_require__(31344);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/values.js
+var object_values = __webpack_require__(91142);
 var object_values_default = /*#__PURE__*/__webpack_require__.n(object_values);
 ;// CONCATENATED MODULE: ./src/plugin/suggest.ts
 
@@ -37802,8 +37808,8 @@ var TagDatabase = /*#__PURE__*/function () {
 }();
 TagDatabase = __decorate([Service(), __metadata("design:paramtypes", [Storage, Logger, messaging_Messaging, Tagging])], TagDatabase);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/url.js
-var core_js_stable_url = __webpack_require__(22123);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/url.js
+var core_js_stable_url = __webpack_require__(84201);
 var url_default = /*#__PURE__*/__webpack_require__.n(core_js_stable_url);
 ;// CONCATENATED MODULE: ./src/plugin/image-context-menu.ts
 
@@ -37843,17 +37849,17 @@ var ImageContextMenu = /*#__PURE__*/function () {
 }();
 ImageContextMenu = __decorate([Service(), __metadata("design:paramtypes", [])], ImageContextMenu);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/number/parse-float.js
-var parse_float = __webpack_require__(9718);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/number/parse-float.js
+var parse_float = __webpack_require__(25452);
 var parse_float_default = /*#__PURE__*/__webpack_require__.n(parse_float);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/number/is-nan.js
-var is_nan = __webpack_require__(98600);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/number/is-nan.js
+var is_nan = __webpack_require__(89806);
 var is_nan_default = /*#__PURE__*/__webpack_require__.n(is_nan);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/object/freeze.js
 var freeze = __webpack_require__(97039);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.37.1/node_modules/core-js-pure/full/object/define-properties.js
 var object_define_properties = __webpack_require__(23093);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/helpers/esm/taggedTemplateLiteral.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/helpers/esm/taggedTemplateLiteral.js
 
 
 
@@ -37865,21 +37871,21 @@ function _taggedTemplateLiteral(e, t) {
   }));
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/some.js
-var some = __webpack_require__(56642);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/some.js
+var some = __webpack_require__(94400);
 var some_default = /*#__PURE__*/__webpack_require__.n(some);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/parse-int.js
-var parse_int = __webpack_require__(79765);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/parse-int.js
+var parse_int = __webpack_require__(46995);
 var parse_int_default = /*#__PURE__*/__webpack_require__.n(parse_int);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/set.js
-var reflect_set = __webpack_require__(48496);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/set.js
+var reflect_set = __webpack_require__(13894);
 var reflect_set_default = /*#__PURE__*/__webpack_require__.n(reflect_set);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/for.js
-var symbol_for = __webpack_require__(79992);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/weak-map.js
-var weak_map = __webpack_require__(80935);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.24.8/node_modules/@babel/runtime-corejs3/core-js-stable/instance/fill.js
-var fill = __webpack_require__(12639);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/for.js
+var symbol_for = __webpack_require__(67450);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/weak-map.js
+var weak_map = __webpack_require__(78941);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/fill.js
+var fill = __webpack_require__(44105);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/lit-html@3.1.4/node_modules/lit-html/lit-html.js
 
 
@@ -38395,8 +38401,8 @@ var j = function j(t, i, s) {
   return h._$AI(t), h;
 };
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.39_typescript@5.5.3_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
-var popup = __webpack_require__(10101);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.40_typescript@5.5.4_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
+var popup = __webpack_require__(94018);
 ;// CONCATENATED MODULE: ./src/plugin/popup/index.less
 
       
@@ -38885,8 +38891,8 @@ var Popup = /*#__PURE__*/function () {
 }();
 Popup = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, DateTime])], Popup);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.39_typescript@5.5.3_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
-var popup_host = __webpack_require__(30105);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.40_typescript@5.5.4_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.93.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
+var popup_host = __webpack_require__(36082);
 ;// CONCATENATED MODULE: ./src/user-script/popup-host.less
 
       
