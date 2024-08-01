@@ -221,7 +221,6 @@ export default async (env = {}, argv = {}) => {
                     downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
                     'run-at': 'document-start',
                     grant: [
-                        'unsafeWindow',
                         'GM_deleteValue',
                         'GM_listValues',
                         'GM_setValue',

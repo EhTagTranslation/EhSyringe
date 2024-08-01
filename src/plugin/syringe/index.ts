@@ -22,6 +22,31 @@ function isText(node: Node | undefined): node is Text {
     return node != null && node.nodeType === Node.TEXT_NODE;
 }
 
+declare global {
+    interface Window {
+        toggle_advsearch_pane: (b: HTMLElement) => void;
+        toggle_filesearch_pane: (b: HTMLElement) => void;
+        show_advsearch_pane: (b: HTMLElement) => void;
+        hide_advsearch_pane: (b: HTMLElement) => void;
+        show_filesearch_pane: (b: HTMLElement) => void;
+        hide_filesearch_pane: (b: HTMLElement) => void;
+    }
+}
+// 该方案同时在 V2、V3 和 UserScript 生效
+// 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
+function codePatch(window: Window): void {
+    window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {
+        document.getElementById('advdiv')!.style.display === 'none'
+            ? window.show_advsearch_pane(b)
+            : window.hide_advsearch_pane(b);
+    };
+    window.toggle_filesearch_pane = function toggle_filesearch_pane(b) {
+        document.getElementById('fsdiv')!.style.display === 'none'
+            ? window.show_filesearch_pane(b)
+            : window.hide_filesearch_pane(b);
+    };
+}
+
 class TagNodeRef {
     private static readonly ATTR = 'ehs-tag';
 
@@ -145,18 +170,8 @@ export class Syringe {
     }
 
     private codePatch(): void {
-        // 该方案同时在 V2、V3 和 UserScript 生效
-        // 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
-        const actualCode = /* js */ `
-            window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {
-                document.getElementById('advdiv').style.display == 'none' ? show_advsearch_pane(b) : hide_advsearch_pane(b);
-            }
-            window.toggle_filesearch_pane = function toggle_filesearch_pane(b) {
-                document.getElementById('fsdiv').style.display == 'none' ? show_filesearch_pane(b) : hide_filesearch_pane(b);
-            }
-            `;
         const { documentElement } = document;
-        documentElement.setAttribute('onreset', actualCode);
+        documentElement.setAttribute('onreset', `;(${codePatch.toString()})(window); return false;`);
         documentElement.dispatchEvent(new Event('reset'));
         documentElement.removeAttribute('onreset');
     }
