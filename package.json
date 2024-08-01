@@ -33,11 +33,11 @@
     "devDependencies": {
         "@babel/core": "^7.25.2",
         "@babel/plugin-transform-runtime": "^7.24.7",
-        "@babel/preset-env": "^7.25.2",
+        "@babel/preset-env": "^7.25.3",
         "@babel/runtime-corejs3": "^7.25.0",
         "@types/chrome": "^0.0.269",
         "@types/escape-html": "^1.0.4",
-        "@types/node": "^20.14.13",
+        "@types/node": "^22.0.2",
         "@types/tampermonkey": "^5.0.3",
         "@types/webextension-polyfill": "^0.10.7",
         "@typescript-eslint/eslint-plugin": "^7.18.0",
