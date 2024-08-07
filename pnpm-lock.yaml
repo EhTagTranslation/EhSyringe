@@ -158,9 +158,6 @@ importers:
       webpack-userscript:
         specifier: ^2.5.8
         version: 2.5.8(webpack@5.93.0(webpack-cli@5.1.4))
-      yargs:
-        specifier: ^17.7.2
-        version: 17.7.2
 
 packages:
   '@ampproject/remapping@2.3.0':
