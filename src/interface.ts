@@ -38,7 +38,7 @@ export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'co
 export interface EHTNamespace {
     namespace: EHTNamespaceName;
     count: number;
-    data: { [tag: string]: EHTTag };
+    data: Record<string, EHTTag>;
 }
 
 export interface EHTTag {
@@ -57,9 +57,7 @@ export interface TagItem extends EHTTag {
     introSearch?: string;
 }
 
-export interface TagMap {
-    [fullKey: string]: TagItem;
-}
+export type TagMap = Record<string, TagItem>;
 
 export interface GitHubAsset {
     url: string;

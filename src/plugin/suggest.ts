@@ -106,7 +106,7 @@ export class Suggest {
             }
         }
 
-        if (sTerm.slice(0, 1) === '"') {
+        if (sTerm.startsWith('"')) {
             sTerm = sTerm.slice(1);
         }
 

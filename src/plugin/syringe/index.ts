@@ -36,14 +36,18 @@ declare global {
 // 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
 function codePatch(window: Window): void {
     window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {
-        document.getElementById('advdiv')!.style.display === 'none'
-            ? window.show_advsearch_pane(b)
-            : window.hide_advsearch_pane(b);
+        if (document.getElementById('advdiv')!.style.display === 'none') {
+            window.show_advsearch_pane(b);
+        } else {
+            window.hide_advsearch_pane(b);
+        }
     };
     window.toggle_filesearch_pane = function toggle_filesearch_pane(b) {
-        document.getElementById('fsdiv')!.style.display === 'none'
-            ? window.show_filesearch_pane(b)
-            : window.hide_filesearch_pane(b);
+        if (document.getElementById('fsdiv')!.style.display === 'none') {
+            window.show_filesearch_pane(b);
+        } else {
+            window.hide_filesearch_pane(b);
+        }
     };
 }
 
@@ -146,7 +150,7 @@ export class Syringe {
         tags.forEach((t) => t.translate(tagMap));
     }
     documentEnd = false;
-    readonly skipNode: Set<string> = new Set(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
+    readonly skipNode = new Set<string>(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
     config = this.getAndInitConfig();
     observer?: MutationObserver;
 

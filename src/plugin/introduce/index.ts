@@ -21,7 +21,7 @@ export class Introduce {
         const conf = await this.storage.get('config');
         if (!conf.showIntroduce) return;
 
-        const tagList = document.querySelector('#taglist') as HTMLDivElement;
+        const tagList = document.querySelector<HTMLDivElement>('#taglist')!;
         this.tagList = tagList;
         const gridRight = document.querySelector('#gd5');
 
@@ -41,7 +41,7 @@ export class Introduce {
             let target = ev.target as Node | null;
 
             if (target instanceof HTMLElement && target.classList.contains('ehs-close')) {
-                const selectedTag = this.tagList.querySelector('[style*="color"]') as HTMLElement;
+                const selectedTag = this.tagList.querySelector<HTMLElement>('[style*="color"]')!;
                 if (selectedTag) {
                     selectedTag.click();
                 } else {

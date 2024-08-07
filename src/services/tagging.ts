@@ -5,7 +5,7 @@ import escapeHtml from 'escape-html';
 import emojiRegex from 'emoji-regex';
 
 const emojiReg = emojiRegex();
-const nsDic: { [k: string]: EHTNamespaceName } = {
+const nsDic: Record<string, EHTNamespaceName> = {
     r: 'reclass',
     reclass: 'reclass',
 
