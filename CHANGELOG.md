@@ -1,5 +1,9 @@
 # 更新日志
 
+## Upcoming
+
+-   翻译 Tag List 页面上的标签 #1263
+
 ## 3.0.5
 
 -   [UserScript] 移除不必要的权限

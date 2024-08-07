@@ -4,6 +4,8 @@ merge(
     /^\/tagjustification\.php/,
     undefined,
     {
+        '\nYou have no tags pending approval.\n\n': '您没有待审核的标签。',
+
         'New Tag Justification': '新建标签申请',
         'Make sure to provide a source for each requested tag whenever possible. ':
             '请尽可能地为每个申请的标签提供来源。',

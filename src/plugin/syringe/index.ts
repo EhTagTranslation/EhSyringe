@@ -52,6 +52,11 @@ function codePatch(window: Window): void {
 }
 
 class TagNodeRef {
+    static attached(node: Text | HTMLElement): boolean {
+        const parentElement = isText(node) ? node.parentElement : node;
+        if (!parentElement) return false;
+        return parentElement.hasAttribute(this.ATTR);
+    }
     private static readonly ATTR = 'ehs-tag';
 
     static create(node: Text | HTMLElement, service: Syringe): TagNodeRef | boolean {
@@ -317,6 +322,15 @@ export class Syringe {
         if (!node) {
             return false;
         }
+        if (isElement(node, 'a') && node.href.startsWith('https://e-hentai.org/tag/')) {
+            const url = new URL(node.href);
+            const urlTag = decodeURIComponent(url.pathname.split('/').pop()!).replace(/_/g, ' ').replace(/\+/g, ' ');
+            if (urlTag === node.textContent) {
+                node.title = node.textContent ?? '';
+                return true;
+            }
+            return false;
+        }
         return node.classList.contains('gt') || node.classList.contains('gtl') || node.classList.contains('gtw');
     }
 
@@ -336,6 +350,8 @@ export class Syringe {
             ref = TagNodeRef.create(elTrans, this) as TagNodeRef;
         } else if (!isText(node) || !parentElement) {
             return false;
+        } else if (TagNodeRef.attached(node)) {
+            return true;
         } else if (parentElement.nodeName === 'MARK' || parentElement.classList.contains('auto-complete-text')) {
             // 不翻译搜索提示的内容
             return true;

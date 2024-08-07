@@ -97,14 +97,13 @@ merge(
         Year: '年度',
         Total: '总计',
 
-        Tag: '标签',
-        Score: '权重',
-        Gallery: '图库',
-        Timestamp: '时间',
+        'User has no tags on public galleries in the last 30 days.': '用户在最近 30 天内没有在公开图库上标记过标签。',
     },
     [
-        [/^Showing (\d+) recent tags:$/, '最近 $1 个标签：'],
-        [/^Showing the last (\d+) of (\d+) recent tags:$/, '最近 $2 个标签中的最后 $1 个：'],
+        [
+            /^User has (\d+) tags? on (\d+) galler(ies|y) in the last 30 days.$/,
+            '用户在最近 30 天内在 $2 个图库上标记了 $1 个标签。',
+        ],
     ],
 );
 
@@ -115,6 +114,8 @@ merge(
         'Pending Tags': '待审核标签',
         'Approved Tags': '已批准标签',
         'Rejected Tags': '已拒绝标签',
+
+        'There are no  tags of this type': '没有此类标签',
 
         namespace: '命名空间',
         gallery: '图库',
