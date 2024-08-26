@@ -49,7 +49,7 @@ merge(
         ' Hentai I don\'t have" would require an actual list; and so on. If you have any minimum quality/resolution demands, make sure to include this as well.':
             ' Hentai” 需要一个确切的列表；以此类推。如果您有任何最低质量/分辨率要求，请务必包含在内。',
         'The more precise you can define your bounty, the higher the chance you will be satisfied with its result. Keep in mind that if your bounty is vague and someone technically fulfills it (as determined by a Bounty Moderator), your posted reward is forfeit.':
-            '您的悬赏内容定义的越精确，您对其结果的满意度就会越高。请记住，如果您的悬赏内容含糊不清，而某人在技术上满足了它（由悬赏版主裁定），您发布的奖励会被没收。',
+            '您的悬赏内容定义的越精确，您对其结果的满意度就会越高。请记住，如果您的悬赏内容含糊不清，而某人在技术上满足了它 (由悬赏版主裁定)，您发布的奖励会被没收。',
         'Wanted Poster:': '悬赏海报：',
         'You can optionally upload a thumbnail, cover page, an image from an incomplete collection, or any other relevant image to further specify the bounty. (JPG/PNG)':
             '您可以选择上传缩略图、封面、不完整合集的图像或任何其他相关的图像，以进一步指定悬赏。(JPG/PNG)',

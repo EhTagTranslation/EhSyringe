@@ -15,9 +15,9 @@ merge(
         ' Default port clients only (Can be slower. Enable if behind firewall/proxy that blocks outgoing non-standard ports.)':
             ' 仅使用默认端口的客户端 (可能稍慢。当防火墙或代理阻止非标准端口的流量时启用此项。)',
         ' No [Modern/HTTPS] (Donator only. You will not be able to browse as many pages. Recommended only if having severe problems.)':
-            ' 否 [现代/HTTPS] (仅限赞助者。配额消耗会加快，只有出现严重的问题时才启用。)',
+            ' 否 [现代/HTTPS] (仅限捐赠者。配额消耗会加快，只有出现严重的问题时才启用。)',
         ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)':
-            ' 否 [传统/HTTP] (仅限赞助者。可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用。)',
+            ' 否 [传统/HTTP] (仅限捐赠者。可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用。)',
         'You appear to be browsing the site from ': '看起来您正在 ',
         ' or use a VPN or proxy in this country, which means the site will try to load images from H@H clients in this general geographic region. If this is incorrect, or if you want to use a different region for any reason (like if you are using a split tunneling VPN), you can select a different country below.':
             ' 浏览此网页，或者使用了此处的 VPN/代理，这意味着网站会尝试通过此区域的 H@H 客户端加载图像。如果此结果不正确，或者您希望通过其他地区的 H@H 客户端加载图像 (例如您正在使用分割隧道 VPN)，可以在下方选择一个不同的区域。',
@@ -277,8 +277,8 @@ merge(
         Zimbabwe: 'Zimbabwe (津巴布韦)',
 
         'Image Size Settings': '图像大小设置',
-        'Images are normally resampled to 1280 pixels of horizontal resolution for online viewing. You can select one of the following alternative resolutions. (Resolutions above 1280x are restricted to accounts with any hath perk, a bronze star, or an UID below 3,000,000.)':
-            '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。 (高于 1280 像素只提供给解锁过任意 Hath Perk、铜星或 UID 小于 3,000,000 的用户)',
+        'Images are normally resampled to 1280 pixels (desktop) or 780 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. (Resolutions above 1280x are restricted to accounts with any hath perk, a bronze star, or an UID below 3,000,000.)':
+            '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 780 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。 (高于 1280 像素只提供给解锁过任意 Hath Perk、铜星或 UID 小于 3,000,000 的用户)',
         'Images are normally resampled to 1280 pixels of horizontal resolution for online viewing. You can select one of the following alternative resolutions.':
             '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。',
         ' Auto': ' 自动',

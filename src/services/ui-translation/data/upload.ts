@@ -14,6 +14,7 @@ const data = {
     Files: '文件数',
     'Public Category': '发布类别',
     'Available Actions': '操作',
+    Expunged: '已删除',
     View: '查看',
     Manage: '管理',
     Publish: '发布',
@@ -101,7 +102,7 @@ const data = {
     'This was officially published in this language, or the gallery has no text.': '官方发布于此语言，或者图库无字',
     Translated: '翻译',
     'This is a fan translation based on the original text.': '基于原始文字翻译',
-    'By a proficient human translator (not machine translated)': '由熟练的译者翻译（非机器翻译）',
+    'By a proficient human translator (not machine translated)': '由熟练的译者翻译 (非机器翻译)',
     Rewrite: '改写',
     'This is a fan rewrite with new made-up text.': '使用新的文字改写',
 
