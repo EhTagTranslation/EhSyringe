@@ -31,6 +31,7 @@ jobs:
           pnpm run build:chrome
           pnpm run build:monkey
       - uses: actions/attest-build-provenance@v1
+        if: startsWith(github.event.ref, 'refs/tags/')
         with:
           subject-path: releases/
       - uses: actions/upload-artifact@v4
