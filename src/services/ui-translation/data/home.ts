@@ -2,18 +2,24 @@ import { merge } from '../helper';
 
 merge(/^\/home\.php/, undefined, {
     'Image Limits': '图像配额',
-    'Due to widespread usage of bulk downloaders, high-resolution images can be limited.': '由于批量下载器的滥用，高分辨率图像可能会受到限制。',
+    'Due to widespread usage of bulk downloaders, high-resolution images can be limited.':
+        '由于批量下载器的滥用，高分辨率图像可能会受到限制。',
     'You are currently at ': '当前：',
     ' towards your account limit of ': '，账户限制为 ',
     '.': '。',
     'You can reset your image quota by spending ': '重置配额花费：',
     ' GP.': ' GP。',
     'Reset Quota': '重置配额',
-    'You are currently using IP-based limits. No restrictions are currently in effect.': '您当前使用的是基于 IP 的限制，目前没有任何限制生效。',
-    'Due to a high request rate, your IP is currently restricted to lower-resolution images.': '由于请求频率过高，您的 IP 目前只能查看低分辨率图像。',
-    'You can get a Bronze Star or the More Pages hathperk to tie image limits to your account.': '您可以通过捐赠铜星或解锁 Hath Perk:「更多页面」将图像配额绑定到您的账户。',
-    'Alternatively, you can unlock a high-resolution quota for 24 hours by spending ': '或者，您可以花费 GP 来解锁 24 小时的高分辨率配额：',
-    'Note that for the latter, clearing your cookies will revert you to IP-based limits.': '请注意：对于后者，清除 Cookie 将使您恢复到基于 IP 的限制。',
+    'You are currently using IP-based limits. No restrictions are currently in effect.':
+        '您当前使用的是基于 IP 的限制，目前没有任何限制生效。',
+    'Due to a high request rate, your IP is currently restricted to lower-resolution images.':
+        '由于请求频率过高，您的 IP 目前只能查看低分辨率图像。',
+    'You can get a Bronze Star or the More Pages hathperk to tie image limits to your account.':
+        '您可以通过捐赠铜星或解锁 Hath Perk:「更多页面」将图像配额绑定到您的账户。',
+    'Alternatively, you can unlock a high-resolution quota for 24 hours by spending ':
+        '或者，您可以花费 GP 来解锁 24 小时的高分辨率配额：',
+    'Note that for the latter, clearing your cookies will revert you to IP-based limits.':
+        '请注意：对于后者，清除 Cookie 将使您恢复到基于 IP 的限制。',
     'Unlock Quota': '解锁配额',
 
     EHTracker: 'EH 种子服务器',

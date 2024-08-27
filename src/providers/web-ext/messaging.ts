@@ -27,7 +27,7 @@ class MessagingCross extends Messaging {
     private async remoteHandle(key: string, args: unknown): Promise<Res> {
         try {
             const req: Req = { key, args };
-            const response = (await browser.runtime.sendMessage(req)) as Res;
+            const response = await browser.runtime.sendMessage<Req, Res>(req);
             if (!response) {
                 const error = new Error(chrome.runtime.lastError?.message ?? '消息发送失败');
                 Object.defineProperties(error, {
