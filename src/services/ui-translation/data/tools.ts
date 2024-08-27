@@ -97,12 +97,17 @@ merge(
         Year: '年度',
         Total: '总计',
 
-        'User has no tags on public galleries in the last 30 days.': '用户在最近 30 天内没有在公开图库上标记过标签。',
+        'User has no recent tags on public galleries.': '用户最近没有在公开图库上标记过标签。',
+        'Filter galleries with assessed bad tagvotes': '筛选具有不良标签投票的图库',
     },
     [
         [
-            /^User has (\d+) tags? on (\d+) galler(ies|y) in the last 30 days.$/,
-            '用户在最近 30 天内在 $2 个图库上标记了 $1 个标签。',
+            /^User has (\d+) recent tags? on (\d+) public galler(ies|y).$/,
+            '用户最近在 $2 个图库上标记了 $1 个标签。',
+        ],
+        [
+            /^Last bad tagvote assessed: /,
+            '最近一次不良标签投票的时间：',
         ],
     ],
 );
