@@ -21,8 +21,8 @@ merge(
         Peers: '下载',
         DLs: '完成',
 
-        '\nNote that you cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.\n':
-            '注意：您无法直接将种子添加到此页面。请在图库中上传。',
+        'You cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.':
+            '您无法直接将种子文件添加到此页面。要将种子文件上传到此系统，请在相应图库的种子页面上传。',
 
         'Posted:': '发布于：',
         'Size:': '文件大小：',

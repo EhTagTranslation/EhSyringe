@@ -94,13 +94,13 @@ merge(
         'The page range minimum cannot be above 1000.': '页数最小值最多为 1000。',
         'The page range maximum cannot be below 10.': '页数最大值至少为 10。',
         'Your page range filter is too narrow.': '页数范围差至少为 20。',
+        'You provided too many keywords. Use fewer keywords, or combine keywords with quotes.':
+            '使用的关键词过多。请减少关键词或使用引号组合关键词。',
         'You provided too many keywords. Use fewer keywords, or combine keywords with quotes. (Ignored ':
             '使用的关键词过多。请减少关键词或使用引号组合关键词。(已忽略 ',
         'No hits found': '什么也没有',
         'No unfiltered results found.': '没有未过滤的结果',
         'Disable Filters': '禁用过滤器',
-        'You cannot add torrents directly to this page. To upload torrents to this system, visit the torrent screen for a gallery.':
-            '您无法直接将种子文件添加到此页面。要将种子文件上传到此系统，请在相应图库的种子页面上传。',
 
         '<< First': '<< 首页',
         '< Prev': '< 上一页',
