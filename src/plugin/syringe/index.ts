@@ -1,4 +1,4 @@
-import { isEx, isEh } from 'utils/hosts';
+import { isEx, isEh, isRepo } from 'utils/hosts';
 import { ready } from 'utils/dom';
 import { Service } from 'services';
 import { UiTranslation } from 'services/ui-translation';
@@ -273,20 +273,23 @@ export class Syringe {
     setRootAttrs(): void {
         const node = document.documentElement;
         if (!node) return;
+
+        node.classList.remove(...[...node.classList.values()].filter((k) => k.startsWith('ehs')));
+        node.classList.add('ehs-injected');
         if (isEx(location.hostname)) {
-            node.classList.add('ex');
+            node.classList.add('ehs-ex');
         } else if (isEh(location.hostname)) {
-            node.classList.add('eh');
+            node.classList.add('ehs-eh');
+        } else if (isRepo(location.hostname)) {
+            node.classList.add('ehs-repo');
         } else if ('matchMedia' in window) {
             const matchesDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (matchesDarkTheme) {
-                node.classList.add('ex');
+                node.classList.add('ehs-ex');
             } else {
-                node.classList.add('eh');
+                node.classList.add('ehs-eh');
             }
         }
-
-        node.classList.remove(...[...node.classList.values()].filter((k) => k.startsWith('ehs')));
         if (!this.config.showIcon) {
             node.classList.add('ehs-hide-icon');
         }

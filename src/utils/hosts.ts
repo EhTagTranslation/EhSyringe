@@ -3,7 +3,8 @@ function isDomain(hostname: string, domain: string): boolean {
 }
 
 export function isEh(hostname: string): boolean {
-    if (hostname === 'forums.e-hentai.org') return false;
+    if (hostname === FORUM) return false;
+    if (hostname === REPO) return false;
     return isDomain(hostname, EH);
 }
 
@@ -19,17 +20,23 @@ export function isEx(hostname: string): boolean {
     return isDomain(hostname, EX) || isUnion(hostname);
 }
 
+export function isRepo(hostname: string): boolean {
+    return isDomain(hostname, REPO);
+}
+
 export function isHathNetwork(hostname: string): boolean {
     return isDomain(hostname, HATH);
 }
 
 export function isValidHost(hostname: string): boolean {
     if (!hostname) return false;
-    return isEh(hostname) || isEx(hostname) || isHathNetwork(hostname);
+    return isEh(hostname) || isEx(hostname) || isHathNetwork(hostname) || isRepo(hostname);
 }
 
 export const EX = 'exhentai.org';
 export const EH = 'e-hentai.org';
 export const EXU = 'exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion';
 export const EHGT = 'ehgt.org';
+export const REPO = 'repo.e-hentai.org';
 export const HATH = 'hath.network';
+export const FORUM = 'forums.e-hentai.org';

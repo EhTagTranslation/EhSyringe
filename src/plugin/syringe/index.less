@@ -2,42 +2,44 @@
 
 :root {
     color-scheme: light;
-    &.ex {
+    &.ehs-ex {
         color-scheme: dark;
     }
 }
 
 button[ehs-input] {
-    min-height: 26px;
-    line-height: 20px;
-    padding: 1px 5px 2px;
-    margin: 0 2px;
-    border: 2px solid #b5a4a4;
-    border-radius: 3px;
-    font-size: 9pt;
-    color: #5c0d12;
-    background-color: #edeada;
-    outline: none;
-    white-space: pre;
+    :is(:root.ehs-eh, :root.ehs-ex) & {
+        min-height: 26px;
+        line-height: 20px;
+        padding: 1px 5px 2px;
+        margin: 0 2px;
+        border: 2px solid #b5a4a4;
+        border-radius: 3px;
+        font-size: 9pt;
+        color: #5c0d12;
+        background-color: #edeada;
+        outline: none;
+        white-space: pre;
 
-    &:disabled {
-        color: #c2a8a4;
-        -webkit-text-fill-color: #c2a8a4;
-        opacity: 1;
+        &:disabled {
+            color: #c2a8a4;
+            -webkit-text-fill-color: #c2a8a4;
+            opacity: 1;
+        }
+
+        &:enabled:hover,
+        &:enabled:focus {
+            background-color: #f3f0e0 !important;
+            border-color: #977273 !important;
+        }
+
+        &:enabled:active {
+            background: radial-gradient(#d7d3c2, #f3f0e0) !important;
+            border-color: #5c0d12 !important;
+        }
     }
 
-    &:enabled:hover,
-    &:enabled:focus {
-        background-color: #f3f0e0 !important;
-        border-color: #977273 !important;
-    }
-
-    &:enabled:active {
-        background: radial-gradient(#d7d3c2, #f3f0e0) !important;
-        border-color: #5c0d12 !important;
-    }
-
-    :root.ex & {
+    :root.ehs-ex & {
         border-color: #8d8d8d;
         color: #f1f1f1;
         background-color: #34353b;
