@@ -279,8 +279,8 @@ merge(
         'Image Size Settings': '图像大小设置',
         'Images are normally resampled to 1280 pixels (desktop) or 780 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. (Resolutions above 1280x are restricted to accounts with any hath perk, a bronze star, or an UID below 3,000,000.)':
             '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 780 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。 (高于 1280 像素只提供给解锁过任意 Hath Perk、铜星或 UID 小于 3,000,000 的用户)',
-        'Images are normally resampled to 1280 pixels of horizontal resolution for online viewing. You can select one of the following alternative resolutions.':
-            '通常情况下，图像会被重采样到 1280 像素宽度用于在线浏览，您也可以手动指定重采样分辨率。',
+        'Images are normally resampled to 1280 pixels (desktop) or 780 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions.':
+            '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 780 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。',
         ' Auto': ' 自动',
         'Use original images instead of the resampled versions? Resampled images will still be used if you select a horizontal resolution different than "Auto" above and the image in question is wider, or if the original image is larger than 10 MiB (or 4 MiB for galleries older than one year).':
             '在阅读时优先加载原图而非重采样版本？当选择了“自动”以外的分辨率且原图宽度大于设定值，或原图大于 10 MiB (一年前发布的图库 4 MiB) 时，仍会加载重采样版本。',
