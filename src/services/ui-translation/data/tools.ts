@@ -4,6 +4,8 @@ merge(
     /^\/tools\/track_expunge/,
     'repo.e-hentai.org',
     {
+        'Expunge Tracker': '删除追踪器',
+
         'State: \xA0 [': '状态： [',
         All: '全部',
         Expunged: '已删除',
@@ -51,6 +53,8 @@ merge(
     /^\/tools\/track_rename/,
     'repo.e-hentai.org',
     {
+        'Rename Tracker': '重命名追踪器',
+
         '\nFilter: \xA0\n[': '状态： [',
         All: '全部',
         Renamed: '已重命名',
@@ -99,16 +103,14 @@ merge(
 
         'User has no recent tags on public galleries.': '用户最近没有在公开图库上标记过标签。',
         'Filter galleries with assessed bad tagvotes': '筛选具有不良标签投票的图库',
+        'There are no recent tag votes assessed as bad.': '最近没有被评定为不良的标签投票。',
     },
     [
         [
             /^User has (\d+) recent tags? on (\d+) public galler(ies|y).$/,
-            '用户最近在 $2 个图库上标记了 $1 个标签。',
+            '用户最近在 $2 个公开图库上标记了 $1 个标签。',
         ],
-        [
-            /^Last bad tagvote assessed: /,
-            '最近一次不良标签投票的时间：',
-        ],
+        [/^Last bad tagvote assessed: /, '最近一次不良标签投票的时间：'],
     ],
 );
 
@@ -127,6 +129,8 @@ merge(
         creator: '创建者',
         'time created': '创建时间',
         'time updated': '更新时间',
+        'time approved': '批准时间',
+        'time rejected': '拒绝时间',
         '(missing)': '(缺失)',
         'Show Older >': '显示更早的 >',
 
