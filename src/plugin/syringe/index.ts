@@ -119,8 +119,10 @@ class TagNodeRef {
             return false;
         }
         value = this.service.tagging.markImagesAndEmoji(value);
-        if (this.original[1] === ':') {
-            value = `${this.original[0]}:${value}`;
+        if (this.original.includes(':')) {
+            const originalNs = this.original.split(':')[0];
+            if (!originalNs) value = `:${value}`;
+            else value = `${this.service.tagging.ns(originalNs)}:${value}`;
         }
         this.node.innerHTML = value;
         this.node.setAttribute('lang', 'cmn-Hans');
@@ -387,17 +389,21 @@ export class Syringe {
             // 快速判断是否有可能包含时间戳
             repText.includes(':')
         ) {
-            repText = repText.replace(/(\d\d\d\d-[0-1][0-9]-[0-3][0-9] [0-2][0-9]:[0-5][0-9])( UTC)?/g, ($, t) => {
-                const date = Date.parse(t + 'Z');
-                if (!date) return $;
-                return `${this.time.diff(date, undefined, DateTime.hour)}`;
-            });
+            repText = repText.replace(
+                /(\d\d\d\d-[0-1][0-9]-[0-3][0-9] [0-2][0-9]:[0-5][0-9](:[0-5][0-9])?)( UTC)?/g,
+                ($, t, seconds) => {
+                    const date = Date.parse(t + 'Z');
+                    if (!date) return $;
+                    if (seconds) return this.time.absolute(date, true);
+                    return this.time.diff(date, undefined, DateTime.hour);
+                },
+            );
             repText = repText.replace(
                 /([0-3][0-9]|[1-9]) (January|February|March|April|May|June|July|August|September|October|November|December) (\d\d\d\d), ([0-2][0-9]:[0-5][0-9])( UTC)?/gi,
                 ($, d, m, y, t) => {
                     const date = Date.parse(`${d} ${m} ${y}, ${t} UTC`);
                     if (!date) return $;
-                    return `${this.time.diff(date, undefined, DateTime.hour)}`;
+                    return this.time.diff(date, undefined, DateTime.hour);
                 },
             );
             repText = repText.replace(
@@ -405,7 +411,7 @@ export class Syringe {
                 ($, _w, d, _do, m, y, t) => {
                     const date = Date.parse(`${d} ${m} ${y}, ${t} UTC`);
                     if (!date) return $;
-                    return `${this.time.diff(date, undefined, DateTime.hour)}`;
+                    return this.time.diff(date, undefined, DateTime.hour);
                 },
             );
         }

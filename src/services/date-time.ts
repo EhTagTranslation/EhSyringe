@@ -10,6 +10,13 @@ const timeFormatter = new Intl.DateTimeFormat(undefined, {
     ...base,
 });
 
+const timeWithSecondFormatter = new Intl.DateTimeFormat(undefined, {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    ...base,
+});
+
 const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
     year: 'numeric',
     month: 'numeric',
@@ -19,11 +26,30 @@ const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
     ...base,
 });
 
+const dateTimeWithSecondFormatter = new Intl.DateTimeFormat(undefined, {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    ...base,
+});
+
 const noYearDateTimeFormatter = new Intl.DateTimeFormat(undefined, {
     month: 'numeric',
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
+    ...base,
+});
+
+const noYearDateTimeWithSecondFormatter = new Intl.DateTimeFormat(undefined, {
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
     ...base,
 });
 
@@ -36,16 +62,16 @@ export class DateTime {
     static readonly month = DateTime.day * (365.25 / 12);
     static readonly year = DateTime.month * 12;
 
-    absolute(hisTime: number, nowTime: number = Date.now()): string {
+    absolute(hisTime: number, withSecond = false, nowTime: number = Date.now()): string {
         const his = new Date(hisTime);
         const now = new Date(nowTime);
         if (his.getFullYear() === now.getFullYear()) {
             if (his.getMonth() === now.getMonth() && his.getDate() === now.getDate()) {
-                return `今天 ${timeFormatter.format(his)}`;
+                return `今天 ${(withSecond ? timeWithSecondFormatter : timeFormatter).format(his)}`;
             }
-            return noYearDateTimeFormatter.format(his);
+            return (withSecond ? noYearDateTimeWithSecondFormatter : noYearDateTimeFormatter).format(his);
         }
-        return dateTimeFormatter.format(his);
+        return (withSecond ? dateTimeWithSecondFormatter : dateTimeFormatter).format(his);
     }
 
     relative(diffTime: number): string {
@@ -70,7 +96,12 @@ export class DateTime {
         else return `${Math.floor(-nYear)} 年后`;
     }
 
-    diff(hisTime: Date | number = 0, nowTime: Date | number = Date.now(), maxRelativeDiff = DateTime.day * 7): string {
+    diff(
+        hisTime: Date | number = 0,
+        withSecond = false,
+        maxRelativeDiff = DateTime.day * 7,
+        nowTime: Date | number = Date.now(),
+    ): string {
         hisTime = typeof hisTime === 'number' ? hisTime : hisTime.getTime();
         nowTime = typeof nowTime === 'number' ? nowTime : nowTime.getTime();
         if (!hisTime) return 'N/A';
@@ -78,7 +109,7 @@ export class DateTime {
         const diffTime = nowTime - hisTime;
 
         if (diffTime >= maxRelativeDiff) {
-            return this.absolute(hisTime, nowTime);
+            return this.absolute(hisTime, withSecond, nowTime);
         } else {
             return this.relative(diffTime);
         }
