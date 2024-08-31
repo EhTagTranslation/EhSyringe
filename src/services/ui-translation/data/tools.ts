@@ -78,6 +78,49 @@ merge(
 );
 
 merge(
+    /^\/tools\/tagtrack/,
+    'repo.e-hentai.org',
+    {
+        'Tag Tracker': '标签追踪器',
+
+        ' downed': ' 已清除',
+        ' weak': ' 弱小',
+        ' active': ' 活跃',
+        ' solid': ' 确定',
+        ' aged galleries': ' 老旧图库',
+        'Only show galleries posted more than three days ago': '只显示三天前发布的图库',
+        ' revived tags': ' 重生标签',
+        'Only show revived tags': '只显示重生 (之前被清除但是再次出现) 的标签',
+        ' exclude expunged': ' 排除已删除图库',
+        'Exclude tags on expunged galleries': '排除已删除图库上的标签',
+        ' exclude autotags': ' 排除自动标签',
+        'Exclude tags placed by autotagger': '排除由系统自动标记的标签',
+
+        'Tag/NS: ': '标签/命名空间：',
+        'tag, tagid, or special:namespace': '标签、标签 ID 或 special:命名空间',
+        Go: '查询',
+
+        'Show Older >': '显示更早的 >',
+        'There are no tags matching this filter.': '没有符合条件的标签。',
+
+        '(Doujinshi) \xA0': '(同人志) \xA0',
+        '(Manga) \xA0': '(漫画) \xA0',
+        '(Artist CG) \xA0': '(画师CG) \xA0',
+        '(Game CG) \xA0': '(游戏CG) \xA0',
+        '(Western) \xA0': '(西方) \xA0',
+        '(Non-H) \xA0': '(无H) \xA0',
+        '(Image Set) \xA0': '(图集) \xA0',
+        '(Misc) \xA0': '(杂项) \xA0',
+
+        downed: '已清除',
+        weak: '弱小',
+        active: '活跃',
+        SOLID: '确定',
+    },
+    [],
+);
+
+merge(
     /^\/tools\/taglist/,
     'repo.e-hentai.org',
     {
@@ -101,9 +144,14 @@ merge(
         Year: '年度',
         Total: '总计',
 
+        'Show Older >': '显示更早的 >',
+
         'User has no recent tags on public galleries.': '用户最近没有在公开图库上标记过标签。',
         'Filter galleries with assessed bad tagvotes': '筛选具有不良标签投票的图库',
         'There are no recent tag votes assessed as bad.': '最近没有被评定为不良的标签投票。',
+
+        'You have to provide a gid or uid': '您必须提供一个 gid 或 uid',
+        'You do not have access to this function.': '您没有权限访问此功能',
     },
     [
         [
