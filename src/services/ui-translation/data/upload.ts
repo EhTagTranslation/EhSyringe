@@ -200,6 +200,8 @@ const data = {
     'A new version of the gallery was successfully created. The previous version will remain publicly listed while you make updates to this version.':
         '新版本的图库已成功创建。旧版本将保留到新版本发布。',
     'To cancel and keep the previous version, simply delete this gallery.': '要取消并保留旧版本，只需删除此图库。',
+    'You cannot unlock galleries this old. Please make a new one, then request to have this one expunged.':
+        '您无法解锁如此老旧的图库。请创建一个新图库，然后请求删除此图库。',
 
     'Please confirm that you wish to delete this unpublished gallery.': '请确认您希望删除此未发布的图库。',
     'This action cannot be undone.': '此操作无法撤销。',
