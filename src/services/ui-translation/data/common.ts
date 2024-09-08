@@ -87,8 +87,8 @@ merge(
 
         'The keyword ': '关键词 ',
         ' is short and will be searched as an exact tag only.': ' 太短，因此只会搜索精确匹配的标签。',
-        'The term ': '关键词 ',
-        ' uses unsupported syntax or is otherwise not valid.': ' 无效或使用了不支持的语法。',
+        'Some terms use unsupported syntax, are too short, or are otherwise not valid.':
+            '某些关键词使用了不支持的语法、太短或无效。',
         'The provided date is invalid or outside the range of posted galleries.':
             '提供的日期无效或超出已发布图库的日期范围。',
         'The page range minimum cannot be above 1000.': '页数最小值最多为 1000。',
