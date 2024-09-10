@@ -223,6 +223,10 @@ merge(
         'This petition is being processed and can no longer be voted on.': '此申请正在处理，无法继续投票。',
         'New expunges for this gallery can currently only be started by trusted users.':
             '目前只有可信用户能为此图库提交新的删除申请。',
+        'If you believe that the gallery should be expunged, please make a post in the ':
+            '如果您认为此图库应当被删除，请在 ',
+        'Expunging, Appealing and Reverting Assistance': '删除、申诉和恢复帮助',
+        ' thread.': ' 主题中发表帖子。',
     },
     [
         [/^(\d\d\d\d-\d\d-\d\d \d\d:\d\d) by (.*)$/, '$1 由 $2'],

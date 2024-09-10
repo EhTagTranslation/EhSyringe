@@ -69,7 +69,7 @@ class TagNodeRef {
 
         let fullKeyCandidate: string | undefined;
         if (aTitle) {
-            const [namespace, key] = aTitle.split(':');
+            const [namespace, key] = aTitle.includes(':') ? aTitle.split(':') : ['', aTitle];
             fullKeyCandidate = service.tagging.fullKey({ namespace, key });
         } else if (aId) {
             let id = aId;

@@ -19,6 +19,7 @@ const data = {
     Manage: '管理',
     Publish: '发布',
     Disown: '脱离关系',
+    'Manage Replacement': '管理新版本',
     'Collapse Open Folders': '折叠文件夹',
     '+ All': '+ 全选',
     '- All': '- 全不选',
