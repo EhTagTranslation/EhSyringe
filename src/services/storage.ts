@@ -77,7 +77,7 @@ export class Storage {
 
     on<T extends keyof StorageItems>(
         key: T,
-        listener: (key: T, oldValue?: StorageItems[T] | undefined, newValue?: StorageItems[T] | undefined) => unknown,
+        listener: (key: T, oldValue: StorageItems[T] | undefined, newValue: StorageItems[T] | undefined) => unknown,
     ): ListenerId {
         return storage.on(key, listener as Listener);
     }
