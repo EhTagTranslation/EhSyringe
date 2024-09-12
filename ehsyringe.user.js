@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.0.9
+// @version     3.0.10
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 34000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@5081b003002d28e743f3e25820045a9e5020ae45/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@1f589ca7891f3a381a70ac036f9cc8b5b603e74b/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -277,7 +277,7 @@ function escapeHtml(string) {
 
 /***/ }),
 
-/***/ 86645:
+/***/ 20388:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -297,7 +297,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#gmid{display:grid;grid:\"gd3 spa spa\
 
 /***/ }),
 
-/***/ 52158:
+/***/ 33587:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -317,7 +317,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:mediu
 
 /***/ }),
 
-/***/ 98693:
+/***/ 90460:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -337,7 +337,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root{--csstools-color-scheme--dark: ;
 
 /***/ }),
 
-/***/ 86992:
+/***/ 18917:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -357,7 +357,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".eh-syringe-lite-auto-complete-list{ba
 
 /***/ }),
 
-/***/ 39942:
+/***/ 36859:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31366,8 +31366,8 @@ var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleE
 // EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleTagTransform.js
 var styleTagTransform = __webpack_require__(27964);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
-var introduce = __webpack_require__(86645);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.45_typescript@5.6.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
+var introduce = __webpack_require__(20388);
 ;// CONCATENATED MODULE: ./src/plugin/introduce/index.less
 
       
@@ -32919,8 +32919,8 @@ function filter_filter(predicate, thisArg) {
     }));
   });
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
-var tag_tip = __webpack_require__(86992);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.45_typescript@5.6.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
+var tag_tip = __webpack_require__(18917);
 ;// CONCATENATED MODULE: ./src/plugin/tag-tip/index.less
 
       
@@ -33659,8 +33659,7 @@ merge(/.*/, undefined, {
   ' Only Search Covers': ' 仅搜索封面',
   'The keyword ': '关键词 ',
   ' is short and will be searched as an exact tag only.': ' 太短，因此只会搜索精确匹配的标签。',
-  'The term ': '关键词 ',
-  ' uses unsupported syntax or is otherwise not valid.': ' 无效或使用了不支持的语法。',
+  'Some terms use unsupported syntax, are too short, or are otherwise not valid.': '某些关键词使用了不支持的语法、太短或无效。',
   'The provided date is invalid or outside the range of posted galleries.': '提供的日期无效或超出已发布图库的日期范围。',
   'The page range minimum cannot be above 1000.': '页数最小值最多为 1000。',
   'The page range maximum cannot be below 10.': '页数最大值至少为 10。',
@@ -33964,7 +33963,10 @@ merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
   'You cannot currently start an expunge for this gallery.': '您目前无法为此图库提交删除申请。',
   'You cannot start additional expunges on this gallery.': '您无法为此图库提交更多删除申请。',
   'This petition is being processed and can no longer be voted on.': '此申请正在处理，无法继续投票。',
-  'New expunges for this gallery can currently only be started by trusted users.': '目前只有可信用户能为此图库提交新的删除申请。'
+  'New expunges for this gallery can currently only be started by trusted users.': '目前只有可信用户能为此图库提交新的删除申请。',
+  'If you believe that the gallery should be expunged, please make a post in the ': '如果您认为此图库应当被删除，请在 ',
+  'Expunging, Appealing and Reverting Assistance': '删除、申诉和恢复帮助',
+  ' thread.': ' 主题中发表帖子。'
 }, [[/^(\d\d\d\d-\d\d-\d\d \d\d:\d\d) by (.*)$/, '$1 由 $2'], [/^on (\d\d\d\d-\d\d-\d\d \d\d:\d\d) by (.*)$/, '投票于 $1 由 $2'], [/^(\d+) minutes?$/, '$1 分钟'], [/^ on (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, '，于 $1']]);
 merge(/^\/g\/\w+\/\w+\/.*report=/, undefined, {
   'Report Type': '举报类型',
@@ -35263,6 +35265,7 @@ var data = {
   Manage: '管理',
   Publish: '发布',
   Disown: '脱离关系',
+  'Manage Replacement': '管理新版本',
   'Collapse Open Folders': '折叠文件夹',
   '+ All': '+ 全选',
   '- All': '- 全不选',
@@ -35412,6 +35415,7 @@ var data = {
   'Create New Version': '创建新版本',
   'A new version of the gallery was successfully created. The previous version will remain publicly listed while you make updates to this version.': '新版本的图库已成功创建。旧版本将保留到新版本发布。',
   'To cancel and keep the previous version, simply delete this gallery.': '要取消并保留旧版本，只需删除此图库。',
+  'You cannot unlock galleries this old. Please make a new one, then request to have this one expunged.': '您无法解锁如此老旧的图库。请创建一个新图库，然后请求删除此图库。',
   'Please confirm that you wish to delete this unpublished gallery.': '请确认您希望删除此未发布的图库。',
   'This action cannot be undone.': '此操作无法撤销。',
   'The gallery was successfully deleted.': '图库已成功删除。',
@@ -35689,7 +35693,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// CONCATENATED MODULE: ./package.json
-var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.9","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0"},"packageManager":"pnpm@9.9.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.25.2","@babel/plugin-transform-runtime":"^7.25.4","@babel/preset-env":"^7.25.4","@babel/runtime-corejs3":"^7.25.6","@eslint/js":"^9.9.1","@types/chrome":"^0.0.270","@types/escape-html":"^1.0.4","@types/node":"^22.5.1","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.5","eslint":"^9.9.1","eslint-config-prettier":"^9.1.0","execa":"^9.3.1","glob":"^11.0.0","html-webpack-plugin":"^5.6.0","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.41","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.0.2","prettier":"^3.3.3","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.26.0","typescript":"^5.5.4","typescript-eslint":"^8.3.0","web-ext":"^8.2.0","webpack":"^5.94.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.0.4","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.38.1","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.0","rxjs":"^7.8.1","tslib":"^2.7.0","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.10","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0"},"packageManager":"pnpm@9.9.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.25.2","@babel/plugin-transform-runtime":"^7.25.4","@babel/preset-env":"^7.25.4","@babel/runtime-corejs3":"^7.25.6","@eslint/js":"^9.10.0","@types/chrome":"^0.0.270","@types/escape-html":"^1.0.4","@types/node":"^22.5.4","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.1.3","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.6","eslint":"^9.10.0","eslint-config-prettier":"^9.1.0","execa":"^9.3.1","glob":"^11.0.0","html-webpack-plugin":"^5.6.0","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.45","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.0.3","prettier":"^3.3.3","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.26.1","typescript":"^5.6.2","typescript-eslint":"^8.5.0","web-ext":"^8.2.0","webpack":"^5.94.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.1.0","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.38.1","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.0","rxjs":"^7.8.1","tslib":"^2.7.0","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// CONCATENATED MODULE: ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -35917,8 +35921,8 @@ DateTime.month = DateTime_1.day * (365.25 / 12);
 DateTime.year = DateTime_1.month * 12;
 DateTime = DateTime_1 = __decorate([Service()], DateTime);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
-var syringe = __webpack_require__(98693);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.45_typescript@5.6.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
+var syringe = __webpack_require__(90460);
 ;// CONCATENATED MODULE: ./src/plugin/syringe/index.less
 
       
@@ -36073,10 +36077,10 @@ var TagNodeRef = /*#__PURE__*/function () {
       var aTitle = parentElement.title;
       var fullKeyCandidate;
       if (aTitle) {
-        var _aTitle$split = aTitle.split(':'),
-          _aTitle$split2 = slicedToArray_slicedToArray(_aTitle$split, 2),
-          namespace = _aTitle$split2[0],
-          key = _aTitle$split2[1];
+        var _ref = includes_default()(aTitle).call(aTitle, ':') ? aTitle.split(':') : ['', aTitle],
+          _ref2 = slicedToArray_slicedToArray(_ref, 2),
+          namespace = _ref2[0],
+          key = _ref2[1];
         fullKeyCandidate = service.tagging.fullKey({
           namespace: namespace,
           key: key
@@ -38729,8 +38733,8 @@ var Q = function Q(t, i, s) {
   return h._$AI(t), h;
 };
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
-var popup = __webpack_require__(52158);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.45_typescript@5.6.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
+var popup = __webpack_require__(33587);
 ;// CONCATENATED MODULE: ./src/plugin/popup/index.less
 
       
@@ -39219,8 +39223,8 @@ var Popup = /*#__PURE__*/function () {
 }();
 Popup = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, DateTime])], Popup);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
-var popup_host = __webpack_require__(39942);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.45_typescript@5.6.2_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
+var popup_host = __webpack_require__(36859);
 ;// CONCATENATED MODULE: ./src/user-script/popup-host.less
 
       
