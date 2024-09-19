@@ -78,6 +78,9 @@ merge(
             '此客户端将托管在一台正常情况下 24 小时运行的系统上',
         'Submit Application': '提交申请',
 
+        'Your application is pending. You can still make changes below if necessary.':
+            '您的申请正在等待处理。如有必要，您仍可以在下方修改申请。',
+
         'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ':
             '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
         'make sure to keep your client running': '确保您的客户端保持运行',
