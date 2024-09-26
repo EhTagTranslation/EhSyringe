@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.0.11
+// @version     3.0.12
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 34000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@e6b0a21c25f42f5dde5ad0d794ff86b9e9ca674d/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@a12baab1435d75b9a6b25fdaa2c04ac531b567cc/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -35693,7 +35693,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.11","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0"},"packageManager":"pnpm@9.9.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.25.2","@babel/plugin-transform-runtime":"^7.25.4","@babel/preset-env":"^7.25.4","@babel/runtime-corejs3":"^7.25.6","@eslint/js":"^9.11.1","@types/chrome":"^0.0.272","@types/escape-html":"^1.0.4","@types/node":"^22.7.2","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.2.1","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.6","eslint":"^9.11.1","eslint-config-prettier":"^9.1.0","execa":"^9.4.0","glob":"^11.0.0","html-webpack-plugin":"^5.6.0","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.47","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.0.5","prettier":"^3.3.3","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.26.1","typescript":"^5.6.2","typescript-eslint":"^8.7.0","web-ext":"^8.3.0","webpack":"^5.95.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.1.0","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.38.1","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.0","rxjs":"^7.8.1","tslib":"^2.7.0","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.12","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0"},"packageManager":"pnpm@9.9.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.25.2","@babel/plugin-transform-runtime":"^7.25.4","@babel/preset-env":"^7.25.4","@babel/runtime-corejs3":"^7.25.6","@eslint/js":"^9.11.1","@types/chrome":"^0.0.272","@types/escape-html":"^1.0.4","@types/node":"^22.7.2","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.2.1","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.6","eslint":"^9.11.1","eslint-config-prettier":"^9.1.0","execa":"^9.4.0","glob":"^11.0.0","html-webpack-plugin":"^5.6.0","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.47","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.0.5","prettier":"^3.3.3","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.26.1","typescript":"^5.6.2","typescript-eslint":"^8.7.0","web-ext":"^8.3.0","webpack":"^5.95.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.1.0","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.38.1","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.0","rxjs":"^7.8.1","tslib":"^2.7.0","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -35993,6 +35993,16 @@ function isElement(node, nodeName) {
 function isText(node) {
   return node != null && node.nodeType === Node.TEXT_NODE;
 }
+function childNodes(node) {
+  var iterator = document.createNodeIterator(node);
+  var nodes = [];
+  var childNode = iterator.nextNode();
+  while (childNode) {
+    nodes.push(childNode);
+    childNode = iterator.nextNode();
+  }
+  return nodes;
+}
 var skipNodeName = new (set_default())(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
 var ignoreClassName = "eh-syringe-ignore";
 var skipElementMatcher = concat_default()(_context = ".".concat(ignoreClassName, ", .")).call(_context, ignoreClassName, " *");
@@ -36173,67 +36183,84 @@ var Syringe = /*#__PURE__*/function () {
       documentElement.removeAttribute('onreset');
     }
   }, {
+    key: "onObserved",
+    value: function onObserved(mutations) {
+      var _iterator = syringe_createForOfIteratorHelper(mutations),
+        _step;
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var mutation = _step.value;
+          if (mutation.type === 'attributes') {
+            this.translateNode(mutation.target);
+            continue;
+          }
+          var _iterator2 = syringe_createForOfIteratorHelper(mutation.addedNodes),
+            _step2;
+          try {
+            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+              var node = _step2.value;
+              this.translateNode(node);
+              if (this.documentEnd) {
+                var nodes = childNodes(node);
+                var _iterator3 = syringe_createForOfIteratorHelper(nodes),
+                  _step3;
+                try {
+                  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                    var childNode = _step3.value;
+                    this.translateNode(childNode);
+                  }
+                } catch (err) {
+                  _iterator3.e(err);
+                } finally {
+                  _iterator3.f();
+                }
+              }
+            }
+          } catch (err) {
+            _iterator2.e(err);
+          } finally {
+            _iterator2.f();
+          }
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    }
+  }, {
     key: "init",
     value: function init() {
       var _this3 = this;
       ready(function () {
-        _this3.documentEnd = true;
+        var _this3$observer$takeR, _this3$observer;
+        _this3.onObserved((_this3$observer$takeR = (_this3$observer = _this3.observer) === null || _this3$observer === void 0 ? void 0 : _this3$observer.takeRecords()) !== null && _this3$observer$takeR !== void 0 ? _this3$observer$takeR : []);
         _this3.codePatch();
+        _this3.documentEnd = true;
       });
       this.setRootAttrs();
-      var body = document.body;
+      var _document2 = document,
+        body = _document2.body;
       if (body) {
-        var nodes = [];
-        var nodeIterator = document.createNodeIterator(body);
-        var node = nodeIterator.nextNode();
-        while (node) {
-          nodes.push(node);
-          node = nodeIterator.nextNode();
-        }
+        var nodes = childNodes(body);
         this.logger.warn("\u6709 ".concat(nodes.length, " \u4E2A\u8282\u70B9\u5728\u6CE8\u5165\u524D\u52A0\u8F7D"), nodes);
-        for (var _i = 0, _nodes = nodes; _i < _nodes.length; _i++) {
-          var _node = _nodes[_i];
-          this.translateNode(_node);
+        var _iterator4 = syringe_createForOfIteratorHelper(nodes),
+          _step4;
+        try {
+          for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+            var node = _step4.value;
+            this.translateNode(node);
+          }
+        } catch (err) {
+          _iterator4.e(err);
+        } finally {
+          _iterator4.f();
         }
       } else {
         this.logger.debug("\u6CA1\u6709\u8282\u70B9\u5728\u6CE8\u5165\u524D\u52A0\u8F7D");
       }
       this.observer = new MutationObserver(function (mutations) {
-        var _iterator = syringe_createForOfIteratorHelper(mutations),
-          _step;
-        try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var mutation = _step.value;
-            if (mutation.type === 'attributes') {
-              _this3.translateNode(mutation.target);
-            } else {
-              var _iterator2 = syringe_createForOfIteratorHelper(mutation.addedNodes),
-                _step2;
-              try {
-                for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-                  var _node2 = _step2.value;
-                  _this3.translateNode(_node2);
-                  if (_this3.documentEnd && _node2.childNodes) {
-                    var _nodeIterator = document.createNodeIterator(_node2);
-                    var childNode = _nodeIterator.nextNode();
-                    while (childNode) {
-                      _this3.translateNode(childNode);
-                      childNode = _nodeIterator.nextNode();
-                    }
-                  }
-                }
-              } catch (err) {
-                _iterator2.e(err);
-              } finally {
-                _iterator2.f();
-              }
-            }
-          }
-        } catch (err) {
-          _iterator.e(err);
-        } finally {
-          _iterator.f();
-        }
+        return _this3.onObserved(mutations);
       });
       this.observer.observe(document.documentElement, {
         attributeFilter: ['title', 'placeholder', 'label', 'value'],
@@ -36411,20 +36438,20 @@ var Syringe = /*#__PURE__*/function () {
       var plain = this.uiData.plainReplacements.get(text);
       if (plain != null) return plain;
       var repText = text;
-      var _iterator3 = syringe_createForOfIteratorHelper(this.uiData.regexReplacements),
-        _step3;
+      var _iterator5 = syringe_createForOfIteratorHelper(this.uiData.regexReplacements),
+        _step5;
       try {
-        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var _step3$value = slicedToArray_slicedToArray(_step3.value, 2),
-            k = _step3$value[0],
-            v = _step3$value[1];
+        for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+          var _step5$value = slicedToArray_slicedToArray(_step5.value, 2),
+            k = _step5$value[0],
+            v = _step5$value[1];
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           repText = repText.replace(k, v);
         }
       } catch (err) {
-        _iterator3.e(err);
+        _iterator5.e(err);
       } finally {
-        _iterator3.f();
+        _iterator5.f();
       }
       if (this.config.translateTimestamp !== false &&
       // 快速判断是否有可能包含时间戳
@@ -36475,17 +36502,17 @@ var Syringe = /*#__PURE__*/function () {
         var _translation2 = this.translateUiText(node.value);
         if (_translation2 != null) {
           var button = document.createElement('button');
-          var _iterator4 = syringe_createForOfIteratorHelper(node.attributes),
-            _step4;
+          var _iterator6 = syringe_createForOfIteratorHelper(node.attributes),
+            _step6;
           try {
-            for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-              var attr = _step4.value;
+            for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+              var attr = _step6.value;
               button.setAttribute(attr.name, attr.value);
             }
           } catch (err) {
-            _iterator4.e(err);
+            _iterator6.e(err);
           } finally {
-            _iterator4.f();
+            _iterator6.f();
           }
           button.setAttribute('ehs-input', '');
           button.textContent = _translation2;
