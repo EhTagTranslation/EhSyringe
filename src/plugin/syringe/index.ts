@@ -22,6 +22,10 @@ function isText(node: Node | undefined): node is Text {
     return node != null && node.nodeType === Node.TEXT_NODE;
 }
 
+const skipNodeName = new Set<string>(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
+const ignoreClassName = `eh-syringe-ignore`;
+const skipElementMatcher = `.${ignoreClassName}, .${ignoreClassName} *`;
+
 declare global {
     interface Window {
         toggle_advsearch_pane: (b: HTMLElement) => void;
@@ -157,7 +161,6 @@ export class Syringe {
         tags.forEach((t) => t.translate(tagMap));
     }
     documentEnd = false;
-    readonly skipNode = new Set<string>(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
     config = this.getAndInitConfig();
     observer?: MutationObserver;
 
@@ -307,12 +310,10 @@ export class Syringe {
     }
 
     translateNode(node: Node): void {
-        if (
-            !node.nodeName ||
-            this.skipNode.has(node.nodeName) ||
-            (node.parentNode != null && this.skipNode.has(node.parentNode.nodeName)) ||
-            (isElement(node) && node.matches('.eh-syringe-ignore, .eh-syringe-ignore *'))
-        ) {
+        const { nodeName } = node;
+        if (!nodeName || skipNodeName.has(nodeName)) return;
+        if (node.parentNode && skipNodeName.has(node.parentNode.nodeName)) return;
+        if (isElement(node) ? node.matches(skipElementMatcher) : node.parentElement?.matches(skipElementMatcher)) {
             return;
         }
 
@@ -485,18 +486,13 @@ export class Syringe {
 
         if (isElement(node, 'div') && node.id === 'gdd') {
             /* E-Hentai-Downloader 兼容处理 */
-            this.cloneAndPrependElement(node);
-            this.cloneAndPrependElement(node.firstElementChild!, (el) => {
-                const clone = document.createElement('div');
-                clone.textContent = el.textContent;
-                return clone;
-            });
+            this.cloneAndPrependElement(node.firstElementChild!);
         }
     }
 
     private cloneAndPrependElement<E extends Element, C extends Element = E>(el: E, cloneNode?: (el: E) => C): C {
         const clone = cloneNode ? cloneNode(el) : (el.cloneNode(true) as C);
-        clone.classList.add('eh-syringe-ignore');
+        clone.classList.add(ignoreClassName);
         clone.setAttribute('hidden', '');
         if (clone.id) clone.id = `ehs-clone-${clone.id}`;
         clone.querySelectorAll('[id]').forEach((node) => {
