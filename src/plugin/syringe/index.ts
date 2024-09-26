@@ -22,6 +22,17 @@ function isText(node: Node | undefined): node is Text {
     return node != null && node.nodeType === Node.TEXT_NODE;
 }
 
+function childNodes(node: Node): Node[] {
+    const iterator = document.createNodeIterator(node);
+    const nodes: Node[] = [];
+    let childNode = iterator.nextNode();
+    while (childNode) {
+        nodes.push(childNode);
+        childNode = iterator.nextNode();
+    }
+    return nodes;
+}
+
 const skipNodeName = new Set<string>(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
 const ignoreClassName = `eh-syringe-ignore`;
 const skipElementMatcher = `.${ignoreClassName}, .${ignoreClassName} *`;
@@ -190,21 +201,34 @@ export class Syringe {
         documentElement.removeAttribute('onreset');
     }
 
+    private onObserved(mutations: readonly MutationRecord[]): void {
+        for (const mutation of mutations) {
+            if (mutation.type === 'attributes') {
+                this.translateNode(mutation.target);
+                continue;
+            }
+            for (const node of mutation.addedNodes) {
+                this.translateNode(node);
+                if (this.documentEnd) {
+                    const nodes = childNodes(node);
+                    for (const childNode of nodes) {
+                        this.translateNode(childNode);
+                    }
+                }
+            }
+        }
+    }
+
     private init(): void {
         ready(() => {
-            this.documentEnd = true;
+            this.onObserved(this.observer?.takeRecords() ?? []);
             this.codePatch();
+            this.documentEnd = true;
         });
         this.setRootAttrs();
-        const body = document.body;
+        const { body } = document;
         if (body) {
-            const nodes: Node[] = [];
-            const nodeIterator = document.createNodeIterator(body);
-            let node = nodeIterator.nextNode();
-            while (node) {
-                nodes.push(node);
-                node = nodeIterator.nextNode();
-            }
+            const nodes = childNodes(body);
             this.logger.warn(`有 ${nodes.length} 个节点在注入前加载`, nodes);
             for (const node of nodes) {
                 this.translateNode(node);
@@ -212,25 +236,7 @@ export class Syringe {
         } else {
             this.logger.debug(`没有节点在注入前加载`);
         }
-        this.observer = new MutationObserver((mutations) => {
-            for (const mutation of mutations) {
-                if (mutation.type === 'attributes') {
-                    this.translateNode(mutation.target);
-                } else {
-                    for (const node of mutation.addedNodes) {
-                        this.translateNode(node);
-                        if (this.documentEnd && node.childNodes) {
-                            const nodeIterator = document.createNodeIterator(node);
-                            let childNode = nodeIterator.nextNode();
-                            while (childNode) {
-                                this.translateNode(childNode);
-                                childNode = nodeIterator.nextNode();
-                            }
-                        }
-                    }
-                }
-            }
-        });
+        this.observer = new MutationObserver((mutations) => this.onObserved(mutations));
         this.observer.observe(document.documentElement, {
             attributeFilter: ['title', 'placeholder', 'label', 'value'],
             childList: true,
