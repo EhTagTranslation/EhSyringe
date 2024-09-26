@@ -1,7 +1,7 @@
 {
     "name": "ehsyringe",
     "displayName": "EhSyringe",
-    "version": "3.0.11",
+    "version": "3.0.12",
     "description": "E 站注射器，将中文翻译注入到 E 站体内。",
     "author": "EhTagTranslation",
     "repository": {
