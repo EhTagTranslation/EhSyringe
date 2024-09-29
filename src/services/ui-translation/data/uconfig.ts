@@ -350,6 +350,7 @@ merge(
             ' 页面加载时 (页面加载时间更长，但是显示的时候无需等待)',
         'You can set a default thumbnail configuration for all galleries you visit.': '图库详情页缩略图设置。',
         'Size: ': '大小：',
+        ' Small': ' 小图',
         ' Large': ' 大图',
         'Rows:': '行数：',
 
