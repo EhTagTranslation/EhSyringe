@@ -91,9 +91,9 @@ merge(
             '某些关键词使用了不支持的语法、太短或无效。',
         'The provided date is invalid or outside the range of posted galleries.':
             '提供的日期无效或超出已发布图库的日期范围。',
-        'The page range minimum cannot be above 1000.': '页数最小值最多为 1000。',
+        'The page range minimum cannot be above 1000.': '页数最小值至多为 1000。',
         'The page range maximum cannot be below 10.': '页数最大值至少为 10。',
-        'Your page range filter is too narrow.': '页数范围差至少为 20。',
+        'Your page range filter is too narrow.': '页数范围差至少为 20，范围比至多为 0.8。',
         'You provided too many keywords. Use fewer keywords, or combine keywords with quotes.':
             '使用的关键词过多。请减少关键词或使用引号组合关键词。',
         'You provided too many keywords. Use fewer keywords, or combine keywords with quotes. (Ignored ':
@@ -189,6 +189,17 @@ merge(
         'The site is currently in Read Only Mode. This page is therefore not available.':
             '网站当前处于只读模式，因此本页面不可用。',
         'This content is not available in Russia.RU': '此内容在俄罗斯 (RU) 不可用',
+
+        'user:': '用户：',
+        'pass:': '密码：',
+        'code:': '代码：',
+        username: '用户名',
+        password: '密码',
+        CPTCA: '验证码',
+        'Fuck Off': '刷新',
+        'Log In': '登录',
+        'You have to complete every field': '您必须填完每个字段',
+        'Please try again': '请再试一次',
     },
     [
         [/^(\d+) pages?$/, '$1 页'],

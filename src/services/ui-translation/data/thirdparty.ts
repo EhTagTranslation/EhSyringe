@@ -7,6 +7,8 @@ merge(
     {
         'E-Hentai Downloader ': 'E-Hentai 下载器 ',
 
+        'Image Limits: ': '图像配额：',
+        '! Account Suspended !': '! 账户已被封禁 !',
         'Download Archive': '下载档案 ',
         ' Number Images': ' 图像编号',
         'Pages Range ': '页面范围 ',
@@ -113,7 +115,7 @@ merge(
             ' 是一种归档漫画图像的文件类型，您可以使用 CDisplay/CDisplayEX 等漫画查看器打开它，或者直接将其视为 Zip 文件解压。为了保持图像的顺序，您还可以启用对图像进行编号。',
 
         "\t\t\t\t\t\t\t(7) If you cannot original images, but you've already logged in and your account is not blocked or used up your limits, it may caused by your cookies is not sent to the server. This feature may helps you to pass your current cookies to the download request, but please enable it ONLY if you cannot download any original images.\t\t\t\t\t\t":
-            ' (7) 如果您无法下载原图，但是您已经登录并且您的帐户没有被阻止或用完您的限制，这可能是因为您的 cookie 没有被发送到服务器。此功能可以帮助您将当前的 cookie 传递给下载请求，但只有当您无法下载任何原图时才应该启用它。',
+            ' (7) 如果您无法下载原图，但是您已经登录并且您的账户没有被阻止或用完您的限制，这可能是因为您的 cookie 没有被发送到服务器。此功能可以帮助您将当前的 cookie 传递给下载请求，但只有当您无法下载任何原图时才应该启用它。',
 
         "\t\t\t\t\t\t\t(8) If you have already logged in, but the script detects that you're not logged in, you can enable this to skip login check. Please note that if you are not logged in actually, the script will not work as expect.\t\t\t\t\t\t":
             ' (8) 如果您已经登录，但脚本检测到您没有登录，您可以启用此功能以跳过登录检查。请注意，如果您实际没有登录，则脚本不会按预期工作。',

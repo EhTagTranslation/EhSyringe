@@ -57,7 +57,7 @@ merge(
         '- The ': '● 您对标签的影响',
         power: '权重',
         ' with which you can affect tagging is determined by a number of factors, such as your account age and whether or not you are active on the ':
-            '取决于多种因素，例如您的帐户资历、您是否活跃于',
+            '取决于多种因素，例如您的账户资历、您是否活跃于',
         forums: '论坛等',
         '- The forums is also where ': '● 论坛也是',
         'everything about tagging is discussed': '讨论标签相关内容',
@@ -105,6 +105,8 @@ merge(
             '在此处输入您的评论，然后点击发表评论。如果最后一条评论是您的，则新评论会被附加到最后一条评论下。',
         'Post Comment': '发表评论',
         'Your comment is too short.': '您的评论太短了。',
+        Edit: '编辑',
+        'Edit Comment': '编辑评论',
 
         'Gallery not found. If you just added this gallery, you may have to wait a short while before it becomes available.':
             '没有找到图库。如果您刚刚添加了此图库，可能需要等待一段时间后才能变得可用。',
@@ -159,7 +161,7 @@ merge(
         ' Content has been defaced by adding content-obstructing scanmarks, censorship or advertisements beyond what is present in the original artist release, or has been intentionally degraded to the point where legibility is an issue.':
             '图库内容被污损，添加了与内容无关的扫描水印、审查或广告，超出了原作者发布的内容或被故意降低画质，以至于影响了易读性。',
         'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.':
-            '在此处输入删除的详细原因。请注意，“我讨厌此内容/艺术家/上传者”等主观理由是无效的，并且可能导致帐户处罚/限制。',
+            '在此处输入删除的详细原因。请注意，“我讨厌此内容/艺术家/上传者”等主观理由是无效的，并且可能导致账户处罚/限制。',
         'Enter the URL of the conflicting gallery, if applicable.': '如有必要，在此处输入冲突图库的 URL。',
         'Create New Petition': '提交新申请',
         'Cancel Expunge Petition': '撤回删除申请',
@@ -212,7 +214,7 @@ merge(
         'Appeals must not be submitted if the gallery should be expunged but the wrong expunge type was used.':
             '如果图库应该被删除但使用了错误的删除类型，则不得提交申诉。',
         'Note that submitting invalid appeals can lead to account restrictions/penalities.':
-            '请注意，提交无效申诉可能会导致帐户受到限制/处罚。',
+            '请注意，提交无效申诉可能会导致账户受到限制/处罚。',
         'Enter a valid reason for why this expunge petition should be revoked here.':
             '请在此处输入应撤销此删除申请的正当理由。',
         'Create New Appeal': '提交新申诉',
@@ -251,7 +253,7 @@ merge(
         'Reversion/Split/Undisown Request': '回退/拆分/恢复所有权请求',
 
         'If you log on with an account, we will remember your provided contact details.':
-            '如果您使用帐户登录，我们将记住您提供的联系信息。',
+            '如果您使用账户登录，我们将记住您提供的联系信息。',
         'We remember and automatically fill in any previous contact details you have entered.':
             '我们会记住并自动填充您曾经输入的联系信息。',
         'Your email address': '您的电子邮件地址',
