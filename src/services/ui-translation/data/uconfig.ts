@@ -313,6 +313,7 @@ merge(
         'Front Page / Search Settings': '首页 / 搜索设置',
         'What categories would you like to show by default on the front page and in searches?':
             '您希望首页和搜索页面默认显示哪些类别？',
+
         'Which display mode would you like to use on the front and search pages?':
             '您希望首页和搜索页面使用哪种显示模式？',
         ' Minimal': ' 最小化',
@@ -320,6 +321,7 @@ merge(
         ' Compact': ' 紧凑 + 标签',
         ' Extended': ' 扩展',
         ' Thumbnail': ' 缩略图',
+
         'Which display style would you like for the search range indicator?': '您希望搜索范围指示器采用哪种显示样式？',
         ' Normal': ' 普通',
         ' Disabled': ' 禁用',
@@ -437,6 +439,12 @@ merge(
 
         'Gallery Page Numbering': '图库页码',
         'Show gallery page numbers:\n\t': '在图库详情页缩略图下方显示页码：',
+
+        'Gallery Page Thumbnail Labeling': '图库缩略图标签',
+        'Show label below gallery thumbnails:\n\t': '在图库详情页缩略图下方显示标签：',
+        ' None': ' 无',
+        ' Page Number Only': ' 仅页码',
+        ' Page Number + Name': ' 页码 + 名称',
 
         'Multi-Page Viewer': '多页查看器',
         'Always use the Multi-Page Viewer? There will still be a link to manually start it if this is left disabled.':

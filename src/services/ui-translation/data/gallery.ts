@@ -134,6 +134,7 @@ merge(
         [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, '，更新于 $1'],
         [/^Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?$/, '$1 - $2，共 $3 张图像'],
         [/^Page (\d+): /, '第 $1 页：'],
+        [/^Page (\d+)$/, '第 $1 页'],
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*$/, '评论时间：$1 \xA0作者：'],
         [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, '评论时间：$1'],
         [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '],

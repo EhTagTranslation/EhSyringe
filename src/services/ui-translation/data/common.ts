@@ -190,6 +190,7 @@ merge(
             '网站当前处于只读模式，因此本页面不可用。',
         'This content is not available in Russia.RU': '此内容在俄罗斯 (RU) 不可用',
 
+        // 洋葱网址登录页
         'user:': '用户：',
         'pass:': '密码：',
         'code:': '代码：',
