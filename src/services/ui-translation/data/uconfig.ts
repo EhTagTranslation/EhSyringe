@@ -13,11 +13,11 @@ merge(
             '如果可用，是否希望通过 Hentai@Home 网络加载图像？',
         ' Any client (Recommended)': ' 任意客户端 (推荐)',
         ' Default port clients only (Can be slower. Enable if behind firewall/proxy that blocks outgoing non-standard ports.)':
-            ' 仅使用默认端口的客户端 (可能稍慢。当防火墙或代理阻止非标准端口的流量时启用此项。)',
+            ' 仅使用默认端口的客户端 (可能稍慢，当防火墙或代理阻止非标准端口的流量时启用此项)',
         ' No [Modern/HTTPS] (Donator only. You will not be able to browse as many pages. Recommended only if having severe problems.)':
-            ' 否 [现代/HTTPS] (仅限捐赠者。配额消耗会加快，只有出现严重的问题时才启用。)',
+            ' 否 [现代/HTTPS] (仅限捐赠者，配额消耗会加快，只有出现严重的问题时才启用)',
         ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)':
-            ' 否 [传统/HTTP] (仅限捐赠者。可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用。)',
+            ' 否 [传统/HTTP] (仅限捐赠者，可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用)',
         'You appear to be browsing the site from ': '看起来您正在 ',
         ' or use a VPN or proxy in this country, which means the site will try to load images from H@H clients in this general geographic region. If this is incorrect, or if you want to use a different region for any reason (like if you are using a split tunneling VPN), you can select a different country below.':
             ' 浏览此网页，或者使用了此处的 VPN/代理，这意味着网站会尝试通过此区域的 H@H 客户端加载图像。如果此结果不正确，或者您希望通过其他地区的 H@H 客户端加载图像 (例如您正在使用分割隧道 VPN)，可以在下方选择一个不同的区域。',
@@ -353,13 +353,12 @@ merge(
         'You can set a default thumbnail configuration for all galleries you visit.': '图库详情页缩略图设置。',
         'Size: ': '大小：',
         ' Small': ' 小图',
-        ' Large': ' 大图',
         'Rows:': '行数：',
 
         'Cover Scaling': '封面缩放',
         '%': ' %',
         'The cover size in gallery list views can be scaled to between 75% and 150% when using the Thumbnail or Extended display modes.':
-            '在扩展和缩略图列表模式下，图库封面可以缩放为 75% 到 150% 之间的自定义值。',
+            '在缩略图和扩展列表模式下，图库封面大小可以缩放为 75% 到 150% 之间的自定义值。',
 
         Ratings: '评分',
         'By default, galleries that you have rated will appear with red stars for ratings of 2 stars and below, green for ratings between 2.5 and 4 stars, and blue for ratings of 4.5 or 5 stars. You can customize this by entering your desired color combination below.':
@@ -436,9 +435,6 @@ merge(
         'Sort order for gallery tags:': '图库标签排序方式：',
         ' Alphabetical': ' 按字母排序',
         ' By tag power': ' 按标签权重',
-
-        'Gallery Page Numbering': '图库页码',
-        'Show gallery page numbers:\n\t': '在图库详情页缩略图下方显示页码：',
 
         'Gallery Page Thumbnail Labeling': '图库缩略图标签',
         'Show label below gallery thumbnails:\n\t': '在图库详情页缩略图下方显示标签：',
