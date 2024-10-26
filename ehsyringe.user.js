@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.0.12
+// @version     3.0.13
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 34000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@a12baab1435d75b9a6b25fdaa2c04ac531b567cc/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@0bdb775328eb6c1a786026ff90268183e770914f/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -37,7 +37,7 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 17937:
+/***/ 75960:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
@@ -47,8 +47,8 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
-var _mapInstanceProperty = __webpack_require__(98705);
-var _concatInstanceProperty = __webpack_require__(22447);
+var _mapInstanceProperty = __webpack_require__(69955);
+var _concatInstanceProperty = __webpack_require__(37613);
 module.exports = function (cssWithMappingToString) {
   var list = [];
 
@@ -136,13 +136,13 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 87228:
+/***/ 99747:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
 
-var _sliceInstanceProperty = __webpack_require__(99165);
+var _sliceInstanceProperty = __webpack_require__(65295);
 module.exports = function (url, options) {
   if (!options) {
     options = {};
@@ -170,14 +170,14 @@ module.exports = function (url, options) {
 
 /***/ }),
 
-/***/ 40803:
+/***/ 73016:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
 
-var _JSON$stringify = __webpack_require__(48999);
-var _concatInstanceProperty = __webpack_require__(22447);
+var _JSON$stringify = __webpack_require__(9613);
+var _concatInstanceProperty = __webpack_require__(37613);
 module.exports = function (item) {
   var content = item[1];
   var cssMapping = item[3];
@@ -196,7 +196,7 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ 25100:
+/***/ 57249:
 /***/ (function(module) {
 
 "use strict";
@@ -277,18 +277,18 @@ function escapeHtml(string) {
 
 /***/ }),
 
-/***/ 14955:
+/***/ 26656:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40803);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17937);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73016);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75960);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "#gmid{display:grid;grid:\"gd3 spa spa\" auto \"gd3 gd4 gd5\" auto/auto 1fr auto}#gmid #gd3{grid-area:gd3}#gmid #spa{grid-area:spa;width:auto}#gmid #gd4{grid-area:gd4;width:auto}#gmid #gd5{grid-area:gd5}div#gd5{position:relative;z-index:3}div#gd5 #ehs-introduce-box img{height:auto;margin:0;width:auto}#ehs-introduce-box{bottom:0;left:0;overflow:auto;position:absolute;right:-5px;text-align:left;top:0;-webkit-box-orient:vertical;-webkit-flex-flow:column;-moz-box-orient:vertical;background:#edebdf;-webkit-border-radius:0 0 6px 0;-moz-border-radius:0 0 6px 0;border-radius:0 0 6px 0;-ms-flex-flow:column;flex-flow:column}#ehs-introduce-box,#ehs-introduce-box .ehs-title{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-direction:normal;-moz-box-direction:normal}#ehs-introduce-box .ehs-title{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;border-bottom:1px solid #5c0d12;-ms-flex:none;flex:none;line-height:14px;margin:0 8px;padding:3px 0;-webkit-box-orient:horizontal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-ms-flex-direction:row;flex-direction:row}#ehs-introduce-box .ehs-title .ehs-cn{font-weight:700}#ehs-introduce-box .ehs-title .ehs-cn,#ehs-introduce-box .ehs-title .ehs-en{overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}#ehs-introduce-box .ehs-title .ehs-en{opacity:.7}#ehs-introduce-box .ehs-title>div{overflow:hidden;-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto}#ehs-introduce-box .ehs-title>span{overflow:hidden;-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;-ms-flex:none;flex:none}#ehs-introduce-box .ehs-close{cursor:pointer;font-size:16px;line-height:28px;opacity:.8;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:20px}#ehs-introduce-box .ehs-close:hover{opacity:1}#ehs-introduce-box .ehs-close:after{content:\"\\00d7\"}#ehs-introduce-box .ehs-content{-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto;margin:4px 0;overflow:auto;padding:4px 8px;scrollbar-color:#5c0d12 transparent;scrollbar-width:thin}#ehs-introduce-box .ehs-content::-webkit-scrollbar{height:4px;width:4px}#ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#5c0d12}#ehs-introduce-box .ehs-content abbr[title]{padding:0 1px}#ehs-introduce-box .ehs-content abbr[title]:after{content:\" (\" attr(title) \")\";font-size:90%}#ehs-introduce-box .ehs-href{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;border-top:1px solid #5c0d12;-ms-flex:none;flex:none;line-height:24px;margin:0 8px}#ehs-introduce-box .ehs-href:empty{display:none}#ehs-introduce-box:empty{display:none}#ehs-introduce-box img{max-width:100%}:root.ehs-ex #ehs-introduce-box{background:#4f535b;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}:root.ehs-ex #ehs-introduce-box .ehs-title{border-bottom:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-href{border-top:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-content{scrollbar-color:#000 transparent}:root.ehs-ex #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#000}.ehs-no-intro,.ehs-no-translation{opacity:.8}.ehs-no-intro h3,.ehs-no-translation h3{font-size:16px;font-weight:700;opacity:.6;padding:8px;text-align:center}:root.ehs-image-level-0 #ehs-introduce-box .ehs-content img{display:none}:root.ehs-image-level-1 #ehs-introduce-box .ehs-content img[nsfw]{display:none}:root.ehs-image-level-2 #ehs-introduce-box .ehs-content img[nsfw=R18G]{display:none}", "",{"version":3,"sources":["webpack://./src/plugin/introduce/index.less"],"names":[],"mappings":"AAAA,MACI,YAAA,CACA,wDACJ,CAHA,WAOQ,aADR,CANA,WAUQ,aAAA,CACA,UADR,CAVA,WAcQ,aAAA,CACA,UADR,CAdA,WAkBQ,aADR,CAKA,QAEI,iBAAA,CADA,SAFJ,CACA,+BAMQ,WAAA,CAFA,QAAA,CACA,UADR,CAMA,mBAEI,QAAA,CAAA,MAAA,CACA,aAAA,CAFA,iBAAA,CACA,UAAA,CAEA,eAAA,CAFA,KAAA,CAIA,2BAAA,CAAA,wBAAA,CAAA,wBAAA,CAEA,kBAAA,CADA,+BAAA,CAAA,4BAAA,CAAA,uBAAA,CADA,oBAAA,CAAA,gBAFJ,CAJA,iDAKI,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,4BAAA,CAAA,yBAOJ,CAbA,8BAUQ,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAEA,+BAAA,CAFA,aAAA,CAAA,SAAA,CAGA,gBAAA,CAFA,YAAA,CAGA,aAAA,CAEA,6BAAA,CAAA,0BAAA,CAAA,0BAAA,CAAA,sBAAA,CAAA,kBAHR,CAbA,sCAmBY,eAAZ,CAnBA,4EAoBY,eAAA,CACA,yBAAA,CAAA,sBAAA,CACA,kBAGZ,CAzBA,sCAyBY,UAAZ,CAzBA,kCAgCY,eAAA,CACA,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAJZ,CA7BA,mCAoCY,eAAA,CACA,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAJZ,CAjCA,8BA0CQ,cAAA,CACA,cAAA,CAEA,gBAAA,CADA,UAAA,CAGA,iBAAA,CANA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CAKA,UAJR,CAMQ,oCACI,SAJZ,CAMQ,oCACI,eAJZ,CAhDA,gCAwDQ,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAAA,CAEA,YAAA,CADA,aAAA,CAEA,eAAA,CAEA,mCAAA,CADA,oBAJR,CAOQ,mDAEI,UAAA,CADA,SAJZ,CAOQ,yDACI,kBALZ,CA/DA,4CAuEY,aALZ,CAMY,kDACI,4BAAA,CACA,aAJhB,CAtEA,6BA+EQ,kBAAA,CAAA,iBAAA,CAAA,eAAA,CACA,4BAAA,CADA,aAAA,CAAA,SAAA,CAGA,gBAAA,CADA,YALR,CAOQ,mCACI,YALZ,CASI,yBACI,YAPR,CAlFA,uBA4FQ,cAPR,CAWA,gCACI,kBAAA,CACA,uBAAA,CAAA,oBAAA,CAAA,eATJ,CAOA,2CAIQ,4BARR,CAIA,0CAOQ,yBARR,CACA,6CAUQ,gCARR,CASQ,sEACI,eAPZ,CAYA,kCAEI,UAVJ,CAQA,wCAMQ,cAAA,CAEA,eAAA,CAJA,UAAA,CAGA,WAAA,CAFA,iBALR,CAcA,4DAEQ,YAZR,CAeA,kEAEQ,YAdR,CAiBA,uEAEQ,YAhBR","sourcesContent":["#gmid {\n    display: grid;\n    grid:\n        'gd3 spa spa' auto\n        'gd3 gd4 gd5' auto\n        / auto 1fr auto;\n    #gd3 {\n        grid-area: gd3;\n    }\n    #spa {\n        grid-area: spa;\n        width: auto;\n    }\n    #gd4 {\n        grid-area: gd4;\n        width: auto;\n    }\n    #gd5 {\n        grid-area: gd5;\n    }\n}\n\ndiv#gd5 {\n    z-index: 3;\n    position: relative;\n    #ehs-introduce-box img {\n        margin: 0;\n        width: auto;\n        height: auto;\n    }\n}\n\n#ehs-introduce-box {\n    position: absolute;\n    inset: 0 -5px 0 0;\n    overflow: auto;\n    text-align: left;\n    display: flex;\n    flex-flow: column;\n    border-radius: 0 0 6px 0;\n    background: #edebdf;\n    .ehs-title {\n        flex: none;\n        margin: 0 8px;\n        border-bottom: 1px solid #5c0d12;\n        line-height: 14px;\n        padding: 3px 0;\n        display: flex;\n        flex-direction: row;\n\n        .ehs-cn {\n            font-weight: bold;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n        .ehs-en {\n            opacity: 0.7;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n\n        > div {\n            overflow: hidden;\n            flex: auto;\n        }\n        > span {\n            overflow: hidden;\n            flex: none;\n        }\n    }\n    .ehs-close {\n        user-select: none;\n        cursor: pointer;\n        font-size: 16px;\n        opacity: 0.8;\n        line-height: 28px;\n        width: 20px;\n        text-align: center;\n        &:hover {\n            opacity: 1;\n        }\n        &::after {\n            content: '\\00d7';\n        }\n    }\n    .ehs-content {\n        flex: auto;\n        overflow: auto;\n        margin: 4px 0;\n        padding: 4px 8px;\n        scrollbar-width: thin;\n        scrollbar-color: #5c0d12 transparent;\n\n        &::-webkit-scrollbar {\n            width: 4px;\n            height: 4px;\n        }\n        &::-webkit-scrollbar-thumb {\n            background: #5c0d12;\n        }\n        abbr[title] {\n            padding: 0 1px;\n            &::after {\n                content: ' (' attr(title) ')';\n                font-size: 90%;\n            }\n        }\n    }\n    .ehs-href {\n        flex: none;\n        border-top: 1px solid #5c0d12;\n        margin: 0 8px;\n        line-height: 24px;\n        &:empty {\n            display: none;\n        }\n    }\n\n    &:empty {\n        display: none;\n    }\n    img {\n        max-width: 100%;\n    }\n}\n\n:root.ehs-ex #ehs-introduce-box {\n    background: #4f535b;\n    border-radius: 0;\n    .ehs-title {\n        border-bottom: 1px solid #000;\n    }\n    .ehs-href {\n        border-top: 1px solid #000;\n    }\n    .ehs-content {\n        scrollbar-color: #000 transparent;\n        &::-webkit-scrollbar-thumb {\n            background: #000;\n        }\n    }\n}\n\n.ehs-no-translation,\n.ehs-no-intro {\n    opacity: 0.8;\n    h3 {\n        opacity: 0.6;\n        text-align: center;\n        font-size: 16px;\n        padding: 8px;\n        font-weight: bold;\n    }\n}\n\n//0:hide, 1:non-h 2: R18 3: R18G\n/* nsfw=\"R18\" */\n:root.ehs-image-level-0 #ehs-introduce-box .ehs-content {\n    img {\n        display: none;\n    }\n}\n:root.ehs-image-level-1 #ehs-introduce-box .ehs-content {\n    img[nsfw] {\n        display: none;\n    }\n}\n:root.ehs-image-level-2 #ehs-introduce-box .ehs-content {\n    img[nsfw='R18G'] {\n        display: none;\n    }\n}\n:root.ehs-image-level-3 {\n    // 所有都显示\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -297,18 +297,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#gmid{display:grid;grid:\"gd3 spa spa\
 
 /***/ }),
 
-/***/ 79368:
+/***/ 38831:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40803);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17937);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73016);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75960);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:medium;line-height:normal;text-align:left;text-align:initial}#eh-syringe-popup-root input,#eh-syringe-popup-root table,#eh-syringe-popup-root td,#eh-syringe-popup-root th{background:inherit;color:inherit}#eh-syringe-popup-root input{border:none;margin:0;padding:0}#eh-syringe-popup-root input[type=checkbox],#eh-syringe-popup-root input[type=radio]{position:static;top:auto}#eh-syringe-popup-root p{margin:.8em 0;padding:0}#eh-syringe-popup-root a{background:rgba(0,0,0,0);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup{background:#f0f0f0;border:1px solid #8041a6;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#111}#eh-syringe-popup .action{background:#f0f0f0;color:#8041a6}#eh-syringe-popup .action.primary{background:#8041a6;border-color:#8041a6;color:#f0f0f0}#eh-syringe-popup .action.primary:hover{background:#491774}#eh-syringe-popup .action.primary:active{background:#ae79c9}#eh-syringe-popup #info{color:#8041a6}#eh-syringe-popup .hasNew{color:#79252b}#eh-syringe-popup a{color:#8041a6}#eh-syringe-popup a:hover{color:#491774}#eh-syringe-popup a:active{color:#ae79c9}#eh-syringe-popup a.minor{color:#a5a3a6}#eh-syringe-popup a.minor:hover{color:#d2cdd4}#eh-syringe-popup a.minor:active{color:#838185}#eh-syringe-popup .logo svg [fill-bg]{fill:#f0f0f0}#eh-syringe-popup .logo svg [fill-accent]{fill:#8041a6}#eh-syringe-popup .logo svg [fill-sa]{fill:#cfbadc}#eh-syringe-popup .logo svg [stroke-bg]{stroke:#f0f0f0}#eh-syringe-popup .logo svg [stroke-accent]{stroke:#8041a6}#eh-syringe-popup .logo svg [stroke-sa]{stroke:#cfbadc}#eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#8041a6}#eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}#eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #8041a6;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #8041a6;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#fdfdfd;border:2px solid #8041a6;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#fdfdfd;border:2px solid #8041a6;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup{background:#313131;border:1px solid #ce90f1;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#eee}:root.ehs-ex #eh-syringe-popup .action{background:#313131;color:#ce90f1}:root.ehs-ex #eh-syringe-popup .action.primary{background:#ce90f1;border-color:#ce90f1;color:#313131}:root.ehs-ex #eh-syringe-popup .action.primary:hover{background:#e2b9f7}:root.ehs-ex #eh-syringe-popup .action.primary:active{background:#b669e9}:root.ehs-ex #eh-syringe-popup #info{color:#ce90f1}:root.ehs-ex #eh-syringe-popup .hasNew{color:#cb8d93}:root.ehs-ex #eh-syringe-popup a{color:#ce90f1}:root.ehs-ex #eh-syringe-popup a:hover{color:#e2b9f7}:root.ehs-ex #eh-syringe-popup a:active{color:#b669e9}:root.ehs-ex #eh-syringe-popup a.minor{color:#a5a3a6}:root.ehs-ex #eh-syringe-popup a.minor:hover{color:#d2cdd4}:root.ehs-ex #eh-syringe-popup a.minor:active{color:#838185}:root.ehs-ex #eh-syringe-popup .logo svg [fill-bg]{fill:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [fill-accent]{fill:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [fill-sa]{fill:#987ca8}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-bg]{stroke:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-accent]{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-sa]{stroke:#987ca8}:root.ehs-ex #eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #ce90f1;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#131313;border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#131313;border:2px solid #ce90f1;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup-root{font-family:sans-serif;font-size:12pt;max-width:400px;min-width:240px;overflow:hidden;padding:1px;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap}#eh-syringe-popup-root .hidden{display:none;visibility:hidden}#eh-syringe-popup-root .ehs-panel{margin:0 auto;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column}#eh-syringe-popup-root .ehs-panel,#eh-syringe-popup-root .ehs-panel .header{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}#eh-syringe-popup-root .ehs-panel .header{line-height:1;margin:16px}#eh-syringe-popup-root .ehs-panel .header>.cushion{-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto}#eh-syringe-popup-root .ehs-panel .header span{color:#a5a3a6}#eh-syringe-popup-root .ehs-panel .content{margin:0 16px;-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto;overflow:visible}#eh-syringe-popup-root .ehs-panel .action{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;cursor:pointer;display:block;font-size:16px;line-height:36px;margin:16px;outline:0;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;min-width:64px;overflow:visible;padding:0 16px;text-align:center;-webkit-text-decoration:none;text-decoration:none;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0);-webkit-transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);-o-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);-moz-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);white-space:nowrap}#eh-syringe-popup-root .ehs-panel .action.primary{-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);-moz-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action.primary:active{-webkit-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);-moz-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action:disabled{opacity:.6}#eh-syringe-popup-root .ehs-panel .action:focus{border:1px solid #888}#eh-syringe-popup-root #ehs-main-panel{-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-main-panel.ehs-hide{opacity:0;pointer-events:none;-webkit-transform:scale(.9);-moz-transform:scale(.9);-ms-transform:scale(.9);-o-transform:scale(.9);transform:scale(.9)}#eh-syringe-popup-root .logo-box{margin:-16px;overflow:hidden;pointer-events:none;position:relative}#eh-syringe-popup-root .logo{margin:20px 0;text-align:center;-webkit-transform:scale(1) rotate(-45deg);-moz-transform:scale(1) rotate(-45deg);-ms-transform:scale(1) rotate(-45deg);-o-transform:scale(1) rotate(-45deg);transform:scale(1) rotate(-45deg);-webkit-transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo #Syringe{pointer-events:all}#eh-syringe-popup-root .logo #Enema{opacity:0;-webkit-transform-origin:61px 86px;-moz-transform-origin:61px 86px;-ms-transform-origin:61px 86px;-o-transform-origin:61px 86px;transform-origin:61px 86px}#eh-syringe-popup-root .logo #Enema2{opacity:1}#eh-syringe-popup-root .logo #Enema,#eh-syringe-popup-root .logo #Enema2,#eh-syringe-popup-root .logo #PushRod{-webkit-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo.prominent{-webkit-transform:scale(1.6) rotate(0deg);-moz-transform:scale(1.6) rotate(0deg);-ms-transform:scale(1.6) rotate(0deg);-o-transform:scale(1.6) rotate(0deg);transform:scale(1.6) rotate(0deg)}#eh-syringe-popup-root .logo.prominent #Enema2{opacity:0}#eh-syringe-popup-root .logo.prominent #Enema{opacity:1}#eh-syringe-popup-root .logo.prominent.injection{-webkit-transform:scale(1.6) rotate(0deg) translate(-10px);-moz-transform:scale(1.6) rotate(0deg) translate(-10px);-ms-transform:scale(1.6) rotate(0deg) translate(-10px);-o-transform:scale(1.6) rotate(0deg) translate(-10px);transform:scale(1.6) rotate(0deg) translate(-10px)}#eh-syringe-popup-root .logo.prominent.injection #Enema,#eh-syringe-popup-root .logo.prominent.injection #Enema2,#eh-syringe-popup-root .logo.prominent.injection #PushRod{-webkit-transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);-o-transition:width .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1);-moz-transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #info{bottom:30px;font-size:16px;height:24px;left:0;line-height:24px;position:absolute;right:0;text-align:center}#eh-syringe-popup-root .monospace{font-family:Menlo,Consolas,Source Code Pro,Inconsolata,Monaco,Courier New,monospace}#eh-syringe-popup-root table{font-size:14px}#eh-syringe-popup-root #ehs-setting-panel{bottom:0;left:0;opacity:0;pointer-events:none;position:absolute;right:0;top:0;-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-setting-panel.ehs-show{opacity:1;pointer-events:auto;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}#eh-syringe-popup-root #ehs-setting-panel #settingForm{font-size:10pt;line-height:12pt}#eh-syringe-popup-root .checkbox-item{padding:4px 0}#eh-syringe-popup-root .checkbox-item label{display:block;position:relative}#eh-syringe-popup-root .checkbox-item svg{height:10px;left:3px;position:absolute;top:3px;width:10px}#eh-syringe-popup-root .checkbox-item svg path{stroke-dasharray:1000;stroke-dashoffset:1000;stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;fill:none}#eh-syringe-popup-root .checkbox-item svg.checked path{stroke-dasharray:113.137,113.137;stroke-dashoffset:0;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup-root .checkbox-item svg.checked path+path{-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;transition:all .28s cubic-bezier(.4,0,.2,1) .28s}#eh-syringe-popup-root .checkbox-item input[type=checkbox]{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-right:2px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s;vertical-align:top;width:16px}#eh-syringe-popup-root .checkbox-item input[type=checkbox]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;width:100%}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-runnable-track{-webkit-border-radius:10px;border-radius:10px;-webkit-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:50%;border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-track{-moz-border-radius:10px;border-radius:10px;-moz-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-moz-border-radius:50%;border-radius:50%;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-moz-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm h3 span{font-size:20pt;font-weight:400}#eh-syringe-popup-root .image-level{margin:4px}#eh-syringe-popup-root .range-title{margin:0}#eh-syringe-popup-root .range-box{margin:5px}#eh-syringe-popup-root .range-label{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}#eh-syringe-popup-root .range-label a{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;display:inline-block;-ms-flex:none;flex:none;font-size:10pt;text-align:center;width:30px}", "",{"version":3,"sources":["webpack://./src/plugin/popup/index.less"],"names":[],"mappings":"AAAA,uBAEI,gBAAA,CACA,kBAAA,CAFA,eAAA,CAAA,kBAGJ,CAJA,8GAQQ,kBAAA,CACA,aAER,CAXA,6BAaQ,WAAA,CAEA,QAAA,CADA,SAER,CAhBA,qFAoBQ,eAAA,CACA,QAAR,CArBA,yBAyBQ,aAAA,CADA,SACR,CAzBA,yBA4BQ,wBAAA,CAEA,4BAAA,CAAA,oBAAA,CADA,sDAAA,CAAA,iDAAA,CAAA,mDAAA,CAAA,8CACR,CAgIA,kBArHQ,kBAAA,CAFA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAGA,6CAAA,CAAA,0CAAA,CAAA,qCAAA,CADA,UALR,CAyHA,0BA/GQ,kBAAA,CACA,aAPR,CASQ,kCAEI,kBAAA,CADA,oBAAA,CAEA,aAPZ,CASQ,wCACI,kBAPZ,CASQ,yCACI,kBAPZ,CA0GA,wBA9FQ,aATR,CAuGA,0BA3FQ,aATR,CAoGA,oBAxFQ,aATR,CAUQ,0BACI,aARZ,CAUQ,2BACI,aARZ,CAUQ,0BACI,aARZ,CASY,gCACI,aAPhB,CASY,iCACI,aAPhB,CAkFA,sCApEY,YAXZ,CA+EA,0CAjEY,YAXZ,CA4EA,sCA9DY,YAXZ,CAyEA,wCA3DY,cAXZ,CAsEA,4CAxDY,cAXZ,CAmEA,wCArDY,cAXZ,CAgEA,uDA/CY,cAdZ,CA6DA,oDA3CY,wBAfZ,CAgBY,4DACI,wBAdhB,CAmBY,gFACI,wBAjBhB,CAmBY,mEACI,wBAjBhB,CAmBY,uEACI,kBAAA,CACA,wBAjBhB,CAmBY,mEACI,kBAAA,CACA,wBAjBhB,CAmBY,6EACI,wBAAA,CACA,yCAAA,CAAA,iCAjBhB,CAmBY,yEACI,wBAAA,CACA,sCAAA,CAAA,iCAjBhB,CAmBY,8EAEI,kBAAA,CADA,wBAAA,CAEA,6CAAA,CAAA,qCAjBhB,CAmBY,0EAEI,kBAAA,CADA,wBAAA,CAEA,0CAAA,CAAA,qCAjBhB,CA+BA,+BA7HQ,kBAAA,CAFA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAGA,6CAAA,CAAA,0CAAA,CAAA,qCAAA,CADA,UAoGR,CAwBA,uCAvHQ,kBAAA,CACA,aAkGR,CAhGQ,+CAEI,kBAAA,CADA,oBAAA,CAEA,aAkGZ,CAhGQ,qDACI,kBAkGZ,CAhGQ,sDACI,kBAkGZ,CASA,qCAtGQ,aAgGR,CAMA,uCAnGQ,aAgGR,CAGA,iCAhGQ,aAgGR,CA/FQ,uCACI,aAiGZ,CA/FQ,wCACI,aAiGZ,CA/FQ,uCACI,aAiGZ,CAhGY,6CACI,aAkGhB,CAhGY,8CACI,aAkGhB,CAfA,mDA5EY,YA8FZ,CAlBA,uDAzEY,YA8FZ,CArBA,mDAtEY,YA8FZ,CAxBA,qDAnEY,cA8FZ,CA3BA,yDAhEY,cA8FZ,CA9BA,qDA7DY,cA8FZ,CAjCA,oEAvDY,cA2FZ,CApCA,iEAnDY,wBA0FZ,CAzFY,yEACI,wBA2FhB,CAtFY,6FACI,wBAwFhB,CAtFY,gFACI,wBAwFhB,CAtFY,oFACI,kBAAA,CACA,wBAwFhB,CAtFY,gFACI,kBAAA,CACA,wBAwFhB,CAtFY,0FACI,wBAAA,CACA,yCAAA,CAAA,iCAwFhB,CAtFY,sFACI,wBAAA,CACA,sCAAA,CAAA,iCAwFhB,CAtFY,2FAEI,kBAAA,CADA,wBAAA,CAEA,6CAAA,CAAA,qCAwFhB,CAtFY,uFAEI,kBAAA,CADA,wBAAA,CAEA,0CAAA,CAAA,qCAwFhB,CAlEA,uBAGI,sBAAA,CACA,cAAA,CAGA,eAAA,CACA,eAAA,CAPA,eAAA,CAKA,WAAA,CAGA,iBAAA,CAJA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CAHA,kBA2EJ,CA7EA,+BAaQ,YAAA,CADA,iBAqER,CAjFA,kCAiBQ,aAAA,CAEA,2BAAA,CAAA,4BAAA,CAAA,6BAAA,CAAA,wBAAA,CAAA,yBAAA,CAAA,yBAAA,CAAA,qBAmER,CAtFA,4EAkBQ,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAyER,CA3FA,0CAuBY,aAAA,CADA,WAqEZ,CA3FA,mDA2BgB,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAmEhB,CA9FA,+CA8BgB,aAmEhB,CAjGA,2CAmCY,aAAA,CACA,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAAA,CACA,gBAiEZ,CAtGA,0CA6CY,6BAAA,CAAA,0BAAA,CAAA,qBAAA,CAGA,cAAA,CAPA,aAAA,CAEA,cAAA,CADA,gBAAA,CAEA,WAAA,CAKA,SAAA,CAHA,iBAAA,CACA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CAGA,uCAAA,CASA,qBAAA,CAHA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAFA,cAAA,CAGA,gBAAA,CAFA,cAAA,CAFA,iBAAA,CADA,4BAAA,CAAA,oBAAA,CAMA,+BAAA,CAAA,4BAAA,CAAA,uBAAA,CAEA,4GAAA,CAAA,oGAAA,CAAA,+FAAA,CAAA,8IAAA,CAAA,4FAAA,CAAA,yLAAA,CATA,kBAyEZ,CA5DY,kDACI,wGAAA,CAAA,qGAAA,CAAA,gGA8DhB,CAzDY,yDACI,8GAAA,CAAA,2GAAA,CAAA,sGA2DhB,CAtDY,mDACI,UAwDhB,CAtDY,gDACI,qBAwDhB,CAxIA,uCAyFQ,0BAAA,CAAA,uBAAA,CAAA,sBAAA,CAAA,qBAAA,CAAA,kBAAA,CAHA,sGAAA,CAAA,8FAAA,CAAA,4FAAA,CAAA,uIAAA,CAAA,sFAAA,CAAA,2NAsDR,CAlDQ,gDAEI,SAAA,CACA,mBAAA,CAFA,2BAAA,CAAA,wBAAA,CAAA,uBAAA,CAAA,sBAAA,CAAA,mBAsDZ,CAjJA,iCAoGQ,YAAA,CAFA,eAAA,CAGA,mBAAA,CAFA,iBAoDR,CAvJA,6BAyGQ,aAAA,CADA,iBAAA,CAGA,yCAAA,CAAA,sCAAA,CAAA,qCAAA,CAAA,oCAAA,CAAA,iCAAA,CADA,iEAAA,CAAA,yDAAA,CAAA,uDAAA,CAAA,kGAAA,CAAA,iDAAA,CAAA,sLAmDR,CA7JA,sCA6GY,kBAmDZ,CAhKA,oCAgHY,SAAA,CACA,kCAAA,CAAA,+BAAA,CAAA,8BAAA,CAAA,6BAAA,CAAA,0BAmDZ,CApKA,qCAoHY,SAmDZ,CAvKA,+GAyHY,yIAAA,CAAA,iIAAA,CAAA,+HAAA,CAAA,0KAAA,CAAA,yHAAA,CAAA,8PAmDZ,CA9CQ,uCAOI,yCAAA,CAAA,sCAAA,CAAA,qCAAA,CAAA,oCAAA,CAAA,iCA0CZ,CAjDQ,+CAEQ,SAkDhB,CApDQ,8CAKQ,SAkDhB,CA/CY,iDACI,0DAAA,CAAA,uDAAA,CAAA,sDAAA,CAAA,qDAAA,CAAA,kDAiDhB,CAlDY,2KAKQ,kGAAA,CAAA,0FAAA,CAAA,wFAAA,CAAA,kIAAA,CAAA,kFAAA,CAAA,oNAkDpB,CA7LA,6BAqJQ,WAAA,CAMA,cAAA,CAHA,WAAA,CAFA,MAAA,CAGA,gBAAA,CALA,iBAAA,CAGA,OAAA,CAGA,iBA6CR,CAvMA,kCA+JQ,mFA2CR,CA1MA,6BAkKQ,cA2CR,CA7MA,0CAyKQ,QAAA,CAFA,MAAA,CAKA,SAAA,CADA,mBAAA,CALA,iBAAA,CAIA,OAAA,CAFA,KAAA,CAQA,4BAAA,CAAA,yBAAA,CAAA,wBAAA,CAAA,uBAAA,CAAA,oBAAA,CAHA,sGAAA,CAAA,8FAAA,CAAA,4FAAA,CAAA,uIAAA,CAAA,sFAAA,CAAA,2NA2CR,CAtCQ,mDAEI,SAAA,CADA,mBAAA,CAEA,0BAAA,CAAA,uBAAA,CAAA,sBAAA,CAAA,qBAAA,CAAA,kBAwCZ,CA7NA,uDAyLY,cAAA,CACA,gBAuCZ,CAjOA,sCA8LQ,aAsCR,CApOA,4CAkMY,aAAA,CADA,iBAuCZ,CAxOA,0CAuMY,WAAA,CAEA,QAAA,CADA,iBAAA,CAEA,OAAA,CAJA,UAyCZ,CA/OA,+CA4MgB,qBAAA,CACA,sBAAA,CACA,iBAAA,CACA,oBAAA,CACA,qBAAA,CACA,SAsChB,CAnCY,uDAEQ,gCAAA,CACA,mBAAA,CACA,sDAAA,CAAA,iDAAA,CAAA,mDAAA,CAAA,8CAoCpB,CAxCY,4DAOQ,wDAAA,CAAA,mDAAA,CAAA,qDAAA,CAAA,gDAoCpB,CA/PA,2DAiOY,uBAAA,CAAA,oBAAA,CAAA,eAAA,CAIA,6BAAA,CAAA,0BAAA,CAAA,qBAAA,CAFA,WAAA,CACA,gBAAA,CAGA,sDAAA,CAAA,iDAAA,CAAA,mDAAA,CAAA,8CAAA,CADA,kBAAA,CAJA,UAsCZ,CAxQA,iEA0OY,YAiCZ,CA3QA,sDAgPY,eAAA,CACA,oBAAA,CACA,uBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CACA,UA8BZ,CAlRA,qFAwPY,0BAAA,CAAA,kBAAA,CACA,6BAAA,CAAA,qBAAA,CAFA,UAgCZ,CAvRA,4DA4PY,YA8BZ,CA1RA,4EA+PY,eAAA,CACA,oBAAA,CACA,uBAAA,CAKA,yBAAA,CAAA,iBAAA,CADA,6BAAA,CAAA,qBAAA,CAHA,WAAA,CAEA,eAAA,CAGA,mDAAA,CAAA,2CAAA,CAJA,UAkCZ,CArSA,wEA4QY,uBAAA,CAAA,kBAAA,CACA,0BAAA,CAAA,qBAAA,CAFA,UA+BZ,CA1SA,wEAgRY,eAAA,CACA,oBAAA,CACA,uBAAA,CAKA,sBAAA,CAAA,iBAAA,CADA,0BAAA,CAAA,qBAAA,CAHA,WAAA,CAEA,eAAA,CAGA,gDAAA,CAAA,2CAAA,CAJA,UAiCZ,CArTA,4CA8RgB,cAAA,CADA,eA4BhB,CAzTA,oCAmSQ,UAyBR,CA5TA,oCAsSQ,QAyBR,CA/TA,kCAySQ,UAyBR,CAlUA,oCA4SQ,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,wBAAA,CAAA,qCAAA,CAAA,qBAAA,CAAA,qBAAA,CAAA,6BAyBR,CAtUA,sCA+SY,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAIA,oBAAA,CAJA,aAAA,CAAA,SAAA,CACA,cAAA,CAEA,iBAAA,CADA,UA4BZ","sourcesContent":["#eh-syringe-popup-root {\n    text-align: initial;\n    font-size: initial;\n    line-height: initial;\n    input,\n    table,\n    th,\n    td {\n        background: inherit;\n        color: inherit;\n    }\n\n    input {\n        border: none;\n        padding: 0;\n        margin: 0;\n    }\n\n    input[type='radio'],\n    input[type='checkbox'] {\n        position: initial;\n        top: initial;\n    }\n    p {\n        padding: 0;\n        margin: 0.8em 0;\n    }\n    a {\n        background: rgba(0, 0, 0, 0);\n        transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        text-decoration: none;\n    }\n}\n\n// theme\n.theme(@background, @foreground, @shadow, @accent) {\n    @soft-accent: softlight(@accent, @background);\n\n    & {\n        border: @accent solid 1px;\n        border-radius: 6px;\n        background: @background;\n        color: @foreground;\n        box-shadow: 0 0 6px 2px @shadow;\n    }\n\n    .action {\n        background: @background;\n        color: @accent;\n\n        &.primary {\n            border-color: @accent;\n            background: @accent;\n            color: @background;\n        }\n        &.primary:hover {\n            background: softlight(@accent, @foreground);\n        }\n        &.primary:active {\n            background: softlight(@accent, @background);\n        }\n    }\n\n    #info {\n        color: @accent;\n    }\n    .hasNew {\n        color: softlight(#aa575e, @foreground);\n    }\n    a {\n        color: @accent;\n        &:hover {\n            color: softlight(@accent, @foreground);\n        }\n        &:active {\n            color: softlight(@accent, @background);\n        }\n        &.minor {\n            color: #a5a3a6;\n            &:hover {\n                color: #d2cdd4;\n            }\n            &:active {\n                color: #838185;\n            }\n        }\n    }\n    .logo svg {\n        @sa: lighten(average(@accent, @background), 10%);\n        [fill-bg] {\n            fill: @background;\n        }\n        [fill-accent] {\n            fill: @accent;\n        }\n        [fill-sa] {\n            fill: @sa;\n        }\n        [stroke-bg] {\n            stroke: @background;\n        }\n        [stroke-accent] {\n            stroke: @accent;\n        }\n        [stroke-sa] {\n            stroke: @sa;\n        }\n    }\n\n    #settingForm {\n        .checkbox-item svg path {\n            stroke: @accent;\n        }\n\n        input[type='checkbox'] {\n            border: solid 2px #a09da6;\n            &:checked {\n                border: solid 2px @accent;\n            }\n        }\n\n        input[type='range'] {\n            &::-webkit-slider-runnable-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-moz-range-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-webkit-slider-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &::-moz-range-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &:focus::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:focus::-moz-range-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:active::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n            &:active::-moz-range-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n        }\n    }\n}\n\n#eh-syringe-popup {\n    @background: rgb(240, 240, 240);\n    @foreground: #111;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #8041a6;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n:root.ehs-ex #eh-syringe-popup {\n    @background: rgb(49, 49, 49);\n    @foreground: #eee;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #ce90f1;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n#eh-syringe-popup-root {\n    overflow: hidden;\n    white-space: nowrap;\n    font-family: sans-serif;\n    font-size: 12pt;\n    user-select: none;\n    padding: 1px;\n    max-width: 400px;\n    min-width: 240px;\n    position: relative;\n\n    .hidden {\n        visibility: hidden;\n        display: none;\n    }\n\n    .ehs-panel {\n        margin: 0 auto;\n        display: flex;\n        flex-direction: column;\n\n        .header {\n            margin: 16px;\n            line-height: 1;\n            //font-size: 16px;\n            display: flex;\n            > .cushion {\n                flex: auto;\n            }\n            span {\n                color: #a5a3a6;\n            }\n        }\n\n        .content {\n            margin: 0 16px;\n            flex: auto;\n            overflow: visible;\n        }\n\n        .action {\n            display: block;\n            line-height: 36px;\n            font-size: 16px;\n            margin: 16px;\n            box-sizing: border-box;\n            position: relative;\n            user-select: none;\n            cursor: pointer;\n            outline: 0;\n            -webkit-tap-highlight-color: transparent;\n            white-space: nowrap;\n            text-decoration: none;\n            text-align: center;\n            min-width: 64px;\n            padding: 0 16px;\n            border-radius: 4px;\n            overflow: visible;\n            transform: translate3d(0, 0, 0);\n            border: 1px #ddd solid;\n            transition:\n                background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),\n                box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n\n            &.primary {\n                box-shadow:\n                    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n                    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n            }\n            &.primary:active {\n                box-shadow:\n                    0 5px 5px -3px rgba(0, 0, 0, 0.2),\n                    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n                    0 3px 14px 2px rgba(0, 0, 0, 0.12);\n            }\n            &:disabled {\n                opacity: 0.6;\n            }\n            &:focus {\n                border: 1px #888 solid;\n            }\n        }\n    }\n\n    #ehs-main-panel {\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1);\n        &.ehs-hide {\n            transform: scale(0.9);\n            opacity: 0;\n            pointer-events: none;\n        }\n    }\n\n    .logo-box {\n        overflow: hidden;\n        position: relative;\n        margin: -16px;\n        pointer-events: none;\n    }\n    .logo {\n        text-align: center;\n        margin: 20px 0;\n        transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1) rotate(-45deg);\n        #Syringe {\n            pointer-events: all;\n        }\n        #Enema {\n            opacity: 0;\n            transform-origin: 61px 86px;\n        }\n        #Enema2 {\n            opacity: 1;\n        }\n        #Enema,\n        #Enema2,\n        #PushRod {\n            transition:\n                width 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n        &.prominent {\n            #Enema2 {\n                opacity: 0;\n            }\n            #Enema {\n                opacity: 1;\n            }\n            transform: scale(1.6) rotate(0deg);\n            &.injection {\n                transform: scale(1.6) rotate(0deg) translate(-10px, 0);\n                #Enema,\n                #Enema2,\n                #PushRod {\n                    transition:\n                        width 600ms cubic-bezier(0.4, 0, 0.2, 1),\n                        transform 600ms cubic-bezier(0.4, 0, 0.2, 1);\n                }\n            }\n        }\n    }\n\n    #info {\n        position: absolute;\n        bottom: 30px;\n        left: 0;\n        right: 0;\n        height: 24px;\n        line-height: 24px;\n        text-align: center;\n        font-size: 16px;\n    }\n\n    .monospace {\n        font-family: Menlo, Consolas, 'Source Code Pro', Inconsolata, Monaco, 'Courier New', monospace;\n    }\n    table {\n        font-size: 14px;\n    }\n\n    #ehs-setting-panel {\n        position: absolute;\n        left: 0;\n        top: 0;\n        bottom: 0;\n        right: 0;\n        pointer-events: none;\n        opacity: 0;\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1.1);\n\n        &.ehs-show {\n            pointer-events: auto;\n            opacity: 1;\n            transform: scale(1);\n        }\n\n        #settingForm {\n            font-size: 10pt;\n            line-height: 12pt;\n        }\n    }\n    .checkbox-item {\n        padding: 4px 0;\n\n        label {\n            position: relative;\n            display: block;\n        }\n\n        svg {\n            width: 10px;\n            height: 10px;\n            position: absolute;\n            left: 3px;\n            top: 3px;\n            path {\n                stroke-dasharray: 1000;\n                stroke-dashoffset: 1000;\n                stroke-width: 16px;\n                stroke-linecap: round;\n                stroke-linejoin: round;\n                fill: none;\n            }\n\n            &.checked {\n                path {\n                    stroke-dasharray: 113.137, 113.137;\n                    stroke-dashoffset: 0;\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n                }\n                path + path {\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 280ms;\n                }\n            }\n        }\n\n        input[type='checkbox'] {\n            appearance: none;\n            width: 16px;\n            height: 16px;\n            margin-right: 2px;\n            box-sizing: border-box;\n            vertical-align: top;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        }\n        input[type='checkbox']:focus {\n            outline: none;\n        }\n    }\n\n    #settingForm {\n        input[type='range'] {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            border-radius: 8px;\n            width: 100%;\n        }\n        input[type='range']::-webkit-slider-runnable-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']:focus {\n            outline: none;\n        }\n        input[type='range']::-webkit-slider-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        input[type='range']::-moz-range-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']::-moz-range-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        h3 {\n            span {\n                font-weight: 400;\n                font-size: 20pt;\n            }\n        }\n    }\n    .image-level {\n        margin: 4px;\n    }\n    .range-title {\n        margin: 0;\n    }\n    .range-box {\n        margin: 5px;\n    }\n    .range-label {\n        display: flex;\n        justify-content: space-between;\n        a {\n            flex: none;\n            font-size: 10pt;\n            width: 30px;\n            text-align: center;\n            display: inline-block;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -317,18 +317,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:mediu
 
 /***/ }),
 
-/***/ 92475:
+/***/ 63040:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40803);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17937);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73016);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75960);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ":root{--csstools-color-scheme--light:initial;color-scheme:light}:root.ehs-ex{--csstools-color-scheme--light: ;color-scheme:dark}.ehs-eh:root button[ehs-input]{background-color:#edeada;border:2px solid #b5a4a4;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#5c0d12;font-size:9pt;line-height:20px;margin:0 2px;min-height:26px;outline:none;padding:1px 5px 2px;white-space:pre}.ehs-ex:root button[ehs-input]{background-color:#edeada;border:2px solid #b5a4a4;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#5c0d12;font-size:9pt;line-height:20px;margin:0 2px;min-height:26px;outline:none;padding:1px 5px 2px;white-space:pre}.ehs-eh:root button[ehs-input]:disabled{color:#c2a8a4;-webkit-text-fill-color:#c2a8a4;opacity:1}.ehs-ex:root button[ehs-input]:disabled{color:#c2a8a4;-webkit-text-fill-color:#c2a8a4;opacity:1}.ehs-eh:root button[ehs-input]:enabled:hover{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-ex:root button[ehs-input]:enabled:hover{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-eh:root button[ehs-input]:enabled:focus{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-ex:root button[ehs-input]:enabled:focus{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-eh:root button[ehs-input]:enabled:active{background:-webkit-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-moz-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-o-radial-gradient(#d7d3c2,#f3f0e0)!important;background:radial-gradient(#d7d3c2,#f3f0e0)!important;border-color:#5c0d12!important}.ehs-ex:root button[ehs-input]:enabled:active{background:-webkit-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-moz-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-o-radial-gradient(#d7d3c2,#f3f0e0)!important;background:radial-gradient(#d7d3c2,#f3f0e0)!important;border-color:#5c0d12!important}:root.ehs-ex button[ehs-input]{background-color:#34353b;border-color:#8d8d8d;color:#f1f1f1}:root.ehs-ex button[ehs-input]:enabled:focus,:root.ehs-ex button[ehs-input]:enabled:hover{background-color:#43464e!important;border-color:#aeaeae!important}:root.ehs-ex button[ehs-input]:enabled:active{background:-webkit-radial-gradient(#1a1a1a,#43464e)!important;background:-moz-radial-gradient(#1a1a1a,#43464e)!important;background:-o-radial-gradient(#1a1a1a,#43464e)!important;background:radial-gradient(#1a1a1a,#43464e)!important;border-color:#c3c3c3!important}:root.ehs-ex button[ehs-input]:disabled{color:#8a8a8a;-webkit-text-fill-color:#8a8a8a}[hidden]{display:none}:root.ehs-hide-icon [ehs-emoji],:root.ehs-hide-icon [ehs-icon]{display:none}body div#gright{z-index:3}body #expunge_new button[ehs-input][type=submit]{margin:6px auto 2px}body #gj{margin:3px 4px}body #gmid{height:auto}body .g2{padding-bottom:20px}body .gsp{padding-top:10px}body td.tc{white-space:nowrap}body div.gt,body div.gtl,body div.gtw{line-height:16px;white-space:nowrap}body div.c6{text-align:left}[ehs-emoji],[ehs-icon]{margin:-.25em 1px!important;max-height:1.25em!important;max-width:2em!important}[ehs-icon]{vertical-align:middle}.ehs-new-tag-complete-translate{display:block;font-weight:bolder;margin-top:4px;opacity:.8;pointer-events:none}.ehs-new-tag-complete-translate:empty{display:none}", "",{"version":3,"sources":["webpack://./src/plugin/syringe/index.less"],"names":[],"mappings":"AAEA,MACI,sCAAA,CAAA,kBADJ,CAEI,aACI,gCAAA,CAAA,iBAAR,CAKI,+BASI,wBAAA,CAJA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAEA,aAAA,CADA,aAAA,CALA,gBAAA,CAEA,YAAA,CAHA,eAAA,CASA,YAAA,CAPA,mBAAA,CAQA,eAHR,CARI,+BASI,wBAAA,CAJA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAEA,aAAA,CADA,aAAA,CALA,gBAAA,CAEA,YAAA,CAHA,eAAA,CASA,YAAA,CAPA,mBAAA,CAQA,eAHR,CAKQ,wCACI,aAAA,CACA,+BAAA,CACA,SAHZ,CAAQ,wCACI,aAAA,CACA,+BAAA,CACA,SAHZ,CAMQ,6CAEI,kCAAA,CACA,8BAJZ,CACQ,6CAEI,kCAAA,CACA,8BAJZ,CACQ,6CAEI,kCAAA,CACA,8BAJZ,CACQ,6CAEI,kCAAA,CACA,8BAJZ,CAOQ,8CACI,6DAAA,CAAA,0DAAA,CAAA,wDAAA,CAAA,qDAAA,CACA,8BALZ,CAGQ,8CACI,6DAAA,CAAA,0DAAA,CAAA,wDAAA,CAAA,qDAAA,CACA,8BALZ,CASI,+BAGI,wBAAA,CAFA,oBAAA,CACA,aANR,CASQ,0FAEI,kCAAA,CACA,8BAPZ,CAUQ,8CACI,6DAAA,CAAA,0DAAA,CAAA,wDAAA,CAAA,qDAAA,CACA,8BARZ,CAWQ,wCACI,aAAA,CACA,+BATZ,CAcA,SACI,YAZJ,CAeA,+DAGQ,YAdR,CAkBA,gBAEQ,SAjBR,CAeA,iDAOQ,mBAnBR,CAYA,SAYQ,cArBR,CASA,WAiBQ,WAvBR,CAMA,SAsBQ,mBAzBR,CAGA,UAyBQ,gBAzBR,CAAA,WA8BQ,kBA3BR,CAHA,sCAqCQ,gBAAA,CACA,kBA7BR,CATA,YA2CQ,eA/BR,CAmCA,uBAII,2BAAA,CAFA,2BAAA,CACA,uBAhCJ,CAoCA,WACI,qBAlCJ,CAqCA,gCACI,aAAA,CAMA,kBAAA,CADA,cAAA,CAEA,UAAA,CACA,mBAvCJ,CAgCI,sCACI,YA9BR","sourcesContent":["// 全局注入样式\n\n:root {\n    color-scheme: light;\n    &.ehs-ex {\n        color-scheme: dark;\n    }\n}\n\nbutton[ehs-input] {\n    :is(:root.ehs-eh, :root.ehs-ex) & {\n        min-height: 26px;\n        line-height: 20px;\n        padding: 1px 5px 2px;\n        margin: 0 2px;\n        border: 2px solid #b5a4a4;\n        border-radius: 3px;\n        font-size: 9pt;\n        color: #5c0d12;\n        background-color: #edeada;\n        outline: none;\n        white-space: pre;\n\n        &:disabled {\n            color: #c2a8a4;\n            -webkit-text-fill-color: #c2a8a4;\n            opacity: 1;\n        }\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #f3f0e0 !important;\n            border-color: #977273 !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#d7d3c2, #f3f0e0) !important;\n            border-color: #5c0d12 !important;\n        }\n    }\n\n    :root.ehs-ex & {\n        border-color: #8d8d8d;\n        color: #f1f1f1;\n        background-color: #34353b;\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #43464e !important;\n            border-color: #aeaeae !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#1a1a1a, #43464e) !important;\n            border-color: #c3c3c3 !important;\n        }\n\n        &:disabled {\n            color: #8a8a8a;\n            -webkit-text-fill-color: #8a8a8a;\n        }\n    }\n}\n\n[hidden] {\n    display: none;\n}\n\n:root.ehs-hide-icon {\n    [ehs-icon],\n    [ehs-emoji] {\n        display: none;\n    }\n}\n\nbody {\n    div#gright {\n        z-index: 3;\n    }\n\n    // 提交删除申请按钮\n    #expunge_new button[ehs-input][type='submit'] {\n        margin: 6px auto 2px;\n    }\n\n    // 日文标题\n    #gj {\n        margin: 3px 4px;\n    }\n\n    // 信息框\n    #gmid {\n        height: auto;\n    }\n\n    // 信息框右侧菜单\n    .g2 {\n        padding-bottom: 20px;\n    }\n    .gsp {\n        padding-top: 10px;\n    }\n\n    // 标签组名\n    td.tc {\n        white-space: nowrap;\n    }\n\n    // 标签\n    div.gtl,\n    div.gtw,\n    div.gt {\n        line-height: 16px;\n        white-space: nowrap;\n    }\n\n    // 评论内容\n    div.c6 {\n        text-align: left;\n    }\n}\n\n[ehs-icon],\n[ehs-emoji] {\n    max-height: 1.25em !important;\n    max-width: 2em !important;\n    margin: -0.25em 1px !important;\n}\n\n[ehs-icon] {\n    vertical-align: middle;\n}\n\n.ehs-new-tag-complete-translate {\n    display: block;\n    &:empty {\n        display: none;\n    }\n\n    margin-top: 4px;\n    font-weight: bolder;\n    opacity: 0.8;\n    pointer-events: none;\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -337,18 +337,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root{--csstools-color-scheme--light:i
 
 /***/ }),
 
-/***/ 60866:
+/***/ 83329:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40803);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17937);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73016);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75960);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".eh-syringe-lite-auto-complete-list{background:#f8f4ec;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);-moz-box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);color:#5c0d12;display:block;max-height:50vh;min-height:20px;overflow:auto;padding:8px 0;position:fixed;scroll-padding:16px;scrollbar-width:thin;-moz-text-align-last:left;text-align-last:left;z-index:10}:root.ehs-ex .eh-syringe-lite-auto-complete-list{background:#2b2b2b;color:#f1f1f1}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list.exclude .auto-complete-item .en-name:before{content:\"- \"}.eh-syringe-lite-auto-complete-list .auto-complete-item{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;line-height:24px;padding:0 8px;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;cursor:pointer;justify-content:space-between}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item>span{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;-ms-flex:none;flex:none}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8ecf3}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item.selected,:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#3e3f40}.eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{color:#5f6368;padding:0 8px}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{color:#d9d9d9}.eh-syringe-lite-auto-complete-list mark{background:#f5f500;color:inherit}:root.ehs-ex .eh-syringe-lite-auto-complete-list mark{background:#727200}", "",{"version":3,"sources":["webpack://./src/plugin/tag-tip/index.less"],"names":[],"mappings":"AAAA,oCACI,kBAAA,CAWA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CACA,wGAAA,CAAA,qGAAA,CAAA,gGAAA,CAXA,aAAA,CAeA,aAAA,CACA,eAAA,CARA,eAAA,CASA,aAAA,CACA,aAAA,CAXA,cAAA,CAYA,mBAAA,CACA,oBAAA,CAXA,yBAAA,CAAA,oBAAA,CAYA,UARJ,CAXI,iDACI,kBAAA,CACA,aAaR,CAMI,sFAEI,YAJR,CAOI,gFAGY,YAPhB,CA1BA,wDAyCQ,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAAA,CADA,gBAAA,CADA,aAAA,CAGA,wBAAA,CAAA,qCAAA,CAAA,qBAAA,CAAA,qBAAA,CACA,cAAA,CADA,6BATR,CAjCA,4DA6CY,8BAAA,CACA,UAAA,CACA,uBATZ,CAtCA,6DAmDY,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAVZ,CAaQ,+HAEI,kBAXZ,CAaY,yJACI,kBAVhB,CAjDA,iEAgEY,aAAA,CADA,aAVZ,CAaY,8EACI,aAXhB,CAxDA,yCA0EQ,kBAAA,CADA,aAbR,CAeQ,sDACI,kBAbZ","sourcesContent":[".eh-syringe-lite-auto-complete-list {\n    background: #f8f4ec;\n    color: #5c0d12;\n\n    :root.ehs-ex & {\n        background: #2b2b2b;\n        color: #f1f1f1;\n    }\n\n    position: fixed;\n    min-height: 20px;\n    text-align-last: left;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    display: block;\n    max-height: 50vh;\n    overflow: auto;\n    padding: 8px 0;\n    scroll-padding: 16px;\n    scrollbar-width: thin;\n    z-index: 10;\n\n    &[hidden],\n    &:empty {\n        display: none;\n    }\n\n    &.exclude {\n        .auto-complete-item {\n            .en-name::before {\n                content: '- ';\n            }\n        }\n    }\n\n    .auto-complete-item {\n        padding: 0 8px;\n        line-height: 24px;\n        display: flex;\n        justify-content: space-between;\n        cursor: pointer;\n        img {\n            display: inline-block !important;\n            height: 8pt;\n            vertical-align: text-top;\n        }\n\n        > span {\n            flex: none;\n        }\n\n        &:hover,\n        &.selected {\n            background: #e8ecf3;\n\n            :root.ehs-ex & {\n                background: #3e3f40;\n            }\n        }\n        .en-name {\n            padding: 0 8px;\n            color: #5f6368;\n\n            :root.ehs-ex & {\n                color: #d9d9d9;\n            }\n        }\n    }\n\n    mark {\n        color: inherit;\n        background: #f5f500;\n        :root.ehs-ex & {\n            background: #727200;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -357,23 +357,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".eh-syringe-lite-auto-complete-list{ba
 
 /***/ }),
 
-/***/ 9588:
+/***/ 43199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40803);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17937);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(87228);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(73016);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75960);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(99747);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(79334), __webpack_require__.b);
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_95_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-button{background:50%/65% no-repeat #fff url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");border:2px solid #6e066e;-webkit-border-radius:36px;-moz-border-radius:36px;border-radius:36px;-webkit-box-shadow:0 0 2px 1px rgba(0,0,0,.5);-moz-box-shadow:0 0 2px 1px rgba(0,0,0,.5);box-shadow:0 0 2px 1px rgba(0,0,0,.5);height:36px;position:fixed;-ms-touch-action:none;touch-action:none;width:36px;z-index:10}#eh-syringe-popup-button:hover{cursor:pointer}:root.ehs-ex #eh-syringe-popup-button{background-color:#bbb;border-color:#926a92}#eh-syringe-popup-badge{background:#444;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;color:#fff;font-size:12px;height:14px;padding:2px 4px;position:absolute;right:-10px;top:-10px}#eh-syringe-popup-back{background:rgba(0,0,0,.3);bottom:0;left:0;opacity:0;pointer-events:none;position:fixed;right:0;top:0;-webkit-transition:visibility,opacity .4s;-o-transition:visibility,opacity .4s;-moz-transition:visibility,opacity .4s;transition:visibility,opacity .4s;visibility:hidden;z-index:1000}#eh-syringe-popup-back.closing,#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{pointer-events:auto;visibility:visible}#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{opacity:1}#eh-syringe-popup-back.closing{opacity:0}#eh-syringe-popup{bottom:72px;position:absolute;right:12px}", "",{"version":3,"sources":["webpack://./src/user-script/popup-host.less"],"names":[],"mappings":"AAAA,yBAUI,yEAAA,CAFA,wBAAA,CADA,0BAAA,CAAA,uBAAA,CAAA,kBAAA,CAEA,6CAAA,CAAA,0CAAA,CAAA,qCAAA,CAHA,WAAA,CALA,cAAA,CACA,qBAAA,CAAA,iBAAA,CAGA,UAAA,CAMA,UADJ,CAEI,+BACI,cAAR,CAGI,sCACI,qBAAA,CACA,oBADR,CAKA,wBAQI,eAAA,CADA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAEA,UAAA,CAPA,cAAA,CADA,WAAA,CAKA,eAAA,CAHA,iBAAA,CACA,WAAA,CACA,SACJ,CAMA,uBAOI,yBAAA,CALA,QAAA,CAGA,MAAA,CAKA,SAAA,CADA,mBAAA,CARA,cAAA,CAEA,OAAA,CACA,KAAA,CAOA,yCAAA,CAAA,oCAAA,CAAA,sCAAA,CAAA,iCAAA,CAHA,iBAAA,CAFA,YACJ,CAQI,0FAII,mBAAA,CADA,kBALR,CAYI,2DACI,SAPR,CASI,+BACI,SAPR,CAWA,kBAEI,WAAA,CADA,iBAAA,CAEA,UATJ","sourcesContent":["#eh-syringe-popup-button {\n    position: fixed;\n    touch-action: none;\n    // bottom: 12px;\n    // right: 12px;\n    width: 36px;\n    height: 36px;\n    border-radius: 36px;\n    border: rgb(110, 6, 110) 2px solid;\n    box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px 1px;\n    background: center/65% no-repeat white url('../assets/logo.svg');\n    z-index: 10;\n    &:hover {\n        cursor: pointer;\n    }\n\n    :root.ehs-ex & {\n        background-color: rgb(187, 187, 187);\n        border-color: rgb(146, 106, 146);\n    }\n}\n\n#eh-syringe-popup-badge {\n    height: 14px;\n    font-size: 12px;\n    position: absolute;\n    right: -10px;\n    top: -10px;\n    padding: 2px 4px;\n    border-radius: 4px;\n    background: #444;\n    color: white;\n}\n\n#eh-syringe-popup-back {\n    position: fixed;\n    bottom: 0;\n    right: 0;\n    top: 0;\n    left: 0;\n    z-index: 1000;\n    background: rgba(0, 0, 0, 0.3);\n    visibility: hidden;\n    pointer-events: none;\n    opacity: 0;\n    transition:\n        visibility,\n        opacity 0.4s;\n\n    &.open,\n    &.opening,\n    &.closing {\n        visibility: visible;\n        pointer-events: initial;\n    }\n\n    &.open {\n        opacity: 1;\n    }\n    &.opening {\n        opacity: 1;\n    }\n    &.closing {\n        opacity: 0;\n    }\n}\n\n#eh-syringe-popup {\n    position: absolute;\n    bottom: 12px + 36px + 24px;\n    right: 12px;\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -382,7 +382,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-button{background:50
 
 /***/ }),
 
-/***/ 70890:
+/***/ 2040:
 /***/ (function(module) {
 
 "use strict";
@@ -473,7 +473,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 76105:
+/***/ 40243:
 /***/ (function(module) {
 
 "use strict";
@@ -514,7 +514,7 @@ module.exports = insertBySelector;
 
 /***/ }),
 
-/***/ 81182:
+/***/ 7524:
 /***/ (function(module) {
 
 "use strict";
@@ -531,7 +531,7 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ 34770:
+/***/ 23016:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
@@ -548,7 +548,7 @@ module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
 
-/***/ 5035:
+/***/ 49385:
 /***/ (function(module) {
 
 "use strict";
@@ -616,7 +616,7 @@ module.exports = domAPI;
 
 /***/ }),
 
-/***/ 88291:
+/***/ 48737:
 /***/ (function(module) {
 
 "use strict";
@@ -645,374 +645,374 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
 /***/ }),
 
-/***/ 17999:
+/***/ 49380:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(3200);
 
 /***/ }),
 
-/***/ 20364:
+/***/ 81291:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(8231);
 
 /***/ }),
 
-/***/ 30689:
+/***/ 31815:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(97199);
 
 /***/ }),
 
-/***/ 85613:
+/***/ 11483:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(42867);
 
 /***/ }),
 
-/***/ 76212:
+/***/ 60330:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(31362);
 
 /***/ }),
 
-/***/ 71892:
+/***/ 82202:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(93298);
 
 /***/ }),
 
-/***/ 22447:
+/***/ 37613:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(50213);
 
 /***/ }),
 
-/***/ 29842:
+/***/ 72080:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(49688);
 
 /***/ }),
 
-/***/ 41618:
+/***/ 53444:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(71532);
 
 /***/ }),
 
-/***/ 38293:
+/***/ 45411:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(79003);
 
 /***/ }),
 
-/***/ 48440:
+/***/ 30926:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(62566);
 
 /***/ }),
 
-/***/ 11328:
+/***/ 52534:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(30494);
 
 /***/ }),
 
-/***/ 18590:
+/***/ 22384:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(6488);
 
 /***/ }),
 
-/***/ 90849:
+/***/ 3323:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(59395);
 
 /***/ }),
 
-/***/ 84195:
+/***/ 70113:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(60857);
 
 /***/ }),
 
-/***/ 98705:
+/***/ 69955:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(54203);
 
 /***/ }),
 
-/***/ 57913:
+/***/ 46967:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(98255);
 
 /***/ }),
 
-/***/ 99165:
+/***/ 65295:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(92887);
 
 /***/ }),
 
-/***/ 96703:
+/***/ 12501:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(72653);
 
 /***/ }),
 
-/***/ 68963:
+/***/ 3221:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(48029);
 
 /***/ }),
 
-/***/ 69983:
+/***/ 6037:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(46125);
 
 /***/ }),
 
-/***/ 9191:
+/***/ 4281:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19825);
 
 /***/ }),
 
-/***/ 41827:
+/***/ 2101:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(11949);
 
 /***/ }),
 
-/***/ 70721:
+/***/ 62919:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(96079);
 
 /***/ }),
 
-/***/ 48999:
+/***/ 9613:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(86165);
 
 /***/ }),
 
-/***/ 45037:
+/***/ 59399:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(93224);
 
 /***/ }),
 
-/***/ 34093:
+/***/ 72443:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(72547);
 
 /***/ }),
 
-/***/ 24201:
+/***/ 87911:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(36239);
 
 /***/ }),
 
-/***/ 41886:
+/***/ 95828:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(89852);
 
 /***/ }),
 
-/***/ 34431:
+/***/ 45941:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(35933);
 
 /***/ }),
 
-/***/ 82176:
+/***/ 16106:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(39058);
 
 /***/ }),
 
-/***/ 37480:
+/***/ 80358:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(15086);
 
 /***/ }),
 
-/***/ 7690:
+/***/ 35540:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(65404);
 
 /***/ }),
 
-/***/ 38809:
+/***/ 67611:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(91411);
 
 /***/ }),
 
-/***/ 65318:
+/***/ 94968:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(44528);
 
 /***/ }),
 
-/***/ 23264:
+/***/ 8190:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(21574);
 
 /***/ }),
 
-/***/ 70303:
+/***/ 5485:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(95253);
 
 /***/ }),
 
-/***/ 34828:
+/***/ 86986:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(71922);
 
 /***/ }),
 
-/***/ 20981:
+/***/ 475:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(12787);
 
 /***/ }),
 
-/***/ 89616:
+/***/ 63814:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(37038);
 
 /***/ }),
 
-/***/ 71438:
+/***/ 75404:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4971);
 
 /***/ }),
 
-/***/ 50944:
+/***/ 85426:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(92221);
 
 /***/ }),
 
-/***/ 57389:
+/***/ 41147:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(29331);
 
 /***/ }),
 
-/***/ 39277:
+/***/ 34963:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(67291);
 
 /***/ }),
 
-/***/ 23593:
+/***/ 15523:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(52059);
 
 /***/ }),
 
-/***/ 92235:
+/***/ 65273:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(33674);
 
 /***/ }),
 
-/***/ 77575:
+/***/ 16105:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(13290);
 
 /***/ }),
 
-/***/ 26979:
+/***/ 42549:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(89741);
 
 /***/ }),
 
-/***/ 17111:
+/***/ 89737:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(59953);
 
 /***/ }),
 
-/***/ 49756:
+/***/ 45122:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5546);
 
 /***/ }),
 
-/***/ 85846:
+/***/ 3636:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(53363);
 
 /***/ }),
 
-/***/ 37976:
+/***/ 80790:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(41309);
 
 /***/ }),
 
-/***/ 9743:
+/***/ 63421:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var _typeof = (__webpack_require__(11320)["default"]);
+var _typeof = (__webpack_require__(74286)["default"]);
 var _Object$defineProperty = __webpack_require__(40110);
 var _Symbol = __webpack_require__(12618);
 var _Object$create = __webpack_require__(13181);
@@ -1334,7 +1334,7 @@ module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.e
 
 /***/ }),
 
-/***/ 11320:
+/***/ 74286:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var _Symbol = __webpack_require__(12618);
@@ -1352,14 +1352,14 @@ module.exports = _typeof, module.exports.__esModule = true, module.exports["defa
 
 /***/ }),
 
-/***/ 69314:
+/***/ 7880:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var _globalThis = __webpack_require__(20364);
-var _typeof = __webpack_require__(11320);
+var _globalThis = __webpack_require__(81291);
+var _typeof = __webpack_require__(74286);
 // TODO(Babel 8): Remove this file.
 
-var runtime = __webpack_require__(9743)();
+var runtime = __webpack_require__(63421)();
 module.exports = runtime;
 
 // Copied from https://github.com/facebook/regenerator/blob/main/packages/runtime/runtime.js#L736=
@@ -28827,47 +28827,47 @@ var reflect = __webpack_require__(89817);
 !function() {
 "use strict";
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js
-var define_property = __webpack_require__(37480);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js
+var define_property = __webpack_require__(80358);
 var define_property_default = /*#__PURE__*/__webpack_require__.n(define_property);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/find.js
-var find = __webpack_require__(48440);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/find.js
+var find = __webpack_require__(30926);
 var find_default = /*#__PURE__*/__webpack_require__.n(find);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js
-var for_each = __webpack_require__(11328);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js
+var for_each = __webpack_require__(52534);
 var for_each_default = /*#__PURE__*/__webpack_require__.n(for_each);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js
-var splice = __webpack_require__(69983);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js
+var splice = __webpack_require__(6037);
 var splice_default = /*#__PURE__*/__webpack_require__.n(splice);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js
-var index_of = __webpack_require__(90849);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js
+var index_of = __webpack_require__(3323);
 var index_of_default = /*#__PURE__*/__webpack_require__.n(index_of);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/assign.js
-var object_assign = __webpack_require__(41886);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/assign.js
+var object_assign = __webpack_require__(95828);
 var assign_default = /*#__PURE__*/__webpack_require__.n(object_assign);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/map.js
-var map = __webpack_require__(98705);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/map.js
+var map = __webpack_require__(69955);
 var map_default = /*#__PURE__*/__webpack_require__.n(map);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js
-var is_array = __webpack_require__(85613);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js
+var is_array = __webpack_require__(11483);
 var is_array_default = /*#__PURE__*/__webpack_require__.n(is_array);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/filter.js
-var filter = __webpack_require__(38293);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/filter.js
+var filter = __webpack_require__(45411);
 var filter_default = /*#__PURE__*/__webpack_require__.n(filter);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/bind.js
-var bind = __webpack_require__(71892);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/bind.js
+var bind = __webpack_require__(82202);
 var bind_default = /*#__PURE__*/__webpack_require__.n(bind);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js
-var get_prototype_of = __webpack_require__(23264);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js
+var get_prototype_of = __webpack_require__(8190);
 var get_prototype_of_default = /*#__PURE__*/__webpack_require__.n(get_prototype_of);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/includes.js
-var includes = __webpack_require__(18590);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/includes.js
+var includes = __webpack_require__(22384);
 var includes_default = /*#__PURE__*/__webpack_require__.n(includes);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js
-var set_prototype_of = __webpack_require__(34828);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js
+var set_prototype_of = __webpack_require__(86986);
 var set_prototype_of_default = /*#__PURE__*/__webpack_require__.n(set_prototype_of);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js
-var create = __webpack_require__(34431);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js
+var create = __webpack_require__(45941);
 var create_default = /*#__PURE__*/__webpack_require__.n(create);
 ;// ./node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/esm5/token.class.js
 /**
@@ -28993,8 +28993,8 @@ var CannotInstantiateValueError = /** @class */function (_super) {
   return CannotInstantiateValueError;
 }(Error);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js
-var symbol = __webpack_require__(77575);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js
+var symbol = __webpack_require__(16105);
 var symbol_default = /*#__PURE__*/__webpack_require__.n(symbol);
 ;// ./node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/esm5/empty.const.js
 
@@ -29488,8 +29488,8 @@ function Service(optionsOrServiceIdentifier) {
 
 
 var services_Container = Container.of('default');
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/ends-with.js
-var ends_with = __webpack_require__(29842);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/ends-with.js
+var ends_with = __webpack_require__(72080);
 var ends_with_default = /*#__PURE__*/__webpack_require__.n(ends_with);
 ;// ./src/utils/hosts.ts
 
@@ -29527,11 +29527,11 @@ var EHGT = 'ehgt.org';
 var REPO = 'repo.e-hentai.org';
 var HATH = 'hath.network';
 var FORUM = 'forums.e-hentai.org';
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/promise.js
-var promise = __webpack_require__(71438);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/promise.js
+var promise = __webpack_require__(75404);
 var promise_default = /*#__PURE__*/__webpack_require__.n(promise);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/set-timeout.js
-var set_timeout = __webpack_require__(23593);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/set-timeout.js
+var set_timeout = __webpack_require__(15523);
 var set_timeout_default = /*#__PURE__*/__webpack_require__.n(set_timeout);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/object/define-property.js
 var object_define_property = __webpack_require__(52352);
@@ -29539,7 +29539,7 @@ var object_define_property = __webpack_require__(52352);
 var full_symbol = __webpack_require__(85464);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/symbol/iterator.js
 var iterator = __webpack_require__(76724);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/typeof.js
 
 
 function _typeof(o) {
@@ -29554,7 +29554,7 @@ function _typeof(o) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/symbol/to-primitive.js
 var to_primitive = __webpack_require__(64423);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/toPrimitive.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/toPrimitive.js
 
 
 function toPrimitive(t, r) {
@@ -29568,7 +29568,7 @@ function toPrimitive(t, r) {
   return ("string" === r ? String : Number)(t);
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/toPropertyKey.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/toPropertyKey.js
 
 
 function toPropertyKey(t) {
@@ -29576,7 +29576,7 @@ function toPropertyKey(t) {
   return "symbol" == _typeof(i) ? i : i + "";
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/createClass.js
 
 
 function _defineProperties(e, r) {
@@ -29591,15 +29591,15 @@ function _createClass(e, r, t) {
   }), e;
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/classCallCheck.js
 function _classCallCheck(a, n) {
   if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js
-var concat = __webpack_require__(22447);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js
+var concat = __webpack_require__(37613);
 var concat_default = /*#__PURE__*/__webpack_require__.n(concat);
-;// ./node_modules/.pnpm/tslib@2.7.0/node_modules/tslib/tslib.es6.mjs
+;// ./node_modules/.pnpm/tslib@2.8.0/node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -29949,12 +29949,25 @@ function __disposeResources(env) {
   return next();
 }
 
+function __rewriteRelativeImportExtension(path, preserveJsx) {
+  if (typeof path === "string" && /^\.\.?\//.test(path)) {
+      return path.replace(/\.(tsx)$|((?:\.d)?)((?:\.[^./]+?)?)\.([cm]?)ts$/i, function (m, tsx, d, ext, cm) {
+          return tsx ? preserveJsx ? ".jsx" : ".js" : d && (!ext || !cm) ? m : (d + ext + "." + cm.toLowerCase() + "js");
+      });
+  }
+  return path;
+}
+
 /* harmony default export */ var tslib_es6 = ({
   __extends: tslib_es6_extends,
   __assign: tslib_es6_assign,
   __rest,
   __decorate,
   __param,
+  __esDecorate,
+  __runInitializers,
+  __propKey,
+  __setFunctionName,
   __metadata,
   __awaiter,
   __generator,
@@ -29977,6 +29990,7 @@ function __disposeResources(env) {
   __classPrivateFieldIn,
   __addDisposableResource,
   __disposeResources,
+  __rewriteRelativeImportExtension,
 });
 
 ;// ./src/services/logger.ts
@@ -30042,7 +30056,7 @@ function ready(callback) {
 }
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/promise/index.js
 var full_promise = __webpack_require__(32981);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/asyncToGenerator.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/asyncToGenerator.js
 
 function asyncGeneratorStep(n, t, e, r, o, a, c) {
   try {
@@ -30070,40 +30084,40 @@ function _asyncToGenerator(n) {
   };
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/starts-with.js
-var starts_with = __webpack_require__(9191);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/starts-with.js
+var starts_with = __webpack_require__(4281);
 var starts_with_default = /*#__PURE__*/__webpack_require__.n(starts_with);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/regenerator/index.js
-var regenerator = __webpack_require__(69314);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/regenerator/index.js
+var regenerator = __webpack_require__(7880);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js
-var slice = __webpack_require__(99165);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js
+var slice = __webpack_require__(65295);
 var slice_default = /*#__PURE__*/__webpack_require__.n(slice);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js
-var from = __webpack_require__(30689);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js
+var from = __webpack_require__(31815);
 var from_default = /*#__PURE__*/__webpack_require__.n(from);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js
-var get_iterator_method = __webpack_require__(17999);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js
+var get_iterator_method = __webpack_require__(49380);
 var get_iterator_method_default = /*#__PURE__*/__webpack_require__.n(get_iterator_method);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js/global-this.js
-var global_this = __webpack_require__(20364);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js/global-this.js
+var global_this = __webpack_require__(81291);
 var global_this_default = /*#__PURE__*/__webpack_require__.n(global_this);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js
-var instance_keys = __webpack_require__(84195);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js
+var instance_keys = __webpack_require__(70113);
 var keys_default = /*#__PURE__*/__webpack_require__.n(instance_keys);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/keys.js
-var object_keys = __webpack_require__(70303);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/keys.js
+var object_keys = __webpack_require__(5485);
 var object_keys_default = /*#__PURE__*/__webpack_require__.n(object_keys);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/construct.js
-var construct = __webpack_require__(50944);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/construct.js
+var construct = __webpack_require__(85426);
 var construct_default = /*#__PURE__*/__webpack_require__.n(construct);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/assertThisInitialized.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/assertThisInitialized.js
 function _assertThisInitialized(e) {
   if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   return e;
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/possibleConstructorReturn.js
 
 
 function _possibleConstructorReturn(t, e) {
@@ -30118,7 +30132,7 @@ var object_set_prototype_of = __webpack_require__(62340);
 var instance_bind = __webpack_require__(21436);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/object/get-prototype-of.js
 var object_get_prototype_of = __webpack_require__(9208);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/getPrototypeOf.js
 
 
 
@@ -30131,7 +30145,7 @@ function _getPrototypeOf(t) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/object/create.js
 var object_create = __webpack_require__(80567);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/setPrototypeOf.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/setPrototypeOf.js
 
 
 function _setPrototypeOf(t, e) {
@@ -30141,7 +30155,7 @@ function _setPrototypeOf(t, e) {
   }, _setPrototypeOf(t, e);
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/inherits.js
 
 
 
@@ -30158,14 +30172,14 @@ function _inherits(t, e) {
   }), e && _setPrototypeOf(t, e);
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/map.js
-var core_js_stable_map = __webpack_require__(45037);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/map.js
+var core_js_stable_map = __webpack_require__(59399);
 var core_js_stable_map_default = /*#__PURE__*/__webpack_require__.n(core_js_stable_map);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/values.js
-var instance_values = __webpack_require__(70721);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/values.js
+var instance_values = __webpack_require__(62919);
 var values_default = /*#__PURE__*/__webpack_require__.n(instance_values);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/json/stringify.js
-var stringify = __webpack_require__(48999);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/json/stringify.js
+var stringify = __webpack_require__(9613);
 var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
 ;// ./node_modules/.pnpm/idb-keyval@6.2.1/node_modules/idb-keyval/dist/index.js
 
@@ -31088,14 +31102,14 @@ Storage = __decorate([Service(), __metadata("design:paramtypes", [Logger])], Sto
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/array/is-array.js
 var array_is_array = __webpack_require__(53077);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/arrayLikeToArray.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/arrayLikeToArray.js
 function arrayLikeToArray_arrayLikeToArray(r, a) {
   (null == a || a > r.length) && (a = r.length);
   for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
   return n;
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithoutHoles.js
 
 
 function _arrayWithoutHoles(r) {
@@ -31106,7 +31120,7 @@ function _arrayWithoutHoles(r) {
 var full_get_iterator_method = __webpack_require__(30746);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/array/from.js
 var array_from = __webpack_require__(83033);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArray.js
 
 
 
@@ -31116,7 +31130,7 @@ function _iterableToArray(r) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/instance/slice.js
 var instance_slice = __webpack_require__(47477);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/unsupportedIterableToArray.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/unsupportedIterableToArray.js
 
 
 
@@ -31129,12 +31143,12 @@ function unsupportedIterableToArray_unsupportedIterableToArray(r, a) {
   }
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableSpread.js
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/toConsumableArray.js
 
 
 
@@ -31143,8 +31157,8 @@ function _toConsumableArray(r) {
   return _arrayWithoutHoles(r) || _iterableToArray(r) || unsupportedIterableToArray_unsupportedIterableToArray(r) || _nonIterableSpread();
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/set.js
-var set = __webpack_require__(92235);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/set.js
+var set = __webpack_require__(65273);
 var set_default = /*#__PURE__*/__webpack_require__.n(set);
 ;// ./src/providers/common/messaging.ts
 
@@ -31348,26 +31362,26 @@ var messaging_Messaging = /*#__PURE__*/function () {
 }();
 messaging_Messaging = __decorate([Service(), __metadata("design:paramtypes", [Logger])], messaging_Messaging);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(70890);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(2040);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(5035);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0/node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(49385);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(76105);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0/node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(40243);
 var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(34770);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(23016);
 var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(81182);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0/node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(7524);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(88291);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.95.0/node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(48737);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
-var introduce = __webpack_require__(14955);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.3_webpack@5.95.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
+var introduce = __webpack_require__(26656);
 ;// ./src/plugin/introduce/index.less
 
       
@@ -31395,11 +31409,11 @@ var introduce_update = injectStylesIntoStyleTag_default()(introduce/* default */
 
        /* harmony default export */ var plugin_introduce = (introduce/* default */.A && introduce/* default */.A.locals ? introduce/* default */.A.locals : undefined);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js
-var trim = __webpack_require__(41827);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js
+var trim = __webpack_require__(2101);
 var trim_default = /*#__PURE__*/__webpack_require__.n(trim);
 // EXTERNAL MODULE: ./node_modules/.pnpm/escape-html@1.0.3/node_modules/escape-html/index.js
-var escape_html = __webpack_require__(25100);
+var escape_html = __webpack_require__(57249);
 var escape_html_default = /*#__PURE__*/__webpack_require__.n(escape_html);
 ;// ./node_modules/.pnpm/emoji-regex@10.4.0/node_modules/emoji-regex/index.mjs
 /* harmony default export */ var emoji_regex = (() => {
@@ -32272,8 +32286,8 @@ var EMPTY_OBSERVER = {
 var observable = function () {
   return typeof (symbol_default()) === 'function' && (symbol_default()).observable || '@@observable';
 }();
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/reduce.js
-var reduce = __webpack_require__(57913);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/reduce.js
+var reduce = __webpack_require__(46967);
 var reduce_default = /*#__PURE__*/__webpack_require__.n(reduce);
 ;// ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/util/identity.js
 function identity(x) {
@@ -32410,8 +32424,8 @@ function isSubscriber(value) {
 function isInteropObservable(input) {
   return isFunction(input[observable]);
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/async-iterator.js
-var async_iterator = __webpack_require__(26979);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/async-iterator.js
+var async_iterator = __webpack_require__(42549);
 var async_iterator_default = /*#__PURE__*/__webpack_require__.n(async_iterator);
 ;// ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/util/isAsyncIterable.js
 
@@ -32424,8 +32438,8 @@ function isAsyncIterable(obj) {
 function createInvalidObservableTypeError(input) {
   return new TypeError("You provided " + (input !== null && _typeof(input) === 'object' ? 'an invalid object' : "'" + input + "'") + " where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable.");
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js
-var symbol_iterator = __webpack_require__(49756);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js
+var symbol_iterator = __webpack_require__(45122);
 var symbol_iterator_default = /*#__PURE__*/__webpack_require__.n(symbol_iterator);
 ;// ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/symbol/iterator.js
 
@@ -32919,8 +32933,8 @@ function filter_filter(predicate, thisArg) {
     }));
   });
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
-var tag_tip = __webpack_require__(60866);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.3_webpack@5.95.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
+var tag_tip = __webpack_require__(83329);
 ;// ./src/plugin/tag-tip/index.less
 
       
@@ -33241,7 +33255,7 @@ var TagTip = /*#__PURE__*/function () {
 }();
 TagTip = __decorate([Service(), __metadata("design:paramtypes", [Storage, Logger, messaging_Messaging, Tagging])], TagTip);
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithHoles.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/arrayWithHoles.js
 
 function _arrayWithHoles(r) {
   if (array_is_array(r)) return r;
@@ -33249,7 +33263,7 @@ function _arrayWithHoles(r) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/instance/push.js
 var push = __webpack_require__(47547);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArrayLimit.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/iterableToArrayLimit.js
 
 
 
@@ -33281,12 +33295,12 @@ function _iterableToArrayLimit(r, l) {
   }
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableRest.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/slicedToArray.js
 
 
 
@@ -33295,11 +33309,11 @@ function slicedToArray_slicedToArray(r, e) {
   return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || unsupportedIterableToArray_unsupportedIterableToArray(r, e) || _nonIterableRest();
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/url.js
-var core_js_stable_url = __webpack_require__(85846);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/url.js
+var core_js_stable_url = __webpack_require__(3636);
 var url_default = /*#__PURE__*/__webpack_require__.n(core_js_stable_url);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/sort.js
-var sort = __webpack_require__(68963);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/sort.js
+var sort = __webpack_require__(3221);
 var sort_default = /*#__PURE__*/__webpack_require__.n(sort);
 ;// ./src/services/ui-translation/helper.ts
 
@@ -33661,9 +33675,9 @@ merge(/.*/, undefined, {
   ' is short and will be searched as an exact tag only.': ' 太短，因此只会搜索精确匹配的标签。',
   'Some terms use unsupported syntax, are too short, or are otherwise not valid.': '某些关键词使用了不支持的语法、太短或无效。',
   'The provided date is invalid or outside the range of posted galleries.': '提供的日期无效或超出已发布图库的日期范围。',
-  'The page range minimum cannot be above 1000.': '页数最小值最多为 1000。',
+  'The page range minimum cannot be above 1000.': '页数最小值至多为 1000。',
   'The page range maximum cannot be below 10.': '页数最大值至少为 10。',
-  'Your page range filter is too narrow.': '页数范围差至少为 20。',
+  'Your page range filter is too narrow.': '页数范围差至少为 20，范围比至多为 0.8。',
   'You provided too many keywords. Use fewer keywords, or combine keywords with quotes.': '使用的关键词过多。请减少关键词或使用引号组合关键词。',
   'You provided too many keywords. Use fewer keywords, or combine keywords with quotes. (Ignored ': '使用的关键词过多。请减少关键词或使用引号组合关键词。(已忽略 ',
   'No hits found': '什么也没有',
@@ -33743,7 +33757,18 @@ merge(/.*/, undefined, {
   'No (Replaced)': '否 (已替换)',
   'The site is currently in Read Only/Failover Mode. Some functionality will not be available. Details may be available on ': '网站当前处于只读/故障转移模式，部分功能会不可用。详情请关注 ',
   'The site is currently in Read Only Mode. This page is therefore not available.': '网站当前处于只读模式，因此本页面不可用。',
-  'This content is not available in Russia.RU': '此内容在俄罗斯 (RU) 不可用'
+  'This content is not available in Russia.RU': '此内容在俄罗斯 (RU) 不可用',
+  // 洋葱网址登录页
+  'user:': '用户：',
+  'pass:': '密码：',
+  'code:': '代码：',
+  username: '用户名',
+  password: '密码',
+  CPTCA: '验证码',
+  'Fuck Off': '刷新',
+  'Log In': '登录',
+  'You have to complete every field': '您必须填完每个字段',
+  'Please try again': '请再试一次'
 }, [[/^(\d+) pages?$/, '$1 页'], [/^Found about ([\d,]+) results?./, '找到约 $1 个结果。'], [/^Found ([\d,]+\+?) results?./, '找到 $1 个结果。'], [/^Found hundreds of results./, '找到数百结果。'], [/^Found thousands of results./, '找到数千结果。'], [/^Found many results./, '找到许多结果。'], [/\s?Filtered ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面过滤 $1 个结果。'], [/\s?Excluded ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面排除 $1 个结果。'], [/\s?Excluded ([\d,]+) galler(ies|y) and filtered ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面排除 $1 个结果，过滤 $3 个结果。']]);
 ;// ./src/services/ui-translation/data/exchange.ts
 
@@ -33848,7 +33873,7 @@ merge(/^\/g\//, undefined, {
   '.': '。',
   '- The ': '● 您对标签的影响',
   power: '权重',
-  ' with which you can affect tagging is determined by a number of factors, such as your account age and whether or not you are active on the ': '取决于多种因素，例如您的帐户资历、您是否活跃于',
+  ' with which you can affect tagging is determined by a number of factors, such as your account age and whether or not you are active on the ': '取决于多种因素，例如您的账户资历、您是否活跃于',
   forums: '论坛等',
   '- The forums is also where ': '● 论坛也是',
   'everything about tagging is discussed': '讨论标签相关内容',
@@ -33888,6 +33913,8 @@ merge(/^\/g\//, undefined, {
   'Enter your comments here, then hit Post Comment. If the last comment posted is yours, this will be appended to that post.': '在此处输入您的评论，然后点击发表评论。如果最后一条评论是您的，则新评论会被附加到最后一条评论下。',
   'Post Comment': '发表评论',
   'Your comment is too short.': '您的评论太短了。',
+  Edit: '编辑',
+  'Edit Comment': '编辑评论',
   'Gallery not found. If you just added this gallery, you may have to wait a short while before it becomes available.': '没有找到图库。如果您刚刚添加了此图库，可能需要等待一段时间后才能变得可用。',
   'This gallery has been removed or is unavailable.': '此图库已被删除或无法使用。',
   'You will be redirected to the front page momentarily.': '您将在几秒后返回首页。',
@@ -33902,7 +33929,7 @@ merge(/^\/g\//, undefined, {
   'View Gallery': '浏览图库',
   'Get Me Outta Here': '带我离开这里',
   'Never Warn Me Again': '不再提醒'
-}, [[/^(\d+) times$/, '$1 次'], [/^Average: ([\d.]+)$/, '平均值：$1'], [/^Rate as ([\d.]+) stars?$/, '$1 星'], [/^Torrent Download \((\d+)\)$/, '种子下载 ($1)'], [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, '，更新于 $1'], [/^Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?$/, '$1 - $2，共 $3 张图像'], [/^Page (\d+): /, '第 $1 页：'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*$/, '评论时间：$1 \xA0作者：'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, '评论时间：$1'], [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '], [/^This gallery is unavailable due to a copyright claim by (.*)\.$/, '由于 $1 提出的版权要求，此图库无法使用']]);
+}, [[/^(\d+) times$/, '$1 次'], [/^Average: ([\d.]+)$/, '平均值：$1'], [/^Rate as ([\d.]+) stars?$/, '$1 星'], [/^Torrent Download \((\d+)\)$/, '种子下载 ($1)'], [/^, added (\d\d\d\d-\d\d-\d\d \d\d:\d\d)$/, '，更新于 $1'], [/^Showing ([\d,]+) - ([\d,]+) of ([\d,]+) images?$/, '$1 - $2，共 $3 张图像'], [/^Page (\d+): /, '第 $1 页：'], [/^Page (\d+)$/, '第 $1 页'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d) by:\s*$/, '评论时间：$1 \xA0作者：'], [/^Posted on (\d\d \w+ \d\d\d\d, \d\d:\d\d)\s*/, '评论时间：$1'], [/^There (is|are) ([\d,]+) more comments? below the viewing threshold - $/, '还有 $2 条评论尚未显示 - '], [/^This gallery is unavailable due to a copyright claim by (.*)\.$/, '由于 $1 提出的版权要求，此图库无法使用']]);
 merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
   'Submit New Expunge Petition': '提交新的删除申请',
   'Specify a valid objective reason why this gallery should be expunged.': '请说明申请删除此图库的客观原因。',
@@ -33914,7 +33941,7 @@ merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
   ' (specify below).': '的内容 (在下方详细描述)。',
   ' This gallery contains either illicit content like child porn or anything else that has been banned.': '此图库包含非法内容，如儿童色情或其他已被禁止的内容。',
   ' Content has been defaced by adding content-obstructing scanmarks, censorship or advertisements beyond what is present in the original artist release, or has been intentionally degraded to the point where legibility is an issue.': '图库内容被污损，添加了与内容无关的扫描水印、审查或广告，超出了原作者发布的内容或被故意降低画质，以至于影响了易读性。',
-  'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.': '在此处输入删除的详细原因。请注意，“我讨厌此内容/艺术家/上传者”等主观理由是无效的，并且可能导致帐户处罚/限制。',
+  'Enter a reason for this expunge here. Note that submitting petitions with subjective reasons along the line of "I hate this content/artist/uploader/etc" are NOT valid and can cause account penalties/restrictions.': '在此处输入删除的详细原因。请注意，“我讨厌此内容/艺术家/上传者”等主观理由是无效的，并且可能导致账户处罚/限制。',
   'Enter the URL of the conflicting gallery, if applicable.': '如有必要，在此处输入冲突图库的 URL。',
   'Create New Petition': '提交新申请',
   'Cancel Expunge Petition': '撤回删除申请',
@@ -33956,7 +33983,7 @@ merge(/^\/g\/\w+\/\w+\/.*act=expunge/, undefined, {
   'This expunge petition is active and prevents the gallery from being listed by default.': '此删除申请已激活，图库已在列表中默认隐藏。',
   'If you have an objective reason for why this gallery should not have been expunged, you can initiate an appeal below.': '如果您有客观原因说明不应该删除此图库，可以在下方提出申诉。',
   'Appeals must not be submitted if the gallery should be expunged but the wrong expunge type was used.': '如果图库应该被删除但使用了错误的删除类型，则不得提交申诉。',
-  'Note that submitting invalid appeals can lead to account restrictions/penalities.': '请注意，提交无效申诉可能会导致帐户受到限制/处罚。',
+  'Note that submitting invalid appeals can lead to account restrictions/penalities.': '请注意，提交无效申诉可能会导致账户受到限制/处罚。',
   'Enter a valid reason for why this expunge petition should be revoked here.': '请在此处输入应撤销此删除申请的正当理由。',
   'Create New Appeal': '提交新申诉',
   'An appeal has been submitted for this expunge petition.': '已针对此删除申请提出申诉。',
@@ -33978,7 +34005,7 @@ merge(/^\/g\/\w+\/\w+\/.*report=/, undefined, {
   Technical: '技术',
   'Excessive Updates': '频繁更新',
   'Reversion/Split/Undisown Request': '回退/拆分/恢复所有权请求',
-  'If you log on with an account, we will remember your provided contact details.': '如果您使用帐户登录，我们将记住您提供的联系信息。',
+  'If you log on with an account, we will remember your provided contact details.': '如果您使用账户登录，我们将记住您提供的联系信息。',
   'We remember and automatically fill in any previous contact details you have entered.': '我们会记住并自动填充您曾经输入的联系信息。',
   'Your email address': '您的电子邮件地址',
   'Please provide a working email address.': '请提供有效的电子邮件地址。',
@@ -34250,6 +34277,7 @@ merge(/^\/hentaiathome\.php\??$/, undefined, {
   'BOTH measurements in my test above are at least 80 Mbps': '我的测速两个值均大于 80 Mbps',
   'This client will be hosted on a system that is usually running 24/7': '此客户端将托管在一台正常情况下 24 小时运行的系统上',
   'Submit Application': '提交申请',
+  'Your application is pending. You can still make changes below if necessary.': '您的申请正在等待处理。如有必要，您仍可以在下方修改申请。',
   'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ': '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
   'make sure to keep your client running': '确保您的客户端保持运行',
   '. Having the client set to the wrong country will make it perform worse than it would otherwise do. If the country is shown in ': '。位于错误的国家/地区的客户端的性能表现将不如预期。如果国家/地区显示为 ',
@@ -34437,8 +34465,6 @@ merge(/^\/lofi\//, undefined, {
 
 merge(/^\/bounce_login\.php/, undefined, {
   'This page requires you to log on.': '此页面需要登录才能访问',
-  'user:': '用户：',
-  'pass:': '密码：',
   'Login!': '登录',
   '\xA0or\xA0': ' 或 ',
   Register: '注册'
@@ -35167,6 +35193,7 @@ merge(/^\/uconfig\.php/, undefined, {
   ' On page load (pages take longer to load, but there is no delay for loading a thumb after the page has loaded)': ' 页面加载时 (页面加载时间更长，但是显示的时候无需等待)',
   'You can set a default thumbnail configuration for all galleries you visit.': '图库详情页缩略图设置。',
   'Size: ': '大小：',
+  ' Small': ' 小图',
   ' Large': ' 大图',
   'Rows:': '行数：',
   'Thumbnail Scaling': '缩略图缩放',
@@ -35231,6 +35258,11 @@ merge(/^\/uconfig\.php/, undefined, {
   ' By tag power': ' 按标签权重',
   'Gallery Page Numbering': '图库页码',
   'Show gallery page numbers:\n\t': '在图库详情页缩略图下方显示页码：',
+  'Gallery Page Thumbnail Labeling': '图库缩略图标签',
+  'Show label below gallery thumbnails:\n\t': '在图库详情页缩略图下方显示标签：',
+  ' None': ' 无',
+  ' Page Number Only': ' 仅页码',
+  ' Page Number + Name': ' 页码 + 名称',
   'Multi-Page Viewer': '多页查看器',
   'Always use the Multi-Page Viewer? There will still be a link to manually start it if this is left disabled.': '总是使用多页查看器？禁用此选项时，仍可以手动启动多页查看器。',
   ' Nope': ' 否',
@@ -35422,6 +35454,8 @@ var data = {
   'Please confirm that you wish to disown this gallery. You will no longer be publicly listed as the uploader unless the gallery was published in the last week, and you will not be able to make further changes to it.': '请确认您希望与此图库脱离关系。在一周后，您将不再被公开列为上传者。并且您将不能再对其进行修改。',
   'Gallery not found.': '图库未找到。',
   'Rate limitation for new posters is in effect. You have to wait a while before you can post more galleries.': '针对新上传者的图库发布速率限制已生效，您必须等待一段时间才能继续发布图库。',
+  'You have exceeded your rate limit for posting galleries, and have to wait a while before you can post any more.': '您已超过了发布图库的速率限制，需要等待一段时间才能继续发布。',
+  'This action cannot be done right now since another operation has locked this gallery. Please wait for this operation to finish.': '由于另一个操作已锁定此图库，此操作暂时无法执行。请等待操作完成。',
   'You cannot publish an empty gallery.': '您不能发布一个空图库',
   'You must agree with the Terms of Service to continue.': '您必须同意服务条款才能继续',
   'You must give the gallery a title to continue.': '您必须给图库命名才能继续',
@@ -35430,7 +35464,7 @@ var data = {
   'Some errors were encountered while adding files to the gallery.': '添加文件到图库时发生了一些错误。',
   'Please review the error log above.': '请查看上方的错误日志。'
 };
-var regexData = [[/^Uploading: (\d+)%$/, '上传中：$1%'], [/^ images? so far\.$/, ' 张图像。'], [/^ images? so far$/, ' 张图像'], [/^ new images? to the gallery. /, ' 张新图像。'], [/^ uploaded files?, added $/, ' 个文件，已添加 '], [/You have added a total of $/, '您目前总共添加了 '], [/^Category of (.*?) can no longer be changed.$/, '无法更改 $1 的分类。'], [/^The file (.*?) is corrupt, incomplete, too large, or not an accepted image file.$/, '文件 $1 损坏 / 不完整 / 过大或是不支持的图像文件。']];
+var regexData = [[/^Uploading: (\d+)%$/, '上传中：$1%'], [/^ images? so far\.$/, ' 张图像。'], [/^ images? so far$/, ' 张图像'], [/^ new images? to the gallery. /, ' 张新图像。'], [/^ uploaded files?, added $/, ' 个文件，已添加 '], [/You have added a total of $/, '您目前总共添加了 '], [/^Category of (.*?) can no longer be changed.$/, '无法更改 $1 的分类。'], [/^The file (.*?) is corrupt, incomplete, too large, or not an accepted image file.$/, '文件 $1 损坏 / 不完整 / 过大或是不支持的图像文件。'], [/^Failed to add the file (.*?) to the gallery. This probably means an identical file with the same filename already exists.$/, '无法将文件 $1 添加到图库。这可能意味着具有相同文件名的相同文件已经存在。'], [/^The file (.*?) was generated by this system and has been replaced with the original copy.$/, '文件 $1 由本系统生成，已替换为原始副本。'], [/^The file (.*?) is too low resolution.$/, '文件 $1 分辨率过低。']];
 merge(/^\/upld\//, undefined, data, regexData);
 merge(/^\//, 'upld.e-hentai.org', data, regexData);
 merge(/^\//, 'upload.e-hentai.org', data, regexData);
@@ -35445,6 +35479,8 @@ merge(/^\/watched/, undefined, {
 // E-Hentai Downloader
 merge(/^\/g\//, undefined, {
   'E-Hentai Downloader ': 'E-Hentai 下载器 ',
+  'Image Limits: ': '图像配额：',
+  '! Account Suspended !': '! 账户已被封禁 !',
   'Download Archive': '下载档案 ',
   ' Number Images': ' 图像编号',
   'Pages Range ': '页面范围 ',
@@ -35525,7 +35561,7 @@ merge(/^\/g\//, undefined, {
   '. Only needed if you have the problem, because the audio-playing icon maybe annoying.\t\t\t\t\t\t': '。只有当您遇到相关问题时才需开启，因为音乐播放图标可能会很烦人。',
   'Comic book archive': '漫画归档 (CBZ)',
   ' is a file type to archive comic images, you can open it with some comic viewer like CDisplay/CDisplayEX, or just extract it as a Zip file. To keep the order of images, you can also enable numbering images.\t\t\t\t\t\t': ' 是一种归档漫画图像的文件类型，您可以使用 CDisplay/CDisplayEX 等漫画查看器打开它，或者直接将其视为 Zip 文件解压。为了保持图像的顺序，您还可以启用对图像进行编号。',
-  "\t\t\t\t\t\t\t(7) If you cannot original images, but you've already logged in and your account is not blocked or used up your limits, it may caused by your cookies is not sent to the server. This feature may helps you to pass your current cookies to the download request, but please enable it ONLY if you cannot download any original images.\t\t\t\t\t\t": ' (7) 如果您无法下载原图，但是您已经登录并且您的帐户没有被阻止或用完您的限制，这可能是因为您的 cookie 没有被发送到服务器。此功能可以帮助您将当前的 cookie 传递给下载请求，但只有当您无法下载任何原图时才应该启用它。',
+  "\t\t\t\t\t\t\t(7) If you cannot original images, but you've already logged in and your account is not blocked or used up your limits, it may caused by your cookies is not sent to the server. This feature may helps you to pass your current cookies to the download request, but please enable it ONLY if you cannot download any original images.\t\t\t\t\t\t": ' (7) 如果您无法下载原图，但是您已经登录并且您的账户没有被阻止或用完您的限制，这可能是因为您的 cookie 没有被发送到服务器。此功能可以帮助您将当前的 cookie 传递给下载请求，但只有当您无法下载任何原图时才应该启用它。',
   "\t\t\t\t\t\t\t(8) If you have already logged in, but the script detects that you're not logged in, you can enable this to skip login check. Please note that if you are not logged in actually, the script will not work as expect.\t\t\t\t\t\t": ' (8) 如果您已经登录，但脚本检测到您没有登录，您可以启用此功能以跳过登录检查。请注意，如果您实际没有登录，则脚本不会按预期工作。',
   '\t\t\t\t\t\t\t(9) If you have problem to download on the same site, like account session is misleading, you can force redirect original download link to another domain. Pass cookies manually may be needed.\t\t\t\t\t\t': ' (9) 如果您无法通过当前站点下载原图，例如账户会话异常，您可以强制将原始下载链接重定向到另一个域。可能需要同时开启手动传递 cookie。',
   "Peak Hours: It's in peak hours now, during peak hours, downloading original images of 90 days ago cost GPs": '高峰时段：现在是高峰时段，下载 90 天前的原图需要消耗 GP',
@@ -35693,7 +35729,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.12","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0"},"packageManager":"pnpm@9.9.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.25.2","@babel/plugin-transform-runtime":"^7.25.4","@babel/preset-env":"^7.25.4","@babel/runtime-corejs3":"^7.25.6","@eslint/js":"^9.11.1","@types/chrome":"^0.0.272","@types/escape-html":"^1.0.4","@types/node":"^22.7.2","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.2.1","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.6","eslint":"^9.11.1","eslint-config-prettier":"^9.1.0","execa":"^9.4.0","glob":"^11.0.0","html-webpack-plugin":"^5.6.0","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.47","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.0.5","prettier":"^3.3.3","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.26.1","typescript":"^5.6.2","typescript-eslint":"^8.7.0","web-ext":"^8.3.0","webpack":"^5.95.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.1.0","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.38.1","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.0","rxjs":"^7.8.1","tslib":"^2.7.0","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.13","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0"},"packageManager":"pnpm@9.9.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.26.0","@babel/plugin-transform-runtime":"^7.25.9","@babel/preset-env":"^7.26.0","@babel/runtime-corejs3":"^7.26.0","@eslint/js":"^9.13.0","@types/chrome":"^0.0.279","@types/escape-html":"^1.0.4","@types/node":"^22.8.1","@types/tampermonkey":"^5.0.3","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.2.1","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.6","eslint":"^9.13.0","eslint-config-prettier":"^9.1.0","execa":"^9.4.1","glob":"^11.0.0","html-webpack-plugin":"^5.6.3","less":"^4.2.0","less-loader":"^12.2.0","postcss":"^8.4.47","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.0.8","prettier":"^3.3.3","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.1.0","type-fest":"^4.26.1","typescript":"^5.6.3","typescript-eslint":"^8.11.0","web-ext":"^8.3.0","webpack":"^5.95.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.1.0","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.38.1","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.1","rxjs":"^7.8.1","tslib":"^2.8.0","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -35779,19 +35815,19 @@ var SyncStorage = /*#__PURE__*/function () {
 }();
 SyncStorage = __decorate([Service(), __metadata("design:paramtypes", [Logger, Storage])], SyncStorage);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-symbols.js
-var get_own_property_symbols = __webpack_require__(65318);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-symbols.js
+var get_own_property_symbols = __webpack_require__(94968);
 var get_own_property_symbols_default = /*#__PURE__*/__webpack_require__.n(get_own_property_symbols);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js
-var get_own_property_descriptor = __webpack_require__(7690);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js
+var get_own_property_descriptor = __webpack_require__(35540);
 var get_own_property_descriptor_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptor);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptors.js
-var get_own_property_descriptors = __webpack_require__(38809);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptors.js
+var get_own_property_descriptors = __webpack_require__(67611);
 var get_own_property_descriptors_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptors);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js
-var define_properties = __webpack_require__(82176);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js
+var define_properties = __webpack_require__(16106);
 var define_properties_default = /*#__PURE__*/__webpack_require__.n(define_properties);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/defineProperty.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/defineProperty.js
 
 
 function _defineProperty(e, r, t) {
@@ -35803,8 +35839,8 @@ function _defineProperty(e, r, t) {
   }) : e[r] = t, e;
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/date/now.js
-var date_now = __webpack_require__(76212);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/date/now.js
+var date_now = __webpack_require__(60330);
 var now_default = /*#__PURE__*/__webpack_require__.n(date_now);
 ;// ./src/services/date-time.ts
 
@@ -35921,8 +35957,8 @@ DateTime.month = DateTime_1.day * (365.25 / 12);
 DateTime.year = DateTime_1.month * 12;
 DateTime = DateTime_1 = __decorate([Service()], DateTime);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
-var syringe = __webpack_require__(92475);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.3_webpack@5.95.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
+var syringe = __webpack_require__(63040);
 ;// ./src/plugin/syringe/index.less
 
       
@@ -36964,7 +37000,7 @@ var Database = /*#__PURE__*/function () {
   }, {
     key: "dataUrls",
     value: function dataUrls(version) {
-      var dataJson = /<!\x2D\x2D([\s\S]+?)\x2D\x2D>/gi.exec(version.body);
+      var dataJson = /<!--([^]+?)-->/gi.exec(version.body);
       if (!dataJson) throw new Error("GitHub \u53D1\u5E03\u6570\u636E\u65E0\u6CD5\u89E3\u6790\uFF0C\u53EF\u80FD\u9700\u8981\u66F4\u65B0\u63D2\u4EF6\u7248\u672C");
       try {
         var data = JSON.parse(dataJson[1]);
@@ -37062,8 +37098,8 @@ var Database = /*#__PURE__*/function () {
 }();
 Database = __decorate([Service(), __metadata("design:paramtypes", [Http, Logger])], Database);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js
-var set_interval = __webpack_require__(39277);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js
+var set_interval = __webpack_require__(34963);
 var set_interval_default = /*#__PURE__*/__webpack_require__.n(set_interval);
 ;// ./src/services/badge-loading.ts
 
@@ -37520,8 +37556,8 @@ var DatabaseUpdater = /*#__PURE__*/function () {
 }();
 DatabaseUpdater = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, Database, BadgeLoading])], DatabaseUpdater);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/object/values.js
-var object_values = __webpack_require__(20981);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/values.js
+var object_values = __webpack_require__(475);
 var object_values_default = /*#__PURE__*/__webpack_require__.n(object_values);
 ;// ./src/plugin/suggest.ts
 
@@ -38209,17 +38245,17 @@ var ImageContextMenu = /*#__PURE__*/function () {
 }();
 ImageContextMenu = __decorate([Service(), __metadata("design:paramtypes", [])], ImageContextMenu);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/number/parse-float.js
-var parse_float = __webpack_require__(24201);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/number/parse-float.js
+var parse_float = __webpack_require__(87911);
 var parse_float_default = /*#__PURE__*/__webpack_require__.n(parse_float);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/number/is-nan.js
-var is_nan = __webpack_require__(34093);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/number/is-nan.js
+var is_nan = __webpack_require__(72443);
 var is_nan_default = /*#__PURE__*/__webpack_require__.n(is_nan);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/object/freeze.js
 var freeze = __webpack_require__(508);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.38.1/node_modules/core-js-pure/full/object/define-properties.js
 var object_define_properties = __webpack_require__(14392);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/helpers/esm/taggedTemplateLiteral.js
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/taggedTemplateLiteral.js
 
 
 
@@ -38231,22 +38267,22 @@ function _taggedTemplateLiteral(e, t) {
   }));
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/some.js
-var some = __webpack_require__(96703);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/some.js
+var some = __webpack_require__(12501);
 var some_default = /*#__PURE__*/__webpack_require__.n(some);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/parse-int.js
-var parse_int = __webpack_require__(89616);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/parse-int.js
+var parse_int = __webpack_require__(63814);
 var parse_int_default = /*#__PURE__*/__webpack_require__.n(parse_int);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/set.js
-var reflect_set = __webpack_require__(57389);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/set.js
+var reflect_set = __webpack_require__(41147);
 var reflect_set_default = /*#__PURE__*/__webpack_require__.n(reflect_set);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/for.js
-var symbol_for = __webpack_require__(17111);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/weak-map.js
-var weak_map = __webpack_require__(37976);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.25.6/node_modules/@babel/runtime-corejs3/core-js-stable/instance/fill.js
-var fill = __webpack_require__(41618);
-;// ./node_modules/.pnpm/lit-html@3.2.0/node_modules/lit-html/lit-html.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/for.js
+var symbol_for = __webpack_require__(89737);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/weak-map.js
+var weak_map = __webpack_require__(80790);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/fill.js
+var fill = __webpack_require__(53444);
+;// ./node_modules/.pnpm/lit-html@3.2.1/node_modules/lit-html/lit-html.js
 
 
 
@@ -38258,10 +38294,10 @@ var fill = __webpack_require__(41618);
 
 
 
-var lit_html_context, _context2, _context3, _n$litHtmlVersions;
+var lit_html_context, _context2, _context3, _t$litHtmlVersions;
 function lit_html_callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, lit_html_isNativeReflectConstruct() ? construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
 function lit_html_isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(construct(Boolean, [], function () {})); } catch (t) {} return (lit_html_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
-function lit_html_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof symbol && get_iterator_method(r) || r["@@iterator"]; if (!t) { if (is_array(r) || (t = lit_html_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n3 = 0, F = function F() {}; return { s: F, n: function n() { return _n3 >= r.length ? { done: !0 } : { done: !1, value: r[_n3++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function lit_html_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof symbol && get_iterator_method(r) || r["@@iterator"]; if (!t) { if (is_array(r) || (t = lit_html_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n2 = 0, F = function F() {}; return { s: F, n: function n() { return _n2 >= r.length ? { done: !0 } : { done: !1, value: r[_n2++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function lit_html_unsupportedIterableToArray(r, a) { if (r) { var _context7; if ("string" == typeof r) return lit_html_arrayLikeToArray(r, a); var t = slice(_context7 = {}.toString.call(r)).call(_context7, 8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? lit_html_arrayLikeToArray(r, a) : void 0; } }
 function lit_html_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
@@ -38281,37 +38317,37 @@ function lit_html_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-var n = global_this,
-  c = n.trustedTypes,
-  h = c ? c.createPolicy("lit-html", {
+var t = global_this,
+  i = t.trustedTypes,
+  s = i ? i.createPolicy("lit-html", {
     createHTML: function createHTML(t) {
       return t;
     }
   }) : void 0,
-  f = "$lit$",
-  v = "lit$".concat(slice(lit_html_context = Math.random().toFixed(9)).call(lit_html_context, 2), "$"),
-  m = "?" + v,
-  _ = "<".concat(m, ">"),
-  w = document,
-  lt = function lt() {
-    return w.createComment("");
+  e = "$lit$",
+  h = "lit$".concat(slice(lit_html_context = Math.random().toFixed(9)).call(lit_html_context, 2), "$"),
+  o = "?" + h,
+  n = "<".concat(o, ">"),
+  r = document,
+  l = function l() {
+    return r.createComment("");
   },
-  st = function st(t) {
+  c = function c(t) {
     return null === t || "object" != _typeof(t) && "function" != typeof t;
   },
-  g = is_array,
-  $ = function $(t) {
-    return g(t) || "function" == typeof (t === null || t === void 0 ? void 0 : get_iterator_method(t));
+  a = is_array,
+  u = function u(t) {
+    return a(t) || "function" == typeof (t === null || t === void 0 ? void 0 : get_iterator_method(t));
   },
-  x = "[ \t\n\f\r]",
-  T = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,
-  E = /-->/g,
-  k = />/g,
-  O = RegExp(concat(_context2 = concat(_context3 = ">|".concat(x, "(?:([^\\s\"'>=/]+)(")).call(_context3, x, "*=")).call(_context2, x, "*(?:[^ \t\n\f\r\"'`<>=]|(\"|')|))|$)"), "g"),
-  S = /'/g,
-  j = /"/g,
-  M = /^(?:script|style|textarea|title)$/i,
-  P = function P(t) {
+  d = "[ \t\n\f\r]",
+  f = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,
+  v = /-->/g,
+  _ = />/g,
+  m = RegExp(concat(_context2 = concat(_context3 = ">|".concat(d, "(?:([^\\s\"'>=/]+)(")).call(_context3, d, "*=")).call(_context2, d, "*(?:[^ \t\n\f\r\"'`<>=]|(\"|')|))|$)"), "g"),
+  p = /'/g,
+  g = /"/g,
+  $ = /^(?:script|style|textarea|title)$/i,
+  y = function y(t) {
     return function (i) {
       for (var _len = arguments.length, s = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
         s[_key - 1] = arguments[_key];
@@ -38323,81 +38359,81 @@ var n = global_this,
       };
     };
   },
-  ke = P(1),
-  Oe = P(2),
-  Se = P(3),
-  R = symbol_for("lit-noChange"),
-  D = symbol_for("lit-nothing"),
-  V = new weak_map(),
-  I = w.createTreeWalker(w, 129);
-function N(t, i) {
-  if (!g(t) || !t.hasOwnProperty("raw")) throw Error("invalid template strings array");
-  return void 0 !== h ? h.createHTML(i) : i;
+  x = y(1),
+  b = y(2),
+  w = y(3),
+  T = symbol_for("lit-noChange"),
+  E = symbol_for("lit-nothing"),
+  A = new weak_map(),
+  C = r.createTreeWalker(r, 129);
+function P(t, i) {
+  if (!a(t) || !t.hasOwnProperty("raw")) throw Error("invalid template strings array");
+  return void 0 !== s ? s.createHTML(i) : i;
 }
-var U = function U(t, i) {
+var V = function V(t, i) {
   var s = t.length - 1,
-    e = [];
-  var h,
-    o = 2 === i ? "<svg>" : 3 === i ? "<math>" : "",
-    n = T;
+    o = [];
+  var r,
+    l = 2 === i ? "<svg>" : 3 === i ? "<math>" : "",
+    c = f;
   for (var _i = 0; _i < s; _i++) {
     var _context4;
     var _s = t[_i];
-    var r = void 0,
-      l = void 0,
-      _c = -1,
-      a = 0;
-    for (; a < _s.length && (n.lastIndex = a, l = n.exec(_s), null !== l);) {
-      var _h;
-      a = n.lastIndex, n === T ? "!--" === l[1] ? n = E : void 0 !== l[1] ? n = k : void 0 !== l[2] ? (M.test(l[2]) && (h = RegExp("</" + l[2], "g")), n = O) : void 0 !== l[3] && (n = O) : n === O ? ">" === l[0] ? (n = (_h = h) !== null && _h !== void 0 ? _h : T, _c = -1) : void 0 === l[1] ? _c = -2 : (_c = n.lastIndex - l[2].length, r = l[1], n = void 0 === l[3] ? O : '"' === l[3] ? j : S) : n === j || n === S ? n = O : n === E || n === k ? n = T : (n = O, h = void 0);
+    var _a = void 0,
+      _u = void 0,
+      _d = -1,
+      _y = 0;
+    for (; _y < _s.length && (c.lastIndex = _y, _u = c.exec(_s), null !== _u);) {
+      var _r;
+      _y = c.lastIndex, c === f ? "!--" === _u[1] ? c = v : void 0 !== _u[1] ? c = _ : void 0 !== _u[2] ? ($.test(_u[2]) && (r = RegExp("</" + _u[2], "g")), c = m) : void 0 !== _u[3] && (c = m) : c === m ? ">" === _u[0] ? (c = (_r = r) !== null && _r !== void 0 ? _r : f, _d = -1) : void 0 === _u[1] ? _d = -2 : (_d = c.lastIndex - _u[2].length, _a = _u[1], c = void 0 === _u[3] ? m : '"' === _u[3] ? g : p) : c === g || c === p ? c = m : c === v || c === _ ? c = f : (c = m, r = void 0);
     }
-    var u = n === O && starts_with(_context4 = t[_i + 1]).call(_context4, "/>") ? " " : "";
-    o += n === T ? _s + _ : _c >= 0 ? (e.push(r), slice(_s).call(_s, 0, _c) + f + slice(_s).call(_s, _c) + v + u) : _s + v + (-2 === _c ? _i : u);
+    var _x = c === m && starts_with(_context4 = t[_i + 1]).call(_context4, "/>") ? " " : "";
+    l += c === f ? _s + n : _d >= 0 ? (o.push(_a), slice(_s).call(_s, 0, _d) + e + slice(_s).call(_s, _d) + h + _x) : _s + h + (-2 === _d ? _i : _x);
   }
-  return [N(t, o + (t[s] || "<?>") + (2 === i ? "</svg>" : 3 === i ? "</math>" : "")), e];
+  return [P(t, l + (t[s] || "<?>") + (2 === i ? "</svg>" : 3 === i ? "</math>" : "")), o];
 };
-var B = /*#__PURE__*/function () {
-  function B(_ref, s) {
+var N = /*#__PURE__*/function () {
+  function N(_ref, n) {
     var t = _ref.strings,
-      i = _ref._$litType$;
-    _classCallCheck(this, B);
-    var e;
+      s = _ref._$litType$;
+    _classCallCheck(this, N);
+    var r;
     this.parts = [];
-    var h = 0,
-      o = 0;
-    var n = t.length - 1,
-      r = this.parts,
-      _U = U(t, i),
-      _U2 = slicedToArray_slicedToArray(_U, 2),
-      l = _U2[0],
-      a = _U2[1];
-    if (this.el = B.createElement(l, s), I.currentNode = this.el.content, 2 === i || 3 === i) {
+    var c = 0,
+      a = 0;
+    var u = t.length - 1,
+      d = this.parts,
+      _V = V(t, s),
+      _V2 = slicedToArray_slicedToArray(_V, 2),
+      f = _V2[0],
+      v = _V2[1];
+    if (this.el = N.createElement(f, n), C.currentNode = this.el.content, 2 === s || 3 === s) {
       var _t = this.el.content.firstChild;
       _t.replaceWith.apply(_t, _toConsumableArray(_t.childNodes));
     }
-    for (; null !== (e = I.nextNode()) && r.length < n;) {
-      if (1 === e.nodeType) {
-        if (e.hasAttributes()) {
-          var _iterator = lit_html_createForOfIteratorHelper(e.getAttributeNames()),
+    for (; null !== (r = C.nextNode()) && d.length < u;) {
+      if (1 === r.nodeType) {
+        if (r.hasAttributes()) {
+          var _iterator = lit_html_createForOfIteratorHelper(r.getAttributeNames()),
             _step;
           try {
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
               var _t2 = _step.value;
-              if (ends_with(_t2).call(_t2, f)) {
-                var _i2 = a[o++],
-                  _s2 = e.getAttribute(_t2).split(v),
-                  _n = /([.?@])?(.*)/.exec(_i2);
-                r.push({
+              if (ends_with(_t2).call(_t2, e)) {
+                var _i2 = v[a++],
+                  _s2 = r.getAttribute(_t2).split(h),
+                  _e = /([.?@])?(.*)/.exec(_i2);
+                d.push({
                   type: 1,
-                  index: h,
-                  name: _n[2],
+                  index: c,
+                  name: _e[2],
                   strings: _s2,
-                  ctor: "." === _n[1] ? Y : "?" === _n[1] ? Z : "@" === _n[1] ? q : G
-                }), e.removeAttribute(_t2);
-              } else starts_with(_t2).call(_t2, v) && (r.push({
+                  ctor: "." === _e[1] ? H : "?" === _e[1] ? I : "@" === _e[1] ? L : k
+                }), r.removeAttribute(_t2);
+              } else starts_with(_t2).call(_t2, h) && (d.push({
                 type: 6,
-                index: h
-              }), e.removeAttribute(_t2));
+                index: c
+              }), r.removeAttribute(_t2));
             }
           } catch (err) {
             _iterator.e(err);
@@ -38405,57 +38441,57 @@ var B = /*#__PURE__*/function () {
             _iterator.f();
           }
         }
-        if (M.test(e.tagName)) {
-          var _t3 = e.textContent.split(v),
-            _i3 = _t3.length - 1;
-          if (_i3 > 0) {
-            e.textContent = c ? c.emptyScript : "";
-            for (var _s3 = 0; _s3 < _i3; _s3++) e.append(_t3[_s3], lt()), I.nextNode(), r.push({
+        if ($.test(r.tagName)) {
+          var _t3 = r.textContent.split(h),
+            _s3 = _t3.length - 1;
+          if (_s3 > 0) {
+            r.textContent = i ? i.emptyScript : "";
+            for (var _i3 = 0; _i3 < _s3; _i3++) r.append(_t3[_i3], l()), C.nextNode(), d.push({
               type: 2,
-              index: ++h
+              index: ++c
             });
-            e.append(_t3[_i3], lt());
+            r.append(_t3[_s3], l());
           }
         }
-      } else if (8 === e.nodeType) if (e.data === m) r.push({
+      } else if (8 === r.nodeType) if (r.data === o) d.push({
         type: 2,
-        index: h
+        index: c
       });else {
         var _t4 = -1;
-        for (; -1 !== (_t4 = index_of(_context5 = e.data).call(_context5, v, _t4 + 1));) {
+        for (; -1 !== (_t4 = index_of(_context5 = r.data).call(_context5, h, _t4 + 1));) {
           var _context5;
-          r.push({
+          d.push({
             type: 7,
-            index: h
-          }), _t4 += v.length - 1;
+            index: c
+          }), _t4 += h.length - 1;
         }
       }
-      h++;
+      c++;
     }
   }
-  return _createClass(B, null, [{
+  return _createClass(N, null, [{
     key: "createElement",
     value: function createElement(t, i) {
-      var s = w.createElement("template");
+      var s = r.createElement("template");
       return s.innerHTML = t, s;
     }
   }]);
 }();
-function z(t, i) {
-  var _s$o, _h2, _h3, _h3$_$AO, _s$o2;
+function S(t, i) {
+  var _s$_$Co, _h, _h2, _h2$_$AO, _s$_$Co2;
   var s = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : t;
   var e = arguments.length > 3 ? arguments[3] : undefined;
-  if (i === R) return i;
-  var h = void 0 !== e ? (_s$o = s.o) === null || _s$o === void 0 ? void 0 : _s$o[e] : s.l;
-  var o = st(i) ? void 0 : i._$litDirective$;
-  return ((_h2 = h) === null || _h2 === void 0 ? void 0 : _h2.constructor) !== o && ((_h3 = h) !== null && _h3 !== void 0 && (_h3$_$AO = _h3._$AO) !== null && _h3$_$AO !== void 0 && _h3$_$AO.call(_h3, !1), void 0 === o ? h = void 0 : (h = new o(t), h._$AT(t, s, e)), void 0 !== e ? ((_s$o2 = s.o) !== null && _s$o2 !== void 0 ? _s$o2 : s.o = [])[e] = h : s.l = h), void 0 !== h && (i = z(t, h._$AS(t, instance_values(i)), h, e)), i;
+  if (i === T) return i;
+  var h = void 0 !== e ? (_s$_$Co = s._$Co) === null || _s$_$Co === void 0 ? void 0 : _s$_$Co[e] : s._$Cl;
+  var o = c(i) ? void 0 : i._$litDirective$;
+  return ((_h = h) === null || _h === void 0 ? void 0 : _h.constructor) !== o && ((_h2 = h) !== null && _h2 !== void 0 && (_h2$_$AO = _h2._$AO) !== null && _h2$_$AO !== void 0 && _h2$_$AO.call(_h2, !1), void 0 === o ? h = void 0 : (h = new o(t), h._$AT(t, s, e)), void 0 !== e ? ((_s$_$Co2 = s._$Co) !== null && _s$_$Co2 !== void 0 ? _s$_$Co2 : s._$Co = [])[e] = h : s._$Cl = h), void 0 !== h && (i = S(t, h._$AS(t, instance_values(i)), h, e)), i;
 }
-var F = /*#__PURE__*/function () {
-  function F(t, i) {
-    _classCallCheck(this, F);
+var M = /*#__PURE__*/function () {
+  function M(t, i) {
+    _classCallCheck(this, M);
     this._$AV = [], this._$AN = void 0, this._$AD = t, this._$AM = i;
   }
-  return _createClass(F, [{
+  return _createClass(M, [{
     key: "parentNode",
     get: function get() {
       return this._$AM.parentNode;
@@ -38472,21 +38508,21 @@ var F = /*#__PURE__*/function () {
       var _this$_$AD = this._$AD,
         i = _this$_$AD.el.content,
         s = _this$_$AD.parts,
-        e = ((_t$creationScope = t === null || t === void 0 ? void 0 : t.creationScope) !== null && _t$creationScope !== void 0 ? _t$creationScope : w).importNode(i, !0);
-      I.currentNode = e;
-      var h = I.nextNode(),
+        e = ((_t$creationScope = t === null || t === void 0 ? void 0 : t.creationScope) !== null && _t$creationScope !== void 0 ? _t$creationScope : r).importNode(i, !0);
+      C.currentNode = e;
+      var h = C.nextNode(),
         o = 0,
         n = 0,
-        r = s[0];
-      for (; void 0 !== r;) {
-        var _r;
-        if (o === r.index) {
+        l = s[0];
+      for (; void 0 !== l;) {
+        var _l;
+        if (o === l.index) {
           var _i4 = void 0;
-          2 === r.type ? _i4 = new et(h, h.nextSibling, this, t) : 1 === r.type ? _i4 = new r.ctor(h, r.name, r.strings, this, t) : 6 === r.type && (_i4 = new K(h, this, t)), this._$AV.push(_i4), r = s[++n];
+          2 === l.type ? _i4 = new R(h, h.nextSibling, this, t) : 1 === l.type ? _i4 = new l.ctor(h, l.name, l.strings, this, t) : 6 === l.type && (_i4 = new z(h, this, t)), this._$AV.push(_i4), l = s[++n];
         }
-        o !== ((_r = r) === null || _r === void 0 ? void 0 : _r.index) && (h = I.nextNode(), o++);
+        o !== ((_l = l) === null || _l === void 0 ? void 0 : _l.index) && (h = C.nextNode(), o++);
       }
-      return I.currentNode = w, e;
+      return C.currentNode = r, e;
     }
   }, {
     key: "p",
@@ -38496,8 +38532,8 @@ var F = /*#__PURE__*/function () {
         _step2;
       try {
         for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var s = _step2.value;
-          void 0 !== s && (void 0 !== s.strings ? (s._$AI(t, s, i), i += s.strings.length - 2) : s._$AI(t[i])), i++;
+          var _s4 = _step2.value;
+          void 0 !== _s4 && (void 0 !== _s4.strings ? (_s4._$AI(t, _s4, i), i += _s4.strings.length - 2) : _s4._$AI(t[i])), i++;
         }
       } catch (err) {
         _iterator2.e(err);
@@ -38507,17 +38543,17 @@ var F = /*#__PURE__*/function () {
     }
   }]);
 }();
-var et = /*#__PURE__*/function () {
-  function et(t, i, s, e) {
+var R = /*#__PURE__*/function () {
+  function R(t, i, s, e) {
     var _e$isConnected;
-    _classCallCheck(this, et);
-    this.type = 2, this._$AH = D, this._$AN = void 0, this._$AA = t, this._$AB = i, this._$AM = s, this.options = e, this.v = (_e$isConnected = e === null || e === void 0 ? void 0 : e.isConnected) !== null && _e$isConnected !== void 0 ? _e$isConnected : !0;
+    _classCallCheck(this, R);
+    this.type = 2, this._$AH = E, this._$AN = void 0, this._$AA = t, this._$AB = i, this._$AM = s, this.options = e, this._$Cv = (_e$isConnected = e === null || e === void 0 ? void 0 : e.isConnected) !== null && _e$isConnected !== void 0 ? _e$isConnected : !0;
   }
-  return _createClass(et, [{
+  return _createClass(R, [{
     key: "_$AU",
     get: function get() {
       var _this$_$AM$_$AU, _this$_$AM;
-      return (_this$_$AM$_$AU = (_this$_$AM = this._$AM) === null || _this$_$AM === void 0 ? void 0 : _this$_$AM._$AU) !== null && _this$_$AM$_$AU !== void 0 ? _this$_$AM$_$AU : this.v;
+      return (_this$_$AM$_$AU = (_this$_$AM = this._$AM) === null || _this$_$AM === void 0 ? void 0 : _this$_$AM._$AU) !== null && _this$_$AM$_$AU !== void 0 ? _this$_$AM$_$AU : this._$Cv;
     }
   }, {
     key: "parentNode",
@@ -38541,7 +38577,7 @@ var et = /*#__PURE__*/function () {
     key: "_$AI",
     value: function _$AI(t) {
       var i = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
-      t = z(this, t, i), st(t) ? t === D || null == t || "" === t ? (this._$AH !== D && this._$AR(), this._$AH = D) : t !== this._$AH && t !== R && this._(t) : void 0 !== t._$litType$ ? this.$(t) : void 0 !== t.nodeType ? this.T(t) : $(t) ? this.k(t) : this._(t);
+      t = S(this, t, i), c(t) ? t === E || null == t || "" === t ? (this._$AH !== E && this._$AR(), this._$AH = E) : t !== this._$AH && t !== T && this._(t) : void 0 !== t._$litType$ ? this.$(t) : void 0 !== t.nodeType ? this.T(t) : u(t) ? this.k(t) : this._(t);
     }
   }, {
     key: "O",
@@ -38556,7 +38592,7 @@ var et = /*#__PURE__*/function () {
   }, {
     key: "_",
     value: function _(t) {
-      this._$AH !== D && st(this._$AH) ? this._$AA.nextSibling.data = t : this.T(w.createTextNode(t)), this._$AH = t;
+      this._$AH !== E && c(this._$AH) ? this._$AA.nextSibling.data = t : this.T(r.createTextNode(t)), this._$AH = t;
     }
   }, {
     key: "$",
@@ -38564,23 +38600,23 @@ var et = /*#__PURE__*/function () {
       var _this$_$AH;
       var i = instance_values(t),
         s = t._$litType$,
-        e = "number" == typeof s ? this._$AC(t) : (void 0 === s.el && (s.el = B.createElement(N(s.h, s.h[0]), this.options)), s);
+        e = "number" == typeof s ? this._$AC(t) : (void 0 === s.el && (s.el = N.createElement(P(s.h, s.h[0]), this.options)), s);
       if (((_this$_$AH = this._$AH) === null || _this$_$AH === void 0 ? void 0 : _this$_$AH._$AD) === e) this._$AH.p(i);else {
-        var _t6 = new F(e, this),
-          _s4 = _t6.u(this.options);
-        _t6.p(i), this.T(_s4), this._$AH = _t6;
+        var _t6 = new M(e, this),
+          _s5 = _t6.u(this.options);
+        _t6.p(i), this.T(_s5), this._$AH = _t6;
       }
     }
   }, {
     key: "_$AC",
     value: function _$AC(t) {
-      var i = V.get(t.strings);
-      return void 0 === i && V.set(t.strings, i = new B(t)), i;
+      var i = A.get(t.strings);
+      return void 0 === i && A.set(t.strings, i = new N(t)), i;
     }
   }, {
     key: "k",
     value: function k(t) {
-      g(this._$AH) || (this._$AH = [], this._$AR());
+      a(this._$AH) || (this._$AH = [], this._$AR());
       var i = this._$AH;
       var s,
         e = 0;
@@ -38588,8 +38624,8 @@ var et = /*#__PURE__*/function () {
         _step3;
       try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var _h4 = _step3.value;
-          e === i.length ? i.push(s = new et(this.O(lt()), this.O(lt()), this, this.options)) : s = i[e], s._$AI(_h4), e++;
+          var _h3 = _step3.value;
+          e === i.length ? i.push(s = new R(this.O(l()), this.O(l()), this, this.options)) : s = i[e], s._$AI(_h3), e++;
         }
       } catch (err) {
         _iterator3.e(err);
@@ -38613,17 +38649,17 @@ var et = /*#__PURE__*/function () {
     key: "setConnected",
     value: function setConnected(t) {
       var _this$_$AP2;
-      void 0 === this._$AM && (this.v = t, (_this$_$AP2 = this._$AP) === null || _this$_$AP2 === void 0 ? void 0 : _this$_$AP2.call(this, t));
+      void 0 === this._$AM && (this._$Cv = t, (_this$_$AP2 = this._$AP) === null || _this$_$AP2 === void 0 ? void 0 : _this$_$AP2.call(this, t));
     }
   }]);
 }();
-var G = /*#__PURE__*/function () {
-  function G(t, i, s, e, h) {
+var k = /*#__PURE__*/function () {
+  function k(t, i, s, e, h) {
     var _context6;
-    _classCallCheck(this, G);
-    this.type = 1, this._$AH = D, this._$AN = void 0, this.element = t, this.name = i, this._$AM = e, this.options = h, s.length > 2 || "" !== s[0] || "" !== s[1] ? (this._$AH = fill(_context6 = Array(s.length - 1)).call(_context6, new String()), this.strings = s) : this._$AH = D;
+    _classCallCheck(this, k);
+    this.type = 1, this._$AH = E, this._$AN = void 0, this.element = t, this.name = i, this._$AM = e, this.options = h, s.length > 2 || "" !== s[0] || "" !== s[1] ? (this._$AH = fill(_context6 = Array(s.length - 1)).call(_context6, new String()), this.strings = s) : this._$AH = E;
   }
-  return _createClass(G, [{
+  return _createClass(k, [{
     key: "tagName",
     get: function get() {
       return this.element.tagName;
@@ -38641,12 +38677,12 @@ var G = /*#__PURE__*/function () {
       var e = arguments.length > 3 ? arguments[3] : undefined;
       var h = this.strings;
       var o = !1;
-      if (void 0 === h) t = z(this, t, i, 0), o = !st(t) || t !== this._$AH && t !== R, o && (this._$AH = t);else {
-        var _e = t;
-        var _n2, r;
-        for (t = h[0], _n2 = 0; _n2 < h.length - 1; _n2++) {
-          var _r2;
-          r = z(this, _e[s + _n2], i, _n2), r === R && (r = this._$AH[_n2]), o || (o = !st(r) || r !== this._$AH[_n2]), r === D ? t = D : t !== D && (t += ((_r2 = r) !== null && _r2 !== void 0 ? _r2 : "") + h[_n2 + 1]), this._$AH[_n2] = r;
+      if (void 0 === h) t = S(this, t, i, 0), o = !c(t) || t !== this._$AH && t !== T, o && (this._$AH = t);else {
+        var _e2 = t;
+        var _n, _r2;
+        for (t = h[0], _n = 0; _n < h.length - 1; _n++) {
+          var _r3;
+          _r2 = S(this, _e2[s + _n], i, _n), _r2 === T && (_r2 = this._$AH[_n]), o || (o = !c(_r2) || _r2 !== this._$AH[_n]), _r2 === E ? t = E : t !== E && (t += ((_r3 = _r2) !== null && _r3 !== void 0 ? _r3 : "") + h[_n + 1]), this._$AH[_n] = _r2;
         }
       }
       o && !e && this.j(t);
@@ -38654,57 +38690,57 @@ var G = /*#__PURE__*/function () {
   }, {
     key: "j",
     value: function j(t) {
-      t === D ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, t !== null && t !== void 0 ? t : "");
+      t === E ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, t !== null && t !== void 0 ? t : "");
     }
   }]);
 }();
-var Y = /*#__PURE__*/function (_G) {
-  function Y() {
+var H = /*#__PURE__*/function (_k) {
+  function H() {
     var _this;
-    _classCallCheck(this, Y);
-    _this = lit_html_callSuper(this, Y, arguments), _this.type = 3;
+    _classCallCheck(this, H);
+    _this = lit_html_callSuper(this, H, arguments), _this.type = 3;
     return _this;
   }
-  _inherits(Y, _G);
-  return _createClass(Y, [{
+  _inherits(H, _k);
+  return _createClass(H, [{
     key: "j",
     value: function j(t) {
-      this.element[this.name] = t === D ? void 0 : t;
+      this.element[this.name] = t === E ? void 0 : t;
     }
   }]);
-}(G);
-var Z = /*#__PURE__*/function (_G2) {
-  function Z() {
+}(k);
+var I = /*#__PURE__*/function (_k2) {
+  function I() {
     var _this2;
-    _classCallCheck(this, Z);
-    _this2 = lit_html_callSuper(this, Z, arguments), _this2.type = 4;
+    _classCallCheck(this, I);
+    _this2 = lit_html_callSuper(this, I, arguments), _this2.type = 4;
     return _this2;
   }
-  _inherits(Z, _G2);
-  return _createClass(Z, [{
+  _inherits(I, _k2);
+  return _createClass(I, [{
     key: "j",
     value: function j(t) {
-      this.element.toggleAttribute(this.name, !!t && t !== D);
+      this.element.toggleAttribute(this.name, !!t && t !== E);
     }
   }]);
-}(G);
-var q = /*#__PURE__*/function (_G3) {
-  function q(t, i, s, e, h) {
+}(k);
+var L = /*#__PURE__*/function (_k3) {
+  function L(t, i, s, e, h) {
     var _this3;
-    _classCallCheck(this, q);
-    _this3 = lit_html_callSuper(this, q, [t, i, s, e, h]), _this3.type = 5;
+    _classCallCheck(this, L);
+    _this3 = lit_html_callSuper(this, L, [t, i, s, e, h]), _this3.type = 5;
     return _this3;
   }
-  _inherits(q, _G3);
-  return _createClass(q, [{
+  _inherits(L, _k3);
+  return _createClass(L, [{
     key: "_$AI",
     value: function _$AI(t) {
-      var _z;
+      var _S;
       var i = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this;
-      if ((t = (_z = z(this, t, i, 0)) !== null && _z !== void 0 ? _z : D) === R) return;
+      if ((t = (_S = S(this, t, i, 0)) !== null && _S !== void 0 ? _S : E) === T) return;
       var s = this._$AH,
-        e = t === D && s !== D || t.capture !== s.capture || t.once !== s.once || t.passive !== s.passive,
-        h = t !== D && (s === D || e);
+        e = t === E && s !== E || t.capture !== s.capture || t.once !== s.once || t.passive !== s.passive,
+        h = t !== E && (s === E || e);
       e && this.element.removeEventListener(this.name, this, s), h && this.element.addEventListener(this.name, this, t), this._$AH = t;
     }
   }, {
@@ -38714,13 +38750,13 @@ var q = /*#__PURE__*/function (_G3) {
       "function" == typeof this._$AH ? this._$AH.call((_this$options$host = (_this$options = this.options) === null || _this$options === void 0 ? void 0 : _this$options.host) !== null && _this$options$host !== void 0 ? _this$options$host : this.element, t) : this._$AH.handleEvent(t);
     }
   }]);
-}(G);
-var K = /*#__PURE__*/function () {
-  function K(t, i, s) {
-    _classCallCheck(this, K);
+}(k);
+var z = /*#__PURE__*/function () {
+  function z(t, i, s) {
+    _classCallCheck(this, z);
     this.element = t, this.type = 6, this._$AN = void 0, this._$AM = i, this.options = s;
   }
-  return _createClass(K, [{
+  return _createClass(z, [{
     key: "_$AU",
     get: function get() {
       return this._$AM._$AU;
@@ -38728,42 +38764,42 @@ var K = /*#__PURE__*/function () {
   }, {
     key: "_$AI",
     value: function _$AI(t) {
-      z(this, t);
+      S(this, t);
     }
   }]);
 }();
-var si = {
-    M: f,
-    P: v,
-    A: m,
+var Z = {
+    M: e,
+    P: h,
+    A: o,
     C: 1,
-    L: U,
-    R: F,
-    D: $,
-    V: z,
-    I: et,
-    H: G,
-    N: Z,
-    U: q,
-    B: Y,
-    F: K
+    L: V,
+    R: M,
+    D: u,
+    V: S,
+    I: R,
+    H: k,
+    N: I,
+    U: L,
+    B: H,
+    F: z
   },
-  Re = n.litHtmlPolyfillSupport;
-Re !== null && Re !== void 0 && Re(B, et), ((_n$litHtmlVersions = n.litHtmlVersions) !== null && _n$litHtmlVersions !== void 0 ? _n$litHtmlVersions : n.litHtmlVersions = []).push("3.2.0");
-var Q = function Q(t, i, s) {
+  j = t.litHtmlPolyfillSupport;
+j !== null && j !== void 0 && j(N, R), ((_t$litHtmlVersions = t.litHtmlVersions) !== null && _t$litHtmlVersions !== void 0 ? _t$litHtmlVersions : t.litHtmlVersions = []).push("3.2.1");
+var B = function B(t, i, s) {
   var _s$renderBefore;
   var e = (_s$renderBefore = s === null || s === void 0 ? void 0 : s.renderBefore) !== null && _s$renderBefore !== void 0 ? _s$renderBefore : i;
   var h = e._$litPart$;
   if (void 0 === h) {
     var _s$renderBefore2;
     var _t7 = (_s$renderBefore2 = s === null || s === void 0 ? void 0 : s.renderBefore) !== null && _s$renderBefore2 !== void 0 ? _s$renderBefore2 : null;
-    e._$litPart$ = h = new et(i.insertBefore(lt(), _t7), _t7, void 0, s !== null && s !== void 0 ? s : {});
+    e._$litPart$ = h = new R(i.insertBefore(l(), _t7), _t7, void 0, s !== null && s !== void 0 ? s : {});
   }
   return h._$AI(t), h;
 };
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
-var popup = __webpack_require__(79368);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.3_webpack@5.95.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
+var popup = __webpack_require__(38831);
 ;// ./src/plugin/popup/index.less
 
       
@@ -39045,7 +39081,7 @@ var Popup = /*#__PURE__*/function () {
       var progress = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var PushRodStyle = "transform: translate(".concat(progress / 400 * 70, "px, 0)");
       var EnemaStyle = "transform: scaleX(".concat(progress / 100, ")");
-      return Oe(_templateObject || (_templateObject = _taggedTemplateLiteral(["<svg width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\">\n            <defs>\n                <clipPath id=\"clip\">\n                    <rect width=\"200\" height=\"200\" />\n                </clipPath>\n            </defs>\n            <g id=\"Syringe\" clip-path=\"url(#clip)\">\n                <g id=\"PushRod\" style=\"", "\">\n                    <g transform=\"translate(-39 -312)\">\n                        <g transform=\"translate(131 403)\" fill-bg stroke-accent stroke-width=\"6\">\n                            <rect width=\"78\" height=\"18\" rx=\"6\" stroke=\"none\" />\n                            <rect x=\"3\" y=\"3\" width=\"72\" height=\"12\" rx=\"3\" fill=\"none\" />\n                        </g>\n                        <g transform=\"translate(203 391)\" fill-bg stroke-accent stroke-width=\"6\">\n                            <rect width=\"18\" height=\"43\" rx=\"9\" stroke=\"none\" />\n                            <rect x=\"3\" y=\"3\" width=\"12\" height=\"37\" rx=\"6\" fill=\"none\" />\n                        </g>\n                    </g>\n                </g>\n                <g transform=\"translate(56 85)\" fill-bg stroke-accent stroke-width=\"6\">\n                    <rect width=\"83\" height=\"30\" rx=\"6\" stroke=\"none\" />\n                    <rect x=\"3\" y=\"3\" width=\"77\" height=\"24\" rx=\"3\" fill=\"none\" />\n                </g>\n                <g id=\"Enema\" style=\"", "\">\n                    <rect width=\"70\" height=\"27\" transform=\"translate(61 86)\" fill-sa />\n                </g>\n                <path\n                    id=\"Enema2\"\n                    d=\"M27.426,86.36s5.65.007,13.6.006S57.64,83.357,57.64,83.357L38.015,102.982,24.409,89.377l3.015-3.015Z\"\n                    transform=\"translate(107.906 10.036) rotate(45)\"\n                    fill-sa\n                />\n                <g transform=\"translate(-39 -312)\">\n                    <g transform=\"translate(95 397)\" fill=\"none\" stroke-accent stroke-width=\"6\">\n                        <rect width=\"83\" height=\"30\" rx=\"6\" stroke=\"none\" />\n                        <rect x=\"3\" y=\"3\" width=\"77\" height=\"24\" rx=\"3\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(82 403)\" fill-sa stroke-accent stroke-width=\"6\">\n                        <rect width=\"19\" height=\"18\" rx=\"6\" stroke=\"none\" />\n                        <rect x=\"3\" y=\"3\" width=\"13\" height=\"12\" rx=\"3\" fill=\"none\" />\n                    </g>\n                    <rect width=\"29\" height=\"6\" rx=\"3\" transform=\"translate(58 409)\" fill-accent />\n                    <g transform=\"translate(172 381)\" fill-bg stroke-accent stroke-width=\"6\">\n                        <rect width=\"18\" height=\"62\" rx=\"9\" stroke=\"none\" />\n                        <rect x=\"3\" y=\"3\" width=\"12\" height=\"56\" rx=\"6\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(119 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(131 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(144 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(156 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                </g>\n            </g>\n        </svg>"])), PushRodStyle, EnemaStyle);
+      return b(_templateObject || (_templateObject = _taggedTemplateLiteral(["<svg width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\">\n            <defs>\n                <clipPath id=\"clip\">\n                    <rect width=\"200\" height=\"200\" />\n                </clipPath>\n            </defs>\n            <g id=\"Syringe\" clip-path=\"url(#clip)\">\n                <g id=\"PushRod\" style=\"", "\">\n                    <g transform=\"translate(-39 -312)\">\n                        <g transform=\"translate(131 403)\" fill-bg stroke-accent stroke-width=\"6\">\n                            <rect width=\"78\" height=\"18\" rx=\"6\" stroke=\"none\" />\n                            <rect x=\"3\" y=\"3\" width=\"72\" height=\"12\" rx=\"3\" fill=\"none\" />\n                        </g>\n                        <g transform=\"translate(203 391)\" fill-bg stroke-accent stroke-width=\"6\">\n                            <rect width=\"18\" height=\"43\" rx=\"9\" stroke=\"none\" />\n                            <rect x=\"3\" y=\"3\" width=\"12\" height=\"37\" rx=\"6\" fill=\"none\" />\n                        </g>\n                    </g>\n                </g>\n                <g transform=\"translate(56 85)\" fill-bg stroke-accent stroke-width=\"6\">\n                    <rect width=\"83\" height=\"30\" rx=\"6\" stroke=\"none\" />\n                    <rect x=\"3\" y=\"3\" width=\"77\" height=\"24\" rx=\"3\" fill=\"none\" />\n                </g>\n                <g id=\"Enema\" style=\"", "\">\n                    <rect width=\"70\" height=\"27\" transform=\"translate(61 86)\" fill-sa />\n                </g>\n                <path\n                    id=\"Enema2\"\n                    d=\"M27.426,86.36s5.65.007,13.6.006S57.64,83.357,57.64,83.357L38.015,102.982,24.409,89.377l3.015-3.015Z\"\n                    transform=\"translate(107.906 10.036) rotate(45)\"\n                    fill-sa\n                />\n                <g transform=\"translate(-39 -312)\">\n                    <g transform=\"translate(95 397)\" fill=\"none\" stroke-accent stroke-width=\"6\">\n                        <rect width=\"83\" height=\"30\" rx=\"6\" stroke=\"none\" />\n                        <rect x=\"3\" y=\"3\" width=\"77\" height=\"24\" rx=\"3\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(82 403)\" fill-sa stroke-accent stroke-width=\"6\">\n                        <rect width=\"19\" height=\"18\" rx=\"6\" stroke=\"none\" />\n                        <rect x=\"3\" y=\"3\" width=\"13\" height=\"12\" rx=\"3\" fill=\"none\" />\n                    </g>\n                    <rect width=\"29\" height=\"6\" rx=\"3\" transform=\"translate(58 409)\" fill-accent />\n                    <g transform=\"translate(172 381)\" fill-bg stroke-accent stroke-width=\"6\">\n                        <rect width=\"18\" height=\"62\" rx=\"9\" stroke=\"none\" />\n                        <rect x=\"3\" y=\"3\" width=\"12\" height=\"56\" rx=\"6\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(119 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(131 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(144 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                    <g transform=\"translate(156 398)\" fill-bg stroke-accent stroke-width=\"3\">\n                        <rect width=\"4\" height=\"11\" rx=\"2\" stroke=\"none\" />\n                        <rect x=\"1.5\" y=\"1.5\" width=\"1\" height=\"8\" rx=\"0.5\" fill=\"none\" />\n                    </g>\n                </g>\n            </g>\n        </svg>"])), PushRodStyle, EnemaStyle);
     }
   }, {
     key: "changeConfigValue",
@@ -39118,11 +39154,11 @@ var Popup = /*#__PURE__*/function () {
         key: 'autoUpdate',
         name: '自动更新'
       }];
-      return ke(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n            <div id=\"ehs-setting-panel\" class=\"ehs-panel ", "\">\n                <div class=\"header\">\n                    <div>\u8BBE\u7F6E</div>\n                    <div class=\"cushion\"></div>\n                    <div>\n                        <a\n                            href=\"#\"\n                            @click=\"", "\"\n                            >\u2715</a\n                        >\n                    </div>\n                </div>\n                <form id=\"settingForm\" class=\"content\">\n                    ", "\n                    <div class=\"image-level\">\n                        <p class=\"range-title\">\n                            \u4ECB\u7ECD\u56FE\u7247:\n                            <span\n                                >", "</span\n                            >\n                        </p>\n                        <div class=\"range-box\">\n                            <input\n                                type=\"range\"\n                                min=\"0\"\n                                max=\"300\"\n                                @change=", "\n                                .value=\"", "\"\n                            />\n                        </div>\n                        <div class=\"range-label\" @click=\"", "\">\n                            <a href=\"#\" @click=\"", "\"\n                                >\u7981\u7528</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >\u975EH</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18G</a\n                            >\n                        </div>\n                    </div>\n                </form>\n                <button\n                    @click=\"", "\"\n                    class=\"action ", "\"\n                >\n                    \u4FDD\u5B58\n                </button>\n            </div>\n        "])), state.showSettingPanel ? 'ehs-show' : '', function (ev) {
+      return x(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n            <div id=\"ehs-setting-panel\" class=\"ehs-panel ", "\">\n                <div class=\"header\">\n                    <div>\u8BBE\u7F6E</div>\n                    <div class=\"cushion\"></div>\n                    <div>\n                        <a\n                            href=\"#\"\n                            @click=\"", "\"\n                            >\u2715</a\n                        >\n                    </div>\n                </div>\n                <form id=\"settingForm\" class=\"content\">\n                    ", "\n                    <div class=\"image-level\">\n                        <p class=\"range-title\">\n                            \u4ECB\u7ECD\u56FE\u7247:\n                            <span\n                                >", "</span\n                            >\n                        </p>\n                        <div class=\"range-box\">\n                            <input\n                                type=\"range\"\n                                min=\"0\"\n                                max=\"300\"\n                                @change=", "\n                                .value=\"", "\"\n                            />\n                        </div>\n                        <div class=\"range-label\" @click=\"", "\">\n                            <a href=\"#\" @click=\"", "\"\n                                >\u7981\u7528</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >\u975EH</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18G</a\n                            >\n                        </div>\n                    </div>\n                </form>\n                <button\n                    @click=\"", "\"\n                    class=\"action ", "\"\n                >\n                    \u4FDD\u5B58\n                </button>\n            </div>\n        "])), state.showSettingPanel ? 'ehs-show' : '', function (ev) {
         state.showSettingPanel = false;
         ev.preventDefault();
       }, map_default()(checkboxList).call(checkboxList, function (item) {
-        return ke(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n                            <div class=\"checkbox-item\">\n                                <label>\n                                    <input\n                                        type=\"checkbox\"\n                                        @change=", "\n                                        ?checked=\"", "\"\n                                    />\n                                    ", "\n                                    <svg\n                                        class=\"", "\"\n                                        viewBox=\"0 0 100 100\"\n                                        xmlns=\"http://www.w3.org/2000/svg\"\n                                    >\n                                        <path d=\"M 10 10 L 90 90\"></path>\n                                        <path d=\"M 90 10 L 10 90\"></path>\n                                    </svg>\n                                </label>\n                            </div>\n                        "])), function (e) {
+        return x(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n                            <div class=\"checkbox-item\">\n                                <label>\n                                    <input\n                                        type=\"checkbox\"\n                                        @change=", "\n                                        ?checked=\"", "\"\n                                    />\n                                    ", "\n                                    <svg\n                                        class=\"", "\"\n                                        viewBox=\"0 0 100 100\"\n                                        xmlns=\"http://www.w3.org/2000/svg\"\n                                    >\n                                        <path d=\"M 10 10 L 90 90\"></path>\n                                        <path d=\"M 90 10 L 10 90\"></path>\n                                    </svg>\n                                </label>\n                            </div>\n                        "])), function (e) {
           return _this3.changeConfigValue(item.key, e.target.checked);
         }, _this3.state.configValue[item.key], item.name, _this3.state.configValue[item.key] ? 'checked' : '');
       }), ['隐藏全部', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][state.configValue.introduceImageLevel], function (e) {
@@ -39157,7 +39193,7 @@ var Popup = /*#__PURE__*/function () {
     value: function mainPanelTemplate() {
       var _this4 = this;
       var state = this.state;
-      return ke(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["<div id=\"ehs-main-panel\" class=\"ehs-panel ", "\">\n            <div class=\"header\">\n                <div>\n                    <a href=\"", "\" class=\"monospace minor\">v", "</a>\n                </div>\n                <div class=\"cushion\"></div>\n                <div>\n                    <a\n                        id=\"settingSwitch\"\n                        href=\"#\"\n                        @click=\"", "\"\n                        >\u8BBE\u7F6E</a\n                    >\n                </div>\n            </div>\n            <div class=\"content\">\n                <div class=\"logo-box\" style=\"height: 205px;\">\n                    <div\n                        class=\"logo ", "\"\n                        @click=\"", "\"\n                    >\n                        ", "\n                    </div>\n                    <div id=\"info\">", "</div>\n                </div>\n                <table>\n                    <tr>\n                        <th>TAG\u7248\u672C\uFF1A</th>\n                        <td>\n                            <a href=\"https://github.com/EhTagTranslation/Database/tree/", "\" class=\"monospace\"\n                                >", "</a\n                            >\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\u4E0A\u6B21\u66F4\u65B0\uFF1A</th>\n                        <td>\n                            <span>", "</span>\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\u66F4\u65B0\u68C0\u67E5\uFF1A</th>\n                        <td>\n                            <span class=\"", "\">\n                                ", "\n                                <a\n                                    class=\"monospace ", "\"\n                                    href=\"https://github.com/EhTagTranslation/Database/tree/", "\"\n                                >\n                                    ", "\n                                </a>\n                            </span>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n            <button\n                @click=\"", "\"\n                ?disabled=", "\n                class=\"action ", "\"\n                id=\"updateButton\"\n            >\n                \u66F4\u65B0\n            </button>\n        </div>"])), state.showSettingPanel ? 'ehs-hide' : '', packageJson.homepage, packageJson.version, function (ev) {
+      return x(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["<div id=\"ehs-main-panel\" class=\"ehs-panel ", "\">\n            <div class=\"header\">\n                <div>\n                    <a href=\"", "\" class=\"monospace minor\">v", "</a>\n                </div>\n                <div class=\"cushion\"></div>\n                <div>\n                    <a\n                        id=\"settingSwitch\"\n                        href=\"#\"\n                        @click=\"", "\"\n                        >\u8BBE\u7F6E</a\n                    >\n                </div>\n            </div>\n            <div class=\"content\">\n                <div class=\"logo-box\" style=\"height: 205px;\">\n                    <div\n                        class=\"logo ", "\"\n                        @click=\"", "\"\n                    >\n                        ", "\n                    </div>\n                    <div id=\"info\">", "</div>\n                </div>\n                <table>\n                    <tr>\n                        <th>TAG\u7248\u672C\uFF1A</th>\n                        <td>\n                            <a href=\"https://github.com/EhTagTranslation/Database/tree/", "\" class=\"monospace\"\n                                >", "</a\n                            >\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\u4E0A\u6B21\u66F4\u65B0\uFF1A</th>\n                        <td>\n                            <span>", "</span>\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\u66F4\u65B0\u68C0\u67E5\uFF1A</th>\n                        <td>\n                            <span class=\"", "\">\n                                ", "\n                                <a\n                                    class=\"monospace ", "\"\n                                    href=\"https://github.com/EhTagTranslation/Database/tree/", "\"\n                                >\n                                    ", "\n                                </a>\n                            </span>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n            <button\n                @click=\"", "\"\n                ?disabled=", "\n                class=\"action ", "\"\n                id=\"updateButton\"\n            >\n                \u66F4\u65B0\n            </button>\n        </div>"])), state.showSettingPanel ? 'ehs-hide' : '', packageJson.homepage, packageJson.version, function (ev) {
         state.showSettingPanel = true;
         ev.preventDefault();
       }, ['', 'prominent', 'prominent injection'][state.animationState] || '', function () {
@@ -39170,7 +39206,7 @@ var Popup = /*#__PURE__*/function () {
     key: "template",
     value: function template() {
       var state = this.state;
-      return ke(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([" <div id=\"eh-syringe-popup-root\">\n            ", " ", "\n        </div>"])), this.mainPanelTemplate(), state.configValue ? this.settingPanelTemplate() : D);
+      return x(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral([" <div id=\"eh-syringe-popup-root\">\n            ", " ", "\n        </div>"])), this.mainPanelTemplate(), state.configValue ? this.settingPanelTemplate() : E);
     }
   }, {
     key: "mount",
@@ -39246,14 +39282,14 @@ var Popup = /*#__PURE__*/function () {
   }, {
     key: "updateView",
     value: function updateView() {
-      Q(this.template(), this.el);
+      B(this.template(), this.el);
     }
   }]);
 }();
 Popup = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, DateTime])], Popup);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.2_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
-var popup_host = __webpack_require__(9588);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.95.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.47_typescript@5.6.3_webpack@5.95.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.95.0/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
+var popup_host = __webpack_require__(43199);
 ;// ./src/user-script/popup-host.less
 
       
