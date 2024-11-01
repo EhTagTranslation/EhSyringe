@@ -42,7 +42,7 @@ merge(/^\/hathperks\.php/, undefined, {
     demo: '演示',
 
     'More Thumbs': '更多缩略图',
-    'Increases the maximum number of thumbnail rows to 10.': '将最大缩略图行数增加到 10。',
+    'Doubles the maximum number of thumbnail rows.': '将最大缩略图行数增加到 10。',
     'Thumbs Up': '超多缩略图',
     'Further increases the maximum number of thumbnail rows to 20.': '将最大缩略图行数增加到 20。',
     'All Thumbs': '全部缩略图',
