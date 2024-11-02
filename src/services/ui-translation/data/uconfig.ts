@@ -356,10 +356,10 @@ merge(
         ' Large': ' 大图',
         'Rows:': '行数：',
 
-        'Thumbnail Scaling': '缩略图缩放',
+        'Cover Scaling': '封面缩放',
         '%': ' %',
-        'Thumbnails on the thumbnail and extended gallery list views can be scaled to a custom value between 75% and 150%.':
-            '在扩展和缩略图列表模式下，图库缩略图可以缩放为 75% 到 150% 之间的自定义值。',
+        'The cover size in gallery list views can be scaled to between 75% and 150% when using the Thumbnail or Extended display modes.':
+            '在扩展和缩略图列表模式下，图库封面可以缩放为 75% 到 150% 之间的自定义值。',
 
         Ratings: '评分',
         'By default, galleries that you have rated will appear with red stars for ratings of 2 stars and below, green for ratings between 2.5 and 4 stars, and blue for ratings of 4.5 or 5 stars. You can customize this by entering your desired color combination below.':

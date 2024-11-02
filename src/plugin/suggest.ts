@@ -34,9 +34,7 @@ export class Suggest {
         this.sha = v.sha;
     }
 
-    readonly nsScore: {
-        [k in EHTNamespaceName]: number;
-    } = {
+    readonly nsScore: Record<EHTNamespaceName, number> = {
         other: 10,
         female: 9,
         male: 8.5,
