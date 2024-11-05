@@ -100,6 +100,7 @@ merge(
             '使用的关键词过多。请减少关键词或使用引号组合关键词。(已忽略 ',
         'No hits found': '什么也没有',
         'No unfiltered results found.': '没有未过滤的结果',
+        'No unfiltered results in this page range. Use less aggressive filters.': '在此页数范围内没有未过滤的结果。请使用更宽松的过滤器。',
         'Disable Filters': '禁用过滤器',
 
         '<< First': '<< 首页',

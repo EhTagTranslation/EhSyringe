@@ -90,9 +90,6 @@ merge(
         'There are newer versions of this gallery available:': '此图库有更新的版本可用：',
         'Back to Gallery': '返回图库',
 
-        Normal: '普通',
-        Large: '大图',
-
         'Contact Poster': '联系评论者',
         'Uploader Comment': '上传者评论',
         'Score ': '分数 ',
