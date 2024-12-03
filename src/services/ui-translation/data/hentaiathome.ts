@@ -18,12 +18,10 @@ merge(
         'Chinese Dominion': '中国大陆',
         Global: '全球',
 
-        '\n\tNetwork Load shows how much bandwidth is currently being used. This includes requests served by H@H and the image servers.':
-            '当前网络负载 显示当前使用的带宽量，这包括 H@H 服务的请求以及来自图像服务器的直接请求。',
-        '\n\tCoverage shows the average number of times a file range is found within a region, indicating the total available storage capacity.':
-            '覆盖率 表示此区域内一组文件的平均存在次数，代表着总可用存储量。',
-        '\n\tHits/GB shows the average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
-            '命中/GB 表示此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
+        '\n\tHits/GB shows the current average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
+            '命中/GB 表示当前此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
+        '\n\tA high number indicates that clients are more needed in the region than other regions. A low number indicates oversaturation.':
+            '较高的数值表明该地区对客户端的需求量比其他地区更高。较低的数值表明该地区已经趋于饱和。',
 
         'Your Active Clients': '您的活动客户端',
         'To add more clients, ': '要添加更多客户端，请',
