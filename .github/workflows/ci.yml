@@ -30,7 +30,7 @@ jobs:
           pnpm run build:firefox
           pnpm run build:chrome
           pnpm run build:monkey
-      - uses: actions/attest-build-provenance@v1
+      - uses: actions/attest-build-provenance@v2
         if: startsWith(github.event.ref, 'refs/tags/')
         with:
           subject-path: releases/
