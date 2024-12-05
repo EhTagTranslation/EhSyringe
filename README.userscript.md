@@ -29,25 +29,25 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ## 功能
 
--   全站翻译（大部分）
--   TAG 翻译
--   TAG 介绍
--   TAG 翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.fly.dev/database/all/~badge)](https://ehtt.vercel.app/list/all) 条标签翻译）
--   搜索框 TAG 输入提示
--   支持 Via、Alook 等支持自定义脚本的手机浏览器
+- 全站翻译（大部分）
+- 标签翻译
+- 标签介绍
+- 标签翻译数据更新（当前[数据库](https://ehtt.vercel.app/list/all)包含 [![all](https://img.shields.io/endpoint?label=&color=brightgreen&url=https://ehtt.fly.dev/database/all/~badge)](https://ehtt.vercel.app/list/all) 条标签翻译）
+- 搜索框标签输入提示
+- 支持 Via、Alook 等支持自定义脚本的手机浏览器
 
 ## 特点
 
--   兼容 E-Hentai-Downloader 及熊猫书签
+- 兼容 E-Hentai-Downloader 及熊猫书签
 
 ## 浏览器扩展版的优势？
 
 本脚本由浏览器扩展打包转换而来，无法完美复现扩展的完美体验，以下功能将只能在扩展版中实现。
 
--   使用地址栏进行搜索
--   通过标签右键菜单跳转到编辑页面
--   通过图片右键菜单搜索所有相关图库
--   在加载 DOM 过程替换翻译, 页面加载完直接是中文不会闪烁
+- 使用地址栏进行搜索
+- 通过标签右键菜单跳转到编辑页面
+- 通过图片右键菜单搜索所有相关图库
+- 在加载 DOM 过程替换翻译, 页面加载完直接是中文不会闪烁
 
 扩展版安装方式请参见[项目首页 https://github.com/EhTagTranslation/EhSyringe](https://github.com/EhTagTranslation/EhSyringe)。
 
@@ -78,6 +78,6 @@ E 站注射器，将中文翻译注入到 E 站体内。
 
 ## 小工具
 
--   用户脚本脚本小工具合集 <https://github.com/EhTagTranslation/UserScripts>
+- 用户脚本脚本小工具合集 <https://github.com/EhTagTranslation/UserScripts>
 
 ## [更新日志](https://github.com/EhTagTranslation/EhSyringe/blob/master/CHANGELOG.md)
