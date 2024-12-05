@@ -377,7 +377,7 @@ export class Popup {
                 </div>
                 <table>
                     <tr>
-                        <th>TAG版本：</th>
+                        <th>标签版本：</th>
                         <td>
                             <a href="https://github.com/EhTagTranslation/Database/tree/${state.sha}" class="monospace"
                                 >${state.sha || ' --- '}</a

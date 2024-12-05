@@ -14,6 +14,6 @@ assignees: ''
 
 **环境**
 
--   系统: [例如: Windows Android]
--   浏览器 [例如: Chrome Firefox]
--   插件版本 [例如: 1.0.0]
+- 系统: [例如: Windows Android]
+- 浏览器 [例如: Chrome Firefox]
+- 插件版本 [例如: 1.0.0]
