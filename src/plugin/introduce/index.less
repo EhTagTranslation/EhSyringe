@@ -17,20 +17,13 @@
     }
     #gd5 {
         grid-area: gd5;
+        z-index: 3;
+        position: relative;
+        min-width: 150px;
     }
 }
 
-div#gd5 {
-    z-index: 3;
-    position: relative;
-    #ehs-introduce-box img {
-        margin: 0;
-        width: auto;
-        height: auto;
-    }
-}
-
-#ehs-introduce-box {
+:root #ehs-introduce-box {
     position: absolute;
     inset: 0 -5px 0 0;
     overflow: auto;
@@ -117,12 +110,14 @@ div#gd5 {
             display: none;
         }
     }
-
     &:empty {
         display: none;
     }
     img {
         max-width: 100%;
+        margin: 0;
+        width: auto;
+        height: auto;
     }
 }
 
