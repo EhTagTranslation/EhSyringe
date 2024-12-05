@@ -1,5 +1,11 @@
 # 更新日志
 
+## 3.0.17
+
+- 更新翻译 #1279
+- 支持仅翻译时间戳 #1281
+- 兼容 [Exhentai-Enhancer](https://github.com/sk2589822/Exhentai-Enhancer) #1281
+
 ## 3.0.16
 
 - 更新翻译
