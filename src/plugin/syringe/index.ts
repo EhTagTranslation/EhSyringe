@@ -140,7 +140,7 @@ class TagNodeRef {
             else value = `${this.service.tagging.ns(originalNs)}:${value}`;
         }
         this.node.innerHTML = value;
-        this.node.setAttribute('lang', 'cmn-Hans');
+        this.node.setAttribute('lang', 'zh-hans');
         return true;
     }
 }
@@ -308,7 +308,7 @@ export class Syringe {
             node.classList.add('ehs-translate-tag');
         }
         if (this.config.translateUi) {
-            node.setAttribute('lang', 'cmn-Hans');
+            node.setAttribute('lang', 'zh-hans');
         } else {
             node.setAttribute('lang', 'en');
         }
@@ -325,7 +325,7 @@ export class Syringe {
 
         const handled = this.translateTag(node);
         /* tag 处理过的ui不再处理*/
-        if (!handled && this.config.translateUi) {
+        if (!handled && (this.config.translateUi || this.config.translateTimestamp)) {
             this.translateUi(node);
         }
     }
@@ -382,17 +382,20 @@ export class Syringe {
     }
 
     private translateUiText(text: string): string | undefined {
-        const plain = this.uiData.plainReplacements.get(text);
-        if (plain != null) return plain;
-
         let repText = text;
-        for (const [k, v] of this.uiData.regexReplacements) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            repText = repText.replace(k, v as (substring: string, ...args: any[]) => string);
+
+        if (this.config.translateUi) {
+            const plain = this.uiData.plainReplacements.get(text);
+            if (plain != null) return plain;
+
+            for (const [k, v] of this.uiData.regexReplacements) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                repText = repText.replace(k, v as (substring: string, ...args: any[]) => string);
+            }
         }
 
         if (
-            this.config.translateTimestamp !== false &&
+            this.config.translateTimestamp &&
             // 快速判断是否有可能包含时间戳
             repText.includes(':')
         ) {
@@ -486,7 +489,7 @@ export class Syringe {
         }
 
         if (isElement(node, 'p') && node.classList.contains('gpc')) {
-            /* 兼容熊猫书签，单独处理页码，保留原页码Element，防止熊猫书签取不到报错 */
+            /* 兼容熊猫书签，单独处理页码，保留原页码 Element，防止熊猫书签取不到报错 */
             this.cloneAndPrependElement(node);
         }
 

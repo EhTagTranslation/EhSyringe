@@ -119,7 +119,7 @@ export function createPopup(): void {
     setBadge({ text: '' });
     const popupBack = document.body.appendChild(document.createElement('div'));
     popupBack.id = 'eh-syringe-popup-back';
-    popupBack.lang = 'cmn-Hans';
+    popupBack.lang = 'zh-hans';
     const popup = popupBack.appendChild(document.createElement('div'));
     popup.id = 'eh-syringe-popup';
 
