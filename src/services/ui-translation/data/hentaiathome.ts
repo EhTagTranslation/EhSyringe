@@ -20,7 +20,7 @@ merge(
 
         '\n\tHits/GB shows the current average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
             '命中/GB 表示当前此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
-        '\n\tA high number indicates that clients are more needed in the region than other regions. A low number indicates oversaturation.':
+        '\n\tA high number indicates that clients are more needed in the region than other regions. A low number indicates oversaturation.\n':
             '较高的数值表明该地区对客户端的需求量比其他地区更高。较低的数值表明该地区已经趋于饱和。',
 
         'Your Active Clients': '您的活动客户端',
@@ -145,8 +145,10 @@ merge(
         'Maximum Upload Rate': '最大上传速率',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
-        'Static Range allocation is limited to 1 per 5 KB/s. Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
-            '每 1 组静态范围至少 5 KB/s。如果设置低于 10 MB/s，则不会被分配到大容量范围。',
+        // 'Static Range allocation is limited to 1 per 5 KB/s. Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
+        //     '每 1 组静态范围至少 5 KB/s。如果设置低于 10 MB/s，则不会被分配到大容量范围。',
+        'Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
+            '如果设置低于 10 MB/s，则不会被分配到大容量范围。',
         ' KBytes/s': ' KB/s',
         ' Enable Client-Side Speed Limit (recommended only for home networks)':
             ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
@@ -197,15 +199,14 @@ merge(
             '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
         'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
             '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
-        'This client currently has ': '此客户端当前被分配了 ',
-        ' static range(s) assigned.': ' 组静态范围。',
+        'The following ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
         ' reset your static ranges ': '重置您的静态范围，',
         unless: '除非',
-        ' the cache has been deleted or is otherwise lost. It should ':
-            '缓存已被删除或以其他方式丢失。如果缓存因任何原因被清除，则',
+        ' the cache has been deleted or is otherwise lost. But it should ':
+            '缓存已被删除或以其他方式丢失。然而如果缓存因任何原因被清除，则',
         always: '必须',
         ' be reset if the cache has been cleared for whatever reason, or the client will encounter serious trust issues.':
             '重置静态范围，否则客户端将遇到严重的信任问题。',
@@ -247,7 +248,6 @@ merge(
             /^If you have a monthly data cap, you can provide it here. If the system detects that you are likely to exceed this target, it will reduce the priority of ranges on your client to reduce the load, but it is not guaranteed to stay below this value. Leave at 0 to limit with max speed alone. Must be at least ([\d.]+) GB if set.$/,
             '如果你有每月数据限额，请在此设置。如果系统检测到你可能超过此限额，它将会降低客户端上的静态范围的优先度，以降低网络负载，但并不能保证低于设定值。保留为 0 表示仅限制最大速度。最低限制为 $1 GB。',
         ],
-        [/^ static range\(s\) assigned: P(\d+) = $/, ' 组静态范围：P$1 = '],
         [/^([\d.]+) GB per month$/, '$1 GB/月'],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
