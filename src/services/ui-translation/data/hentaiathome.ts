@@ -29,6 +29,15 @@ merge(
         '. Make sure to read the requirements first to make sure that you qualify. Include the system specifications and location the client will run at in the message, and specify whether it is a home connection or a VPS/Dedicated. Each client requires its own unique public IPv4 address to run, and must either be reachable directly from the internet, or have a port forwarded. These are technical requirements, and it is not possible to make any exceptions.':
             '。请务必先阅读要求以确保您符合资格。在消息中包含客户端的配置和地理位置，并说明它是家庭连接还是 VPS/独立服务器。每个客户端都需要拥有唯一的公共 IPv4 地址才能运行，并且必须可以直接从 Internet 访问，或者使用端口转发。这些都是技术要求，不可能有任何例外。',
 
+        'Due to excess capacity, we are not taking new applications for Europe at the moment, with an exception for donators.':
+            '由于资源过剩，我们暂时不接受欧洲地区的新申请，但捐赠者除外。',
+        'If you want to run a client ': '如果您想在',
+        'outside of Europe': '欧洲以外的地区',
+        ', ': '运行客户端，请',
+        '. Include the system specs, speedtest and location in the message.': '。在消息中包含系统配置、SpeedTest 结果和地理位置。',
+        'The client will be locked to the provided location. Do not send PMs asking to run clients in Europe.':
+            '客户端将被锁定在指定的地理位置。请勿发送私信要求在欧洲运行客户端。',
+
         Client: '客户端',
         Status: '状态',
         Created: '创建于',
