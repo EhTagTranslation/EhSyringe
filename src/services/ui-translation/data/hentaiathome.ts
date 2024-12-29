@@ -136,6 +136,9 @@ merge(
     /^\/hentaiathome\.php\?.*act=settings/,
     undefined,
     {
+        'You cannot reset the ranges of a client that has been online in the last 24 hours. DO NOT RESET RANGES UNLESS YOU LOST YOUR CACHE.':
+            '您无法重置过去 24 小时内在线的客户端的静态范围。除非您丢失了缓存，否则请不要重置范围。',
+        
         'Client ID:': '客户端 ID：',
         'Client Key:': '客户端 Key：',
 
