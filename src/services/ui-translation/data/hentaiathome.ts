@@ -1,4 +1,5 @@
 import { merge } from '../helper';
+import { BROWSING_COUNTRY } from './_browsingcountry';
 
 merge(
     /^\/hentaiathome\.php\??$/,
@@ -56,6 +57,7 @@ merge(
         Online: '在线',
         Offline: '离线',
         'Not available when offline': '离线状态下不可用',
+        ...BROWSING_COUNTRY,
 
         'Apply for H@H participation': '参与申请 H@H',
         'For information on how to participate in the Hentai@Home Project, refer to the ':
@@ -89,15 +91,12 @@ merge(
         'Your application is pending. You can still make changes below if necessary.':
             '您的申请正在等待处理。如有必要，您仍可以在下方修改申请。',
 
-        'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ':
-            '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
+        'If the auto-detected country is wrong, ': '如果自动检测的国家/地区错误，请',
+        ' to have an override applied. Include the correct country, client ID and IP address in your message, and ':
+            '以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
         'make sure to keep your client running': '确保您的客户端保持运行',
-        '. Having the client set to the wrong country will make it perform worse than it would otherwise do. If the country is shown in ':
-            '。位于错误的国家/地区的客户端的性能表现将不如预期。如果国家/地区显示为 ',
-        red: '红色',
-        ' that means it appears to be located outside of its home region, and ': '，则意味着它似乎位于其所在地区之外，',
-        'will not be assigned new ranges nor gain any hath': '不会再被分配新的范围，也不会获得 Hath',
-        '. Contact Tenboro if you need to change the home region.': '。如果您需要更改所在地区，请联系 Tenboro。',
+        '. Having a client set to the wrong country will cause a variety of issues, and makes it perform worse than it would otherwise do.':
+            '。将客户端设置为错误的国家/地区会导致各种问题，并使其性能表现不如预期。',
 
         'Free Archive Quota: ': '免费的存档配额：',
         ', measured in a 168-hour sliding window. Clients must be ':
