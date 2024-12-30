@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.0.17
+// @version     3.0.18
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 34000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@ea644542e736c0e792c36ad1eaa678ec9ea9383a/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@e2b9074cc34a983bfb1fc87adcf0d79838011be1/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -37,7 +37,7 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 20220:
+/***/ 31032:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
@@ -47,8 +47,8 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
-var _mapInstanceProperty = __webpack_require__(46497);
-var _concatInstanceProperty = __webpack_require__(53215);
+var _mapInstanceProperty = __webpack_require__(27826);
+var _concatInstanceProperty = __webpack_require__(92334);
 module.exports = function (cssWithMappingToString) {
   var list = [];
 
@@ -136,13 +136,13 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 58871:
+/***/ 67075:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
 
-var _sliceInstanceProperty = __webpack_require__(95181);
+var _sliceInstanceProperty = __webpack_require__(22810);
 module.exports = function (url, options) {
   if (!options) {
     options = {};
@@ -170,14 +170,14 @@ module.exports = function (url, options) {
 
 /***/ }),
 
-/***/ 71172:
+/***/ 34648:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
 
 
-var _JSON$stringify = __webpack_require__(59223);
-var _concatInstanceProperty = __webpack_require__(53215);
+var _JSON$stringify = __webpack_require__(34032);
+var _concatInstanceProperty = __webpack_require__(92334);
 module.exports = function (item) {
   var content = item[1];
   var cssMapping = item[3];
@@ -196,7 +196,7 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ 61155:
+/***/ 77134:
 /***/ (function(module) {
 
 "use strict";
@@ -277,18 +277,18 @@ function escapeHtml(string) {
 
 /***/ }),
 
-/***/ 42417:
+/***/ 73508:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71172);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20220);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34648);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31032);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "#gmid{display:grid;grid:\"gd3 spa spa\" auto \"gd3 gd4 gd5\" auto/auto 1fr auto}#gmid #gd3{grid-area:gd3}#gmid #spa{grid-area:spa;width:auto}#gmid #gd4{grid-area:gd4;width:auto}#gmid #gd5{grid-area:gd5;min-width:150px;position:relative;z-index:3}:root #ehs-introduce-box{bottom:0;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;left:0;overflow:auto;position:absolute;right:-5px;text-align:left;top:0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-flow:column;-moz-box-orient:vertical;-moz-box-direction:normal;background:#edebdf;-webkit-border-radius:0 0 6px 0;-moz-border-radius:0 0 6px 0;border-radius:0 0 6px 0;-ms-flex-flow:column;flex-flow:column}:root #ehs-introduce-box .ehs-title{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;border-bottom:1px solid #5c0d12;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-ms-flex:none;flex:none;line-height:14px;margin:0 8px;padding:3px 0;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row}:root #ehs-introduce-box .ehs-title .ehs-cn{font-weight:700;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title .ehs-en{opacity:.7;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title>div{overflow:hidden;-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto}:root #ehs-introduce-box .ehs-title>span{overflow:hidden;-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;-ms-flex:none;flex:none}:root #ehs-introduce-box .ehs-close{cursor:pointer;font-size:16px;line-height:28px;opacity:.8;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:20px}:root #ehs-introduce-box .ehs-close:hover{opacity:1}:root #ehs-introduce-box .ehs-close:after{content:\"\\00d7\"}:root #ehs-introduce-box .ehs-content{-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto;margin:4px 0;overflow:auto;padding:4px 8px;scrollbar-color:#5c0d12 transparent;scrollbar-width:thin}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar{height:4px;width:4px}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#5c0d12}:root #ehs-introduce-box .ehs-content abbr[title]{padding:0 1px}:root #ehs-introduce-box .ehs-content abbr[title]:after{content:\" (\" attr(title) \")\";font-size:90%}:root #ehs-introduce-box .ehs-href{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;border-top:1px solid #5c0d12;-ms-flex:none;flex:none;line-height:24px;margin:0 8px}:root #ehs-introduce-box .ehs-href:empty{display:none}:root #ehs-introduce-box:empty{display:none}:root #ehs-introduce-box img{height:auto;margin:0;max-width:100%;width:auto}:root.ehs-ex #ehs-introduce-box{background:#4f535b;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}:root.ehs-ex #ehs-introduce-box .ehs-title{border-bottom:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-href{border-top:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-content{scrollbar-color:#000 transparent}:root.ehs-ex #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#000}.ehs-no-intro,.ehs-no-translation{opacity:.8}.ehs-no-intro h3,.ehs-no-translation h3{font-size:16px;font-weight:700;opacity:.6;padding:8px;text-align:center}:root.ehs-image-level-0 #ehs-introduce-box .ehs-content img{display:none}:root.ehs-image-level-1 #ehs-introduce-box .ehs-content img[nsfw]{display:none}:root.ehs-image-level-2 #ehs-introduce-box .ehs-content img[nsfw=R18G]{display:none}", "",{"version":3,"sources":["webpack://./src/plugin/introduce/index.less"],"names":[],"mappings":"AAAA,MACI,YAAA,CACA,wDACJ,CAHA,WAOQ,aADR,CANA,WAUQ,aAAA,CACA,UADR,CAVA,WAcQ,aAAA,CACA,UADR,CAdA,WAkBQ,aAAA,CAGA,eAAA,CADA,iBAAA,CADA,SACR,CAKA,yBAEI,QAAA,CAGA,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAAA,CAHA,MAAA,CACA,aAAA,CAFA,iBAAA,CACA,UAAA,CAEA,eAAA,CAFA,KAAA,CAIA,2BAAA,CAAA,4BAAA,CAAA,wBAAA,CAAA,wBAAA,CAAA,yBAAA,CAEA,kBAAA,CADA,+BAAA,CAAA,4BAAA,CAAA,uBAAA,CADA,oBAAA,CAAA,gBADJ,CALA,oCAUQ,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAEA,+BAAA,CAGA,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAAA,CALA,aAAA,CAAA,SAAA,CAGA,gBAAA,CAFA,YAAA,CAGA,aAAA,CAEA,6BAAA,CAAA,4BAAA,CAAA,0BAAA,CAAA,0BAAA,CAAA,yBAAA,CAAA,sBAAA,CAAA,kBAFR,CAdA,4CAmBY,eAAA,CACA,eAAA,CACA,yBAAA,CAAA,sBAAA,CACA,kBAFZ,CApBA,4CAyBY,UAAA,CACA,eAAA,CACA,yBAAA,CAAA,sBAAA,CACA,kBAFZ,CA1BA,wCAgCY,eAAA,CACA,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAHZ,CA9BA,yCAoCY,eAAA,CACA,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAHZ,CAlCA,oCA0CQ,cAAA,CACA,cAAA,CAEA,gBAAA,CADA,UAAA,CAGA,iBAAA,CANA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CAKA,UAHR,CAKQ,0CACI,SAHZ,CAKQ,0CACI,eAHZ,CAjDA,sCAwDQ,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAAA,CAEA,YAAA,CADA,aAAA,CAEA,eAAA,CAEA,mCAAA,CADA,oBAHR,CAMQ,yDAEI,UAAA,CADA,SAHZ,CAMQ,+DACI,kBAJZ,CAhEA,kDAuEY,aAJZ,CAKY,wDACI,4BAAA,CACA,aAHhB,CAvEA,mCA+EQ,kBAAA,CAAA,iBAAA,CAAA,eAAA,CACA,4BAAA,CADA,aAAA,CAAA,SAAA,CAGA,gBAAA,CADA,YAJR,CAMQ,yCACI,YAJZ,CAOI,+BACI,YALR,CAnFA,6BA8FQ,WAAA,CAFA,QAAA,CADA,cAAA,CAEA,UAJR,CASA,gCACI,kBAAA,CACA,uBAAA,CAAA,oBAAA,CAAA,eAPJ,CAKA,2CAIQ,4BANR,CAEA,0CAOQ,yBANR,CADA,6CAUQ,gCANR,CAOQ,sEACI,eALZ,CAUA,kCAEI,UARJ,CAMA,wCAMQ,cAAA,CAEA,eAAA,CAJA,UAAA,CAGA,WAAA,CAFA,iBAHR,CAYA,4DAEQ,YAVR,CAaA,kEAEQ,YAZR,CAeA,uEAEQ,YAdR","sourcesContent":["#gmid {\n    display: grid;\n    grid:\n        'gd3 spa spa' auto\n        'gd3 gd4 gd5' auto\n        / auto 1fr auto;\n    #gd3 {\n        grid-area: gd3;\n    }\n    #spa {\n        grid-area: spa;\n        width: auto;\n    }\n    #gd4 {\n        grid-area: gd4;\n        width: auto;\n    }\n    #gd5 {\n        grid-area: gd5;\n        z-index: 3;\n        position: relative;\n        min-width: 150px;\n    }\n}\n\n:root #ehs-introduce-box {\n    position: absolute;\n    inset: 0 -5px 0 0;\n    overflow: auto;\n    text-align: left;\n    display: flex;\n    flex-flow: column;\n    border-radius: 0 0 6px 0;\n    background: #edebdf;\n    .ehs-title {\n        flex: none;\n        margin: 0 8px;\n        border-bottom: 1px solid #5c0d12;\n        line-height: 14px;\n        padding: 3px 0;\n        display: flex;\n        flex-direction: row;\n\n        .ehs-cn {\n            font-weight: bold;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n        .ehs-en {\n            opacity: 0.7;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n\n        > div {\n            overflow: hidden;\n            flex: auto;\n        }\n        > span {\n            overflow: hidden;\n            flex: none;\n        }\n    }\n    .ehs-close {\n        user-select: none;\n        cursor: pointer;\n        font-size: 16px;\n        opacity: 0.8;\n        line-height: 28px;\n        width: 20px;\n        text-align: center;\n        &:hover {\n            opacity: 1;\n        }\n        &::after {\n            content: '\\00d7';\n        }\n    }\n    .ehs-content {\n        flex: auto;\n        overflow: auto;\n        margin: 4px 0;\n        padding: 4px 8px;\n        scrollbar-width: thin;\n        scrollbar-color: #5c0d12 transparent;\n\n        &::-webkit-scrollbar {\n            width: 4px;\n            height: 4px;\n        }\n        &::-webkit-scrollbar-thumb {\n            background: #5c0d12;\n        }\n        abbr[title] {\n            padding: 0 1px;\n            &::after {\n                content: ' (' attr(title) ')';\n                font-size: 90%;\n            }\n        }\n    }\n    .ehs-href {\n        flex: none;\n        border-top: 1px solid #5c0d12;\n        margin: 0 8px;\n        line-height: 24px;\n        &:empty {\n            display: none;\n        }\n    }\n    &:empty {\n        display: none;\n    }\n    img {\n        max-width: 100%;\n        margin: 0;\n        width: auto;\n        height: auto;\n    }\n}\n\n:root.ehs-ex #ehs-introduce-box {\n    background: #4f535b;\n    border-radius: 0;\n    .ehs-title {\n        border-bottom: 1px solid #000;\n    }\n    .ehs-href {\n        border-top: 1px solid #000;\n    }\n    .ehs-content {\n        scrollbar-color: #000 transparent;\n        &::-webkit-scrollbar-thumb {\n            background: #000;\n        }\n    }\n}\n\n.ehs-no-translation,\n.ehs-no-intro {\n    opacity: 0.8;\n    h3 {\n        opacity: 0.6;\n        text-align: center;\n        font-size: 16px;\n        padding: 8px;\n        font-weight: bold;\n    }\n}\n\n//0:hide, 1:non-h 2: R18 3: R18G\n/* nsfw=\"R18\" */\n:root.ehs-image-level-0 #ehs-introduce-box .ehs-content {\n    img {\n        display: none;\n    }\n}\n:root.ehs-image-level-1 #ehs-introduce-box .ehs-content {\n    img[nsfw] {\n        display: none;\n    }\n}\n:root.ehs-image-level-2 #ehs-introduce-box .ehs-content {\n    img[nsfw='R18G'] {\n        display: none;\n    }\n}\n:root.ehs-image-level-3 {\n    // 所有都显示\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -297,18 +297,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#gmid{display:grid;grid:\"gd3 spa spa\
 
 /***/ }),
 
-/***/ 74730:
+/***/ 90643:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71172);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20220);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34648);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31032);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:medium;line-height:normal;text-align:left;text-align:initial}#eh-syringe-popup-root input,#eh-syringe-popup-root table,#eh-syringe-popup-root td,#eh-syringe-popup-root th{background:inherit;color:inherit}#eh-syringe-popup-root input{border:none;margin:0;padding:0}#eh-syringe-popup-root input[type=checkbox],#eh-syringe-popup-root input[type=radio]{position:static;top:auto}#eh-syringe-popup-root p{margin:.8em 0;padding:0}#eh-syringe-popup-root a{background:rgba(0,0,0,0);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup{background:#f0f0f0;border:1px solid #8041a6;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#111}#eh-syringe-popup .action{background:#f0f0f0;color:#8041a6}#eh-syringe-popup .action.primary{background:#8041a6;border-color:#8041a6;color:#f0f0f0}#eh-syringe-popup .action.primary:hover{background:#491774}#eh-syringe-popup .action.primary:active{background:#ae79c9}#eh-syringe-popup #info{color:#8041a6}#eh-syringe-popup .hasNew{color:#79252b}#eh-syringe-popup a{color:#8041a6}#eh-syringe-popup a:hover{color:#491774}#eh-syringe-popup a:active{color:#ae79c9}#eh-syringe-popup a.minor{color:#a5a3a6}#eh-syringe-popup a.minor:hover{color:#d2cdd4}#eh-syringe-popup a.minor:active{color:#838185}#eh-syringe-popup .logo svg [fill-bg]{fill:#f0f0f0}#eh-syringe-popup .logo svg [fill-accent]{fill:#8041a6}#eh-syringe-popup .logo svg [fill-sa]{fill:#cfbadc}#eh-syringe-popup .logo svg [stroke-bg]{stroke:#f0f0f0}#eh-syringe-popup .logo svg [stroke-accent]{stroke:#8041a6}#eh-syringe-popup .logo svg [stroke-sa]{stroke:#cfbadc}#eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#8041a6}#eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}#eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #8041a6;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #8041a6;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#fdfdfd;border:2px solid #8041a6;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#fdfdfd;border:2px solid #8041a6;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup{background:#313131;border:1px solid #ce90f1;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#eee}:root.ehs-ex #eh-syringe-popup .action{background:#313131;color:#ce90f1}:root.ehs-ex #eh-syringe-popup .action.primary{background:#ce90f1;border-color:#ce90f1;color:#313131}:root.ehs-ex #eh-syringe-popup .action.primary:hover{background:#e2b9f7}:root.ehs-ex #eh-syringe-popup .action.primary:active{background:#b669e9}:root.ehs-ex #eh-syringe-popup #info{color:#ce90f1}:root.ehs-ex #eh-syringe-popup .hasNew{color:#cb8d93}:root.ehs-ex #eh-syringe-popup a{color:#ce90f1}:root.ehs-ex #eh-syringe-popup a:hover{color:#e2b9f7}:root.ehs-ex #eh-syringe-popup a:active{color:#b669e9}:root.ehs-ex #eh-syringe-popup a.minor{color:#a5a3a6}:root.ehs-ex #eh-syringe-popup a.minor:hover{color:#d2cdd4}:root.ehs-ex #eh-syringe-popup a.minor:active{color:#838185}:root.ehs-ex #eh-syringe-popup .logo svg [fill-bg]{fill:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [fill-accent]{fill:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [fill-sa]{fill:#987ca8}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-bg]{stroke:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-accent]{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-sa]{stroke:#987ca8}:root.ehs-ex #eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #ce90f1;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#131313;border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#131313;border:2px solid #ce90f1;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup-root{font-family:sans-serif;font-size:12pt;max-width:400px;min-width:240px;overflow:hidden;padding:1px;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap}#eh-syringe-popup-root .hidden{display:none;visibility:hidden}#eh-syringe-popup-root .ehs-panel{margin:0 auto;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column}#eh-syringe-popup-root .ehs-panel,#eh-syringe-popup-root .ehs-panel .header{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}#eh-syringe-popup-root .ehs-panel .header{line-height:1;margin:16px}#eh-syringe-popup-root .ehs-panel .header>.cushion{-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto}#eh-syringe-popup-root .ehs-panel .header span{color:#a5a3a6}#eh-syringe-popup-root .ehs-panel .content{margin:0 16px;-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto;overflow:visible}#eh-syringe-popup-root .ehs-panel .action{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;cursor:pointer;display:block;font-size:16px;line-height:36px;margin:16px;outline:0;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;min-width:64px;overflow:visible;padding:0 16px;text-align:center;-webkit-text-decoration:none;text-decoration:none;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0);-webkit-transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);-o-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);-moz-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);white-space:nowrap}#eh-syringe-popup-root .ehs-panel .action.primary{-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);-moz-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action.primary:active{-webkit-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);-moz-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action:disabled{opacity:.6}#eh-syringe-popup-root .ehs-panel .action:focus{border:1px solid #888}#eh-syringe-popup-root #ehs-main-panel{-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-main-panel.ehs-hide{opacity:0;pointer-events:none;-webkit-transform:scale(.9);-moz-transform:scale(.9);-ms-transform:scale(.9);-o-transform:scale(.9);transform:scale(.9)}#eh-syringe-popup-root .logo-box{margin:-16px;overflow:hidden;pointer-events:none;position:relative}#eh-syringe-popup-root .logo{margin:20px 0;text-align:center;-webkit-transform:scale(1) rotate(-45deg);-moz-transform:scale(1) rotate(-45deg);-ms-transform:scale(1) rotate(-45deg);-o-transform:scale(1) rotate(-45deg);transform:scale(1) rotate(-45deg);-webkit-transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo #Syringe{pointer-events:all}#eh-syringe-popup-root .logo #Enema{opacity:0;-webkit-transform-origin:61px 86px;-moz-transform-origin:61px 86px;-ms-transform-origin:61px 86px;-o-transform-origin:61px 86px;transform-origin:61px 86px}#eh-syringe-popup-root .logo #Enema2{opacity:1}#eh-syringe-popup-root .logo #Enema,#eh-syringe-popup-root .logo #Enema2,#eh-syringe-popup-root .logo #PushRod{-webkit-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo.prominent{-webkit-transform:scale(1.6) rotate(0deg);-moz-transform:scale(1.6) rotate(0deg);-ms-transform:scale(1.6) rotate(0deg);-o-transform:scale(1.6) rotate(0deg);transform:scale(1.6) rotate(0deg)}#eh-syringe-popup-root .logo.prominent #Enema2{opacity:0}#eh-syringe-popup-root .logo.prominent #Enema{opacity:1}#eh-syringe-popup-root .logo.prominent.injection{-webkit-transform:scale(1.6) rotate(0deg) translate(-10px);-moz-transform:scale(1.6) rotate(0deg) translate(-10px);-ms-transform:scale(1.6) rotate(0deg) translate(-10px);-o-transform:scale(1.6) rotate(0deg) translate(-10px);transform:scale(1.6) rotate(0deg) translate(-10px)}#eh-syringe-popup-root .logo.prominent.injection #Enema,#eh-syringe-popup-root .logo.prominent.injection #Enema2,#eh-syringe-popup-root .logo.prominent.injection #PushRod{-webkit-transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);-o-transition:width .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1);-moz-transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #info{bottom:30px;font-size:16px;height:24px;left:0;line-height:24px;position:absolute;right:0;text-align:center}#eh-syringe-popup-root .monospace{font-family:Menlo,Consolas,Source Code Pro,Inconsolata,Monaco,Courier New,monospace}#eh-syringe-popup-root table{font-size:14px}#eh-syringe-popup-root #ehs-setting-panel{bottom:0;left:0;opacity:0;pointer-events:none;position:absolute;right:0;top:0;-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-setting-panel.ehs-show{opacity:1;pointer-events:auto;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}#eh-syringe-popup-root #ehs-setting-panel #settingForm{font-size:10pt;line-height:12pt}#eh-syringe-popup-root .checkbox-item{padding:4px 0}#eh-syringe-popup-root .checkbox-item label{display:block;position:relative}#eh-syringe-popup-root .checkbox-item svg{height:10px;left:3px;position:absolute;top:3px;width:10px}#eh-syringe-popup-root .checkbox-item svg path{stroke-dasharray:1000;stroke-dashoffset:1000;stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;fill:none}#eh-syringe-popup-root .checkbox-item svg.checked path{stroke-dasharray:113.137,113.137;stroke-dashoffset:0;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup-root .checkbox-item svg.checked path+path{-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;transition:all .28s cubic-bezier(.4,0,.2,1) .28s}#eh-syringe-popup-root .checkbox-item input[type=checkbox]{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-right:2px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s;vertical-align:top;width:16px}#eh-syringe-popup-root .checkbox-item input[type=checkbox]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;width:100%}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-runnable-track{-webkit-border-radius:10px;border-radius:10px;-webkit-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:50%;border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-track{-moz-border-radius:10px;border-radius:10px;-moz-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-moz-border-radius:50%;border-radius:50%;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-moz-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm h3 span{font-size:20pt;font-weight:400}#eh-syringe-popup-root .image-level{margin:4px}#eh-syringe-popup-root .range-title{margin:0}#eh-syringe-popup-root .range-box{margin:5px}#eh-syringe-popup-root .range-label{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}#eh-syringe-popup-root .range-label a{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;display:inline-block;-ms-flex:none;flex:none;font-size:10pt;text-align:center;width:30px}", "",{"version":3,"sources":["webpack://./src/plugin/popup/index.less"],"names":[],"mappings":"AAAA,uBAEI,gBAAA,CACA,kBAAA,CAFA,eAAA,CAAA,kBAGJ,CAJA,8GAQQ,kBAAA,CACA,aAER,CAXA,6BAaQ,WAAA,CAEA,QAAA,CADA,SAER,CAhBA,qFAoBQ,eAAA,CACA,QAAR,CArBA,yBAyBQ,aAAA,CADA,SACR,CAzBA,yBA4BQ,wBAAA,CAEA,4BAAA,CAAA,oBAAA,CADA,sDAAA,CAAA,iDAAA,CAAA,mDAAA,CAAA,8CACR,CAgIA,kBArHQ,kBAAA,CAFA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAGA,6CAAA,CAAA,0CAAA,CAAA,qCAAA,CADA,UALR,CAyHA,0BA/GQ,kBAAA,CACA,aAPR,CASQ,kCAEI,kBAAA,CADA,oBAAA,CAEA,aAPZ,CASQ,wCACI,kBAPZ,CASQ,yCACI,kBAPZ,CA0GA,wBA9FQ,aATR,CAuGA,0BA3FQ,aATR,CAoGA,oBAxFQ,aATR,CAUQ,0BACI,aARZ,CAUQ,2BACI,aARZ,CAUQ,0BACI,aARZ,CASY,gCACI,aAPhB,CASY,iCACI,aAPhB,CAkFA,sCApEY,YAXZ,CA+EA,0CAjEY,YAXZ,CA4EA,sCA9DY,YAXZ,CAyEA,wCA3DY,cAXZ,CAsEA,4CAxDY,cAXZ,CAmEA,wCArDY,cAXZ,CAgEA,uDA/CY,cAdZ,CA6DA,oDA3CY,wBAfZ,CAgBY,4DACI,wBAdhB,CAmBY,gFACI,wBAjBhB,CAmBY,mEACI,wBAjBhB,CAmBY,uEACI,kBAAA,CACA,wBAjBhB,CAmBY,mEACI,kBAAA,CACA,wBAjBhB,CAmBY,6EACI,wBAAA,CACA,yCAAA,CAAA,iCAjBhB,CAmBY,yEACI,wBAAA,CACA,sCAAA,CAAA,iCAjBhB,CAmBY,8EAEI,kBAAA,CADA,wBAAA,CAEA,6CAAA,CAAA,qCAjBhB,CAmBY,0EAEI,kBAAA,CADA,wBAAA,CAEA,0CAAA,CAAA,qCAjBhB,CA+BA,+BA7HQ,kBAAA,CAFA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAGA,6CAAA,CAAA,0CAAA,CAAA,qCAAA,CADA,UAoGR,CAwBA,uCAvHQ,kBAAA,CACA,aAkGR,CAhGQ,+CAEI,kBAAA,CADA,oBAAA,CAEA,aAkGZ,CAhGQ,qDACI,kBAkGZ,CAhGQ,sDACI,kBAkGZ,CASA,qCAtGQ,aAgGR,CAMA,uCAnGQ,aAgGR,CAGA,iCAhGQ,aAgGR,CA/FQ,uCACI,aAiGZ,CA/FQ,wCACI,aAiGZ,CA/FQ,uCACI,aAiGZ,CAhGY,6CACI,aAkGhB,CAhGY,8CACI,aAkGhB,CAfA,mDA5EY,YA8FZ,CAlBA,uDAzEY,YA8FZ,CArBA,mDAtEY,YA8FZ,CAxBA,qDAnEY,cA8FZ,CA3BA,yDAhEY,cA8FZ,CA9BA,qDA7DY,cA8FZ,CAjCA,oEAvDY,cA2FZ,CApCA,iEAnDY,wBA0FZ,CAzFY,yEACI,wBA2FhB,CAtFY,6FACI,wBAwFhB,CAtFY,gFACI,wBAwFhB,CAtFY,oFACI,kBAAA,CACA,wBAwFhB,CAtFY,gFACI,kBAAA,CACA,wBAwFhB,CAtFY,0FACI,wBAAA,CACA,yCAAA,CAAA,iCAwFhB,CAtFY,sFACI,wBAAA,CACA,sCAAA,CAAA,iCAwFhB,CAtFY,2FAEI,kBAAA,CADA,wBAAA,CAEA,6CAAA,CAAA,qCAwFhB,CAtFY,uFAEI,kBAAA,CADA,wBAAA,CAEA,0CAAA,CAAA,qCAwFhB,CAlEA,uBAGI,sBAAA,CACA,cAAA,CAGA,eAAA,CACA,eAAA,CAPA,eAAA,CAKA,WAAA,CAGA,iBAAA,CAJA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CAHA,kBA2EJ,CA7EA,+BAaQ,YAAA,CADA,iBAqER,CAjFA,kCAiBQ,aAAA,CAEA,2BAAA,CAAA,4BAAA,CAAA,6BAAA,CAAA,wBAAA,CAAA,yBAAA,CAAA,yBAAA,CAAA,qBAmER,CAtFA,4EAkBQ,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAyER,CA3FA,0CAuBY,aAAA,CADA,WAqEZ,CA3FA,mDA2BgB,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAmEhB,CA9FA,+CA8BgB,aAmEhB,CAjGA,2CAmCY,aAAA,CACA,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAAA,CACA,gBAiEZ,CAtGA,0CA6CY,6BAAA,CAAA,0BAAA,CAAA,qBAAA,CAGA,cAAA,CAPA,aAAA,CAEA,cAAA,CADA,gBAAA,CAEA,WAAA,CAKA,SAAA,CAHA,iBAAA,CACA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CAGA,uCAAA,CASA,qBAAA,CAHA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAFA,cAAA,CAGA,gBAAA,CAFA,cAAA,CAFA,iBAAA,CADA,4BAAA,CAAA,oBAAA,CAMA,+BAAA,CAAA,4BAAA,CAAA,uBAAA,CAEA,4GAAA,CAAA,oGAAA,CAAA,+FAAA,CAAA,8IAAA,CAAA,4FAAA,CAAA,yLAAA,CATA,kBAyEZ,CA5DY,kDACI,wGAAA,CAAA,qGAAA,CAAA,gGA8DhB,CAzDY,yDACI,8GAAA,CAAA,2GAAA,CAAA,sGA2DhB,CAtDY,mDACI,UAwDhB,CAtDY,gDACI,qBAwDhB,CAxIA,uCAyFQ,0BAAA,CAAA,uBAAA,CAAA,sBAAA,CAAA,qBAAA,CAAA,kBAAA,CAHA,sGAAA,CAAA,8FAAA,CAAA,4FAAA,CAAA,uIAAA,CAAA,sFAAA,CAAA,2NAsDR,CAlDQ,gDAEI,SAAA,CACA,mBAAA,CAFA,2BAAA,CAAA,wBAAA,CAAA,uBAAA,CAAA,sBAAA,CAAA,mBAsDZ,CAjJA,iCAoGQ,YAAA,CAFA,eAAA,CAGA,mBAAA,CAFA,iBAoDR,CAvJA,6BAyGQ,aAAA,CADA,iBAAA,CAGA,yCAAA,CAAA,sCAAA,CAAA,qCAAA,CAAA,oCAAA,CAAA,iCAAA,CADA,iEAAA,CAAA,yDAAA,CAAA,uDAAA,CAAA,kGAAA,CAAA,iDAAA,CAAA,sLAmDR,CA7JA,sCA6GY,kBAmDZ,CAhKA,oCAgHY,SAAA,CACA,kCAAA,CAAA,+BAAA,CAAA,8BAAA,CAAA,6BAAA,CAAA,0BAmDZ,CApKA,qCAoHY,SAmDZ,CAvKA,+GAyHY,yIAAA,CAAA,iIAAA,CAAA,+HAAA,CAAA,0KAAA,CAAA,yHAAA,CAAA,8PAmDZ,CA9CQ,uCAOI,yCAAA,CAAA,sCAAA,CAAA,qCAAA,CAAA,oCAAA,CAAA,iCA0CZ,CAjDQ,+CAEQ,SAkDhB,CApDQ,8CAKQ,SAkDhB,CA/CY,iDACI,0DAAA,CAAA,uDAAA,CAAA,sDAAA,CAAA,qDAAA,CAAA,kDAiDhB,CAlDY,2KAKQ,kGAAA,CAAA,0FAAA,CAAA,wFAAA,CAAA,kIAAA,CAAA,kFAAA,CAAA,oNAkDpB,CA7LA,6BAqJQ,WAAA,CAMA,cAAA,CAHA,WAAA,CAFA,MAAA,CAGA,gBAAA,CALA,iBAAA,CAGA,OAAA,CAGA,iBA6CR,CAvMA,kCA+JQ,mFA2CR,CA1MA,6BAkKQ,cA2CR,CA7MA,0CAyKQ,QAAA,CAFA,MAAA,CAKA,SAAA,CADA,mBAAA,CALA,iBAAA,CAIA,OAAA,CAFA,KAAA,CAQA,4BAAA,CAAA,yBAAA,CAAA,wBAAA,CAAA,uBAAA,CAAA,oBAAA,CAHA,sGAAA,CAAA,8FAAA,CAAA,4FAAA,CAAA,uIAAA,CAAA,sFAAA,CAAA,2NA2CR,CAtCQ,mDAEI,SAAA,CADA,mBAAA,CAEA,0BAAA,CAAA,uBAAA,CAAA,sBAAA,CAAA,qBAAA,CAAA,kBAwCZ,CA7NA,uDAyLY,cAAA,CACA,gBAuCZ,CAjOA,sCA8LQ,aAsCR,CApOA,4CAkMY,aAAA,CADA,iBAuCZ,CAxOA,0CAuMY,WAAA,CAEA,QAAA,CADA,iBAAA,CAEA,OAAA,CAJA,UAyCZ,CA/OA,+CA4MgB,qBAAA,CACA,sBAAA,CACA,iBAAA,CACA,oBAAA,CACA,qBAAA,CACA,SAsChB,CAnCY,uDAEQ,gCAAA,CACA,mBAAA,CACA,sDAAA,CAAA,iDAAA,CAAA,mDAAA,CAAA,8CAoCpB,CAxCY,4DAOQ,wDAAA,CAAA,mDAAA,CAAA,qDAAA,CAAA,gDAoCpB,CA/PA,2DAiOY,uBAAA,CAAA,oBAAA,CAAA,eAAA,CAIA,6BAAA,CAAA,0BAAA,CAAA,qBAAA,CAFA,WAAA,CACA,gBAAA,CAGA,sDAAA,CAAA,iDAAA,CAAA,mDAAA,CAAA,8CAAA,CADA,kBAAA,CAJA,UAsCZ,CAxQA,iEA0OY,YAiCZ,CA3QA,sDAgPY,eAAA,CACA,oBAAA,CACA,uBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CACA,UA8BZ,CAlRA,qFAwPY,0BAAA,CAAA,kBAAA,CACA,6BAAA,CAAA,qBAAA,CAFA,UAgCZ,CAvRA,4DA4PY,YA8BZ,CA1RA,4EA+PY,eAAA,CACA,oBAAA,CACA,uBAAA,CAKA,yBAAA,CAAA,iBAAA,CADA,6BAAA,CAAA,qBAAA,CAHA,WAAA,CAEA,eAAA,CAGA,mDAAA,CAAA,2CAAA,CAJA,UAkCZ,CArSA,wEA4QY,uBAAA,CAAA,kBAAA,CACA,0BAAA,CAAA,qBAAA,CAFA,UA+BZ,CA1SA,wEAgRY,eAAA,CACA,oBAAA,CACA,uBAAA,CAKA,sBAAA,CAAA,iBAAA,CADA,0BAAA,CAAA,qBAAA,CAHA,WAAA,CAEA,eAAA,CAGA,gDAAA,CAAA,2CAAA,CAJA,UAiCZ,CArTA,4CA8RgB,cAAA,CADA,eA4BhB,CAzTA,oCAmSQ,UAyBR,CA5TA,oCAsSQ,QAyBR,CA/TA,kCAySQ,UAyBR,CAlUA,oCA4SQ,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,wBAAA,CAAA,qCAAA,CAAA,qBAAA,CAAA,qBAAA,CAAA,6BAyBR,CAtUA,sCA+SY,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAIA,oBAAA,CAJA,aAAA,CAAA,SAAA,CACA,cAAA,CAEA,iBAAA,CADA,UA4BZ","sourcesContent":["#eh-syringe-popup-root {\n    text-align: initial;\n    font-size: initial;\n    line-height: initial;\n    input,\n    table,\n    th,\n    td {\n        background: inherit;\n        color: inherit;\n    }\n\n    input {\n        border: none;\n        padding: 0;\n        margin: 0;\n    }\n\n    input[type='radio'],\n    input[type='checkbox'] {\n        position: initial;\n        top: initial;\n    }\n    p {\n        padding: 0;\n        margin: 0.8em 0;\n    }\n    a {\n        background: rgba(0, 0, 0, 0);\n        transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        text-decoration: none;\n    }\n}\n\n// theme\n.theme(@background, @foreground, @shadow, @accent) {\n    @soft-accent: softlight(@accent, @background);\n\n    & {\n        border: @accent solid 1px;\n        border-radius: 6px;\n        background: @background;\n        color: @foreground;\n        box-shadow: 0 0 6px 2px @shadow;\n    }\n\n    .action {\n        background: @background;\n        color: @accent;\n\n        &.primary {\n            border-color: @accent;\n            background: @accent;\n            color: @background;\n        }\n        &.primary:hover {\n            background: softlight(@accent, @foreground);\n        }\n        &.primary:active {\n            background: softlight(@accent, @background);\n        }\n    }\n\n    #info {\n        color: @accent;\n    }\n    .hasNew {\n        color: softlight(#aa575e, @foreground);\n    }\n    a {\n        color: @accent;\n        &:hover {\n            color: softlight(@accent, @foreground);\n        }\n        &:active {\n            color: softlight(@accent, @background);\n        }\n        &.minor {\n            color: #a5a3a6;\n            &:hover {\n                color: #d2cdd4;\n            }\n            &:active {\n                color: #838185;\n            }\n        }\n    }\n    .logo svg {\n        @sa: lighten(average(@accent, @background), 10%);\n        [fill-bg] {\n            fill: @background;\n        }\n        [fill-accent] {\n            fill: @accent;\n        }\n        [fill-sa] {\n            fill: @sa;\n        }\n        [stroke-bg] {\n            stroke: @background;\n        }\n        [stroke-accent] {\n            stroke: @accent;\n        }\n        [stroke-sa] {\n            stroke: @sa;\n        }\n    }\n\n    #settingForm {\n        .checkbox-item svg path {\n            stroke: @accent;\n        }\n\n        input[type='checkbox'] {\n            border: solid 2px #a09da6;\n            &:checked {\n                border: solid 2px @accent;\n            }\n        }\n\n        input[type='range'] {\n            &::-webkit-slider-runnable-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-moz-range-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-webkit-slider-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &::-moz-range-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &:focus::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:focus::-moz-range-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:active::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n            &:active::-moz-range-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n        }\n    }\n}\n\n#eh-syringe-popup {\n    @background: rgb(240, 240, 240);\n    @foreground: #111;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #8041a6;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n:root.ehs-ex #eh-syringe-popup {\n    @background: rgb(49, 49, 49);\n    @foreground: #eee;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #ce90f1;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n#eh-syringe-popup-root {\n    overflow: hidden;\n    white-space: nowrap;\n    font-family: sans-serif;\n    font-size: 12pt;\n    user-select: none;\n    padding: 1px;\n    max-width: 400px;\n    min-width: 240px;\n    position: relative;\n\n    .hidden {\n        visibility: hidden;\n        display: none;\n    }\n\n    .ehs-panel {\n        margin: 0 auto;\n        display: flex;\n        flex-direction: column;\n\n        .header {\n            margin: 16px;\n            line-height: 1;\n            //font-size: 16px;\n            display: flex;\n            > .cushion {\n                flex: auto;\n            }\n            span {\n                color: #a5a3a6;\n            }\n        }\n\n        .content {\n            margin: 0 16px;\n            flex: auto;\n            overflow: visible;\n        }\n\n        .action {\n            display: block;\n            line-height: 36px;\n            font-size: 16px;\n            margin: 16px;\n            box-sizing: border-box;\n            position: relative;\n            user-select: none;\n            cursor: pointer;\n            outline: 0;\n            -webkit-tap-highlight-color: transparent;\n            white-space: nowrap;\n            text-decoration: none;\n            text-align: center;\n            min-width: 64px;\n            padding: 0 16px;\n            border-radius: 4px;\n            overflow: visible;\n            transform: translate3d(0, 0, 0);\n            border: 1px #ddd solid;\n            transition:\n                background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),\n                box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n\n            &.primary {\n                box-shadow:\n                    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n                    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n            }\n            &.primary:active {\n                box-shadow:\n                    0 5px 5px -3px rgba(0, 0, 0, 0.2),\n                    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n                    0 3px 14px 2px rgba(0, 0, 0, 0.12);\n            }\n            &:disabled {\n                opacity: 0.6;\n            }\n            &:focus {\n                border: 1px #888 solid;\n            }\n        }\n    }\n\n    #ehs-main-panel {\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1);\n        &.ehs-hide {\n            transform: scale(0.9);\n            opacity: 0;\n            pointer-events: none;\n        }\n    }\n\n    .logo-box {\n        overflow: hidden;\n        position: relative;\n        margin: -16px;\n        pointer-events: none;\n    }\n    .logo {\n        text-align: center;\n        margin: 20px 0;\n        transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1) rotate(-45deg);\n        #Syringe {\n            pointer-events: all;\n        }\n        #Enema {\n            opacity: 0;\n            transform-origin: 61px 86px;\n        }\n        #Enema2 {\n            opacity: 1;\n        }\n        #Enema,\n        #Enema2,\n        #PushRod {\n            transition:\n                width 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n        &.prominent {\n            #Enema2 {\n                opacity: 0;\n            }\n            #Enema {\n                opacity: 1;\n            }\n            transform: scale(1.6) rotate(0deg);\n            &.injection {\n                transform: scale(1.6) rotate(0deg) translate(-10px, 0);\n                #Enema,\n                #Enema2,\n                #PushRod {\n                    transition:\n                        width 600ms cubic-bezier(0.4, 0, 0.2, 1),\n                        transform 600ms cubic-bezier(0.4, 0, 0.2, 1);\n                }\n            }\n        }\n    }\n\n    #info {\n        position: absolute;\n        bottom: 30px;\n        left: 0;\n        right: 0;\n        height: 24px;\n        line-height: 24px;\n        text-align: center;\n        font-size: 16px;\n    }\n\n    .monospace {\n        font-family: Menlo, Consolas, 'Source Code Pro', Inconsolata, Monaco, 'Courier New', monospace;\n    }\n    table {\n        font-size: 14px;\n    }\n\n    #ehs-setting-panel {\n        position: absolute;\n        left: 0;\n        top: 0;\n        bottom: 0;\n        right: 0;\n        pointer-events: none;\n        opacity: 0;\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1.1);\n\n        &.ehs-show {\n            pointer-events: auto;\n            opacity: 1;\n            transform: scale(1);\n        }\n\n        #settingForm {\n            font-size: 10pt;\n            line-height: 12pt;\n        }\n    }\n    .checkbox-item {\n        padding: 4px 0;\n\n        label {\n            position: relative;\n            display: block;\n        }\n\n        svg {\n            width: 10px;\n            height: 10px;\n            position: absolute;\n            left: 3px;\n            top: 3px;\n            path {\n                stroke-dasharray: 1000;\n                stroke-dashoffset: 1000;\n                stroke-width: 16px;\n                stroke-linecap: round;\n                stroke-linejoin: round;\n                fill: none;\n            }\n\n            &.checked {\n                path {\n                    stroke-dasharray: 113.137, 113.137;\n                    stroke-dashoffset: 0;\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n                }\n                path + path {\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 280ms;\n                }\n            }\n        }\n\n        input[type='checkbox'] {\n            appearance: none;\n            width: 16px;\n            height: 16px;\n            margin-right: 2px;\n            box-sizing: border-box;\n            vertical-align: top;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        }\n        input[type='checkbox']:focus {\n            outline: none;\n        }\n    }\n\n    #settingForm {\n        input[type='range'] {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            border-radius: 8px;\n            width: 100%;\n        }\n        input[type='range']::-webkit-slider-runnable-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']:focus {\n            outline: none;\n        }\n        input[type='range']::-webkit-slider-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        input[type='range']::-moz-range-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']::-moz-range-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        h3 {\n            span {\n                font-weight: 400;\n                font-size: 20pt;\n            }\n        }\n    }\n    .image-level {\n        margin: 4px;\n    }\n    .range-title {\n        margin: 0;\n    }\n    .range-box {\n        margin: 5px;\n    }\n    .range-label {\n        display: flex;\n        justify-content: space-between;\n        a {\n            flex: none;\n            font-size: 10pt;\n            width: 30px;\n            text-align: center;\n            display: inline-block;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -317,18 +317,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:mediu
 
 /***/ }),
 
-/***/ 31913:
+/***/ 33244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71172);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20220);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34648);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31032);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ":root{--csstools-color-scheme--light:initial;color-scheme:light}:root.ehs-ex{--csstools-color-scheme--light: ;color-scheme:dark}.ehs-eh:root button[ehs-input]{background-color:#edeada;border:2px solid #b5a4a4;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#5c0d12;font-size:9pt;line-height:20px;margin:0 2px;min-height:26px;outline:none;padding:1px 5px 2px;white-space:pre}.ehs-ex:root button[ehs-input]{background-color:#edeada;border:2px solid #b5a4a4;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#5c0d12;font-size:9pt;line-height:20px;margin:0 2px;min-height:26px;outline:none;padding:1px 5px 2px;white-space:pre}.ehs-eh:root button[ehs-input]:disabled{color:#c2a8a4;-webkit-text-fill-color:#c2a8a4;opacity:1}.ehs-ex:root button[ehs-input]:disabled{color:#c2a8a4;-webkit-text-fill-color:#c2a8a4;opacity:1}.ehs-eh:root button[ehs-input]:enabled:hover{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-ex:root button[ehs-input]:enabled:hover{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-eh:root button[ehs-input]:enabled:focus{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-ex:root button[ehs-input]:enabled:focus{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-eh:root button[ehs-input]:enabled:active{background:-webkit-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-moz-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-o-radial-gradient(#d7d3c2,#f3f0e0)!important;background:radial-gradient(#d7d3c2,#f3f0e0)!important;border-color:#5c0d12!important}.ehs-ex:root button[ehs-input]:enabled:active{background:-webkit-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-moz-radial-gradient(#d7d3c2,#f3f0e0)!important;background:-o-radial-gradient(#d7d3c2,#f3f0e0)!important;background:radial-gradient(#d7d3c2,#f3f0e0)!important;border-color:#5c0d12!important}:root.ehs-ex button[ehs-input]{background-color:#34353b;border-color:#8d8d8d;color:#f1f1f1}:root.ehs-ex button[ehs-input]:enabled:focus,:root.ehs-ex button[ehs-input]:enabled:hover{background-color:#43464e!important;border-color:#aeaeae!important}:root.ehs-ex button[ehs-input]:enabled:active{background:-webkit-radial-gradient(#1a1a1a,#43464e)!important;background:-moz-radial-gradient(#1a1a1a,#43464e)!important;background:-o-radial-gradient(#1a1a1a,#43464e)!important;background:radial-gradient(#1a1a1a,#43464e)!important;border-color:#c3c3c3!important}:root.ehs-ex button[ehs-input]:disabled{color:#8a8a8a;-webkit-text-fill-color:#8a8a8a}[hidden]{display:none}:root.ehs-hide-icon [ehs-emoji],:root.ehs-hide-icon [ehs-icon]{display:none}body div#gright{z-index:3}body #expunge_new button[ehs-input][type=submit]{margin:6px auto 2px}body #gj{margin:3px 4px}body #gmid{height:auto}body .g2{padding-bottom:20px}body .gsp{padding-top:10px}body td.tc{white-space:nowrap}body div.gt,body div.gtl,body div.gtw{line-height:16px;white-space:nowrap}body div.c6{text-align:left}[ehs-emoji],[ehs-icon]{margin:-.25em 1px!important;max-height:1.25em!important;max-width:2em!important}[ehs-icon]{vertical-align:middle}.ehs-new-tag-complete-translate{display:block;font-weight:bolder;margin-top:4px;opacity:.8;pointer-events:none}.ehs-new-tag-complete-translate:empty{display:none}", "",{"version":3,"sources":["webpack://./src/plugin/syringe/index.less"],"names":[],"mappings":"AAEA,MACI,sCAAA,CAAA,kBADJ,CAEI,aACI,gCAAA,CAAA,iBAAR,CAKI,+BASI,wBAAA,CAJA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAEA,aAAA,CADA,aAAA,CALA,gBAAA,CAEA,YAAA,CAHA,eAAA,CASA,YAAA,CAPA,mBAAA,CAQA,eAHR,CARI,+BASI,wBAAA,CAJA,wBAAA,CACA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAEA,aAAA,CADA,aAAA,CALA,gBAAA,CAEA,YAAA,CAHA,eAAA,CASA,YAAA,CAPA,mBAAA,CAQA,eAHR,CAKQ,wCACI,aAAA,CACA,+BAAA,CACA,SAHZ,CAAQ,wCACI,aAAA,CACA,+BAAA,CACA,SAHZ,CAMQ,6CAEI,kCAAA,CACA,8BAJZ,CACQ,6CAEI,kCAAA,CACA,8BAJZ,CACQ,6CAEI,kCAAA,CACA,8BAJZ,CACQ,6CAEI,kCAAA,CACA,8BAJZ,CAOQ,8CACI,6DAAA,CAAA,0DAAA,CAAA,wDAAA,CAAA,qDAAA,CACA,8BALZ,CAGQ,8CACI,6DAAA,CAAA,0DAAA,CAAA,wDAAA,CAAA,qDAAA,CACA,8BALZ,CASI,+BAGI,wBAAA,CAFA,oBAAA,CACA,aANR,CASQ,0FAEI,kCAAA,CACA,8BAPZ,CAUQ,8CACI,6DAAA,CAAA,0DAAA,CAAA,wDAAA,CAAA,qDAAA,CACA,8BARZ,CAWQ,wCACI,aAAA,CACA,+BATZ,CAcA,SACI,YAZJ,CAeA,+DAGQ,YAdR,CAkBA,gBAEQ,SAjBR,CAeA,iDAOQ,mBAnBR,CAYA,SAYQ,cArBR,CASA,WAiBQ,WAvBR,CAMA,SAsBQ,mBAzBR,CAGA,UAyBQ,gBAzBR,CAAA,WA8BQ,kBA3BR,CAHA,sCAqCQ,gBAAA,CACA,kBA7BR,CATA,YA2CQ,eA/BR,CAmCA,uBAII,2BAAA,CAFA,2BAAA,CACA,uBAhCJ,CAoCA,WACI,qBAlCJ,CAqCA,gCACI,aAAA,CAMA,kBAAA,CADA,cAAA,CAEA,UAAA,CACA,mBAvCJ,CAgCI,sCACI,YA9BR","sourcesContent":["// 全局注入样式\n\n:root {\n    color-scheme: light;\n    &.ehs-ex {\n        color-scheme: dark;\n    }\n}\n\nbutton[ehs-input] {\n    :is(:root.ehs-eh, :root.ehs-ex) & {\n        min-height: 26px;\n        line-height: 20px;\n        padding: 1px 5px 2px;\n        margin: 0 2px;\n        border: 2px solid #b5a4a4;\n        border-radius: 3px;\n        font-size: 9pt;\n        color: #5c0d12;\n        background-color: #edeada;\n        outline: none;\n        white-space: pre;\n\n        &:disabled {\n            color: #c2a8a4;\n            -webkit-text-fill-color: #c2a8a4;\n            opacity: 1;\n        }\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #f3f0e0 !important;\n            border-color: #977273 !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#d7d3c2, #f3f0e0) !important;\n            border-color: #5c0d12 !important;\n        }\n    }\n\n    :root.ehs-ex & {\n        border-color: #8d8d8d;\n        color: #f1f1f1;\n        background-color: #34353b;\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #43464e !important;\n            border-color: #aeaeae !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#1a1a1a, #43464e) !important;\n            border-color: #c3c3c3 !important;\n        }\n\n        &:disabled {\n            color: #8a8a8a;\n            -webkit-text-fill-color: #8a8a8a;\n        }\n    }\n}\n\n[hidden] {\n    display: none;\n}\n\n:root.ehs-hide-icon {\n    [ehs-icon],\n    [ehs-emoji] {\n        display: none;\n    }\n}\n\nbody {\n    div#gright {\n        z-index: 3;\n    }\n\n    // 提交删除申请按钮\n    #expunge_new button[ehs-input][type='submit'] {\n        margin: 6px auto 2px;\n    }\n\n    // 日文标题\n    #gj {\n        margin: 3px 4px;\n    }\n\n    // 信息框\n    #gmid {\n        height: auto;\n    }\n\n    // 信息框右侧菜单\n    .g2 {\n        padding-bottom: 20px;\n    }\n    .gsp {\n        padding-top: 10px;\n    }\n\n    // 标签组名\n    td.tc {\n        white-space: nowrap;\n    }\n\n    // 标签\n    div.gtl,\n    div.gtw,\n    div.gt {\n        line-height: 16px;\n        white-space: nowrap;\n    }\n\n    // 评论内容\n    div.c6 {\n        text-align: left;\n    }\n}\n\n[ehs-icon],\n[ehs-emoji] {\n    max-height: 1.25em !important;\n    max-width: 2em !important;\n    margin: -0.25em 1px !important;\n}\n\n[ehs-icon] {\n    vertical-align: middle;\n}\n\n.ehs-new-tag-complete-translate {\n    display: block;\n    &:empty {\n        display: none;\n    }\n\n    margin-top: 4px;\n    font-weight: bolder;\n    opacity: 0.8;\n    pointer-events: none;\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -337,18 +337,18 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root{--csstools-color-scheme--light:i
 
 /***/ }),
 
-/***/ 98492:
+/***/ 45989:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71172);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20220);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34648);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31032);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".eh-syringe-lite-auto-complete-list{background:#f8f4ec;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);-moz-box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);color:#5c0d12;display:block;max-height:50vh;min-height:20px;overflow:auto;padding:8px 0;position:fixed;scroll-padding:16px;scrollbar-width:thin;-moz-text-align-last:left;text-align-last:left;z-index:10}:root.ehs-ex .eh-syringe-lite-auto-complete-list{background:#2b2b2b;color:#f1f1f1}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list.exclude .auto-complete-item .en-name:before{content:\"- \"}.eh-syringe-lite-auto-complete-list .auto-complete-item{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;line-height:24px;padding:0 8px;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;cursor:pointer;justify-content:space-between}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item>span{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;-ms-flex:none;flex:none}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8ecf3}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item.selected,:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#3e3f40}.eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{color:#5f6368;padding:0 8px}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{color:#d9d9d9}.eh-syringe-lite-auto-complete-list mark{background:#f5f500;color:inherit}:root.ehs-ex .eh-syringe-lite-auto-complete-list mark{background:#727200}", "",{"version":3,"sources":["webpack://./src/plugin/tag-tip/index.less"],"names":[],"mappings":"AAAA,oCACI,kBAAA,CAWA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CACA,wGAAA,CAAA,qGAAA,CAAA,gGAAA,CAXA,aAAA,CAeA,aAAA,CACA,eAAA,CARA,eAAA,CASA,aAAA,CACA,aAAA,CAXA,cAAA,CAYA,mBAAA,CACA,oBAAA,CAXA,yBAAA,CAAA,oBAAA,CAYA,UARJ,CAXI,iDACI,kBAAA,CACA,aAaR,CAMI,sFAEI,YAJR,CAOI,gFAGY,YAPhB,CA1BA,wDAyCQ,mBAAA,CAAA,oBAAA,CAAA,gBAAA,CAAA,mBAAA,CAAA,YAAA,CADA,gBAAA,CADA,aAAA,CAGA,wBAAA,CAAA,qCAAA,CAAA,qBAAA,CAAA,qBAAA,CACA,cAAA,CADA,6BATR,CAjCA,4DA6CY,8BAAA,CACA,UAAA,CACA,uBATZ,CAtCA,6DAmDY,kBAAA,CAAA,iBAAA,CAAA,eAAA,CAAA,aAAA,CAAA,SAVZ,CAaQ,+HAEI,kBAXZ,CAaY,yJACI,kBAVhB,CAjDA,iEAgEY,aAAA,CADA,aAVZ,CAaY,8EACI,aAXhB,CAxDA,yCA0EQ,kBAAA,CADA,aAbR,CAeQ,sDACI,kBAbZ","sourcesContent":[".eh-syringe-lite-auto-complete-list {\n    background: #f8f4ec;\n    color: #5c0d12;\n\n    :root.ehs-ex & {\n        background: #2b2b2b;\n        color: #f1f1f1;\n    }\n\n    position: fixed;\n    min-height: 20px;\n    text-align-last: left;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    display: block;\n    max-height: 50vh;\n    overflow: auto;\n    padding: 8px 0;\n    scroll-padding: 16px;\n    scrollbar-width: thin;\n    z-index: 10;\n\n    &[hidden],\n    &:empty {\n        display: none;\n    }\n\n    &.exclude {\n        .auto-complete-item {\n            .en-name::before {\n                content: '- ';\n            }\n        }\n    }\n\n    .auto-complete-item {\n        padding: 0 8px;\n        line-height: 24px;\n        display: flex;\n        justify-content: space-between;\n        cursor: pointer;\n        img {\n            display: inline-block !important;\n            height: 8pt;\n            vertical-align: text-top;\n        }\n\n        > span {\n            flex: none;\n        }\n\n        &:hover,\n        &.selected {\n            background: #e8ecf3;\n\n            :root.ehs-ex & {\n                background: #3e3f40;\n            }\n        }\n        .en-name {\n            padding: 0 8px;\n            color: #5f6368;\n\n            :root.ehs-ex & {\n                color: #d9d9d9;\n            }\n        }\n    }\n\n    mark {\n        color: inherit;\n        background: #f5f500;\n        :root.ehs-ex & {\n            background: #727200;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -357,23 +357,23 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".eh-syringe-lite-auto-complete-list{ba
 
 /***/ }),
 
-/***/ 37274:
+/***/ 55739:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71172);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20220);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(58871);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34648);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31032);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(67075);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(79334), __webpack_require__.b);
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_0_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_97_1_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-button{background:50%/65% no-repeat #fff url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");border:2px solid #6e066e;-webkit-border-radius:36px;-moz-border-radius:36px;border-radius:36px;-webkit-box-shadow:0 0 2px 1px rgba(0,0,0,.5);-moz-box-shadow:0 0 2px 1px rgba(0,0,0,.5);box-shadow:0 0 2px 1px rgba(0,0,0,.5);height:36px;position:fixed;-ms-touch-action:none;touch-action:none;width:36px;z-index:10}#eh-syringe-popup-button:hover{cursor:pointer}:root.ehs-ex #eh-syringe-popup-button{background-color:#bbb;border-color:#926a92}#eh-syringe-popup-badge{background:#444;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;color:#fff;font-size:12px;height:14px;padding:2px 4px;position:absolute;right:-10px;top:-10px}#eh-syringe-popup-back{background:rgba(0,0,0,.3);bottom:0;left:0;opacity:0;pointer-events:none;position:fixed;right:0;top:0;-webkit-transition:visibility,opacity .4s;-o-transition:visibility,opacity .4s;-moz-transition:visibility,opacity .4s;transition:visibility,opacity .4s;visibility:hidden;z-index:1000}#eh-syringe-popup-back.closing,#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{pointer-events:auto;visibility:visible}#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{opacity:1}#eh-syringe-popup-back.closing{opacity:0}#eh-syringe-popup{bottom:72px;position:absolute;right:12px}", "",{"version":3,"sources":["webpack://./src/user-script/popup-host.less"],"names":[],"mappings":"AAAA,yBAUI,yEAAA,CAFA,wBAAA,CADA,0BAAA,CAAA,uBAAA,CAAA,kBAAA,CAEA,6CAAA,CAAA,0CAAA,CAAA,qCAAA,CAHA,WAAA,CALA,cAAA,CACA,qBAAA,CAAA,iBAAA,CAGA,UAAA,CAMA,UADJ,CAEI,+BACI,cAAR,CAGI,sCACI,qBAAA,CACA,oBADR,CAKA,wBAQI,eAAA,CADA,yBAAA,CAAA,sBAAA,CAAA,iBAAA,CAEA,UAAA,CAPA,cAAA,CADA,WAAA,CAKA,eAAA,CAHA,iBAAA,CACA,WAAA,CACA,SACJ,CAMA,uBAOI,yBAAA,CALA,QAAA,CAGA,MAAA,CAKA,SAAA,CADA,mBAAA,CARA,cAAA,CAEA,OAAA,CACA,KAAA,CAOA,yCAAA,CAAA,oCAAA,CAAA,sCAAA,CAAA,iCAAA,CAHA,iBAAA,CAFA,YACJ,CAQI,0FAII,mBAAA,CADA,kBALR,CAYI,2DACI,SAPR,CASI,+BACI,SAPR,CAWA,kBAEI,WAAA,CADA,iBAAA,CAEA,UATJ","sourcesContent":["#eh-syringe-popup-button {\n    position: fixed;\n    touch-action: none;\n    // bottom: 12px;\n    // right: 12px;\n    width: 36px;\n    height: 36px;\n    border-radius: 36px;\n    border: rgb(110, 6, 110) 2px solid;\n    box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px 1px;\n    background: center/65% no-repeat white url('../assets/logo.svg');\n    z-index: 10;\n    &:hover {\n        cursor: pointer;\n    }\n\n    :root.ehs-ex & {\n        background-color: rgb(187, 187, 187);\n        border-color: rgb(146, 106, 146);\n    }\n}\n\n#eh-syringe-popup-badge {\n    height: 14px;\n    font-size: 12px;\n    position: absolute;\n    right: -10px;\n    top: -10px;\n    padding: 2px 4px;\n    border-radius: 4px;\n    background: #444;\n    color: white;\n}\n\n#eh-syringe-popup-back {\n    position: fixed;\n    bottom: 0;\n    right: 0;\n    top: 0;\n    left: 0;\n    z-index: 1000;\n    background: rgba(0, 0, 0, 0.3);\n    visibility: hidden;\n    pointer-events: none;\n    opacity: 0;\n    transition:\n        visibility,\n        opacity 0.4s;\n\n    &.open,\n    &.opening,\n    &.closing {\n        visibility: visible;\n        pointer-events: initial;\n    }\n\n    &.open {\n        opacity: 1;\n    }\n    &.opening {\n        opacity: 1;\n    }\n    &.closing {\n        opacity: 0;\n    }\n}\n\n#eh-syringe-popup {\n    position: absolute;\n    bottom: 12px + 36px + 24px;\n    right: 12px;\n}\n"],"sourceRoot":""}]);
 // Exports
@@ -382,7 +382,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-button{background:50
 
 /***/ }),
 
-/***/ 43226:
+/***/ 6741:
 /***/ (function(module) {
 
 "use strict";
@@ -473,7 +473,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 24313:
+/***/ 22658:
 /***/ (function(module) {
 
 "use strict";
@@ -514,7 +514,7 @@ module.exports = insertBySelector;
 
 /***/ }),
 
-/***/ 54574:
+/***/ 99369:
 /***/ (function(module) {
 
 "use strict";
@@ -531,7 +531,7 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ 14786:
+/***/ 73533:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 "use strict";
@@ -548,7 +548,7 @@ module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
 
-/***/ 39387:
+/***/ 386:
 /***/ (function(module) {
 
 "use strict";
@@ -616,7 +616,7 @@ module.exports = domAPI;
 
 /***/ }),
 
-/***/ 60531:
+/***/ 85750:
 /***/ (function(module) {
 
 "use strict";
@@ -659,360 +659,360 @@ module.exports = __webpack_require__(26507);
 
 /***/ }),
 
-/***/ 75729:
+/***/ 57478:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(72939);
 
 /***/ }),
 
-/***/ 11293:
+/***/ 33510:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(73103);
 
 /***/ }),
 
-/***/ 27812:
+/***/ 10551:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(21606);
 
 /***/ }),
 
-/***/ 43652:
+/***/ 96529:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(4942);
 
 /***/ }),
 
-/***/ 53215:
+/***/ 92334:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(14297);
 
 /***/ }),
 
-/***/ 48162:
+/***/ 32182:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(31260);
 
 /***/ }),
 
-/***/ 51842:
+/***/ 53991:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19296);
 
 /***/ }),
 
-/***/ 13189:
+/***/ 84444:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(58231);
 
 /***/ }),
 
-/***/ 49800:
+/***/ 87405:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(57274);
 
 /***/ }),
 
-/***/ 90384:
+/***/ 90497:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(68346);
 
 /***/ }),
 
-/***/ 68046:
+/***/ 71635:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(18524);
 
 /***/ }),
 
-/***/ 76497:
+/***/ 3824:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(7183);
 
 /***/ }),
 
-/***/ 47987:
+/***/ 76142:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(75405);
 
 /***/ }),
 
-/***/ 46497:
+/***/ 27826:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(94663);
 
 /***/ }),
 
-/***/ 60521:
+/***/ 33212:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(13483);
 
 /***/ }),
 
-/***/ 95181:
+/***/ 22810:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(74283);
 
 /***/ }),
 
-/***/ 41039:
+/***/ 36922:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(29601);
 
 /***/ }),
 
-/***/ 89299:
+/***/ 9586:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(67945);
 
 /***/ }),
 
-/***/ 78159:
+/***/ 28046:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(40377);
 
 /***/ }),
 
-/***/ 85815:
+/***/ 32624:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(35517);
 
 /***/ }),
 
-/***/ 34035:
+/***/ 13242:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(97497);
 
 /***/ }),
 
-/***/ 76305:
+/***/ 51432:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(15611);
 
 /***/ }),
 
-/***/ 59223:
+/***/ 34032:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(68393);
 
 /***/ }),
 
-/***/ 28541:
+/***/ 14088:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19524);
 
 /***/ }),
 
-/***/ 52349:
+/***/ 47216:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(61015);
 
 /***/ }),
 
-/***/ 25849:
+/***/ 68862:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(26755);
 
 /***/ }),
 
-/***/ 38894:
+/***/ 29915:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(21968);
 
 /***/ }),
 
-/***/ 68783:
+/***/ 1182:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(13225);
 
 /***/ }),
 
-/***/ 76272:
+/***/ 51051:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(88433);
 
 /***/ }),
 
-/***/ 76312:
+/***/ 6775:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(64658);
 
 /***/ }),
 
-/***/ 65722:
+/***/ 77077:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(248);
 
 /***/ }),
 
-/***/ 17897:
+/***/ 35424:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(5447);
 
 /***/ }),
 
-/***/ 11222:
+/***/ 61263:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(46316);
 
 /***/ }),
 
-/***/ 24880:
+/***/ 3913:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(79818);
 
 /***/ }),
 
-/***/ 26895:
+/***/ 89550:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(74129);
 
 /***/ }),
 
-/***/ 84444:
+/***/ 64181:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(9438);
 
 /***/ }),
 
-/***/ 15365:
+/***/ 97256:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(93687);
 
 /***/ }),
 
-/***/ 81152:
+/***/ 62909:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(82258);
 
 /***/ }),
 
-/***/ 25022:
+/***/ 97263:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(93719);
 
 /***/ }),
 
-/***/ 56464:
+/***/ 66445:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(10070);
 
 /***/ }),
 
-/***/ 52669:
+/***/ 552:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(6055);
 
 /***/ }),
 
-/***/ 74589:
+/***/ 84070:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(57527);
 
 /***/ }),
 
-/***/ 47865:
+/***/ 42348:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(36759);
 
 /***/ }),
 
-/***/ 48123:
+/***/ 24658:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19454);
 
 /***/ }),
 
-/***/ 40567:
+/***/ 64832:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(25310);
 
 /***/ }),
 
-/***/ 21075:
+/***/ 34046:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(99313);
 
 /***/ }),
 
-/***/ 84263:
+/***/ 26944:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(24381);
 
 /***/ }),
 
-/***/ 58796:
+/***/ 95361:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(18078);
 
 /***/ }),
 
-/***/ 85862:
+/***/ 28723:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(47511);
 
 /***/ }),
 
-/***/ 4328:
+/***/ 67199:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 module.exports = __webpack_require__(45913);
 
 /***/ }),
 
-/***/ 90047:
+/***/ 20674:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
-var _typeof = (__webpack_require__(1192)["default"]);
+var _typeof = (__webpack_require__(97409)["default"]);
 var _Object$defineProperty = __webpack_require__(61666);
 var _Symbol = __webpack_require__(11566);
 var _Object$create = __webpack_require__(30937);
@@ -1334,7 +1334,7 @@ module.exports = _regeneratorRuntime, module.exports.__esModule = true, module.e
 
 /***/ }),
 
-/***/ 1192:
+/***/ 97409:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var _Symbol = __webpack_require__(11566);
@@ -1352,14 +1352,14 @@ module.exports = _typeof, module.exports.__esModule = true, module.exports["defa
 
 /***/ }),
 
-/***/ 4242:
+/***/ 10785:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var _globalThis = __webpack_require__(81291);
-var _typeof = __webpack_require__(1192);
+var _typeof = __webpack_require__(97409);
 // TODO(Babel 8): Remove this file.
 
-var runtime = __webpack_require__(90047)();
+var runtime = __webpack_require__(20674)();
 module.exports = runtime;
 
 // Copied from https://github.com/facebook/regenerator/blob/main/packages/runtime/runtime.js#L736=
@@ -28845,46 +28845,46 @@ var reflect = __webpack_require__(71533);
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-property.js
-var define_property = __webpack_require__(76312);
+var define_property = __webpack_require__(6775);
 var define_property_default = /*#__PURE__*/__webpack_require__.n(define_property);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/find.js
-var find = __webpack_require__(49800);
+var find = __webpack_require__(87405);
 var find_default = /*#__PURE__*/__webpack_require__.n(find);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/for-each.js
-var for_each = __webpack_require__(90384);
+var for_each = __webpack_require__(90497);
 var for_each_default = /*#__PURE__*/__webpack_require__.n(for_each);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/splice.js
-var splice = __webpack_require__(78159);
+var splice = __webpack_require__(28046);
 var splice_default = /*#__PURE__*/__webpack_require__.n(splice);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/index-of.js
-var index_of = __webpack_require__(76497);
+var index_of = __webpack_require__(3824);
 var index_of_default = /*#__PURE__*/__webpack_require__.n(index_of);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/assign.js
-var object_assign = __webpack_require__(38894);
+var object_assign = __webpack_require__(29915);
 var assign_default = /*#__PURE__*/__webpack_require__.n(object_assign);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/map.js
-var map = __webpack_require__(46497);
+var map = __webpack_require__(27826);
 var map_default = /*#__PURE__*/__webpack_require__.n(map);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/array/is-array.js
-var is_array = __webpack_require__(11293);
+var is_array = __webpack_require__(33510);
 var is_array_default = /*#__PURE__*/__webpack_require__.n(is_array);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/filter.js
-var filter = __webpack_require__(13189);
+var filter = __webpack_require__(84444);
 var filter_default = /*#__PURE__*/__webpack_require__.n(filter);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/bind.js
-var bind = __webpack_require__(43652);
+var bind = __webpack_require__(96529);
 var bind_default = /*#__PURE__*/__webpack_require__.n(bind);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-prototype-of.js
-var get_prototype_of = __webpack_require__(24880);
+var get_prototype_of = __webpack_require__(3913);
 var get_prototype_of_default = /*#__PURE__*/__webpack_require__.n(get_prototype_of);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/includes.js
-var includes = __webpack_require__(68046);
+var includes = __webpack_require__(71635);
 var includes_default = /*#__PURE__*/__webpack_require__.n(includes);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/set-prototype-of.js
-var set_prototype_of = __webpack_require__(84444);
+var set_prototype_of = __webpack_require__(64181);
 var set_prototype_of_default = /*#__PURE__*/__webpack_require__.n(set_prototype_of);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/create.js
-var create = __webpack_require__(68783);
+var create = __webpack_require__(1182);
 var create_default = /*#__PURE__*/__webpack_require__.n(create);
 ;// ./node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/esm5/token.class.js
 /**
@@ -29011,7 +29011,7 @@ var CannotInstantiateValueError = /** @class */function (_super) {
 }(Error);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol.js
-var symbol = __webpack_require__(40567);
+var symbol = __webpack_require__(64832);
 var symbol_default = /*#__PURE__*/__webpack_require__.n(symbol);
 ;// ./node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/esm5/empty.const.js
 
@@ -29506,7 +29506,7 @@ function Service(optionsOrServiceIdentifier) {
 
 var services_Container = Container.of('default');
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/ends-with.js
-var ends_with = __webpack_require__(48162);
+var ends_with = __webpack_require__(32182);
 var ends_with_default = /*#__PURE__*/__webpack_require__.n(ends_with);
 ;// ./src/utils/hosts.ts
 
@@ -29545,10 +29545,10 @@ var REPO = 'repo.e-hentai.org';
 var HATH = 'hath.network';
 var FORUM = 'forums.e-hentai.org';
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/promise.js
-var promise = __webpack_require__(25022);
+var promise = __webpack_require__(97263);
 var promise_default = /*#__PURE__*/__webpack_require__.n(promise);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/set-timeout.js
-var set_timeout = __webpack_require__(47865);
+var set_timeout = __webpack_require__(42348);
 var set_timeout_default = /*#__PURE__*/__webpack_require__.n(set_timeout);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.39.0/node_modules/core-js-pure/full/object/define-property.js
 var object_define_property = __webpack_require__(7708);
@@ -29614,7 +29614,7 @@ function _classCallCheck(a, n) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/concat.js
-var concat = __webpack_require__(53215);
+var concat = __webpack_require__(92334);
 var concat_default = /*#__PURE__*/__webpack_require__.n(concat);
 ;// ./node_modules/.pnpm/tslib@2.8.1/node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
@@ -30111,16 +30111,16 @@ function _asyncToGenerator(n) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/starts-with.js
-var starts_with = __webpack_require__(85815);
+var starts_with = __webpack_require__(32624);
 var starts_with_default = /*#__PURE__*/__webpack_require__.n(starts_with);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/regenerator/index.js
-var regenerator = __webpack_require__(4242);
+var regenerator = __webpack_require__(10785);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/slice.js
-var slice = __webpack_require__(95181);
+var slice = __webpack_require__(22810);
 var slice_default = /*#__PURE__*/__webpack_require__.n(slice);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/array/from.js
-var from = __webpack_require__(75729);
+var from = __webpack_require__(57478);
 var from_default = /*#__PURE__*/__webpack_require__.n(from);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js/get-iterator-method.js
 var get_iterator_method = __webpack_require__(49380);
@@ -30129,13 +30129,13 @@ var get_iterator_method_default = /*#__PURE__*/__webpack_require__.n(get_iterato
 var global_this = __webpack_require__(81291);
 var global_this_default = /*#__PURE__*/__webpack_require__.n(global_this);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js
-var instance_keys = __webpack_require__(47987);
+var instance_keys = __webpack_require__(76142);
 var keys_default = /*#__PURE__*/__webpack_require__.n(instance_keys);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/keys.js
-var object_keys = __webpack_require__(26895);
+var object_keys = __webpack_require__(89550);
 var object_keys_default = /*#__PURE__*/__webpack_require__.n(object_keys);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/construct.js
-var construct = __webpack_require__(56464);
+var construct = __webpack_require__(66445);
 var construct_default = /*#__PURE__*/__webpack_require__.n(construct);
 ;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/assertThisInitialized.js
 function _assertThisInitialized(e) {
@@ -30199,13 +30199,13 @@ function _inherits(t, e) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/map.js
-var core_js_stable_map = __webpack_require__(28541);
+var core_js_stable_map = __webpack_require__(14088);
 var core_js_stable_map_default = /*#__PURE__*/__webpack_require__.n(core_js_stable_map);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/values.js
-var instance_values = __webpack_require__(76305);
+var instance_values = __webpack_require__(51432);
 var values_default = /*#__PURE__*/__webpack_require__.n(instance_values);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/json/stringify.js
-var stringify = __webpack_require__(59223);
+var stringify = __webpack_require__(34032);
 var stringify_default = /*#__PURE__*/__webpack_require__.n(stringify);
 ;// ./node_modules/.pnpm/idb-keyval@6.2.1/node_modules/idb-keyval/dist/index.js
 
@@ -31184,7 +31184,7 @@ function _toConsumableArray(r) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/set.js
-var set = __webpack_require__(48123);
+var set = __webpack_require__(24658);
 var set_default = /*#__PURE__*/__webpack_require__.n(set);
 ;// ./src/providers/common/messaging.ts
 
@@ -31388,26 +31388,26 @@ var messaging_Messaging = /*#__PURE__*/function () {
 }();
 messaging_Messaging = __decorate([Service(), __metadata("design:paramtypes", [Logger])], messaging_Messaging);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(43226);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.1/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(6741);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.0/node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(39387);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.1/node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(386);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.0/node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(24313);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.1/node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(22658);
 var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.0/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(14786);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.1/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(73533);
 var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.0/node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(54574);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.1/node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(99369);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.0/node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(60531);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.97.1/node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(85750);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.0/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
-var introduce = __webpack_require__(42417);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.1/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.1/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.1/node_modules/less-loader/dist/cjs.js!./src/plugin/introduce/index.less
+var introduce = __webpack_require__(73508);
 ;// ./src/plugin/introduce/index.less
 
       
@@ -31436,10 +31436,10 @@ var introduce_update = injectStylesIntoStyleTag_default()(introduce/* default */
        /* harmony default export */ var plugin_introduce = (introduce/* default */.A && introduce/* default */.A.locals ? introduce/* default */.A.locals : undefined);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js
-var trim = __webpack_require__(34035);
+var trim = __webpack_require__(13242);
 var trim_default = /*#__PURE__*/__webpack_require__.n(trim);
 // EXTERNAL MODULE: ./node_modules/.pnpm/escape-html@1.0.3/node_modules/escape-html/index.js
-var escape_html = __webpack_require__(61155);
+var escape_html = __webpack_require__(77134);
 var escape_html_default = /*#__PURE__*/__webpack_require__.n(escape_html);
 ;// ./node_modules/.pnpm/emoji-regex@10.4.0/node_modules/emoji-regex/index.mjs
 /* harmony default export */ var emoji_regex = (() => {
@@ -32313,7 +32313,7 @@ var observable = function () {
   return typeof (symbol_default()) === 'function' && (symbol_default()).observable || '@@observable';
 }();
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/reduce.js
-var reduce = __webpack_require__(60521);
+var reduce = __webpack_require__(33212);
 var reduce_default = /*#__PURE__*/__webpack_require__.n(reduce);
 ;// ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/util/identity.js
 function identity(x) {
@@ -32451,7 +32451,7 @@ function isInteropObservable(input) {
   return isFunction(input[observable]);
 }
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/async-iterator.js
-var async_iterator = __webpack_require__(21075);
+var async_iterator = __webpack_require__(34046);
 var async_iterator_default = /*#__PURE__*/__webpack_require__.n(async_iterator);
 ;// ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/util/isAsyncIterable.js
 
@@ -32465,7 +32465,7 @@ function createInvalidObservableTypeError(input) {
   return new TypeError("You provided " + (input !== null && _typeof(input) === 'object' ? 'an invalid object' : "'" + input + "'") + " where a stream was expected. You can provide an Observable, Promise, ReadableStream, Array, AsyncIterable, or Iterable.");
 }
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/iterator.js
-var symbol_iterator = __webpack_require__(58796);
+var symbol_iterator = __webpack_require__(95361);
 var symbol_iterator_default = /*#__PURE__*/__webpack_require__.n(symbol_iterator);
 ;// ./node_modules/.pnpm/rxjs@7.8.1/node_modules/rxjs/dist/esm5/internal/symbol/iterator.js
 
@@ -32959,8 +32959,8 @@ function filter_filter(predicate, thisArg) {
     }));
   });
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.0/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
-var tag_tip = __webpack_require__(98492);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.1/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.1/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.1/node_modules/less-loader/dist/cjs.js!./src/plugin/tag-tip/index.less
+var tag_tip = __webpack_require__(45989);
 ;// ./src/plugin/tag-tip/index.less
 
       
@@ -33336,10 +33336,10 @@ function slicedToArray_slicedToArray(r, e) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/url.js
-var core_js_stable_url = __webpack_require__(85862);
+var core_js_stable_url = __webpack_require__(28723);
 var url_default = /*#__PURE__*/__webpack_require__.n(core_js_stable_url);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/sort.js
-var sort = __webpack_require__(89299);
+var sort = __webpack_require__(9586);
 var sort_default = /*#__PURE__*/__webpack_require__.n(sort);
 ;// ./src/services/ui-translation/helper.ts
 
@@ -34241,9 +34241,299 @@ merge(/^\/hathperks\.php/, undefined, {
   'Dæmon Duality IX': '双重守护精灵 IX',
   'Increases attack damage and magic damage by 50%.': '提升攻击伤害和魔法伤害各 50%。'
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-symbols.js
+var get_own_property_symbols = __webpack_require__(61263);
+var get_own_property_symbols_default = /*#__PURE__*/__webpack_require__.n(get_own_property_symbols);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js
+var get_own_property_descriptor = __webpack_require__(77077);
+var get_own_property_descriptor_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptor);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptors.js
+var get_own_property_descriptors = __webpack_require__(35424);
+var get_own_property_descriptors_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptors);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js
+var define_properties = __webpack_require__(51051);
+var define_properties_default = /*#__PURE__*/__webpack_require__.n(define_properties);
+;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/defineProperty.js
+
+
+function _defineProperty(e, r, t) {
+  return (r = toPropertyKey(r)) in e ? object_define_property(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
+}
+
+;// ./src/services/ui-translation/data/_browsingcountry.ts
+var BROWSING_COUNTRY = {
+  Afghanistan: 'Afghanistan (阿富汗)',
+  'Aland Islands': 'Aland Islands (奥兰群岛)',
+  Albania: 'Albania (阿尔巴尼亚)',
+  Algeria: 'Algeria (阿尔及利亚)',
+  'American Samoa': 'American Samoa (美属萨摩亚)',
+  Andorra: 'Andorra (安道尔)',
+  Angola: 'Angola (安哥拉)',
+  Anguilla: 'Anguilla (安圭拉)',
+  Antarctica: 'Antarctica (南极洲)',
+  'Antigua and Barbuda': 'Antigua and Barbuda (安提瓜和巴布达)',
+  Argentina: 'Argentina (阿根廷)',
+  Armenia: 'Armenia (亚美尼亚)',
+  Aruba: 'Aruba (阿鲁巴)',
+  'Asia/Pacific Region': 'Asia/Pacific Region (亚太地区)',
+  Australia: 'Australia (澳大利亚)',
+  Austria: 'Austria (奥地利)',
+  Azerbaijan: 'Azerbaijan (阿塞拜疆)',
+  Bahamas: 'Bahamas (巴哈马)',
+  Bahrain: 'Bahrain (巴林)',
+  Bangladesh: 'Bangladesh (孟加拉国)',
+  Barbados: 'Barbados (巴巴多斯)',
+  Belarus: 'Belarus (白俄罗斯)',
+  Belgium: 'Belgium (比利时)',
+  Belize: 'Belize (伯利兹)',
+  Benin: 'Benin (贝宁)',
+  Bermuda: 'Bermuda (百慕大)',
+  Bhutan: 'Bhutan (不丹)',
+  Bolivia: 'Bolivia (玻利维亚)',
+  'Bonaire Saint Eustatius and Saba': 'Bonaire Saint Eustatius and Saba (博内尔、圣尤斯特歇斯和萨巴)',
+  'Bosnia and Herzegovina': 'Bosnia and Herzegovina (波斯尼亚和黑塞哥维那)',
+  Botswana: 'Botswana (博茨瓦纳)',
+  'Bouvet Island': 'Bouvet Island (布维岛)',
+  Brazil: 'Brazil (巴西)',
+  'British Indian Ocean Territory': 'British Indian Ocean Territory (英属印度洋领地)',
+  'Brunei Darussalam': 'Brunei Darussalam (文莱)',
+  Bulgaria: 'Bulgaria (保加利亚)',
+  'Burkina Faso': 'Burkina Faso (布基纳法索)',
+  Burundi: 'Burundi (布隆迪)',
+  Cambodia: 'Cambodia (柬埔寨)',
+  Cameroon: 'Cameroon (喀麦隆)',
+  Canada: 'Canada (加拿大)',
+  'Cape Verde': 'Cape Verde (佛得角)',
+  'Cayman Islands': 'Cayman Islands (开曼群岛)',
+  'Central African Republic': 'Central African Republic (中非共和国)',
+  Chad: 'Chad (乍得)',
+  Chile: 'Chile (智利)',
+  China: 'China (中国大陆)',
+  'Christmas Island': 'Christmas Island (圣诞岛)',
+  'Cocos Islands': 'Cocos Islands (科科斯群岛)',
+  Colombia: 'Colombia (哥伦比亚)',
+  Comoros: 'Comoros (科摩罗)',
+  Congo: 'Congo (刚果)',
+  'Congo The Democratic Republic of the': 'Congo The Democratic Republic of the (刚果民主共和国)',
+  'Cook Islands': 'Cook Islands (库克群岛)',
+  'Costa Rica': 'Costa Rica (哥斯达黎加)',
+  "Cote D'Ivoire": "Cote D'Ivoire (科特迪瓦)",
+  Croatia: 'Croatia (克罗地亚)',
+  Cuba: 'Cuba (古巴)',
+  Curacao: 'Curacao (库拉索)',
+  Cyprus: 'Cyprus (塞浦路斯)',
+  'Czech Republic': 'Czech Republic (捷克共和国)',
+  Denmark: 'Denmark (丹麦)',
+  Djibouti: 'Djibouti (吉布提)',
+  Dominica: 'Dominica (多米尼加)',
+  'Dominican Republic': 'Dominican Republic (多米尼加共和国)',
+  Ecuador: 'Ecuador (厄瓜多尔)',
+  Egypt: 'Egypt (埃及)',
+  'El Salvador': 'El Salvador (萨尔瓦多)',
+  'Equatorial Guinea': 'Equatorial Guinea (赤道几内亚)',
+  Eritrea: 'Eritrea (厄立特里亚)',
+  Estonia: 'Estonia (爱沙尼亚)',
+  Ethiopia: 'Ethiopia (埃塞俄比亚)',
+  Europe: 'Europe (欧洲)',
+  'Falkland Islands': 'Falkland Islands (马尔维纳斯群岛)',
+  'Faroe Islands': 'Faroe Islands (法罗群岛)',
+  Fiji: 'Fiji (斐济)',
+  Finland: 'Finland (芬兰)',
+  France: 'France (法国)',
+  'French Guiana': 'French Guiana (法属圭亚那)',
+  'French Polynesia': 'French Polynesia (法属波利尼西亚)',
+  'French Southern Territories': 'French Southern Territories (法属南部领地)',
+  Gabon: 'Gabon (加蓬)',
+  Gambia: 'Gambia (冈比亚)',
+  Georgia: 'Georgia (格鲁吉亚)',
+  Germany: 'Germany (德国)',
+  Ghana: 'Ghana (加纳)',
+  Gibraltar: 'Gibraltar (直布罗陀)',
+  Greece: 'Greece (希腊)',
+  Greenland: 'Greenland (格陵兰)',
+  Grenada: 'Grenada (格林纳达)',
+  Guadeloupe: 'Guadeloupe (瓜德罗普)',
+  Guam: 'Guam (关岛)',
+  Guatemala: 'Guatemala (危地马拉)',
+  Guernsey: 'Guernsey (根西岛)',
+  Guinea: 'Guinea (几内亚)',
+  'Guinea-Bissau': 'Guinea-Bissau (几内亚比绍)',
+  Guyana: 'Guyana (圭亚那)',
+  Haiti: 'Haiti (海地)',
+  'Heard Island and McDonald Islands': 'Heard Island and McDonald Islands (赫德岛和麦克唐纳群岛)',
+  'Holy See (Vatican City State)': 'Holy See (Vatican City State) (梵蒂冈)',
+  Honduras: 'Honduras (洪都拉斯)',
+  'Hong Kong': 'Hong Kong (香港特别行政区)',
+  Hungary: 'Hungary (匈牙利)',
+  Iceland: 'Iceland (冰岛)',
+  India: 'India (印度)',
+  Indonesia: 'Indonesia (印度尼西亚)',
+  Iran: 'Iran (伊朗)',
+  Iraq: 'Iraq (伊拉克)',
+  Ireland: 'Ireland (爱尔兰)',
+  'Isle of Man': 'Isle of Man (马恩岛)',
+  Israel: 'Israel (以色列)',
+  Italy: 'Italy (意大利)',
+  Jamaica: 'Jamaica (牙买加)',
+  Japan: 'Japan (日本)',
+  Jersey: 'Jersey (泽西岛)',
+  Jordan: 'Jordan (约旦)',
+  Kazakhstan: 'Kazakhstan (哈萨克斯坦)',
+  Kenya: 'Kenya (肯尼亚)',
+  Kiribati: 'Kiribati (基里巴斯)',
+  Kuwait: 'Kuwait (科威特)',
+  Kyrgyzstan: 'Kyrgyzstan (吉尔吉斯斯坦)',
+  "Lao People's Democratic Republic": "Lao People's Democratic Republic (老挝)",
+  Latvia: 'Latvia (拉脱维亚)',
+  Lebanon: 'Lebanon (黎巴嫩)',
+  Lesotho: 'Lesotho (莱索托)',
+  Liberia: 'Liberia (利比里亚)',
+  Libya: 'Libya (利比亚)',
+  Liechtenstein: 'Liechtenstein (列支敦士登)',
+  Lithuania: 'Lithuania (立陶宛)',
+  Luxembourg: 'Luxembourg (卢森堡)',
+  Macau: 'Macau (澳门特别行政区)',
+  Macedonia: 'Macedonia (马其顿)',
+  Madagascar: 'Madagascar (马达加斯加)',
+  Malawi: 'Malawi (马拉维)',
+  Malaysia: 'Malaysia (马来西亚)',
+  Maldives: 'Maldives (马尔代夫)',
+  Mali: 'Mali (马里)',
+  Malta: 'Malta (马耳他)',
+  'Marshall Islands': 'Marshall Islands (马绍尔群岛)',
+  Martinique: 'Martinique (马提尼克)',
+  Mauritania: 'Mauritania (毛里塔尼亚)',
+  Mauritius: 'Mauritius (毛里求斯)',
+  Mayotte: 'Mayotte (马约特)',
+  Mexico: 'Mexico (墨西哥)',
+  Micronesia: 'Micronesia (密克罗尼西亚)',
+  Moldova: 'Moldova (摩尔多瓦)',
+  Monaco: 'Monaco (摩纳哥)',
+  Mongolia: 'Mongolia (蒙古)',
+  Montenegro: 'Montenegro (黑山)',
+  Montserrat: 'Montserrat (蒙特塞拉特)',
+  Morocco: 'Morocco (摩洛哥)',
+  Mozambique: 'Mozambique (莫桑比克)',
+  Myanmar: 'Myanmar (缅甸)',
+  Namibia: 'Namibia (纳米比亚)',
+  Nauru: 'Nauru (瑙鲁)',
+  Nepal: 'Nepal (尼泊尔)',
+  Netherlands: 'Netherlands (荷兰)',
+  'New Caledonia': 'New Caledonia (新喀里多尼亚)',
+  'New Zealand': 'New Zealand (新西兰)',
+  Nicaragua: 'Nicaragua (尼加拉瓜)',
+  Niger: 'Niger (尼日尔)',
+  Nigeria: 'Nigeria (尼日利亚)',
+  Niue: 'Niue (纽埃)',
+  'Norfolk Island': 'Norfolk Island (诺福克岛)',
+  'North Korea': 'North Korea (朝鲜)',
+  'Northern Mariana Islands': 'Northern Mariana Islands (北马里亚纳群岛)',
+  Norway: 'Norway (挪威)',
+  Oman: 'Oman (阿曼)',
+  Pakistan: 'Pakistan (巴基斯坦)',
+  Palau: 'Palau (帕劳)',
+  'Palestinian Territory': 'Palestinian Territory (巴勒斯坦)',
+  Panama: 'Panama (巴拿马)',
+  'Papua New Guinea': 'Papua New Guinea (巴布亚新几内亚)',
+  Paraguay: 'Paraguay (巴拉圭)',
+  Peru: 'Peru (秘鲁)',
+  Philippines: 'Philippines (菲律宾)',
+  'Pitcairn Islands': 'Pitcairn Islands (皮特凯恩群岛)',
+  Poland: 'Poland (波兰)',
+  Portugal: 'Portugal (葡萄牙)',
+  'Puerto Rico': 'Puerto Rico (波多黎各)',
+  Qatar: 'Qatar (卡塔尔)',
+  Reunion: 'Reunion (留尼汪)',
+  Romania: 'Romania (罗马尼亚)',
+  'Russian Federation': 'Russian Federation (俄罗斯)',
+  Rwanda: 'Rwanda (卢旺达)',
+  'Saint Barthelemy': 'Saint Barthelemy (圣巴泰勒米)',
+  'Saint Helena': 'Saint Helena (圣赫勒拿)',
+  'Saint Kitts and Nevis': 'Saint Kitts and Nevis (圣基茨和尼维斯)',
+  'Saint Lucia': 'Saint Lucia (圣卢西亚)',
+  'Saint Martin': 'Saint Martin (圣马丁)',
+  'Saint Pierre and Miquelon': 'Saint Pierre and Miquelon (圣皮埃尔和密克隆)',
+  'Saint Vincent and the Grenadines': 'Saint Vincent and the Grenadines (圣文森特和格林纳丁斯)',
+  Samoa: 'Samoa (萨摩亚)',
+  'San Marino': 'San Marino (圣马力诺)',
+  'Sao Tome and Principe': 'Sao Tome and Principe (圣多美和普林西比)',
+  'Saudi Arabia': 'Saudi Arabia (沙特阿拉伯)',
+  Senegal: 'Senegal (塞内加尔)',
+  Serbia: 'Serbia (塞尔维亚)',
+  Seychelles: 'Seychelles (塞舌尔)',
+  'Sierra Leone': 'Sierra Leone (塞拉利昂)',
+  Singapore: 'Singapore (新加坡)',
+  'Sint Maarten': 'Sint Maarten (荷属圣马丁)',
+  Slovakia: 'Slovakia (斯洛伐克)',
+  Slovenia: 'Slovenia (斯洛文尼亚)',
+  'Solomon Islands': 'Solomon Islands (所罗门群岛)',
+  Somalia: 'Somalia (索马里)',
+  'South Africa': 'South Africa (南非)',
+  'South Georgia and the South Sandwich Islands': 'South Georgia and the South Sandwich Islands (南乔治亚岛和南桑威奇群岛)',
+  'South Korea': 'South Korea (韩国)',
+  'South Sudan': 'South Sudan (南苏丹)',
+  Spain: 'Spain (西班牙)',
+  'Sri Lanka': 'Sri Lanka (斯里兰卡)',
+  Sudan: 'Sudan (苏丹)',
+  Suriname: 'Suriname (苏里南)',
+  'Svalbard and Jan Mayen': 'Svalbard and Jan Mayen (斯瓦尔巴和扬马延)',
+  Swaziland: 'Swaziland (斯威士兰)',
+  Sweden: 'Sweden (瑞典)',
+  Switzerland: 'Switzerland (瑞士)',
+  'Syrian Arab Republic': 'Syrian Arab Republic (叙利亚)',
+  Taiwan: 'Taiwan (中国台湾)',
+  Tajikistan: 'Tajikistan (塔吉克斯坦)',
+  Tanzania: 'Tanzania (坦桑尼亚)',
+  Thailand: 'Thailand (泰国)',
+  'Timor-Leste': 'Timor-Leste (东帝汶)',
+  Togo: 'Togo (多哥)',
+  Tokelau: 'Tokelau (托克劳)',
+  Tonga: 'Tonga (汤加)',
+  'Trinidad and Tobago': 'Trinidad and Tobago (特立尼达和多巴哥)',
+  Tunisia: 'Tunisia (突尼斯)',
+  Turkey: 'Turkey (土耳其)',
+  Turkmenistan: 'Turkmenistan (土库曼斯坦)',
+  'Turks and Caicos Islands': 'Turks and Caicos Islands (特克斯和凯科斯群岛)',
+  Tuvalu: 'Tuvalu (图瓦卢)',
+  Uganda: 'Uganda (乌干达)',
+  Ukraine: 'Ukraine (乌克兰)',
+  'United Arab Emirates': 'United Arab Emirates (阿拉伯联合酋长国)',
+  'United Kingdom': 'United Kingdom (英国)',
+  'United States': 'United States (美国)',
+  'United States Minor Outlying Islands': 'United States Minor Outlying Islands (美国本土外小岛屿)',
+  Uruguay: 'Uruguay (乌拉圭)',
+  Uzbekistan: 'Uzbekistan (乌兹别克斯坦)',
+  Vanuatu: 'Vanuatu (瓦努阿图)',
+  Venezuela: 'Venezuela (委内瑞拉)',
+  Vietnam: 'Vietnam (越南)',
+  'Virgin Islands British': 'Virgin Islands British (英属维尔京群岛)',
+  'Virgin Islands U.S.': 'Virgin Islands U.S. (美属维尔京群岛)',
+  'Wallis and Futuna': 'Wallis and Futuna (瓦利斯和富图纳)',
+  'Western Sahara': 'Western Sahara (西撒哈拉)',
+  Yemen: 'Yemen (也门)',
+  Zambia: 'Zambia (赞比亚)',
+  Zimbabwe: 'Zimbabwe (津巴布韦)'
+};
 ;// ./src/services/ui-translation/data/hentaiathome.ts
 
-merge(/^\/hentaiathome\.php\??$/, undefined, {
+
+
+
+
+
+
+
+
+function hentaiathome_ownKeys(e, r) { var t = object_keys_default()(e); if ((get_own_property_symbols_default())) { var o = get_own_property_symbols_default()(e); r && (o = filter_default()(o).call(o, function (r) { return get_own_property_descriptor_default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context, _context2; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context = hentaiathome_ownKeys(Object(t), !0)).call(_context, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context2 = hentaiathome_ownKeys(Object(t))).call(_context2, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
+
+
+merge(/^\/hentaiathome\.php\??$/, undefined, _objectSpread(_objectSpread({
   'Hentai@Home Clients': 'Hentai@Home 客户端',
   'H@H Region': 'H@H 地区',
   'Current Network Load': '当前网络负载',
@@ -34262,6 +34552,12 @@ merge(/^\/hentaiathome\.php\??$/, undefined, {
   'To add more clients, ': '要添加更多客户端，请',
   'PM Tenboro': '联系 Tenboro',
   '. Make sure to read the requirements first to make sure that you qualify. Include the system specifications and location the client will run at in the message, and specify whether it is a home connection or a VPS/Dedicated. Each client requires its own unique public IPv4 address to run, and must either be reachable directly from the internet, or have a port forwarded. These are technical requirements, and it is not possible to make any exceptions.': '。请务必先阅读要求以确保您符合资格。在消息中包含客户端的配置和地理位置，并说明它是家庭连接还是 VPS/独立服务器。每个客户端都需要拥有唯一的公共 IPv4 地址才能运行，并且必须可以直接从 Internet 访问，或者使用端口转发。这些都是技术要求，不可能有任何例外。',
+  'Due to excess capacity, we are not taking new applications for Europe at the moment, with an exception for donators.': '由于资源过剩，我们暂时不接受欧洲地区的新申请，但捐赠者除外。',
+  'If you want to run a client ': '如果您想在',
+  'outside of Europe': '欧洲以外的地区',
+  ', ': '运行客户端，请',
+  '. Include the system specs, speedtest and location in the message.': '。在消息中包含系统配置、SpeedTest 结果和地理位置。',
+  'The client will be locked to the provided location. Do not send PMs asking to run clients in Europe.': '客户端将被锁定在指定的地理位置。请勿发送私信要求在欧洲运行客户端。',
   Client: '客户端',
   Status: '状态',
   Created: '创建于',
@@ -34277,7 +34573,8 @@ merge(/^\/hentaiathome\.php\??$/, undefined, {
   Country: '国家/地区',
   Online: '在线',
   Offline: '离线',
-  'Not available when offline': '离线状态下不可用',
+  'Not available when offline': '离线状态下不可用'
+}, BROWSING_COUNTRY), {}, {
   'Apply for H@H participation': '参与申请 H@H',
   'For information on how to participate in the Hentai@Home Project, refer to the ': '有关如何参与 Hentai@Home 项目的信息，请参阅 ',
   'Hentai@Home Project FAQ': 'Hentai@Home 项目常见问题解答 (英文)',
@@ -34302,13 +34599,10 @@ merge(/^\/hentaiathome\.php\??$/, undefined, {
   'This client will be hosted on a system that is usually running 24/7': '此客户端将托管在一台正常情况下 24 小时运行的系统上',
   'Submit Application': '提交申请',
   'Your application is pending. You can still make changes below if necessary.': '您的申请正在等待处理。如有必要，您仍可以在下方修改申请。',
-  'If the auto-detected country is wrong, contact Tenboro to have an override applied. Include the correct country, client ID and IP address in your message, and ': '如果自动检测的国家/地区错误，请联系 Tenboro 以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
+  'If the auto-detected country is wrong, ': '如果自动检测的国家/地区错误，请',
+  ' to have an override applied. Include the correct country, client ID and IP address in your message, and ': '以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
   'make sure to keep your client running': '确保您的客户端保持运行',
-  '. Having the client set to the wrong country will make it perform worse than it would otherwise do. If the country is shown in ': '。位于错误的国家/地区的客户端的性能表现将不如预期。如果国家/地区显示为 ',
-  red: '红色',
-  ' that means it appears to be located outside of its home region, and ': '，则意味着它似乎位于其所在地区之外，',
-  'will not be assigned new ranges nor gain any hath': '不会再被分配新的范围，也不会获得 Hath',
-  '. Contact Tenboro if you need to change the home region.': '。如果您需要更改所在地区，请联系 Tenboro。',
+  '. Having a client set to the wrong country will cause a variety of issues, and makes it perform worse than it would otherwise do.': '。将客户端设置为错误的国家/地区会导致各种问题，并使其性能表现不如预期。',
   'Free Archive Quota: ': '免费的存档配额：',
   ', measured in a 168-hour sliding window. Clients must be ': '，按照最近 168 小时的在线时间进行计算。客户端必须保持',
   healthy: '健康',
@@ -34322,8 +34616,9 @@ merge(/^\/hentaiathome\.php\??$/, undefined, {
   '. You should verify that the size and cryptographic hash correspond to the files you download. Hentai@Home is an Open Source project released under the GNU General Public Licence v3. The source code and build scripts for Windows and Linux-like systems can be found above.': ' 找到当前版本的发行说明 (英文)。请验证您下载的文件的大小和哈希值与上方给出的数值相对应。Hentai@Home 是在 GNU 通用公共许可证 v3 下发布的开源项目。Windows 和类 Linux 系统的源代码和构建脚本可以在上面找到。',
   'Unfortunately, we cannot accept clients with less than 80 Mbit/s outgoing speed.': '抱歉，我们无法接受出站速率低于 80 Mbps 的客户端。',
   'Unfortunately, we cannot accept clients that are frequently offline.': '抱歉，我们无法接受经常离线的客户端。'
-}, [[/^([\d.]+) \/ min$/, '$1 / 分钟'], [/^([\d.]+) \/ day$/, '$1 / 天'], [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'], [/^([\d.]+) ([KMGTP]B) per week$/, '每周 $1 $2'], [/^Must be at least ([\d.]+) ([KMGTP]B)\/s, which must be reserved for H@H.$/, '不小于 $1 $2/s，必须为 H@H 保留。'], [/^ Must be at least ([\d.]+) ([KMGTP]iB) but more is always better.$/, '至少为 $1 $2，但越多越好。'], [/^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/, '最大出站速率必须至少为 $1 $2/s。'], [/^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/, '磁盘空间必须至少为 $1 $2。']]);
+}), [[/^([\d.]+) \/ min$/, '$1 / 分钟'], [/^([\d.]+) \/ day$/, '$1 / 天'], [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'], [/^([\d.]+) ([KMGTP]B) per week$/, '每周 $1 $2'], [/^Must be at least ([\d.]+) ([KMGTP]B)\/s, which must be reserved for H@H.$/, '不小于 $1 $2/s，必须为 H@H 保留。'], [/^ Must be at least ([\d.]+) ([KMGTP]iB) but more is always better.$/, '至少为 $1 $2，但越多越好。'], [/^Max Burst Speed must be at least ([\d.]+) ([KMGTP]B)\/s.$/, '最大出站速率必须至少为 $1 $2/s。'], [/^Disk Space must be at least ([\d.]+) ([KMGTP]B).$/, '磁盘空间必须至少为 $1 $2。']]);
 merge(/^\/hentaiathome\.php\?.*act=settings/, undefined, {
+  'You cannot reset the ranges of a client that has been online in the last 24 hours. DO NOT RESET RANGES UNLESS YOU LOST YOUR CACHE.': '您无法重置过去 24 小时内在线的客户端的静态范围。除非您丢失了缓存，否则请不要重置范围。',
   'Client ID:': '客户端 ID：',
   'Client Key:': '客户端 Key：',
   'Current Value: ': '现值：',
@@ -34899,7 +35194,19 @@ merge(/^\/(gallery)?torrents\.php/, undefined, {
 }, [[/^Showing ([\d,]+)-([\d,]+) of ([\d,]+)$/, '$1 - $2，共 $3 个结果'], [/^([\d,]+) torrents? (was|were) found for this gallery.$/, '找到了 $1 个种子。']]);
 ;// ./src/services/ui-translation/data/uconfig.ts
 
-merge(/^\/uconfig\.php/, undefined, {
+
+
+
+
+
+
+
+
+function uconfig_ownKeys(e, r) { var t = object_keys_default()(e); if ((get_own_property_symbols_default())) { var o = get_own_property_symbols_default()(e); r && (o = filter_default()(o).call(o, function (r) { return get_own_property_descriptor_default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function uconfig_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context, _context2; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context = uconfig_ownKeys(Object(t), !0)).call(_context, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context2 = uconfig_ownKeys(Object(t))).call(_context2, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
+
+
+merge(/^\/uconfig\.php/, undefined, uconfig_objectSpread(uconfig_objectSpread({
   'Selected Profile:': '当前配置：',
   'Delete Profile': '删除配置',
   'Set as Default': '设为默认',
@@ -34912,258 +35219,8 @@ merge(/^\/uconfig\.php/, undefined, {
   'You appear to be browsing the site from ': '看起来您正在 ',
   ' or use a VPN or proxy in this country, which means the site will try to load images from H@H clients in this general geographic region. If this is incorrect, or if you want to use a different region for any reason (like if you are using a split tunneling VPN), you can select a different country below.': ' 浏览此网页，或者使用了此处的 VPN/代理，这意味着网站会尝试通过此区域的 H@H 客户端加载图像。如果此结果不正确，或者您希望通过其他地区的 H@H 客户端加载图像 (例如您正在使用分割隧道 VPN)，可以在下方选择一个不同的区域。',
   '\n\t\tBrowsing Country: ': '浏览区域：',
-  'Auto-Detect': '自动检测',
-  Afghanistan: 'Afghanistan (阿富汗)',
-  'Aland Islands': 'Aland Islands (奥兰群岛)',
-  Albania: 'Albania (阿尔巴尼亚)',
-  Algeria: 'Algeria (阿尔及利亚)',
-  'American Samoa': 'American Samoa (美属萨摩亚)',
-  Andorra: 'Andorra (安道尔)',
-  Angola: 'Angola (安哥拉)',
-  Anguilla: 'Anguilla (安圭拉)',
-  Antarctica: 'Antarctica (南极洲)',
-  'Antigua and Barbuda': 'Antigua and Barbuda (安提瓜和巴布达)',
-  Argentina: 'Argentina (阿根廷)',
-  Armenia: 'Armenia (亚美尼亚)',
-  Aruba: 'Aruba (阿鲁巴)',
-  'Asia/Pacific Region': 'Asia/Pacific Region (亚太地区)',
-  Australia: 'Australia (澳大利亚)',
-  Austria: 'Austria (奥地利)',
-  Azerbaijan: 'Azerbaijan (阿塞拜疆)',
-  Bahamas: 'Bahamas (巴哈马)',
-  Bahrain: 'Bahrain (巴林)',
-  Bangladesh: 'Bangladesh (孟加拉国)',
-  Barbados: 'Barbados (巴巴多斯)',
-  Belarus: 'Belarus (白俄罗斯)',
-  Belgium: 'Belgium (比利时)',
-  Belize: 'Belize (伯利兹)',
-  Benin: 'Benin (贝宁)',
-  Bermuda: 'Bermuda (百慕大)',
-  Bhutan: 'Bhutan (不丹)',
-  Bolivia: 'Bolivia (玻利维亚)',
-  'Bonaire Saint Eustatius and Saba': 'Bonaire Saint Eustatius and Saba (博内尔、圣尤斯特歇斯和萨巴)',
-  'Bosnia and Herzegovina': 'Bosnia and Herzegovina (波斯尼亚和黑塞哥维那)',
-  Botswana: 'Botswana (博茨瓦纳)',
-  'Bouvet Island': 'Bouvet Island (布维岛)',
-  Brazil: 'Brazil (巴西)',
-  'British Indian Ocean Territory': 'British Indian Ocean Territory (英属印度洋领地)',
-  'Brunei Darussalam': 'Brunei Darussalam (文莱)',
-  Bulgaria: 'Bulgaria (保加利亚)',
-  'Burkina Faso': 'Burkina Faso (布基纳法索)',
-  Burundi: 'Burundi (布隆迪)',
-  Cambodia: 'Cambodia (柬埔寨)',
-  Cameroon: 'Cameroon (喀麦隆)',
-  Canada: 'Canada (加拿大)',
-  'Cape Verde': 'Cape Verde (佛得角)',
-  'Cayman Islands': 'Cayman Islands (开曼群岛)',
-  'Central African Republic': 'Central African Republic (中非共和国)',
-  Chad: 'Chad (乍得)',
-  Chile: 'Chile (智利)',
-  China: 'China (中国大陆)',
-  'Christmas Island': 'Christmas Island (圣诞岛)',
-  'Cocos Islands': 'Cocos Islands (科科斯群岛)',
-  Colombia: 'Colombia (哥伦比亚)',
-  Comoros: 'Comoros (科摩罗)',
-  Congo: 'Congo (刚果)',
-  'Congo The Democratic Republic of the': 'Congo The Democratic Republic of the (刚果民主共和国)',
-  'Cook Islands': 'Cook Islands (库克群岛)',
-  'Costa Rica': 'Costa Rica (哥斯达黎加)',
-  "Cote D'Ivoire": "Cote D'Ivoire (科特迪瓦)",
-  Croatia: 'Croatia (克罗地亚)',
-  Cuba: 'Cuba (古巴)',
-  Curacao: 'Curacao (库拉索)',
-  Cyprus: 'Cyprus (塞浦路斯)',
-  'Czech Republic': 'Czech Republic (捷克共和国)',
-  Denmark: 'Denmark (丹麦)',
-  Djibouti: 'Djibouti (吉布提)',
-  Dominica: 'Dominica (多米尼加)',
-  'Dominican Republic': 'Dominican Republic (多米尼加共和国)',
-  Ecuador: 'Ecuador (厄瓜多尔)',
-  Egypt: 'Egypt (埃及)',
-  'El Salvador': 'El Salvador (萨尔瓦多)',
-  'Equatorial Guinea': 'Equatorial Guinea (赤道几内亚)',
-  Eritrea: 'Eritrea (厄立特里亚)',
-  Estonia: 'Estonia (爱沙尼亚)',
-  Ethiopia: 'Ethiopia (埃塞俄比亚)',
-  Europe: 'Europe (欧洲)',
-  'Falkland Islands': 'Falkland Islands (马尔维纳斯群岛)',
-  'Faroe Islands': 'Faroe Islands (法罗群岛)',
-  Fiji: 'Fiji (斐济)',
-  Finland: 'Finland (芬兰)',
-  France: 'France (法国)',
-  'French Guiana': 'French Guiana (法属圭亚那)',
-  'French Polynesia': 'French Polynesia (法属波利尼西亚)',
-  'French Southern Territories': 'French Southern Territories (法属南部领地)',
-  Gabon: 'Gabon (加蓬)',
-  Gambia: 'Gambia (冈比亚)',
-  Georgia: 'Georgia (格鲁吉亚)',
-  Germany: 'Germany (德国)',
-  Ghana: 'Ghana (加纳)',
-  Gibraltar: 'Gibraltar (直布罗陀)',
-  Greece: 'Greece (希腊)',
-  Greenland: 'Greenland (格陵兰)',
-  Grenada: 'Grenada (格林纳达)',
-  Guadeloupe: 'Guadeloupe (瓜德罗普)',
-  Guam: 'Guam (关岛)',
-  Guatemala: 'Guatemala (危地马拉)',
-  Guernsey: 'Guernsey (根西岛)',
-  Guinea: 'Guinea (几内亚)',
-  'Guinea-Bissau': 'Guinea-Bissau (几内亚比绍)',
-  Guyana: 'Guyana (圭亚那)',
-  Haiti: 'Haiti (海地)',
-  'Heard Island and McDonald Islands': 'Heard Island and McDonald Islands (赫德岛和麦克唐纳群岛)',
-  'Holy See (Vatican City State)': 'Holy See (Vatican City State) (梵蒂冈)',
-  Honduras: 'Honduras (洪都拉斯)',
-  'Hong Kong': 'Hong Kong (香港特别行政区)',
-  Hungary: 'Hungary (匈牙利)',
-  Iceland: 'Iceland (冰岛)',
-  India: 'India (印度)',
-  Indonesia: 'Indonesia (印度尼西亚)',
-  Iran: 'Iran (伊朗)',
-  Iraq: 'Iraq (伊拉克)',
-  Ireland: 'Ireland (爱尔兰)',
-  'Isle of Man': 'Isle of Man (马恩岛)',
-  Israel: 'Israel (以色列)',
-  Italy: 'Italy (意大利)',
-  Jamaica: 'Jamaica (牙买加)',
-  Japan: 'Japan (日本)',
-  Jersey: 'Jersey (泽西岛)',
-  Jordan: 'Jordan (约旦)',
-  Kazakhstan: 'Kazakhstan (哈萨克斯坦)',
-  Kenya: 'Kenya (肯尼亚)',
-  Kiribati: 'Kiribati (基里巴斯)',
-  Kuwait: 'Kuwait (科威特)',
-  Kyrgyzstan: 'Kyrgyzstan (吉尔吉斯斯坦)',
-  "Lao People's Democratic Republic": "Lao People's Democratic Republic (老挝)",
-  Latvia: 'Latvia (拉脱维亚)',
-  Lebanon: 'Lebanon (黎巴嫩)',
-  Lesotho: 'Lesotho (莱索托)',
-  Liberia: 'Liberia (利比里亚)',
-  Libya: 'Libya (利比亚)',
-  Liechtenstein: 'Liechtenstein (列支敦士登)',
-  Lithuania: 'Lithuania (立陶宛)',
-  Luxembourg: 'Luxembourg (卢森堡)',
-  Macau: 'Macau (澳门特别行政区)',
-  Macedonia: 'Macedonia (马其顿)',
-  Madagascar: 'Madagascar (马达加斯加)',
-  Malawi: 'Malawi (马拉维)',
-  Malaysia: 'Malaysia (马来西亚)',
-  Maldives: 'Maldives (马尔代夫)',
-  Mali: 'Mali (马里)',
-  Malta: 'Malta (马耳他)',
-  'Marshall Islands': 'Marshall Islands (马绍尔群岛)',
-  Martinique: 'Martinique (马提尼克)',
-  Mauritania: 'Mauritania (毛里塔尼亚)',
-  Mauritius: 'Mauritius (毛里求斯)',
-  Mayotte: 'Mayotte (马约特)',
-  Mexico: 'Mexico (墨西哥)',
-  Micronesia: 'Micronesia (密克罗尼西亚)',
-  Moldova: 'Moldova (摩尔多瓦)',
-  Monaco: 'Monaco (摩纳哥)',
-  Mongolia: 'Mongolia (蒙古)',
-  Montenegro: 'Montenegro (黑山)',
-  Montserrat: 'Montserrat (蒙特塞拉特)',
-  Morocco: 'Morocco (摩洛哥)',
-  Mozambique: 'Mozambique (莫桑比克)',
-  Myanmar: 'Myanmar (缅甸)',
-  Namibia: 'Namibia (纳米比亚)',
-  Nauru: 'Nauru (瑙鲁)',
-  Nepal: 'Nepal (尼泊尔)',
-  Netherlands: 'Netherlands (荷兰)',
-  'New Caledonia': 'New Caledonia (新喀里多尼亚)',
-  'New Zealand': 'New Zealand (新西兰)',
-  Nicaragua: 'Nicaragua (尼加拉瓜)',
-  Niger: 'Niger (尼日尔)',
-  Nigeria: 'Nigeria (尼日利亚)',
-  Niue: 'Niue (纽埃)',
-  'Norfolk Island': 'Norfolk Island (诺福克岛)',
-  'North Korea': 'North Korea (朝鲜)',
-  'Northern Mariana Islands': 'Northern Mariana Islands (北马里亚纳群岛)',
-  Norway: 'Norway (挪威)',
-  Oman: 'Oman (阿曼)',
-  Pakistan: 'Pakistan (巴基斯坦)',
-  Palau: 'Palau (帕劳)',
-  'Palestinian Territory': 'Palestinian Territory (巴勒斯坦)',
-  Panama: 'Panama (巴拿马)',
-  'Papua New Guinea': 'Papua New Guinea (巴布亚新几内亚)',
-  Paraguay: 'Paraguay (巴拉圭)',
-  Peru: 'Peru (秘鲁)',
-  Philippines: 'Philippines (菲律宾)',
-  'Pitcairn Islands': 'Pitcairn Islands (皮特凯恩群岛)',
-  Poland: 'Poland (波兰)',
-  Portugal: 'Portugal (葡萄牙)',
-  'Puerto Rico': 'Puerto Rico (波多黎各)',
-  Qatar: 'Qatar (卡塔尔)',
-  Reunion: 'Reunion (留尼汪)',
-  Romania: 'Romania (罗马尼亚)',
-  'Russian Federation': 'Russian Federation (俄罗斯)',
-  Rwanda: 'Rwanda (卢旺达)',
-  'Saint Barthelemy': 'Saint Barthelemy (圣巴泰勒米)',
-  'Saint Helena': 'Saint Helena (圣赫勒拿)',
-  'Saint Kitts and Nevis': 'Saint Kitts and Nevis (圣基茨和尼维斯)',
-  'Saint Lucia': 'Saint Lucia (圣卢西亚)',
-  'Saint Martin': 'Saint Martin (圣马丁)',
-  'Saint Pierre and Miquelon': 'Saint Pierre and Miquelon (圣皮埃尔和密克隆)',
-  'Saint Vincent and the Grenadines': 'Saint Vincent and the Grenadines (圣文森特和格林纳丁斯)',
-  Samoa: 'Samoa (萨摩亚)',
-  'San Marino': 'San Marino (圣马力诺)',
-  'Sao Tome and Principe': 'Sao Tome and Principe (圣多美和普林西比)',
-  'Saudi Arabia': 'Saudi Arabia (沙特阿拉伯)',
-  Senegal: 'Senegal (塞内加尔)',
-  Serbia: 'Serbia (塞尔维亚)',
-  Seychelles: 'Seychelles (塞舌尔)',
-  'Sierra Leone': 'Sierra Leone (塞拉利昂)',
-  Singapore: 'Singapore (新加坡)',
-  'Sint Maarten': 'Sint Maarten (荷属圣马丁)',
-  Slovakia: 'Slovakia (斯洛伐克)',
-  Slovenia: 'Slovenia (斯洛文尼亚)',
-  'Solomon Islands': 'Solomon Islands (所罗门群岛)',
-  Somalia: 'Somalia (索马里)',
-  'South Africa': 'South Africa (南非)',
-  'South Georgia and the South Sandwich Islands': 'South Georgia and the South Sandwich Islands (南乔治亚岛和南桑威奇群岛)',
-  'South Korea': 'South Korea (韩国)',
-  'South Sudan': 'South Sudan (南苏丹)',
-  Spain: 'Spain (西班牙)',
-  'Sri Lanka': 'Sri Lanka (斯里兰卡)',
-  Sudan: 'Sudan (苏丹)',
-  Suriname: 'Suriname (苏里南)',
-  'Svalbard and Jan Mayen': 'Svalbard and Jan Mayen (斯瓦尔巴和扬马延)',
-  Swaziland: 'Swaziland (斯威士兰)',
-  Sweden: 'Sweden (瑞典)',
-  Switzerland: 'Switzerland (瑞士)',
-  'Syrian Arab Republic': 'Syrian Arab Republic (叙利亚)',
-  Taiwan: 'Taiwan (中国台湾)',
-  Tajikistan: 'Tajikistan (塔吉克斯坦)',
-  Tanzania: 'Tanzania (坦桑尼亚)',
-  Thailand: 'Thailand (泰国)',
-  'Timor-Leste': 'Timor-Leste (东帝汶)',
-  Togo: 'Togo (多哥)',
-  Tokelau: 'Tokelau (托克劳)',
-  Tonga: 'Tonga (汤加)',
-  'Trinidad and Tobago': 'Trinidad and Tobago (特立尼达和多巴哥)',
-  Tunisia: 'Tunisia (突尼斯)',
-  Turkey: 'Turkey (土耳其)',
-  Turkmenistan: 'Turkmenistan (土库曼斯坦)',
-  'Turks and Caicos Islands': 'Turks and Caicos Islands (特克斯和凯科斯群岛)',
-  Tuvalu: 'Tuvalu (图瓦卢)',
-  Uganda: 'Uganda (乌干达)',
-  Ukraine: 'Ukraine (乌克兰)',
-  'United Arab Emirates': 'United Arab Emirates (阿拉伯联合酋长国)',
-  'United Kingdom': 'United Kingdom (英国)',
-  'United States': 'United States (美国)',
-  'United States Minor Outlying Islands': 'United States Minor Outlying Islands (美国本土外小岛屿)',
-  Uruguay: 'Uruguay (乌拉圭)',
-  Uzbekistan: 'Uzbekistan (乌兹别克斯坦)',
-  Vanuatu: 'Vanuatu (瓦努阿图)',
-  Venezuela: 'Venezuela (委内瑞拉)',
-  Vietnam: 'Vietnam (越南)',
-  'Virgin Islands British': 'Virgin Islands British (英属维尔京群岛)',
-  'Virgin Islands U.S.': 'Virgin Islands U.S. (美属维尔京群岛)',
-  'Wallis and Futuna': 'Wallis and Futuna (瓦利斯和富图纳)',
-  'Western Sahara': 'Western Sahara (西撒哈拉)',
-  Yemen: 'Yemen (也门)',
-  Zambia: 'Zambia (赞比亚)',
-  Zimbabwe: 'Zimbabwe (津巴布韦)',
+  'Auto-Detect': '自动检测'
+}, BROWSING_COUNTRY), {}, {
   'Image Size Settings': '图像大小设置',
   'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. Note that legacy images will have horizontal resolutions of 780x / 1280x / 1600x / 2400x instead. (Resolutions above 1280x are restricted to accounts with any hath perk, a bronze star, or an UID below 3,000,000.)': '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 800 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。注意，旧图库的水平分辨率为 780x / 1280x / 1600x / 2400x。 (高于 1280 像素只提供给解锁过任意 Hath Perk、铜星或 UID 小于 3,000,000 的用户)',
   'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. Note that legacy images will have horizontal resolutions of 780x / 1280x / 1600x / 2400x instead.': '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 800 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。注意，旧图库的水平分辨率为 780x / 1280x / 1600x / 2400x。',
@@ -35297,7 +35354,7 @@ merge(/^\/uconfig\.php/, undefined, {
   ' Hide': ' 隐藏',
   Apply: '应用',
   'Settings were updated': '设置更新完毕'
-}, [[/ \(Default\)$/, ' (默认)']]);
+}), [[/ \(Default\)$/, ' (默认)']]);
 ;// ./src/services/ui-translation/data/upload.ts
 
 var data = {
@@ -35750,7 +35807,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.17","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0 || ^22.11.0"},"packageManager":"pnpm@9.12.3","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.26.0","@babel/plugin-transform-runtime":"^7.25.9","@babel/preset-env":"^7.26.0","@babel/runtime-corejs3":"^7.26.0","@eslint/js":"^9.16.0","@types/chrome":"^0.0.287","@types/escape-html":"^1.0.4","@types/node":"^22.10.1","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.2.1","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.6","eslint":"^9.16.0","eslint-config-prettier":"^9.1.0","execa":"^9.5.1","glob":"^11.0.0","html-webpack-plugin":"^5.6.3","less":"^4.2.1","less-loader":"^12.2.0","postcss":"^8.4.49","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.1.1","prettier":"^3.4.2","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.30.0","typescript":"^5.7.2","typescript-eslint":"^8.17.0","web-ext":"^8.3.0","webpack":"^5.97.0","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^5.1.4","webpack-dev-server":"^5.1.0","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.39.0","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.1","rxjs":"^7.8.1","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.0.18","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^20.17.0 || ^22.11.0"},"packageManager":"pnpm@9.12.3","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.26.0","@babel/plugin-transform-runtime":"^7.25.9","@babel/preset-env":"^7.26.0","@babel/runtime-corejs3":"^7.26.0","@eslint/js":"^9.17.0","@types/chrome":"^0.0.287","@types/escape-html":"^1.0.4","@types/node":"^22.10.2","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.1","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^9.2.1","copy-webpack-plugin":"^12.0.2","css-loader":"^7.1.2","cssnano":"^7.0.6","eslint":"^9.17.0","eslint-config-prettier":"^9.1.0","execa":"^9.5.2","glob":"^11.0.0","html-webpack-plugin":"^5.6.3","less":"^4.2.1","less-loader":"^12.2.0","postcss":"^8.4.49","postcss-import":"^16.1.0","postcss-loader":"^8.1.1","postcss-preset-env":"^10.1.3","prettier":"^3.4.2","rimraf":"^6.0.1","semver":"^7.6.3","style-loader":"^4.0.0","ts-loader":"^9.5.1","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.31.0","typescript":"^5.7.2","typescript-eslint":"^8.18.2","web-ext":"^8.3.0","webpack":"^5.97.1","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.0","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.39.0","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.1","lit-html":"^3.2.1","rxjs":"^7.8.1","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -35836,32 +35893,8 @@ var SyncStorage = /*#__PURE__*/function () {
 }();
 SyncStorage = __decorate([Service(), __metadata("design:paramtypes", [Logger, Storage])], SyncStorage);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-symbols.js
-var get_own_property_symbols = __webpack_require__(11222);
-var get_own_property_symbols_default = /*#__PURE__*/__webpack_require__.n(get_own_property_symbols);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptor.js
-var get_own_property_descriptor = __webpack_require__(65722);
-var get_own_property_descriptor_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptor);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/get-own-property-descriptors.js
-var get_own_property_descriptors = __webpack_require__(17897);
-var get_own_property_descriptors_default = /*#__PURE__*/__webpack_require__.n(get_own_property_descriptors);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/define-properties.js
-var define_properties = __webpack_require__(76272);
-var define_properties_default = /*#__PURE__*/__webpack_require__.n(define_properties);
-;// ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/helpers/esm/defineProperty.js
-
-
-function _defineProperty(e, r, t) {
-  return (r = toPropertyKey(r)) in e ? object_define_property(e, r, {
-    value: t,
-    enumerable: !0,
-    configurable: !0,
-    writable: !0
-  }) : e[r] = t, e;
-}
-
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/date/now.js
-var date_now = __webpack_require__(27812);
+var date_now = __webpack_require__(10551);
 var now_default = /*#__PURE__*/__webpack_require__.n(date_now);
 ;// ./src/services/date-time.ts
 
@@ -35877,30 +35910,30 @@ var now_default = /*#__PURE__*/__webpack_require__.n(date_now);
 
 
 function date_time_ownKeys(e, r) { var t = object_keys_default()(e); if ((get_own_property_symbols_default())) { var o = get_own_property_symbols_default()(e); r && (o = filter_default()(o).call(o, function (r) { return get_own_property_descriptor_default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context, _context2; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context = date_time_ownKeys(Object(t), !0)).call(_context, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context2 = date_time_ownKeys(Object(t))).call(_context2, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
+function date_time_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context, _context2; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context = date_time_ownKeys(Object(t), !0)).call(_context, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context2 = date_time_ownKeys(Object(t))).call(_context2, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
 var DateTime_1;
 
 
 var base = {
   hourCycle: 'h23'
 };
-var timeFormatter = new Intl.DateTimeFormat(undefined, _objectSpread({
+var timeFormatter = new Intl.DateTimeFormat(undefined, date_time_objectSpread({
   hour: 'numeric',
   minute: 'numeric'
 }, base));
-var timeWithSecondFormatter = new Intl.DateTimeFormat(undefined, _objectSpread({
+var timeWithSecondFormatter = new Intl.DateTimeFormat(undefined, date_time_objectSpread({
   hour: 'numeric',
   minute: 'numeric',
   second: 'numeric'
 }, base));
-var dateTimeFormatter = new Intl.DateTimeFormat(undefined, _objectSpread({
+var dateTimeFormatter = new Intl.DateTimeFormat(undefined, date_time_objectSpread({
   year: 'numeric',
   month: 'numeric',
   day: 'numeric',
   hour: 'numeric',
   minute: 'numeric'
 }, base));
-var dateTimeWithSecondFormatter = new Intl.DateTimeFormat(undefined, _objectSpread({
+var dateTimeWithSecondFormatter = new Intl.DateTimeFormat(undefined, date_time_objectSpread({
   year: 'numeric',
   month: 'numeric',
   day: 'numeric',
@@ -35908,13 +35941,13 @@ var dateTimeWithSecondFormatter = new Intl.DateTimeFormat(undefined, _objectSpre
   minute: 'numeric',
   second: 'numeric'
 }, base));
-var noYearDateTimeFormatter = new Intl.DateTimeFormat(undefined, _objectSpread({
+var noYearDateTimeFormatter = new Intl.DateTimeFormat(undefined, date_time_objectSpread({
   month: 'numeric',
   day: 'numeric',
   hour: 'numeric',
   minute: 'numeric'
 }, base));
-var noYearDateTimeWithSecondFormatter = new Intl.DateTimeFormat(undefined, _objectSpread({
+var noYearDateTimeWithSecondFormatter = new Intl.DateTimeFormat(undefined, date_time_objectSpread({
   month: 'numeric',
   day: 'numeric',
   hour: 'numeric',
@@ -35978,8 +36011,8 @@ DateTime.month = DateTime_1.day * (365.25 / 12);
 DateTime.year = DateTime_1.month * 12;
 DateTime = DateTime_1 = __decorate([Service()], DateTime);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.0/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
-var syringe = __webpack_require__(31913);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.1/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.1/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.1/node_modules/less-loader/dist/cjs.js!./src/plugin/syringe/index.less
+var syringe = __webpack_require__(33244);
 ;// ./src/plugin/syringe/index.less
 
       
@@ -37122,7 +37155,7 @@ var Database = /*#__PURE__*/function () {
 Database = __decorate([Service(), __metadata("design:paramtypes", [Http, Logger])], Database);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js
-var set_interval = __webpack_require__(74589);
+var set_interval = __webpack_require__(84070);
 var set_interval_default = /*#__PURE__*/__webpack_require__.n(set_interval);
 ;// ./src/services/badge-loading.ts
 
@@ -37580,7 +37613,7 @@ var DatabaseUpdater = /*#__PURE__*/function () {
 DatabaseUpdater = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, Database, BadgeLoading])], DatabaseUpdater);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/object/values.js
-var object_values = __webpack_require__(15365);
+var object_values = __webpack_require__(97256);
 var object_values_default = /*#__PURE__*/__webpack_require__.n(object_values);
 ;// ./src/plugin/suggest.ts
 
@@ -38269,10 +38302,10 @@ var ImageContextMenu = /*#__PURE__*/function () {
 ImageContextMenu = __decorate([Service(), __metadata("design:paramtypes", [])], ImageContextMenu);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/number/parse-float.js
-var parse_float = __webpack_require__(25849);
+var parse_float = __webpack_require__(68862);
 var parse_float_default = /*#__PURE__*/__webpack_require__.n(parse_float);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/number/is-nan.js
-var is_nan = __webpack_require__(52349);
+var is_nan = __webpack_require__(47216);
 var is_nan_default = /*#__PURE__*/__webpack_require__.n(is_nan);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.39.0/node_modules/core-js-pure/full/object/freeze.js
 var freeze = __webpack_require__(33416);
@@ -38291,20 +38324,20 @@ function _taggedTemplateLiteral(e, t) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/some.js
-var some = __webpack_require__(41039);
+var some = __webpack_require__(36922);
 var some_default = /*#__PURE__*/__webpack_require__.n(some);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/parse-int.js
-var parse_int = __webpack_require__(81152);
+var parse_int = __webpack_require__(62909);
 var parse_int_default = /*#__PURE__*/__webpack_require__.n(parse_int);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/set.js
-var reflect_set = __webpack_require__(52669);
+var reflect_set = __webpack_require__(552);
 var reflect_set_default = /*#__PURE__*/__webpack_require__.n(reflect_set);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/for.js
-var symbol_for = __webpack_require__(84263);
+var symbol_for = __webpack_require__(26944);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/weak-map.js
-var weak_map = __webpack_require__(4328);
+var weak_map = __webpack_require__(67199);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.26.0/node_modules/@babel/runtime-corejs3/core-js-stable/instance/fill.js
-var fill = __webpack_require__(51842);
+var fill = __webpack_require__(53991);
 ;// ./node_modules/.pnpm/lit-html@3.2.1/node_modules/lit-html/lit-html.js
 
 
@@ -38821,8 +38854,8 @@ var B = function B(t, i, s) {
   return h._$AI(t), h;
 };
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.0/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
-var popup = __webpack_require__(74730);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.1/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.1/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.1/node_modules/less-loader/dist/cjs.js!./src/plugin/popup/index.less
+var popup = __webpack_require__(90643);
 ;// ./src/plugin/popup/index.less
 
       
@@ -39311,8 +39344,8 @@ var Popup = /*#__PURE__*/function () {
 }();
 Popup = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, DateTime])], Popup);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.0/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.0/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
-var popup_host = __webpack_require__(37274);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.97.1/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.49_typescript@5.7.2_webpack@5.97.1/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.1_webpack@5.97.1/node_modules/less-loader/dist/cjs.js!./src/user-script/popup-host.less
+var popup_host = __webpack_require__(55739);
 ;// ./src/user-script/popup-host.less
 
       
