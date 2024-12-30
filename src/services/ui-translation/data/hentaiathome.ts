@@ -34,7 +34,8 @@ merge(
         'If you want to run a client ': '如果您想在',
         'outside of Europe': '欧洲以外的地区',
         ', ': '运行客户端，请',
-        '. Include the system specs, speedtest and location in the message.': '。在消息中包含系统配置、SpeedTest 结果和地理位置。',
+        '. Include the system specs, speedtest and location in the message.':
+            '。在消息中包含系统配置、SpeedTest 结果和地理位置。',
         'The client will be locked to the provided location. Do not send PMs asking to run clients in Europe.':
             '客户端将被锁定在指定的地理位置。请勿发送私信要求在欧洲运行客户端。',
 
@@ -138,7 +139,7 @@ merge(
     {
         'You cannot reset the ranges of a client that has been online in the last 24 hours. DO NOT RESET RANGES UNLESS YOU LOST YOUR CACHE.':
             '您无法重置过去 24 小时内在线的客户端的静态范围。除非您丢失了缓存，否则请不要重置范围。',
-        
+
         'Client ID:': '客户端 ID：',
         'Client Key:': '客户端 Key：',
 
