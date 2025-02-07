@@ -217,5 +217,9 @@ merge(
             /\s?Excluded ([\d,]+) galler(ies|y) and filtered ([\d,]+) galler(ies|y) from this page.\s?/,
             '已从此页面排除 $1 个结果，过滤 $3 个结果。',
         ],
+        [
+            /^This IP address has been temporarily banned due to an excessive request rate. This probably means you are using automated mirroring\/harvesting software or share the IP address with someone who does. The ban expires in (\d+) hours and (\d+) minutes$/,
+            '由于请求速率过高，此 IP 地址已被暂时封禁。这可能意味着您正在使用自动镜像/采集软件，或与某人共享 IP 地址。封禁将在 $1 小时 $2 分钟后解除。',
+        ],
     ],
 );
