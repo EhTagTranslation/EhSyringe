@@ -43,8 +43,8 @@ export interface EHTNamespace {
 
 export interface EHTTag {
     name: string;
-    intro?: string;
-    links?: string;
+    intro: string;
+    links: string;
 }
 
 export interface TagItem extends EHTTag {
@@ -54,7 +54,7 @@ export interface TagItem extends EHTTag {
     /** 去除 emoji 和图片等的名称 */
     cn: string;
     /** 用于搜索的简介 */
-    introSearch?: string;
+    introSearch: string;
 }
 
 export type TagMap = Record<string, TagItem>;

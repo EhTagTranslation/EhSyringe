@@ -87,6 +87,8 @@ export class TagDatabase {
                     key,
                     name: name,
                     cn: this.tagging.removeImagesAndEmoji(name),
+                    intro: '',
+                    links: '',
                     introSearch: '',
                 };
                 if (t.intro) {

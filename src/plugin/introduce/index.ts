@@ -113,10 +113,8 @@ export class Introduce {
             </div>
             <div class="ehs-content">
                 ${
-                    tagData.intro
-                        ? tagData.intro
-                        : `
-                    <div class="ehs-no-intro">
+                    tagData.intro ||
+                    `<div class="ehs-no-intro">
                         <h3>无介绍</h3>
                         <center><a href="${editorUrl}" target="_blank">提供介绍</a></center>
                     </div> `
