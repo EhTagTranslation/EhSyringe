@@ -25,11 +25,13 @@ jobs:
             LICENSE
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
+      - name: Download crx key
+        run: echo "${{ secrets.CRX_KEY }}" > key.pem
       - name: Build
         run: |
+          pnpm run build:monkey
           pnpm run build:firefox
           pnpm run build:chrome
-          pnpm run build:monkey
       - uses: actions/attest-build-provenance@v2
         if: startsWith(github.event.ref, 'refs/tags/')
         with:

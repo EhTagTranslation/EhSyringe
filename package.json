@@ -24,8 +24,8 @@
         "build": "webpack --mode=production",
         "build:monkey": "pnpm run build --env type=user-script",
         "build:ext": "pnpm run build --env type=web-ext",
-        "build:chrome": "pnpm run build:ext --env vendor=chrome && web-ext build -s dist -a releases -n ehsyringe.chrome.zip -o",
-        "build:firefox": "pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o",
+        "build:chrome": "pnpm run build:ext --env vendor=chrome && crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx",
+        "build:firefox": "pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o",
         "lint": "eslint",
         "format": "prettier --ignore-path .gitignore --write .",
         "clean": "rimraf dist releases"
@@ -44,6 +44,7 @@
         "@webextension-toolbox/webpack-webextension-plugin": "^3.3.1",
         "babel-loader": "^10.0.0",
         "copy-webpack-plugin": "^13.0.0",
+        "crx": "^5.0.1",
         "css-loader": "^7.1.2",
         "cssnano": "^7.0.6",
         "eslint": "^9.23.0",

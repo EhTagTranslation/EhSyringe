@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /releases
+/key.pem
 
 # dependencies
 /node_modules
