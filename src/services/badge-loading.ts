@@ -38,15 +38,13 @@ export class BadgeLoading {
         this.text = text;
         this.setColor(color);
         if (loading) {
-            if (!this.interval) {
-                this.interval = setInterval(() => {
-                    this.setText(`${this.text}${this.loadingString[this.frame] || ''}`);
-                    this.frame++;
-                    if (!this.loadingString[this.frame]) {
-                        this.frame = 0;
-                    }
-                }, 100);
-            }
+            this.interval ??= setInterval(() => {
+                this.setText(`${this.text}${this.loadingString[this.frame] || ''}`);
+                this.frame++;
+                if (!this.loadingString[this.frame]) {
+                    this.frame = 0;
+                }
+            }, 100);
         } else {
             this.frame = 0;
             if (this.interval) {

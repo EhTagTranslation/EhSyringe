@@ -453,9 +453,7 @@ export class Popup {
         this.updateView();
         await sleep(0);
         await this.checkVersion();
-        if (!this.downloadStatusSub) {
-            this.downloadStatusSub = this.messaging.on('updating-database', this.downloadStatus);
-        }
+        this.downloadStatusSub ??= this.messaging.on('updating-database', this.downloadStatus);
         this.el.addEventListener('click', this.openLink);
     }
 
