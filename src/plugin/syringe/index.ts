@@ -35,7 +35,7 @@ function childNodes(node: Node): Node[] {
 
 const skipNodeName = new Set<string>(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
 const ignoreClassName = `eh-syringe-ignore`;
-const skipElementMatcher = `.${ignoreClassName}, .${ignoreClassName} *`;
+const skipElementMatcher = `.${ignoreClassName}, .${ignoreClassName} *, [translate=no], [translate=no] :not([translate=yes])`;
 
 declare global {
     interface Window {
