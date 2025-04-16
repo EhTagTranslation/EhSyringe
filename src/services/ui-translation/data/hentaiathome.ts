@@ -198,6 +198,8 @@ merge(
             '每 1 组静态范围至少 5 GB。如果设置低于 5 TB/月，则不会被分配到大容量范围。',
         'To reduce the monthly data transfer target for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端的每月数据流量限制需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
+        'You need to check the confirmation box to confirm removing these ranges to set this.':
+            '你需要勾选确认框，确认移除这些范围才能进行设置。',
         ' Confirm removing all assigned high-capacity ranges from this client if set below 5 TB/month':
             ' 如果低于5 TB/月，确认删除客户端中所有大容量范围',
 
@@ -255,6 +257,10 @@ merge(
         [
             /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 5 GB of monthly data transfer, so you cannot reduce it below ([\d.]+) GB without removing ranges.$/,
             '此客户端已分配 $1 组静态范围。每组需要至少 5 GB 的每月数据流量，所以您无法减少至低于 $2 GB，除非移除静态范围。',
+        ],
+        [
+            /^This client currently has ([\d.]+) high-capacity ranges assigned. Clients with high-capacity ranges cannot have a data transfer limit set below ([\d.]+) TB\/month.$/,
+            '此客户端已分配 $1 组大容量范围。已具有大容量范围的客户端，其每月数据流量限制不能设置为低于 $2 TB/月。',
         ],
         [
             /^If you have a monthly data cap, you can provide it here. If the system detects that you are likely to exceed this target, it will reduce the priority of ranges on your client to reduce the load, but it is not guaranteed to stay below this value. Leave at 0 to limit with max speed alone. Must be at least ([\d.]+) GB if set.$/,
