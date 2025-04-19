@@ -456,6 +456,12 @@ export class Syringe {
                 button.setAttribute('ehs-input', '');
                 button.textContent = translation;
                 node.replaceWith(button);
+                // 新元素的事件派发至原元素，兼容 MEMS
+                button.addEventListener('click', (e) => {
+                    if (!node.dispatchEvent(new MouseEvent('click', e))) {
+                        e.preventDefault();
+                    }
+                });
             }
             return;
         }
@@ -486,6 +492,11 @@ export class Syringe {
             if (translation != null) {
                 node.textContent = translation;
             }
+        }
+
+        if (isElement(node, 'select') && node.matches('.searchnav > div > :scope')) {
+            // 兼容 MEMS
+            this.cloneAndPrependElement(node);
         }
 
         if (isElement(node, 'p') && node.classList.contains('gpc')) {

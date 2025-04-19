@@ -93,9 +93,34 @@ body {
         height: auto;
     }
 
+    // 标签输入
+    #tagmenu_act,
+    #tagmenu_new {
+        width: calc(100% - 30px) !important; // 留下右侧 loading 空间
+    }
+
+    #tagmenu_new > form {
+        display: flex;
+        #newtagfield {
+            flex: auto;
+        }
+    }
+
     // 信息框右侧菜单
-    .g2 {
-        padding-bottom: 20px;
+    #gd5 {
+        display: flex;
+        flex-flow: column;
+
+        // 当其他脚本在这里插入过多链接时。修改布局
+        --ehs-gap: 1;
+        &:has(:nth-child(8)) {
+            --ehs-gap: 0;
+            justify-content: space-around;
+        }
+    }
+    .g2,
+    .g3 {
+        padding-bottom: calc(20px * var(--ehs-gap, 1));
     }
     .gsp {
         padding-top: 10px;
