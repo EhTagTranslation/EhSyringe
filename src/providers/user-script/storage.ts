@@ -4,6 +4,24 @@ import type { JsonValue } from 'type-fest';
 
 const syncMark = '__sync__';
 
+function parse(value: string | null | undefined): JsonValue | undefined {
+    if (value == null) return undefined;
+    try {
+        return JSON.parse(value) as JsonValue;
+    } catch {
+        return undefined;
+    }
+}
+
+function serialize(value: JsonValue | undefined): string | undefined {
+    if (value === undefined) return undefined;
+    try {
+        return JSON.stringify(value);
+    } catch {
+        return undefined;
+    }
+}
+
 class AsyncPolyfill implements Storage {
     private listenerId = 1;
     private readonly listeners = new Map<number, { name: string; listener: Tampermonkey.ValueChangeListener }>();
@@ -29,8 +47,8 @@ class AsyncPolyfill implements Storage {
             listener(name, oldValue, value, false);
         }
     }
-    get(key: string): Promise<JsonValue | undefined> {
-        return get(key, this.store);
+    async get(key: string): Promise<JsonValue | undefined> {
+        return await get(key, this.store);
     }
     async set(key: string, value: JsonValue): Promise<void> {
         const oldValue = await this.get(key);
@@ -58,16 +76,51 @@ class AsyncPolyfill implements Storage {
 
 class GmAsyncStorage implements Storage {
     get(key: string): Promise<JsonValue | undefined> {
-        return Promise.resolve(GM_getValue(key));
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                try {
+                    resolve(parse(GM_getValue(key)));
+                } catch (ex) {
+                    reject(ex as Error);
+                }
+            });
+        });
     }
     set(key: string, value: JsonValue): Promise<void> {
-        return Promise.resolve(GM_setValue(key, value));
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                try {
+                    GM_setValue(key, serialize(value));
+                    resolve();
+                } catch (ex) {
+                    reject(ex as Error);
+                }
+            });
+        });
     }
     delete(key: string): Promise<void> {
-        return Promise.resolve(GM_deleteValue(key));
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                try {
+                    GM_deleteValue(key);
+                    resolve();
+                } catch (ex) {
+                    reject(ex as Error);
+                }
+            });
+        });
     }
     keys(): Promise<string[]> {
-        return Promise.resolve(GM_listValues().filter((k) => !k.startsWith(syncMark)));
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                try {
+                    const ks = GM_listValues();
+                    resolve(ks.filter((k) => !k.startsWith(syncMark)));
+                } catch (ex) {
+                    reject(ex as Error);
+                }
+            });
+        });
     }
     on(key: string, listener: Listener): ListenerId {
         return GM_addValueChangeListener(key, listener) as unknown as ListenerId;
@@ -87,15 +140,24 @@ const GM_ALL_DEFINED =
 export const storage: Storage = GM_ALL_DEFINED ? new GmAsyncStorage() : new AsyncPolyfill();
 
 abstract class SyncStorageBase implements SyncStorage {
-    abstract get(key: string): JsonValue | undefined;
-    abstract set(key: string, value: JsonValue): void;
-    abstract delete(key: string): void;
-    protected abstract list(): Iterable<string>;
+    protected abstract getRaw(key: string): string | null | undefined;
+    protected abstract setRaw(key: string, value: string | null | undefined): void;
+    get(key: string): JsonValue | undefined {
+        const value = this.getRaw(this.KEY_PREFIX + key);
+        return parse(value);
+    }
+    set(key: string, value: JsonValue): void {
+        this.setRaw(this.KEY_PREFIX + key, serialize(value));
+    }
+    delete(key: string): void {
+        this.setRaw(this.KEY_PREFIX + key, undefined);
+    }
+    protected abstract listRaw(): Iterable<string>;
     keys(): string[] {
         const names = [];
         const prefix = this.KEY_PREFIX;
-        for (const key of this.list()) {
-            if (!key) break;
+        for (const key of this.listRaw()) {
+            if (!key) continue;
             if (key.startsWith(prefix)) {
                 names.push(key.slice(prefix.length));
             }
@@ -103,37 +165,20 @@ abstract class SyncStorageBase implements SyncStorage {
         return names;
     }
     protected abstract readonly KEY_PREFIX: string;
-    protected key(key: string): string {
-        return this.KEY_PREFIX + key;
-    }
 }
 
 class SyncPolyfill extends SyncStorageBase {
     protected readonly KEY_PREFIX = 'EH_SYNC_POLYFILL_';
-
-    private parse<T>(value?: string | null, defaultValue?: T): T {
-        if (!value) return defaultValue as T;
-        try {
-            return JSON.parse(value) as T;
-        } catch {
-            return defaultValue as T;
+    getRaw(key: string): string | null {
+        return localStorage.getItem(key);
+    }
+    setRaw(key: string, value: string | null | undefined): void {
+        if (value == null) {
+            return localStorage.removeItem(key);
         }
+        localStorage.setItem(key, value);
     }
-    get(key: string): JsonValue | undefined {
-        const value = localStorage.getItem(this.key(key));
-        return this.parse(value);
-    }
-    set(key: string, value: JsonValue): void {
-        if (value === undefined) {
-            return this.delete(key);
-        }
-        const jValue = JSON.stringify(value);
-        localStorage.setItem(this.key(key), jValue);
-    }
-    delete(key: string): void {
-        localStorage.removeItem(this.key(key));
-    }
-    protected override *list(): Iterable<string> {
+    protected override *listRaw(): Iterable<string> {
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
             if (key) yield key;
@@ -143,16 +188,16 @@ class SyncPolyfill extends SyncStorageBase {
 
 class GMSyncStorage extends SyncStorageBase {
     protected readonly KEY_PREFIX = syncMark;
-    get(key: string): JsonValue | undefined {
-        return GM_getValue(this.key(key));
+    getRaw(key: string): string | undefined {
+        return GM_getValue(key);
     }
-    set(key: string, value: JsonValue): void {
-        GM_setValue(this.key(key), value);
+    setRaw(key: string, value: string | null): void {
+        if (value == null) {
+            return GM_deleteValue(key);
+        }
+        GM_setValue(key, value);
     }
-    delete(key: string): void {
-        GM_deleteValue(this.key(key));
-    }
-    protected override list(): Iterable<string> {
+    protected override listRaw(): Iterable<string> {
         return GM_listValues();
     }
 }
