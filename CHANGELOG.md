@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.1.3
+
+- 调整样式 [#1293](https://github.com/EhTagTranslation/EhSyringe/issues/1293)
+
 ## 3.1.2
 
 - 兼容 MEMS #1292
