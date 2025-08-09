@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.1.4
+
+- 兼容 [x-gallery-metadata](https://github.com/dnsev-h/x) [#1298](https://github.com/EhTagTranslation/EhSyringe/issues/1298)
+
 ## 3.1.3
 
 - 调整样式 [#1293](https://github.com/EhTagTranslation/EhSyringe/issues/1293)
