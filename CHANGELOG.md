@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.1.5
+
+- 修复标签提示位置不正确的问题 [#1300](https://github.com/EhTagTranslation/EhSyringe/issues/1300)
+
 ## 3.1.4
 
 - 兼容 [x-gallery-metadata](https://github.com/dnsev-h/x) [#1298](https://github.com/EhTagTranslation/EhSyringe/issues/1298)
