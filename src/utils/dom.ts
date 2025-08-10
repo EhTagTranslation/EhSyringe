@@ -8,11 +8,7 @@ export function ready(callback: () => void | Promise<void>): void {
         logger.error('执行文档加载回调失败', ex);
     };
     const f = (): void => {
-        try {
-            Promise.resolve(callback()).catch(onError);
-        } catch (ex) {
-            onError(ex);
-        }
+        Promise.resolve().then(callback).catch(onError);
     };
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', f, { passive: true, once: true });

@@ -69,7 +69,8 @@ export class TagTip {
             this.autoCompleteList.innerHTML = '';
         });
 
-        document.body.insertBefore(this.autoCompleteList, null);
+        document.body.appendChild(this.autoCompleteList);
+        this.setListPosition();
     }
 
     async search(value: string): Promise<void> {
@@ -172,8 +173,8 @@ export class TagTip {
 
     setListPosition(): void {
         const rect = this.inputElement.getBoundingClientRect();
-        this.autoCompleteList.style.left = `${rect.left}px`;
-        this.autoCompleteList.style.top = `${rect.bottom}px`;
+        this.autoCompleteList.style.left = `${rect.left + window.scrollX}px`;
+        this.autoCompleteList.style.top = `${rect.bottom + window.scrollY}px`;
         this.autoCompleteList.style.minWidth = `${rect.width}px`;
     }
 
