@@ -44,6 +44,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: startsWith(github.event.ref, 'refs/tags/')
 
     steps:
