@@ -61,9 +61,9 @@ export class TagTip {
         });
 
         fromEvent(this.inputElement, 'focus').subscribe(() => this.setListPosition());
+        fromEvent(this.inputElement, 'pointerenter').subscribe(() => this.setListPosition());
 
         fromEvent(window, 'resize').subscribe(() => this.setListPosition());
-        fromEvent(window, 'scroll').subscribe(() => this.setListPosition());
 
         fromEvent(document, 'click').subscribe(() => {
             this.autoCompleteList.innerHTML = '';
