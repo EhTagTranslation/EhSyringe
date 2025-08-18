@@ -139,6 +139,7 @@ export class Tagging {
         female: '女',
         male: '男',
         mixed: '混',
+        location: '地点',
         reclass: '重新分类',
         temp: '临时',
     };
