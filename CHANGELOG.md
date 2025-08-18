@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.2.0
+
+- 添加 location 命名空间
+
 ## 3.1.5
 
 - 修复标签提示位置不正确的问题 [#1300](https://github.com/EhTagTranslation/EhSyringe/issues/1300)
