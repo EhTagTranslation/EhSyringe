@@ -13,6 +13,9 @@ const nsDic: Record<string, EHTNamespaceName> = {
     language: 'language',
     lang: 'language',
 
+    loc: 'location',
+    location: 'location',
+
     o: 'other',
     other: 'other',
 
@@ -58,6 +61,7 @@ const shortNsDic: Record<EHTNamespaceName, EHTNamespaceNameShort> = {
     female: 'f',
     mixed: 'x',
     other: 'o',
+    location: 'loc',
     temp: '',
 };
 @Service()

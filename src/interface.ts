@@ -31,9 +31,10 @@ export type EHTNamespaceName =
     | 'female'
     | 'mixed'
     | 'other'
+    | 'location'
     | 'temp';
 
-export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'cos' | 'm' | 'f' | 'x' | 'o';
+export type EHTNamespaceNameShort = '' | 'r' | 'l' | 'p' | 'c' | 'g' | 'a' | 'cos' | 'm' | 'f' | 'x' | 'o' | 'loc';
 
 export interface EHTNamespace {
     namespace: EHTNamespaceName;

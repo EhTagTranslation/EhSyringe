@@ -140,6 +140,7 @@ merge(
         'male:': '男性:',
         'mixed:': '混合:',
         'other:': '其他:',
+        'location:': '地点:',
         'temp:': '临时:',
         '(Disowned)': '(已放弃)',
         'No torrents available': '无可用种子',

@@ -36,6 +36,7 @@ export class Suggest {
 
     readonly nsScore: Record<EHTNamespaceName, number> = {
         other: 10,
+        location: 9,
         female: 9,
         male: 8.5,
         mixed: 8,
