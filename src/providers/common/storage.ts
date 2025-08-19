@@ -1,6 +1,6 @@
-import type { Opaque, JsonValue } from 'type-fest';
+import type { Tagged, JsonValue } from 'type-fest';
 
-export type ListenerId = Opaque<unknown, Listener>;
+export type ListenerId = Tagged<unknown, 'ListenerId'>;
 export type Listener = (key: string, oldValue?: JsonValue, newValue?: JsonValue) => unknown;
 
 export interface Storage {

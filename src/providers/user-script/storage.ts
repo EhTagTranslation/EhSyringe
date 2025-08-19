@@ -123,7 +123,9 @@ class GmAsyncStorage implements Storage {
         });
     }
     on(key: string, listener: Listener): ListenerId {
-        return GM_addValueChangeListener(key, listener) as unknown as ListenerId;
+        return GM_addValueChangeListener(key, (key, ov: string, nv: string) =>
+            listener(key, parse(ov), parse(nv)),
+        ) as unknown as ListenerId;
     }
     off(key: string, id: ListenerId): void {
         GM_removeValueChangeListener(id as unknown as number);
