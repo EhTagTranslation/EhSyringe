@@ -22,6 +22,7 @@ export interface ConfigData {
     introduceImageLevel: ImageLevel;
     autoUpdate: boolean;
     tagTip: boolean;
+    overrideDbUrl: string;
 }
 
 export interface StorageItems {
@@ -109,6 +110,7 @@ export class Storage {
             introduceImageLevel: ImageLevel.r18g,
             autoUpdate: true,
             tagTip: true,
+            overrideDbUrl: '',
         },
         database: undefined,
         databaseInfo: undefined,

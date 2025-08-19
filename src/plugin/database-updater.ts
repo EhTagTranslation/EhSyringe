@@ -43,23 +43,34 @@ export class DatabaseUpdater {
                 this.logger.log('跳过');
                 return undefined;
             }
+
             const version = await this.checkVersion(recheck);
-            if (version?.sha && (!!force || version.sha !== (await this.messaging.emit('get-tag-sha', undefined)))) {
-                await this.updating;
-                const updating = this.update();
-                this.updating = updating;
-                const success = await updating;
-                this.updating = undefined;
-                if (success) {
-                    this.logger.log('有新版本并更新', version);
-                    return version;
-                } else {
-                    this.logger.log('更新新版本失败', version);
-                    return undefined;
-                }
+            if (!version?.sha) {
+                this.logger.log('没有数据库版本信息');
+                return undefined;
             }
-            this.logger.log('没有新版本');
-            return undefined;
+
+            if (force) {
+                this.logger.log('强制更新', version);
+            } else if (version.sha !== (await this.messaging.emit('get-tag-sha', undefined))) {
+                this.logger.log('有新版本', version);
+            } else {
+                this.logger.log('没有新版本', version);
+                return undefined;
+            }
+
+            await this.updating;
+            const updating = this.update();
+            this.updating = updating;
+            const success = await updating;
+            this.updating = undefined;
+            if (success) {
+                this.logger.log('有新版本并更新', version);
+                return version;
+            } else {
+                this.logger.log('更新新版本失败', version);
+                return undefined;
+            }
         });
         this.messaging.on('check-database', async ({ force }) => {
             return await this.checkVersion(force);
@@ -98,8 +109,8 @@ export class DatabaseUpdater {
         // 重置下载状态
         this.initDownloadStatus();
         try {
-            const data = await this.download();
-            await this.messaging.emit('update-tag', data.data);
+            const { base, override } = await this.download();
+            await this.messaging.emit('update-tag', { base, override });
 
             this.badge.set('OK', '#00C801');
             this.pushDownloadStatus({
@@ -162,7 +173,7 @@ export class DatabaseUpdater {
         return this.lastCheckData;
     }
 
-    private async download(): Promise<{ release: GithubRelease; data: EHTDatabase }> {
+    private async download(): Promise<{ release: GithubRelease; base: EHTDatabase; override?: EHTDatabase }> {
         this.badge.set('', '#4A90E2', 2);
         this.pushDownloadStatus({ run: true, info: '加载中' });
         const checkData = await this.checkVersion();
@@ -182,7 +193,7 @@ export class DatabaseUpdater {
             });
             this.pushDownloadStatus({ info: '下载完成', progress: 100 });
             this.badge.set('100', '#4A90E2', 1);
-            return { release: info, data };
+            return { release: info, ...data };
         } finally {
             timer.end();
         }

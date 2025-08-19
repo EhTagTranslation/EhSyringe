@@ -1,4 +1,4 @@
-import type { EHTDatabase, TagMap, TagItem } from '../interface';
+import type { EHTDatabase, TagMap, TagItem, EHTTag, EHTNamespace, EHTNamespaceName } from '../interface';
 import { Service } from 'typedi';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
@@ -51,7 +51,7 @@ export class TagDatabase {
     private async init(): Promise<void> {
         const data = await this.storage.get('databaseInfo');
         const dataMap = await this.storage.get('database');
-        this.messaging.on('update-tag', (data) => this.update(data));
+        this.messaging.on('update-tag', (data) => this.update(data.base, data.override));
         if (!data || data.version !== DATA_STRUCTURE_VERSION || !dataMap || !data.sha) {
             this.tagMap.next({ sha: '', map: {} });
             const timer = this.logger.time('数据结构变化, 重新构建数据');
@@ -69,39 +69,62 @@ export class TagDatabase {
         });
     }
 
-    update(tagDB: EHTDatabase): void {
+    update(baseDB: EHTDatabase, overrideDb?: EHTDatabase): void {
         const timer = this.logger.time('构建数据');
-        const sha = tagDB.head.sha;
+        const sha = baseDB.head.sha;
         const map: TagMap = {};
         const check = Date.now();
-        tagDB.data.forEach((nsData) => {
-            const namespace = nsData.namespace;
-            if (namespace === 'rows') return;
-            for (const key in nsData.data) {
-                const t = nsData.data[key];
+        const handleTag = (namespace: EHTNamespaceName, key: string, tag: EHTTag): void => {
+            if (typeof key != 'string') return;
+            if (key.includes('_')) key = key.replace(/_/g, ' ').trim();
+            if (!key) return;
 
-                const fullKey = this.tagging.fullKey({ namespace, key });
-                const name = this.tagging.removePara(t.name);
-                const ehTag: TagItem = {
-                    ns: this.tagging.ns(namespace),
-                    key,
-                    name: name,
-                    cn: this.tagging.removeImagesAndEmoji(name),
-                    intro: '',
-                    links: '',
-                    introSearch: '',
-                };
-                if (t.intro) {
-                    ehTag.intro = t.intro;
-                    ehTag.introSearch += '\0' + this.tagging.removeHtmlTags(t.intro).toLowerCase();
-                }
-                if (t.links) {
-                    ehTag.links = t.links;
-                    ehTag.introSearch += '\0' + this.tagging.removeHtmlTags(t.links).toLowerCase();
-                }
-                map[fullKey] = ehTag;
+            const fullKey = this.tagging.fullKey({ namespace, key });
+            if (map[fullKey]) return;
+
+            const name = this.tagging.removePara(tag.name) || key;
+            const ehTag: TagItem = {
+                ns: this.tagging.ns(namespace),
+                key,
+                name: name,
+                cn: this.tagging.removeImagesAndEmoji(name),
+                intro: '',
+                links: '',
+                introSearch: '',
+            };
+            if (tag.intro) {
+                ehTag.intro = tag.intro;
+                ehTag.introSearch += '\0' + this.tagging.removeHtmlTags(tag.intro).toLowerCase();
             }
-        });
+            if (tag.links) {
+                ehTag.links = tag.links;
+                ehTag.introSearch += '\0' + this.tagging.removeHtmlTags(tag.links).toLowerCase();
+            }
+            map[fullKey] = ehTag;
+        };
+        for (const baseNsData of baseDB.data) {
+            const namespace = baseNsData.namespace;
+            if (namespace === 'rows') return;
+            const overrideNsData = overrideDb?.data.find((ns) => ns.namespace === namespace);
+            for (const key in baseNsData.data) {
+                const baseTag = baseNsData.data[key];
+                const overrideTag = overrideNsData?.data[key];
+                if (overrideTag) {
+                    handleTag(namespace, key, {
+                        ...baseTag,
+                        ...overrideTag,
+                    });
+                } else {
+                    handleTag(namespace, key, baseTag);
+                }
+            }
+            if (overrideNsData?.data) {
+                for (const key in overrideNsData.data) {
+                    const overrideTag = overrideNsData.data[key];
+                    handleTag(namespace, key, overrideTag);
+                }
+            }
+        }
         this.tagMap.next({ map, sha });
 
         // 后台继续处理，直接返回

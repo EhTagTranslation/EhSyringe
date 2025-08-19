@@ -14,6 +14,17 @@
         border: none;
         padding: 0;
         margin: 0;
+        min-width: 0;
+    }
+
+    input[type='text'] {
+        border-radius: 0;
+        border-bottom: solid 1px transparent;
+
+        &.invalid,
+        &:invalid {
+            border-color: #aa575e !important;
+        }
     }
 
     input[type='radio'],
@@ -110,6 +121,14 @@
     #settingForm {
         .checkbox-item svg path {
             stroke: @accent;
+        }
+
+        input[type='text'] {
+            color: @foreground;
+            border-color: @soft-accent;
+            &:focus {
+                border-color: @accent;
+            }
         }
 
         input[type='checkbox'] {
@@ -358,6 +377,8 @@
         }
 
         #settingForm {
+            overflow: hidden auto;
+            scrollbar-width: thin;
             font-size: 10pt;
             line-height: 12pt;
         }
@@ -463,8 +484,9 @@
             }
         }
     }
+
     .image-level {
-        margin: 4px;
+        padding: 4px;
     }
     .range-title {
         margin: 0;
@@ -482,5 +504,12 @@
             text-align: center;
             display: inline-block;
         }
+    }
+
+    .override-db {
+        padding: 4px;
+        display: flex;
+        gap: 4px;
+        align-items: first baseline;
     }
 }

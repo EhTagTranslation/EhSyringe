@@ -330,6 +330,36 @@ export class Popup {
                             >
                         </div>
                     </div>
+                    <div class="override-db">
+                        <label for="overrideDbUrl">外部数据库: </label>
+                        <input
+                            id="overrideDbUrl"
+                            type="text"
+                            pattern="https?://.+|"
+                            value="${this.state.configValue.overrideDbUrl || ''}"
+                            placeholder="https://example.com/data.html.json"
+                            @change="${(e: Event) => {
+                                const el = e.target as HTMLInputElement;
+                                const value = String(el.value || '').trim();
+                                el.value = value;
+                                let valid = true;
+                                if (value) {
+                                    try {
+                                        const u = new URL(value);
+                                        if (u.protocol !== 'http:' && u.protocol !== 'https:') {
+                                            valid = false;
+                                        }
+                                    } catch {
+                                        valid = false;
+                                    }
+                                }
+                                el.classList.toggle('invalid', !valid);
+                                if (valid) {
+                                    this.changeConfigValue('overrideDbUrl', value);
+                                }
+                            }}"
+                        />
+                    </div>
                 </form>
                 <button
                     @click="${async () => {
