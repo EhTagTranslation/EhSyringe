@@ -337,7 +337,7 @@ export class Popup {
                             type="text"
                             pattern="https?://.+|"
                             value="${this.state.configValue.overrideDbUrl || ''}"
-                            placeholder="https://example.com/data.html.json"
+                            placeholder="https://eg.com/data.html.json"
                             @change="${(e: Event) => {
                                 const el = e.target as HTMLInputElement;
                                 const value = String(el.value || '').trim();

@@ -509,7 +509,12 @@
     .override-db {
         padding: 4px;
         display: flex;
+        flex-direction: column;
         gap: 4px;
-        align-items: first baseline;
+        align-items: flex-start;
+
+        input {
+            width: 100%;
+        }
     }
 }
