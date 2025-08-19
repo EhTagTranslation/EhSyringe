@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.2.0
+// @version     3.2.1
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@25f82a4d50b63965c822720963f9e0463f25a76d/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@ddf843d9ff1ef7ff18edd2922285180646d59340/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -13246,7 +13246,7 @@ module.exports = uncurryThis({}.isPrototypeOf);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:medium;line-height:normal;text-align:left;text-align:initial}#eh-syringe-popup-root input,#eh-syringe-popup-root table,#eh-syringe-popup-root td,#eh-syringe-popup-root th{background:inherit;color:inherit}#eh-syringe-popup-root input{border:none;margin:0;padding:0}#eh-syringe-popup-root input[type=checkbox],#eh-syringe-popup-root input[type=radio]{position:static;top:auto}#eh-syringe-popup-root p{margin:.8em 0;padding:0}#eh-syringe-popup-root a{background:rgba(0,0,0,0);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup{background:#f0f0f0;border:1px solid #8041a6;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#111}#eh-syringe-popup .action{background:#f0f0f0;color:#8041a6}#eh-syringe-popup .action.primary{background:#8041a6;border-color:#8041a6;color:#f0f0f0}#eh-syringe-popup .action.primary:hover{background:#491774}#eh-syringe-popup .action.primary:active{background:#ae79c9}#eh-syringe-popup #info{color:#8041a6}#eh-syringe-popup .hasNew{color:#79252b}#eh-syringe-popup a{color:#8041a6}#eh-syringe-popup a:hover{color:#491774}#eh-syringe-popup a:active{color:#ae79c9}#eh-syringe-popup a.minor{color:#a5a3a6}#eh-syringe-popup a.minor:hover{color:#d2cdd4}#eh-syringe-popup a.minor:active{color:#838185}#eh-syringe-popup .logo svg [fill-bg]{fill:#f0f0f0}#eh-syringe-popup .logo svg [fill-accent]{fill:#8041a6}#eh-syringe-popup .logo svg [fill-sa]{fill:#cfbadc}#eh-syringe-popup .logo svg [stroke-bg]{stroke:#f0f0f0}#eh-syringe-popup .logo svg [stroke-accent]{stroke:#8041a6}#eh-syringe-popup .logo svg [stroke-sa]{stroke:#cfbadc}#eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#8041a6}#eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}#eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #8041a6;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #8041a6;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#fdfdfd;border:2px solid #8041a6;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#fdfdfd;border:2px solid #8041a6;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup{background:#313131;border:1px solid #ce90f1;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#eee}:root.ehs-ex #eh-syringe-popup .action{background:#313131;color:#ce90f1}:root.ehs-ex #eh-syringe-popup .action.primary{background:#ce90f1;border-color:#ce90f1;color:#313131}:root.ehs-ex #eh-syringe-popup .action.primary:hover{background:#e2b9f7}:root.ehs-ex #eh-syringe-popup .action.primary:active{background:#b669e9}:root.ehs-ex #eh-syringe-popup #info{color:#ce90f1}:root.ehs-ex #eh-syringe-popup .hasNew{color:#cb8d93}:root.ehs-ex #eh-syringe-popup a{color:#ce90f1}:root.ehs-ex #eh-syringe-popup a:hover{color:#e2b9f7}:root.ehs-ex #eh-syringe-popup a:active{color:#b669e9}:root.ehs-ex #eh-syringe-popup a.minor{color:#a5a3a6}:root.ehs-ex #eh-syringe-popup a.minor:hover{color:#d2cdd4}:root.ehs-ex #eh-syringe-popup a.minor:active{color:#838185}:root.ehs-ex #eh-syringe-popup .logo svg [fill-bg]{fill:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [fill-accent]{fill:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [fill-sa]{fill:#987ca8}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-bg]{stroke:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-accent]{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-sa]{stroke:#987ca8}:root.ehs-ex #eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #ce90f1;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#131313;border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#131313;border:2px solid #ce90f1;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup-root{font-family:sans-serif;font-size:12pt;max-width:400px;min-width:240px;overflow:hidden;padding:1px;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap}#eh-syringe-popup-root .hidden{display:none;visibility:hidden}#eh-syringe-popup-root .ehs-panel{margin:0 auto;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column}#eh-syringe-popup-root .ehs-panel,#eh-syringe-popup-root .ehs-panel .header{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}#eh-syringe-popup-root .ehs-panel .header{line-height:1;margin:16px}#eh-syringe-popup-root .ehs-panel .header>.cushion{-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto}#eh-syringe-popup-root .ehs-panel .header span{color:#a5a3a6}#eh-syringe-popup-root .ehs-panel .content{margin:0 16px;-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto;overflow:visible}#eh-syringe-popup-root .ehs-panel .action{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;cursor:pointer;display:block;font-size:16px;line-height:36px;margin:16px;outline:0;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;min-width:64px;overflow:visible;padding:0 16px;text-align:center;-webkit-text-decoration:none;text-decoration:none;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0);-webkit-transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);-o-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);-moz-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);white-space:nowrap}#eh-syringe-popup-root .ehs-panel .action.primary{-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);-moz-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action.primary:active{-webkit-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);-moz-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action:disabled{opacity:.6}#eh-syringe-popup-root .ehs-panel .action:focus{border:1px solid #888}#eh-syringe-popup-root #ehs-main-panel{-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-main-panel.ehs-hide{opacity:0;pointer-events:none;-webkit-transform:scale(.9);-moz-transform:scale(.9);-ms-transform:scale(.9);-o-transform:scale(.9);transform:scale(.9)}#eh-syringe-popup-root .logo-box{margin:-16px;overflow:hidden;pointer-events:none;position:relative}#eh-syringe-popup-root .logo{margin:20px 0;text-align:center;-webkit-transform:scale(1) rotate(-45deg);-moz-transform:scale(1) rotate(-45deg);-ms-transform:scale(1) rotate(-45deg);-o-transform:scale(1) rotate(-45deg);transform:scale(1) rotate(-45deg);-webkit-transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo svg{pointer-events:none}#eh-syringe-popup-root .logo #Enema{opacity:0;-webkit-transform-origin:61px 86px;-moz-transform-origin:61px 86px;-ms-transform-origin:61px 86px;-o-transform-origin:61px 86px;transform-origin:61px 86px}#eh-syringe-popup-root .logo #Enema2{opacity:1}#eh-syringe-popup-root .logo #Enema,#eh-syringe-popup-root .logo #Enema2,#eh-syringe-popup-root .logo #PushRod{-webkit-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo.prominent{-webkit-transform:scale(1.6) rotate(0deg);-moz-transform:scale(1.6) rotate(0deg);-ms-transform:scale(1.6) rotate(0deg);-o-transform:scale(1.6) rotate(0deg);transform:scale(1.6) rotate(0deg)}#eh-syringe-popup-root .logo.prominent #Enema2{opacity:0}#eh-syringe-popup-root .logo.prominent #Enema{opacity:1}#eh-syringe-popup-root .logo.prominent.injection{-webkit-transform:scale(1.6) rotate(0deg) translate(-10px);-moz-transform:scale(1.6) rotate(0deg) translate(-10px);-ms-transform:scale(1.6) rotate(0deg) translate(-10px);-o-transform:scale(1.6) rotate(0deg) translate(-10px);transform:scale(1.6) rotate(0deg) translate(-10px)}#eh-syringe-popup-root .logo.prominent.injection #Enema,#eh-syringe-popup-root .logo.prominent.injection #Enema2,#eh-syringe-popup-root .logo.prominent.injection #PushRod{-webkit-transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);-o-transition:width .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1);-moz-transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #info{bottom:30px;font-size:16px;height:24px;left:0;line-height:24px;position:absolute;right:0;text-align:center}#eh-syringe-popup-root .monospace{font-family:Menlo,Consolas,Source Code Pro,Inconsolata,Monaco,Courier New,monospace}#eh-syringe-popup-root table{font-size:14px}#eh-syringe-popup-root #ehs-setting-panel{bottom:0;left:0;opacity:0;pointer-events:none;position:absolute;right:0;top:0;-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-setting-panel.ehs-show{opacity:1;pointer-events:auto;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}#eh-syringe-popup-root #ehs-setting-panel #settingForm{font-size:10pt;line-height:12pt}#eh-syringe-popup-root .checkbox-item{padding:4px 0}#eh-syringe-popup-root .checkbox-item label{display:block;position:relative}#eh-syringe-popup-root .checkbox-item svg{height:10px;left:3px;position:absolute;top:3px;width:10px}#eh-syringe-popup-root .checkbox-item svg path{stroke-dasharray:1000;stroke-dashoffset:1000;stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;fill:none}#eh-syringe-popup-root .checkbox-item svg.checked path{stroke-dasharray:113.137,113.137;stroke-dashoffset:0;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup-root .checkbox-item svg.checked path+path{-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;transition:all .28s cubic-bezier(.4,0,.2,1) .28s}#eh-syringe-popup-root .checkbox-item input[type=checkbox]{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-right:2px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s;vertical-align:top;width:16px}#eh-syringe-popup-root .checkbox-item input[type=checkbox]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;width:100%}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-runnable-track{-webkit-border-radius:10px;border-radius:10px;-webkit-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:50%;border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-track{-moz-border-radius:10px;border-radius:10px;-moz-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-moz-border-radius:50%;border-radius:50%;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-moz-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm h3 span{font-size:20pt;font-weight:400}#eh-syringe-popup-root .image-level{margin:4px}#eh-syringe-popup-root .range-title{margin:0}#eh-syringe-popup-root .range-box{margin:5px}#eh-syringe-popup-root .range-label{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}#eh-syringe-popup-root .range-label a{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;display:inline-block;-ms-flex:none;flex:none;font-size:10pt;text-align:center;width:30px}", "",{"version":3,"sources":["webpack://./src/plugin/popup/index.less"],"names":[],"mappings":"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","sourcesContent":["#eh-syringe-popup-root {\n    text-align: initial;\n    font-size: initial;\n    line-height: initial;\n    input,\n    table,\n    th,\n    td {\n        background: inherit;\n        color: inherit;\n    }\n\n    input {\n        border: none;\n        padding: 0;\n        margin: 0;\n    }\n\n    input[type='radio'],\n    input[type='checkbox'] {\n        position: initial;\n        top: initial;\n    }\n    p {\n        padding: 0;\n        margin: 0.8em 0;\n    }\n    a {\n        background: rgba(0, 0, 0, 0);\n        transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        text-decoration: none;\n    }\n}\n\n// theme\n.theme(@background, @foreground, @shadow, @accent) {\n    @soft-accent: softlight(@accent, @background);\n\n    & {\n        border: @accent solid 1px;\n        border-radius: 6px;\n        background: @background;\n        color: @foreground;\n        box-shadow: 0 0 6px 2px @shadow;\n    }\n\n    .action {\n        background: @background;\n        color: @accent;\n\n        &.primary {\n            border-color: @accent;\n            background: @accent;\n            color: @background;\n        }\n        &.primary:hover {\n            background: softlight(@accent, @foreground);\n        }\n        &.primary:active {\n            background: softlight(@accent, @background);\n        }\n    }\n\n    #info {\n        color: @accent;\n    }\n    .hasNew {\n        color: softlight(#aa575e, @foreground);\n    }\n    a {\n        color: @accent;\n        &:hover {\n            color: softlight(@accent, @foreground);\n        }\n        &:active {\n            color: softlight(@accent, @background);\n        }\n        &.minor {\n            color: #a5a3a6;\n            &:hover {\n                color: #d2cdd4;\n            }\n            &:active {\n                color: #838185;\n            }\n        }\n    }\n    .logo svg {\n        @sa: lighten(average(@accent, @background), 10%);\n        [fill-bg] {\n            fill: @background;\n        }\n        [fill-accent] {\n            fill: @accent;\n        }\n        [fill-sa] {\n            fill: @sa;\n        }\n        [stroke-bg] {\n            stroke: @background;\n        }\n        [stroke-accent] {\n            stroke: @accent;\n        }\n        [stroke-sa] {\n            stroke: @sa;\n        }\n    }\n\n    #settingForm {\n        .checkbox-item svg path {\n            stroke: @accent;\n        }\n\n        input[type='checkbox'] {\n            border: solid 2px #a09da6;\n            &:checked {\n                border: solid 2px @accent;\n            }\n        }\n\n        input[type='range'] {\n            &::-webkit-slider-runnable-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-moz-range-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-webkit-slider-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &::-moz-range-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &:focus::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:focus::-moz-range-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:active::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n            &:active::-moz-range-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n        }\n    }\n}\n\n#eh-syringe-popup {\n    @background: rgb(240, 240, 240);\n    @foreground: #111;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #8041a6;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n:root.ehs-ex #eh-syringe-popup {\n    @background: rgb(49, 49, 49);\n    @foreground: #eee;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #ce90f1;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n#eh-syringe-popup-root {\n    overflow: hidden;\n    white-space: nowrap;\n    font-family: sans-serif;\n    font-size: 12pt;\n    user-select: none;\n    padding: 1px;\n    max-width: 400px;\n    min-width: 240px;\n    position: relative;\n\n    .hidden {\n        visibility: hidden;\n        display: none;\n    }\n\n    .ehs-panel {\n        margin: 0 auto;\n        display: flex;\n        flex-direction: column;\n\n        .header {\n            margin: 16px;\n            line-height: 1;\n            //font-size: 16px;\n            display: flex;\n            > .cushion {\n                flex: auto;\n            }\n            span {\n                color: #a5a3a6;\n            }\n        }\n\n        .content {\n            margin: 0 16px;\n            flex: auto;\n            overflow: visible;\n        }\n\n        .action {\n            display: block;\n            line-height: 36px;\n            font-size: 16px;\n            margin: 16px;\n            box-sizing: border-box;\n            position: relative;\n            user-select: none;\n            cursor: pointer;\n            outline: 0;\n            -webkit-tap-highlight-color: transparent;\n            white-space: nowrap;\n            text-decoration: none;\n            text-align: center;\n            min-width: 64px;\n            padding: 0 16px;\n            border-radius: 4px;\n            overflow: visible;\n            transform: translate3d(0, 0, 0);\n            border: 1px #ddd solid;\n            transition:\n                background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),\n                box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n\n            &.primary {\n                box-shadow:\n                    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n                    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n            }\n            &.primary:active {\n                box-shadow:\n                    0 5px 5px -3px rgba(0, 0, 0, 0.2),\n                    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n                    0 3px 14px 2px rgba(0, 0, 0, 0.12);\n            }\n            &:disabled {\n                opacity: 0.6;\n            }\n            &:focus {\n                border: 1px #888 solid;\n            }\n        }\n    }\n\n    #ehs-main-panel {\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1);\n        &.ehs-hide {\n            transform: scale(0.9);\n            opacity: 0;\n            pointer-events: none;\n        }\n    }\n\n    .logo-box {\n        overflow: hidden;\n        position: relative;\n        margin: -16px;\n        pointer-events: none;\n    }\n    .logo {\n        text-align: center;\n        margin: 20px 0;\n        transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1) rotate(-45deg);\n\n        svg {\n            pointer-events: none;\n        }\n        #Enema {\n            opacity: 0;\n            transform-origin: 61px 86px;\n        }\n        #Enema2 {\n            opacity: 1;\n        }\n        #Enema,\n        #Enema2,\n        #PushRod {\n            transition:\n                width 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n        &.prominent {\n            #Enema2 {\n                opacity: 0;\n            }\n            #Enema {\n                opacity: 1;\n            }\n            transform: scale(1.6) rotate(0deg);\n            &.injection {\n                transform: scale(1.6) rotate(0deg) translate(-10px, 0);\n                #Enema,\n                #Enema2,\n                #PushRod {\n                    transition:\n                        width 600ms cubic-bezier(0.4, 0, 0.2, 1),\n                        transform 600ms cubic-bezier(0.4, 0, 0.2, 1);\n                }\n            }\n        }\n    }\n\n    #info {\n        position: absolute;\n        bottom: 30px;\n        left: 0;\n        right: 0;\n        height: 24px;\n        line-height: 24px;\n        text-align: center;\n        font-size: 16px;\n    }\n\n    .monospace {\n        font-family: Menlo, Consolas, 'Source Code Pro', Inconsolata, Monaco, 'Courier New', monospace;\n    }\n    table {\n        font-size: 14px;\n    }\n\n    #ehs-setting-panel {\n        position: absolute;\n        left: 0;\n        top: 0;\n        bottom: 0;\n        right: 0;\n        pointer-events: none;\n        opacity: 0;\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1.1);\n\n        &.ehs-show {\n            pointer-events: auto;\n            opacity: 1;\n            transform: scale(1);\n        }\n\n        #settingForm {\n            font-size: 10pt;\n            line-height: 12pt;\n        }\n    }\n    .checkbox-item {\n        padding: 4px 0;\n\n        label {\n            position: relative;\n            display: block;\n        }\n\n        svg {\n            width: 10px;\n            height: 10px;\n            position: absolute;\n            left: 3px;\n            top: 3px;\n            path {\n                stroke-dasharray: 1000;\n                stroke-dashoffset: 1000;\n                stroke-width: 16px;\n                stroke-linecap: round;\n                stroke-linejoin: round;\n                fill: none;\n            }\n\n            &.checked {\n                path {\n                    stroke-dasharray: 113.137, 113.137;\n                    stroke-dashoffset: 0;\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n                }\n                path + path {\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 280ms;\n                }\n            }\n        }\n\n        input[type='checkbox'] {\n            appearance: none;\n            width: 16px;\n            height: 16px;\n            margin-right: 2px;\n            box-sizing: border-box;\n            vertical-align: top;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        }\n        input[type='checkbox']:focus {\n            outline: none;\n        }\n    }\n\n    #settingForm {\n        input[type='range'] {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            border-radius: 8px;\n            width: 100%;\n        }\n        input[type='range']::-webkit-slider-runnable-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']:focus {\n            outline: none;\n        }\n        input[type='range']::-webkit-slider-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        input[type='range']::-moz-range-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']::-moz-range-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        h3 {\n            span {\n                font-weight: 400;\n                font-size: 20pt;\n            }\n        }\n    }\n    .image-level {\n        margin: 4px;\n    }\n    .range-title {\n        margin: 0;\n    }\n    .range-box {\n        margin: 5px;\n    }\n    .range-label {\n        display: flex;\n        justify-content: space-between;\n        a {\n            flex: none;\n            font-size: 10pt;\n            width: 30px;\n            text-align: center;\n            display: inline-block;\n        }\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#eh-syringe-popup-root{font-size:medium;line-height:normal;text-align:left;text-align:initial}#eh-syringe-popup-root input,#eh-syringe-popup-root table,#eh-syringe-popup-root td,#eh-syringe-popup-root th{background:inherit;color:inherit}#eh-syringe-popup-root input{border:none;margin:0;min-width:0;padding:0}#eh-syringe-popup-root input[type=text]{border-bottom:1px solid transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}#eh-syringe-popup-root input[type=text].invalid,#eh-syringe-popup-root input[type=text]:invalid{border-color:#aa575e!important}#eh-syringe-popup-root input[type=checkbox],#eh-syringe-popup-root input[type=radio]{position:static;top:auto}#eh-syringe-popup-root p{margin:.8em 0;padding:0}#eh-syringe-popup-root a{background:rgba(0,0,0,0);-webkit-text-decoration:none;text-decoration:none;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup{background:#f0f0f0;border:1px solid #8041a6;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#111}#eh-syringe-popup .action{background:#f0f0f0;color:#8041a6}#eh-syringe-popup .action.primary{background:#8041a6;border-color:#8041a6;color:#f0f0f0}#eh-syringe-popup .action.primary:hover{background:#491774}#eh-syringe-popup .action.primary:active{background:#ae79c9}#eh-syringe-popup #info{color:#8041a6}#eh-syringe-popup .hasNew{color:#79252b}#eh-syringe-popup a{color:#8041a6}#eh-syringe-popup a:hover{color:#491774}#eh-syringe-popup a:active{color:#ae79c9}#eh-syringe-popup a.minor{color:#a5a3a6}#eh-syringe-popup a.minor:hover{color:#d2cdd4}#eh-syringe-popup a.minor:active{color:#838185}#eh-syringe-popup .logo svg [fill-bg]{fill:#f0f0f0}#eh-syringe-popup .logo svg [fill-accent]{fill:#8041a6}#eh-syringe-popup .logo svg [fill-sa]{fill:#cfbadc}#eh-syringe-popup .logo svg [stroke-bg]{stroke:#f0f0f0}#eh-syringe-popup .logo svg [stroke-accent]{stroke:#8041a6}#eh-syringe-popup .logo svg [stroke-sa]{stroke:#cfbadc}#eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#8041a6}#eh-syringe-popup #settingForm input[type=text]{border-color:#ae79c9;color:#111}#eh-syringe-popup #settingForm input[type=text]:focus{border-color:#8041a6}#eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}#eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #8041a6;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #8041a6;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#fdfdfd;border:2px solid #8041a6;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#fdfdfd;border:2px solid #8041a6;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup{background:#313131;border:1px solid #ce90f1;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 0 6px 2px rgba(0,0,0,.2);-moz-box-shadow:0 0 6px 2px rgba(0,0,0,.2);box-shadow:0 0 6px 2px rgba(0,0,0,.2);color:#eee}:root.ehs-ex #eh-syringe-popup .action{background:#313131;color:#ce90f1}:root.ehs-ex #eh-syringe-popup .action.primary{background:#ce90f1;border-color:#ce90f1;color:#313131}:root.ehs-ex #eh-syringe-popup .action.primary:hover{background:#e2b9f7}:root.ehs-ex #eh-syringe-popup .action.primary:active{background:#b669e9}:root.ehs-ex #eh-syringe-popup #info{color:#ce90f1}:root.ehs-ex #eh-syringe-popup .hasNew{color:#cb8d93}:root.ehs-ex #eh-syringe-popup a{color:#ce90f1}:root.ehs-ex #eh-syringe-popup a:hover{color:#e2b9f7}:root.ehs-ex #eh-syringe-popup a:active{color:#b669e9}:root.ehs-ex #eh-syringe-popup a.minor{color:#a5a3a6}:root.ehs-ex #eh-syringe-popup a.minor:hover{color:#d2cdd4}:root.ehs-ex #eh-syringe-popup a.minor:active{color:#838185}:root.ehs-ex #eh-syringe-popup .logo svg [fill-bg]{fill:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [fill-accent]{fill:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [fill-sa]{fill:#987ca8}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-bg]{stroke:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-accent]{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-sa]{stroke:#987ca8}:root.ehs-ex #eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=text]{border-color:#b669e9;color:#eee}:root.ehs-ex #eh-syringe-popup #settingForm input[type=text]:focus{border-color:#ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #ce90f1;-moz-box-shadow:0 0 7px rgba(0,0,0,.2);box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{background:#131313;border:2px solid #ce90f1;-webkit-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{background:#131313;border:2px solid #ce90f1;-moz-box-shadow:0 0 7px 1px rgba(0,0,0,.2);box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup-root{font-family:sans-serif;font-size:12pt;max-width:400px;min-width:240px;overflow:hidden;padding:1px;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap}#eh-syringe-popup-root .hidden{display:none;visibility:hidden}#eh-syringe-popup-root .ehs-panel{margin:0 auto;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column}#eh-syringe-popup-root .ehs-panel,#eh-syringe-popup-root .ehs-panel .header{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}#eh-syringe-popup-root .ehs-panel .header{line-height:1;margin:16px}#eh-syringe-popup-root .ehs-panel .header>.cushion{-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto}#eh-syringe-popup-root .ehs-panel .header span{color:#a5a3a6}#eh-syringe-popup-root .ehs-panel .content{margin:0 16px;-webkit-box-flex:1;-webkit-flex:auto;-moz-box-flex:1;-ms-flex:auto;flex:auto;overflow:visible}#eh-syringe-popup-root .ehs-panel .action{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;cursor:pointer;display:block;font-size:16px;line-height:36px;margin:16px;outline:0;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;border:1px solid #ddd;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;min-width:64px;overflow:visible;padding:0 16px;text-align:center;-webkit-text-decoration:none;text-decoration:none;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0);-webkit-transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);-o-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);-moz-transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1);transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1),-moz-box-shadow .28s cubic-bezier(.4,0,.2,1);white-space:nowrap}#eh-syringe-popup-root .ehs-panel .action.primary{-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);-moz-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action.primary:active{-webkit-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);-moz-box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action:disabled{opacity:.6}#eh-syringe-popup-root .ehs-panel .action:focus{border:1px solid #888}#eh-syringe-popup-root #ehs-main-panel{-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-main-panel.ehs-hide{opacity:0;pointer-events:none;-webkit-transform:scale(.9);-moz-transform:scale(.9);-ms-transform:scale(.9);-o-transform:scale(.9);transform:scale(.9)}#eh-syringe-popup-root .logo-box{margin:-16px;overflow:hidden;pointer-events:none;position:relative}#eh-syringe-popup-root .logo{margin:20px 0;text-align:center;-webkit-transform:scale(1) rotate(-45deg);-moz-transform:scale(1) rotate(-45deg);-ms-transform:scale(1) rotate(-45deg);-o-transform:scale(1) rotate(-45deg);transform:scale(1) rotate(-45deg);-webkit-transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1);transition:transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo svg{pointer-events:none}#eh-syringe-popup-root .logo #Enema{opacity:0;-webkit-transform-origin:61px 86px;-moz-transform-origin:61px 86px;-ms-transform-origin:61px 86px;-o-transform-origin:61px 86px;transform-origin:61px 86px}#eh-syringe-popup-root .logo #Enema2{opacity:1}#eh-syringe-popup-root .logo #Enema,#eh-syringe-popup-root .logo #Enema2,#eh-syringe-popup-root .logo #PushRod{-webkit-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo.prominent{-webkit-transform:scale(1.6) rotate(0deg);-moz-transform:scale(1.6) rotate(0deg);-ms-transform:scale(1.6) rotate(0deg);-o-transform:scale(1.6) rotate(0deg);transform:scale(1.6) rotate(0deg)}#eh-syringe-popup-root .logo.prominent #Enema2{opacity:0}#eh-syringe-popup-root .logo.prominent #Enema{opacity:1}#eh-syringe-popup-root .logo.prominent.injection{-webkit-transform:scale(1.6) rotate(0deg) translate(-10px);-moz-transform:scale(1.6) rotate(0deg) translate(-10px);-ms-transform:scale(1.6) rotate(0deg) translate(-10px);-o-transform:scale(1.6) rotate(0deg) translate(-10px);transform:scale(1.6) rotate(0deg) translate(-10px)}#eh-syringe-popup-root .logo.prominent.injection #Enema,#eh-syringe-popup-root .logo.prominent.injection #Enema2,#eh-syringe-popup-root .logo.prominent.injection #PushRod{-webkit-transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1);-o-transition:width .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1);-moz-transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),-webkit-transform .6s cubic-bezier(.4,0,.2,1),-moz-transform .6s cubic-bezier(.4,0,.2,1),-o-transform .6s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #info{bottom:30px;font-size:16px;height:24px;left:0;line-height:24px;position:absolute;right:0;text-align:center}#eh-syringe-popup-root .monospace{font-family:Menlo,Consolas,Source Code Pro,Inconsolata,Monaco,Courier New,monospace}#eh-syringe-popup-root table{font-size:14px}#eh-syringe-popup-root #ehs-setting-panel{bottom:0;left:0;opacity:0;pointer-events:none;position:absolute;right:0;top:0;-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);-o-transform:scale(1.1);transform:scale(1.1);-webkit-transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1);-o-transition:opacity .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1);-moz-transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1),-webkit-transform .28s cubic-bezier(.4,0,.2,1),-moz-transform .28s cubic-bezier(.4,0,.2,1),-o-transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #ehs-setting-panel.ehs-show{opacity:1;pointer-events:auto;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1)}#eh-syringe-popup-root #ehs-setting-panel #settingForm{font-size:10pt;line-height:12pt;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;scrollbar-width:thin}#eh-syringe-popup-root .checkbox-item{padding:4px 0}#eh-syringe-popup-root .checkbox-item label{display:block;position:relative}#eh-syringe-popup-root .checkbox-item svg{height:10px;left:3px;position:absolute;top:3px;width:10px}#eh-syringe-popup-root .checkbox-item svg path{stroke-dasharray:1000;stroke-dashoffset:1000;stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;fill:none}#eh-syringe-popup-root .checkbox-item svg.checked path{stroke-dasharray:113.137,113.137;stroke-dashoffset:0;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup-root .checkbox-item svg.checked path+path{-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) .28s;transition:all .28s cubic-bezier(.4,0,.2,1) .28s}#eh-syringe-popup-root .checkbox-item input[type=checkbox]{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-right:2px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-o-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-moz-transition:all .28s cubic-bezier(.4,0,.2,1) 0s;transition:all .28s cubic-bezier(.4,0,.2,1) 0s;vertical-align:top;width:16px}#eh-syringe-popup-root .checkbox-item input[type=checkbox]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;width:100%}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-runnable-track{-webkit-border-radius:10px;border-radius:10px;-webkit-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-webkit-border-radius:50%;border-radius:50%;-webkit-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-track{-moz-border-radius:10px;border-radius:10px;-moz-box-sizing:border-box;box-sizing:border-box;height:6px}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;-moz-border-radius:50%;border-radius:50%;-moz-box-sizing:border-box;box-sizing:border-box;height:16px;margin-top:-6px;-moz-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1);width:16px}#eh-syringe-popup-root #settingForm h3 span{font-size:20pt;font-weight:400}#eh-syringe-popup-root .image-level{padding:4px}#eh-syringe-popup-root .range-title{margin:0}#eh-syringe-popup-root .range-box{margin:5px}#eh-syringe-popup-root .range-label{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}#eh-syringe-popup-root .range-label a{-webkit-box-flex:0;-webkit-flex:none;-moz-box-flex:0;display:inline-block;-ms-flex:none;flex:none;font-size:10pt;text-align:center;width:30px}#eh-syringe-popup-root .override-db{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;padding:4px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;gap:4px;-webkit-box-align:start;-webkit-align-items:flex-start;-moz-box-align:start;-ms-flex-align:start;align-items:flex-start}#eh-syringe-popup-root .override-db input{width:100%}", "",{"version":3,"sources":["webpack://./src/plugin/popup/index.less"],"names":[],"mappings":"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","sourcesContent":["#eh-syringe-popup-root {\n    text-align: initial;\n    font-size: initial;\n    line-height: initial;\n    input,\n    table,\n    th,\n    td {\n        background: inherit;\n        color: inherit;\n    }\n\n    input {\n        border: none;\n        padding: 0;\n        margin: 0;\n        min-width: 0;\n    }\n\n    input[type='text'] {\n        border-radius: 0;\n        border-bottom: solid 1px transparent;\n\n        &.invalid,\n        &:invalid {\n            border-color: #aa575e !important;\n        }\n    }\n\n    input[type='radio'],\n    input[type='checkbox'] {\n        position: initial;\n        top: initial;\n    }\n    p {\n        padding: 0;\n        margin: 0.8em 0;\n    }\n    a {\n        background: rgba(0, 0, 0, 0);\n        transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        text-decoration: none;\n    }\n}\n\n// theme\n.theme(@background, @foreground, @shadow, @accent) {\n    @soft-accent: softlight(@accent, @background);\n\n    & {\n        border: @accent solid 1px;\n        border-radius: 6px;\n        background: @background;\n        color: @foreground;\n        box-shadow: 0 0 6px 2px @shadow;\n    }\n\n    .action {\n        background: @background;\n        color: @accent;\n\n        &.primary {\n            border-color: @accent;\n            background: @accent;\n            color: @background;\n        }\n        &.primary:hover {\n            background: softlight(@accent, @foreground);\n        }\n        &.primary:active {\n            background: softlight(@accent, @background);\n        }\n    }\n\n    #info {\n        color: @accent;\n    }\n    .hasNew {\n        color: softlight(#aa575e, @foreground);\n    }\n    a {\n        color: @accent;\n        &:hover {\n            color: softlight(@accent, @foreground);\n        }\n        &:active {\n            color: softlight(@accent, @background);\n        }\n        &.minor {\n            color: #a5a3a6;\n            &:hover {\n                color: #d2cdd4;\n            }\n            &:active {\n                color: #838185;\n            }\n        }\n    }\n    .logo svg {\n        @sa: lighten(average(@accent, @background), 10%);\n        [fill-bg] {\n            fill: @background;\n        }\n        [fill-accent] {\n            fill: @accent;\n        }\n        [fill-sa] {\n            fill: @sa;\n        }\n        [stroke-bg] {\n            stroke: @background;\n        }\n        [stroke-accent] {\n            stroke: @accent;\n        }\n        [stroke-sa] {\n            stroke: @sa;\n        }\n    }\n\n    #settingForm {\n        .checkbox-item svg path {\n            stroke: @accent;\n        }\n\n        input[type='text'] {\n            color: @foreground;\n            border-color: @soft-accent;\n            &:focus {\n                border-color: @accent;\n            }\n        }\n\n        input[type='checkbox'] {\n            border: solid 2px #a09da6;\n            &:checked {\n                border: solid 2px @accent;\n            }\n        }\n\n        input[type='range'] {\n            &::-webkit-slider-runnable-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-moz-range-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-webkit-slider-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &::-moz-range-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &:focus::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:focus::-moz-range-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:active::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n            &:active::-moz-range-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n        }\n    }\n}\n\n#eh-syringe-popup {\n    @background: rgb(240, 240, 240);\n    @foreground: #111;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #8041a6;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n:root.ehs-ex #eh-syringe-popup {\n    @background: rgb(49, 49, 49);\n    @foreground: #eee;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #ce90f1;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n#eh-syringe-popup-root {\n    overflow: hidden;\n    white-space: nowrap;\n    font-family: sans-serif;\n    font-size: 12pt;\n    user-select: none;\n    padding: 1px;\n    max-width: 400px;\n    min-width: 240px;\n    position: relative;\n\n    .hidden {\n        visibility: hidden;\n        display: none;\n    }\n\n    .ehs-panel {\n        margin: 0 auto;\n        display: flex;\n        flex-direction: column;\n\n        .header {\n            margin: 16px;\n            line-height: 1;\n            //font-size: 16px;\n            display: flex;\n            > .cushion {\n                flex: auto;\n            }\n            span {\n                color: #a5a3a6;\n            }\n        }\n\n        .content {\n            margin: 0 16px;\n            flex: auto;\n            overflow: visible;\n        }\n\n        .action {\n            display: block;\n            line-height: 36px;\n            font-size: 16px;\n            margin: 16px;\n            box-sizing: border-box;\n            position: relative;\n            user-select: none;\n            cursor: pointer;\n            outline: 0;\n            -webkit-tap-highlight-color: transparent;\n            white-space: nowrap;\n            text-decoration: none;\n            text-align: center;\n            min-width: 64px;\n            padding: 0 16px;\n            border-radius: 4px;\n            overflow: visible;\n            transform: translate3d(0, 0, 0);\n            border: 1px #ddd solid;\n            transition:\n                background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),\n                box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n\n            &.primary {\n                box-shadow:\n                    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n                    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n            }\n            &.primary:active {\n                box-shadow:\n                    0 5px 5px -3px rgba(0, 0, 0, 0.2),\n                    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n                    0 3px 14px 2px rgba(0, 0, 0, 0.12);\n            }\n            &:disabled {\n                opacity: 0.6;\n            }\n            &:focus {\n                border: 1px #888 solid;\n            }\n        }\n    }\n\n    #ehs-main-panel {\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1);\n        &.ehs-hide {\n            transform: scale(0.9);\n            opacity: 0;\n            pointer-events: none;\n        }\n    }\n\n    .logo-box {\n        overflow: hidden;\n        position: relative;\n        margin: -16px;\n        pointer-events: none;\n    }\n    .logo {\n        text-align: center;\n        margin: 20px 0;\n        transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1) rotate(-45deg);\n\n        svg {\n            pointer-events: none;\n        }\n        #Enema {\n            opacity: 0;\n            transform-origin: 61px 86px;\n        }\n        #Enema2 {\n            opacity: 1;\n        }\n        #Enema,\n        #Enema2,\n        #PushRod {\n            transition:\n                width 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n        &.prominent {\n            #Enema2 {\n                opacity: 0;\n            }\n            #Enema {\n                opacity: 1;\n            }\n            transform: scale(1.6) rotate(0deg);\n            &.injection {\n                transform: scale(1.6) rotate(0deg) translate(-10px, 0);\n                #Enema,\n                #Enema2,\n                #PushRod {\n                    transition:\n                        width 600ms cubic-bezier(0.4, 0, 0.2, 1),\n                        transform 600ms cubic-bezier(0.4, 0, 0.2, 1);\n                }\n            }\n        }\n    }\n\n    #info {\n        position: absolute;\n        bottom: 30px;\n        left: 0;\n        right: 0;\n        height: 24px;\n        line-height: 24px;\n        text-align: center;\n        font-size: 16px;\n    }\n\n    .monospace {\n        font-family: Menlo, Consolas, 'Source Code Pro', Inconsolata, Monaco, 'Courier New', monospace;\n    }\n    table {\n        font-size: 14px;\n    }\n\n    #ehs-setting-panel {\n        position: absolute;\n        left: 0;\n        top: 0;\n        bottom: 0;\n        right: 0;\n        pointer-events: none;\n        opacity: 0;\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1.1);\n\n        &.ehs-show {\n            pointer-events: auto;\n            opacity: 1;\n            transform: scale(1);\n        }\n\n        #settingForm {\n            overflow: hidden auto;\n            scrollbar-width: thin;\n            font-size: 10pt;\n            line-height: 12pt;\n        }\n    }\n    .checkbox-item {\n        padding: 4px 0;\n\n        label {\n            position: relative;\n            display: block;\n        }\n\n        svg {\n            width: 10px;\n            height: 10px;\n            position: absolute;\n            left: 3px;\n            top: 3px;\n            path {\n                stroke-dasharray: 1000;\n                stroke-dashoffset: 1000;\n                stroke-width: 16px;\n                stroke-linecap: round;\n                stroke-linejoin: round;\n                fill: none;\n            }\n\n            &.checked {\n                path {\n                    stroke-dasharray: 113.137, 113.137;\n                    stroke-dashoffset: 0;\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n                }\n                path + path {\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 280ms;\n                }\n            }\n        }\n\n        input[type='checkbox'] {\n            appearance: none;\n            width: 16px;\n            height: 16px;\n            margin-right: 2px;\n            box-sizing: border-box;\n            vertical-align: top;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        }\n        input[type='checkbox']:focus {\n            outline: none;\n        }\n    }\n\n    #settingForm {\n        input[type='range'] {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            border-radius: 8px;\n            width: 100%;\n        }\n        input[type='range']::-webkit-slider-runnable-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']:focus {\n            outline: none;\n        }\n        input[type='range']::-webkit-slider-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        input[type='range']::-moz-range-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']::-moz-range-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        h3 {\n            span {\n                font-weight: 400;\n                font-size: 20pt;\n            }\n        }\n    }\n\n    .image-level {\n        padding: 4px;\n    }\n    .range-title {\n        margin: 0;\n    }\n    .range-box {\n        margin: 5px;\n    }\n    .range-label {\n        display: flex;\n        justify-content: space-between;\n        a {\n            flex: none;\n            font-size: 10pt;\n            width: 30px;\n            text-align: center;\n            display: inline-block;\n        }\n    }\n\n    .override-db {\n        padding: 4px;\n        display: flex;\n        flex-direction: column;\n        gap: 4px;\n        align-items: flex-start;\n\n        input {\n            width: 100%;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ __webpack_exports__.A = (___CSS_LOADER_EXPORT___);
 
@@ -21963,7 +21963,9 @@ var GmAsyncStorage = /*#__PURE__*/function () {
   }, {
     key: "on",
     value: function on(key, listener) {
-      return GM_addValueChangeListener(key, listener);
+      return GM_addValueChangeListener(key, function (key, ov, nv) {
+        return listener(key, parse(ov), parse(nv));
+      });
     }
   }, {
     key: "off",
@@ -22148,7 +22150,8 @@ var Storage = /*#__PURE__*/function () {
         showIcon: true,
         introduceImageLevel: ImageLevel.r18g,
         autoUpdate: true,
-        tagTip: true
+        tagTip: true,
+        overrideDbUrl: ''
       },
       database: undefined,
       databaseInfo: undefined,
@@ -27068,7 +27071,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.2.0","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.14.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.3","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.3","@eslint/js":"^9.33.0","@types/chrome":"^0.1.4","@types/escape-html":"^1.0.4","@types/node":"^24.3.0","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.0","eslint":"^9.33.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.0","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.1.1","postcss-preset-env":"^10.2.4","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.39.1","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.45.0","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.2.1","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.14.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.3","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.3","@eslint/js":"^9.33.0","@types/chrome":"^0.1.4","@types/escape-html":"^1.0.4","@types/node":"^24.3.0","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.0","eslint":"^9.33.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.0","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.1.1","postcss-preset-env":"^10.2.4","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.39.1","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.45.0","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -28120,6 +28123,9 @@ var TagContextMenu = /*#__PURE__*/function () {
 }();
 TagContextMenu = __decorate([Service(), __metadata("design:paramtypes", [Tagging])], TagContextMenu);
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.28.3/node_modules/@babel/runtime-corejs3/core-js-stable/instance/some.js
+var some = __webpack_require__(45413);
+var some_default = /*#__PURE__*/__webpack_require__.n(some);
 ;// ./src/services/http.ts
 
 
@@ -28265,7 +28271,7 @@ Http = __decorate([Service()], Http);
 
 
 function database_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof (symbol_default()) && get_iterator_method_default()(r) || r["@@iterator"]; if (!t) { if (is_array_default()(r) || (t = database_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
-function database_unsupportedIterableToArray(r, a) { if (r) { var _context5; if ("string" == typeof r) return database_arrayLikeToArray(r, a); var t = slice_default()(_context5 = {}.toString.call(r)).call(_context5, 8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? from_default()(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? database_arrayLikeToArray(r, a) : void 0; } }
+function database_unsupportedIterableToArray(r, a) { if (r) { var _context1; if ("string" == typeof r) return database_arrayLikeToArray(r, a); var t = slice_default()(_context1 = {}.toString.call(r)).call(_context1, 8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? from_default()(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? database_arrayLikeToArray(r, a) : void 0; } }
 function database_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
 
@@ -28275,10 +28281,18 @@ function database_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r
 
 
 
+
+
+
+
+
+
+
 var Database = /*#__PURE__*/function () {
-  function Database(http, logger) {
+  function Database(http, storage, logger) {
     _classCallCheck(this, Database);
     this.http = http;
+    this.storage = storage;
     this.logger = logger;
   }
   return _createClass(Database, [{
@@ -28289,7 +28303,7 @@ var Database = /*#__PURE__*/function () {
         return regenerator_default().wrap(function (_context2) {
           while (1) switch (_context2.prev = _context2.next) {
             case 0:
-              githubDownloadUrl = 'https://ehtt.fly.dev/octokit/release'; //'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
+              githubDownloadUrl = 'https://ehtt.fly.dev/octokit/release'; // 'https://api.github.com/repos/ehtagtranslation/Database/releases/latest';
               _context2.next = 1;
               return this.http.json(githubDownloadUrl);
             case 1:
@@ -28339,91 +28353,200 @@ var Database = /*#__PURE__*/function () {
       }
     }
   }, {
+    key: "fetchData",
+    value: function () {
+      var _fetchData = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee2(version, total, url, progress) {
+        var _context3, _result$head, result, _context4, _result$head2, _context5, _t;
+        return regenerator_default().wrap(function (_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
+            case 0:
+              _context6.prev = 0;
+              _context6.next = 1;
+              return this.http.download(url, 'GET', function (loaded) {
+                if (total > 0) progress === null || progress === void 0 || progress(loaded / total);else progress === null || progress === void 0 || progress(0);
+              }, 'json');
+            case 1:
+              result = _context6.sent;
+              if (!(!result || !is_array_default()(result.data) || some_default()(_context3 = result.data).call(_context3, function (item) {
+                return item.data == null || _typeof(item.data) !== 'object';
+              }))) {
+                _context6.next = 2;
+                break;
+              }
+              throw new Error("\u4E0B\u8F7D\u7684\u6570\u636E\u683C\u5F0F\u4E0D\u6B63\u786E: ".concat(stringify_default()(result)));
+            case 2:
+              if (!(version && (result === null || result === void 0 || (_result$head = result.head) === null || _result$head === void 0 ? void 0 : _result$head.sha) !== version.target_commitish)) {
+                _context6.next = 3;
+                break;
+              }
+              throw new Error(concat_default()(_context4 = "\u7248\u672C\u4E0D\u5339\u914D: ".concat(result === null || result === void 0 || (_result$head2 = result.head) === null || _result$head2 === void 0 ? void 0 : _result$head2.sha, " !== ")).call(_context4, version.target_commitish));
+            case 3:
+              this.logger.log("\u4ECE ".concat(url, " \u4E0B\u8F7D\u6210\u529F"));
+              return _context6.abrupt("return", result);
+            case 4:
+              _context6.prev = 4;
+              _t = _context6["catch"](0);
+              this.logger.warn("\u5C1D\u8BD5\u4ECE ".concat(url, " \u4E0B\u8F7D\u5931\u8D25"), _t);
+              throw new Error(concat_default()(_context5 = "\u4ECE ".concat(url, " \u4E0B\u8F7D\u5931\u8D25: ")).call(_context5, _t.message || String(_t)));
+            case 5:
+            case "end":
+              return _context6.stop();
+          }
+        }, _callee2, this, [[0, 4]]);
+      }));
+      function fetchData(_x, _x2, _x3, _x4) {
+        return _fetchData.apply(this, arguments);
+      }
+      return fetchData;
+    }()
+  }, {
+    key: "getOverride",
+    value: function () {
+      var _getOverride = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee3() {
+        var _config$overrideDbUrl;
+        var config, url, u, _context7, _t2, _t3;
+        return regenerator_default().wrap(function (_context8) {
+          while (1) switch (_context8.prev = _context8.next) {
+            case 0:
+              _context8.next = 1;
+              return this.storage.get('config');
+            case 1:
+              config = _context8.sent;
+              url = config === null || config === void 0 || (_config$overrideDbUrl = config.overrideDbUrl) === null || _config$overrideDbUrl === void 0 ? void 0 : trim_default()(_config$overrideDbUrl).call(_config$overrideDbUrl);
+              if (url) {
+                _context8.next = 2;
+                break;
+              }
+              this.logger.debug("\u672A\u914D\u7F6E\u5916\u90E8\u6570\u636E\u5E93 URL");
+              return _context8.abrupt("return", undefined);
+            case 2:
+              _context8.prev = 2;
+              u = new (url_default())(url);
+              if (!(u.protocol !== 'http:' && u.protocol !== 'https:')) {
+                _context8.next = 3;
+                break;
+              }
+              throw new Error('不支持的协议');
+            case 3:
+              _context8.next = 5;
+              break;
+            case 4:
+              _context8.prev = 4;
+              _t2 = _context8["catch"](2);
+              this.logger.error(concat_default()(_context7 = "\u65E0\u6548\u7684\u5916\u90E8\u6570\u636E\u5E93 URL ".concat(url, "\uFF1A")).call(_context7, _t2.message || String(_t2)));
+            case 5:
+              this.logger.debug("\u4ECE URL ".concat(url, " \u52A0\u8F7D\u5916\u90E8\u6570\u636E\u5E93"));
+              _context8.prev = 6;
+              _context8.next = 7;
+              return this.fetchData(undefined, 0, url, undefined);
+            case 7:
+              return _context8.abrupt("return", _context8.sent);
+            case 8:
+              _context8.prev = 8;
+              _t3 = _context8["catch"](6);
+              this.logger.error("\u52A0\u8F7D\u5916\u90E8\u6570\u636E\u5E93\u5931\u8D25\uFF1A".concat(_t3.message || String(_t3)));
+              return _context8.abrupt("return", undefined);
+            case 9:
+            case "end":
+              return _context8.stop();
+          }
+        }, _callee3, this, [[2, 4], [6, 8]]);
+      }));
+      function getOverride() {
+        return _getOverride.apply(this, arguments);
+      }
+      return getOverride;
+    }()
+  }, {
     key: "getData",
     value: function () {
-      var _getData = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee2(version, progress) {
-        var _context3;
-        var urls, asset, errors, _iterator, _step, url, _result$head, result, e, _t, _t2;
-        return regenerator_default().wrap(function (_context4) {
-          while (1) switch (_context4.prev = _context4.next) {
+      var _getData = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee4(version, progress) {
+        var _context9;
+        var urls, asset, total, errors, override, base, _iterator, _step, url, e, _t4, _t5, _t6, _t7;
+        return regenerator_default().wrap(function (_context0) {
+          while (1) switch (_context0.prev = _context0.next) {
             case 0:
               urls = this.dataUrls(version);
-              asset = find_default()(_context3 = version.assets).call(_context3, function (asset) {
+              asset = find_default()(_context9 = version.assets).call(_context9, function (asset) {
                 return asset.name === 'db.html.json';
               });
+              total = asset != null ? asset.size : 0;
               errors = [];
+              override = this.getOverride();
               _iterator = database_createForOfIteratorHelper(urls);
-              _context4.prev = 1;
+              _context0.prev = 1;
               _iterator.s();
             case 2:
               if ((_step = _iterator.n()).done) {
-                _context4.next = 8;
+                _context0.next = 7;
                 break;
               }
               url = _step.value;
-              _context4.prev = 3;
-              _context4.next = 4;
-              return this.http.download(url, 'GET', function (loaded) {
-                var total = asset != null ? asset.size : 0;
-                if (total > 0) progress === null || progress === void 0 || progress(loaded / total);else progress === null || progress === void 0 || progress(0);
-              }, 'json');
+              _context0.prev = 3;
+              _context0.next = 4;
+              return this.fetchData(version, total, url, progress);
             case 4:
-              result = _context4.sent;
-              if (!((result === null || result === void 0 || (_result$head = result.head) === null || _result$head === void 0 ? void 0 : _result$head.sha) === version.target_commitish && result !== null && result !== void 0 && result.data)) {
-                _context4.next = 5;
-                break;
-              }
-              this.logger.log("\u4ECE ".concat(url, " \u4E0B\u8F7D\u6210\u529F"));
-              return _context4.abrupt("return", result);
+              base = _context0.sent;
+              return _context0.abrupt("continue", 7);
             case 5:
-              _context4.next = 7;
-              break;
+              _context0.prev = 5;
+              _t4 = _context0["catch"](3);
+              errors.push(_t4);
             case 6:
-              _context4.prev = 6;
-              _t = _context4["catch"](3);
-              errors.push(_t);
-              this.logger.warn("\u5C1D\u8BD5\u4ECE ".concat(url, " \u4E0B\u8F7D\u5931\u8D25"), _t);
+              _context0.next = 2;
+              break;
             case 7:
-              _context4.next = 2;
+              _context0.next = 9;
               break;
             case 8:
-              _context4.next = 10;
-              break;
+              _context0.prev = 8;
+              _t5 = _context0["catch"](1);
+              _iterator.e(_t5);
             case 9:
-              _context4.prev = 9;
-              _t2 = _context4["catch"](1);
-              _iterator.e(_t2);
-            case 10:
-              _context4.prev = 10;
+              _context0.prev = 9;
               _iterator.f();
-              return _context4.finish(10);
-            case 11:
+              return _context0.finish(9);
+            case 10:
+              if (base) {
+                _context0.next = 12;
+                break;
+              }
               if (!(errors.length === 0)) {
-                _context4.next = 12;
+                _context0.next = 11;
                 break;
               }
               throw new Error('没有获取到有效的文件');
-            case 12:
+            case 11:
               e = errors[errors.length - 1];
               define_property_default()(e, 'errors', {
                 value: errors,
                 enumerable: true
               });
               throw e;
+            case 12:
+              _t6 = base;
+              _context0.next = 13;
+              return override;
             case 13:
+              _t7 = _context0.sent;
+              return _context0.abrupt("return", {
+                base: _t6,
+                override: _t7
+              });
+            case 14:
             case "end":
-              return _context4.stop();
+              return _context0.stop();
           }
-        }, _callee2, this, [[1, 9, 10, 11], [3, 6]]);
+        }, _callee4, this, [[1, 8, 9, 10], [3, 5]]);
       }));
-      function getData(_x, _x2) {
+      function getData(_x5, _x6) {
         return _getData.apply(this, arguments);
       }
       return getData;
     }()
   }]);
 }();
-Database = __decorate([Service(), __metadata("design:paramtypes", [Http, Logger])], Database);
+Database = __decorate([Service(), __metadata("design:paramtypes", [Http, Storage, Logger])], Database);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.28.3/node_modules/@babel/runtime-corejs3/core-js-stable/set-interval.js
 var set_interval = __webpack_require__(24963);
@@ -28561,7 +28684,7 @@ var DatabaseUpdater = /*#__PURE__*/function () {
     this.checked = false;
     this.messaging.on('update-database', /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee(_ref) {
-        var force, recheck, version, updating, success, _t, _t2, _t3, _t4;
+        var force, recheck, version, updating, success, _t, _t2;
         return regenerator_default().wrap(function (_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
@@ -28577,52 +28700,57 @@ var DatabaseUpdater = /*#__PURE__*/function () {
               return _this.checkVersion(recheck);
             case 2:
               version = _context.sent;
-              _t = version !== null && version !== void 0 && version.sha;
-              if (!_t) {
-                _context.next = 5;
+              if (version !== null && version !== void 0 && version.sha) {
+                _context.next = 3;
                 break;
               }
-              _t2 = !!force;
-              if (_t2) {
+              _this.logger.log('没有数据库版本信息');
+              return _context.abrupt("return", undefined);
+            case 3:
+              if (!force) {
                 _context.next = 4;
                 break;
               }
-              _t3 = version.sha;
-              _context.next = 3;
-              return _this.messaging.emit('get-tag-sha', undefined);
-            case 3:
-              _t4 = _context.sent;
-              _t2 = _t3 !== _t4;
+              _this.logger.log('强制更新', version);
+              _context.next = 7;
+              break;
             case 4:
-              _t = _t2;
+              _t = version.sha;
+              _context.next = 5;
+              return _this.messaging.emit('get-tag-sha', undefined);
             case 5:
-              if (!_t) {
-                _context.next = 9;
+              _t2 = _context.sent;
+              if (!(_t !== _t2)) {
+                _context.next = 6;
                 break;
               }
-              _context.next = 6;
-              return _this.updating;
+              _this.logger.log('有新版本', version);
+              _context.next = 7;
+              break;
             case 6:
+              _this.logger.log('没有新版本', version);
+              return _context.abrupt("return", undefined);
+            case 7:
+              _context.next = 8;
+              return _this.updating;
+            case 8:
               updating = _this.update();
               _this.updating = updating;
-              _context.next = 7;
+              _context.next = 9;
               return updating;
-            case 7:
+            case 9:
               success = _context.sent;
               _this.updating = undefined;
               if (!success) {
-                _context.next = 8;
+                _context.next = 10;
                 break;
               }
               _this.logger.log('有新版本并更新', version);
               return _context.abrupt("return", version);
-            case 8:
+            case 10:
               _this.logger.log('更新新版本失败', version);
               return _context.abrupt("return", undefined);
-            case 9:
-              _this.logger.log('没有新版本');
-              return _context.abrupt("return", undefined);
-            case 10:
+            case 11:
             case "end":
               return _context.stop();
           }
@@ -28697,7 +28825,7 @@ var DatabaseUpdater = /*#__PURE__*/function () {
     value: function () {
       var _update = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee4() {
         var _this2 = this;
-        var data, e, _t5;
+        var _yield$this$download, base, override, e, _t3;
         return regenerator_default().wrap(function (_context4) {
           while (1) switch (_context4.prev = _context4.next) {
             case 0:
@@ -28707,9 +28835,14 @@ var DatabaseUpdater = /*#__PURE__*/function () {
               _context4.next = 2;
               return this.download();
             case 2:
-              data = _context4.sent;
+              _yield$this$download = _context4.sent;
+              base = _yield$this$download.base;
+              override = _yield$this$download.override;
               _context4.next = 3;
-              return this.messaging.emit('update-tag', data.data);
+              return this.messaging.emit('update-tag', {
+                base: base,
+                override: override
+              });
             case 3:
               this.badge.set('OK', '#00C801');
               this.pushDownloadStatus({
@@ -28727,8 +28860,8 @@ var DatabaseUpdater = /*#__PURE__*/function () {
               return _context4.abrupt("return", true);
             case 4:
               _context4.prev = 4;
-              _t5 = _context4["catch"](1);
-              e = _t5;
+              _t3 = _context4["catch"](1);
+              e = _t3;
               this.logger.error(e);
               this.badge.set('ERR', '#C80000');
               this.pushDownloadStatus({
@@ -28859,10 +28992,9 @@ var DatabaseUpdater = /*#__PURE__*/function () {
                 progress: 100
               });
               this.badge.set('100', '#4A90E2', 1);
-              return _context6.abrupt("return", {
-                release: info,
-                data: data
-              });
+              return _context6.abrupt("return", database_updater_objectSpread({
+                release: info
+              }, data));
             case 5:
               _context6.prev = 5;
               timer.end();
@@ -29361,8 +29493,19 @@ function firstValueFrom(source, config) {
 
 
 
+
+
+
+
+
+function tag_database_createForOfIteratorHelper(r, e) { var t = "undefined" != typeof (symbol_default()) && get_iterator_method_default()(r) || r["@@iterator"]; if (!t) { if (is_array_default()(r) || (t = tag_database_unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function tag_database_unsupportedIterableToArray(r, a) { if (r) { var _context6; if ("string" == typeof r) return tag_database_arrayLikeToArray(r, a); var t = slice_default()(_context6 = {}.toString.call(r)).call(_context6, 8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? from_default()(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? tag_database_arrayLikeToArray(r, a) : void 0; } }
+function tag_database_arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+
 function tag_database_ownKeys(e, r) { var t = object_keys_default()(e); if ((get_own_property_symbols_default())) { var o = get_own_property_symbols_default()(e); r && (o = filter_default()(o).call(o, function (r) { return get_own_property_descriptor_default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function tag_database_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context3, _context4; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context3 = tag_database_ownKeys(Object(t), !0)).call(_context3, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context4 = tag_database_ownKeys(Object(t))).call(_context4, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
+function tag_database_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context4, _context5; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context4 = tag_database_ownKeys(Object(t), !0)).call(_context4, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context5 = tag_database_ownKeys(Object(t))).call(_context5, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
+
+
 
 
 
@@ -29436,7 +29579,7 @@ var TagDatabase = /*#__PURE__*/function () {
             case 2:
               dataMap = _context.sent;
               this.messaging.on('update-tag', function (data) {
-                return _this2.update(data);
+                return _this2.update(data.base, data.override);
               });
               if (!(!data || data.version !== DATA_STRUCTURE_VERSION || !dataMap || !data.sha)) {
                 _context.next = 5;
@@ -29482,43 +29625,81 @@ var TagDatabase = /*#__PURE__*/function () {
     }()
   }, {
     key: "update",
-    value: function update(tagDB) {
-      var _context2,
-        _this3 = this;
+    value: function update(baseDB, overrideDb) {
+      var _this3 = this;
       var timer = this.logger.time('构建数据');
-      var sha = tagDB.head.sha;
+      var sha = baseDB.head.sha;
       var map = {};
       var check = now_default()();
-      for_each_default()(_context2 = tagDB.data).call(_context2, function (nsData) {
-        var namespace = nsData.namespace;
-        if (namespace === 'rows') return;
-        for (var key in nsData.data) {
-          var t = nsData.data[key];
-          var fullKey = _this3.tagging.fullKey({
-            namespace: namespace,
-            key: key
-          });
-          var name = _this3.tagging.removePara(t.name);
-          var ehTag = {
-            ns: _this3.tagging.ns(namespace),
-            key: key,
-            name: name,
-            cn: _this3.tagging.removeImagesAndEmoji(name),
-            intro: '',
-            links: '',
-            introSearch: ''
-          };
-          if (t.intro) {
-            ehTag.intro = t.intro;
-            ehTag.introSearch += '\0' + _this3.tagging.removeHtmlTags(t.intro).toLowerCase();
-          }
-          if (t.links) {
-            ehTag.links = t.links;
-            ehTag.introSearch += '\0' + _this3.tagging.removeHtmlTags(t.links).toLowerCase();
-          }
-          map[fullKey] = ehTag;
+      var handleTag = function handleTag(namespace, key, tag) {
+        var _context2;
+        if (typeof key != 'string') return;
+        if (includes_default()(key).call(key, '_')) key = trim_default()(_context2 = key.replace(/_/g, ' ')).call(_context2);
+        if (!key) return;
+        var fullKey = _this3.tagging.fullKey({
+          namespace: namespace,
+          key: key
+        });
+        if (map[fullKey]) return;
+        var name = _this3.tagging.removePara(tag.name) || key;
+        var ehTag = {
+          ns: _this3.tagging.ns(namespace),
+          key: key,
+          name: name,
+          cn: _this3.tagging.removeImagesAndEmoji(name),
+          intro: '',
+          links: '',
+          introSearch: ''
+        };
+        if (tag.intro) {
+          ehTag.intro = tag.intro;
+          ehTag.introSearch += '\0' + _this3.tagging.removeHtmlTags(tag.intro).toLowerCase();
         }
-      });
+        if (tag.links) {
+          ehTag.links = tag.links;
+          ehTag.introSearch += '\0' + _this3.tagging.removeHtmlTags(tag.links).toLowerCase();
+        }
+        map[fullKey] = ehTag;
+      };
+      var _iterator = tag_database_createForOfIteratorHelper(baseDB.data),
+        _step;
+      try {
+        var _loop = function _loop() {
+            var _context3;
+            var baseNsData = _step.value;
+            var namespace = baseNsData.namespace;
+            if (namespace === 'rows') return {
+              v: void 0
+            };
+            var overrideNsData = overrideDb === null || overrideDb === void 0 ? void 0 : find_default()(_context3 = overrideDb.data).call(_context3, function (ns) {
+              return ns.namespace === namespace;
+            });
+            for (var key in baseNsData.data) {
+              var baseTag = baseNsData.data[key];
+              var overrideTag = overrideNsData === null || overrideNsData === void 0 ? void 0 : overrideNsData.data[key];
+              if (overrideTag) {
+                handleTag(namespace, key, tag_database_objectSpread(tag_database_objectSpread({}, baseTag), overrideTag));
+              } else {
+                handleTag(namespace, key, baseTag);
+              }
+            }
+            if (overrideNsData !== null && overrideNsData !== void 0 && overrideNsData.data) {
+              for (var _key in overrideNsData.data) {
+                var _overrideTag = overrideNsData.data[_key];
+                handleTag(namespace, _key, _overrideTag);
+              }
+            }
+          },
+          _ret;
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          _ret = _loop();
+          if (_ret) return _ret.v;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
       this.tagMap.next({
         map: map,
         sha: sha
@@ -29596,9 +29777,6 @@ function _taggedTemplateLiteral(e, t) {
   }));
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.28.3/node_modules/@babel/runtime-corejs3/core-js-stable/instance/some.js
-var some = __webpack_require__(45413);
-var some_default = /*#__PURE__*/__webpack_require__.n(some);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.28.3/node_modules/@babel/runtime-corejs3/core-js-stable/parse-int.js
 var parse_int = __webpack_require__(31382);
 var parse_int_default = /*#__PURE__*/__webpack_require__.n(parse_int);
@@ -30174,8 +30352,10 @@ var _templateObject, _templateObject2, _templateObject3, _templateObject4, _temp
 
 
 
+
+
 function popup_ownKeys(e, r) { var t = object_keys_default()(e); if ((get_own_property_symbols_default())) { var o = get_own_property_symbols_default()(e); r && (o = filter_default()(o).call(o, function (r) { return get_own_property_descriptor_default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function popup_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context0, _context1; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context0 = popup_ownKeys(Object(t), !0)).call(_context0, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context1 = popup_ownKeys(Object(t))).call(_context1, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
+function popup_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context1, _context10; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context1 = popup_ownKeys(Object(t), !0)).call(_context1, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context10 = popup_ownKeys(Object(t))).call(_context10, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
 
 
 
@@ -30477,7 +30657,7 @@ var Popup = /*#__PURE__*/function () {
         key: 'autoUpdate',
         name: '自动更新'
       }];
-      return x(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n            <div id=\"ehs-setting-panel\" class=\"ehs-panel ", "\">\n                <div class=\"header\">\n                    <div>\u8BBE\u7F6E</div>\n                    <div class=\"cushion\"></div>\n                    <div>\n                        <a\n                            href=\"#\"\n                            @click=\"", "\"\n                            >\u2715</a\n                        >\n                    </div>\n                </div>\n                <form id=\"settingForm\" class=\"content\">\n                    ", "\n                    <div class=\"image-level\">\n                        <p class=\"range-title\">\n                            \u4ECB\u7ECD\u56FE\u7247:\n                            <span\n                                >", "</span\n                            >\n                        </p>\n                        <div class=\"range-box\">\n                            <input\n                                type=\"range\"\n                                min=\"0\"\n                                max=\"300\"\n                                @change=", "\n                                .value=\"", "\"\n                            />\n                        </div>\n                        <div class=\"range-label\" @click=\"", "\">\n                            <a href=\"#\" @click=\"", "\"\n                                >\u7981\u7528</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >\u975EH</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18G</a\n                            >\n                        </div>\n                    </div>\n                </form>\n                <button\n                    @click=\"", "\"\n                    class=\"action ", "\"\n                >\n                    \u4FDD\u5B58\n                </button>\n            </div>\n        "])), state.showSettingPanel ? 'ehs-show' : '', function (ev) {
+      return x(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n            <div id=\"ehs-setting-panel\" class=\"ehs-panel ", "\">\n                <div class=\"header\">\n                    <div>\u8BBE\u7F6E</div>\n                    <div class=\"cushion\"></div>\n                    <div>\n                        <a\n                            href=\"#\"\n                            @click=\"", "\"\n                            >\u2715</a\n                        >\n                    </div>\n                </div>\n                <form id=\"settingForm\" class=\"content\">\n                    ", "\n                    <div class=\"image-level\">\n                        <p class=\"range-title\">\n                            \u4ECB\u7ECD\u56FE\u7247:\n                            <span\n                                >", "</span\n                            >\n                        </p>\n                        <div class=\"range-box\">\n                            <input\n                                type=\"range\"\n                                min=\"0\"\n                                max=\"300\"\n                                @change=", "\n                                .value=\"", "\"\n                            />\n                        </div>\n                        <div class=\"range-label\" @click=\"", "\">\n                            <a href=\"#\" @click=\"", "\"\n                                >\u7981\u7528</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >\u975EH</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18</a\n                            >\n                            <a href=\"#\" @click=\"", "\"\n                                >R18G</a\n                            >\n                        </div>\n                    </div>\n                    <div class=\"override-db\">\n                        <label for=\"overrideDbUrl\">\u5916\u90E8\u6570\u636E\u5E93: </label>\n                        <input\n                            id=\"overrideDbUrl\"\n                            type=\"text\"\n                            pattern=\"https?://.+|\"\n                            value=\"", "\"\n                            placeholder=\"https://eg.com/data.html.json\"\n                            @change=\"", "\"\n                        />\n                    </div>\n                </form>\n                <button\n                    @click=\"", "\"\n                    class=\"action ", "\"\n                >\n                    \u4FDD\u5B58\n                </button>\n            </div>\n        "])), state.showSettingPanel ? 'ehs-show' : '', function (ev) {
         state.showSettingPanel = false;
         ev.preventDefault();
       }, map_default()(checkboxList).call(checkboxList, function (item) {
@@ -30498,15 +30678,35 @@ var Popup = /*#__PURE__*/function () {
         return _this3.changeConfigValue('introduceImageLevel', ImageLevel.r18);
       }, function () {
         return _this3.changeConfigValue('introduceImageLevel', ImageLevel.r18g);
+      }, this.state.configValue.overrideDbUrl || '', function (e) {
+        var _context8;
+        var el = e.target;
+        var value = trim_default()(_context8 = String(el.value || '')).call(_context8);
+        el.value = value;
+        var valid = true;
+        if (value) {
+          try {
+            var u = new (url_default())(value);
+            if (u.protocol !== 'http:' && u.protocol !== 'https:') {
+              valid = false;
+            }
+          } catch (_unused) {
+            valid = false;
+          }
+        }
+        el.classList.toggle('invalid', !valid);
+        if (valid) {
+          _this3.changeConfigValue('overrideDbUrl', value);
+        }
       }, /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee6() {
-        return regenerator_default().wrap(function (_context8) {
-          while (1) switch (_context8.prev = _context8.next) {
+        return regenerator_default().wrap(function (_context9) {
+          while (1) switch (_context9.prev = _context9.next) {
             case 0:
-              _context8.next = 1;
+              _context9.next = 1;
               return _this3.saveConfig();
             case 1:
             case "end":
-              return _context8.stop();
+              return _context9.stop();
           }
         }, _callee6);
       })), this.changeConfigUnsaved() ? 'primary' : '');
@@ -30564,25 +30764,25 @@ var Popup = /*#__PURE__*/function () {
     value: function () {
       var _onopen = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee7() {
         var _this$downloadStatusS;
-        return regenerator_default().wrap(function (_context9) {
-          while (1) switch (_context9.prev = _context9.next) {
+        return regenerator_default().wrap(function (_context0) {
+          while (1) switch (_context0.prev = _context0.next) {
             case 0:
               this.resetState();
-              _context9.next = 1;
+              _context0.next = 1;
               return this.loadConfig();
             case 1:
               this.updateView();
-              _context9.next = 2;
+              _context0.next = 2;
               return sleep(0);
             case 2:
-              _context9.next = 3;
+              _context0.next = 3;
               return this.checkVersion();
             case 3:
               (_this$downloadStatusS = this.downloadStatusSub) !== null && _this$downloadStatusS !== void 0 ? _this$downloadStatusS : this.downloadStatusSub = this.messaging.on('updating-database', this.downloadStatus);
               this.el.addEventListener('click', this.openLink);
             case 4:
             case "end":
-              return _context9.stop();
+              return _context0.stop();
           }
         }, _callee7, this);
       }));
