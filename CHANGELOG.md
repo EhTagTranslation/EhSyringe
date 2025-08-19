@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.2.1
+
+- 支持设置外部数据库 [#1303](https://github.com/EhTagTranslation/EhSyringe/issues/1303)
+
 ## 3.2.0
 
 - 添加 location 命名空间
