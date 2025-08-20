@@ -1,4 +1,4 @@
-import type { EHTDatabase, TagMap, TagItem, EHTTag, EHTNamespace, EHTNamespaceName } from '../interface';
+import type { EHTDatabase, TagMap, TagItem, EHTTag, EHTNamespaceName } from '../interface';
 import { Service } from 'typedi';
 import { Storage } from 'services/storage';
 import { Logger } from 'services/logger';
@@ -76,7 +76,8 @@ export class TagDatabase {
         const check = Date.now();
         const handleTag = (namespace: EHTNamespaceName, key: string, tag: EHTTag): void => {
             if (typeof key != 'string') return;
-            if (key.includes('_')) key = key.replace(/_/g, ' ').trim();
+            if (key.includes('_')) key = key.replace(/_/g, ' ');
+            key = key.trim();
             if (!key) return;
 
             const fullKey = this.tagging.fullKey({ namespace, key });
