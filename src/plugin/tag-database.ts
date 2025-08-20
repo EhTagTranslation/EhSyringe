@@ -104,7 +104,7 @@ export class TagDatabase {
         };
         for (const baseNsData of baseDB.data) {
             const namespace = baseNsData.namespace;
-            if (namespace === 'rows') return;
+            if (namespace === 'rows') continue;
             const overrideNsData = overrideDb?.data.find((ns) => ns.namespace === namespace);
             for (const key in baseNsData.data) {
                 const baseTag = baseNsData.data[key];
