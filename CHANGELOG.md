@@ -1,5 +1,10 @@
 # 更新日志
 
+## 3.2.2
+
+- 修复翻译更新功能 [#1305](https://github.com/EhTagTranslation/EhSyringe/issues/1305)
+- 更换内置翻译数据源
+
 ## 3.2.1
 
 - 支持设置外部数据库 [#1303](https://github.com/EhTagTranslation/EhSyringe/issues/1303)
