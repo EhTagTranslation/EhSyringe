@@ -34,14 +34,14 @@ export class Database {
             const sha = data.mirror;
             if (typeof sha != 'string') throw new Error();
             return [
-                `https://fastly.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
-                `https://gcore.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
-                `https://cdn.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
-                `https://testingcf.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
-                `https://test1.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
-                `https://originfastly.jsdelivr.net/gh/EhTagTranslation/DatabaseReleases@${sha}/db.html.json`,
-                `https://cdn.statically.io/gh/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
-                `https://rawcdn.githack.com/EhTagTranslation/DatabaseReleases/${sha}/db.html.json`,
+                `https://fastly.jsdelivr.net/gh/EhTagTranslation/Database@${sha}/db.html.json`,
+                `https://gcore.jsdelivr.net/gh/EhTagTranslation/Database@${sha}/db.html.json`,
+                `https://cdn.jsdelivr.net/gh/EhTagTranslation/Database@${sha}/db.html.json`,
+                `https://testingcf.jsdelivr.net/gh/EhTagTranslation/Database@${sha}/db.html.json`,
+                `https://test1.jsdelivr.net/gh/EhTagTranslation/Database@${sha}/db.html.json`,
+                `https://originfastly.jsdelivr.net/gh/EhTagTranslation/Database@${sha}/db.html.json`,
+                `https://cdn.statically.io/gh/EhTagTranslation/Database/${sha}/db.html.json`,
+                `https://rawcdn.githack.com/EhTagTranslation/Database/${sha}/db.html.json`,
             ];
         } catch {
             throw new Error(`GitHub 发布数据无法解析，可能需要更新插件版本`);
