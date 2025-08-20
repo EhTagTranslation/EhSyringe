@@ -112,8 +112,9 @@ export class TagDatabase {
                 const overrideTag = overrideNsData?.data[key];
                 if (overrideTag) {
                     handleTag(namespace, key, {
-                        ...baseTag,
-                        ...overrideTag,
+                        name: overrideTag.name || baseTag.name,
+                        intro: overrideTag.intro || baseTag.intro,
+                        links: overrideTag.links || baseTag.links,
                     });
                 } else {
                     handleTag(namespace, key, baseTag);
