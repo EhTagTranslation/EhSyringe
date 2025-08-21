@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.2.2
+// @version     3.2.3
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@dec7f109bf57bf04d67612825a3234f12774d84d/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@330306d60be14f21a10bd7c5fee8ef765e260ff9/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -27071,7 +27071,7 @@ var UiTranslation = /*#__PURE__*/function () {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.2.2","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.14.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.3","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.3","@eslint/js":"^9.33.0","@types/chrome":"^0.1.4","@types/escape-html":"^1.0.4","@types/node":"^24.3.0","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.0","eslint":"^9.33.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.1.1","postcss-preset-env":"^10.2.4","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.40.0","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.45.0","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+var package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.2.3","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.14.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.3","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.3","@eslint/js":"^9.33.0","@types/chrome":"^0.1.4","@types/escape-html":"^1.0.4","@types/node":"^24.3.0","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.0","eslint":"^9.33.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.1.1","postcss-preset-env":"^10.2.4","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.40.0","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.45.0","emoji-regex":"^10.4.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 var packageJson = package_namespaceObject;
@@ -28649,8 +28649,9 @@ function sleep(ms) {
 
 
 
+
 function database_updater_ownKeys(e, r) { var t = object_keys_default()(e); if ((get_own_property_symbols_default())) { var o = get_own_property_symbols_default()(e); r && (o = filter_default()(o).call(o, function (r) { return get_own_property_descriptor_default()(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function database_updater_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context7, _context8; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context7 = database_updater_ownKeys(Object(t), !0)).call(_context7, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context8 = database_updater_ownKeys(Object(t))).call(_context8, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
+function database_updater_objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var _context8, _context9; var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? for_each_default()(_context8 = database_updater_ownKeys(Object(t), !0)).call(_context8, function (r) { _defineProperty(e, r, t[r]); }) : (get_own_property_descriptors_default()) ? define_properties_default()(e, get_own_property_descriptors_default()(t)) : for_each_default()(_context9 = database_updater_ownKeys(Object(t))).call(_context9, function (r) { define_property_default()(e, r, get_own_property_descriptor_default()(t, r)); }); } return e; }
 
 
 
@@ -28684,75 +28685,75 @@ var DatabaseUpdater = /*#__PURE__*/function () {
     this.checked = false;
     this.messaging.on('update-database', /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee(_ref) {
-        var force, recheck, version, updating, success, _t, _t2;
-        return regenerator_default().wrap(function (_context) {
-          while (1) switch (_context.prev = _context.next) {
+        var _context;
+        var force, recheck, version, updating, success, _t;
+        return regenerator_default().wrap(function (_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
             case 0:
               force = _ref.force, recheck = _ref.recheck;
               if (!(_this.checked && !force)) {
-                _context.next = 1;
+                _context2.next = 1;
                 break;
               }
               _this.logger.log('跳过');
-              return _context.abrupt("return", undefined);
+              return _context2.abrupt("return", undefined);
             case 1:
-              _context.next = 2;
+              _context2.next = 2;
               return _this.checkVersion(recheck);
             case 2:
-              version = _context.sent;
+              version = _context2.sent;
               if (version !== null && version !== void 0 && version.sha) {
-                _context.next = 3;
+                _context2.next = 3;
                 break;
               }
               _this.logger.log('没有数据库版本信息');
-              return _context.abrupt("return", undefined);
+              return _context2.abrupt("return", undefined);
             case 3:
               if (!force) {
-                _context.next = 4;
+                _context2.next = 4;
                 break;
               }
               _this.logger.log('强制更新', version);
-              _context.next = 7;
+              _context2.next = 7;
               break;
             case 4:
-              _t = version.sha;
-              _context.next = 5;
+              _t = (starts_with_default());
+              _context2.next = 5;
               return _this.messaging.emit('get-tag-sha', undefined);
             case 5:
-              _t2 = _context.sent;
-              if (!(_t !== _t2)) {
-                _context.next = 6;
+              if (_t(_context = _context2.sent).call(_context, version.sha)) {
+                _context2.next = 6;
                 break;
               }
               _this.logger.log('有新版本', version);
-              _context.next = 7;
+              _context2.next = 7;
               break;
             case 6:
               _this.logger.log('没有新版本', version);
-              return _context.abrupt("return", undefined);
+              return _context2.abrupt("return", undefined);
             case 7:
-              _context.next = 8;
+              _context2.next = 8;
               return _this.updating;
             case 8:
               updating = _this.update();
               _this.updating = updating;
-              _context.next = 9;
+              _context2.next = 9;
               return updating;
             case 9:
-              success = _context.sent;
+              success = _context2.sent;
               _this.updating = undefined;
               if (!success) {
-                _context.next = 10;
+                _context2.next = 10;
                 break;
               }
               _this.logger.log('有新版本并更新', version);
-              return _context.abrupt("return", version);
+              return _context2.abrupt("return", version);
             case 10:
               _this.logger.log('更新新版本失败', version);
-              return _context.abrupt("return", undefined);
+              return _context2.abrupt("return", undefined);
             case 11:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }, _callee);
       }));
@@ -28763,17 +28764,17 @@ var DatabaseUpdater = /*#__PURE__*/function () {
     this.messaging.on('check-database', /*#__PURE__*/function () {
       var _ref4 = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee2(_ref3) {
         var force;
-        return regenerator_default().wrap(function (_context2) {
-          while (1) switch (_context2.prev = _context2.next) {
+        return regenerator_default().wrap(function (_context3) {
+          while (1) switch (_context3.prev = _context3.next) {
             case 0:
               force = _ref3.force;
-              _context2.next = 1;
+              _context3.next = 1;
               return _this.checkVersion(force);
             case 1:
-              return _context2.abrupt("return", _context2.sent);
+              return _context3.abrupt("return", _context3.sent);
             case 2:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }, _callee2);
       }));
@@ -28788,19 +28789,19 @@ var DatabaseUpdater = /*#__PURE__*/function () {
     value: function () {
       var _init = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee3() {
         var storage;
-        return regenerator_default().wrap(function (_context3) {
-          while (1) switch (_context3.prev = _context3.next) {
+        return regenerator_default().wrap(function (_context4) {
+          while (1) switch (_context4.prev = _context4.next) {
             case 0:
-              _context3.next = 1;
+              _context4.next = 1;
               return this.storage.get('release');
             case 1:
-              storage = _context3.sent;
+              storage = _context4.sent;
               if (storage && storage.check > this._lastCheckData.check) {
                 assign_default()(this._lastCheckData, storage);
               }
             case 2:
             case "end":
-              return _context3.stop();
+              return _context4.stop();
           }
         }, _callee3, this);
       }));
@@ -28825,20 +28826,20 @@ var DatabaseUpdater = /*#__PURE__*/function () {
     value: function () {
       var _update = _asyncToGenerator(/*#__PURE__*/regenerator_default().mark(function _callee4() {
         var _this2 = this;
-        var _yield$this$download, base, override, e, _t3;
-        return regenerator_default().wrap(function (_context4) {
-          while (1) switch (_context4.prev = _context4.next) {
+        var _yield$this$download, base, override, e, _t2;
+        return regenerator_default().wrap(function (_context5) {
+          while (1) switch (_context5.prev = _context5.next) {
             case 0:
               // 重置下载状态
               this.initDownloadStatus();
-              _context4.prev = 1;
-              _context4.next = 2;
+              _context5.prev = 1;
+              _context5.next = 2;
               return this.download();
             case 2:
-              _yield$this$download = _context4.sent;
+              _yield$this$download = _context5.sent;
               base = _yield$this$download.base;
               override = _yield$this$download.override;
-              _context4.next = 3;
+              _context5.next = 3;
               return this.messaging.emit('update-tag', {
                 base: base,
                 override: override
@@ -28857,11 +28858,11 @@ var DatabaseUpdater = /*#__PURE__*/function () {
                   _this2.initDownloadStatus();
                 }
               });
-              return _context4.abrupt("return", true);
+              return _context5.abrupt("return", true);
             case 4:
-              _context4.prev = 4;
-              _t3 = _context4["catch"](1);
-              e = _t3;
+              _context5.prev = 4;
+              _t2 = _context5["catch"](1);
+              e = _t2;
               this.logger.error(e);
               this.badge.set('ERR', '#C80000');
               this.pushDownloadStatus({
@@ -28869,10 +28870,10 @@ var DatabaseUpdater = /*#__PURE__*/function () {
                 error: true,
                 info: e !== null && e !== void 0 && e.message ? e.message : '更新失败'
               });
-              return _context4.abrupt("return", false);
+              return _context5.abrupt("return", false);
             case 5:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }, _callee4, this, [[1, 4]]);
       }));
@@ -28903,37 +28904,37 @@ var DatabaseUpdater = /*#__PURE__*/function () {
           lastCheckData,
           info,
           _args5 = arguments;
-        return regenerator_default().wrap(function (_context5) {
-          while (1) switch (_context5.prev = _context5.next) {
+        return regenerator_default().wrap(function (_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
             case 0:
               force = _args5.length > 0 && _args5[0] !== undefined ? _args5[0] : false;
               if (force) {
-                _context5.next = 1;
+                _context6.next = 1;
                 break;
               }
               // 限制每 5 分钟最多请求 1 次
               time = new Date().getTime();
               lastCheckData = this.lastCheckData;
               if (!(time - lastCheckData.check <= 1000 * 60 * 5 && lastCheckData.githubRelease)) {
-                _context5.next = 1;
+                _context6.next = 1;
                 break;
               }
-              return _context5.abrupt("return", lastCheckData);
+              return _context6.abrupt("return", lastCheckData);
             case 1:
-              _context5.next = 2;
+              _context6.next = 2;
               return this.database.getLatestVersion();
             case 2:
-              info = _context5.sent;
+              info = _context6.sent;
               this.lastCheckData = {
                 sha: info.target_commitish,
                 githubRelease: info,
                 check: now_default()()
               };
               this.checked = true;
-              return _context5.abrupt("return", this.lastCheckData);
+              return _context6.abrupt("return", this.lastCheckData);
             case 3:
             case "end":
-              return _context5.stop();
+              return _context6.stop();
           }
         }, _callee5, this);
       }));
@@ -28949,20 +28950,20 @@ var DatabaseUpdater = /*#__PURE__*/function () {
         var _checkData$githubRele,
           _this3 = this;
         var checkData, info, timer, data;
-        return regenerator_default().wrap(function (_context6) {
-          while (1) switch (_context6.prev = _context6.next) {
+        return regenerator_default().wrap(function (_context7) {
+          while (1) switch (_context7.prev = _context7.next) {
             case 0:
               this.badge.set('', '#4A90E2', 2);
               this.pushDownloadStatus({
                 run: true,
                 info: '加载中'
               });
-              _context6.next = 1;
+              _context7.next = 1;
               return this.checkVersion();
             case 1:
-              checkData = _context6.sent;
+              checkData = _context7.sent;
               if (checkData !== null && checkData !== void 0 && (_checkData$githubRele = checkData.githubRelease) !== null && _checkData$githubRele !== void 0 && _checkData$githubRele.target_commitish) {
-                _context6.next = 2;
+                _context7.next = 2;
                 break;
               }
               this.logger.debug('checkData', checkData);
@@ -28970,13 +28971,13 @@ var DatabaseUpdater = /*#__PURE__*/function () {
             case 2:
               info = checkData.githubRelease;
               timer = this.logger.time("\u5F00\u59CB\u4E0B\u8F7D");
-              _context6.prev = 3;
+              _context7.prev = 3;
               this.pushDownloadStatus({
                 info: '0%',
                 progress: 0
               });
               this.badge.set('0', '#4A90E2', 1);
-              _context6.next = 4;
+              _context7.next = 4;
               return this.database.getData(info, function (progress) {
                 var percent = Math.floor(progress * 100);
                 _this3.pushDownloadStatus({
@@ -28986,22 +28987,22 @@ var DatabaseUpdater = /*#__PURE__*/function () {
                 _this3.badge.set(percent.toFixed(0), '#4A90E2', 1);
               });
             case 4:
-              data = _context6.sent;
+              data = _context7.sent;
               this.pushDownloadStatus({
                 info: '下载完成',
                 progress: 100
               });
               this.badge.set('100', '#4A90E2', 1);
-              return _context6.abrupt("return", database_updater_objectSpread({
+              return _context7.abrupt("return", database_updater_objectSpread({
                 release: info
               }, data));
             case 5:
-              _context6.prev = 5;
+              _context7.prev = 5;
               timer.end();
-              return _context6.finish(5);
+              return _context7.finish(5);
             case 6:
             case "end":
-              return _context6.stop();
+              return _context7.stop();
           }
         }, _callee6, this, [[3,, 5, 6]]);
       }));
@@ -29628,7 +29629,7 @@ var TagDatabase = /*#__PURE__*/function () {
     value: function update(baseDB, overrideDb) {
       var _this3 = this;
       var timer = this.logger.time('构建数据');
-      var sha = baseDB.head.sha;
+      var sha = baseDB.head.sha + (overrideDb ? "+".concat(overrideDb.head.sha) : '');
       var map = {};
       var check = now_default()();
       var handleTag = function handleTag(namespace, key, tag) {
@@ -29676,7 +29677,11 @@ var TagDatabase = /*#__PURE__*/function () {
             var baseTag = baseNsData.data[key];
             var overrideTag = overrideNsData === null || overrideNsData === void 0 ? void 0 : overrideNsData.data[key];
             if (overrideTag) {
-              handleTag(namespace, key, tag_database_objectSpread(tag_database_objectSpread({}, baseTag), overrideTag));
+              handleTag(namespace, key, {
+                name: overrideTag.name || baseTag.name,
+                intro: overrideTag.intro || baseTag.intro,
+                links: overrideTag.links || baseTag.links
+              });
             } else {
               handleTag(namespace, key, baseTag);
             }
@@ -30524,7 +30529,7 @@ var Popup = /*#__PURE__*/function () {
             case 7:
               data = _context4.sent;
               this.logger.log('Release Data', data);
-              hasNewData = this.state.updateAvailable = data.sha !== currentSha;
+              hasNewData = this.state.updateAvailable = !starts_with_default()(currentSha).call(currentSha, data.sha);
               if (hasNewData) {
                 this.state.newSha = slice_default()(_context3 = data.sha).call(_context3, 0, 7);
                 this.state.versionInfo = "\u6709\u66F4\u65B0\uFF01";
