@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.2.3
+
+- 修复外部数据库功能 bug [#1307](https://github.com/EhTagTranslation/EhSyringe/issues/1307)
+
 ## 3.2.2
 
 - 修复翻译更新功能 [#1305](https://github.com/EhTagTranslation/EhSyringe/issues/1305)
