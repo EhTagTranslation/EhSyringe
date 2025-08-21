@@ -71,7 +71,7 @@ export class TagDatabase {
 
     update(baseDB: EHTDatabase, overrideDb?: EHTDatabase): void {
         const timer = this.logger.time('构建数据');
-        const sha = baseDB.head.sha;
+        const sha = baseDB.head.sha + (overrideDb ? `+${overrideDb.head.sha}` : '');
         const map: TagMap = {};
         const check = Date.now();
         const handleTag = (namespace: EHTNamespaceName, key: string, tag: EHTTag): void => {

@@ -52,7 +52,7 @@ export class DatabaseUpdater {
 
             if (force) {
                 this.logger.log('强制更新', version);
-            } else if (version.sha !== (await this.messaging.emit('get-tag-sha', undefined))) {
+            } else if (!(await this.messaging.emit('get-tag-sha', undefined)).startsWith(version.sha)) {
                 this.logger.log('有新版本', version);
             } else {
                 this.logger.log('没有新版本', version);

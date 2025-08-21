@@ -99,7 +99,7 @@ export class Popup {
         try {
             const data = await this.messaging.emit('check-database', { force: true });
             this.logger.log('Release Data', data);
-            const hasNewData = (this.state.updateAvailable = data.sha !== currentSha);
+            const hasNewData = (this.state.updateAvailable = !currentSha.startsWith(data.sha));
             if (hasNewData) {
                 this.state.newSha = data.sha.slice(0, 7);
                 this.state.versionInfo = `有更新！`;
