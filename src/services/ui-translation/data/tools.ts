@@ -159,6 +159,7 @@ merge(
             '用户最近在 $2 个公开图库上标记了 $1 个标签。',
         ],
         [/^Last bad tagvote assessed: /, '最近一次不良标签投票的时间：'],
+        [/^Withdrawn bad tagvotes: /, '已撤回的不良标签投票：'],
     ],
 );
 
