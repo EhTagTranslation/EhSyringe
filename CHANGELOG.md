@@ -1,5 +1,12 @@
 # 更新日志
 
+## 3.3.0
+
+- 增加翻译 [#1310](https://github.com/EhTagTranslation/EhSyringe/pull/1310)
+- 支持搜索日文汉字时展示中文结果，或搜索中文汉字时展示日文结果 [#1308](https://github.com/EhTagTranslation/EhSyringe/issues/1308)
+- 调整搜索框样式，增加条目限制
+- 调整支持的浏览器为 `firefox >= 60, edge >= 16, chrome >= 61, safari >= 11, opera >= 48`，与脚本 `compatible` 保持一致
+
 ## 3.2.3
 
 - 修复外部数据库功能 bug [#1307](https://github.com/EhTagTranslation/EhSyringe/issues/1307)
