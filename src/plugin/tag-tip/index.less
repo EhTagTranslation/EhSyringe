@@ -55,14 +55,6 @@
             vertical-align: text-top;
         }
 
-        > span {
-            flex: 0 1 auto;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            overflow: clip;
-        }
-
         &:hover,
         &.selected {
             background: #e8ecf3;
@@ -71,7 +63,15 @@
                 background: #3e3f40;
             }
         }
-        .en-name {
+    }
+
+    .auto-complete-text {
+        flex: 0 1 auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &.en-name {
             flex-shrink: 4;
             padding-left: 8px;
             color: #5f6368;
