@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        EhSyringe
-// @version     3.3.0
+// @version     3.3.1
 // @author      EhTagTranslation
 // @description E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。
 // @homepage    https://github.com/EhTagTranslation/EhSyringe
@@ -20,7 +20,7 @@
 // @compatible  safari >= 11
 // @compatible  opera >= 48
 // @exclude     *://forums.e-hentai.org/*
-// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@aa0b0695b32bb753daa8da336d736959c4f3647c/src/assets/logo.svg
+// @icon        https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@eec0aee3bab629c00a14aabad4740c05f2b70ac7/src/assets/logo.svg
 // @updateURL   https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.meta.js
 // @downloadURL https://github.com/EhTagTranslation/EhSyringe/releases/latest/download/ehsyringe.user.js
 // @run-at      document-start
@@ -3553,6 +3553,20 @@ module.exports = parent;
 
 /***/ }),
 
+/***/ 26718:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+__webpack_require__(37276);
+__webpack_require__(53167);
+var getBuiltInPrototypeMethod = __webpack_require__(7150);
+
+module.exports = getBuiltInPrototypeMethod('Array', 'flatMap');
+
+
+/***/ }),
+
 /***/ 26932:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -4849,7 +4863,7 @@ module.exports = function (it) {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.eh-syringe-lite-auto-complete-list{background:#f8f4ec;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);color:#5c0d12;display:block;left:628px;max-height:50vh;min-height:20px;min-width:570px;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;padding:8px 0;position:absolute;scroll-padding:16px;scrollbar-width:thin;text-align-last:left;top:168px;z-index:10}:root.ehs-ex .eh-syringe-lite-auto-complete-list{background:#2b2b2b;color:#f1f1f1}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list.exclude .auto-complete-item .en-name:before{content:"- "}.eh-syringe-lite-auto-complete-list .auto-complete-item{contain:strict;content-visibility:auto;cursor:pointer;display:flex;height:24px;justify-content:space-between;line-height:24px;padding:0 8px}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item>span{flex:0 1 auto;overflow:hidden;overflow:clip;text-overflow:ellipsis;white-space:nowrap}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8ecf3}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item.selected,:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#3e3f40}.eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{color:#5f6368;flex-shrink:4;padding-left:8px}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item .en-name{color:#d9d9d9}.eh-syringe-lite-auto-complete-list mark{background:#f5f500;color:inherit}:root.ehs-ex .eh-syringe-lite-auto-complete-list mark{background:#727200}`, "",{"version":3,"sources":["webpack://./src/plugin/tag-tip/index.less"],"names":[],"mappings":"AAAA,oCACI,kBAAA,CAcA,iBAAA,CACA,gGAAA,CAdA,aAAA,CAkBA,aAAA,CATA,UAAA,CAUA,eAAA,CARA,eAAA,CADA,eAAA,CAUA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,aAAA,CAdA,iBAAA,CAeA,mBAAA,CACA,oBAAA,CAXA,oBAAA,CAJA,SAAA,CAgBA,UARJ,CAdI,iDACI,kBAAA,CACA,aAgBR,CAMI,sFAEI,YAJR,CAOI,gFAGY,YAPhB,CA7BA,wDA6CQ,cAAA,CACA,uBAAA,CAGA,cAAA,CAFA,YAAA,CAHA,WAAA,CAIA,6BAAA,CALA,gBAAA,CADA,aAHR,CAvCA,4DAoDY,8BAAA,CACA,UAAA,CACA,uBAVZ,CA5CA,6DA0DY,aAAA,CAGA,eAAA,CACA,aAAA,CAFA,sBAAA,CADA,kBARZ,CAcQ,+HAEI,kBAZZ,CAcY,yJACI,kBAXhB,CA3DA,iEA4EY,aAAA,CAFA,aAAA,CACA,gBAXZ,CAaY,8EACI,aAXhB,CAnEA,yCAqFQ,kBAAA,CADA,aAbR,CAeQ,sDACI,kBAbZ","sourcesContent":[".eh-syringe-lite-auto-complete-list {\n    background: #f8f4ec;\n    color: #5c0d12;\n\n    :root.ehs-ex & {\n        background: #2b2b2b;\n        color: #f1f1f1;\n    }\n\n    position: absolute;\n    top: 168px;\n    left: 628px;\n    min-width: 570px;\n    min-height: 20px;\n    text-align-last: left;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    display: block;\n    max-height: 50vh;\n    overflow: hidden auto;\n    padding: 8px 0;\n    scroll-padding: 16px;\n    scrollbar-width: thin;\n    z-index: 10;\n\n    &[hidden],\n    &:empty {\n        display: none;\n    }\n\n    &.exclude {\n        .auto-complete-item {\n            .en-name::before {\n                content: '- ';\n            }\n        }\n    }\n\n    .auto-complete-item {\n        padding: 0 8px;\n        line-height: 24px;\n        height: 24px;\n        contain: strict;\n        content-visibility: auto;\n        display: flex;\n        justify-content: space-between;\n        cursor: pointer;\n\n        img {\n            display: inline-block !important;\n            height: 8pt;\n            vertical-align: text-top;\n        }\n\n        > span {\n            flex: 0 1 auto;\n            white-space: nowrap;\n            text-overflow: ellipsis;\n            overflow: hidden;\n            overflow: clip;\n        }\n\n        &:hover,\n        &.selected {\n            background: #e8ecf3;\n\n            :root.ehs-ex & {\n                background: #3e3f40;\n            }\n        }\n        .en-name {\n            flex-shrink: 4;\n            padding-left: 8px;\n            color: #5f6368;\n            :root.ehs-ex & {\n                color: #d9d9d9;\n            }\n        }\n    }\n\n    mark {\n        color: inherit;\n        background: #f5f500;\n        :root.ehs-ex & {\n            background: #727200;\n        }\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `.eh-syringe-lite-auto-complete-list{background:#f8f4ec;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);color:#5c0d12;display:block;left:628px;max-height:50vh;min-height:20px;min-width:570px;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;padding:8px 0;position:absolute;scroll-padding:16px;scrollbar-width:thin;text-align-last:left;top:168px;z-index:10}:root.ehs-ex .eh-syringe-lite-auto-complete-list{background:#2b2b2b;color:#f1f1f1}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list.exclude .auto-complete-item .en-name:before{content:"- "}.eh-syringe-lite-auto-complete-list .auto-complete-item{contain:strict;content-visibility:auto;cursor:pointer;display:flex;height:24px;justify-content:space-between;line-height:24px;padding:0 8px}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8ecf3}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item.selected,:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#3e3f40}.eh-syringe-lite-auto-complete-list .auto-complete-text{flex:0 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{color:#5f6368;flex-shrink:4;padding-left:8px}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{color:#d9d9d9}.eh-syringe-lite-auto-complete-list mark{background:#f5f500;color:inherit}:root.ehs-ex .eh-syringe-lite-auto-complete-list mark{background:#727200}`, "",{"version":3,"sources":["webpack://./src/plugin/tag-tip/index.less"],"names":[],"mappings":"AAAA,oCACI,kBAAA,CAcA,iBAAA,CACA,gGAAA,CAdA,aAAA,CAkBA,aAAA,CATA,UAAA,CAUA,eAAA,CARA,eAAA,CADA,eAAA,CAUA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,aAAA,CAdA,iBAAA,CAeA,mBAAA,CACA,oBAAA,CAXA,oBAAA,CAJA,SAAA,CAgBA,UARJ,CAdI,iDACI,kBAAA,CACA,aAgBR,CAMI,sFAEI,YAJR,CAOI,gFAGY,YAPhB,CA7BA,wDA6CQ,cAAA,CACA,uBAAA,CAGA,cAAA,CAFA,YAAA,CAHA,WAAA,CAIA,6BAAA,CALA,gBAAA,CADA,aAHR,CAvCA,4DAoDY,8BAAA,CACA,UAAA,CACA,uBAVZ,CAaQ,+HAEI,kBAXZ,CAaY,yJACI,kBAVhB,CApDA,wDAoEQ,aAAA,CAGA,eAAA,CADA,sBAAA,CADA,kBAXR,CAeQ,gEAGI,aAAA,CAFA,aAAA,CACA,gBAZZ,CAcY,6EACI,aAZhB,CAlEA,yCAqFQ,kBAAA,CADA,aAdR,CAgBQ,sDACI,kBAdZ","sourcesContent":[".eh-syringe-lite-auto-complete-list {\n    background: #f8f4ec;\n    color: #5c0d12;\n\n    :root.ehs-ex & {\n        background: #2b2b2b;\n        color: #f1f1f1;\n    }\n\n    position: absolute;\n    top: 168px;\n    left: 628px;\n    min-width: 570px;\n    min-height: 20px;\n    text-align-last: left;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    display: block;\n    max-height: 50vh;\n    overflow: hidden auto;\n    padding: 8px 0;\n    scroll-padding: 16px;\n    scrollbar-width: thin;\n    z-index: 10;\n\n    &[hidden],\n    &:empty {\n        display: none;\n    }\n\n    &.exclude {\n        .auto-complete-item {\n            .en-name::before {\n                content: '- ';\n            }\n        }\n    }\n\n    .auto-complete-item {\n        padding: 0 8px;\n        line-height: 24px;\n        height: 24px;\n        contain: strict;\n        content-visibility: auto;\n        display: flex;\n        justify-content: space-between;\n        cursor: pointer;\n\n        img {\n            display: inline-block !important;\n            height: 8pt;\n            vertical-align: text-top;\n        }\n\n        &:hover,\n        &.selected {\n            background: #e8ecf3;\n\n            :root.ehs-ex & {\n                background: #3e3f40;\n            }\n        }\n    }\n\n    .auto-complete-text {\n        flex: 0 1 auto;\n        white-space: nowrap;\n        text-overflow: ellipsis;\n        overflow: hidden;\n\n        &.en-name {\n            flex-shrink: 4;\n            padding-left: 8px;\n            color: #5f6368;\n            :root.ehs-ex & {\n                color: #d9d9d9;\n            }\n        }\n    }\n\n    mark {\n        color: inherit;\n        background: #f5f500;\n        :root.ehs-ex & {\n            background: #727200;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5188,6 +5202,35 @@ var isObject = __webpack_require__(66586);
 module.exports = function (argument) {
   return isObject(argument) || argument === null;
 };
+
+
+/***/ }),
+
+/***/ 37276:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var $ = __webpack_require__(2224);
+var flattenIntoArray = __webpack_require__(50541);
+var aCallable = __webpack_require__(67732);
+var toObject = __webpack_require__(89751);
+var lengthOfArrayLike = __webpack_require__(33844);
+var arraySpeciesCreate = __webpack_require__(18355);
+
+// `Array.prototype.flatMap` method
+// https://tc39.es/ecma262/#sec-array.prototype.flatmap
+$({ target: 'Array', proto: true }, {
+  flatMap: function flatMap(callbackfn /* , thisArg */) {
+    var O = toObject(this);
+    var sourceLen = lengthOfArrayLike(O);
+    var A;
+    aCallable(callbackfn);
+    A = arraySpeciesCreate(O, 0);
+    A.length = flattenIntoArray(A, O, O, sourceLen, 0, 1, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+    return A;
+  }
+});
 
 
 /***/ }),
@@ -6909,6 +6952,55 @@ module.exports = DESCRIPTORS ? function (object, key, value) {
 
 /***/ }),
 
+/***/ 50541:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var isArray = __webpack_require__(35966);
+var lengthOfArrayLike = __webpack_require__(33844);
+var doesNotExceedSafeInteger = __webpack_require__(71279);
+var bind = __webpack_require__(9062);
+
+// `FlattenIntoArray` abstract operation
+// https://tc39.es/ecma262/#sec-flattenintoarray
+var flattenIntoArray = function (target, original, source, sourceLen, start, depth, mapper, thisArg) {
+  var targetIndex = start;
+  var sourceIndex = 0;
+  var mapFn = mapper ? bind(mapper, thisArg) : false;
+  var element, elementLen;
+
+  while (sourceIndex < sourceLen) {
+    if (sourceIndex in source) {
+      element = mapFn ? mapFn(source[sourceIndex], sourceIndex, original) : source[sourceIndex];
+
+      if (depth > 0 && isArray(element)) {
+        elementLen = lengthOfArrayLike(element);
+        targetIndex = flattenIntoArray(target, original, element, elementLen, targetIndex, depth - 1) - 1;
+      } else {
+        doesNotExceedSafeInteger(targetIndex + 1);
+        target[targetIndex] = element;
+      }
+
+      targetIndex++;
+    }
+    sourceIndex++;
+  }
+  return targetIndex;
+};
+
+module.exports = flattenIntoArray;
+
+
+/***/ }),
+
+/***/ 50777:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(52197);
+
+/***/ }),
+
 /***/ 50847:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -7042,6 +7134,18 @@ module.exports =
 
 /***/ }),
 
+/***/ 52197:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var parent = __webpack_require__(61010);
+
+module.exports = parent;
+
+
+/***/ }),
+
 /***/ 52674:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -7153,6 +7257,21 @@ __webpack_require__(19546);
 var getBuiltInPrototypeMethod = __webpack_require__(7150);
 
 module.exports = getBuiltInPrototypeMethod('String', 'startsWith');
+
+
+/***/ }),
+
+/***/ 53167:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+// this method was added to unscopables after implementation
+// in popular engines, so it's moved to a separate module
+var addToUnscopables = __webpack_require__(41555);
+
+// https://tc39.es/ecma262/#sec-array.prototype-@@unscopables
+addToUnscopables('flatMap');
 
 
 /***/ }),
@@ -8233,6 +8352,24 @@ __webpack_require__(46591);
 var getBuiltInPrototypeMethod = __webpack_require__(7150);
 
 module.exports = getBuiltInPrototypeMethod('String', 'endsWith');
+
+
+/***/ }),
+
+/***/ 61010:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var isPrototypeOf = __webpack_require__(84027);
+var method = __webpack_require__(26718);
+
+var ArrayPrototype = Array.prototype;
+
+module.exports = function (it) {
+  var own = it.flatMap;
+  return it === ArrayPrototype || (isPrototypeOf(ArrayPrototype, it) && own === ArrayPrototype.flatMap) ? method : own;
+};
 
 
 /***/ }),
@@ -19037,6 +19174,7 @@ let TagTip = class TagTip {
     this.delimiter = ' ';
     this.ctrlKey = false;
     this.disableExclusionMode = false;
+    this.searchCache = ['', []];
     this.init().catch(logger.error);
   }
   async init() {
@@ -19052,7 +19190,7 @@ let TagTip = class TagTip {
     this.inputElement.autocomplete = 'off';
     this.autoCompleteList = document.createElement('div');
     this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list eh-syringe-ignore';
-    fromEvent(this.inputElement, 'keyup').pipe(filter(e => !new Set(['ArrowUp', 'ArrowDown', 'Enter', 'Meta', 'Control', 'Alt']).has(e.key)), map(() => this.inputElement.value)).subscribe(s => {
+    fromEvent(this.inputElement, 'keyup').pipe(filter(e => !new Set(['ArrowUp', 'ArrowDown', 'Enter', 'Meta', 'Control', 'Alt']).has(e.key)), map(() => this.inputElement.value.replace(/  +/gm, ' '))).subscribe(s => {
       this.search(s).catch(this.logger.error);
     });
     fromEvent(this.inputElement, 'keydown').subscribe(e => this.keydown(e));
@@ -19072,39 +19210,45 @@ let TagTip = class TagTip {
     this.setListPosition();
   }
   async search(value) {
-    var _value$match;
-    value = this.inputElement.value = value.replace(/  +/gm, ' ');
-    // [^\s,] 空白字符和逗号以外的字符 (用于支持逗号)
-    // (?:"|$) 非捕获分组, 引号或文本结束  (用于匹配不完整的引号)
-    // [^\s,]+:".+?(?:"|$)     NS:"ab cd"     NS:"ab c...
-    // ".+?(?:"|$)]            "ab cd"        "ab c...
-    // [^\s,]+:[^\s,]+         NS:abcd
-    // [^\s,]+                 abcd
-    const values = (_value$match = value.match(/([^\s,]+:".+?(?:"|$)|".+?(?:"|$)]|[^\s,]+:[^\s,]+|[^\s,]+)/gim)) !== null && _value$match !== void 0 ? _value$match : [];
-    const result = [];
-    const used = new Set();
-    await promise_default().all(values.map(async (v, i) => {
-      const sv = values.slice(i);
-      if (!sv) return;
-      const svs = sv.join(this.delimiter);
-      if (!svs || svs.replace(/\s+/, '').length === 0) return;
-      const suggestions = await this.messaging.emit('suggest-tag', {
-        term: svs,
-        limit: SUGGEST_LIMIT
-      });
-      for (const suggestion of suggestions) {
-        const {
-          tag
-        } = suggestion;
-        if (used.has(this.tagging.fullKey(tag))) continue;
-        used.add(this.tagging.fullKey(tag));
-        result.push(suggestion);
+    this.inputElement.value = value;
+    let result;
+    if (this.searchCache[0] === value) {
+      result = this.searchCache[1];
+    } else {
+      var _value$match;
+      // [^\s,] 空白字符和逗号以外的字符 (用于支持逗号)
+      // (?:"|$) 非捕获分组, 引号或文本结束  (用于匹配不完整的引号)
+      // [^\s,]+:".+?(?:"|$)     NS:"ab cd"     NS:"ab c...
+      // ".+?(?:"|$)]            "ab cd"        "ab c...
+      // [^\s,]+:[^\s,]+         NS:abcd
+      // [^\s,]+                 abcd
+      const values = (_value$match = value.match(/([^\s,]+:".+?(?:"|$)|".+?(?:"|$)]|[^\s,]+:[^\s,]+|[^\s,]+)/gim)) !== null && _value$match !== void 0 ? _value$match : [];
+      result = [];
+      const used = new Set();
+      await promise_default().all(values.map(async (v, i) => {
+        const sv = values.slice(i);
+        if (!sv) return;
+        const svs = sv.join(this.delimiter);
+        if (!svs || svs.replace(/\s+/, '').length === 0) return;
+        const suggestions = await this.messaging.emit('suggest-tag', {
+          term: svs,
+          limit: SUGGEST_LIMIT
+        });
+        for (const suggestion of suggestions) {
+          const {
+            tag
+          } = suggestion;
+          if (used.has(this.tagging.fullKey(tag))) continue;
+          used.add(this.tagging.fullKey(tag));
+          result.push(suggestion);
+        }
+      }));
+      if (values.length > 1) {
+        // 整合了多个关键词的搜索结果，重新排序并限制数量
+        sort_default()(result).call(result, (a, b) => b.score - a.score);
+        result.splice(SUGGEST_LIMIT);
       }
-    }));
-    if (values.length > 1) {
-      // 整合了多个关键词的搜索结果，重新排序并限制数量
-      sort_default()(result).call(result, (a, b) => b.score - a.score);
-      result.splice(SUGGEST_LIMIT);
+      this.searchCache = [value, result];
     }
     this.autoCompleteList.innerHTML = '';
     for (const suggestion of result) {
@@ -21608,7 +21752,7 @@ let UiTranslation = class UiTranslation {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.3.0","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.15.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.4","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.4","@eslint/js":"^9.35.0","@types/chrome":"^0.1.6","@types/escape-html":"^1.0.4","@types/node":"^24.3.1","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.1","eslint":"^9.35.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.2.0","postcss-preset-env":"^10.3.1","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.4","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.42.0","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","webpack-userscript":"^2.5.8"},"dependencies":{"core-js":"^3.45.1","emoji-regex":"^10.5.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.3.1","description":"E 站注射器，将中文翻译注入到 E 站体内。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.15.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome && crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","build:firefox":"pnpm run build:ext --env vendor=firefox && web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.4","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.4","@eslint/js":"^9.35.0","@types/chrome":"^0.1.6","@types/escape-html":"^1.0.4","@types/node":"^24.3.1","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.1","eslint":"^9.35.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.2.0","postcss-preset-env":"^10.3.1","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.4","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.42.0","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","webpack-userscript":"^2.5.8","yaml-loader":"^0.8.1"},"dependencies":{"core-js":"^3.45.1","emoji-regex":"^10.5.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 const packageJson = package_namespaceObject;
@@ -22837,732 +22981,63 @@ DatabaseUpdater = __decorate([Service(), __metadata("design:paramtypes", [Logger
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.28.4/node_modules/@babel/runtime-corejs3/core-js-stable/object/from-entries.js
 var from_entries = __webpack_require__(95424);
 var from_entries_default = /*#__PURE__*/__webpack_require__.n(from_entries);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.28.4/node_modules/@babel/runtime-corejs3/core-js-stable/instance/flat-map.js
+var flat_map = __webpack_require__(50777);
+var flat_map_default = /*#__PURE__*/__webpack_require__.n(flat_map);
+;// ./src/plugin/suggest/dict.yml
+const dict_namespaceObject = /*#__PURE__*/JSON.parse('{"拂":["払"],"奸":["姦"],"爱":["愛"],"拔":["抜"],"罢":["罷"],"霸":["覇"],"败":["敗"],"拜":["拝"],"颁":["頒"],"饱":["飽"],"宝":["寶"],"报":["報"],"贝":["貝"],"备":["備"],"辈":["輩"],"笔":["筆"],"币":["幣"],"闭":["閉"],"边":["辺"],"编":["編"],"变":["変"],"标":["標"],"别":["別"],"宾":["賓"],"冰":["氷"],"并":["並","併"],"钵":["缽"],"补":["補"],"步":["歩"],"财":["財"],"参":["參"],"残":["殘"],"蚕":["蠶"],"惨":["慘"],"仓":["倉"],"藏":["蔵"],"册":["冊"],"侧":["側"],"测":["測"],"层":["層"],"插":["挿"],"查":["査"],"禅":["禪"],"产":["產","産"],"肠":["腸"],"偿":["償"],"场":["場"],"巢":["巣"],"车":["車"],"彻":["徹"],"陈":["陳"],"称":["稱"],"诚":["誠"],"乘":["乗"],"惩":["懲"],"吃":["喫"],"痴":["癡"],"迟":["遅"],"齿":["歯"],"耻":["恥"],"敕":["勅"],"冲":["沖","衝"],"虫":["蟲"],"铳":["銃"],"丑":["醜"],"础":["礎"],"处":["處","処"],"触":["觸"],"传":["伝"],"窗":["窓"],"创":["創"],"锤":["錘"],"纯":["純"],"词":["詞"],"辞":["辭"],"赐":["賜"],"从":["従"],"粹":["粋"],"错":["錯"],"达":["達"],"带":["帯"],"贷":["貸"],"担":["擔"],"单":["単"],"胆":["膽"],"诞":["誕"],"弹":["弾"],"当":["當"],"党":["黨"],"导":["導"],"岛":["島"],"盗":["盜"],"稻":["稲"],"德":["徳"],"灯":["燈"],"敌":["敵"],"递":["逓"],"缔":["締"],"点":["點"],"电":["電"],"钓":["釣"],"叠":["畳"],"顶":["頂"],"订":["訂"],"锭":["錠"],"东":["東"],"动":["動","働"],"冻":["凍"],"栋":["棟"],"斗":["闘"],"独":["獨"],"读":["読"],"笃":["篤"],"断":["斷"],"锻":["鍛"],"队":["隊"],"对":["対"],"钝":["鈍"],"夺":["奪"],"堕":["墮"],"额":["額"],"恶":["悪"],"饿":["餓"],"儿":["児"],"贰":["弐"],"发":["髪","発"],"罚":["罰"],"阀":["閥"],"烦":["煩"],"饭":["飯"],"范":["範"],"贩":["販"],"访":["訪"],"纺":["紡"],"飞":["飛"],"废":["廃"],"费":["費"],"纷":["紛"],"氛":["雰"],"坟":["墳"],"奋":["奮"],"愤":["憤"],"风":["風"],"缝":["縫"],"佛":["仏"],"肤":["膚"],"负":["負"],"妇":["婦"],"复":["複","復"],"赋":["賦"],"缚":["縛"],"该":["該"],"干":["幹","乾"],"绀":["紺"],"刚":["剛"],"纲":["綱"],"钢":["鋼"],"阁":["閣"],"个":["個","箇"],"给":["給"],"宫":["宮"],"贡":["貢"],"沟":["溝"],"构":["構"],"购":["購"],"谷":["穀"],"顾":["顧"],"挂":["掛"],"关":["関"],"观":["観"],"馆":["館"],"贯":["貫"],"惯":["慣"],"广":["広"],"归":["帰"],"规":["規"],"轨":["軌"],"贵":["貴"],"国":["國"],"果":["菓"],"过":["過"],"还":["還"],"汉":["漢"],"号":["號"],"贺":["賀"],"黑":["黒"],"红":["紅"],"后":["後"],"户":["戸"],"护":["護"],"华":["華"],"话":["話"],"怀":["懐"],"坏":["壊"],"欢":["歓"],"环":["環"],"缓":["緩"],"换":["換"],"唤":["喚"],"挥":["揮"],"辉":["輝"],"绘":["絵"],"贿":["賄"],"惠":["恵"],"货":["貨"],"获":["穫","獲"],"祸":["禍"],"击":["撃"],"饥":["飢"],"机":["機"],"鸡":["鶏"],"积":["積"],"级":["級"],"极":["極"],"几":["幾","机"],"计":["計"],"记":["記"],"纪":["紀"],"际":["際"],"剂":["剤"],"迹":["跡"],"济":["済"],"继":["継"],"绩":["績"],"假":["仮"],"价":["価"],"坚":["堅"],"间":["間"],"监":["監"],"茧":["繭"],"俭":["倹"],"检":["検"],"减":["減"],"简":["簡"],"见":["見"],"荐":["薦"],"剑":["剣"],"舰":["艦"],"渐":["漸"],"践":["踐"],"鉴":["鑑","鑑"],"将":["將"],"讲":["講"],"奖":["奨"],"纟":["糸"],"绞":["絞"],"矫":["矯"],"觉":["覚"],"较":["較"],"阶":["階"],"揭":["掲"],"节":["節"],"杰":["傑","傑"],"诘":["詰"],"洁":["潔"],"结":["結"],"届":["屆"],"紧":["緊"],"谨":["謹"],"尽":["盡"],"进":["進"],"经":["経"],"惊":["驚"],"鲸":["鯨"],"净":["浄"],"竞":["競"],"静":["靜"],"镜":["鏡"],"纠":["糾"],"举":["挙"],"剧":["劇"],"据":["據","拠"],"卷":["巻","巻"],"绢":["絹"],"决":["決"],"绝":["絶"],"军":["軍"],"开":["開"],"壳":["殻"],"渴":["渇"],"课":["課"],"垦":["墾"],"恳":["懇"],"库":["庫"],"夸":["誇"],"块":["塊"],"宽":["寛"],"况":["況"],"矿":["鉱"],"扩":["拡"],"来":["來"],"赖":["頼"],"濑":["瀬"],"栏":["欄"],"览":["覧"],"滥":["濫"],"劳":["労"],"乐":["楽"],"垒":["塁"],"泪":["涙"],"类":["類"],"离":["離"],"礼":["禮"],"里":["裡","裏"],"历":["歴","暦"],"丽":["麗"],"励":["勵"],"隶":["隸","隷"],"连":["連"],"练":["練"],"炼":["錬"],"恋":["戀"],"凉":["涼"],"粮":["糧"],"两":["両"],"疗":["療"],"猎":["猟"],"邻":["鄰","隣"],"临":["臨"],"赁":["賃"],"灵":["霊"],"铃":["鈴"],"龄":["齢"],"领":["領"],"泷":["滝"],"楼":["樓"],"炉":["爐"],"虏":["虜"],"陆":["陸"],"录":["録"],"乱":["亂"],"伦":["倫"],"轮":["輪"],"论":["論"],"罗":["羅"],"络":["絡"],"虑":["慮"],"绿":["緑"],"马":["馬"],"买":["買"],"麦":["麥"],"卖":["売"],"脉":["脈"],"蛮":["蠻"],"满":["満"],"猫":["貓"],"贸":["貿"],"没":["沒"],"每":["毎"],"门":["門"],"梦":["夢"],"绵":["綿"],"灭":["滅"],"鸣":["鳴"],"铭":["銘"],"默":["黙"],"谋":["謀"],"亩":["畝"],"纳":["納"],"难":["難"],"恼":["悩"],"脑":["脳"],"内":["內"],"拟":["擬"],"娘":["嬢"],"酿":["醸"],"鸟":["鳥"],"宁":["寧"],"农":["農"],"浓":["濃"],"诺":["諾"],"盘":["盤"],"赔":["賠"],"喷":["噴"],"贫":["貧"],"频":["頻"],"评":["評"],"扑":["撲"],"铺":["舗"],"仆":["僕"],"朴":["樸"],"谱":["譜"],"齐":["斉"],"骑":["騎"],"棋":["碁"],"启":["啓"],"气":["気"],"弃":["棄"],"迁":["遷"],"铅":["鉛"],"谦":["謙"],"钱":["銭"],"潜":["潛"],"浅":["淺"],"强":["強"],"缲":["繰"],"桥":["橋"],"窃":["竊"],"亲":["親"],"寝":["寢"],"轻":["軽"],"倾":["傾"],"请":["請"],"庆":["慶"],"穷":["窮"],"驱":["駆"],"圈":["圏"],"权":["権"],"劝":["勧"],"确":["確"],"壤":["壌"],"让":["譲"],"热":["熱"],"认":["認"],"荣":["栄"],"软":["軟"],"锐":["鋭"],"润":["潤"],"伞":["傘"],"丧":["喪"],"骚":["騒"],"扫":["掃"],"涩":["渋"],"杀":["殺"],"缮":["繕"],"伤":["傷"],"赏":["賞"],"烧":["焼"],"绍":["紹"],"舍":["舎","捨"],"设":["設"],"涉":["渉"],"摄":["摂"],"绅":["紳"],"审":["審"],"声":["聲"],"绳":["縄"],"圣":["聖"],"胜":["勝"],"剩":["剰"],"师":["師"],"诗":["詩"],"湿":["濕"],"时":["時"],"识":["識"],"实":["実"],"势":["勢"],"饰":["飾"],"试":["試"],"视":["視"],"适":["適"],"释":["釈"],"收":["収"],"寿":["壽"],"兽":["獣"],"书":["書"],"枢":["樞"],"疏":["疎"],"输":["輸"],"属":["屬"],"术":["術"],"树":["樹"],"数":["數"],"帅":["帥"],"双":["雙"],"税":["稅"],"顺":["順"],"说":["說","説"],"饲":["飼"],"讼":["訟"],"搜":["捜"],"诉":["訴"],"肃":["粛"],"随":["隨"],"髓":["髄"],"岁":["歳"],"碎":["砕"],"穗":["穂"],"孙":["孫"],"损":["損"],"缩":["縮"],"锁":["鎖"],"态":["態"],"坛":["壇"],"昙":["曇"],"谈":["談"],"叹":["歎","嘆"],"汤":["湯"],"讨":["討"],"腾":["騰"],"誊":["謄"],"题":["題"],"条":["條"],"调":["調"],"铁":["鐵","鉄"],"厅":["庁"],"听":["聴"],"铜":["銅"],"统":["統"],"头":["頭"],"图":["図"],"涂":["塗"],"团":["団"],"脱":["脫"],"驮":["駄"],"湾":["灣"],"顽":["頑"],"万":["萬"],"网":["網"],"为":["為"],"违":["違"],"围":["囲"],"维":["維"],"伟":["偉"],"伪":["偽"],"纬":["緯"],"卫":["衛"],"纹":["紋"],"闻":["聞"],"稳":["穏"],"问":["問"],"涡":["渦"],"污":["汚"],"无":["無"],"吴":["呉"],"务":["務"],"误":["誤"],"雾":["霧"],"溪":["渓","渓"],"习":["習"],"袭":["襲"],"玺":["璽"],"铣":["銑"],"戏":["戯"],"系":["係"],"细":["細"],"舄":["潟"],"辖":["轄"],"吓":["嚇"],"纤":["繊"],"鲜":["鮮"],"闲":["閑","閑"],"贤":["賢"],"显":["顕"],"险":["険"],"现":["現"],"宪":["憲"],"陷":["陥"],"缐":["線"],"乡":["郷"],"详":["詳"],"响":["響"],"项":["項"],"晓":["暁"],"笑":["咲"],"效":["効"],"协":["協"],"胁":["脅"],"写":["寫"],"谢":["謝"],"兴":["興"],"许":["許"],"叙":["敘"],"绪":["緒"],"续":["続"],"轩":["軒"],"悬":["懸"],"选":["選"],"勋":["勲"],"熏":["薫"],"寻":["尋"],"训":["訓"],"压":["圧"],"亚":["亜"],"烟":["煙"],"严":["厳"],"盐":["塩"],"颜":["顔"],"验":["験"],"扬":["揚"],"阳":["陽"],"养":["養"],"样":["様"],"窑":["窯"],"谣":["謡"],"摇":["揺"],"药":["薬"],"业":["業"],"叶":["葉"],"谒":["謁"],"壹":["壱"],"仪":["儀"],"遗":["遺"],"亿":["億"],"义":["義"],"忆":["憶"],"议":["議"],"异":["異"],"译":["訳"],"驿":["駅"],"阴":["陰"],"银":["銀"],"饮":["飲"],"隐":["隠"],"樱":["桜"],"萤":["蛍"],"营":["営"],"应":["応"],"拥":["擁"],"咏":["詠"],"踊":["踴"],"优":["優"],"忧":["憂"],"邮":["郵"],"犹":["猶"],"游":["遊"],"诱":["誘"],"余":["餘"],"鱼":["魚"],"娱":["娯"],"渔":["漁"],"与":["與"],"语":["語"],"狱":["獄"],"预":["預"],"谕":["諭"],"御":["禦"],"誉":["譽"],"园":["園"],"员":["員"],"缘":["縁"],"远":["遠"],"愿":["願"],"约":["約"],"阅":["閲"],"跃":["躍"],"云":["雲","伝"],"运":["運"],"韵":["韻"],"杂":["雑"],"灾":["災"],"载":["載"],"暂":["暫"],"赞":["贊","賛"],"脏":["臓"],"则":["則"],"责":["責"],"择":["択"],"泽":["沢"],"贼":["賊"],"增":["増"],"赠":["贈"],"札":["劄"],"诈":["詐"],"斋":["斎"],"债":["債"],"栈":["桟"],"战":["戦"],"张":["張"],"长":["長"],"帐":["帳"],"胀":["脹"],"诏":["詔"],"着":["著"],"贞":["貞"],"针":["針"],"侦":["偵"],"诊":["診"],"阵":["陣"],"镇":["鎮"],"争":["爭"],"证":["證","証"],"织":["織"],"执":["執"],"值":["値"],"职":["職"],"纸":["紙"],"质":["質"],"滞":["滯"],"终":["終"],"钟":["鐘"],"种":["種"],"冢":["塚"],"众":["眾","衆"],"轴":["軸"],"昼":["晝"],"诸":["諸"],"嘱":["囑"],"贮":["貯"],"驻":["駐"],"筑":["築"],"专":["専"],"转":["転"],"妆":["妝"],"庄":["荘"],"装":["裝"],"壮":["壯"],"状":["狀"],"坠":["墜"],"浊":["濁"],"咨":["諮"],"资":["資"],"姊":["姉"],"渍":["漬"],"总":["総"],"纵":["縦"],"组":["組"],"醉":["酔"],"闷":["悶"],"灌":["浣"],"仿":["倣"],"做":["作"],"划":["画"],"叛":["反"],"圆":["円"],"吊":["弔"],"雕":["彫"],"征":["徴"],"托":["託"],"采":["採"],"榨":["搾"],"拨":["発"],"升":["昇"],"晚":["晩"],"桌":["卓"],"沉":["沈"],"准":["準"],"泼":["発"],"滨":["浜"],"熔":["溶"],"牺":["犠"],"瓣":["弁"],"愈":["癒"],"炮":["砲"],"丝":["糸"],"线":["線"],"县":["県"],"缺":["欠"],"罐":["缶"],"艺":["芸"],"制":["製"],"志":["誌"],"讽":["風"],"丰":["豊"],"辨":["弁"],"辩":["弁"],"周":["週"],"醋":["酢"],"铸":["鋳"],"只":["隻"],"龙":["竜"]}');
 ;// ./src/plugin/suggest/dict.ts
+var _context;
 
-// https://github.com/manakanemu/ctoj
-const CN2JP = {
-  拂: '払',
-  奸: '姦',
-  爱: '愛',
-  拔: '抜',
-  罢: '罷',
-  霸: '覇',
-  败: '敗',
-  拜: '拝',
-  颁: '頒',
-  饱: '飽',
-  宝: '寶',
-  报: '報',
-  贝: '貝',
-  备: '備',
-  辈: '輩',
-  笔: '筆',
-  币: '幣',
-  闭: '閉',
-  边: '辺',
-  编: '編',
-  变: '変',
-  标: '標',
-  别: '別',
-  宾: '賓',
-  冰: '氷',
-  并: '並',
-  钵: '缽',
-  补: '補',
-  步: '歩',
-  财: '財',
-  参: '參',
-  残: '殘',
-  蚕: '蠶',
-  惨: '慘',
-  仓: '倉',
-  藏: '蔵',
-  册: '冊',
-  侧: '側',
-  测: '測',
-  层: '層',
-  插: '挿',
-  查: '査',
-  禅: '禪',
-  产: '產',
-  肠: '腸',
-  偿: '償',
-  场: '場',
-  巢: '巣',
-  车: '車',
-  彻: '徹',
-  陈: '陳',
-  称: '稱',
-  诚: '誠',
-  乘: '乗',
-  惩: '懲',
-  吃: '喫',
-  痴: '癡',
-  迟: '遅',
-  齿: '歯',
-  耻: '恥',
-  敕: '勅',
-  冲: '沖',
-  虫: '蟲',
-  铳: '銃',
-  丑: '醜',
-  础: '礎',
-  处: '處',
-  触: '觸',
-  传: '伝',
-  窗: '窓',
-  创: '創',
-  锤: '錘',
-  纯: '純',
-  词: '詞',
-  辞: '辭',
-  赐: '賜',
-  从: '従',
-  粹: '粋',
-  错: '錯',
-  达: '達',
-  带: '帯',
-  贷: '貸',
-  担: '擔',
-  单: '単',
-  胆: '膽',
-  诞: '誕',
-  弹: '弾',
-  当: '當',
-  党: '黨',
-  导: '導',
-  岛: '島',
-  盗: '盜',
-  稻: '稲',
-  德: '徳',
-  灯: '燈',
-  敌: '敵',
-  递: '逓',
-  缔: '締',
-  点: '點',
-  电: '電',
-  钓: '釣',
-  叠: '畳',
-  顶: '頂',
-  订: '訂',
-  锭: '錠',
-  东: '東',
-  动: '動',
-  冻: '凍',
-  栋: '棟',
-  斗: '闘',
-  独: '獨',
-  读: '読',
-  笃: '篤',
-  断: '斷',
-  锻: '鍛',
-  队: '隊',
-  对: '対',
-  钝: '鈍',
-  夺: '奪',
-  堕: '墮',
-  额: '額',
-  恶: '悪',
-  饿: '餓',
-  儿: '児',
-  贰: '弐',
-  发: '髪',
-  罚: '罰',
-  阀: '閥',
-  烦: '煩',
-  饭: '飯',
-  范: '範',
-  贩: '販',
-  访: '訪',
-  纺: '紡',
-  飞: '飛',
-  废: '廃',
-  费: '費',
-  纷: '紛',
-  氛: '雰',
-  坟: '墳',
-  奋: '奮',
-  愤: '憤',
-  风: '風',
-  缝: '縫',
-  佛: '仏',
-  肤: '膚',
-  负: '負',
-  妇: '婦',
-  复: '複',
-  赋: '賦',
-  缚: '縛',
-  该: '該',
-  干: '幹',
-  绀: '紺',
-  刚: '剛',
-  纲: '綱',
-  钢: '鋼',
-  阁: '閣',
-  个: '個',
-  给: '給',
-  宫: '宮',
-  贡: '貢',
-  沟: '溝',
-  构: '構',
-  购: '購',
-  谷: '穀',
-  顾: '顧',
-  挂: '掛',
-  关: '関',
-  观: '観',
-  馆: '館',
-  贯: '貫',
-  惯: '慣',
-  广: '広',
-  归: '帰',
-  规: '規',
-  轨: '軌',
-  贵: '貴',
-  国: '國',
-  果: '菓',
-  过: '過',
-  还: '還',
-  汉: '漢',
-  号: '號',
-  贺: '賀',
-  黑: '黒',
-  红: '紅',
-  后: '後',
-  户: '戸',
-  护: '護',
-  华: '華',
-  话: '話',
-  怀: '懐',
-  坏: '壊',
-  欢: '歓',
-  环: '環',
-  缓: '緩',
-  换: '換',
-  唤: '喚',
-  挥: '揮',
-  辉: '輝',
-  绘: '絵',
-  贿: '賄',
-  惠: '恵',
-  货: '貨',
-  获: '穫',
-  祸: '禍',
-  击: '撃',
-  饥: '飢',
-  机: '機',
-  鸡: '鶏',
-  积: '積',
-  级: '級',
-  极: '極',
-  几: '幾',
-  计: '計',
-  记: '記',
-  纪: '紀',
-  际: '際',
-  剂: '剤',
-  迹: '跡',
-  济: '済',
-  继: '継',
-  绩: '績',
-  假: '仮',
-  价: '価',
-  坚: '堅',
-  间: '間',
-  监: '監',
-  茧: '繭',
-  俭: '倹',
-  检: '検',
-  减: '減',
-  简: '簡',
-  见: '見',
-  荐: '薦',
-  剑: '剣',
-  舰: '艦',
-  渐: '漸',
-  践: '踐',
-  鉴: '鑑',
-  将: '將',
-  讲: '講',
-  奖: '奨',
-  纟: '糸',
-  绞: '絞',
-  矫: '矯',
-  觉: '覚',
-  较: '較',
-  阶: '階',
-  揭: '掲',
-  节: '節',
-  杰: '傑',
-  诘: '詰',
-  洁: '潔',
-  结: '結',
-  届: '屆',
-  紧: '緊',
-  谨: '謹',
-  尽: '盡',
-  进: '進',
-  经: '経',
-  惊: '驚',
-  鲸: '鯨',
-  净: '浄',
-  竞: '競',
-  静: '靜',
-  镜: '鏡',
-  纠: '糾',
-  举: '挙',
-  剧: '劇',
-  据: '據',
-  卷: '巻',
-  绢: '絹',
-  决: '決',
-  绝: '絶',
-  军: '軍',
-  开: '開',
-  壳: '殻',
-  渴: '渇',
-  课: '課',
-  垦: '墾',
-  恳: '懇',
-  库: '庫',
-  夸: '誇',
-  块: '塊',
-  宽: '寛',
-  况: '況',
-  矿: '鉱',
-  扩: '拡',
-  来: '來',
-  赖: '頼',
-  濑: '瀬',
-  栏: '欄',
-  览: '覧',
-  滥: '濫',
-  劳: '労',
-  乐: '楽',
-  垒: '塁',
-  泪: '涙',
-  类: '類',
-  离: '離',
-  礼: '禮',
-  里: '裡',
-  历: '歴',
-  丽: '麗',
-  励: '勵',
-  隶: '隸',
-  连: '連',
-  练: '練',
-  炼: '錬',
-  恋: '戀',
-  凉: '涼',
-  粮: '糧',
-  两: '両',
-  疗: '療',
-  猎: '猟',
-  邻: '鄰',
-  临: '臨',
-  赁: '賃',
-  灵: '霊',
-  铃: '鈴',
-  龄: '齢',
-  领: '領',
-  泷: '滝',
-  楼: '樓',
-  炉: '爐',
-  虏: '虜',
-  陆: '陸',
-  录: '録',
-  乱: '亂',
-  伦: '倫',
-  轮: '輪',
-  论: '論',
-  罗: '羅',
-  络: '絡',
-  虑: '慮',
-  绿: '緑',
-  马: '馬',
-  买: '買',
-  麦: '麥',
-  卖: '売',
-  脉: '脈',
-  蛮: '蠻',
-  满: '満',
-  猫: '貓',
-  贸: '貿',
-  没: '沒',
-  每: '毎',
-  门: '門',
-  梦: '夢',
-  绵: '綿',
-  灭: '滅',
-  鸣: '鳴',
-  铭: '銘',
-  默: '黙',
-  谋: '謀',
-  亩: '畝',
-  纳: '納',
-  难: '難',
-  恼: '悩',
-  脑: '脳',
-  内: '內',
-  拟: '擬',
-  娘: '嬢',
-  酿: '醸',
-  鸟: '鳥',
-  宁: '寧',
-  农: '農',
-  浓: '濃',
-  诺: '諾',
-  盘: '盤',
-  赔: '賠',
-  喷: '噴',
-  贫: '貧',
-  频: '頻',
-  评: '評',
-  扑: '撲',
-  铺: '舗',
-  仆: '僕',
-  朴: '樸',
-  谱: '譜',
-  齐: '斉',
-  骑: '騎',
-  棋: '碁',
-  启: '啓',
-  气: '気',
-  弃: '棄',
-  迁: '遷',
-  铅: '鉛',
-  谦: '謙',
-  钱: '銭',
-  潜: '潛',
-  浅: '淺',
-  强: '強',
-  缲: '繰',
-  桥: '橋',
-  窃: '竊',
-  亲: '親',
-  寝: '寢',
-  轻: '軽',
-  倾: '傾',
-  请: '請',
-  庆: '慶',
-  穷: '窮',
-  驱: '駆',
-  圈: '圏',
-  权: '権',
-  劝: '勧',
-  确: '確',
-  壤: '壌',
-  让: '譲',
-  热: '熱',
-  认: '認',
-  荣: '栄',
-  软: '軟',
-  锐: '鋭',
-  润: '潤',
-  伞: '傘',
-  丧: '喪',
-  骚: '騒',
-  扫: '掃',
-  涩: '渋',
-  杀: '殺',
-  缮: '繕',
-  伤: '傷',
-  赏: '賞',
-  烧: '焼',
-  绍: '紹',
-  舍: '舎',
-  设: '設',
-  涉: '渉',
-  摄: '摂',
-  绅: '紳',
-  审: '審',
-  声: '聲',
-  绳: '縄',
-  圣: '聖',
-  胜: '勝',
-  剩: '剰',
-  师: '師',
-  诗: '詩',
-  湿: '濕',
-  时: '時',
-  识: '識',
-  实: '実',
-  势: '勢',
-  饰: '飾',
-  试: '試',
-  视: '視',
-  适: '適',
-  释: '釈',
-  收: '収',
-  寿: '壽',
-  兽: '獣',
-  书: '書',
-  枢: '樞',
-  疏: '疎',
-  输: '輸',
-  属: '屬',
-  术: '術',
-  树: '樹',
-  数: '數',
-  帅: '帥',
-  双: '雙',
-  税: '稅',
-  顺: '順',
-  说: '說',
-  饲: '飼',
-  讼: '訟',
-  搜: '捜',
-  诉: '訴',
-  肃: '粛',
-  随: '隨',
-  髓: '髄',
-  岁: '歳',
-  碎: '砕',
-  穗: '穂',
-  孙: '孫',
-  损: '損',
-  缩: '縮',
-  锁: '鎖',
-  态: '態',
-  坛: '壇',
-  昙: '曇',
-  谈: '談',
-  叹: '歎',
-  汤: '湯',
-  讨: '討',
-  腾: '騰',
-  誊: '謄',
-  题: '題',
-  条: '條',
-  调: '調',
-  铁: '鐵',
-  厅: '庁',
-  听: '聴',
-  铜: '銅',
-  统: '統',
-  头: '頭',
-  图: '図',
-  涂: '塗',
-  团: '団',
-  脱: '脫',
-  驮: '駄',
-  湾: '灣',
-  顽: '頑',
-  万: '萬',
-  网: '網',
-  为: '為',
-  违: '違',
-  围: '囲',
-  维: '維',
-  伟: '偉',
-  伪: '偽',
-  纬: '緯',
-  卫: '衛',
-  纹: '紋',
-  闻: '聞',
-  稳: '穏',
-  问: '問',
-  涡: '渦',
-  污: '汚',
-  无: '無',
-  吴: '呉',
-  务: '務',
-  误: '誤',
-  雾: '霧',
-  溪: '渓',
-  习: '習',
-  袭: '襲',
-  玺: '璽',
-  铣: '銑',
-  戏: '戯',
-  系: '係',
-  细: '細',
-  舄: '潟',
-  辖: '轄',
-  吓: '嚇',
-  纤: '繊',
-  鲜: '鮮',
-  闲: '閑',
-  贤: '賢',
-  显: '顕',
-  险: '険',
-  现: '現',
-  宪: '憲',
-  陷: '陥',
-  缐: '線',
-  乡: '郷',
-  详: '詳',
-  响: '響',
-  项: '項',
-  晓: '暁',
-  笑: '咲',
-  效: '効',
-  协: '協',
-  胁: '脅',
-  写: '寫',
-  谢: '謝',
-  兴: '興',
-  许: '許',
-  叙: '敘',
-  绪: '緒',
-  续: '続',
-  轩: '軒',
-  悬: '懸',
-  选: '選',
-  勋: '勲',
-  熏: '薫',
-  寻: '尋',
-  训: '訓',
-  压: '圧',
-  亚: '亜',
-  烟: '煙',
-  严: '厳',
-  盐: '塩',
-  颜: '顔',
-  验: '験',
-  扬: '揚',
-  阳: '陽',
-  养: '養',
-  样: '様',
-  窑: '窯',
-  谣: '謡',
-  摇: '揺',
-  药: '薬',
-  业: '業',
-  叶: '葉',
-  谒: '謁',
-  壹: '壱',
-  仪: '儀',
-  遗: '遺',
-  亿: '億',
-  义: '義',
-  忆: '憶',
-  议: '議',
-  异: '異',
-  译: '訳',
-  驿: '駅',
-  阴: '陰',
-  银: '銀',
-  饮: '飲',
-  隐: '隠',
-  樱: '桜',
-  萤: '蛍',
-  营: '営',
-  应: '応',
-  拥: '擁',
-  咏: '詠',
-  踊: '踴',
-  优: '優',
-  忧: '憂',
-  邮: '郵',
-  犹: '猶',
-  游: '遊',
-  诱: '誘',
-  余: '餘',
-  鱼: '魚',
-  娱: '娯',
-  渔: '漁',
-  与: '與',
-  语: '語',
-  狱: '獄',
-  预: '預',
-  谕: '諭',
-  御: '禦',
-  誉: '譽',
-  园: '園',
-  员: '員',
-  缘: '縁',
-  远: '遠',
-  愿: '願',
-  约: '約',
-  阅: '閲',
-  跃: '躍',
-  云: '雲',
-  运: '運',
-  韵: '韻',
-  杂: '雑',
-  灾: '災',
-  载: '載',
-  暂: '暫',
-  赞: '贊',
-  脏: '臓',
-  则: '則',
-  责: '責',
-  择: '択',
-  泽: '沢',
-  贼: '賊',
-  增: '増',
-  赠: '贈',
-  札: '劄',
-  诈: '詐',
-  斋: '斎',
-  债: '債',
-  栈: '桟',
-  战: '戦',
-  张: '張',
-  长: '長',
-  帐: '帳',
-  胀: '脹',
-  诏: '詔',
-  着: '著',
-  贞: '貞',
-  针: '針',
-  侦: '偵',
-  诊: '診',
-  阵: '陣',
-  镇: '鎮',
-  争: '爭',
-  证: '證',
-  织: '織',
-  执: '執',
-  值: '値',
-  职: '職',
-  纸: '紙',
-  质: '質',
-  滞: '滯',
-  终: '終',
-  钟: '鐘',
-  种: '種',
-  冢: '塚',
-  众: '眾',
-  轴: '軸',
-  昼: '晝',
-  诸: '諸',
-  嘱: '囑',
-  贮: '貯',
-  驻: '駐',
-  筑: '築',
-  专: '専',
-  转: '転',
-  妆: '妝',
-  庄: '荘',
-  装: '裝',
-  壮: '壯',
-  状: '狀',
-  坠: '墜',
-  浊: '濁',
-  咨: '諮',
-  资: '資',
-  姊: '姉',
-  渍: '漬',
-  总: '総',
-  纵: '縦',
-  组: '組',
-  醉: '酔',
-  闷: '悶',
-  灌: '浣'
-};
-const JP2CN = from_entries_default()(Object.entries(CN2JP).map(_ref => {
+
+
+const CN2JP = Object.freeze(dict_namespaceObject);
+const JP2CN = Object.freeze(from_entries_default()(flat_map_default()(_context = Object.entries(CN2JP)).call(_context, _ref => {
   let [k, v] = _ref;
-  return [v, k];
-}));
+  return v.map(vv => [vv, k]);
+})));
+/** 检查是否为 ASCII */
+function isASCII(text) {
+  for (let i = 0, n = text.length; i < n; i++) {
+    if (text.charCodeAt(i) >= 0x80) return false;
+  }
+  return true;
+}
 /** 转为中文汉字 */
 function toCN(text) {
-  return text.replace(/(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])/g, c => JP2CN[c] || c);
+  let ret = '';
+  for (const ch of text) {
+    ret += JP2CN[ch] || ch;
+  }
+  return ret;
 }
+const MAX_COMBINE = 16;
 /** 转为日文汉字 */
 function toJP(text) {
-  return text.replace(/(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF])/g, c => CN2JP[c] || c);
+  let res = [''];
+  for (const ch of text) {
+    const jp = CN2JP[ch];
+    let rep;
+    if (jp) {
+      if (jp.length > 1 && res.length < MAX_COMBINE) {
+        const tmp = [];
+        for (const r of res) {
+          for (const j of jp) {
+            tmp.push(r + j);
+          }
+        }
+        res = tmp;
+        continue;
+      }
+      rep = jp[0];
+    } else {
+      rep = ch;
+    }
+    for (let i = 0, n = res.length; i < n; i++) {
+      res[i] += rep;
+    }
+  }
+  return res;
 }
 ;// ./src/plugin/suggest/index.ts
 
@@ -23573,27 +23048,67 @@ function toJP(text) {
 
 
 
+const NS_SCORE = Object.freeze({
+  o: 10,
+  loc: 9,
+  f: 9,
+  m: 8.5,
+  x: 8,
+  l: 2,
+  a: 2.5,
+  cos: 2.4,
+  g: 2.2,
+  p: 3.3,
+  c: 2.8,
+  r: 1,
+  '': 0 // rows
+});
+/** 生成完成项 */
+function markTag(tag, search, term) {
+  let score = 0;
+  const match = {};
+  const {
+    key,
+    ns,
+    cn,
+    introSearch
+  } = tag;
+  const keyIdx = key.indexOf(search);
+  if (keyIdx >= 0) {
+    score += NS_SCORE[ns] * (search.length + 1) / key.length * (keyIdx === 0 ? 2 : 1);
+    match.key = {
+      start: keyIdx,
+      end: keyIdx + search.length
+    };
+  }
+  const name = cn.toLowerCase();
+  const nameIdx = name.indexOf(search);
+  if (nameIdx >= 0) {
+    score += NS_SCORE[ns] * (search.length + 1) / name.length * (nameIdx === 0 ? 2 : 1);
+    match.cn = {
+      start: nameIdx,
+      end: nameIdx + search.length
+    };
+  }
+  if (introSearch) {
+    const introIdx = introSearch.indexOf(search);
+    if (introIdx >= 0) {
+      score += NS_SCORE[ns] * (search.length + 1) / introSearch.length * 0.5;
+    }
+  }
+  if (score === 0) return undefined;
+  return {
+    tag,
+    term,
+    match,
+    score
+  };
+}
 let Suggest = class Suggest {
   constructor(logger, messaging, tagging) {
     this.logger = logger;
     this.messaging = messaging;
     this.tagging = tagging;
-    this.nsScore = {
-      other: 10,
-      location: 9,
-      female: 9,
-      male: 8.5,
-      mixed: 8,
-      language: 2,
-      artist: 2.5,
-      cosplayer: 2.4,
-      group: 2.2,
-      parody: 3.3,
-      character: 2.8,
-      reclass: 1,
-      rows: 0,
-      temp: 0.1
-    };
     this.tagList = [];
     this.sha = '';
     messaging.on('suggest-tag', args => {
@@ -23607,42 +23122,6 @@ let Suggest = class Suggest {
     });
     if (v.map) this.tagList = Object.values(v.map);
     this.sha = v.sha;
-  }
-  markTag(tag, search, term) {
-    let score = 0;
-    const ns = this.tagging.namespace(tag.ns);
-    const match = {};
-    const key = tag.key;
-    const keyIdx = tag.key.indexOf(search);
-    if (keyIdx >= 0) {
-      score += this.nsScore[ns] * (search.length + 1) / key.length * (keyIdx === 0 ? 2 : 1);
-      match.key = {
-        start: keyIdx,
-        end: keyIdx + search.length
-      };
-    }
-    const name = tag.cn.toLowerCase();
-    const nameIdx = name.indexOf(search);
-    if (nameIdx >= 0) {
-      score += this.nsScore[ns] * (search.length + 1) / name.length * (nameIdx === 0 ? 2 : 1);
-      match.cn = {
-        start: nameIdx,
-        end: nameIdx + search.length
-      };
-    }
-    if (tag.introSearch) {
-      const intro = tag.introSearch;
-      const introIdx = intro.indexOf(search);
-      if (introIdx >= 0) {
-        score += this.nsScore[ns] * (search.length + 1) / intro.length * 0.5;
-      }
-    }
-    return {
-      tag,
-      term,
-      match,
-      score
-    };
   }
   async getSuggests(term) {
     let limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : -1;
@@ -23664,11 +23143,16 @@ let Suggest = class Suggest {
       sTerm = sTerm.slice(1);
     }
     const suggestions = [];
-    const terms = [...new Set([sTerm, toCN(sTerm), toJP(sTerm)])];
+    let terms = [sTerm];
+    if (!isASCII(sTerm)) {
+      terms.push(toCN(sTerm), ...toJP(sTerm));
+      terms = [...new Set(terms)];
+    }
+    const nTerms = terms.length;
     for (const tag of tagList) {
-      for (const t of terms) {
-        const st = this.markTag(tag, t, term);
-        if (st.score > 0) {
+      for (let i = 0; i < nTerms; i++) {
+        const st = markTag(tag, terms[i], term);
+        if (st) {
           suggestions.push(st);
           break;
         }
