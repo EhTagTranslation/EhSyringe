@@ -3,6 +3,7 @@ import { Logger } from 'services/logger';
 import type { EHTNamespaceName, TagItem } from 'interface';
 import { Messaging } from 'services/messaging';
 import { Tagging } from 'services/tagging';
+import { toCN, toJP } from './dict';
 
 export interface Suggestion {
     tag: TagItem;
@@ -109,16 +110,22 @@ export class Suggest {
             sTerm = sTerm.slice(1);
         }
 
-        let suggestions = [];
+        const suggestions = [];
+        const terms = [...new Set([sTerm, toCN(sTerm), toJP(sTerm)])];
         for (const tag of tagList) {
-            const st = this.markTag(tag, sTerm, term);
-            if (st.score > 0) suggestions.push(st);
+            for (const t of terms) {
+                const st = this.markTag(tag, t, term);
+                if (st.score > 0) {
+                    suggestions.push(st);
+                    break;
+                }
+            }
         }
         suggestions.sort((st1, st2) => st2.score - st1.score);
-        if (limit > 0) {
-            suggestions = suggestions.slice(0, limit);
+        if (limit > 0 && suggestions.length > limit) {
+            suggestions.length = limit;
         }
-        this.logger.debug(`搜索：${term}`, suggestions);
+        this.logger.debug(`搜索：${term} (${terms.join(', ')})`, suggestions);
         timer.end();
         return suggestions;
     }
