@@ -161,6 +161,9 @@ importers:
       webpack-userscript:
         specifier: ^2.5.8
         version: 2.5.8(webpack@5.101.3)
+      yaml-loader:
+        specifier: ^0.8.1
+        version: 0.8.1
 
 packages:
   '@babel/code-frame@7.27.1':
@@ -1907,6 +1910,10 @@ packages:
     resolution:
       { integrity: sha512-qeFIXtP4MSoi6NLqO12WfqARWWuCKi2Rn/9hJLEmtB5yTNr9DqFWkJRCf2qShWzPeAMRnOgCrq0sg/KLv5ES9w== }
 
+  big.js@5.2.2:
+    resolution:
+      { integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ== }
+
   binary-extensions@2.3.0:
     resolution:
       { integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw== }
@@ -2556,6 +2563,11 @@ packages:
   emoji-regex@9.2.2:
     resolution:
       { integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg== }
+
+  emojis-list@3.0.0:
+    resolution:
+      { integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q== }
+    engines: { node: '>= 4' }
 
   encodeurl@1.0.2:
     resolution:
@@ -3485,6 +3497,10 @@ packages:
       { integrity: sha512-zptv57P3GpL+O0I7VdMJNBZCu+BPHVQUk55Ft8/QCJjTVxrnJHuVuX/0Bl2A6/+2oyR/ZMEuFKwmzqqZ/U5nPQ== }
     engines: { node: 20 || >=22 }
 
+  javascript-stringify@2.1.0:
+    resolution:
+      { integrity: sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg== }
+
   jest-worker@27.5.1:
     resolution:
       { integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg== }
@@ -3663,6 +3679,11 @@ packages:
     resolution:
       { integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg== }
     engines: { node: '>=6.11.5' }
+
+  loader-utils@2.0.4:
+    resolution:
+      { integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw== }
+    engines: { node: '>=8.9.0' }
 
   locate-path@3.0.0:
     resolution:
@@ -5704,6 +5725,17 @@ packages:
     resolution:
       { integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A== }
 
+  yaml-loader@0.8.1:
+    resolution:
+      { integrity: sha512-BCEndnUoi3BaZmePkwGGe93txRxLgMhBa/gE725v1/GHnura8QvNs7c4+4C1yyhhKoj3Dg63M7IqhA++15j6ww== }
+    engines: { node: '>= 14' }
+
+  yaml@2.8.1:
+    resolution:
+      { integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw== }
+    engines: { node: '>= 14.6' }
+    hasBin: true
+
   yargs-parser@21.1.1:
     resolution:
       { integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw== }
@@ -7467,6 +7499,8 @@ snapshots:
     dependencies:
       tweetnacl: 0.14.5
 
+  big.js@5.2.2: {}
+
   binary-extensions@2.3.0: {}
 
   bl@4.1.0:
@@ -8040,6 +8074,8 @@ snapshots:
   emoji-regex@8.0.0: {}
 
   emoji-regex@9.2.2: {}
+
+  emojis-list@3.0.0: {}
 
   encodeurl@1.0.2: {}
 
@@ -8803,6 +8839,8 @@ snapshots:
     dependencies:
       '@isaacs/cliui': 8.0.2
 
+  javascript-stringify@2.1.0: {}
+
   jest-worker@27.5.1:
     dependencies:
       '@types/node': 24.3.1
@@ -8935,6 +8973,12 @@ snapshots:
       '@types/trusted-types': 2.0.7
 
   loader-runner@4.3.0: {}
+
+  loader-utils@2.0.4:
+    dependencies:
+      big.js: 5.2.2
+      emojis-list: 3.0.0
+      json5: 2.2.3
 
   locate-path@3.0.0:
     dependencies:
@@ -10708,6 +10752,14 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@4.0.0: {}
+
+  yaml-loader@0.8.1:
+    dependencies:
+      javascript-stringify: 2.1.0
+      loader-utils: 2.0.4
+      yaml: 2.8.1
+
+  yaml@2.8.1: {}
 
   yargs-parser@21.1.1: {}
 

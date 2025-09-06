@@ -104,6 +104,11 @@ export default async (env = {}, argv = {}) => {
                     test: /\.css$/,
                     use: [...cssLoaders],
                 },
+                {
+                    test: /\.ya?ml$/,
+                    type: 'json',
+                    use: [{ loader: 'yaml-loader', options: { asJSON: true } }],
+                },
             ],
         },
         resolve: {
