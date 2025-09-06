@@ -22,12 +22,12 @@ export class TagTip {
         this.init().catch(logger.error);
     }
 
-    selectedIndex = 0;
-    inputElement!: HTMLInputElement;
-    autoCompleteList!: HTMLDivElement;
-    delimiter = ' ';
-    ctrlKey = false;
-    disableExclusionMode = false;
+    private selectedIndex = 0;
+    private inputElement!: HTMLInputElement;
+    private autoCompleteList!: HTMLDivElement;
+    private delimiter = ' ';
+    private ctrlKey = false;
+    private disableExclusionMode = false;
 
     private async init(): Promise<void> {
         const conf = await this.storage.get('config');
@@ -46,8 +46,7 @@ export class TagTip {
         fromEvent<KeyboardEvent>(this.inputElement, 'keyup')
             .pipe(
                 filter((e) => !new Set(['ArrowUp', 'ArrowDown', 'Enter', 'Meta', 'Control', 'Alt']).has(e.key)),
-                map(() => this.inputElement.value),
-                // distinctUntilChanged()
+                map(() => this.inputElement.value.replace(/  +/gm, ' ')),
             )
             .subscribe((s) => {
                 this.search(s).catch(this.logger.error);
@@ -75,45 +74,51 @@ export class TagTip {
         this.setListPosition();
     }
 
-    async search(value: string): Promise<void> {
-        value = this.inputElement.value = value.replace(/  +/gm, ' ');
+    private searchCache: [string, Suggestion[]] = ['', []];
+    private async search(value: string): Promise<void> {
+        this.inputElement.value = value;
+        let result: Suggestion[];
+        if (this.searchCache[0] === value) {
+            result = this.searchCache[1];
+        } else {
+            // [^\s,] 空白字符和逗号以外的字符 (用于支持逗号)
+            // (?:"|$) 非捕获分组, 引号或文本结束  (用于匹配不完整的引号)
 
-        // [^\s,] 空白字符和逗号以外的字符 (用于支持逗号)
-        // (?:"|$) 非捕获分组, 引号或文本结束  (用于匹配不完整的引号)
+            // [^\s,]+:".+?(?:"|$)     NS:"ab cd"     NS:"ab c...
+            // ".+?(?:"|$)]            "ab cd"        "ab c...
+            // [^\s,]+:[^\s,]+         NS:abcd
+            // [^\s,]+                 abcd
 
-        // [^\s,]+:".+?(?:"|$)     NS:"ab cd"     NS:"ab c...
-        // ".+?(?:"|$)]            "ab cd"        "ab c...
-        // [^\s,]+:[^\s,]+         NS:abcd
-        // [^\s,]+                 abcd
+            const values = value.match(/([^\s,]+:".+?(?:"|$)|".+?(?:"|$)]|[^\s,]+:[^\s,]+|[^\s,]+)/gim) ?? [];
+            result = [];
+            const used = new Set();
+            await Promise.all(
+                values.map(async (v, i) => {
+                    const sv = values.slice(i);
+                    if (!sv) return;
 
-        const values = value.match(/([^\s,]+:".+?(?:"|$)|".+?(?:"|$)]|[^\s,]+:[^\s,]+|[^\s,]+)/gim) ?? [];
-        const result: Suggestion[] = [];
-        const used = new Set();
-        await Promise.all(
-            values.map(async (v, i) => {
-                const sv = values.slice(i);
-                if (!sv) return;
+                    const svs = sv.join(this.delimiter);
+                    if (!svs || svs.replace(/\s+/, '').length === 0) return;
 
-                const svs = sv.join(this.delimiter);
-                if (!svs || svs.replace(/\s+/, '').length === 0) return;
+                    const suggestions = await this.messaging.emit('suggest-tag', {
+                        term: svs,
+                        limit: SUGGEST_LIMIT,
+                    });
 
-                const suggestions = await this.messaging.emit('suggest-tag', {
-                    term: svs,
-                    limit: SUGGEST_LIMIT,
-                });
-
-                for (const suggestion of suggestions) {
-                    const { tag } = suggestion;
-                    if (used.has(this.tagging.fullKey(tag))) continue;
-                    used.add(this.tagging.fullKey(tag));
-                    result.push(suggestion);
-                }
-            }),
-        );
-        if (values.length > 1) {
-            // 整合了多个关键词的搜索结果，重新排序并限制数量
-            result.sort((a, b) => b.score - a.score);
-            result.splice(SUGGEST_LIMIT);
+                    for (const suggestion of suggestions) {
+                        const { tag } = suggestion;
+                        if (used.has(this.tagging.fullKey(tag))) continue;
+                        used.add(this.tagging.fullKey(tag));
+                        result.push(suggestion);
+                    }
+                }),
+            );
+            if (values.length > 1) {
+                // 整合了多个关键词的搜索结果，重新排序并限制数量
+                result.sort((a, b) => b.score - a.score);
+                result.splice(SUGGEST_LIMIT);
+            }
+            this.searchCache = [value, result];
         }
         this.autoCompleteList.innerHTML = '';
         for (const suggestion of result) {
@@ -123,7 +128,7 @@ export class TagTip {
         this.scrollList();
     }
 
-    checkCtrl(e: KeyboardEvent): void {
+    private checkCtrl(e: KeyboardEvent): void {
         if (this.disableExclusionMode) return;
         this.ctrlKey = e.ctrlKey || e.metaKey;
         if (this.ctrlKey) {
@@ -133,7 +138,7 @@ export class TagTip {
         }
     }
 
-    keydown(e: KeyboardEvent): void {
+    private keydown(e: KeyboardEvent): void {
         this.checkCtrl(e);
         if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
             if (e.key === 'ArrowUp') {
@@ -168,7 +173,7 @@ export class TagTip {
         }
     }
 
-    scrollList(): void {
+    private scrollList(): void {
         if (this.selectedIndex < 0) {
             this.autoCompleteList.scrollTop = 0;
             return;
@@ -178,14 +183,14 @@ export class TagTip {
         current.scrollIntoView({ block: 'nearest', behavior: 'instant' });
     }
 
-    setListPosition(): void {
+    private setListPosition(): void {
         const rect = this.inputElement.getBoundingClientRect();
         this.autoCompleteList.style.left = `${rect.left + window.scrollX}px`;
         this.autoCompleteList.style.top = `${rect.bottom + window.scrollY}px`;
         this.autoCompleteList.style.width = `${rect.width}px`;
     }
 
-    tagElementItem(suggestion: Suggestion): HTMLDivElement {
+    private tagElementItem(suggestion: Suggestion): HTMLDivElement {
         const tag = suggestion.tag;
         const item = document.createElement('div');
         const cnName = document.createElement('span');
