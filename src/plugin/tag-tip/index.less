@@ -20,7 +20,7 @@
         0 2px 1px -1px rgba(0, 0, 0, 0.12);
     display: block;
     max-height: 50vh;
-    overflow: auto;
+    overflow: hidden auto;
     padding: 8px 0;
     scroll-padding: 16px;
     scrollbar-width: thin;
@@ -42,9 +42,13 @@
     .auto-complete-item {
         padding: 0 8px;
         line-height: 24px;
+        height: 24px;
+        contain: strict;
+        content-visibility: auto;
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+
         img {
             display: inline-block !important;
             height: 8pt;
@@ -52,7 +56,11 @@
         }
 
         > span {
-            flex: none;
+            flex: 0 1 auto;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            overflow: clip;
         }
 
         &:hover,
@@ -64,9 +72,9 @@
             }
         }
         .en-name {
-            padding: 0 8px;
+            flex-shrink: 4;
+            padding-left: 8px;
             color: #5f6368;
-
             :root.ehs-ex & {
                 color: #d9d9d9;
             }

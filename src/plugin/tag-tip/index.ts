@@ -9,6 +9,8 @@ import { Tagging } from 'services/tagging';
 
 import './index.less';
 
+const SUGGEST_LIMIT = 100;
+
 @Service()
 export class TagTip {
     constructor(
@@ -39,7 +41,7 @@ export class TagTip {
         this.inputElement = searchInput;
         this.inputElement.autocomplete = 'off';
         this.autoCompleteList = document.createElement('div');
-        this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list';
+        this.autoCompleteList.className = 'eh-syringe-lite-auto-complete-list eh-syringe-ignore';
 
         fromEvent<KeyboardEvent>(this.inputElement, 'keyup')
             .pipe(
@@ -90,28 +92,33 @@ export class TagTip {
         await Promise.all(
             values.map(async (v, i) => {
                 const sv = values.slice(i);
-                if (sv.length) {
-                    const svs = sv.join(this.delimiter);
-                    if (!svs || svs.replace(/\s+/, '').length === 0) return;
+                if (!sv) return;
 
-                    const suggestions = await this.messaging.emit('suggest-tag', {
-                        term: svs,
-                        limit: 50,
-                    });
+                const svs = sv.join(this.delimiter);
+                if (!svs || svs.replace(/\s+/, '').length === 0) return;
 
-                    suggestions.forEach((suggestion) => {
-                        const tag = suggestion.tag;
-                        if (used.has(this.tagging.fullKey(tag))) return;
-                        used.add(this.tagging.fullKey(tag));
-                        result.push(suggestion);
-                    });
+                const suggestions = await this.messaging.emit('suggest-tag', {
+                    term: svs,
+                    limit: SUGGEST_LIMIT,
+                });
+
+                for (const suggestion of suggestions) {
+                    const { tag } = suggestion;
+                    if (used.has(this.tagging.fullKey(tag))) continue;
+                    used.add(this.tagging.fullKey(tag));
+                    result.push(suggestion);
                 }
             }),
         );
+        if (values.length > 1) {
+            // 整合了多个关键词的搜索结果，重新排序并限制数量
+            result.sort((a, b) => b.score - a.score);
+            result.splice(SUGGEST_LIMIT);
+        }
         this.autoCompleteList.innerHTML = '';
-        result.slice(0, 50).forEach((tag) => {
-            this.autoCompleteList.insertBefore(this.tagElementItem(tag), null);
-        });
+        for (const suggestion of result) {
+            this.autoCompleteList.appendChild(this.tagElementItem(suggestion));
+        }
         this.selectedIndex = -1;
         this.scrollList();
     }
@@ -175,7 +182,7 @@ export class TagTip {
         const rect = this.inputElement.getBoundingClientRect();
         this.autoCompleteList.style.left = `${rect.left + window.scrollX}px`;
         this.autoCompleteList.style.top = `${rect.bottom + window.scrollY}px`;
-        this.autoCompleteList.style.minWidth = `${rect.width}px`;
+        this.autoCompleteList.style.width = `${rect.width}px`;
     }
 
     tagElementItem(suggestion: Suggestion): HTMLDivElement {
