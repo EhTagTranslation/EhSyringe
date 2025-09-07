@@ -54,11 +54,11 @@ declare global {
 // 该方案同时在 V2、V3 和 UserScript 生效
 // 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
 function codePatch(window: Window): void {
-    window.addOnloadHook = function (callbak: () => void): void {
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            setTimeout(callbak, 0);
+    window.addOnloadHook = function (callback: () => void): void {
+        if (document.readyState !== 'loading') {
+            setTimeout(callback, 0);
         } else {
-            window.addEventListener('DOMContentLoaded', callbak, { once: true });
+            window.addEventListener('DOMContentLoaded', callback, { once: true });
         }
     };
     window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {
