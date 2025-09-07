@@ -1,25 +1,19 @@
+// @ts-check
 import path from 'node:path';
 import fs from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 import { execaCommandSync } from 'execa';
 import semver from 'semver';
 import webpack from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
-import _WebExtensionPlugin from '@webextension-toolbox/webpack-webextension-plugin';
+import { WebextensionPlugin } from '@webextension-toolbox/webpack-webextension-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import WebpackUserScript from 'webpack-userscript';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import pkgJson from './package.json' with { type: 'json' };
+import manifestJson from './manifest.json' with { type: 'json' };
 
-/** @type {typeof _WebExtensionPlugin} */
-const WebExtensionPlugin = _WebExtensionPlugin.default;
-
-const __dirname = path.resolve(fileURLToPath(import.meta.url), '../');
-
-/** @type { import('./src/info').packageJson & import('type-fest').PackageJson } */
-const pkgJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, './package.json')));
-const manifestJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, './manifest.json')));
+const __dirname = import.meta.dirname;
 
 /** @type {webpack.RuleSetUseItem[]} */
 const cssLoaders = [
@@ -130,7 +124,7 @@ export default async (env = {}, argv = {}) => {
             }),
         ],
         performance: false,
-        devtool: dev ? 'eval-source-map' : 'source-map',
+        devtool: dev ? 'eval-source-map' : 'inline-source-map',
         optimization: {},
     };
 
@@ -144,6 +138,7 @@ export default async (env = {}, argv = {}) => {
 
     if (type === 'user-script') {
         const outputPath = path.resolve(__dirname, 'releases');
+        fs.mkdirSync(outputPath, { recursive: true });
 
         if (devServer) {
             // 在 e 站使用调试功能需要连接 websocket 到 localhost，必须启用 HTTPS
@@ -204,6 +199,14 @@ export default async (env = {}, argv = {}) => {
                     userScriptMainSource: JSON.stringify(`${fileHost}/${fileName('main')}`),
                 }),
             );
+        } else {
+            config.devtool = false;
+            config.plugins.push(
+                new webpack.SourceMapDevToolPlugin({
+                    publicPath: `${pkgJson.homepage}/releases/download/v${pkgJson.version}/`,
+                    filename: '[file].map[query]',
+                }),
+            );
         }
         config.output = {
             path: outputPath,
@@ -211,36 +214,57 @@ export default async (env = {}, argv = {}) => {
             filename: (data) => fileName(data.chunk.name),
         };
         config.plugins.push(
-            new WebpackUserScript({
-                headers: (data) => ({
-                    name: pkgJson.displayName || pkgJson.name,
-                    description: manifestJson.description,
-                    namespace: pkgJson.homepage,
-                    version: dev ? `[version]+build.[buildTime].[buildNo]` : `[version]`,
-                    license: pkgJson.license,
-                    compatible: ['firefox >= 60', 'edge >= 16', 'chrome >= 61', 'safari >= 11', 'opera >= 48'],
-                    match: manifestJson.content_scripts[0].matches,
-                    exclude: manifestJson.content_scripts[0].exclude_matches,
-                    icon: `https://fastly.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
-                    updateURL: `${fileHost}/${fileName(data.chunkName, true)}`,
-                    downloadURL: `${fileHost}/${fileName(data.chunkName)}`,
-                    'run-at': 'document-start',
-                    grant: [
-                        'GM_deleteValue',
-                        'GM_listValues',
-                        'GM_setValue',
-                        'GM_getValue',
-                        'GM_addValueChangeListener',
-                        'GM_removeValueChangeListener',
-                        'GM_openInTab',
-                        'GM_notification',
-                    ],
-                }),
-                proxyScript: { enable: false },
+            new webpack.BannerPlugin({
+                banner: ({ filename, chunk }) => {
+                    if (!filename.endsWith('.user.js')) {
+                        return '';
+                    }
+                    const meta = {
+                        name: pkgJson.displayName || pkgJson.name,
+                        version: dev ? `${pkgJson.version}+build.${currentHEAD}` : pkgJson.version,
+                        description: pkgJson.description,
+                        author: pkgJson.author,
+                        homepage: pkgJson.homepage,
+                        namespace: pkgJson.homepage,
+                        license: pkgJson.license,
+                        compatible: ['firefox >= 60', 'edge >= 16', 'chrome >= 61', 'safari >= 11', 'opera >= 48'],
+                        match: manifestJson.content_scripts[0].matches,
+                        exclude: manifestJson.content_scripts[0].exclude_matches,
+                        'run-at': 'document-start',
+                        grant: [
+                            'GM_deleteValue',
+                            'GM_listValues',
+                            'GM_setValue',
+                            'GM_getValue',
+                            'GM_addValueChangeListener',
+                            'GM_removeValueChangeListener',
+                            'GM_openInTab',
+                            'GM_notification',
+                        ],
+                        icon: `https://fastly.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
+                        updateURL: `${fileHost}/${fileName(chunk.name, true)}`,
+                        downloadURL: `${fileHost}/${fileName(chunk.name)}`,
+                    };
+                    let metaString = '// ==UserScript==\n';
+                    for (const key of Object.keys(meta)) {
+                        let value = meta[key];
+                        if (Array.isArray(value)) {
+                            value.forEach((v) => {
+                                metaString += `// @${key.padEnd(20)} ${v}\n`;
+                            });
+                        } else {
+                            metaString += `// @${key.padEnd(20)} ${value}\n`;
+                        }
+                    }
+                    metaString += '// ==/UserScript==\n\n';
+                    fs.writeFileSync(path.resolve(outputPath, fileName(chunk.name, true)), metaString, 'utf-8');
+                    return metaString;
+                },
+                raw: true,
+                entryOnly: true,
             }),
         );
     } else {
-        config.devtool = 'inline-source-map';
         config.entry = (await glob('src/web-ext/**/*.ts')).reduce(function (obj, el) {
             const name = path.parse(el).name;
             if (name !== 'polyfills') obj[name] = path.resolve(__dirname, el);
@@ -262,7 +286,7 @@ export default async (env = {}, argv = {}) => {
                 template: 'src/web-ext/popup.html',
                 chunks: ['popup'],
             }),
-            new WebExtensionPlugin({
+            new WebextensionPlugin({
                 vendor,
                 manifestDefaults: {
                     name: pkgJson.displayName,

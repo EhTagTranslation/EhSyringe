@@ -26,12 +26,21 @@ jobs:
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
       - name: Download crx key
+        if: github.event_name == 'push'
         run: echo "${{ secrets.CRX_KEY }}" > key.pem
-      - name: Build
-        run: |
-          pnpm run build:monkey
-          pnpm run build:firefox
-          pnpm run build:chrome
+      - name: Build monkey
+        run: pnpm run build:monkey
+      - name: Build chrome
+        run: pnpm run build:chrome
+      - name: Pack chrome
+        if: github.event_name == 'push'
+        run: pnpm run pack:chrome
+      - name: Build firefox
+        run: pnpm run build:firefox
+      - name: Pack firefox
+        run: pnpm run pack:firefox
+      - name: List releases
+        run: ls -lh releases/
       - uses: actions/attest-build-provenance@v3
         if: startsWith(github.event.ref, 'refs/tags/')
         with:
