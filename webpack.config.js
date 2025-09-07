@@ -222,11 +222,15 @@ export default async (env = {}, argv = {}) => {
                     const meta = {
                         name: pkgJson.displayName || pkgJson.name,
                         version: dev ? `${pkgJson.version}+build.${currentHEAD}` : pkgJson.version,
-                        description: pkgJson.description,
                         author: pkgJson.author,
-                        homepage: pkgJson.homepage,
-                        namespace: pkgJson.homepage,
+                        description: pkgJson.description,
+                        icon: `https://fastly.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
                         license: pkgJson.license,
+                        namespace: pkgJson.homepage,
+                        homepage: pkgJson.homepage,
+                        supportURL: pkgJson.bugs,
+                        updateURL: `${fileHost}/${fileName(chunk.name, true)}`,
+                        downloadURL: `${fileHost}/${fileName(chunk.name)}`,
                         compatible: ['firefox >= 60', 'edge >= 16', 'chrome >= 61', 'safari >= 11', 'opera >= 48'],
                         match: manifestJson.content_scripts[0].matches,
                         exclude: manifestJson.content_scripts[0].exclude_matches,
@@ -241,22 +245,19 @@ export default async (env = {}, argv = {}) => {
                             'GM_openInTab',
                             'GM_notification',
                         ],
-                        icon: `https://fastly.jsdelivr.net/gh/${repo}@${currentHEAD}/src/assets/logo.svg`,
-                        updateURL: `${fileHost}/${fileName(chunk.name, true)}`,
-                        downloadURL: `${fileHost}/${fileName(chunk.name)}`,
                     };
                     let metaString = '// ==UserScript==\n';
                     for (const key of Object.keys(meta)) {
                         let value = meta[key];
                         if (Array.isArray(value)) {
                             value.forEach((v) => {
-                                metaString += `// @${key.padEnd(20)} ${v}\n`;
+                                metaString += `// @${key.padEnd(12)} ${v}\n`;
                             });
                         } else {
-                            metaString += `// @${key.padEnd(20)} ${value}\n`;
+                            metaString += `// @${key.padEnd(12)} ${value}\n`;
                         }
                     }
-                    metaString += '// ==/UserScript==\n\n';
+                    metaString += '// ==/UserScript==\n';
                     fs.writeFileSync(path.resolve(outputPath, fileName(chunk.name, true)), metaString, 'utf-8');
                     return metaString;
                 },
