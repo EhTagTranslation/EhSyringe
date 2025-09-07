@@ -37,7 +37,8 @@
                 "*://*.exhentai.org/*",
                 "*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
                 "*://*.e-hentai.org/*",
-                "*://*.hath.network/*"
+                "*://*.hath.network/*",
+                "*://ehwiki.org/*"
             ],
             "exclude_matches": ["*://forums.e-hentai.org/*"],
             "js": ["script/page.js"],
@@ -52,6 +53,7 @@
         "*://*.exhentai.org/*",
         "*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
         "*://*.e-hentai.org/*",
-        "*://*.hath.network/*"
+        "*://*.hath.network/*",
+        "*://ehwiki.org/*"
     ]
 }

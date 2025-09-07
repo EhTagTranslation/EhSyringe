@@ -167,3 +167,14 @@ body {
     opacity: 0.8;
     pointer-events: none;
 }
+
+// wiki 样式
+
+:root.ehs-wiki {
+    &.ehs-translate-tag [ehs-tag][lang|='zh-hans'] {
+        &::after {
+            content: ' (' attr(ehs-tag) ')';
+            font-size: 80%;
+        }
+    }
+}

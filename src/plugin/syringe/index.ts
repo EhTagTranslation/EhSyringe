@@ -1,5 +1,6 @@
-import { isEx, isEh, isRepo } from 'utils/hosts';
+import { isEx, isEh, isRepo, isWiki } from 'utils/hosts';
 import { ready } from 'utils/dom';
+import type { EHTNamespaceNameShort } from 'interface';
 import { Service } from 'services';
 import { UiTranslation } from 'services/ui-translation';
 import type { ConfigData } from 'services/storage';
@@ -45,11 +46,21 @@ declare global {
         hide_advsearch_pane: (b: HTMLElement) => void;
         show_filesearch_pane: (b: HTMLElement) => void;
         hide_filesearch_pane: (b: HTMLElement) => void;
+
+        // patch mediawiki https://www.mediawiki.org/wiki/ResourceLoader/Migration_guide_(users)#addOnloadHook
+        addOnloadHook: (callback: () => void) => void;
     }
 }
 // 该方案同时在 V2、V3 和 UserScript 生效
 // 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
 function codePatch(window: Window): void {
+    window.addOnloadHook = function (callbak: () => void): void {
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(callbak, 0);
+        } else {
+            window.addEventListener('DOMContentLoaded', callbak, { once: true });
+        }
+    };
     window.toggle_advsearch_pane = function toggle_advsearch_pane(b) {
         if (document.getElementById('advdiv')!.style.display === 'none') {
             window.show_advsearch_pane(b);
@@ -65,6 +76,23 @@ function codePatch(window: Window): void {
         }
     };
 }
+
+const WIKI_SEARCH_NS = [
+    'loc',
+    'o',
+    'l',
+    'f',
+    'm',
+    'x',
+    'p',
+    'c',
+    'a',
+    'cos',
+    'g',
+    'r',
+] as const satisfies readonly EHTNamespaceNameShort[] & { length: 12 };
+
+const WIKI_NORMAL_TERM = new Set(['power', 'ban', 'banned', 'comment', 'renaming', 'expunge', 'tag']);
 
 class TagNodeRef {
     static attached(node: Text | HTMLElement): boolean {
@@ -130,6 +158,12 @@ class TagNodeRef {
             return false;
         }
         let value = tagMap[this.fullKey];
+        if (!value && this.service.isWiki && !this.fullKey.includes(':')) {
+            for (const ns of WIKI_SEARCH_NS) {
+                value = tagMap[`${ns}:${this.fullKey}`];
+                if (value) break;
+            }
+        }
         if (!value) {
             return false;
         }
@@ -281,18 +315,24 @@ export class Syringe {
         this.updatingTagMap = updatingTagMap;
     }
 
+    readonly isEx = isEx(location.hostname);
+    readonly isEh = isEh(location.hostname);
+    readonly isRepo = isRepo(location.hostname);
+    readonly isWiki = isWiki(location.hostname);
     setRootAttrs(): void {
         const node = document.documentElement;
         if (!node) return;
 
         node.classList.remove(...[...node.classList.values()].filter((k) => k.startsWith('ehs')));
         node.classList.add('ehs-injected');
-        if (isEx(location.hostname)) {
+        if (this.isEx) {
             node.classList.add('ehs-ex');
-        } else if (isEh(location.hostname)) {
+        } else if (this.isEh) {
             node.classList.add('ehs-eh');
-        } else if (isRepo(location.hostname)) {
+        } else if (this.isRepo) {
             node.classList.add('ehs-repo');
+        } else if (this.isWiki) {
+            node.classList.add('ehs-wiki');
         } else if ('matchMedia' in window) {
             const matchesDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (matchesDarkTheme) {
@@ -337,7 +377,28 @@ export class Syringe {
         if (isElement(node, 'a') && node.href.startsWith('https://e-hentai.org/tag/')) {
             const url = new URL(node.href);
             const urlTag = decodeURIComponent(url.pathname.split('/').pop()!).replace(/_/g, ' ').replace(/\+/g, ' ');
-            if (urlTag === node.textContent) {
+            if (urlTag !== node.textContent) {
+                return false;
+            }
+            node.title = node.textContent ?? '';
+            return true;
+        }
+        if (this.isWiki) {
+            if (!this.tagging.isTagName(node.textContent) || WIKI_NORMAL_TERM.has(node.textContent)) {
+                return false;
+            }
+            if (isElement(node, 'h1') && node.id === 'firstHeading') {
+                node.title = node.textContent ?? '';
+                return true;
+            }
+            if (isElement(node, 'a') && /^https?:\/\/ehwiki.org\/wiki\/[-+._a-z0-9]+$/.exec(node.href)) {
+                const url = new URL(node.href);
+                const urlTag = decodeURIComponent(url.pathname.split('/').pop()!)
+                    .replace(/_/g, ' ')
+                    .replace(/\+/g, ' ');
+                if (urlTag !== node.textContent) {
+                    return false;
+                }
                 node.title = node.textContent ?? '';
                 return true;
             }
@@ -431,7 +492,7 @@ export class Syringe {
     }
 
     translateUi(node: Node): void {
-        if (isElement(node) && node.title) {
+        if (isElement(node) && node.title && typeof node.title == 'string') {
             const translation = this.translateUiText(node.title);
             if (translation != null) {
                 node.title = translation;

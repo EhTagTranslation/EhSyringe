@@ -145,12 +145,9 @@ export default async (env = {}, argv = {}) => {
             // 启用 chrome://flags/#allow-insecure-localhost
             config.devServer = {
                 port: 48792,
-                allowedHosts: [
-                    '.e-hentai.org',
-                    '.exhentai.org',
-                    '.hath.network',
-                    '.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion',
-                ],
+                allowedHosts: manifestJson.host_permissions.map((h) =>
+                    h.replace(/^\*:\/\/\*?/, '').replace(/\/\*?$/, ''),
+                ),
                 liveReload: false,
                 hot: false,
                 static: {

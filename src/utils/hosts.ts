@@ -28,9 +28,13 @@ export function isHathNetwork(hostname: string): boolean {
     return isDomain(hostname, HATH);
 }
 
+export function isWiki(hostname: string): boolean {
+    return hostname === 'ehwiki.org';
+}
+
 export function isValidHost(hostname: string): boolean {
     if (!hostname) return false;
-    return isEh(hostname) || isEx(hostname) || isHathNetwork(hostname) || isRepo(hostname);
+    return isEh(hostname) || isEx(hostname) || isHathNetwork(hostname) || isRepo(hostname) || isWiki(hostname);
 }
 
 export const EX = 'exhentai.org';

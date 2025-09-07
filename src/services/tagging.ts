@@ -105,6 +105,11 @@ export class Tagging {
             .trim();
     }
 
+    isTagName(name: string): boolean {
+        if (!name || typeof name != 'string') return false;
+        return /^[a-z0-9. -]+$/.test(name);
+    }
+
     fullKey(tag: { namespace: string; key: string } | { ns: EHTNamespaceNameShort; key: string }): string {
         const ns = 'namespace' in tag ? this.ns(tag.namespace) : tag.ns;
         const key = tag.key.toLowerCase();
