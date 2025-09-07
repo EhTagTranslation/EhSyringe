@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         EhSyringe
-// @version      3.4.0
+// @version      3.4.1
 // @author       EhTagTranslation
 // @description  E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。
-// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@231d951d9edd9fd955125b5e43fb536102570c78/src/assets/logo.svg
+// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@51e0379eed59ebf30dec3ecfd630d6a5822b0032/src/assets/logo.svg
 // @license      MIT
 // @namespace    https://github.com/EhTagTranslation/EhSyringe
 // @homepage     https://github.com/EhTagTranslation/EhSyringe
@@ -2072,7 +2072,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `#eh-syringe-popup-button{background:50%/65% no-repeat #fff url(${___CSS_LOADER_URL_REPLACEMENT_0___});border:2px solid #6e066e;border-radius:36px;box-shadow:0 0 2px 1px rgba(0,0,0,.5);height:36px;position:fixed;touch-action:none;width:36px;z-index:10}#eh-syringe-popup-button:hover{cursor:pointer}:root.ehs-ex #eh-syringe-popup-button{background-color:#bbb;border-color:#926a92}#eh-syringe-popup-badge{background:#444;border-radius:4px;color:#fff;font-size:12px;height:14px;padding:2px 4px;position:absolute;right:-10px;top:-10px}#eh-syringe-popup-back{background:rgba(0,0,0,.3);bottom:0;left:0;opacity:0;pointer-events:none;position:fixed;right:0;top:0;transition:visibility,opacity .4s;visibility:hidden;z-index:1000}#eh-syringe-popup-back.closing,#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{pointer-events:auto;visibility:visible}#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{opacity:1}#eh-syringe-popup-back.closing{opacity:0}#eh-syringe-popup{bottom:72px;position:absolute;right:12px}`, "",{"version":3,"sources":["webpack://./src/user-script/popup-host.less"],"names":[],"mappings":"AAAA,yBAUI,yEAAA,CAFA,wBAAA,CADA,kBAAA,CAEA,qCAAA,CAHA,WAAA,CALA,cAAA,CACA,iBAAA,CAGA,UAAA,CAMA,UADJ,CAEI,+BACI,cAAR,CAGI,sCACI,qBAAA,CACA,oBADR,CAKA,wBAQI,eAAA,CADA,iBAAA,CAEA,UAAA,CAPA,cAAA,CADA,WAAA,CAKA,eAAA,CAHA,iBAAA,CACA,WAAA,CACA,SACJ,CAMA,uBAOI,yBAAA,CALA,QAAA,CAGA,MAAA,CAKA,SAAA,CADA,mBAAA,CARA,cAAA,CAEA,OAAA,CACA,KAAA,CAOA,iCAAA,CAHA,iBAAA,CAFA,YACJ,CAQI,0FAII,mBAAA,CADA,kBALR,CAYI,2DACI,SAPR,CASI,+BACI,SAPR,CAWA,kBAEI,WAAA,CADA,iBAAA,CAEA,UATJ","sourcesContent":["#eh-syringe-popup-button {\n    position: fixed;\n    touch-action: none;\n    // bottom: 12px;\n    // right: 12px;\n    width: 36px;\n    height: 36px;\n    border-radius: 36px;\n    border: rgb(110, 6, 110) 2px solid;\n    box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px 1px;\n    background: center/65% no-repeat white url('../assets/logo.svg');\n    z-index: 10;\n    &:hover {\n        cursor: pointer;\n    }\n\n    :root.ehs-ex & {\n        background-color: rgb(187, 187, 187);\n        border-color: rgb(146, 106, 146);\n    }\n}\n\n#eh-syringe-popup-badge {\n    height: 14px;\n    font-size: 12px;\n    position: absolute;\n    right: -10px;\n    top: -10px;\n    padding: 2px 4px;\n    border-radius: 4px;\n    background: #444;\n    color: white;\n}\n\n#eh-syringe-popup-back {\n    position: fixed;\n    bottom: 0;\n    right: 0;\n    top: 0;\n    left: 0;\n    z-index: 1000;\n    background: rgba(0, 0, 0, 0.3);\n    visibility: hidden;\n    pointer-events: none;\n    opacity: 0;\n    transition:\n        visibility,\n        opacity 0.4s;\n\n    &.open,\n    &.opening,\n    &.closing {\n        visibility: visible;\n        pointer-events: initial;\n    }\n\n    &.open {\n        opacity: 1;\n    }\n    &.opening {\n        opacity: 1;\n    }\n    &.closing {\n        opacity: 0;\n    }\n}\n\n#eh-syringe-popup {\n    position: absolute;\n    bottom: 12px + 36px + 24px;\n    right: 12px;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `#eh-syringe-popup-button{background:50%/65% no-repeat #fff url(${___CSS_LOADER_URL_REPLACEMENT_0___});border:2px solid #6e066e;border-radius:36px;box-shadow:0 0 2px 1px rgba(0,0,0,.5);height:36px;position:fixed;touch-action:none;width:36px;z-index:10}#eh-syringe-popup-button:hover{cursor:pointer}:root.ehs-ex #eh-syringe-popup-button{background-color:#bbb;border-color:#926a92}#eh-syringe-popup-badge{background:#444;border-radius:4px;color:#fff;font-size:12px;height:14px;padding:2px 4px;position:absolute;right:-10px;top:-10px}#eh-syringe-popup-back{background:rgba(0,0,0,.3);bottom:0;left:0;opacity:0;pointer-events:none;position:fixed;right:0;top:0;transition:visibility,opacity .4s;visibility:hidden;z-index:1000}#eh-syringe-popup-back.closing,#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{pointer-events:auto;visibility:visible}#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{opacity:1}#eh-syringe-popup-back.closing{opacity:0}#eh-syringe-popup{bottom:72px;position:absolute;right:12px}@media print{#eh-syringe-popup-back,#eh-syringe-popup-button{display:none}}`, "",{"version":3,"sources":["webpack://./src/user-script/popup-host.less"],"names":[],"mappings":"AAAA,yBAUI,yEAAA,CAFA,wBAAA,CADA,kBAAA,CAEA,qCAAA,CAHA,WAAA,CALA,cAAA,CACA,iBAAA,CAGA,UAAA,CAMA,UADJ,CAEI,+BACI,cAAR,CAGI,sCACI,qBAAA,CACA,oBADR,CAKA,wBAQI,eAAA,CADA,iBAAA,CAEA,UAAA,CAPA,cAAA,CADA,WAAA,CAKA,eAAA,CAHA,iBAAA,CACA,WAAA,CACA,SACJ,CAMA,uBAOI,yBAAA,CALA,QAAA,CAGA,MAAA,CAKA,SAAA,CADA,mBAAA,CARA,cAAA,CAEA,OAAA,CACA,KAAA,CAOA,iCAAA,CAHA,iBAAA,CAFA,YACJ,CAQI,0FAII,mBAAA,CADA,kBALR,CAYI,2DACI,SAPR,CASI,+BACI,SAPR,CAWA,kBAEI,WAAA,CADA,iBAAA,CAEA,UATJ,CAYA,aACI,gDAEI,YAVN,CACF","sourcesContent":["#eh-syringe-popup-button {\n    position: fixed;\n    touch-action: none;\n    // bottom: 12px;\n    // right: 12px;\n    width: 36px;\n    height: 36px;\n    border-radius: 36px;\n    border: rgb(110, 6, 110) 2px solid;\n    box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px 1px;\n    background: center/65% no-repeat white url('../assets/logo.svg');\n    z-index: 10;\n    &:hover {\n        cursor: pointer;\n    }\n\n    :root.ehs-ex & {\n        background-color: rgb(187, 187, 187);\n        border-color: rgb(146, 106, 146);\n    }\n}\n\n#eh-syringe-popup-badge {\n    height: 14px;\n    font-size: 12px;\n    position: absolute;\n    right: -10px;\n    top: -10px;\n    padding: 2px 4px;\n    border-radius: 4px;\n    background: #444;\n    color: white;\n}\n\n#eh-syringe-popup-back {\n    position: fixed;\n    bottom: 0;\n    right: 0;\n    top: 0;\n    left: 0;\n    z-index: 1000;\n    background: rgba(0, 0, 0, 0.3);\n    visibility: hidden;\n    pointer-events: none;\n    opacity: 0;\n    transition:\n        visibility,\n        opacity 0.4s;\n\n    &.open,\n    &.opening,\n    &.closing {\n        visibility: visible;\n        pointer-events: initial;\n    }\n\n    &.open {\n        opacity: 1;\n    }\n    &.opening {\n        opacity: 1;\n    }\n    &.closing {\n        opacity: 0;\n    }\n}\n\n#eh-syringe-popup {\n    position: absolute;\n    bottom: 12px + 36px + 24px;\n    right: 12px;\n}\n\n@media print {\n    #eh-syringe-popup-back,\n    #eh-syringe-popup-button {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15377,7 +15377,7 @@ module.exports = parent;
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_101_3_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `:root{--csstools-color-scheme--light:initial;color-scheme:light}:root.ehs-ex{--csstools-color-scheme--light: ;color-scheme:dark}.ehs-eh:root button[ehs-input],.ehs-ex:root button[ehs-input]{background-color:#edeada;border:2px solid #b5a4a4;border-radius:3px;color:#5c0d12;font-size:9pt;line-height:20px;margin:0 2px;min-height:26px;outline:none;padding:1px 5px 2px;white-space:pre}.ehs-eh:root button[ehs-input]:disabled,.ehs-ex:root button[ehs-input]:disabled{color:#c2a8a4;-webkit-text-fill-color:#c2a8a4;opacity:1}.ehs-eh:root button[ehs-input]:enabled:focus,.ehs-eh:root button[ehs-input]:enabled:hover,.ehs-ex:root button[ehs-input]:enabled:focus,.ehs-ex:root button[ehs-input]:enabled:hover{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-eh:root button[ehs-input]:enabled:active,.ehs-ex:root button[ehs-input]:enabled:active{background:radial-gradient(#d7d3c2,#f3f0e0)!important;border-color:#5c0d12!important}:root.ehs-ex button[ehs-input]{background-color:#34353b;border-color:#8d8d8d;color:#f1f1f1}:root.ehs-ex button[ehs-input]:enabled:focus,:root.ehs-ex button[ehs-input]:enabled:hover{background-color:#43464e!important;border-color:#aeaeae!important}:root.ehs-ex button[ehs-input]:enabled:active{background:radial-gradient(#1a1a1a,#43464e)!important;border-color:#c3c3c3!important}:root.ehs-ex button[ehs-input]:disabled{color:#8a8a8a;-webkit-text-fill-color:#8a8a8a}:root.ehs-hide-icon [ehs-emoji],:root.ehs-hide-icon [ehs-icon],[hidden]{display:none}body div#gright{z-index:3}body #expunge_new button[ehs-input][type=submit]{margin:6px auto 2px}body #gj{margin:3px 4px}body #gmid{height:auto}body #tagmenu_act,body #tagmenu_new{width:calc(100% - 30px)!important}body #tagmenu_new>form{display:flex}body #tagmenu_new>form #newtagfield{flex:auto}body #gd5{display:flex;flex-flow:column;--ehs-gap:1}body #gd5:has(:nth-child(8)){--ehs-gap:0;justify-content:space-around}body .g2,body .g3{padding-bottom:calc(20px*var(--ehs-gap, 1))}body .gsp{padding-top:10px}body td.tc{white-space:nowrap}body div.gt,body div.gtl,body div.gtw{line-height:16px;white-space:nowrap}body div.c6{text-align:left}[ehs-emoji],[ehs-icon]{margin:-.25em 1px!important;max-height:1.25em!important;max-width:2em!important}[ehs-icon]{vertical-align:middle}.ehs-new-tag-complete-translate{display:block;font-weight:bolder;margin-top:4px;opacity:.8;pointer-events:none}.ehs-new-tag-complete-translate:empty{display:none}:root.ehs-wiki.ehs-translate-tag [ehs-tag][lang|=zh-hans]:after{content:" (" attr(ehs-tag) ")";font-size:80%}`, "",{"version":3,"sources":["webpack://./src/plugin/syringe/index.less"],"names":[],"mappings":"AAEA,MACI,sCAAA,CAAA,kBADJ,CAEI,aACI,gCAAA,CAAA,iBAAR,CAKI,8DASI,wBAAA,CAJA,wBAAA,CACA,iBAAA,CAEA,aAAA,CADA,aAAA,CALA,gBAAA,CAEA,YAAA,CAHA,eAAA,CASA,YAAA,CAPA,mBAAA,CAQA,eAHR,CAKQ,gFACI,aAAA,CACA,+BAAA,CACA,SAHZ,CAMQ,oLAEI,kCAAA,CACA,8BAJZ,CAOQ,4FACI,qDAAA,CACA,8BALZ,CASI,+BAGI,wBAAA,CAFA,oBAAA,CACA,aANR,CASQ,0FAEI,kCAAA,CACA,8BAPZ,CAUQ,8CACI,qDAAA,CACA,8BARZ,CAWQ,wCACI,aAAA,CACA,+BATZ,CAkBA,wEAGQ,YAdR,CAkBA,gBAEQ,SAjBR,CAeA,iDAOQ,mBAnBR,CAYA,SAYQ,cArBR,CASA,WAiBQ,WAvBR,CAMA,oCAuBQ,iCAzBR,CAEA,uBA2BQ,YA1BR,CADA,oCA6BY,SAzBZ,CAJA,UAmCQ,YAAA,CACA,gBAAA,CAGA,WA9BR,CA+BQ,6BACI,WAAA,CACA,4BA7BZ,CAbA,kBA+CQ,2CA9BR,CAjBA,UAkDQ,gBA9BR,CApBA,WAuDQ,kBAhCR,CAvBA,sCA8DQ,gBAAA,CACA,kBAlCR,CA7BA,YAoEQ,eApCR,CAwCA,uBAII,2BAAA,CAFA,2BAAA,CACA,uBArCJ,CAyCA,WACI,qBAvCJ,CA0CA,gCACI,aAAA,CAMA,kBAAA,CADA,cAAA,CAEA,UAAA,CACA,mBA5CJ,CAqCI,sCACI,YAnCR,CAgDQ,gEACI,8BAAA,CACA,aA9CZ","sourcesContent":["// 全局注入样式\n\n:root {\n    color-scheme: light;\n    &.ehs-ex {\n        color-scheme: dark;\n    }\n}\n\nbutton[ehs-input] {\n    :is(:root.ehs-eh, :root.ehs-ex) & {\n        min-height: 26px;\n        line-height: 20px;\n        padding: 1px 5px 2px;\n        margin: 0 2px;\n        border: 2px solid #b5a4a4;\n        border-radius: 3px;\n        font-size: 9pt;\n        color: #5c0d12;\n        background-color: #edeada;\n        outline: none;\n        white-space: pre;\n\n        &:disabled {\n            color: #c2a8a4;\n            -webkit-text-fill-color: #c2a8a4;\n            opacity: 1;\n        }\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #f3f0e0 !important;\n            border-color: #977273 !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#d7d3c2, #f3f0e0) !important;\n            border-color: #5c0d12 !important;\n        }\n    }\n\n    :root.ehs-ex & {\n        border-color: #8d8d8d;\n        color: #f1f1f1;\n        background-color: #34353b;\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #43464e !important;\n            border-color: #aeaeae !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#1a1a1a, #43464e) !important;\n            border-color: #c3c3c3 !important;\n        }\n\n        &:disabled {\n            color: #8a8a8a;\n            -webkit-text-fill-color: #8a8a8a;\n        }\n    }\n}\n\n[hidden] {\n    display: none;\n}\n\n:root.ehs-hide-icon {\n    [ehs-icon],\n    [ehs-emoji] {\n        display: none;\n    }\n}\n\nbody {\n    div#gright {\n        z-index: 3;\n    }\n\n    // 提交删除申请按钮\n    #expunge_new button[ehs-input][type='submit'] {\n        margin: 6px auto 2px;\n    }\n\n    // 日文标题\n    #gj {\n        margin: 3px 4px;\n    }\n\n    // 信息框\n    #gmid {\n        height: auto;\n    }\n\n    // 标签输入\n    #tagmenu_act,\n    #tagmenu_new {\n        width: calc(100% - 30px) !important; // 留下右侧 loading 空间\n    }\n\n    #tagmenu_new > form {\n        display: flex;\n        #newtagfield {\n            flex: auto;\n        }\n    }\n\n    // 信息框右侧菜单\n    #gd5 {\n        display: flex;\n        flex-flow: column;\n\n        // 当其他脚本在这里插入过多链接时。修改布局\n        --ehs-gap: 1;\n        &:has(:nth-child(8)) {\n            --ehs-gap: 0;\n            justify-content: space-around;\n        }\n    }\n    .g2,\n    .g3 {\n        padding-bottom: calc(20px * var(--ehs-gap, 1));\n    }\n    .gsp {\n        padding-top: 10px;\n    }\n\n    // 标签组名\n    td.tc {\n        white-space: nowrap;\n    }\n\n    // 标签\n    div.gtl,\n    div.gtw,\n    div.gt {\n        line-height: 16px;\n        white-space: nowrap;\n    }\n\n    // 评论内容\n    div.c6 {\n        text-align: left;\n    }\n}\n\n[ehs-icon],\n[ehs-emoji] {\n    max-height: 1.25em !important;\n    max-width: 2em !important;\n    margin: -0.25em 1px !important;\n}\n\n[ehs-icon] {\n    vertical-align: middle;\n}\n\n.ehs-new-tag-complete-translate {\n    display: block;\n    &:empty {\n        display: none;\n    }\n\n    margin-top: 4px;\n    font-weight: bolder;\n    opacity: 0.8;\n    pointer-events: none;\n}\n\n// wiki 样式\n\n:root.ehs-wiki {\n    &.ehs-translate-tag [ehs-tag][lang|='zh-hans'] {\n        &::after {\n            content: ' (' attr(ehs-tag) ')';\n            font-size: 80%;\n        }\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `:root{--csstools-color-scheme--light:initial;color-scheme:light}:root.ehs-ex{--csstools-color-scheme--light: ;color-scheme:dark}.ehs-eh:root button[ehs-input],.ehs-ex:root button[ehs-input]{background-color:#edeada;border:2px solid #b5a4a4;border-radius:3px;color:#5c0d12;font-size:9pt;line-height:20px;margin:0 2px;min-height:26px;outline:none;padding:1px 5px 2px;white-space:pre}.ehs-eh:root button[ehs-input]:disabled,.ehs-ex:root button[ehs-input]:disabled{color:#c2a8a4;-webkit-text-fill-color:#c2a8a4;opacity:1}.ehs-eh:root button[ehs-input]:enabled:focus,.ehs-eh:root button[ehs-input]:enabled:hover,.ehs-ex:root button[ehs-input]:enabled:focus,.ehs-ex:root button[ehs-input]:enabled:hover{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-eh:root button[ehs-input]:enabled:active,.ehs-ex:root button[ehs-input]:enabled:active{background:radial-gradient(#d7d3c2,#f3f0e0)!important;border-color:#5c0d12!important}:root.ehs-ex button[ehs-input]{background-color:#34353b;border-color:#8d8d8d;color:#f1f1f1}:root.ehs-ex button[ehs-input]:enabled:focus,:root.ehs-ex button[ehs-input]:enabled:hover{background-color:#43464e!important;border-color:#aeaeae!important}:root.ehs-ex button[ehs-input]:enabled:active{background:radial-gradient(#1a1a1a,#43464e)!important;border-color:#c3c3c3!important}:root.ehs-ex button[ehs-input]:disabled{color:#8a8a8a;-webkit-text-fill-color:#8a8a8a}:root.ehs-hide-icon [ehs-emoji],:root.ehs-hide-icon [ehs-icon],[hidden]{display:none}body div#gright{z-index:3}body #expunge_new button[ehs-input][type=submit]{margin:6px auto 2px}body #gj{margin:3px 4px}body #gmid{height:auto}body #tagmenu_act,body #tagmenu_new{width:calc(100% - 30px)!important}body #tagmenu_new>form{display:flex}body #tagmenu_new>form #newtagfield{flex:auto}body #gd5{display:flex;flex-flow:column}body #gd5:has(>:nth-child(10)) .g2:not(:has(+.gsp)){padding-bottom:8px}body #gd5:has(>:nth-child(10)) .g3:not(:has(+.gsp)){padding-bottom:8px}body #gd5:has(>:nth-child(10)) .gsp{padding-top:0}body #gd5:has(>:nth-child(15)) .g2:not(:has(+.gsp)){padding-bottom:4px}body #gd5:has(>:nth-child(15)) .g3:not(:has(+.gsp)){padding-bottom:4px}body #gd5:has(>:nth-child(15)) .gsp{padding-top:0}body .g2,body .g3{padding-bottom:20px}body .gsp{padding-top:10px}body td.tc{white-space:nowrap}body div.gt,body div.gtl,body div.gtw{line-height:16px;white-space:nowrap}body div.c6{text-align:left}[ehs-emoji],[ehs-icon]{margin:-.25em 1px!important;max-height:1.25em!important;max-width:2em!important}[ehs-icon]{vertical-align:middle}.ehs-new-tag-complete-translate{display:block;font-weight:bolder;margin-top:4px;opacity:.8;pointer-events:none}.ehs-new-tag-complete-translate:empty{display:none}:root.ehs-wiki.ehs-translate-tag [ehs-tag][lang|=zh-hans]:after{content:" (" attr(ehs-tag) ")";font-size:80%}`, "",{"version":3,"sources":["webpack://./src/plugin/syringe/index.less"],"names":[],"mappings":"AAEA,MACI,sCAAA,CAAA,kBADJ,CAEI,aACI,gCAAA,CAAA,iBAAR,CAKI,8DASI,wBAAA,CAJA,wBAAA,CACA,iBAAA,CAEA,aAAA,CADA,aAAA,CALA,gBAAA,CAEA,YAAA,CAHA,eAAA,CASA,YAAA,CAPA,mBAAA,CAQA,eAHR,CAKQ,gFACI,aAAA,CACA,+BAAA,CACA,SAHZ,CAMQ,oLAEI,kCAAA,CACA,8BAJZ,CAOQ,4FACI,qDAAA,CACA,8BALZ,CASI,+BAGI,wBAAA,CAFA,oBAAA,CACA,aANR,CASQ,0FAEI,kCAAA,CACA,8BAPZ,CAUQ,8CACI,qDAAA,CACA,8BARZ,CAWQ,wCACI,aAAA,CACA,+BATZ,CAkBA,wEAGQ,YAdR,CAkBA,gBAEQ,SAjBR,CAeA,iDAOQ,mBAnBR,CAYA,SAYQ,cArBR,CASA,WAiBQ,WAvBR,CAMA,oCAuBQ,iCAzBR,CAEA,uBA2BQ,YA1BR,CADA,oCA6BY,SAzBZ,CAJA,UAmCQ,YAAA,CACA,gBA5BR,CA+BQ,oDAEQ,kBA9BhB,CA4BQ,oDAEQ,kBA9BhB,CA4BQ,oCAKQ,aA9BhB,CAiCQ,oDAEQ,kBAhChB,CA8BQ,oDAEQ,kBAhChB,CA8BQ,oCAKQ,aAhChB,CApBA,kBA0DQ,mBAlCR,CAxBA,UA6DQ,gBAlCR,CA3BA,WAkEQ,kBApCR,CA9BA,sCAyEQ,gBAAA,CACA,kBAtCR,CApCA,YA+EQ,eAxCR,CA4CA,uBAII,2BAAA,CAFA,2BAAA,CACA,uBAzCJ,CA6CA,WACI,qBA3CJ,CA8CA,gCACI,aAAA,CAMA,kBAAA,CADA,cAAA,CAEA,UAAA,CACA,mBAhDJ,CAyCI,sCACI,YAvCR,CAoDQ,gEACI,8BAAA,CACA,aAlDZ","sourcesContent":["// 全局注入样式\n\n:root {\n    color-scheme: light;\n    &.ehs-ex {\n        color-scheme: dark;\n    }\n}\n\nbutton[ehs-input] {\n    :is(:root.ehs-eh, :root.ehs-ex) & {\n        min-height: 26px;\n        line-height: 20px;\n        padding: 1px 5px 2px;\n        margin: 0 2px;\n        border: 2px solid #b5a4a4;\n        border-radius: 3px;\n        font-size: 9pt;\n        color: #5c0d12;\n        background-color: #edeada;\n        outline: none;\n        white-space: pre;\n\n        &:disabled {\n            color: #c2a8a4;\n            -webkit-text-fill-color: #c2a8a4;\n            opacity: 1;\n        }\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #f3f0e0 !important;\n            border-color: #977273 !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#d7d3c2, #f3f0e0) !important;\n            border-color: #5c0d12 !important;\n        }\n    }\n\n    :root.ehs-ex & {\n        border-color: #8d8d8d;\n        color: #f1f1f1;\n        background-color: #34353b;\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #43464e !important;\n            border-color: #aeaeae !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#1a1a1a, #43464e) !important;\n            border-color: #c3c3c3 !important;\n        }\n\n        &:disabled {\n            color: #8a8a8a;\n            -webkit-text-fill-color: #8a8a8a;\n        }\n    }\n}\n\n[hidden] {\n    display: none;\n}\n\n:root.ehs-hide-icon {\n    [ehs-icon],\n    [ehs-emoji] {\n        display: none;\n    }\n}\n\nbody {\n    div#gright {\n        z-index: 3;\n    }\n\n    // 提交删除申请按钮\n    #expunge_new button[ehs-input][type='submit'] {\n        margin: 6px auto 2px;\n    }\n\n    // 日文标题\n    #gj {\n        margin: 3px 4px;\n    }\n\n    // 信息框\n    #gmid {\n        height: auto;\n    }\n\n    // 标签输入\n    #tagmenu_act,\n    #tagmenu_new {\n        width: calc(100% - 30px) !important; // 留下右侧 loading 空间\n    }\n\n    #tagmenu_new > form {\n        display: flex;\n        #newtagfield {\n            flex: auto;\n        }\n    }\n\n    // 信息框右侧菜单\n    #gd5 {\n        display: flex;\n        flex-flow: column;\n\n        // 当其他脚本在这里插入过多链接时。修改布局\n        &:has(> :nth-child(10)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 8px;\n            }\n            .gsp {\n                padding-top: 0;\n            }\n        }\n        &:has(> :nth-child(15)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 4px;\n            }\n            .gsp {\n                padding-top: 0;\n            }\n        }\n    }\n    .g2,\n    .g3 {\n        padding-bottom: 20px;\n    }\n    .gsp {\n        padding-top: 10px;\n    }\n\n    // 标签组名\n    td.tc {\n        white-space: nowrap;\n    }\n\n    // 标签\n    div.gtl,\n    div.gtw,\n    div.gt {\n        line-height: 16px;\n        white-space: nowrap;\n    }\n\n    // 评论内容\n    div.c6 {\n        text-align: left;\n    }\n}\n\n[ehs-icon],\n[ehs-emoji] {\n    max-height: 1.25em !important;\n    max-width: 2em !important;\n    margin: -0.25em 1px !important;\n}\n\n[ehs-icon] {\n    vertical-align: middle;\n}\n\n.ehs-new-tag-complete-translate {\n    display: block;\n    &:empty {\n        display: none;\n    }\n\n    margin-top: 4px;\n    font-weight: bolder;\n    opacity: 0.8;\n    pointer-events: none;\n}\n\n// wiki 样式\n\n:root.ehs-wiki {\n    &.ehs-translate-tag [ehs-tag][lang|='zh-hans'] {\n        &::after {\n            content: ' (' attr(ehs-tag) ')';\n            font-size: 80%;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -19786,6 +19786,15 @@ merge(/.*/, undefined, {
   'You have to complete every field': '您必须填完每个字段',
   'Please try again': '请再试一次'
 }, [[/^(\d+) pages?$/, '$1 页'], [/^Found about ([\d,]+) results?./, '找到约 $1 个结果。'], [/^Found ([\d,]+\+?) results?./, '找到 $1 个结果。'], [/^Found hundreds of results./, '找到数百结果。'], [/^Found thousands of results./, '找到数千结果。'], [/^Found many results./, '找到许多结果。'], [/\s?Filtered ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面过滤 $1 个结果。'], [/\s?Excluded ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面排除 $1 个结果。'], [/\s?Excluded ([\d,]+) galler(ies|y) and filtered ([\d,]+) galler(ies|y) from this page.\s?/, '已从此页面排除 $1 个结果，过滤 $3 个结果。'], [/^This IP address has been temporarily banned due to an excessive request rate. This probably means you are using automated mirroring\/harvesting software or share the IP address with someone who does. The ban expires in (\d+) hours and (\d+) minutes$/, '由于请求速率过高，此 IP 地址已被暂时封禁。这可能意味着您正在使用自动镜像/采集软件，或与某人共享 IP 地址。封禁将在 $1 小时 $2 分钟后解除。']]);
+;// ./src/services/ui-translation/data/ehwiki.ts
+
+// 提交此文件时请先登录到 EHWiki
+// 并在 https://ehwiki.org/wiki/Special:Preferences#mw-htmlform-i18n 中设置界面语言为“中文（简体）”
+// 不要翻译已经被 MediaWiki 翻译过的内容
+merge(/.*/, 'ehwiki.org', {
+  'external links': '外部链接',
+  'E-Hentai Forums': 'E-Hentai 论坛'
+}, []);
 ;// ./src/services/ui-translation/data/exchange.ts
 
 merge(/^\/exchange\.php\?/, undefined, {
@@ -21712,6 +21721,7 @@ merge(/^\/g\//, undefined, {
 
 
 
+
 ;// ./src/services/ui-translation/index.ts
 
 
@@ -21760,7 +21770,7 @@ let UiTranslation = class UiTranslation {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.4.0","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.15.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.4","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.4","@eslint/js":"^9.35.0","@types/chrome":"^0.1.6","@types/escape-html":"^1.0.4","@types/node":"^24.3.1","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.1","eslint":"^9.35.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.2.0","postcss-preset-env":"^10.3.1","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.4","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.42.0","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","yaml-loader":"^0.8.1"},"dependencies":{"core-js":"^3.45.1","emoji-regex":"^10.5.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.4.1","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.15.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.4","@babel/plugin-transform-runtime":"^7.28.3","@babel/preset-env":"^7.28.3","@babel/runtime-corejs3":"^7.28.4","@eslint/js":"^9.35.0","@types/chrome":"^0.1.6","@types/escape-html":"^1.0.4","@types/node":"^24.3.1","@types/tampermonkey":"^5.0.4","@types/webextension-polyfill":"^0.12.3","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.1","eslint":"^9.35.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.0","glob":"^11.0.3","html-webpack-plugin":"^5.6.4","less":"^4.4.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.2.0","postcss-preset-env":"^10.3.1","prettier":"^3.6.2","rimraf":"^6.0.1","semver":"^7.7.2","style-loader":"^4.0.0","ts-loader":"^9.5.4","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^4.41.0","typescript":"^5.9.2","typescript-eslint":"^8.42.0","web-ext":"^8.9.0","webpack":"^5.101.3","webpack-bundle-analyzer":"^4.10.2","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","yaml-loader":"^0.8.1"},"dependencies":{"core-js":"^3.45.1","emoji-regex":"^10.5.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.1","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 const packageJson = package_namespaceObject;
@@ -21954,6 +21964,7 @@ var syringe_update = injectStylesIntoStyleTag_default()(syringe/* default */.A, 
 
 
 
+
 function isElement(node, nodeName) {
   return node instanceof HTMLElement && (nodeName == null || node.localName === nodeName);
 }
@@ -21976,11 +21987,11 @@ const skipElementMatcher = ".".concat(ignoreClassName, ", .").concat(ignoreClass
 // 该方案同时在 V2、V3 和 UserScript 生效
 // 注意 actualCode 是在事件回调内部运行的，要挂载变量需要显式写 `window.varName = xxx`
 function codePatch(window) {
-  window.addOnloadHook = function (callbak) {
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      setTimeout(callbak, 0);
+  window.addOnloadHook = function (callback) {
+    if (document.readyState !== 'loading') {
+      setTimeout(callback, 0);
     } else {
-      window.addEventListener('DOMContentLoaded', callbak, {
+      window.addEventListener('DOMContentLoaded', callback, {
         once: true
       });
     }
@@ -22000,8 +22011,8 @@ function codePatch(window) {
     }
   };
 }
-const WIKI_SEARCH_NS = ['loc', 'o', 'l', 'f', 'm', 'x', 'p', 'c', 'a', 'cos', 'g', 'r'];
-const WIKI_NORMAL_TERM = new Set(['power', 'ban', 'banned', 'comment', 'renaming', 'expunge', 'tag']);
+const WIKI_SEARCH_NS = ['loc', 'o', 'l', 'f', 'm', 'x', 'g', 'a', 'cos', 'p', 'c', 'r'];
+const WIKI_NORMAL_TERM = new Set(['power', 'ban', 'bans', 'karma', 'banned', 'gallery', 'galleries', 'comment', 'comments', 'renaming', 'expunge', 'tag', 'archives', 'dawn', 'torrent', 'credits', 'bazaar', 'shrine', 'persona', 'contests', 'hath', 'deception', 'toplist', 'toplists', 'cosplay']);
 class TagNodeRef {
   static attached(node) {
     const parentElement = isText(node) ? node.parentElement : node;
@@ -22018,7 +22029,29 @@ class TagNodeRef {
     const aTitle = parentElement.title;
     let fullKeyCandidate;
     if (aTitle) {
-      const [namespace, key] = includes_default()(aTitle).call(aTitle, ':') ? aTitle.split(':') : ['', aTitle];
+      let tag;
+      if (includes_default()(aTitle).call(aTitle, ':')) {
+        tag = aTitle.split(':');
+      } else if (service.isWiki) {
+        if (starts_with_default()(aTitle).call(aTitle, 'series ')) {
+          var _context;
+          tag = ['parody', trim_default()(_context = aTitle.slice('series '.length)).call(_context)];
+        } else if (starts_with_default()(aTitle).call(aTitle, 'character ')) {
+          var _context2;
+          tag = ['character', trim_default()(_context2 = aTitle.slice('character '.length)).call(_context2)];
+        } else if (starts_with_default()(aTitle).call(aTitle, 'artist ')) {
+          var _context3;
+          tag = ['artist', trim_default()(_context3 = aTitle.slice('artist '.length)).call(_context3)];
+        } else if (starts_with_default()(aTitle).call(aTitle, 'group ')) {
+          var _context4;
+          tag = ['group', trim_default()(_context4 = aTitle.slice('group '.length)).call(_context4)];
+        } else {
+          tag = ['', aTitle];
+        }
+      } else {
+        tag = ['', aTitle];
+      }
+      const [namespace, key] = tag;
       fullKeyCandidate = service.tagging.fullKey({
         namespace,
         key
@@ -22058,7 +22091,7 @@ class TagNodeRef {
     return !!this.node.parentElement;
   }
   translate(tagMap) {
-    var _context, _context2;
+    var _context5, _context6;
     if (!this.alive) return true;
     if (!this.service.config.translateTag) {
       this.node.textContent = this.original;
@@ -22069,7 +22102,7 @@ class TagNodeRef {
       return false;
     }
     let value = tagMap[this.fullKey];
-    if (!value && this.service.isWiki && !includes_default()(_context = this.fullKey).call(_context, ':')) {
+    if (!value && this.service.isWiki && !includes_default()(_context5 = this.fullKey).call(_context5, ':')) {
       for (const ns of WIKI_SEARCH_NS) {
         value = tagMap["".concat(ns, ":").concat(this.fullKey)];
         if (value) break;
@@ -22079,7 +22112,7 @@ class TagNodeRef {
       return false;
     }
     value = this.service.tagging.markImagesAndEmoji(value);
-    if (includes_default()(_context2 = this.original).call(_context2, ':')) {
+    if (includes_default()(_context6 = this.original).call(_context6, ':')) {
       const originalNs = this.original.split(':')[0];
       if (!originalNs) value = ":".concat(value);else value = "".concat(this.service.tagging.ns(originalNs), ":").concat(value);
     }
@@ -22219,10 +22252,10 @@ let Syringe = class Syringe {
     this.updatingTagMap = updatingTagMap;
   }
   setRootAttrs() {
-    var _context3;
+    var _context7;
     const node = document.documentElement;
     if (!node) return;
-    node.classList.remove(...[...values_default()(_context3 = node.classList).call(_context3)].filter(k => starts_with_default()(k).call(k, 'ehs')));
+    node.classList.remove(...[...values_default()(_context7 = node.classList).call(_context7)].filter(k => starts_with_default()(k).call(k, 'ehs')));
     node.classList.add('ehs-injected');
     if (this.isEx) {
       node.classList.add('ehs-ex');
@@ -22270,11 +22303,11 @@ let Syringe = class Syringe {
     }
   }
   isTagContainer(node) {
-    var _context4;
+    var _context8, _context9;
     if (!node) {
       return false;
     }
-    if (isElement(node, 'a') && starts_with_default()(_context4 = node.href).call(_context4, 'https://e-hentai.org/tag/')) {
+    if (isElement(node, 'a') && starts_with_default()(_context8 = node.href).call(_context8, 'https://e-hentai.org/tag/')) {
       var _node$textContent2;
       const url = new (url_default())(node.href);
       const urlTag = decodeURIComponent(url.pathname.split('/').pop()).replace(/_/g, ' ').replace(/\+/g, ' ');
@@ -22284,26 +22317,36 @@ let Syringe = class Syringe {
       node.title = (_node$textContent2 = node.textContent) !== null && _node$textContent2 !== void 0 ? _node$textContent2 : '';
       return true;
     }
-    if (this.isWiki) {
-      if (!this.tagging.isTagName(node.textContent) || WIKI_NORMAL_TERM.has(node.textContent)) {
+    if (this.isWiki && (isElement(node, 'h1') && node.id === 'firstHeading' || isElement(node, 'a') && includes_default()(_context9 = node.href).call(_context9, '://ehwiki.org/'))) {
+      var _context0, _context1;
+      if (starts_with_default()(_context0 = node.className).call(_context0, 'oo-ui-')) {
+        // 不翻译搜索框
         return false;
       }
-      if (isElement(node, 'h1') && node.id === 'firstHeading') {
-        var _node$textContent3;
-        node.title = (_node$textContent3 = node.textContent) !== null && _node$textContent3 !== void 0 ? _node$textContent3 : '';
+      const tag = trim_default()(_context1 = (node.textContent || '').replace(/[\s\u200E\u200F]+/g, ' ')).call(_context1).toLowerCase();
+      if (!this.tagging.isTagName(tag) || WIKI_NORMAL_TERM.has(tag)) {
+        return false;
+      }
+      if (node.id === 'firstHeading') {
+        node.title = tag;
         return true;
       }
-      if (isElement(node, 'a') && /^https?:\/\/ehwiki.org\/wiki\/[-+._a-z0-9]+$/.exec(node.href)) {
-        var _node$textContent4;
-        const url = new (url_default())(node.href);
-        const urlTag = decodeURIComponent(url.pathname.split('/').pop()).replace(/_/g, ' ').replace(/\+/g, ' ');
-        if (urlTag !== node.textContent) {
-          return false;
-        }
-        node.title = (_node$textContent4 = node.textContent) !== null && _node$textContent4 !== void 0 ? _node$textContent4 : '';
-        return true;
+      if (!('href' in node)) {
+        return false;
       }
-      return false;
+      const isWikiLink =
+      // wiki 内部链接
+      /^https?:\/\/ehwiki.org\/wiki\/[-+._A-Za-z0-9]+($|\?)/.test(node.href) ||
+      // 指向不存在页面的链接
+      node.classList.contains('new') && /^https?:\/\/ehwiki.org\/action\/edit\/[-+._A-Za-z0-9]+($|\?)/.test(node.href);
+      if (!isWikiLink) return false;
+      const url = new (url_default())(node.href);
+      const urlTag = decodeURIComponent(url.pathname.split('/').pop()).replace(/_/g, ' ').replace(/\+/g, ' ').toLowerCase();
+      if (urlTag !== tag) {
+        return false;
+      }
+      node.title = tag;
+      return true;
     }
     return node.classList.contains('gt') || node.classList.contains('gtl') || node.classList.contains('gtw');
   }
@@ -22380,8 +22423,8 @@ let Syringe = class Syringe {
       }
     }
     if (isText(node)) {
-      var _node$textContent5;
-      const text = (_node$textContent5 = node.textContent) !== null && _node$textContent5 !== void 0 ? _node$textContent5 : '';
+      var _node$textContent3;
+      const text = (_node$textContent3 = node.textContent) !== null && _node$textContent3 !== void 0 ? _node$textContent3 : '';
       const translation = this.translateUiText(text);
       if (translation != null) {
         node.textContent = translation;
@@ -22430,8 +22473,8 @@ let Syringe = class Syringe {
     }
     // 导航链接，一体化处理，不再处理文本节点（原文使用子元素和媒体查询实现页面宽度改变时文本自动更改为缩写）
     if (isElement(node, 'a') && (node === null || node === void 0 || (_node$parentElement2 = node.parentElement) === null || _node$parentElement2 === void 0 || (_node$parentElement2 = _node$parentElement2.parentElement) === null || _node$parentElement2 === void 0 ? void 0 : _node$parentElement2.id) === 'nb') {
-      var _node$textContent6;
-      const translation = this.translateUiText((_node$textContent6 = node.textContent) !== null && _node$textContent6 !== void 0 ? _node$textContent6 : '');
+      var _node$textContent4;
+      const translation = this.translateUiText((_node$textContent4 = node.textContent) !== null && _node$textContent4 !== void 0 ? _node$textContent4 : '');
       if (translation != null) {
         node.textContent = translation;
       }
@@ -24544,4 +24587,4 @@ if (!(LOADED_KEY in window)) {
 
 /******/ })()
 ;
-//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.4.0/ehsyringe.user.js.map
+//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.4.1/ehsyringe.user.js.map
