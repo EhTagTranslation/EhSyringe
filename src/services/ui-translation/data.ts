@@ -2,6 +2,7 @@ import './data/archiver';
 import './data/bitcoin';
 import './data/bounty';
 import './data/common';
+import './data/ehwiki';
 import './data/exchange';
 import './data/favorites';
 import './data/gallery';

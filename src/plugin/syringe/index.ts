@@ -117,6 +117,7 @@ const WIKI_NORMAL_TERM = new Set([
     'deception',
     'toplist',
     'toplists',
+    'cosplay',
 ]);
 
 class TagNodeRef {
