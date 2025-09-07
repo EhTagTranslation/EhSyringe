@@ -84,15 +84,40 @@ const WIKI_SEARCH_NS = [
     'f',
     'm',
     'x',
-    'p',
-    'c',
+    'g',
     'a',
     'cos',
-    'g',
+    'p',
+    'c',
     'r',
 ] as const satisfies readonly EHTNamespaceNameShort[] & { length: 12 };
 
-const WIKI_NORMAL_TERM = new Set(['power', 'ban', 'banned', 'comment', 'renaming', 'expunge', 'tag']);
+const WIKI_NORMAL_TERM = new Set([
+    'power',
+    'ban',
+    'bans',
+    'karma',
+    'banned',
+    'gallery',
+    'galleries',
+    'comment',
+    'comments',
+    'renaming',
+    'expunge',
+    'tag',
+    'archives',
+    'dawn',
+    'torrent',
+    'credits',
+    'bazaar',
+    'shrine',
+    'persona',
+    'contests',
+    'hath',
+    'deception',
+    'toplist',
+    'toplists',
+]);
 
 class TagNodeRef {
     static attached(node: Text | HTMLElement): boolean {
@@ -112,7 +137,25 @@ class TagNodeRef {
 
         let fullKeyCandidate: string | undefined;
         if (aTitle) {
-            const [namespace, key] = aTitle.includes(':') ? aTitle.split(':') : ['', aTitle];
+            let tag;
+            if (aTitle.includes(':')) {
+                tag = aTitle.split(':');
+            } else if (service.isWiki) {
+                if (aTitle.startsWith('series ')) {
+                    tag = ['parody', aTitle.slice('series '.length).trim()];
+                } else if (aTitle.startsWith('character ')) {
+                    tag = ['character', aTitle.slice('character '.length).trim()];
+                } else if (aTitle.startsWith('artist ')) {
+                    tag = ['artist', aTitle.slice('artist '.length).trim()];
+                } else if (aTitle.startsWith('group ')) {
+                    tag = ['group', aTitle.slice('group '.length).trim()];
+                } else {
+                    tag = ['', aTitle];
+                }
+            } else {
+                tag = ['', aTitle];
+            }
+            const [namespace, key] = tag;
             fullKeyCandidate = service.tagging.fullKey({ namespace, key });
         } else if (aId) {
             let id = aId;
@@ -384,22 +427,27 @@ export class Syringe {
             return true;
         }
         if (this.isWiki) {
-            if (!this.tagging.isTagName(node.textContent) || WIKI_NORMAL_TERM.has(node.textContent)) {
+            const tag = (node.textContent || '')
+                .replace(/[\s\u200E\u200F]+/g, ' ')
+                .trim()
+                .toLowerCase();
+            if (!this.tagging.isTagName(tag) || WIKI_NORMAL_TERM.has(tag)) {
                 return false;
             }
             if (isElement(node, 'h1') && node.id === 'firstHeading') {
-                node.title = node.textContent ?? '';
+                node.title = tag;
                 return true;
             }
-            if (isElement(node, 'a') && /^https?:\/\/ehwiki.org\/wiki\/[-+._a-z0-9]+$/.exec(node.href)) {
+            if (isElement(node, 'a') && /^https?:\/\/ehwiki.org\/wiki\/[-+._A-Za-z0-9]+$/.test(node.href)) {
                 const url = new URL(node.href);
                 const urlTag = decodeURIComponent(url.pathname.split('/').pop()!)
                     .replace(/_/g, ' ')
-                    .replace(/\+/g, ' ');
-                if (urlTag !== node.textContent) {
+                    .replace(/\+/g, ' ')
+                    .toLowerCase();
+                if (urlTag !== tag) {
                     return false;
                 }
-                node.title = node.textContent ?? '';
+                node.title = tag;
                 return true;
             }
             return false;
