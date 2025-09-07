@@ -2,6 +2,11 @@
 
 ## 3.4.0
 
+- 兼容 eharia2 [#1311](https://github.com/EhTagTranslation/EhSyringe/issues/1311)
+- 优化 EHWiki 支持，添加部分翻译
+
+## 3.4.0
+
 - 添加 EHWiki 支持 [#1196](https://github.com/EhTagTranslation/EhSyringe/issues/1196)
 - [UserScript] 优化源映射，移除部分依赖
 
