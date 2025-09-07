@@ -1,5 +1,10 @@
 # 更新日志
 
+## 3.4.0
+
+- 添加 EHWiki 支持 [#1196](https://github.com/EhTagTranslation/EhSyringe/issues/1196)
+- [UserScript] 优化源映射，移除部分依赖
+
 ## 3.3.1
 
 - 修复搜索重复触发问题
