@@ -439,6 +439,10 @@ export class Syringe {
                 return true;
             }
             if (isElement(node, 'a') && /^https?:\/\/ehwiki.org\/wiki\/[-+._A-Za-z0-9]+$/.test(node.href)) {
+                if (node.className.startsWith('oo-ui-')) {
+                    // 不翻译搜索框
+                    return false;
+                }
                 const url = new URL(node.href);
                 const urlTag = decodeURIComponent(url.pathname.split('/').pop()!)
                     .replace(/_/g, ' ')
