@@ -112,15 +112,26 @@ body {
         flex-flow: column;
 
         // 当其他脚本在这里插入过多链接时。修改布局
-        --ehs-gap: 1;
-        &:has(:nth-child(8)) {
-            --ehs-gap: 0;
-            justify-content: space-around;
+        &:has(> :nth-child(10)) {
+            :is(.g2, .g3):not(:has(+ .gsp)) {
+                padding-bottom: 8px;
+            }
+            .gsp {
+                padding-top: 0;
+            }
+        }
+        &:has(> :nth-child(15)) {
+            :is(.g2, .g3):not(:has(+ .gsp)) {
+                padding-bottom: 4px;
+            }
+            .gsp {
+                padding-top: 0;
+            }
         }
     }
     .g2,
     .g3 {
-        padding-bottom: calc(20px * var(--ehs-gap, 1));
+        padding-bottom: 20px;
     }
     .gsp {
         padding-top: 10px;
