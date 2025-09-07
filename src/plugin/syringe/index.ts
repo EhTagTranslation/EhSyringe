@@ -426,7 +426,15 @@ export class Syringe {
             node.title = node.textContent ?? '';
             return true;
         }
-        if (this.isWiki) {
+        if (
+            this.isWiki &&
+            ((isElement(node, 'h1') && node.id === 'firstHeading') ||
+                (isElement(node, 'a') && node.href.includes('://ehwiki.org/')))
+        ) {
+            if (node.className.startsWith('oo-ui-')) {
+                // 不翻译搜索框
+                return false;
+            }
             const tag = (node.textContent || '')
                 .replace(/[\s\u200E\u200F]+/g, ' ')
                 .trim()
@@ -434,27 +442,32 @@ export class Syringe {
             if (!this.tagging.isTagName(tag) || WIKI_NORMAL_TERM.has(tag)) {
                 return false;
             }
-            if (isElement(node, 'h1') && node.id === 'firstHeading') {
+            if (node.id === 'firstHeading') {
                 node.title = tag;
                 return true;
             }
-            if (isElement(node, 'a') && /^https?:\/\/ehwiki.org\/wiki\/[-+._A-Za-z0-9]+$/.test(node.href)) {
-                if (node.className.startsWith('oo-ui-')) {
-                    // 不翻译搜索框
-                    return false;
-                }
-                const url = new URL(node.href);
-                const urlTag = decodeURIComponent(url.pathname.split('/').pop()!)
-                    .replace(/_/g, ' ')
-                    .replace(/\+/g, ' ')
-                    .toLowerCase();
-                if (urlTag !== tag) {
-                    return false;
-                }
-                node.title = tag;
-                return true;
+            if (!('href' in node)) {
+                return false;
             }
-            return false;
+
+            const isWikiLink =
+                // wiki 内部链接
+                /^https?:\/\/ehwiki.org\/wiki\/[-+._A-Za-z0-9]+($|\?)/.test(node.href) ||
+                // 指向不存在页面的链接
+                (node.classList.contains('new') &&
+                    /^https?:\/\/ehwiki.org\/action\/edit\/[-+._A-Za-z0-9]+($|\?)/.test(node.href));
+            if (!isWikiLink) return false;
+
+            const url = new URL(node.href);
+            const urlTag = decodeURIComponent(url.pathname.split('/').pop()!)
+                .replace(/_/g, ' ')
+                .replace(/\+/g, ' ')
+                .toLowerCase();
+            if (urlTag !== tag) {
+                return false;
+            }
+            node.title = tag;
+            return true;
         }
         return node.classList.contains('gt') || node.classList.contains('gtl') || node.classList.contains('gtw');
     }
