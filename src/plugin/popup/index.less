@@ -8,6 +8,12 @@
     td {
         background: inherit;
         color: inherit;
+        margin: 0;
+        padding: 0;
+    }
+    th,
+    td {
+        padding: 1px;
     }
 
     input {
@@ -119,15 +125,23 @@
     }
 
     #settingForm {
+        scrollbar-color: @accent transparent;
+
         .checkbox-item svg path {
             stroke: @accent;
         }
 
         input[type='text'] {
-            color: @foreground;
+            color: @accent;
             border-color: @soft-accent;
             &:focus {
                 border-color: @accent;
+            }
+
+            &::placeholder {
+                opacity: 0.5;
+                -webkit-text-fill-color: @soft-accent;
+                color: @soft-accent;
             }
         }
 
@@ -243,6 +257,7 @@
             outline: 0;
             -webkit-tap-highlight-color: transparent;
             white-space: nowrap;
+            font-weight: normal;
             text-decoration: none;
             text-align: center;
             min-width: 64px;
