@@ -1,6 +1,6 @@
 # 更新日志
 
-## 3.4.0
+## 3.4.1
 
 - 兼容 eharia2 [#1311](https://github.com/EhTagTranslation/EhSyringe/issues/1311)
 - 优化 EHWiki 支持，添加部分翻译
