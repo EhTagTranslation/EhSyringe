@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         EhSyringe
-// @version      3.4.1
+// @version      3.4.2
 // @author       EhTagTranslation
 // @description  E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。
-// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@51e0379eed59ebf30dec3ecfd630d6a5822b0032/src/assets/logo.svg
+// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@0b6c3ca2c89e38454ccab71419cb94b07f052fab/src/assets/logo.svg
 // @license      MIT
 // @namespace    https://github.com/EhTagTranslation/EhSyringe
 // @homepage     https://github.com/EhTagTranslation/EhSyringe
