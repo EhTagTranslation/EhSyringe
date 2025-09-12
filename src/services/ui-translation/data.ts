@@ -27,4 +27,6 @@ import './data/torrents';
 import './data/uconfig';
 import './data/upload';
 import './data/watched';
-import './data/thirdparty';
+
+import './data/thirdparty/e-hentai-downloader';
+import './data/thirdparty/ex-resurrect';

@@ -1,4 +1,4 @@
-import { merge } from '../helper';
+import { merge } from '../../helper';
 
 // E-Hentai Downloader
 merge(

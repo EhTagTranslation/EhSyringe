@@ -13,7 +13,7 @@ import { DateTime } from 'services/date-time';
 import './index.less';
 
 function isElement<K extends keyof HTMLElementTagNameMap | undefined = undefined>(
-    node: Node | undefined,
+    node: Node | null | undefined,
     nodeName?: K,
 ): node is K extends keyof HTMLElementTagNameMap ? HTMLElementTagNameMap[K] : HTMLElement {
     return node instanceof HTMLElement && (nodeName == null || node.localName === nodeName);
@@ -619,6 +619,11 @@ export class Syringe {
             if (translation != null) {
                 node.textContent = translation;
             }
+        }
+
+        if (isElement(node, 'div') && node.className === 'd' && isElement(node.parentElement, 'body')) {
+            // 兼容 ExResurrect
+            this.cloneAndPrependElement(node);
         }
 
         if (isElement(node, 'select') && node.matches('.searchnav > div > :scope')) {
