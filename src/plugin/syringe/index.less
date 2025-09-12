@@ -114,18 +114,35 @@ body {
         // 当其他脚本在这里插入过多链接时。修改布局
         &:has(> :nth-child(10)) {
             :is(.g2, .g3):not(:has(+ .gsp)) {
-                padding-bottom: 8px;
+                padding-bottom: 18px;
             }
             .gsp {
                 padding-top: 0;
             }
         }
+        &:has(> :nth-child(11)) {
+            :is(.g2, .g3):not(:has(+ .gsp)) {
+                padding-bottom: 16px;
+            }
+        }
+        &:has(> :nth-child(12)) {
+            :is(.g2, .g3):not(:has(+ .gsp)) {
+                padding-bottom: 12px;
+            }
+        }
+        &:has(> :nth-child(13)) {
+            :is(.g2, .g3):not(:has(+ .gsp)) {
+                padding-bottom: 8px;
+            }
+        }
+        &:has(> :nth-child(14)) {
+            :is(.g2, .g3):not(:has(+ .gsp)) {
+                padding-bottom: 6px;
+            }
+        }
         &:has(> :nth-child(15)) {
             :is(.g2, .g3):not(:has(+ .gsp)) {
                 padding-bottom: 4px;
-            }
-            .gsp {
-                padding-top: 0;
             }
         }
     }
