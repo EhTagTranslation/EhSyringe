@@ -1,5 +1,10 @@
 # 更新日志
 
+## 3.4.2
+
+- 优化样式 [#1313](https://github.com/EhTagTranslation/EhSyringe/issues/1313)
+- 兼容 ExResurrect [#1312](https://github.com/EhTagTranslation/EhSyringe/issues/1312)
+
 ## 3.4.1
 
 - 兼容 eharia2 [#1311](https://github.com/EhTagTranslation/EhSyringe/issues/1311)
