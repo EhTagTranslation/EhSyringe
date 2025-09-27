@@ -269,5 +269,14 @@ merge(
         [/^([\d.]+) GB per month$/, '$1 GB/月'],
         [/^([\d.]+) ([KMGTP]B)\/hour$/, '$1 $2/小时'],
         [/^([\d.]+) ([KMGTP]B)\/s$/, '$1 $2/s'],
+        [
+            /^Cannot set a larger Max Upload Rate than ([\d.]+) ([KMGTP]B)\/s \(([\d.]+) ([KMGTP]bit)\/s\).$/,
+            '最大上传速率不能设置为超过 $1 $2B/s ($3 $4/s)。',
+        ],
+        [
+            /^Monthly Data Transfer Target must be at least ([\d.]+) ([KMGTP]B) if set\.$/,
+            '如果设置，月数据传输目标必须至少为 $1 $2。',
+        ],
+        [/^Disk Cache Size must be at least ([\d.]+) ([KMGTP]i?B)\.$/, '磁盘缓存大小必须至少为 $1 $2。'],
     ],
 );
