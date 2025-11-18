@@ -52,7 +52,7 @@
         "eslint": "^9.39.1",
         "eslint-config-prettier": "^10.1.8",
         "execa": "^9.6.0",
-        "glob": "^11.0.3",
+        "glob": "^11.1.0",
         "html-webpack-plugin": "^5.6.4",
         "less": "^4.4.2",
         "less-loader": "^12.3.0",
