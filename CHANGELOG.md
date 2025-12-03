@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.4.3
+
+- 更新翻译
+
 ## 3.4.2
 
 - 优化样式 [#1313](https://github.com/EhTagTranslation/EhSyringe/issues/1313)
