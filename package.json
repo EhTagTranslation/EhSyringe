@@ -1,7 +1,7 @@
 {
     "name": "ehsyringe",
     "displayName": "EhSyringe",
-    "version": "3.4.2",
+    "version": "3.4.3",
     "description": "E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。",
     "author": "EhTagTranslation",
     "repository": {
