@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: docs
           path: |
@@ -45,7 +45,7 @@ jobs:
         if: startsWith(github.event.ref, 'refs/tags/')
         with:
           subject-path: releases/
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: releases
           path: releases/
