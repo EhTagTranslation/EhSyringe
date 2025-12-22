@@ -47,6 +47,7 @@ merge(
             '请注意，您必须在上传后从此站点下载已完成的种子，以便记录统计信息。',
         'Upload Torrent': '上传种子',
         'Close Window': '关闭窗口',
+        'Delete Torrent': '删除种子',
 
         Posted: '发布于',
         DLers: '下载',
