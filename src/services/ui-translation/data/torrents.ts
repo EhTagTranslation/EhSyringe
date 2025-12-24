@@ -65,7 +65,7 @@ merge(
         'Change display name or comment for this torrent': '修改种子显示名称或备注',
         'Add more torrents or list torrents for this gallery.': '列出当前图库的种子或为当前图库上传更多种子',
         'The personalized torrent file will start downloading momentarily.': '私有种子即将开始下载',
-        'Please wait...': '请稍后...',
+        'Please wait...': '请稍侯...',
     },
     [
         [/^Showing ([\d,]+)-([\d,]+) of ([\d,]+)$/, '$1 - $2，共 $3 个结果'],
