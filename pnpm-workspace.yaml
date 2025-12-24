@@ -1,4 +1,5 @@
 ignoredBuiltDependencies:
   - core-js
   - core-js-pure
+  - less
   - spawn-sync

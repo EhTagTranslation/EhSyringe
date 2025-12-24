@@ -61,7 +61,8 @@ merge(
         'Back to Index': '返回',
 
         'Your torrent was successfully uploaded and processed.': '您的种子已上传并处理完毕。',
-        'Note that you should now download and use the personalized torrent from this site to seed the torrent. If you do not use this torrent for seeding, it will not count against your uploading and seeding statistics.': '请注意：您现在需要下载并使用本页面提供的私有种子进行做种。若未使用此种子做种，您的上传与做种数据将不会计入统计。',
+        'Note that you should now download and use the personalized torrent from this site to seed the torrent. If you do not use this torrent for seeding, it will not count against your uploading and seeding statistics.':
+            '请注意：您现在需要下载并使用本页面提供的私有种子进行做种。若未使用此种子做种，您的上传与做种数据将不会计入统计。',
         'Change display name or comment for this torrent': '修改种子显示名称或备注',
         'Add more torrents or list torrents for this gallery.': '列出当前图库的种子或为当前图库上传更多种子',
         'The personalized torrent file will start downloading momentarily.': '私有种子即将开始下载',
