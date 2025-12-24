@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         EhSyringe
-// @version      3.4.4
+// @version      3.4.5
 // @author       EhTagTranslation
 // @description  E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。
-// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@8406b300e3f88d18c45582dde35858bfbc974439/src/assets/logo.svg
+// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@f558567adbbc057c97505aa83431c5dc3edde384/src/assets/logo.svg
 // @license      MIT
 // @namespace    https://github.com/EhTagTranslation/EhSyringe
 // @homepage     https://github.com/EhTagTranslation/EhSyringe
@@ -20408,6 +20408,7 @@ function _defineProperty(e, r, t) {
 
 ;// ./src/services/ui-translation/data/_browsingcountry.ts
 const BROWSING_COUNTRY = {
+  'North America': 'North America (北美洲)',
   Afghanistan: 'Afghanistan (阿富汗)',
   'Aland Islands': 'Aland Islands (奥兰群岛)',
   Albania: 'Albania (阿尔巴尼亚)',
@@ -20735,7 +20736,7 @@ merge(/^\/hentaiathome\.php\??$/, undefined, _objectSpread(_objectSpread({
   'If the auto-detected region is wrong, ': '如果自动检测的地区错误，请',
   ' to have an override applied. Include the correct country, client ID and IP address in your message, and ': '以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
   'make sure to keep your client running': '确保您的客户端保持运行',
-  '. Having a client set to the wrong region will cause a variety of issues, and makes it perform worse than it would otherwise do.': '。将客户端设置为错误的地区会导致各种问题，并使其性能表现不如预期。',
+  '. Having a client placed in the wrong region will cause a variety of issues, and makes it perform worse than it would otherwise do.': '。将客户端设置为错误的地区会导致各种问题，并使其性能表现不如预期。',
   'Free Archive Quota: ': '免费的存档配额：',
   ', measured in a 168-hour sliding window. Clients must be ': '，按照最近 168 小时的在线时间进行计算。客户端必须保持',
   healthy: '健康',
@@ -21912,7 +21913,7 @@ let UiTranslation = class UiTranslation {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.4.4","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.26.2","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.5","@babel/plugin-transform-runtime":"^7.28.5","@babel/preset-env":"^7.28.5","@babel/runtime-corejs3":"^7.28.4","@eslint/js":"^9.39.2","@types/chrome":"^0.1.32","@types/escape-html":"^1.0.4","@types/node":"^25.0.3","@types/tampermonkey":"^5.0.5","@types/webextension-polyfill":"^0.12.4","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.2","eslint":"^9.39.2","eslint-config-prettier":"^10.1.8","execa":"^9.6.1","glob":"^13.0.0","html-webpack-plugin":"^5.6.5","less":"^4.5.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.2.0","postcss-preset-env":"^10.5.0","prettier":"^3.7.4","rimraf":"^6.1.2","semver":"^7.7.3","style-loader":"^4.0.0","ts-loader":"^9.5.4","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.3.1","typescript":"^5.9.3","typescript-eslint":"^8.50.1","web-ext":"^9.2.0","webpack":"^5.104.1","webpack-bundle-analyzer":"^5.1.0","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","yaml-loader":"^0.8.1"},"dependencies":{"core-js":"^3.47.0","emoji-regex":"^10.6.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.2","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.4.5","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 37000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.11.0 || ^24.2.0"},"packageManager":"pnpm@10.26.2","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.28.5","@babel/plugin-transform-runtime":"^7.28.5","@babel/preset-env":"^7.28.5","@babel/runtime-corejs3":"^7.28.4","@eslint/js":"^9.39.2","@types/chrome":"^0.1.32","@types/escape-html":"^1.0.4","@types/node":"^25.0.3","@types/tampermonkey":"^5.0.5","@types/webextension-polyfill":"^0.12.4","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.0.0","copy-webpack-plugin":"^13.0.1","crx":"^5.0.1","css-loader":"^7.1.2","cssnano":"^7.1.2","eslint":"^9.39.2","eslint-config-prettier":"^10.1.8","execa":"^9.6.1","glob":"^13.0.0","html-webpack-plugin":"^5.6.5","less":"^4.5.1","less-loader":"^12.3.0","postcss":"^8.5.6","postcss-import":"^16.1.1","postcss-loader":"^8.2.0","postcss-preset-env":"^10.5.0","prettier":"^3.7.4","rimraf":"^6.1.2","semver":"^7.7.3","style-loader":"^4.0.0","ts-loader":"^9.5.4","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.3.1","typescript":"^5.9.3","typescript-eslint":"^8.50.1","web-ext":"^9.2.0","webpack":"^5.104.1","webpack-bundle-analyzer":"^5.1.0","webpack-cli":"^6.0.1","webpack-dev-server":"^5.2.2","yaml-loader":"^0.8.1"},"dependencies":{"core-js":"^3.47.0","emoji-regex":"^10.6.0","escape-html":"^1.0.3","idb-keyval":"^6.2.2","lit-html":"^3.3.2","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 const packageJson = package_namespaceObject;
@@ -24734,4 +24735,4 @@ if (!(LOADED_KEY in window)) {
 
 /******/ })()
 ;
-//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.4.4/ehsyringe.user.js.map
+//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.4.5/ehsyringe.user.js.map
