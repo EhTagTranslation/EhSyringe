@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.4.5
+
+- 更新翻译
+
 ## 3.4.4
 
 - 更新翻译 [#1323](https://github.com/EhTagTranslation/EhSyringe/pull/1323)
