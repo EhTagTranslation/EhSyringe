@@ -31,7 +31,9 @@ merge(
         'Downloads:': '完成：',
         'Uploader:': '上传者：',
         Information: '信息',
+        Modify: '修改',
         Expunged: '已删除',
+        Comments: '备注',
 
         'There are no torrents for this gallery.': '当前图库还没有种子',
         'There are no up-to-date torrents for this gallery.': '当前图库没有最新的种子',
@@ -45,6 +47,7 @@ merge(
             '请注意，您必须在上传后从此站点下载已完成的种子，以便记录统计信息。',
         'Upload Torrent': '上传种子',
         'Close Window': '关闭窗口',
+        'Delete Torrent': '删除种子',
 
         Posted: '发布于',
         DLers: '下载',
@@ -56,6 +59,13 @@ merge(
         'No comments were given for this torrent.': '此种子没有评论',
         'Vote to Expunge': '投票删除',
         'Back to Index': '返回',
+
+        'Your torrent was successfully uploaded and processed.': '您的种子已上传并处理完毕。',
+        'Note that you should now download and use the personalized torrent from this site to seed the torrent. If you do not use this torrent for seeding, it will not count against your uploading and seeding statistics.': '请注意：您现在需要下载并使用本页面提供的私有种子进行做种。若未使用此种子做种，您的上传与做种数据将不会计入统计。',
+        'Change display name or comment for this torrent': '修改种子显示名称或备注',
+        'Add more torrents or list torrents for this gallery.': '列出当前图库的种子或为当前图库上传更多种子',
+        'The personalized torrent file will start downloading momentarily.': '私有种子即将开始下载',
+        'Please wait...': '请稍侯...',
     },
     [
         [/^Showing ([\d,]+)-([\d,]+) of ([\d,]+)$/, '$1 - $2，共 $3 个结果'],

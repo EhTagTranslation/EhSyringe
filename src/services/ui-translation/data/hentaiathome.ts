@@ -52,7 +52,7 @@ merge(
         Trust: '信任',
         Hitrate: '命中率',
         Hathrate: 'Hath 产出率',
-        Country: '国家/地区',
+        Region: '地区',
 
         Online: '在线',
         Offline: '离线',
@@ -91,12 +91,12 @@ merge(
         'Your application is pending. You can still make changes below if necessary.':
             '您的申请正在等待处理。如有必要，您仍可以在下方修改申请。',
 
-        'If the auto-detected country is wrong, ': '如果自动检测的国家/地区错误，请',
+        'If the auto-detected region is wrong, ': '如果自动检测的地区错误，请',
         ' to have an override applied. Include the correct country, client ID and IP address in your message, and ':
             '以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
         'make sure to keep your client running': '确保您的客户端保持运行',
-        '. Having a client set to the wrong country will cause a variety of issues, and makes it perform worse than it would otherwise do.':
-            '。将客户端设置为错误的国家/地区会导致各种问题，并使其性能表现不如预期。',
+        '. Having a client set to the wrong region will cause a variety of issues, and makes it perform worse than it would otherwise do.':
+            '。将客户端设置为错误的地区会导致各种问题，并使其性能表现不如预期。',
 
         'Free Archive Quota: ': '免费的存档配额：',
         ', measured in a 168-hour sliding window. Clients must be ':
