@@ -95,7 +95,7 @@ merge(
         ' to have an override applied. Include the correct country, client ID and IP address in your message, and ':
             '以进行更改。在消息中包含正确的国家/地区、客户端 ID 和 IP 地址，并',
         'make sure to keep your client running': '确保您的客户端保持运行',
-        '. Having a client set to the wrong region will cause a variety of issues, and makes it perform worse than it would otherwise do.':
+        '. Having a client placed in the wrong region will cause a variety of issues, and makes it perform worse than it would otherwise do.':
             '。将客户端设置为错误的地区会导致各种问题，并使其性能表现不如预期。',
 
         'Free Archive Quota: ': '免费的存档配额：',

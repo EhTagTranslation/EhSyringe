@@ -1,4 +1,6 @@
 export const BROWSING_COUNTRY = {
+    'North America': 'North America (北美洲)',
+
     Afghanistan: 'Afghanistan (阿富汗)',
     'Aland Islands': 'Aland Islands (奥兰群岛)',
     Albania: 'Albania (阿尔巴尼亚)',
