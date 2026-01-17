@@ -20,7 +20,7 @@ function isElement<K extends keyof HTMLElementTagNameMap | undefined = undefined
 }
 
 function isText(node: Node | undefined): node is Text {
-    return node != null && node.nodeType === Node.TEXT_NODE;
+    return node?.nodeType === Node.TEXT_NODE;
 }
 
 function childNodes(node: Node): Node[] {
@@ -430,7 +430,7 @@ export class Syringe {
         if (
             this.isWiki &&
             ((isElement(node, 'h1') && node.id === 'firstHeading') ||
-                (isElement(node, 'a') && node.href.includes('://ehwiki.org/')))
+                (isElement(node, 'a') && new URL(node.href).hostname === 'ehwiki.org'))
         ) {
             if (node.className.startsWith('oo-ui-')) {
                 // 不翻译搜索框
