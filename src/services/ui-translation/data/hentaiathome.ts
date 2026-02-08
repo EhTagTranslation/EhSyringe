@@ -157,8 +157,6 @@ merge(
         'Maximum Upload Rate': '最大上传速率',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
-        // 'Static Range allocation is limited to 1 per 5 KB/s. Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
-        //     '每 1 组静态范围至少 5 KB/s。如果设置低于 10 MB/s，则不会被分配到大容量范围。',
         'Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
             '如果设置低于 10 MB/s，则不会被分配到大容量范围。',
         ' KBytes/s': ' KB/s',
@@ -213,6 +211,8 @@ merge(
             '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
         'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
             '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
+        'No ranges are assigned yet. The client must run for at least 24 hours continuously before any ranges are assigned.':
+            '尚未分配任何范围。客户端必须连续运行至少 24 小时，才会分配范围。',
         'The following ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',

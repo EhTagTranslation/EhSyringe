@@ -7,10 +7,10 @@ merge(
         'The Hath Exchange': 'Hath 交易',
         'The GP Exchange': 'GP 交易',
 
-        'Last 8 Hours (per kGP)': '最近 8 小时 (每 kGP)',
-        'Last 24 Hours (per kGP)': '最近 24 小时 (每 kGP)',
-        'Last 8 Hours (per Hath)': '最近 8 小时 (每 Hath)',
-        'Last 24 Hours (per Hath)': '最近 24 小时 (每 Hath)',
+        'Last 8 Hours (Credits per 1000 GP)': '最近 8 小时 (Credits/kGP)',
+        'Last 24 Hours (Credits per 1000 GP)': '最近 24 小时 (Credits/kGP)',
+        'Last 8 Hours (Credits per Hath)': '最近 8 小时 (Credits/Hath)',
+        'Last 24 Hours (Credits per Hath)': '最近 24 小时 (Credits/Hath)',
 
         'Buy Hath': '买进 Hath',
         'Sell Hath': '卖出 Hath',
@@ -23,12 +23,12 @@ merge(
         'Insufficient GP': 'GP 不足',
 
         '\n\t\t\t\tCount: ': '数量：',
-        ' Hath \xA0\n\t\t\t\tBid Price/Hath: ': ' Hath \xA0 买入单价：',
-        ' Hath \xA0\n\t\t\t\tAsk Price/Hath: ': ' Hath \xA0 卖出单价：',
+        ' Hath \xA0\n\t\t\t\tBid Price per Hath: ': ' Hath \xA0 买入单价：',
+        ' Hath \xA0\n\t\t\t\tAsk Price per Hath: ': ' Hath \xA0 卖出单价：',
         'Buy Hath!': '买进 Hath',
         'Sell Hath!': '卖出 Hath',
-        ' kGP \xA0\n\t\t\t\tBid Price/kGP: ': ' kGP \xA0 买入单价：',
-        ' kGP \xA0\n\t\t\t\tAsk Price/kGP: ': ' kGP \xA0 卖出单价：',
+        ' kGP \xA0\n\t\t\t\tBid Price per kGP: ': ' kGP \xA0 买入单价：',
+        ' kGP \xA0\n\t\t\t\tAsk Price per kGP: ': ' kGP \xA0 卖出单价：',
         'Buy GP!': '买进 GP',
         'Sell GP!': '卖出 GP',
 

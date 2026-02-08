@@ -11,7 +11,7 @@
     "engines": {
         "node": "^22.11.0 || ^24.2.0"
     },
-    "packageManager": "pnpm@10.28.0",
+    "packageManager": "pnpm@10.29.1",
     "license": "MIT",
     "bugs": "https://github.com/EhTagTranslation/EhSyringe/issues",
     "homepage": "https://github.com/EhTagTranslation/EhSyringe",
@@ -40,7 +40,7 @@
         "@eslint/js": "^9.39.2",
         "@types/chrome": "^0.1.36",
         "@types/escape-html": "^1.0.4",
-        "@types/node": "^25.2.1",
+        "@types/node": "^25.2.2",
         "@types/tampermonkey": "^5.0.5",
         "@types/webextension-polyfill": "^0.12.4",
         "@webextension-toolbox/webpack-webextension-plugin": "^3.3.1",
