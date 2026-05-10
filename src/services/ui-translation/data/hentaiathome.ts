@@ -176,7 +176,6 @@ merge(
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.':
             '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现的越好。保留空间必须始终可用。',
-        'Static Range allocation is limited to 1 per 250 MiB.': '静态范围分配限制为每 250 MiB 磁盘空间 1 组。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
         'To reduce the disk space for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端所需的磁盘空间需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
@@ -246,17 +245,18 @@ merge(
             /^This is the maximum speed the client can use to serve files, measured in kilobytes per second. Must be at least ([\d.]+) ([KMGTP]B)\/s. Actual utilization will be at most 80% of this over time.$/,
             '这是客户端可以用来提供文件的最大速度，以每秒千字节为单位。必须至少为 $1 $2/s。随着时间的推移，利用率最多会达到此值的 80%。',
         ],
+        [/^Static Range allocation is limited to 1 per ([\d.]+) MiB\.$/, '静态范围分配限制为每 $1 MiB 磁盘空间 1 组。'],
         [
-            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 250 MiB of disk space, so you cannot reduce it below ([\d.]+) GiB without removing ranges.$/,
-            '此客户端已分配 $1 组静态范围。每组需要至少 250 MiB 磁盘空间，所以您无法减少至低于 $2 GiB，除非移除静态范围。',
+            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least ([\d.]+) MiB of disk space, so you cannot reduce it below ([\d.]+) GiB without removing ranges.$/,
+            '此客户端已分配 $1 组静态范围。每组需要至少 $2 MiB 磁盘空间，所以您无法减少至低于 $3 GiB，除非移除静态范围。',
         ],
         [
-            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 5 KB\/s of upload rate, so you cannot reduce it below ([\d.]+) KB\/s without removing ranges.$/,
-            '此客户端已分配 $1 组静态范围。每组需要至少 5 KB/s 上传速率，所以您无法减少至低于 $2 KB/s，除非移除静态范围。',
+            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least ([\d.]+) KB\/s of upload rate, so you cannot reduce it below ([\d.]+) KB\/s without removing ranges.$/,
+            '此客户端已分配 $1 组静态范围。每组需要至少 $2 KB/s 上传速率，所以您无法减少至低于 $3 KB/s，除非移除静态范围。',
         ],
         [
-            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least 5 GB of monthly data transfer, so you cannot reduce it below ([\d.]+) GB without removing ranges.$/,
-            '此客户端已分配 $1 组静态范围。每组需要至少 5 GB 的每月数据流量，所以您无法减少至低于 $2 GB，除非移除静态范围。',
+            /^This client currently has ([\d.]+) static ranges assigned. Each requires at least ([\d.]+) GB of monthly data transfer, so you cannot reduce it below ([\d.]+) GB without removing ranges.$/,
+            '此客户端已分配 $1 组静态范围。每组需要至少 $2 GB 的每月数据流量，所以您无法减少至低于 $3 GB，除非移除静态范围。',
         ],
         [
             /^This client currently has ([\d.]+) high-capacity ranges assigned. Clients with high-capacity ranges cannot have a data transfer limit set below ([\d.]+) TB\/month.$/,
