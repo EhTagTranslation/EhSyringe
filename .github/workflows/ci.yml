@@ -24,7 +24,7 @@ jobs:
             README.userscript.md
             LICENSE
       - name: Install
-        uses: wyvox/action-setup-pnpm@v3
+        uses: wyvox/action-setup-pnpm@v4
       - name: Download crx key
         if: github.event_name == 'push'
         run: echo "${{ secrets.CRX_KEY }}" > key.pem
