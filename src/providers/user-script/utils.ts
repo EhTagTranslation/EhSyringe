@@ -1,3 +1,4 @@
+/// <reference types="tampermonkey" />
 import type { NotificationInfo } from '../common/notification';
 import type { Badge } from '../common/badge';
 

@@ -1,3 +1,4 @@
+/// <reference types="chrome" />
 import { Service } from 'typedi';
 import { Logger } from 'services/logger';
 import { openInTab } from 'providers/utils';

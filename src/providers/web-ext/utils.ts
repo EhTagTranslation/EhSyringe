@@ -1,3 +1,4 @@
+/// <reference types="chrome" />
 import type { NotificationInfo } from '../common/notification';
 import type { Badge } from 'providers/common/badge';
 import { packageJson } from 'info';

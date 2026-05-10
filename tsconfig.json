@@ -3,9 +3,11 @@
     "compilerOptions": {
         "target": "ES2020",
         "module": "ESNext",
-        "moduleResolution": "Node",
-        "baseUrl": "src",
+        "moduleResolution": "Bundler",
         "resolveJsonModule": true,
+        "paths": {
+            "*": ["./src/*"]
+        },
         "outDir": "./dist/",
         "sourceMap": true,
         "esModuleInterop": true,

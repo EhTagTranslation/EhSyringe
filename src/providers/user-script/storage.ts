@@ -1,3 +1,4 @@
+/// <reference types="tampermonkey" />
 import type { Storage, ListenerId, SyncStorage, Listener } from '../common/storage';
 import { get, set, del, keys, createStore } from 'idb-keyval';
 import type { JsonValue } from 'type-fest';
@@ -74,52 +75,32 @@ class AsyncPolyfill implements Storage {
     }
 }
 
+function runAsync<T>(f: () => T): Promise<T> {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            try {
+                resolve(f());
+            } catch (ex) {
+                reject(ex instanceof Error ? ex : new Error(String(ex)));
+            }
+        });
+    });
+}
+
 class GmAsyncStorage implements Storage {
     get(key: string): Promise<JsonValue | undefined> {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                try {
-                    resolve(parse(GM_getValue(key)));
-                } catch (ex) {
-                    reject(ex as Error);
-                }
-            });
-        });
+        return runAsync(() => parse(GM_getValue(key)));
     }
     set(key: string, value: JsonValue): Promise<void> {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                try {
-                    GM_setValue(key, serialize(value));
-                    resolve();
-                } catch (ex) {
-                    reject(ex as Error);
-                }
-            });
-        });
+        return runAsync(() => GM_setValue(key, serialize(value)));
     }
     delete(key: string): Promise<void> {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                try {
-                    GM_deleteValue(key);
-                    resolve();
-                } catch (ex) {
-                    reject(ex as Error);
-                }
-            });
-        });
+        return runAsync(() => GM_deleteValue(key));
     }
     keys(): Promise<string[]> {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                try {
-                    const ks = GM_listValues();
-                    resolve(ks.filter((k) => !k.startsWith(syncMark)));
-                } catch (ex) {
-                    reject(ex as Error);
-                }
-            });
+        return runAsync(() => {
+            const ks = GM_listValues();
+            return ks.filter((k) => !k.startsWith(syncMark));
         });
     }
     on(key: string, listener: Listener): ListenerId {

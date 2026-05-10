@@ -1,3 +1,4 @@
+/// <reference types="chrome" />
 import type { Menu } from '../common/menu';
 import type { Menus } from 'webextension-polyfill';
 export * from '../common/menu';

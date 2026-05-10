@@ -1,3 +1,4 @@
+/// <reference types="chrome" />
 import { Messaging } from '../common/messaging';
 
 type Res = { handlers: number; data?: unknown; error?: Error };
