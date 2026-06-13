@@ -45,7 +45,7 @@
             "run_at": "document_start"
         }
     ],
-    "permissions": ["activeTab", "notifications", "storage", "contextMenus"],
+    "permissions": ["activeTab", "notifications", "storage", "unlimitedStorage", "contextMenus"],
     "host_permissions": [
         "*://exhentai.org/*",
         "*://exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/*",
