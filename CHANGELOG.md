@@ -2,6 +2,10 @@
 
 ## 3.4.7
 
+- [WebExtension] 修复存储限制问题 [#1352](https://github.com/EhTagTranslation/EhSyringe/issues/1352)
+
+## 3.4.7
+
 - 更新翻译
 
 ## 3.4.6
