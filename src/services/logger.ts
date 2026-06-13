@@ -21,6 +21,6 @@ export class Logger {
             label,
             log: (console.timeLog || console.log).bind(console, pLabel),
             end: console.timeEnd.bind(console, pLabel),
-        } as Timer;
+        };
     };
 }

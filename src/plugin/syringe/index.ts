@@ -486,7 +486,7 @@ export class Syringe {
             elTrans.id = tag;
             elTrans.classList.add('ehs-new-tag-complete-translate');
             node.appendChild(elTrans);
-            ref = TagNodeRef.create(elTrans, this) as TagNodeRef;
+            ref = TagNodeRef.create(elTrans, this);
         } else if (!isText(node) || !parentElement) {
             return false;
         } else if (TagNodeRef.attached(node)) {
