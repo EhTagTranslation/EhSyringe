@@ -1,6 +1,6 @@
 # 更新日志
 
-## 3.4.7
+## 3.4.8
 
 - [WebExtension] 修复存储限制问题 [#1352](https://github.com/EhTagTranslation/EhSyringe/issues/1352)
 
