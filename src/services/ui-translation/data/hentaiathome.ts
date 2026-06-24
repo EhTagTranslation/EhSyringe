@@ -13,11 +13,11 @@ merge(
         Coverage: '覆盖率',
         'Hits/GB': '命中/GB',
         Quality: '质量',
-        'North and South America': '北美洲和南美洲',
-        'Europe and Africa': '欧洲和非洲',
-        'Asia and Oceania': '亚洲和大洋洲',
-        'Chinese Dominion': '中国大陆',
-        Global: '全球',
+        'North and South America': 'North and South America （北美洲和南美洲）',
+        'Europe and Africa': 'Europe and Africa (欧洲和非洲)',
+        'Asia and Oceania': 'Asia and Oceania (亚洲和大洋洲)',
+        Global: 'Global (全球)',
+        ...BROWSING_COUNTRY,
 
         '\n\tHits/GB shows the current average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
             '命中/GB 表示当前此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
