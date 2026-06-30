@@ -156,10 +156,10 @@ importers:
         version: 5.3.0
       webpack-cli:
         specifier: ^7.0.3
-        version: 7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.4)(webpack@5.107.2)
+        version: 7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.5)(webpack@5.107.2)
       webpack-dev-server:
-        specifier: ^5.2.4
-        version: 5.2.4(tslib@2.8.1)(webpack-cli@7.0.3)(webpack@5.107.2)
+        specifier: ^5.2.5
+        version: 5.2.5(tslib@2.8.1)(webpack-cli@7.0.3)(webpack@5.107.2)
       yaml-loader:
         specifier: ^0.9.0
         version: 0.9.0
@@ -1175,50 +1175,50 @@ packages:
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-core@4.57.7':
-    resolution: {integrity: sha512-GDKuYHjP7vAI1kjBo73V+STKr9XIMZknW/xirpRW/EcShX0IKSev/ALafeRfC8Q331nodrXUFu04PugPB0MAhw==}
+  '@jsonjoy.com/fs-core@4.57.8':
+    resolution: {integrity: sha512-YzVbwggV9452VCeHgo0bjsTaUt1O7JE0XpEsPar93nn/+RAwXk0mb1Y+f5EDJ3TRtRCFe+Ck5RuojdfB4jeHVw==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-fsa@4.57.7':
-    resolution: {integrity: sha512-1rWsah2nZtRbNeP+c61QcfGfVrJXBmBD0Hm7Akvv4C9MKEasXnbiOS//iH3T3HwUSSBATGrfSp0Xi8nlNhATeQ==}
+  '@jsonjoy.com/fs-fsa@4.57.8':
+    resolution: {integrity: sha512-vmClyvCQMxgqz7uamDiGtRfp4MjzOznk3pcQjCxlIwJcw7TWeyr+bF30hI0x8NxdtNOGMg1pHM74VDIXOeyjuw==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-node-builtins@4.57.7':
-    resolution: {integrity: sha512-LWqfY1m+uAosjwM1RrKhMkUnP9jcq1RUczHsNO779ovm1E9v8I/pmj04eBAcoBjhC7ltcPbNFGyRJ5JqSJ7Jdg==}
+  '@jsonjoy.com/fs-node-builtins@4.57.8':
+    resolution: {integrity: sha512-mxXSXw8zZwRVakcjLqR2I/psy4gURFSASZS10kKJ2kJw05GC2nXGroGrWVHxwgkxXgQLsFQnB74QaLzsxzdL/w==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-node-to-fsa@4.57.7':
-    resolution: {integrity: sha512-9T0zC9LKcAWXDoTLRdLMoJ0seOvJ5bgDKq1tSBoQAFQpPDstQUeV1Oe7PLypdu7F2D3ddRstmwgeNUEN/VaZ4Q==}
+  '@jsonjoy.com/fs-node-to-fsa@4.57.8':
+    resolution: {integrity: sha512-AWZcT/4+H+iDl4XCukbXrarvwEgOrf/prFI5/7eg4ix9FxqVsZysIDJd1Kjd+AjlCeHKHJOaRqjLd5HiGSCJEw==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-node-utils@4.57.7':
-    resolution: {integrity: sha512-jjWSDOsfcog2cZnUCwX5AHmlIq6b6wx5Pz/2LAcNjJ62Rajwg89Fy7ubN+lDHew0/1reLDa9Z5urybYadhh37g==}
+  '@jsonjoy.com/fs-node-utils@4.57.8':
+    resolution: {integrity: sha512-E/bJ7sQAb4pu9nbeJhbULU3WnqWrswte4N9Js/oHt7aHB746S8/XBqKlcbrqIgnD3095XluovNEZuu5ONT230g==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-node@4.57.7':
-    resolution: {integrity: sha512-xhnyeyEVTiIOibFvda/5n89nChMLCPKHHM2WQ+GGDf6+U/IrQBW3Qx6x+Uq1bkDbxBkybLOdIGoBtVBrE8Nngg==}
+  '@jsonjoy.com/fs-node@4.57.8':
+    resolution: {integrity: sha512-IPEOlDYSnTDYpjQlQg2F8h+eqxKQN3sdbroI0WrteRiQZ462HzVpBo9ZZX485njz4nAacoe3fd4iDiIhk+k5Hg==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-print@4.57.7':
-    resolution: {integrity: sha512-mFM4P4Gjq0QQHkLnXzPYPEMFrAoe6a5Myedgb6+CmL+nGd3MKvTxYPuD7N1dLIH9RBy1fLdzxd80qvuK8xrx3Q==}
+  '@jsonjoy.com/fs-print@4.57.8':
+    resolution: {integrity: sha512-DfzhOBpmvNu5P/KSe4NNQaOnvNliTdcf0qrh/4EReErF/XUQXYkd0vZl/OiJCm/qjEEo8DWRstliw2/JNS84dA==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
 
-  '@jsonjoy.com/fs-snapshot@4.57.7':
-    resolution: {integrity: sha512-1GS3+plfm2giB3PqokiqyydyqYTPLcCQIKSkp0TdMNRh3KVk7rqRM6U785FLlVRG7XLmkc0KWr215OY+22K3QA==}
+  '@jsonjoy.com/fs-snapshot@4.57.8':
+    resolution: {integrity: sha512-L+eqKaWOHLDaiMv1dh/EWQ4hA+o6xAhWSumTo3Teg7OM18jU/KE13/e8Mfal+eAZ/pSl4wIhKHcDiwapJzC8Wg==}
     engines: {node: '>=10.0'}
     peerDependencies:
       tslib: '2'
@@ -1762,8 +1762,8 @@ packages:
     resolution: {integrity: sha512-3grm+/2tUOvu2cjJkvsIxrv/wVpfXQW4PsQHYm7yk4vfpu7Ekl6nEsYBoJUL6qDwZUx8wUhQ8tR2qz+ad9c9OA==}
     engines: {node: '>= 0.8', npm: 1.2.8000 || >= 1.4.16}
 
-  bonjour-service@1.4.1:
-    resolution: {integrity: sha512-9KM4QMPKnaJqaja1v7gYO/+TXZGLtzPA05NmUTqDAJjcsWeVoOXKMvU9g0gfuuoYTQqJZ924hivICd5R/bCJbA==}
+  bonjour-service@1.4.2:
+    resolution: {integrity: sha512-lMskhnsW70yWHr4PhPeh2rvaIkLSaDpp+nmtbXBZaNKTXwxL73QOkW6HhbzqTImXjevn9TreGT4GACGBCGP9nQ==}
 
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
@@ -2581,7 +2581,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -2666,8 +2666,8 @@ packages:
   http-parser-js@0.5.10:
     resolution: {integrity: sha512-Pysuw9XpUq5dVc/2SMHpuTY01RFl8fttgcyunjL7eEMhGM3cI4eOmiCycJDVCo/7O7ClfQD3SaI6ftDzqOXYMA==}
 
-  http-proxy-middleware@2.0.9:
-    resolution: {integrity: sha512-c1IyJYLYppU574+YI7R4QyX2ystMtVXZwIdzazUIPIJsHuWNd+mho2j+bKoHftndicGj9yh+xjd+l0yj7VeT1Q==}
+  http-proxy-middleware@2.0.10:
+    resolution: {integrity: sha512-RKzRWNPxUZqbuk3BC5mGVJbBnWgr+diEnjJexIOytFbBzDy88Fbh/YvBr3DsNrl1jYAfjWfpATEv0NO35FDuPQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@types/express': ^4.17.13
@@ -3115,8 +3115,8 @@ packages:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
 
-  memfs@4.57.7:
-    resolution: {integrity: sha512-YZPphUQZSRGk6ddPlsNuMbztrLwsbUATFNZcqKscSbSJZ4g0+Y3vSZLJ/rfnGZaB1FFhC7SrywZXev6i8lnHgg==}
+  memfs@4.57.8:
+    resolution: {integrity: sha512-bApYhn8BLpFAnAQmFfEl/NPN+8qx5Ar3V4Qt3ek23mVwBEElzV7c6XoPkb/PCG8ZFpowCEpHcPwMFTwHS7tSMA==}
     peerDependencies:
       tslib: '2'
 
@@ -3855,8 +3855,8 @@ packages:
     resolution: {integrity: sha512-KTqnxsgGiQ6ZAzZCVlJH5eOjSnvlyEgx1m8bkRJfOhmGRqfo5KLvmAlACQkrjEtOQ4B7wF9TdSLIs9O90MX9xA==}
     engines: {node: '>=16.0.0'}
 
-  qs@6.15.2:
-    resolution: {integrity: sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==}
+  qs@6.15.3:
+    resolution: {integrity: sha512-O9gl3zCl5h5blw1KGUzQKhA5oUXSl8rwUIM5o0S3nCXMliSvy5Dzx7/DJcI+SwgICv+IneSZwhBh1oSyEHA71A==}
     engines: {node: '>=0.6'}
 
   quick-format-unescaped@4.0.4:
@@ -3864,6 +3864,10 @@ packages:
 
   range-parser@1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
+    engines: {node: '>= 0.6'}
+
+  range-parser@1.3.0:
+    resolution: {integrity: sha512-hek2mFQpPuI4E1BBKrSto+BU3e3x4xuarsbiwr3+lf7p44juvFMV0XFWQAP3xUyqXA4RrXLIoaSUGbSt056ZMw==}
     engines: {node: '>= 0.6'}
 
   raw-body@2.5.3:
@@ -4065,8 +4069,8 @@ packages:
   shell-quote@1.7.3:
     resolution: {integrity: sha512-Vpfqwm4EnqGdlsBFNmHhxhElJYrdfcxPThu+ryKS5J8L/fhAwLazFZtq+S+TWZ9ANj2piSQLGj6NQg+lKPmxrw==}
 
-  shell-quote@1.8.4:
-    resolution: {integrity: sha512-VsC6n6vz1ihYYyZZwX7YZSF5l5x36ca17OC+a69h94YqB7X6XLwf+5MOgynYir2SLFUbl8gIYvBo8K8RoNQ6bQ==}
+  shell-quote@1.9.0:
+    resolution: {integrity: sha512-Iov+JwFv/2HcTpcwNMKd8+IWNb8tboQJNQTkAY/LLVK7gGH9jy+LGkVqPxfekHl+yMmiqXszdGWXgkfml7hjqA==}
     engines: {node: '>= 0.4'}
 
   side-channel-list@1.0.1:
@@ -4463,6 +4467,7 @@ packages:
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   vary@1.1.2:
@@ -4519,8 +4524,8 @@ packages:
       webpack:
         optional: true
 
-  webpack-dev-server@5.2.4:
-    resolution: {integrity: sha512-GqDPGZN9bRqKBTkp4aWkobDDHMsrXKoGSdOH56smIri8qR0JG8gfL8/v/f/OZR3/OKXjG8uwJbFVhKm/FNU/UA==}
+  webpack-dev-server@5.2.5:
+    resolution: {integrity: sha512-4wZtCquSuv9CKX8oybo+mqxtxZqWz47uM1Ch94lxowBztOhWCbhqvRbfC/mODOwxgV2brY+JGZpHq58/SuVFYg==}
     engines: {node: '>= 18.12.0'}
     hasBin: true
     peerDependencies:
@@ -5865,58 +5870,58 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-core@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-core@4.57.8(tslib@2.8.1)':
     dependencies:
-      '@jsonjoy.com/fs-node-builtins': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-utils': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-builtins': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-utils': 4.57.8(tslib@2.8.1)
       thingies: 2.6.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-fsa@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-fsa@4.57.8(tslib@2.8.1)':
     dependencies:
-      '@jsonjoy.com/fs-core': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-builtins': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-utils': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-core': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-builtins': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-utils': 4.57.8(tslib@2.8.1)
       thingies: 2.6.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-node-builtins@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-node-builtins@4.57.8(tslib@2.8.1)':
     dependencies:
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-node-to-fsa@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-node-to-fsa@4.57.8(tslib@2.8.1)':
     dependencies:
-      '@jsonjoy.com/fs-fsa': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-builtins': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-utils': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-fsa': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-builtins': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-utils': 4.57.8(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-node-utils@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-node-utils@4.57.8(tslib@2.8.1)':
     dependencies:
-      '@jsonjoy.com/fs-node-builtins': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-builtins': 4.57.8(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-node@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-node@4.57.8(tslib@2.8.1)':
     dependencies:
-      '@jsonjoy.com/fs-core': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-builtins': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-utils': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-print': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-snapshot': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-core': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-builtins': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-utils': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-print': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-snapshot': 4.57.8(tslib@2.8.1)
       glob-to-regex.js: 1.2.0(tslib@2.8.1)
       thingies: 2.6.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-print@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-print@4.57.8(tslib@2.8.1)':
     dependencies:
-      '@jsonjoy.com/fs-node-utils': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-utils': 4.57.8(tslib@2.8.1)
       tree-dump: 1.1.0(tslib@2.8.1)
       tslib: 2.8.1
 
-  '@jsonjoy.com/fs-snapshot@4.57.7(tslib@2.8.1)':
+  '@jsonjoy.com/fs-snapshot@4.57.8(tslib@2.8.1)':
     dependencies:
       '@jsonjoy.com/buffers': 17.67.0(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-utils': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-utils': 4.57.8(tslib@2.8.1)
       '@jsonjoy.com/json-pack': 17.67.0(tslib@2.8.1)
       '@jsonjoy.com/util': 17.67.0(tslib@2.8.1)
       tslib: 2.8.1
@@ -6630,14 +6635,14 @@ snapshots:
       http-errors: 2.0.1
       iconv-lite: 0.4.24
       on-finished: 2.4.1
-      qs: 6.15.2
+      qs: 6.15.3
       raw-body: 2.5.3
       type-is: 1.6.18
       unpipe: 1.0.0
     transitivePeerDependencies:
       - supports-color
 
-  bonjour-service@1.4.1:
+  bonjour-service@1.4.2:
     dependencies:
       fast-deep-equal: 3.1.3
       multicast-dns: 7.2.5
@@ -7395,7 +7400,7 @@ snapshots:
       parseurl: 1.3.3
       path-to-regexp: 0.1.13
       proxy-addr: 2.0.7
-      qs: 6.15.2
+      qs: 6.15.3
       range-parser: 1.2.1
       safe-buffer: 5.2.1
       send: 0.19.2
@@ -7658,7 +7663,7 @@ snapshots:
 
   http-parser-js@0.5.10: {}
 
-  http-proxy-middleware@2.0.9(@types/express@4.17.25):
+  http-proxy-middleware@2.0.10(@types/express@4.17.25):
     dependencies:
       '@types/http-proxy': 1.17.17
       http-proxy: 1.18.1
@@ -7918,7 +7923,7 @@ snapshots:
   launch-editor@2.14.1:
     dependencies:
       picocolors: 1.1.1
-      shell-quote: 1.8.4
+      shell-quote: 1.9.0
 
   lazystream@1.0.1:
     dependencies:
@@ -8034,16 +8039,16 @@ snapshots:
 
   media-typer@0.3.0: {}
 
-  memfs@4.57.7(tslib@2.8.1):
+  memfs@4.57.8(tslib@2.8.1):
     dependencies:
-      '@jsonjoy.com/fs-core': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-fsa': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-builtins': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-to-fsa': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-node-utils': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-print': 4.57.7(tslib@2.8.1)
-      '@jsonjoy.com/fs-snapshot': 4.57.7(tslib@2.8.1)
+      '@jsonjoy.com/fs-core': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-fsa': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-builtins': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-to-fsa': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-node-utils': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-print': 4.57.8(tslib@2.8.1)
+      '@jsonjoy.com/fs-snapshot': 4.57.8(tslib@2.8.1)
       '@jsonjoy.com/json-pack': 1.21.0(tslib@2.8.1)
       '@jsonjoy.com/util': 1.9.0(tslib@2.8.1)
       glob-to-regex.js: 1.2.0(tslib@2.8.1)
@@ -8818,13 +8823,16 @@ snapshots:
 
   pvutils@1.1.5: {}
 
-  qs@6.15.2:
+  qs@6.15.3:
     dependencies:
+      es-define-property: 1.0.1
       side-channel: 1.1.1
 
   quick-format-unescaped@4.0.4: {}
 
   range-parser@1.2.1: {}
+
+  range-parser@1.3.0: {}
 
   raw-body@2.5.3:
     dependencies:
@@ -9041,7 +9049,7 @@ snapshots:
 
   shell-quote@1.7.3: {}
 
-  shell-quote@1.8.4: {}
+  shell-quote@1.9.0: {}
 
   side-channel-list@1.0.1:
     dependencies:
@@ -9474,7 +9482,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  webpack-cli@7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.4)(webpack@5.107.2):
+  webpack-cli@7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.5)(webpack@5.107.2):
     dependencies:
       '@discoveryjs/json-ext': 1.1.0
       commander: 14.0.3
@@ -9487,22 +9495,22 @@ snapshots:
       webpack-merge: 6.0.1
     optionalDependencies:
       webpack-bundle-analyzer: 5.3.0
-      webpack-dev-server: 5.2.4(tslib@2.8.1)(webpack-cli@7.0.3)(webpack@5.107.2)
+      webpack-dev-server: 5.2.5(tslib@2.8.1)(webpack-cli@7.0.3)(webpack@5.107.2)
 
   webpack-dev-middleware@7.4.5(tslib@2.8.1)(webpack@5.107.2):
     dependencies:
       colorette: 2.0.20
-      memfs: 4.57.7(tslib@2.8.1)
+      memfs: 4.57.8(tslib@2.8.1)
       mime-types: 3.0.2
       on-finished: 2.4.1
-      range-parser: 1.2.1
+      range-parser: 1.3.0
       schema-utils: 4.3.3
     optionalDependencies:
       webpack: 5.107.2(cssnano@8.0.2)(postcss@8.5.15)(webpack-cli@7.0.3)
     transitivePeerDependencies:
       - tslib
 
-  webpack-dev-server@5.2.4(tslib@2.8.1)(webpack-cli@7.0.3)(webpack@5.107.2):
+  webpack-dev-server@5.2.5(tslib@2.8.1)(webpack-cli@7.0.3)(webpack@5.107.2):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -9513,14 +9521,14 @@ snapshots:
       '@types/sockjs': 0.3.36
       '@types/ws': 8.18.1
       ansi-html-community: 0.0.8
-      bonjour-service: 1.4.1
+      bonjour-service: 1.4.2
       chokidar: 3.6.0
       colorette: 2.0.20
       compression: 1.8.1
       connect-history-api-fallback: 2.0.0
       express: 4.22.2
       graceful-fs: 4.2.11
-      http-proxy-middleware: 2.0.9(@types/express@4.17.25)
+      http-proxy-middleware: 2.0.10(@types/express@4.17.25)
       ipaddr.js: 2.4.0
       launch-editor: 2.14.1
       open: 10.2.0
@@ -9534,7 +9542,7 @@ snapshots:
       ws: 8.21.0
     optionalDependencies:
       webpack: 5.107.2(cssnano@8.0.2)(postcss@8.5.15)(webpack-cli@7.0.3)
-      webpack-cli: 7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.4)(webpack@5.107.2)
+      webpack-cli: 7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.5)(webpack@5.107.2)
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -9576,7 +9584,7 @@ snapshots:
       watchpack: 2.5.2
       webpack-sources: 3.5.0
     optionalDependencies:
-      webpack-cli: 7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.4)(webpack@5.107.2)
+      webpack-cli: 7.0.3(webpack-bundle-analyzer@5.3.0)(webpack-dev-server@5.2.5)(webpack@5.107.2)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@swc/core'
