@@ -53,13 +53,13 @@ merge(
         'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
         'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
         'New donations will typically show up here in less than two minutes. It will show as ':
-            '新的捐赠通常会在两分钟内显示在这里，但在被纳入一个区块并达到两个确认之前会处于',
-        '  until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. After it has been marked as ':
-            '直到它被包含在一个区块中并达到两次确认。此过程通常不到一小时，但在某些情况下可能需要更长时间。在它被标记为',
-        ', you still have to apply it below to make it take effect.': '时才能通过下方按钮完成捐赠。',
-        'No transactions in the past year.': '在过去一年内没有交易',
+            '新的捐赠通常会在两分钟内显示在这里，但它会显示为',
         Pending: '待定',
+        ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. After it has been marked as ':
+            '，直到它被包含在一个区块中并达到两次确认。这个过程通常不到一小时，但某些情况下可能需要更长时间。在它被标记为',
         Confirmed: '已确认',
+        ', you still have to apply it below to make it take effect.':
+            '后，你仍需要在下面应用它才能使其生效。',
         'Refresh List': '刷新列表',
 
         'Unspent: ': '未使用：',

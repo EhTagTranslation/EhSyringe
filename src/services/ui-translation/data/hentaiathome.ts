@@ -213,11 +213,11 @@ merge(
         'Reset Static Ranges': '重置静态范围',
         'Your client will be assigned ranges of files to cache and serve. This toggle clears these ranges. ':
             '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
-        'NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL CAUSE YOUR CLIENT TO BECOME REVOKED.':
+        'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL CAUSE YOUR CLIENT TO BECOME REVOKED.':
             '除非缓存丢失，否则请勿执行此操作。它无法修复客户端的其他任何问题。定期执行此操作将导致您的客户端被吊销。',
         'No ranges are assigned yet. The client must run for at least 24 hours continuously before any ranges are assigned.':
             '尚未分配任何范围。客户端必须连续运行至少 24 小时，才会分配范围。',
-        'The following ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
+        'The following priority ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',

@@ -205,7 +205,7 @@ merge(/^\/hathperks\.php/, undefined, {
     'Increases the equipment storage allowance to 1000 equips.': '将装备数量限制增加到 1000。',
 
     'Repair Bear Mk.1': '修理熊 Mk.1',
-    '	The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times, reducing effective equipment wear by half. Does not affect charms.':
+    'The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times, reducing effective equipment wear by half. Does not affect charms.':
         '作为莫古利动力学的最新发明，修理熊会随侍在侧，助您的装备随时保持良好状态，并将装备耗损程度减半。对护身符无效。',
     'Repair Bear Mk.2': '修理熊 Mk.2',
     'Further hones the skills of your Repair Bear, making it better at maintaining your equipment. Effective equipment wear is reduced to 25% of normal.':
@@ -214,7 +214,7 @@ merge(/^\/hathperks\.php/, undefined, {
     'Trains your Repair Bear to the penultimate level, making those pesky forge visits (almost) a distant memory. Effective equipment wear is reduced to 10% of normal.':
         '将您的修理熊培训至完全体，让那些烦人的锻造次数 (几乎) 成为遥远的记忆。有效装备耗损程度减少为正常值的 10%。',
     'Repair Bear Mk.4': '修理熊 Mk.4',
-    '	The pinnacle of Repair Bear Technology, providing the ultimate in-the-field preventive equipment maintenance. Equipment wear is fully eliminated, and equipment durability loss on defeat is cut by half.':
+    'The pinnacle of Repair Bear Technology, providing the ultimate in-the-field preventive equipment maintenance. Equipment wear is fully eliminated, and equipment durability loss on defeat is cut by half.':
         '修理熊科技的顶尖之作，提供实地预防性装备维护的终极方案。装备耗损完全消除，且被击败时的装备耐久度损耗减半。',
 
     'Dæmon Duality I': '双重守护精灵 I',
