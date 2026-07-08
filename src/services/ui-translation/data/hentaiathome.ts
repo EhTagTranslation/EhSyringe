@@ -13,10 +13,6 @@ merge(
         Coverage: '覆盖率',
         'Hits/GB': '命中/GB',
         Quality: '质量',
-        'North and South America': '北美洲和南美洲',
-        'Europe and Africa': '欧洲和非洲',
-        'Asia and Oceania': '亚洲和大洋洲',
-        'Chinese Dominion': '中国大陆',
         Global: '全球',
 
         '\n\tHits/GB shows the current average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
@@ -178,9 +174,10 @@ merge(
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.':
             '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现的越好。保留空间必须始终可用。',
-        'is committed': '已占用',
+        ' is ': ' 已',
+        committed: '占用',
         'This is the minimum disk space that has currently been claimed for the H@H cache. Reducing the maximum disk cache size below this value will require removing some static ranges, which will decrease the traffic to your client.':
-            '这是目前已为 H@H 缓存占用的最小磁盘空间。将最大磁盘缓存大小降低至此值以下，将需要移除部分静态范围，这会导致流向您客户端的流量减少。',
+            '这是 H@H 缓存当前占用的最小磁盘空间。如果将最大磁盘缓存大小减少到此值以下，则需要移除一些静态范围，这会导致客户端流量减少。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
         'To reduce the disk space for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端所需的磁盘空间需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',

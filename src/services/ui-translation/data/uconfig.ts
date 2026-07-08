@@ -19,9 +19,13 @@ merge(
             ' 否 [现代/HTTPS] (仅限捐赠者，配额消耗会加快，只有出现严重的问题时才启用)',
         ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)':
             ' 否 [传统/HTTP] (仅限捐赠者，可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用)',
+
+        'You appear to be located in ': '看起来您位于 ',
+        ', or use a VPN located there, and will default to load images from the ': '，或者使用了位于此处的 VPN，默认会从 ',
+        ' H@H Region.': ' H@H 区域加载图像。',
         'If this is incorrect, or you prefer using a different region for any reason (like if you are using a split tunneling VPN), select the desired region below.':
-            '如果结果不正确，或者您因任何原因（例如使用了分割隧道 VPN）倾向于使用其他区域，请在下方选择所需的区域。',
-        'H@H Region':'H@H 区域',
+            '如果此结果不正确，或者您希望通过其他地区的 H@H 客户端加载图像 (例如您正在使用分割隧道 VPN)，可以在下方选择一个不同的区域。',
+        '\n\t\tH@H Region: ': 'H@H 区域：',
         'Auto-Detect': '自动检测',
         ...BROWSING_COUNTRY,
 
@@ -205,12 +209,5 @@ merge(
         Apply: '应用',
         'Settings were updated': '设置更新完毕',
     },
-    [
-        [/ \(Default\)$/, ' (默认)'],
-    [
-        /^You appear to be located in <strong>(.+)<\/strong>, or use a VPN located there, and will default to load images from the <strong>(.+)<\/strong> H@H Region\.$/,
-        '您当前似乎位于 <strong>$1</strong>，或者使用了该地区的 VPN，因此将默认从 <strong>$2</strong> H@H 区域加载图像。'
-    ],
-],
-
+    [[/ \(Default\)$/, ' (默认)'],],
 );

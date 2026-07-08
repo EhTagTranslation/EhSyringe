@@ -111,7 +111,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Dark Descent': '黑暗后裔',
     "Increases the number of World Seeds dropped from higher-level arenas.":
-        '增加从高等级竞技场掉落的世界种子的数量。(20% → 50%）',
+        '增加 30% 从高等级竞技场掉落的世界种子的数量。',
 
     'Eminent Elementalist': '元素大师',
     'Increases effective Elemental Magic Proficiency by 10% of your natural base proficiency.':
