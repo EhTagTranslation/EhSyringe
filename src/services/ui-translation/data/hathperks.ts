@@ -111,7 +111,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Dark Descent': '黑暗后裔',
     "Increases the number of World Seeds dropped from higher-level arenas.":
-        '增加 30% 从高等级竞技场掉落的世界种子的数量。',
+        '高等级竞技场掉落的世界种子数量增加 30%。',
 
     'Eminent Elementalist': '元素大师',
     'Increases effective Elemental Magic Proficiency by 10% of your natural base proficiency.':
@@ -142,7 +142,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Limit Breaker I':'极限突破 I',
     'For those who believe that power is but a number; increases the equipment stat fusion cap to 210.': 
-        '献给那些相信力量只是一个数字的人；将装备属性融合上限提升至 210。',
+        '献给那些相信力量只是一个数字的人。将装备属性融合上限提升至 210。',
     'Limit Breaker II':'极限突破 II',
     'Further increases the equipment stat fusion cap to 220.': '进一步提高装备属性融合上限至 220。',
     'Limit Breaker III':'极限突破 III',
@@ -206,7 +206,7 @@ merge(/^\/hathperks\.php/, undefined, {
 
     'Repair Bear Mk.1': '修理熊 Mk.1',
     'The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times, reducing effective equipment wear by half. Does not affect charms.':
-        '作为莫古利动力学的最新发明，修理熊会随侍在侧，助您的装备随时保持良好状态，并将装备耗损程度减半。对护身符无效。',
+        '作为莫古利动力学的最新发明，修理熊会一路跟随您，帮助您随时维护装备，使装备的实际磨损降低一半。对护身符无效。',
     'Repair Bear Mk.2': '修理熊 Mk.2',
     'Further hones the skills of your Repair Bear, making it better at maintaining your equipment. Effective equipment wear is reduced to 25% of normal.':
         '进一步磨练您的修理熊的技巧，使它精于维护您的装备。有效装备耗损程度减少为正常值的 25%。',

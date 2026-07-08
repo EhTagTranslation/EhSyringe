@@ -1,5 +1,4 @@
 import { merge } from '../helper';
-import { BROWSING_COUNTRY } from './_browsingcountry';
 
 merge(
     /^\/hentaiathome\.php\??$/,
@@ -13,6 +12,17 @@ merge(
         Coverage: '覆盖率',
         'Hits/GB': '命中/GB',
         Quality: '质量',
+        'North and South America': '北美洲和南美洲',
+        'Europe and Africa': '欧洲和非洲',
+        'Asia and Oceania': '亚洲和大洋洲',
+
+        'Chinese Dominion': '中国大陆',
+        North: '北美洲',
+        South: '南美洲',
+        Europe: '欧洲',
+        Africa: '非洲',
+        Asia: '亚洲',
+        Oceania: '大洋洲',
         Global: '全球',
 
         '\n\tHits/GB shows the current average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
@@ -53,7 +63,6 @@ merge(
         Online: '在线',
         Offline: '离线',
         'Not available when offline': '离线状态下不可用',
-        ...BROWSING_COUNTRY,
 
         'Apply for H@H participation': '参与申请 H@H',
         'For information on how to participate in the Hentai@Home Project, refer to the ':

@@ -60,6 +60,7 @@ merge(
         Confirmed: '已确认',
         ', you still have to apply it below to make it take effect.':
             '后，你仍需要在下面应用它才能使其生效。',
+        'No transactions in the past year.': '过去一年没有交易记录。',
         'Refresh List': '刷新列表',
 
         'Unspent: ': '未使用：',
