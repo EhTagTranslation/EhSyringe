@@ -110,8 +110,8 @@ merge(/^\/hathperks\.php/, undefined, {
         '每天的第一瓶能量饮料恢复量加倍。',
 
     'Dark Descent': '黑暗后裔',
-    "Halve the required number of amnesia shards for reseting an item's potential.":
-        '重置装备潜能的重铸碎片所需数量减半。',
+    "Increases the number of World Seeds dropped from higher-level arenas.":
+        '增加高级竞技场掉落的世界种子数量。',
 
     'Eminent Elementalist': '元素大师',
     'Increases effective Elemental Magic Proficiency by 10% of your natural base proficiency.':
@@ -139,6 +139,18 @@ merge(/^\/hathperks\.php/, undefined, {
     'Follower of Snowflake': '雪花的信徒',
     'Displays your unyielding devotion to Snowflake, the Goddess of Loot and Harvest.':
         '雪花 ─ 专司战利品与收获的女神。宣示您对她不屈不挠的奉献精神。',
+
+    'Limit Breaker I': '极限突破 I',
+    'For those who believe that power is but a number; increases the equipment stat fusion cap to 210.': 
+        '对于那些认为力量不过是一个数字的人，将装备属性的融合上限提高至210。',
+    'Limit Breaker II': '极限突破 II',
+    'Further increases the equipment stat fusion cap to 220.': '进一步将装备属性融合上限提升至220。',
+    'Limit Breaker III': '极限突破 III',
+    'Further increases the equipment stat fusion cap to 230.': '进一步将装备属性融合上限提升至230。',
+    'Limit Breaker IV': '极限突破 IV',
+    'Further increases the equipment stat fusion cap to 240.': '进一步将装备属性融合上限提升至240。',
+    'Limit Breaker V': '极限突破 V',
+    'Further increases the equipment stat fusion cap to 250.': '进一步将装备属性融合上限提升至250。',
 
     'Thinking Cap': '深思',
     'Increases EXP gain by 25%. For calculation purposes, this bonus is added to the HentaiVerse training bonus.':
@@ -193,8 +205,8 @@ merge(/^\/hathperks\.php/, undefined, {
     'Increases the equipment storage allowance to 1000 equips.': '将装备数量限制增加到 1000。',
 
     'Repair Bear Mk.1': '修理熊 Mk.1',
-    'The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times. This reduces effective equipment wear by half.':
-        '莫古利动力学的最新发明，修理熊会随侍在侧帮助您的装备随时保持良好状态。有效装备耗损程度将减少一半。',
+    'The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times, reducing effective equipment wear by half. Does not affect charms.':
+        '莫古利动力学的最新发明，修理熊会随侍在侧帮助您的装备随时保持良好状态。有效装备耗损程度将减少一半。不影响护身符。',
     'Repair Bear Mk.2': '修理熊 Mk.2',
     'Further hones the skills of your Repair Bear, making it better at maintaining your equipment. Effective equipment wear is reduced to 25% of normal.':
         '进一步磨练您的修理熊的技巧，使它精于维护您的装备。有效装备耗损程度减少为正常值的 25%。',
@@ -202,7 +214,7 @@ merge(/^\/hathperks\.php/, undefined, {
     'Trains your Repair Bear to the penultimate level, making those pesky forge visits (almost) a distant memory. Effective equipment wear is reduced to 10% of normal.':
         '将您的修理熊培训至完全体，让那些烦人的锻造次数 (几乎) 成为遥远的记忆。有效装备耗损程度减少为正常值的 10%。',
     'Repair Bear Mk.4': '修理熊 Mk.4',
-    'The pinnacle of Repair Bear Technology, providing the ultimate in-the-field preventive equipment maintenance. Equipment wear is fully eliminated, and defeat durability loss is cut by half.':
+    'The pinnacle of Repair Bear Technology, providing the ultimate in-the-field preventive equipment maintenance. Equipment wear is fully eliminated, and equipment durability loss on defeat is cut by half.':
         '修理熊科技的顶尖之作，提供这门领域最高端的预防性装备维护技术。装备耗损完全消除，被击倒时的耐久度损耗减半。',
 
     'Dæmon Duality I': '双重守护精灵 I',
