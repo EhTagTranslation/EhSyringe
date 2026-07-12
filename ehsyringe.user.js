@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         EhSyringe
-// @version      3.4.8
+// @version      3.4.9
 // @author       EhTagTranslation
 // @description  E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 42000 条标签翻译，标签数据库持续更新中。
-// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@936cf310b4bc31ab93278a81aa86c8a797fa9a61/src/assets/logo.svg
+// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@cc6dec26707d11194aa47d0d58cac7bc887f0f00/src/assets/logo.svg
 // @license      MIT
 // @namespace    https://github.com/EhTagTranslation/EhSyringe
 // @homepage     https://github.com/EhTagTranslation/EhSyringe
@@ -38,7 +38,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 54719:
+/***/ 56045:
 /***/ ((module) => {
 
 "use strict";
@@ -130,7 +130,7 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ 20358:
+/***/ 67672:
 /***/ ((module) => {
 
 "use strict";
@@ -163,7 +163,7 @@ module.exports = function (url, options) {
 
 /***/ }),
 
-/***/ 63625:
+/***/ 97575:
 /***/ ((module) => {
 
 "use strict";
@@ -186,7 +186,7 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ 30774:
+/***/ 18511:
 /***/ ((module) => {
 
 "use strict";
@@ -267,127 +267,132 @@ function escapeHtml(string) {
 
 /***/ }),
 
-/***/ 89982:
+/***/ 71557:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63625);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54719);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97575);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56045);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `#gmid{display:grid;grid:"gd3 spa spa" auto "gd3 gd4 gd5" auto/auto 1fr auto}#gmid #gd3{grid-area:gd3}#gmid #spa{grid-area:spa;width:auto}#gmid #gd4{grid-area:gd4;width:auto}#gmid #gd5{grid-area:gd5;z-index:3;position:relative;min-width:150px}:root #ehs-introduce-box{position:absolute;top:0;right:-5px;bottom:0;left:0;overflow:auto;text-align:left;display:flex;flex-flow:column;border-radius:0 0 6px 0;background:#edebdf}:root #ehs-introduce-box .ehs-title{flex:none;margin:0 8px;border-bottom:1px solid #5c0d12;line-height:14px;padding:3px 0;display:flex;flex-direction:row}:root #ehs-introduce-box .ehs-title .ehs-cn{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title .ehs-en{opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title>div{overflow:hidden;flex:auto}:root #ehs-introduce-box .ehs-title>span{overflow:hidden;flex:none}:root #ehs-introduce-box .ehs-close{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;font-size:16px;opacity:.8;line-height:28px;width:20px;text-align:center}:root #ehs-introduce-box .ehs-close:hover{opacity:1}:root #ehs-introduce-box .ehs-close:after{content:"\\00d7"}:root #ehs-introduce-box .ehs-content{flex:auto;overflow:auto;margin:4px 0;padding:4px 8px;scrollbar-width:thin;scrollbar-color:#5c0d12 transparent}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar{width:4px;height:4px}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#5c0d12}:root #ehs-introduce-box .ehs-content abbr[title]{padding:0 1px}:root #ehs-introduce-box .ehs-content abbr[title]:after{content:" (" attr(title) ")";font-size:90%}:root #ehs-introduce-box .ehs-href{flex:none;border-top:1px solid #5c0d12;margin:0 8px;line-height:24px}:root #ehs-introduce-box .ehs-href:empty,:root #ehs-introduce-box:empty{display:none}:root #ehs-introduce-box img{max-width:100%;margin:0;width:auto;height:auto}:root.ehs-ex #ehs-introduce-box{background:#4f535b;border-radius:0}:root.ehs-ex #ehs-introduce-box .ehs-title{border-bottom:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-href{border-top:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-content{scrollbar-color:#000 transparent}:root.ehs-ex #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#000}.ehs-no-intro,.ehs-no-translation{opacity:.8}.ehs-no-intro h3,.ehs-no-translation h3{opacity:.6;text-align:center;font-size:16px;padding:8px;font-weight:700}:root.ehs-image-level-0 #ehs-introduce-box .ehs-content img,:root.ehs-image-level-1 #ehs-introduce-box .ehs-content img[nsfw],:root.ehs-image-level-2 #ehs-introduce-box .ehs-content img[nsfw=R18G]{display:none}`, "",{"version":3,"sources":["webpack://./src/plugin/introduce/index.less"],"names":[],"mappings":"AAAA,MACI,YAAA,CACA,wDACJ,CAHA,WAOQ,aADR,CANA,WAUQ,aAAA,CACA,UADR,CAVA,WAcQ,aAAA,CACA,UADR,CAdA,WAkBQ,aAAA,CACA,SAAA,CACA,iBAAA,CACA,eADR,CAKA,yBACI,iBAAA,CACA,KAAA,CAAA,UAAA,CAAA,QAAA,CAAA,MAAA,CACA,aAAA,CACA,eAAA,CACA,YAAA,CACA,gBAAA,CACA,uBAAA,CACA,kBAHJ,CALA,oCAUQ,SAAA,CACA,YAAA,CACA,+BAAA,CACA,gBAAA,CACA,aAAA,CACA,YAAA,CACA,kBAFR,CAdA,4CAmBY,eAAA,CACA,eAAA,CACA,sBAAA,CACA,kBAFZ,CApBA,4CAyBY,UAAA,CACA,eAAA,CACA,sBAAA,CACA,kBAFZ,CA1BA,wCAgCY,eAAA,CACA,SAHZ,CA9BA,yCAoCY,eAAA,CACA,SAHZ,CAlCA,oCAyCQ,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CACA,cAAA,CACA,cAAA,CACA,UAAA,CACA,gBAAA,CACA,UAAA,CACA,iBAJR,CAKQ,0CACI,SAHZ,CAKQ,0CACI,eAHZ,CAjDA,sCAwDQ,SAAA,CACA,aAAA,CACA,YAAA,CACA,eAAA,CACA,oBAAA,CACA,mCAJR,CAMQ,yDACI,SAAA,CACA,UAJZ,CAMQ,+DACI,kBAJZ,CAhEA,kDAuEY,aAJZ,CAKY,wDACI,4BAAA,CACA,aAHhB,CAvEA,mCA+EQ,SAAA,CACA,4BAAA,CACA,YAAA,CACA,gBALR,CAUI,wEACI,YALR,CAnFA,6BA2FQ,cAAA,CACA,QAAA,CACA,UAAA,CACA,WALR,CASA,gCACI,kBAAA,CACA,eAPJ,CAKA,2CAIQ,4BANR,CAEA,0CAOQ,yBANR,CADA,6CAUQ,gCANR,CAOQ,sEACI,eALZ,CAUA,kCAEI,UARJ,CAMA,wCAIQ,UAAA,CACA,iBAAA,CACA,cAAA,CACA,WAAA,CACA,eANR,CAsBA,qMAEQ,YAdR","sourcesContent":["#gmid {\n    display: grid;\n    grid:\n        'gd3 spa spa' auto\n        'gd3 gd4 gd5' auto\n        / auto 1fr auto;\n    #gd3 {\n        grid-area: gd3;\n    }\n    #spa {\n        grid-area: spa;\n        width: auto;\n    }\n    #gd4 {\n        grid-area: gd4;\n        width: auto;\n    }\n    #gd5 {\n        grid-area: gd5;\n        z-index: 3;\n        position: relative;\n        min-width: 150px;\n    }\n}\n\n:root #ehs-introduce-box {\n    position: absolute;\n    inset: 0 -5px 0 0;\n    overflow: auto;\n    text-align: left;\n    display: flex;\n    flex-flow: column;\n    border-radius: 0 0 6px 0;\n    background: #edebdf;\n    .ehs-title {\n        flex: none;\n        margin: 0 8px;\n        border-bottom: 1px solid #5c0d12;\n        line-height: 14px;\n        padding: 3px 0;\n        display: flex;\n        flex-direction: row;\n\n        .ehs-cn {\n            font-weight: bold;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n        .ehs-en {\n            opacity: 0.7;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n\n        > div {\n            overflow: hidden;\n            flex: auto;\n        }\n        > span {\n            overflow: hidden;\n            flex: none;\n        }\n    }\n    .ehs-close {\n        user-select: none;\n        cursor: pointer;\n        font-size: 16px;\n        opacity: 0.8;\n        line-height: 28px;\n        width: 20px;\n        text-align: center;\n        &:hover {\n            opacity: 1;\n        }\n        &::after {\n            content: '\\00d7';\n        }\n    }\n    .ehs-content {\n        flex: auto;\n        overflow: auto;\n        margin: 4px 0;\n        padding: 4px 8px;\n        scrollbar-width: thin;\n        scrollbar-color: #5c0d12 transparent;\n\n        &::-webkit-scrollbar {\n            width: 4px;\n            height: 4px;\n        }\n        &::-webkit-scrollbar-thumb {\n            background: #5c0d12;\n        }\n        abbr[title] {\n            padding: 0 1px;\n            &::after {\n                content: ' (' attr(title) ')';\n                font-size: 90%;\n            }\n        }\n    }\n    .ehs-href {\n        flex: none;\n        border-top: 1px solid #5c0d12;\n        margin: 0 8px;\n        line-height: 24px;\n        &:empty {\n            display: none;\n        }\n    }\n    &:empty {\n        display: none;\n    }\n    img {\n        max-width: 100%;\n        margin: 0;\n        width: auto;\n        height: auto;\n    }\n}\n\n:root.ehs-ex #ehs-introduce-box {\n    background: #4f535b;\n    border-radius: 0;\n    .ehs-title {\n        border-bottom: 1px solid #000;\n    }\n    .ehs-href {\n        border-top: 1px solid #000;\n    }\n    .ehs-content {\n        scrollbar-color: #000 transparent;\n        &::-webkit-scrollbar-thumb {\n            background: #000;\n        }\n    }\n}\n\n.ehs-no-translation,\n.ehs-no-intro {\n    opacity: 0.8;\n    h3 {\n        opacity: 0.6;\n        text-align: center;\n        font-size: 16px;\n        padding: 8px;\n        font-weight: bold;\n    }\n}\n\n//0:hide, 1:non-h 2: R18 3: R18G\n/* nsfw=\"R18\" */\n:root.ehs-image-level-0 #ehs-introduce-box .ehs-content {\n    img {\n        display: none;\n    }\n}\n:root.ehs-image-level-1 #ehs-introduce-box .ehs-content {\n    img[nsfw] {\n        display: none;\n    }\n}\n:root.ehs-image-level-2 #ehs-introduce-box .ehs-content {\n    img[nsfw='R18G'] {\n        display: none;\n    }\n}\n:root.ehs-image-level-3 {\n    // 所有都显示\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
 
 /***/ }),
 
-/***/ 12201:
+/***/ 62990:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63625);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54719);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97575);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56045);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `#eh-syringe-popup-root{text-align:left;text-align:initial;font-size:medium;line-height:normal}#eh-syringe-popup-root input,#eh-syringe-popup-root table,#eh-syringe-popup-root td,#eh-syringe-popup-root th{background:inherit;color:inherit;margin:0;padding:0}#eh-syringe-popup-root td,#eh-syringe-popup-root th{padding:1px}#eh-syringe-popup-root input{border:none;padding:0;margin:0;min-width:0}#eh-syringe-popup-root input[type=text]{border-radius:0;border-bottom:1px solid transparent}#eh-syringe-popup-root input[type=text].invalid,#eh-syringe-popup-root input[type=text]:invalid{border-color:#aa575e!important}#eh-syringe-popup-root input[type=checkbox],#eh-syringe-popup-root input[type=radio]{position:static;top:auto}#eh-syringe-popup-root p{padding:0;margin:.8em 0}#eh-syringe-popup-root a{background:transparent;transition:all .28s cubic-bezier(.4,0,.2,1) 0s;-webkit-text-decoration:none;text-decoration:none}#eh-syringe-popup{border:1px solid #8041a6;border-radius:6px;background:#f0f0f0;color:#111;box-shadow:0 0 6px 2px rgba(0,0,0,.2)}#eh-syringe-popup .action{background:#f0f0f0;color:#8041a6}#eh-syringe-popup .action.primary{border-color:#8041a6;background:#8041a6;color:#f0f0f0}#eh-syringe-popup .action.primary:hover{background:#491774}#eh-syringe-popup .action.primary:active{background:#ae79c9}#eh-syringe-popup #info{color:#8041a6}#eh-syringe-popup .hasNew{color:#79252b}#eh-syringe-popup a{color:#8041a6}#eh-syringe-popup a:hover{color:#491774}#eh-syringe-popup a:active{color:#ae79c9}#eh-syringe-popup a.minor{color:#a5a3a6}#eh-syringe-popup a.minor:hover{color:#d2cdd4}#eh-syringe-popup a.minor:active{color:#838185}#eh-syringe-popup .logo svg [fill-bg]{fill:#f0f0f0}#eh-syringe-popup .logo svg [fill-accent]{fill:#8041a6}#eh-syringe-popup .logo svg [fill-sa]{fill:#cfbadc}#eh-syringe-popup .logo svg [stroke-bg]{stroke:#f0f0f0}#eh-syringe-popup .logo svg [stroke-accent]{stroke:#8041a6}#eh-syringe-popup .logo svg [stroke-sa]{stroke:#cfbadc}#eh-syringe-popup #settingForm{scrollbar-color:#8041a6 transparent}#eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#8041a6}#eh-syringe-popup #settingForm input[type=text]{color:#8041a6;border-color:#ae79c9}#eh-syringe-popup #settingForm input[type=text]:focus{border-color:#8041a6}#eh-syringe-popup #settingForm input[type=text]::-ms-input-placeholder{opacity:.5;-webkit-text-fill-color:#ae79c9;color:#ae79c9}#eh-syringe-popup #settingForm input[type=text]::placeholder{opacity:.5;-webkit-text-fill-color:#ae79c9;color:#ae79c9}#eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}#eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #ae79c9}#eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#f0f0f0;border:2px solid #8041a6}#eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #8041a6;box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #8041a6;box-shadow:0 0 7px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{border:2px solid #8041a6;background:#fdfdfd;box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{border:2px solid #8041a6;background:#fdfdfd;box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup{border:1px solid #ce90f1;border-radius:6px;background:#313131;color:#eee;box-shadow:0 0 6px 2px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup .action{background:#313131;color:#ce90f1}:root.ehs-ex #eh-syringe-popup .action.primary{border-color:#ce90f1;background:#ce90f1;color:#313131}:root.ehs-ex #eh-syringe-popup .action.primary:hover{background:#e2b9f7}:root.ehs-ex #eh-syringe-popup .action.primary:active{background:#b669e9}:root.ehs-ex #eh-syringe-popup #info{color:#ce90f1}:root.ehs-ex #eh-syringe-popup .hasNew{color:#cb8d93}:root.ehs-ex #eh-syringe-popup a{color:#ce90f1}:root.ehs-ex #eh-syringe-popup a:hover{color:#e2b9f7}:root.ehs-ex #eh-syringe-popup a:active{color:#b669e9}:root.ehs-ex #eh-syringe-popup a.minor{color:#a5a3a6}:root.ehs-ex #eh-syringe-popup a.minor:hover{color:#d2cdd4}:root.ehs-ex #eh-syringe-popup a.minor:active{color:#838185}:root.ehs-ex #eh-syringe-popup .logo svg [fill-bg]{fill:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [fill-accent]{fill:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [fill-sa]{fill:#987ca8}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-bg]{stroke:#313131}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-accent]{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup .logo svg [stroke-sa]{stroke:#987ca8}:root.ehs-ex #eh-syringe-popup #settingForm{scrollbar-color:#ce90f1 transparent}:root.ehs-ex #eh-syringe-popup #settingForm .checkbox-item svg path{stroke:#ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=text]{color:#ce90f1;border-color:#b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=text]:focus{border-color:#ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=text]::-ms-input-placeholder{opacity:.5;-webkit-text-fill-color:#b669e9;color:#b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=text]::placeholder{opacity:.5;-webkit-text-fill-color:#b669e9;color:#b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]{border:2px solid #a09da6}:root.ehs-ex #eh-syringe-popup #settingForm input[type=checkbox]:checked{border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-runnable-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-track{border:1px solid #b669e9}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-webkit-slider-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]::-moz-range-thumb{background:#313131;border:2px solid #ce90f1}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-webkit-slider-thumb{border:2px solid #ce90f1;box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:focus::-moz-range-thumb{border:2px solid #ce90f1;box-shadow:0 0 7px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-webkit-slider-thumb{border:2px solid #ce90f1;background:#131313;box-shadow:0 0 7px 1px rgba(0,0,0,.2)}:root.ehs-ex #eh-syringe-popup #settingForm input[type=range]:active::-moz-range-thumb{border:2px solid #ce90f1;background:#131313;box-shadow:0 0 7px 1px rgba(0,0,0,.2)}#eh-syringe-popup-root{overflow:hidden;white-space:nowrap;font-family:sans-serif;font-size:12pt;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;padding:1px;max-width:400px;min-width:240px;position:relative}#eh-syringe-popup-root .hidden{visibility:hidden;display:none}#eh-syringe-popup-root .ehs-panel{margin:0 auto;display:flex;flex-direction:column}#eh-syringe-popup-root .ehs-panel .header{margin:16px;line-height:1;display:flex}#eh-syringe-popup-root .ehs-panel .header>.cushion{flex:auto}#eh-syringe-popup-root .ehs-panel .header span{color:#a5a3a6}#eh-syringe-popup-root .ehs-panel .content{margin:0 16px;padding:0 2px;flex:auto;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;scrollbar-width:thin}#eh-syringe-popup-root .ehs-panel .action{display:block;line-height:36px;font-size:16px;margin:16px;box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:0;-webkit-tap-highlight-color:transparent;white-space:nowrap;font-weight:400;-webkit-text-decoration:none;text-decoration:none;text-align:center;min-width:64px;padding:0 16px;border-radius:4px;overflow:visible;transform:translateZ(0);border:1px solid #ddd;transition:background .4s cubic-bezier(.25,.8,.25,1),box-shadow .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .ehs-panel .action.primary{box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action.primary:active{box-shadow:0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12)}#eh-syringe-popup-root .ehs-panel .action:disabled{opacity:.6}#eh-syringe-popup-root .ehs-panel .action:focus{border:1px solid #888}#eh-syringe-popup-root #ehs-main-panel{transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transform:scale(1)}#eh-syringe-popup-root #ehs-main-panel.ehs-hide{transform:scale(.9);opacity:0;pointer-events:none}#eh-syringe-popup-root .logo-box{overflow:hidden;position:relative;margin:-16px;pointer-events:none}#eh-syringe-popup-root .logo{text-align:center;margin:20px 0;transition:transform .28s cubic-bezier(.4,0,.2,1);transform:scale(1) rotate(-45deg)}#eh-syringe-popup-root .logo svg{pointer-events:none}#eh-syringe-popup-root .logo #Enema{opacity:0;transform-origin:61px 86px}#eh-syringe-popup-root .logo #Enema2{opacity:1}#eh-syringe-popup-root .logo #Enema,#eh-syringe-popup-root .logo #Enema2,#eh-syringe-popup-root .logo #PushRod{transition:width .28s cubic-bezier(.4,0,.2,1),opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root .logo.prominent{transform:scale(1.6) rotate(0deg)}#eh-syringe-popup-root .logo.prominent #Enema2{opacity:0}#eh-syringe-popup-root .logo.prominent #Enema{opacity:1}#eh-syringe-popup-root .logo.prominent.injection{transform:scale(1.6) rotate(0deg) translate(-10px)}#eh-syringe-popup-root .logo.prominent.injection #Enema,#eh-syringe-popup-root .logo.prominent.injection #Enema2,#eh-syringe-popup-root .logo.prominent.injection #PushRod{transition:width .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #info{position:absolute;bottom:30px;left:0;right:0;height:24px;line-height:24px;text-align:center;font-size:16px}#eh-syringe-popup-root .monospace{font-family:Menlo,Consolas,Source Code Pro,Inconsolata,Monaco,Courier New,monospace}#eh-syringe-popup-root table{font-size:14px}#eh-syringe-popup-root #ehs-setting-panel{position:absolute;left:0;top:0;bottom:0;right:0;pointer-events:none;opacity:0;transition:opacity .28s cubic-bezier(.4,0,.2,1),transform .28s cubic-bezier(.4,0,.2,1);transform:scale(1.1)}#eh-syringe-popup-root #ehs-setting-panel.ehs-show{pointer-events:auto;opacity:1;transform:scale(1)}#eh-syringe-popup-root #ehs-setting-panel #settingForm{font-size:10pt;line-height:12pt}#eh-syringe-popup-root .checkbox-item{padding:4px 0}#eh-syringe-popup-root .checkbox-item label{position:relative;display:block}#eh-syringe-popup-root .checkbox-item svg{width:10px;height:10px;position:absolute;left:3px;top:3px}#eh-syringe-popup-root .checkbox-item svg path{stroke-dasharray:1000;stroke-dashoffset:1000;stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;fill:none}#eh-syringe-popup-root .checkbox-item svg.checked path{stroke-dasharray:113.137,113.137;stroke-dashoffset:0;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup-root .checkbox-item svg.checked path+path{transition:all .28s cubic-bezier(.4,0,.2,1) .28s}#eh-syringe-popup-root .checkbox-item input[type=checkbox]{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:16px;height:16px;margin-right:2px;box-sizing:border-box;vertical-align:top;transition:all .28s cubic-bezier(.4,0,.2,1) 0s}#eh-syringe-popup-root .checkbox-item input[type=checkbox]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]{appearance:none;-moz-appearance:none;-webkit-appearance:none;border-radius:8px;width:100%}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:10px;box-sizing:border-box}#eh-syringe-popup-root #settingForm input[type=range]:focus{outline:none}#eh-syringe-popup-root #settingForm input[type=range]::-webkit-slider-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;height:16px;width:16px;margin-top:-6px;box-sizing:border-box;border-radius:50%;-webkit-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-track{height:6px;border-radius:10px;box-sizing:border-box}#eh-syringe-popup-root #settingForm input[type=range]::-moz-range-thumb{appearance:none;-moz-appearance:none;-webkit-appearance:none;height:16px;width:16px;margin-top:-6px;box-sizing:border-box;border-radius:50%;-moz-transition:all .28s cubic-bezier(.4,0,.2,1);transition:all .28s cubic-bezier(.4,0,.2,1)}#eh-syringe-popup-root #settingForm h3 span{font-weight:400;font-size:20pt}#eh-syringe-popup-root .image-level{padding:4px}#eh-syringe-popup-root .range-title{margin:0}#eh-syringe-popup-root .range-box{margin:5px}#eh-syringe-popup-root .range-label{display:flex;justify-content:space-between}#eh-syringe-popup-root .range-label a{flex:none;font-size:10pt;width:30px;text-align:center;display:inline-block}#eh-syringe-popup-root .override-db{padding:4px;display:flex;flex-direction:column;gap:4px;align-items:flex-start}#eh-syringe-popup-root .override-db input{width:100%}`, "",{"version":3,"sources":["webpack://./src/plugin/popup/index.less"],"names":[],"mappings":"AAAA,uBACI,eAAA,CAAA,kBAAA,CACA,gBAAA,CACA,kBACJ,CAJA,8GAQQ,kBAAA,CACA,aAAA,CACA,QAAA,CACA,SAER,CAbA,oDAeQ,WAER,CAjBA,6BAmBQ,WAAA,CACA,SAAA,CACA,QAAA,CACA,WACR,CAvBA,wCA0BQ,eAAA,CACA,mCAAR,CAEQ,gGAEI,8BAAZ,CA/BA,qFAqCQ,eAAA,CACA,QAFR,CApCA,yBAyCQ,SAAA,CACA,aAFR,CAxCA,yBA6CQ,sBAAA,CACA,8CAAA,CACA,4BAAA,CAAA,oBAFR,CAkJA,kBAvIQ,wBAAA,CACA,iBAAA,CACA,kBAAA,CACA,UAAA,CACA,qCARR,CA2IA,0BA/HQ,kBAAA,CACA,aATR,CAWQ,kCACI,oBAAA,CACA,kBAAA,CACA,aATZ,CAWQ,wCACI,kBATZ,CAWQ,yCACI,kBATZ,CA4HA,wBA9GQ,aAXR,CAyHA,0BA3GQ,aAXR,CAsHA,oBAxGQ,aAXR,CAYQ,0BACI,aAVZ,CAYQ,2BACI,aAVZ,CAYQ,0BACI,aAVZ,CAWY,gCACI,aAThB,CAWY,iCACI,aAThB,CAoGA,sCApFY,YAbZ,CAiGA,0CAjFY,YAbZ,CA8FA,sCA9EY,YAbZ,CA2FA,wCA3EY,cAbZ,CAwFA,4CAxEY,cAbZ,CAqFA,wCArEY,cAbZ,CAkFA,+BAhEQ,mCAfR,CA+EA,uDA7DY,cAfZ,CA4EA,gDAzDY,aAAA,CACA,oBAhBZ,CAiBY,sDACI,oBAfhB,CAkBY,uEACI,UAAA,CACA,+BAAA,CACA,aAhBhB,CAaY,6DACI,UAAA,CACA,+BAAA,CACA,aAhBhB,CAgEA,oDA3CY,wBAlBZ,CAmBY,4DACI,wBAjBhB,CAsBY,gFACI,wBApBhB,CAsBY,mEACI,wBApBhB,CAsBY,uEACI,kBAAA,CACA,wBApBhB,CAsBY,mEACI,kBAAA,CACA,wBApBhB,CAsBY,6EACI,wBAAA,CACA,iCApBhB,CAsBY,yEACI,wBAAA,CACA,iCApBhB,CAsBY,8EACI,wBAAA,CACA,kBAAA,CACA,qCApBhB,CAsBY,0EACI,wBAAA,CACA,kBAAA,CACA,qCApBhB,CAkCA,+BA/IQ,wBAAA,CACA,iBAAA,CACA,kBAAA,CACA,UAAA,CACA,qCAgHR,CA2BA,uCAvIQ,kBAAA,CACA,aA+GR,CA7GQ,+CACI,oBAAA,CACA,kBAAA,CACA,aA+GZ,CA7GQ,qDACI,kBA+GZ,CA7GQ,sDACI,kBA+GZ,CAYA,qCAtHQ,aA6GR,CASA,uCAnHQ,aA6GR,CAMA,iCAhHQ,aA6GR,CA5GQ,uCACI,aA8GZ,CA5GQ,wCACI,aA8GZ,CA5GQ,uCACI,aA8GZ,CA7GY,6CACI,aA+GhB,CA7GY,8CACI,aA+GhB,CAZA,mDA5FY,YA2GZ,CAfA,uDAzFY,YA2GZ,CAlBA,mDAtFY,YA2GZ,CArBA,qDAnFY,cA2GZ,CAxBA,yDAhFY,cA2GZ,CA3BA,qDA7EY,cA2GZ,CA9BA,4CAxEQ,mCAyGR,CAjCA,oEArEY,cAyGZ,CApCA,6DAjEY,aAAA,CACA,oBAwGZ,CAvGY,mEACI,oBAyGhB,CAtGY,oFACI,UAAA,CACA,+BAAA,CACA,aAwGhB,CA3GY,0EACI,UAAA,CACA,+BAAA,CACA,aAwGhB,CAhDA,iEAnDY,wBAsGZ,CArGY,yEACI,wBAuGhB,CAlGY,6FACI,wBAoGhB,CAlGY,gFACI,wBAoGhB,CAlGY,oFACI,kBAAA,CACA,wBAoGhB,CAlGY,gFACI,kBAAA,CACA,wBAoGhB,CAlGY,0FACI,wBAAA,CACA,iCAoGhB,CAlGY,sFACI,wBAAA,CACA,iCAoGhB,CAlGY,2FACI,wBAAA,CACA,kBAAA,CACA,qCAoGhB,CAlGY,uFACI,wBAAA,CACA,kBAAA,CACA,qCAoGhB,CA9EA,uBACI,eAAA,CACA,kBAAA,CACA,sBAAA,CACA,cAAA,CACA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CACA,WAAA,CACA,eAAA,CACA,eAAA,CACA,iBAgFJ,CAzFA,+BAYQ,iBAAA,CACA,YAgFR,CA7FA,kCAiBQ,aAAA,CACA,YAAA,CACA,qBA+ER,CAlGA,0CAsBY,WAAA,CACA,aAAA,CAEA,YA8EZ,CAvGA,mDA2BgB,SA+EhB,CA1GA,+CA8BgB,aA+EhB,CA7GA,2CAmCY,aAAA,CACA,aAAA,CACA,SAAA,CACA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,oBA6EZ,CApHA,0CA2CY,aAAA,CACA,gBAAA,CACA,cAAA,CACA,WAAA,CACA,qBAAA,CACA,iBAAA,CACA,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CACA,cAAA,CACA,SAAA,CACA,uCAAA,CACA,kBAAA,CACA,eAAA,CACA,4BAAA,CAAA,oBAAA,CACA,iBAAA,CACA,cAAA,CACA,cAAA,CACA,iBAAA,CACA,gBAAA,CACA,uBAAA,CACA,qBAAA,CACA,4FA4EZ,CAxEY,kDACI,gGA0EhB,CArEY,yDACI,sGAuEhB,CAlEY,mDACI,UAoEhB,CAlEY,gDACI,qBAoEhB,CAvJA,uCAyFQ,sFAAA,CAGA,kBA+DR,CA9DQ,gDACI,mBAAA,CACA,SAAA,CACA,mBAgEZ,CAhKA,iCAqGQ,eAAA,CACA,iBAAA,CACA,YAAA,CACA,mBA8DR,CAtKA,6BA2GQ,iBAAA,CACA,aAAA,CACA,iDAAA,CACA,iCA8DR,CA5KA,iCAiHY,mBA8DZ,CA/KA,oCAoHY,SAAA,CACA,0BA8DZ,CAnLA,qCAwHY,SA8DZ,CAtLA,+GA6HY,yHA8DZ,CAzDQ,uCAOI,iCAqDZ,CA5DQ,+CAEQ,SA6DhB,CA/DQ,8CAKQ,SA6DhB,CA1DY,iDACI,kDA4DhB,CA7DY,2KAKQ,kFA6DpB,CA5MA,6BAwJQ,iBAAA,CACA,WAAA,CACA,MAAA,CACA,OAAA,CACA,WAAA,CACA,gBAAA,CACA,iBAAA,CACA,cAuDR,CAtNA,kCAmKQ,mFAsDR,CAzNA,6BAsKQ,cAsDR,CA5NA,0CA0KQ,iBAAA,CACA,MAAA,CACA,KAAA,CACA,QAAA,CACA,OAAA,CACA,mBAAA,CACA,SAAA,CACA,sFAAA,CAGA,oBAmDR,CAjDQ,mDACI,mBAAA,CACA,SAAA,CACA,kBAmDZ,CA5OA,uDA6LY,cAAA,CACA,gBAkDZ,CAhPA,sCAkMQ,aAiDR,CAnPA,4CAqMY,iBAAA,CACA,aAiDZ,CAvPA,0CA0MY,UAAA,CACA,WAAA,CACA,iBAAA,CACA,QAAA,CACA,OAgDZ,CA9PA,+CAgNgB,qBAAA,CACA,sBAAA,CACA,iBAAA,CACA,oBAAA,CACA,qBAAA,CACA,SAiDhB,CA9CY,uDAEQ,gCAAA,CACA,mBAAA,CACA,8CA+CpB,CAnDY,4DAOQ,gDA+CpB,CA9QA,2DAqOY,uBAAA,CAAA,oBAAA,CAAA,eAAA,CACA,UAAA,CACA,WAAA,CACA,gBAAA,CACA,qBAAA,CACA,kBAAA,CACA,8CA4CZ,CAvRA,iEA8OY,YA4CZ,CA1RA,sDAoPY,eAAA,CACA,oBAAA,CACA,uBAAA,CACA,iBAAA,CACA,UAyCZ,CAjSA,qFA2PY,UAAA,CACA,kBAAA,CACA,qBAyCZ,CAtSA,4DAgQY,YAyCZ,CAzSA,4EAmQY,eAAA,CACA,oBAAA,CACA,uBAAA,CACA,WAAA,CACA,UAAA,CACA,eAAA,CACA,qBAAA,CACA,iBAAA,CACA,mDAAA,CAAA,2CAyCZ,CApTA,wEA+QY,UAAA,CACA,kBAAA,CACA,qBAwCZ,CAzTA,wEAoRY,eAAA,CACA,oBAAA,CACA,uBAAA,CACA,WAAA,CACA,UAAA,CACA,eAAA,CACA,qBAAA,CACA,iBAAA,CACA,gDAAA,CAAA,2CAwCZ,CApUA,4CAiSgB,eAAA,CACA,cAsChB,CAxUA,oCAwSQ,WAmCR,CA3UA,oCA2SQ,QAmCR,CA9UA,kCA8SQ,UAmCR,CAjVA,oCAiTQ,YAAA,CACA,6BAmCR,CArVA,sCAoTY,SAAA,CACA,cAAA,CACA,UAAA,CACA,iBAAA,CACA,oBAoCZ,CA5VA,oCA6TQ,WAAA,CACA,YAAA,CACA,qBAAA,CACA,OAAA,CACA,sBAkCR,CAnWA,0CAoUY,UAkCZ","sourcesContent":["#eh-syringe-popup-root {\n    text-align: initial;\n    font-size: initial;\n    line-height: initial;\n    input,\n    table,\n    th,\n    td {\n        background: inherit;\n        color: inherit;\n        margin: 0;\n        padding: 0;\n    }\n    th,\n    td {\n        padding: 1px;\n    }\n\n    input {\n        border: none;\n        padding: 0;\n        margin: 0;\n        min-width: 0;\n    }\n\n    input[type='text'] {\n        border-radius: 0;\n        border-bottom: solid 1px transparent;\n\n        &.invalid,\n        &:invalid {\n            border-color: #aa575e !important;\n        }\n    }\n\n    input[type='radio'],\n    input[type='checkbox'] {\n        position: initial;\n        top: initial;\n    }\n    p {\n        padding: 0;\n        margin: 0.8em 0;\n    }\n    a {\n        background: rgba(0, 0, 0, 0);\n        transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        text-decoration: none;\n    }\n}\n\n// theme\n.theme(@background, @foreground, @shadow, @accent) {\n    @soft-accent: softlight(@accent, @background);\n\n    & {\n        border: @accent solid 1px;\n        border-radius: 6px;\n        background: @background;\n        color: @foreground;\n        box-shadow: 0 0 6px 2px @shadow;\n    }\n\n    .action {\n        background: @background;\n        color: @accent;\n\n        &.primary {\n            border-color: @accent;\n            background: @accent;\n            color: @background;\n        }\n        &.primary:hover {\n            background: softlight(@accent, @foreground);\n        }\n        &.primary:active {\n            background: softlight(@accent, @background);\n        }\n    }\n\n    #info {\n        color: @accent;\n    }\n    .hasNew {\n        color: softlight(#aa575e, @foreground);\n    }\n    a {\n        color: @accent;\n        &:hover {\n            color: softlight(@accent, @foreground);\n        }\n        &:active {\n            color: softlight(@accent, @background);\n        }\n        &.minor {\n            color: #a5a3a6;\n            &:hover {\n                color: #d2cdd4;\n            }\n            &:active {\n                color: #838185;\n            }\n        }\n    }\n    .logo svg {\n        @sa: lighten(average(@accent, @background), 10%);\n        [fill-bg] {\n            fill: @background;\n        }\n        [fill-accent] {\n            fill: @accent;\n        }\n        [fill-sa] {\n            fill: @sa;\n        }\n        [stroke-bg] {\n            stroke: @background;\n        }\n        [stroke-accent] {\n            stroke: @accent;\n        }\n        [stroke-sa] {\n            stroke: @sa;\n        }\n    }\n\n    #settingForm {\n        scrollbar-color: @accent transparent;\n\n        .checkbox-item svg path {\n            stroke: @accent;\n        }\n\n        input[type='text'] {\n            color: @accent;\n            border-color: @soft-accent;\n            &:focus {\n                border-color: @accent;\n            }\n\n            &::placeholder {\n                opacity: 0.5;\n                -webkit-text-fill-color: @soft-accent;\n                color: @soft-accent;\n            }\n        }\n\n        input[type='checkbox'] {\n            border: solid 2px #a09da6;\n            &:checked {\n                border: solid 2px @accent;\n            }\n        }\n\n        input[type='range'] {\n            &::-webkit-slider-runnable-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-moz-range-track {\n                border: 1px @soft-accent solid;\n            }\n            &::-webkit-slider-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &::-moz-range-thumb {\n                background: @background;\n                border: solid 2px @accent;\n            }\n            &:focus::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:focus::-moz-range-thumb {\n                border: solid 2px @accent;\n                box-shadow: 0 0 7px @shadow;\n            }\n            &:active::-webkit-slider-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n            &:active::-moz-range-thumb {\n                border: solid 2px @accent;\n                background: overlay(@background, @background);\n                box-shadow: 0 0 7px 1px @shadow;\n            }\n        }\n    }\n}\n\n#eh-syringe-popup {\n    @background: rgb(240, 240, 240);\n    @foreground: #111;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #8041a6;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n:root.ehs-ex #eh-syringe-popup {\n    @background: rgb(49, 49, 49);\n    @foreground: #eee;\n    @shadow: rgba(0, 0, 0, 0.2);\n    @accent: #ce90f1;\n    .theme(@background, @foreground, @shadow, @accent);\n}\n\n#eh-syringe-popup-root {\n    overflow: hidden;\n    white-space: nowrap;\n    font-family: sans-serif;\n    font-size: 12pt;\n    user-select: none;\n    padding: 1px;\n    max-width: 400px;\n    min-width: 240px;\n    position: relative;\n\n    .hidden {\n        visibility: hidden;\n        display: none;\n    }\n\n    .ehs-panel {\n        margin: 0 auto;\n        display: flex;\n        flex-direction: column;\n\n        .header {\n            margin: 16px;\n            line-height: 1;\n            //font-size: 16px;\n            display: flex;\n            > .cushion {\n                flex: auto;\n            }\n            span {\n                color: #a5a3a6;\n            }\n        }\n\n        .content {\n            margin: 0 16px;\n            padding: 0 2px;\n            flex: auto;\n            overflow: hidden auto;\n            scrollbar-width: thin;\n        }\n\n        .action {\n            display: block;\n            line-height: 36px;\n            font-size: 16px;\n            margin: 16px;\n            box-sizing: border-box;\n            position: relative;\n            user-select: none;\n            cursor: pointer;\n            outline: 0;\n            -webkit-tap-highlight-color: transparent;\n            white-space: nowrap;\n            font-weight: normal;\n            text-decoration: none;\n            text-align: center;\n            min-width: 64px;\n            padding: 0 16px;\n            border-radius: 4px;\n            overflow: visible;\n            transform: translate3d(0, 0, 0);\n            border: 1px #ddd solid;\n            transition:\n                background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),\n                box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);\n\n            &.primary {\n                box-shadow:\n                    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n                    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n                    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n            }\n            &.primary:active {\n                box-shadow:\n                    0 5px 5px -3px rgba(0, 0, 0, 0.2),\n                    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n                    0 3px 14px 2px rgba(0, 0, 0, 0.12);\n            }\n            &:disabled {\n                opacity: 0.6;\n            }\n            &:focus {\n                border: 1px #888 solid;\n            }\n        }\n    }\n\n    #ehs-main-panel {\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1);\n        &.ehs-hide {\n            transform: scale(0.9);\n            opacity: 0;\n            pointer-events: none;\n        }\n    }\n\n    .logo-box {\n        overflow: hidden;\n        position: relative;\n        margin: -16px;\n        pointer-events: none;\n    }\n    .logo {\n        text-align: center;\n        margin: 20px 0;\n        transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1) rotate(-45deg);\n\n        svg {\n            pointer-events: none;\n        }\n        #Enema {\n            opacity: 0;\n            transform-origin: 61px 86px;\n        }\n        #Enema2 {\n            opacity: 1;\n        }\n        #Enema,\n        #Enema2,\n        #PushRod {\n            transition:\n                width 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n                transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n        &.prominent {\n            #Enema2 {\n                opacity: 0;\n            }\n            #Enema {\n                opacity: 1;\n            }\n            transform: scale(1.6) rotate(0deg);\n            &.injection {\n                transform: scale(1.6) rotate(0deg) translate(-10px, 0);\n                #Enema,\n                #Enema2,\n                #PushRod {\n                    transition:\n                        width 600ms cubic-bezier(0.4, 0, 0.2, 1),\n                        transform 600ms cubic-bezier(0.4, 0, 0.2, 1);\n                }\n            }\n        }\n    }\n\n    #info {\n        position: absolute;\n        bottom: 30px;\n        left: 0;\n        right: 0;\n        height: 24px;\n        line-height: 24px;\n        text-align: center;\n        font-size: 16px;\n    }\n\n    .monospace {\n        font-family: Menlo, Consolas, 'Source Code Pro', Inconsolata, Monaco, 'Courier New', monospace;\n    }\n    table {\n        font-size: 14px;\n    }\n\n    #ehs-setting-panel {\n        position: absolute;\n        left: 0;\n        top: 0;\n        bottom: 0;\n        right: 0;\n        pointer-events: none;\n        opacity: 0;\n        transition:\n            opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),\n            transform 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        transform: scale(1.1);\n\n        &.ehs-show {\n            pointer-events: auto;\n            opacity: 1;\n            transform: scale(1);\n        }\n\n        #settingForm {\n            font-size: 10pt;\n            line-height: 12pt;\n        }\n    }\n    .checkbox-item {\n        padding: 4px 0;\n\n        label {\n            position: relative;\n            display: block;\n        }\n\n        svg {\n            width: 10px;\n            height: 10px;\n            position: absolute;\n            left: 3px;\n            top: 3px;\n            path {\n                stroke-dasharray: 1000;\n                stroke-dashoffset: 1000;\n                stroke-width: 16px;\n                stroke-linecap: round;\n                stroke-linejoin: round;\n                fill: none;\n            }\n\n            &.checked {\n                path {\n                    stroke-dasharray: 113.137, 113.137;\n                    stroke-dashoffset: 0;\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n                }\n                path + path {\n                    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 280ms;\n                }\n            }\n        }\n\n        input[type='checkbox'] {\n            appearance: none;\n            width: 16px;\n            height: 16px;\n            margin-right: 2px;\n            box-sizing: border-box;\n            vertical-align: top;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;\n        }\n        input[type='checkbox']:focus {\n            outline: none;\n        }\n    }\n\n    #settingForm {\n        input[type='range'] {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            border-radius: 8px;\n            width: 100%;\n        }\n        input[type='range']::-webkit-slider-runnable-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']:focus {\n            outline: none;\n        }\n        input[type='range']::-webkit-slider-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        input[type='range']::-moz-range-track {\n            height: 6px;\n            border-radius: 10px;\n            box-sizing: border-box;\n        }\n        input[type='range']::-moz-range-thumb {\n            appearance: none;\n            -moz-appearance: none;\n            -webkit-appearance: none;\n            height: 16px;\n            width: 16px;\n            margin-top: -6px;\n            box-sizing: border-box;\n            border-radius: 50%;\n            transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);\n        }\n\n        h3 {\n            span {\n                font-weight: 400;\n                font-size: 20pt;\n            }\n        }\n    }\n\n    .image-level {\n        padding: 4px;\n    }\n    .range-title {\n        margin: 0;\n    }\n    .range-box {\n        margin: 5px;\n    }\n    .range-label {\n        display: flex;\n        justify-content: space-between;\n        a {\n            flex: none;\n            font-size: 10pt;\n            width: 30px;\n            text-align: center;\n            display: inline-block;\n        }\n    }\n\n    .override-db {\n        padding: 4px;\n        display: flex;\n        flex-direction: column;\n        gap: 4px;\n        align-items: flex-start;\n\n        input {\n            width: 100%;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
 
 /***/ }),
 
-/***/ 8510:
+/***/ 96917:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63625);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54719);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97575);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56045);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `:root{--csstools-color-scheme--light:initial;color-scheme:light}:root.ehs-ex{--csstools-color-scheme--light: ;color-scheme:dark}.ehs-eh:root button[ehs-input],.ehs-ex:root button[ehs-input]{min-height:26px;line-height:20px;padding:1px 5px 2px;margin:0 2px;border:2px solid #b5a4a4;border-radius:3px;font-size:9pt;color:#5c0d12;background-color:#edeada;outline:none;white-space:pre}.ehs-eh:root button[ehs-input]:disabled,.ehs-ex:root button[ehs-input]:disabled{color:#c2a8a4;-webkit-text-fill-color:#c2a8a4;opacity:1}.ehs-eh:root button[ehs-input]:enabled:focus,.ehs-eh:root button[ehs-input]:enabled:hover,.ehs-ex:root button[ehs-input]:enabled:focus,.ehs-ex:root button[ehs-input]:enabled:hover{background-color:#f3f0e0!important;border-color:#977273!important}.ehs-eh:root button[ehs-input]:enabled:active,.ehs-ex:root button[ehs-input]:enabled:active{background:radial-gradient(#d7d3c2,#f3f0e0)!important;border-color:#5c0d12!important}:root.ehs-ex button[ehs-input]{border-color:#8d8d8d;color:#f1f1f1;background-color:#34353b}:root.ehs-ex button[ehs-input]:enabled:focus,:root.ehs-ex button[ehs-input]:enabled:hover{background-color:#43464e!important;border-color:#aeaeae!important}:root.ehs-ex button[ehs-input]:enabled:active{background:radial-gradient(#1a1a1a,#43464e)!important;border-color:#c3c3c3!important}:root.ehs-ex button[ehs-input]:disabled{color:#8a8a8a;-webkit-text-fill-color:#8a8a8a}:root.ehs-hide-icon [ehs-emoji],:root.ehs-hide-icon [ehs-icon],[hidden]{display:none}body div#gright{z-index:3}body #expunge_new button[ehs-input][type=submit]{margin:6px auto 2px}body #gleft{pointer-events:none}body #gj{margin:3px 4px}body #gmid{height:auto}body #tagmenu_act,body #tagmenu_new{width:calc(100% - 30px)!important}body #tagmenu_new>form{display:flex}body #tagmenu_new>form #newtagfield{flex:auto}body #gd5{display:flex;flex-flow:column}body #gd5:has(>:nth-child(10)) .g2:not(:has(+.gsp)){padding-bottom:18px}body #gd5:has(>:nth-child(10)) .g3:not(:has(+.gsp)){padding-bottom:18px}body #gd5:has(>:nth-child(10)) .gsp{padding-top:0}body #gd5:has(>:nth-child(11)) .g2:not(:has(+.gsp)){padding-bottom:16px}body #gd5:has(>:nth-child(11)) .g3:not(:has(+.gsp)){padding-bottom:16px}body #gd5:has(>:nth-child(12)) .g2:not(:has(+.gsp)){padding-bottom:12px}body #gd5:has(>:nth-child(12)) .g3:not(:has(+.gsp)){padding-bottom:12px}body #gd5:has(>:nth-child(13)) .g2:not(:has(+.gsp)){padding-bottom:8px}body #gd5:has(>:nth-child(13)) .g3:not(:has(+.gsp)){padding-bottom:8px}body #gd5:has(>:nth-child(14)) .g2:not(:has(+.gsp)){padding-bottom:6px}body #gd5:has(>:nth-child(14)) .g3:not(:has(+.gsp)){padding-bottom:6px}body #gd5:has(>:nth-child(15)) .g2:not(:has(+.gsp)){padding-bottom:4px}body #gd5:has(>:nth-child(15)) .g3:not(:has(+.gsp)){padding-bottom:4px}body .g2,body .g3{padding-bottom:20px}body .gsp{padding-top:10px}body td.tc{white-space:nowrap}body div.gt,body div.gtl,body div.gtw{line-height:16px;white-space:nowrap}body div.c6{text-align:left}[ehs-emoji],[ehs-icon]{max-height:1.25em!important;max-width:2em!important;margin:-.25em 1px!important}[ehs-icon]{vertical-align:middle}.ehs-new-tag-complete-translate{display:block;margin-top:4px;font-weight:bolder;opacity:.8;pointer-events:none}.ehs-new-tag-complete-translate:empty{display:none}:root.ehs-wiki.ehs-translate-tag [ehs-tag][lang|=zh-hans]:after{content:" (" attr(ehs-tag) ")";font-size:80%}`, "",{"version":3,"sources":["webpack://./src/plugin/syringe/index.less"],"names":[],"mappings":"AAEA,MACI,sCAAA,CAAA,kBADJ,CAEI,aACI,gCAAA,CAAA,iBAAR,CAKI,8DACI,eAAA,CACA,gBAAA,CACA,mBAAA,CACA,YAAA,CACA,wBAAA,CACA,iBAAA,CACA,aAAA,CACA,aAAA,CACA,wBAAA,CACA,YAAA,CACA,eAHR,CAKQ,gFACI,aAAA,CACA,+BAAA,CACA,SAHZ,CAMQ,oLAEI,kCAAA,CACA,8BAJZ,CAOQ,4FACI,qDAAA,CACA,8BALZ,CASI,+BACI,oBAAA,CACA,aAAA,CACA,wBAPR,CASQ,0FAEI,kCAAA,CACA,8BAPZ,CAUQ,8CACI,qDAAA,CACA,8BARZ,CAWQ,wCACI,aAAA,CACA,+BATZ,CAkBA,wEAGQ,YAdR,CAkBA,gBAEQ,SAjBR,CAeA,iDAOQ,mBAnBR,CAYA,YAYQ,mBArBR,CASA,SAiBQ,cAvBR,CAMA,WAsBQ,WAzBR,CAGA,oCA4BQ,iCA3BR,CADA,uBAgCQ,YA5BR,CAJA,oCAkCY,SA3BZ,CAPA,UAwCQ,YAAA,CACA,gBA9BR,CAiCQ,oDAEQ,mBAhChB,CA8BQ,oDAEQ,mBAhChB,CA8BQ,oCAKQ,aAhChB,CAmCQ,oDAEQ,mBAlChB,CAgCQ,oDAEQ,mBAlChB,CAqCQ,oDAEQ,mBApChB,CAkCQ,oDAEQ,mBApChB,CAuCQ,oDAEQ,kBAtChB,CAoCQ,oDAEQ,kBAtChB,CAyCQ,oDAEQ,kBAxChB,CAsCQ,oDAEQ,kBAxChB,CA2CQ,oDAEQ,kBA1ChB,CAwCQ,oDAEQ,kBA1ChB,CAhCA,kBAgFQ,mBA5CR,CApCA,UAmFQ,gBA5CR,CAvCA,WAwFQ,kBA9CR,CA1CA,sCA+FQ,gBAAA,CACA,kBAhDR,CAhDA,YAqGQ,eAlDR,CAsDA,uBAEI,2BAAA,CACA,uBAAA,CACA,2BApDJ,CAuDA,WACI,qBArDJ,CAwDA,gCACI,aAAA,CAKA,cAAA,CACA,kBAAA,CACA,UAAA,CACA,mBA1DJ,CAmDI,sCACI,YAjDR,CA8DQ,gEACI,8BAAA,CACA,aA5DZ","sourcesContent":["// 全局注入样式\n\n:root {\n    color-scheme: light;\n    &.ehs-ex {\n        color-scheme: dark;\n    }\n}\n\nbutton[ehs-input] {\n    :is(:root.ehs-eh, :root.ehs-ex) & {\n        min-height: 26px;\n        line-height: 20px;\n        padding: 1px 5px 2px;\n        margin: 0 2px;\n        border: 2px solid #b5a4a4;\n        border-radius: 3px;\n        font-size: 9pt;\n        color: #5c0d12;\n        background-color: #edeada;\n        outline: none;\n        white-space: pre;\n\n        &:disabled {\n            color: #c2a8a4;\n            -webkit-text-fill-color: #c2a8a4;\n            opacity: 1;\n        }\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #f3f0e0 !important;\n            border-color: #977273 !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#d7d3c2, #f3f0e0) !important;\n            border-color: #5c0d12 !important;\n        }\n    }\n\n    :root.ehs-ex & {\n        border-color: #8d8d8d;\n        color: #f1f1f1;\n        background-color: #34353b;\n\n        &:enabled:hover,\n        &:enabled:focus {\n            background-color: #43464e !important;\n            border-color: #aeaeae !important;\n        }\n\n        &:enabled:active {\n            background: radial-gradient(#1a1a1a, #43464e) !important;\n            border-color: #c3c3c3 !important;\n        }\n\n        &:disabled {\n            color: #8a8a8a;\n            -webkit-text-fill-color: #8a8a8a;\n        }\n    }\n}\n\n[hidden] {\n    display: none;\n}\n\n:root.ehs-hide-icon {\n    [ehs-icon],\n    [ehs-emoji] {\n        display: none;\n    }\n}\n\nbody {\n    div#gright {\n        z-index: 3;\n    }\n\n    // 提交删除申请按钮\n    #expunge_new button[ehs-input][type='submit'] {\n        margin: 6px auto 2px;\n    }\n\n    // 题图\n    #gleft {\n        pointer-events: none;\n    }\n\n    // 日文标题\n    #gj {\n        margin: 3px 4px;\n    }\n\n    // 信息框\n    #gmid {\n        height: auto;\n    }\n\n    // 标签输入\n    #tagmenu_act,\n    #tagmenu_new {\n        width: calc(100% - 30px) !important; // 留下右侧 loading 空间\n    }\n\n    #tagmenu_new > form {\n        display: flex;\n        #newtagfield {\n            flex: auto;\n        }\n    }\n\n    // 信息框右侧菜单\n    #gd5 {\n        display: flex;\n        flex-flow: column;\n\n        // 当其他脚本在这里插入过多链接时。修改布局\n        &:has(> :nth-child(10)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 18px;\n            }\n            .gsp {\n                padding-top: 0;\n            }\n        }\n        &:has(> :nth-child(11)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 16px;\n            }\n        }\n        &:has(> :nth-child(12)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 12px;\n            }\n        }\n        &:has(> :nth-child(13)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 8px;\n            }\n        }\n        &:has(> :nth-child(14)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 6px;\n            }\n        }\n        &:has(> :nth-child(15)) {\n            :is(.g2, .g3):not(:has(+ .gsp)) {\n                padding-bottom: 4px;\n            }\n        }\n    }\n    .g2,\n    .g3 {\n        padding-bottom: 20px;\n    }\n    .gsp {\n        padding-top: 10px;\n    }\n\n    // 标签组名\n    td.tc {\n        white-space: nowrap;\n    }\n\n    // 标签\n    div.gtl,\n    div.gtw,\n    div.gt {\n        line-height: 16px;\n        white-space: nowrap;\n    }\n\n    // 评论内容\n    div.c6 {\n        text-align: left;\n    }\n}\n\n[ehs-icon],\n[ehs-emoji] {\n    max-height: 1.25em !important;\n    max-width: 2em !important;\n    margin: -0.25em 1px !important;\n}\n\n[ehs-icon] {\n    vertical-align: middle;\n}\n\n.ehs-new-tag-complete-translate {\n    display: block;\n    &:empty {\n        display: none;\n    }\n\n    margin-top: 4px;\n    font-weight: bolder;\n    opacity: 0.8;\n    pointer-events: none;\n}\n\n// wiki 样式\n\n:root.ehs-wiki {\n    &.ehs-translate-tag [ehs-tag][lang|='zh-hans'] {\n        &::after {\n            content: ' (' attr(ehs-tag) ')';\n            font-size: 80%;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
 
 /***/ }),
 
-/***/ 36227:
+/***/ 14560:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63625);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54719);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97575);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56045);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 // Imports
 
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.eh-syringe-lite-auto-complete-list{background:#f8f4ec;color:#5c0d12;position:absolute;top:168px;left:628px;min-width:570px;min-height:20px;text-align-last:left;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);display:block;max-height:50vh;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;padding:8px 0;scroll-padding:16px;scrollbar-width:thin;z-index:10}:root.ehs-ex .eh-syringe-lite-auto-complete-list{background:#2b2b2b;color:#f1f1f1}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list.exclude .auto-complete-item .en-name:before{content:"- "}.eh-syringe-lite-auto-complete-list .auto-complete-item{padding:0 8px;line-height:24px;height:24px;contain:strict;content-visibility:auto;display:flex;justify-content:space-between;cursor:pointer}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8ecf3}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item.selected,:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#3e3f40}.eh-syringe-lite-auto-complete-list .auto-complete-text{flex:0 1 auto;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{flex-shrink:4;padding-left:8px;color:#5f6368}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{color:#d9d9d9}.eh-syringe-lite-auto-complete-list mark{color:inherit;background:#f5f500}:root.ehs-ex .eh-syringe-lite-auto-complete-list mark{background:#727200}`, "",{"version":3,"sources":["webpack://./src/plugin/tag-tip/index.less"],"names":[],"mappings":"AAAA,oCACI,kBAAA,CACA,aAAA,CAOA,iBAAA,CACA,SAAA,CACA,UAAA,CACA,eAAA,CACA,eAAA,CACA,oBAAA,CACA,iBAAA,CACA,gGAAA,CAIA,aAAA,CACA,eAAA,CACA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,aAAA,CACA,mBAAA,CACA,oBAAA,CACA,UARJ,CAdI,iDACI,kBAAA,CACA,aAgBR,CAMI,sFAEI,YAJR,CAOI,gFAGY,YAPhB,CA7BA,wDA0CQ,aAAA,CACA,gBAAA,CACA,WAAA,CACA,cAAA,CACA,uBAAA,CACA,YAAA,CACA,6BAAA,CACA,cAVR,CAvCA,4DAoDY,8BAAA,CACA,UAAA,CACA,uBAVZ,CAaQ,+HAEI,kBAXZ,CAaY,yJACI,kBAVhB,CApDA,wDAoEQ,aAAA,CACA,kBAAA,CACA,sBAAA,CACA,eAbR,CAeQ,gEACI,aAAA,CACA,gBAAA,CACA,aAbZ,CAcY,6EACI,aAZhB,CAlEA,yCAoFQ,aAAA,CACA,kBAfR,CAgBQ,sDACI,kBAdZ","sourcesContent":[".eh-syringe-lite-auto-complete-list {\n    background: #f8f4ec;\n    color: #5c0d12;\n\n    :root.ehs-ex & {\n        background: #2b2b2b;\n        color: #f1f1f1;\n    }\n\n    position: absolute;\n    top: 168px;\n    left: 628px;\n    min-width: 570px;\n    min-height: 20px;\n    text-align-last: left;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    display: block;\n    max-height: 50vh;\n    overflow: hidden auto;\n    padding: 8px 0;\n    scroll-padding: 16px;\n    scrollbar-width: thin;\n    z-index: 10;\n\n    &[hidden],\n    &:empty {\n        display: none;\n    }\n\n    &.exclude {\n        .auto-complete-item {\n            .en-name::before {\n                content: '- ';\n            }\n        }\n    }\n\n    .auto-complete-item {\n        padding: 0 8px;\n        line-height: 24px;\n        height: 24px;\n        contain: strict;\n        content-visibility: auto;\n        display: flex;\n        justify-content: space-between;\n        cursor: pointer;\n\n        img {\n            display: inline-block !important;\n            height: 8pt;\n            vertical-align: text-top;\n        }\n\n        &:hover,\n        &.selected {\n            background: #e8ecf3;\n\n            :root.ehs-ex & {\n                background: #3e3f40;\n            }\n        }\n    }\n\n    .auto-complete-text {\n        flex: 0 1 auto;\n        white-space: nowrap;\n        text-overflow: ellipsis;\n        overflow: hidden;\n\n        &.en-name {\n            flex-shrink: 4;\n            padding-left: 8px;\n            color: #5f6368;\n            :root.ehs-ex & {\n                color: #d9d9d9;\n            }\n        }\n    }\n\n    mark {\n        color: inherit;\n        background: #f5f500;\n        :root.ehs-ex & {\n            background: #727200;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
 
 /***/ }),
 
-/***/ 52677:
+/***/ 64950:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63625);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54719);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(20358);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97575);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56045);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(67672);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(79334), __webpack_require__.b);
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_107_2_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_pnpm_css_loader_7_1_4_webpack_5_108_4_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `#eh-syringe-popup-button{position:fixed;touch-action:none;width:36px;height:36px;border-radius:36px;border:2px solid #6e066e;box-shadow:0 0 2px 1px rgba(0,0,0,.5);background:50%/65% no-repeat #fff url(${___CSS_LOADER_URL_REPLACEMENT_0___});z-index:10}#eh-syringe-popup-button:hover{cursor:pointer}:root.ehs-ex #eh-syringe-popup-button{background-color:#bbb;border-color:#926a92}#eh-syringe-popup-badge{height:14px;font-size:12px;position:absolute;right:-10px;top:-10px;padding:2px 4px;border-radius:4px;background:#444;color:#fff}#eh-syringe-popup-back{position:fixed;bottom:0;right:0;top:0;left:0;z-index:1000;background:rgba(0,0,0,.3);visibility:hidden;pointer-events:none;opacity:0;transition:visibility,opacity .4s}#eh-syringe-popup-back.closing,#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{visibility:visible;pointer-events:auto}#eh-syringe-popup-back.open,#eh-syringe-popup-back.opening{opacity:1}#eh-syringe-popup-back.closing{opacity:0}#eh-syringe-popup{position:absolute;bottom:72px;right:12px}@media print{#eh-syringe-popup-back,#eh-syringe-popup-button{display:none}}`, "",{"version":3,"sources":["webpack://./src/user-script/popup-host.less"],"names":[],"mappings":"AAAA,yBACI,cAAA,CACA,iBAAA,CAGA,UAAA,CACA,WAAA,CACA,kBAAA,CACA,wBAAA,CACA,qCAAA,CACA,yEAAA,CACA,UADJ,CAEI,+BACI,cAAR,CAGI,sCACI,qBAAA,CACA,oBADR,CAKA,wBACI,WAAA,CACA,cAAA,CACA,iBAAA,CACA,WAAA,CACA,SAAA,CACA,eAAA,CACA,iBAAA,CACA,eAAA,CACA,UAHJ,CAMA,uBACI,cAAA,CACA,QAAA,CACA,OAAA,CACA,KAAA,CACA,MAAA,CACA,YAAA,CACA,yBAAA,CACA,iBAAA,CACA,mBAAA,CACA,SAAA,CACA,iCAJJ,CAQI,0FAGI,kBAAA,CACA,mBANR,CAYI,2DACI,SAPR,CASI,+BACI,SAPR,CAWA,kBACI,iBAAA,CACA,WAAA,CACA,UATJ,CAYA,aACI,gDAEI,YAVN,CACF","sourcesContent":["#eh-syringe-popup-button {\n    position: fixed;\n    touch-action: none;\n    // bottom: 12px;\n    // right: 12px;\n    width: 36px;\n    height: 36px;\n    border-radius: 36px;\n    border: rgb(110, 6, 110) 2px solid;\n    box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px 1px;\n    background: center/65% no-repeat white url('../assets/logo.svg');\n    z-index: 10;\n    &:hover {\n        cursor: pointer;\n    }\n\n    :root.ehs-ex & {\n        background-color: rgb(187, 187, 187);\n        border-color: rgb(146, 106, 146);\n    }\n}\n\n#eh-syringe-popup-badge {\n    height: 14px;\n    font-size: 12px;\n    position: absolute;\n    right: -10px;\n    top: -10px;\n    padding: 2px 4px;\n    border-radius: 4px;\n    background: #444;\n    color: white;\n}\n\n#eh-syringe-popup-back {\n    position: fixed;\n    bottom: 0;\n    right: 0;\n    top: 0;\n    left: 0;\n    z-index: 1000;\n    background: rgba(0, 0, 0, 0.3);\n    visibility: hidden;\n    pointer-events: none;\n    opacity: 0;\n    transition:\n        visibility,\n        opacity 0.4s;\n\n    &.open,\n    &.opening,\n    &.closing {\n        visibility: visible;\n        pointer-events: initial;\n    }\n\n    &.open {\n        opacity: 1;\n    }\n    &.opening {\n        opacity: 1;\n    }\n    &.closing {\n        opacity: 0;\n    }\n}\n\n#eh-syringe-popup {\n    position: absolute;\n    bottom: 12px + 36px + 24px;\n    right: 12px;\n}\n\n@media print {\n    #eh-syringe-popup-back,\n    #eh-syringe-popup-button {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* export default binding */ __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
 
 /***/ }),
 
-/***/ 14368:
+/***/ 52263:
 /***/ ((module) => {
 
 "use strict";
@@ -478,7 +483,7 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ 74987:
+/***/ 19912:
 /***/ ((module) => {
 
 "use strict";
@@ -519,7 +524,7 @@ module.exports = insertBySelector;
 
 /***/ }),
 
-/***/ 31740:
+/***/ 58403:
 /***/ ((module) => {
 
 "use strict";
@@ -536,7 +541,7 @@ module.exports = insertStyleElement;
 
 /***/ }),
 
-/***/ 5344:
+/***/ 11375:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -553,7 +558,7 @@ module.exports = setAttributesWithoutAttributes;
 
 /***/ }),
 
-/***/ 82769:
+/***/ 16196:
 /***/ ((module) => {
 
 "use strict";
@@ -621,7 +626,7 @@ module.exports = domAPI;
 
 /***/ }),
 
-/***/ 14633:
+/***/ 60752:
 /***/ ((module) => {
 
 "use strict";
@@ -657,126 +662,126 @@ module.exports = __webpack_require__(60246);
 
 /***/ }),
 
-/***/ 63861:
+/***/ 71650:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(90495);
 
 /***/ }),
 
-/***/ 18902:
+/***/ 83255:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(84583);
 
 /***/ }),
 
-/***/ 11871:
+/***/ 70542:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(6645);
 
 /***/ }),
 
-/***/ 97738:
+/***/ 7411:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(92660);
 
 /***/ }),
 
-/***/ 77632:
+/***/ 39817:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(61914);
 
 /***/ }),
 
-/***/ 81190:
+/***/ 48723:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(4852);
 
 /***/ }),
 
-/***/ 35972:
+/***/ 93111:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(79514);
 
 /***/ }),
 
-/***/ 3582:
+/***/ 93459:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(71060);
 
 /***/ }),
 
-/***/ 59596:
+/***/ 55601:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(45318);
 
 /***/ }),
 
-/***/ 50170:
+/***/ 49337:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(48924);
 
 /***/ }),
 
-/***/ 48119:
+/***/ 98318:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(97873);
 
 /***/ }),
 
-/***/ 82235:
+/***/ 24754:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(41653);
 
 /***/ }),
 
-/***/ 6073:
+/***/ 53120:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(20163);
 
 /***/ }),
 
-/***/ 93267:
+/***/ 80190:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(7126);
 
 /***/ }),
 
-/***/ 80724:
+/***/ 83453:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(14102);
 
 /***/ }),
 
-/***/ 22122:
+/***/ 44403:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(28456);
 
 /***/ }),
 
-/***/ 81551:
+/***/ 87430:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(55730);
 
 /***/ }),
 
-/***/ 24547:
+/***/ 38280:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(58582);
@@ -16573,17 +16578,17 @@ module.exports = parent;
 /******/ 	});
 /************************************************************************/
 /******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
+/******/ 	const __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
@@ -16604,7 +16609,7 @@ module.exports = parent;
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
 /******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
+/******/ 			const getter = module && module.__esModule ?
 /******/ 				() => (module['default']) :
 /******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
@@ -16614,11 +16619,26 @@ module.exports = parent;
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
+/******/ 		// define getter/value functions for harmony exports
 /******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
 /******/ 				}
 /******/ 			}
 /******/ 		};
@@ -16656,7 +16676,7 @@ module.exports = parent;
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
+/******/ 		const installedChunks = {
 /******/ 			792: 0
 /******/ 		};
 /******/ 		
@@ -16681,7 +16701,7 @@ module.exports = parent;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
+let __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
@@ -16699,10 +16719,10 @@ var reflect = __webpack_require__(74010);
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/object/assign.js
-var object_assign = __webpack_require__(48119);
+var object_assign = __webpack_require__(98318);
 var assign_default = /*#__PURE__*/__webpack_require__.n(object_assign);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/includes.js
-var includes = __webpack_require__(11871);
+var includes = __webpack_require__(70542);
 var includes_default = /*#__PURE__*/__webpack_require__.n(includes);
 ;// ./node_modules/.pnpm/typedi@0.10.0/node_modules/typedi/esm5/token.class.js
 /**
@@ -17292,7 +17312,7 @@ function Service(optionsOrServiceIdentifier) {
 
 const services_Container = Container.of('default');
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/ends-with.js
-var ends_with = __webpack_require__(63861);
+var ends_with = __webpack_require__(71650);
 var ends_with_default = /*#__PURE__*/__webpack_require__.n(ends_with);
 ;// ./src/utils/hosts.ts
 
@@ -17334,7 +17354,7 @@ const REPO = 'repo.e-hentai.org';
 const HATH = 'hath.network';
 const FORUM = 'forums.e-hentai.org';
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/promise.js
-var promise = __webpack_require__(93267);
+var promise = __webpack_require__(80190);
 var promise_default = /*#__PURE__*/__webpack_require__.n(promise);
 ;// ./node_modules/.pnpm/tslib@2.8.1/node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
@@ -17786,18 +17806,18 @@ function ready(callback) {
   }
 }
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/starts-with.js
-var starts_with = __webpack_require__(35972);
+var starts_with = __webpack_require__(93111);
 var starts_with_default = /*#__PURE__*/__webpack_require__.n(starts_with);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js/global-this.js
 var global_this = __webpack_require__(20375);
 var global_this_default = /*#__PURE__*/__webpack_require__.n(global_this);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/keys.js
-var instance_keys = __webpack_require__(97738);
+var instance_keys = __webpack_require__(7411);
 var keys_default = /*#__PURE__*/__webpack_require__.n(instance_keys);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/values.js
-var instance_values = __webpack_require__(59596);
+var instance_values = __webpack_require__(55601);
 var values_default = /*#__PURE__*/__webpack_require__.n(instance_values);
-;// ./node_modules/.pnpm/idb-keyval@6.2.5/node_modules/idb-keyval/dist/index.js
+;// ./node_modules/.pnpm/idb-keyval@6.3.0/node_modules/idb-keyval/dist/index.js
 /* unused harmony import specifier */ var _slicedToArray;
 /* unused harmony import specifier */ var _Promise;
 
@@ -17821,7 +17841,9 @@ function createStore(dbName, storeName) {
       // It seems like Safari sometimes likes to just close the connection.
       // It's supposed to fire this event when that happens. Let's hope it does!
       db.onclose = () => dbp = undefined;
-    }, () => {});
+    }, () => {
+      dbp = undefined;
+    });
     return dbp;
   };
   return (txMode, callback) => getDB().then(db => callback(db.transaction(storeName, txMode).objectStore(storeName)));
@@ -17898,7 +17920,7 @@ function update(key, updater) {
     const req = store.get(key);
     req.onsuccess = function () {
       try {
-        store.put(updater(this.result), key);
+        store.put(updater(req.result), key);
         resolve(promisifyRequest(store.transaction));
       } catch (err) {
         reject(err);
@@ -18386,26 +18408,26 @@ let messaging_Messaging = class Messaging {
 };
 messaging_Messaging = __decorate([Service(), __metadata("design:paramtypes", [Logger])], messaging_Messaging);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.107.2/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
-var injectStylesIntoStyleTag = __webpack_require__(14368);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.108.4/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(52263);
 var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.107.2/node_modules/style-loader/dist/runtime/styleDomAPI.js
-var styleDomAPI = __webpack_require__(82769);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.108.4/node_modules/style-loader/dist/runtime/styleDomAPI.js
+var styleDomAPI = __webpack_require__(16196);
 var styleDomAPI_default = /*#__PURE__*/__webpack_require__.n(styleDomAPI);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.107.2/node_modules/style-loader/dist/runtime/insertBySelector.js
-var insertBySelector = __webpack_require__(74987);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.108.4/node_modules/style-loader/dist/runtime/insertBySelector.js
+var insertBySelector = __webpack_require__(19912);
 var insertBySelector_default = /*#__PURE__*/__webpack_require__.n(insertBySelector);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.107.2/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
-var setAttributesWithoutAttributes = __webpack_require__(5344);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.108.4/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js
+var setAttributesWithoutAttributes = __webpack_require__(11375);
 var setAttributesWithoutAttributes_default = /*#__PURE__*/__webpack_require__.n(setAttributesWithoutAttributes);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.107.2/node_modules/style-loader/dist/runtime/insertStyleElement.js
-var insertStyleElement = __webpack_require__(31740);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.108.4/node_modules/style-loader/dist/runtime/insertStyleElement.js
+var insertStyleElement = __webpack_require__(58403);
 var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleElement);
-// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.107.2/node_modules/style-loader/dist/runtime/styleTagTransform.js
-var styleTagTransform = __webpack_require__(14633);
+// EXTERNAL MODULE: ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.108.4/node_modules/style-loader/dist/runtime/styleTagTransform.js
+var styleTagTransform = __webpack_require__(60752);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.107.2/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.15_typescript@6.0.3_webpack@5.107.2/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.4_webpack@5.107.2/node_modules/less-loader/dist/cjs/index.js!./src/plugin/introduce/index.less
-var introduce = __webpack_require__(89982);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.108.4/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.16_typescript@6.0.3_webpack@5.108.4/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.7_webpack@5.108.4/node_modules/less-loader/dist/cjs/index.js!./src/plugin/introduce/index.less
+var introduce = __webpack_require__(71557);
 ;// ./src/plugin/introduce/index.less
 
       
@@ -18434,10 +18456,10 @@ var introduce_update = injectStylesIntoStyleTag_default()(introduce/* default */
        /* harmony default export */ const plugin_introduce = (introduce/* default */.A && introduce/* default */.A.locals ? introduce/* default */.A.locals : undefined);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/trim.js
-var trim = __webpack_require__(3582);
+var trim = __webpack_require__(93459);
 var trim_default = /*#__PURE__*/__webpack_require__.n(trim);
 // EXTERNAL MODULE: ./node_modules/.pnpm/escape-html@1.0.3/node_modules/escape-html/index.js
-var escape_html = __webpack_require__(30774);
+var escape_html = __webpack_require__(18511);
 var escape_html_default = /*#__PURE__*/__webpack_require__.n(escape_html);
 ;// ./node_modules/.pnpm/emoji-regex@10.6.0/node_modules/emoji-regex/index.mjs
 /* harmony default export */ const emoji_regex = (() => {
@@ -18736,7 +18758,7 @@ let Introduce = class Introduce {
 Introduce = __decorate([Service(), __metadata("design:paramtypes", [Logger, Storage, messaging_Messaging, Tagging])], Introduce);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/sort.js
-var sort = __webpack_require__(81190);
+var sort = __webpack_require__(48723);
 var sort_default = /*#__PURE__*/__webpack_require__.n(sort);
 ;// ./node_modules/.pnpm/rxjs@7.8.2/node_modules/rxjs/dist/esm5/internal/util/isArrayLike.js
 var isArrayLike = function isArrayLike(x) {
@@ -19211,7 +19233,7 @@ var observable = function () {
   return typeof Symbol === 'function' && Symbol.observable || '@@observable';
 }();
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/reduce.js
-var reduce = __webpack_require__(77632);
+var reduce = __webpack_require__(39817);
 var reduce_default = /*#__PURE__*/__webpack_require__.n(reduce);
 ;// ./node_modules/.pnpm/rxjs@7.8.2/node_modules/rxjs/dist/esm5/internal/util/identity.js
 function identity(x) {
@@ -19349,7 +19371,7 @@ function isInteropObservable(input) {
   return isFunction(input[observable]);
 }
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/symbol/async-iterator.js
-var async_iterator = __webpack_require__(22122);
+var async_iterator = __webpack_require__(44403);
 var async_iterator_default = /*#__PURE__*/__webpack_require__.n(async_iterator);
 ;// ./node_modules/.pnpm/rxjs@7.8.2/node_modules/rxjs/dist/esm5/internal/util/isAsyncIterable.js
 
@@ -19850,8 +19872,8 @@ function filter(predicate, thisArg) {
     }));
   });
 }
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.107.2/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.15_typescript@6.0.3_webpack@5.107.2/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.4_webpack@5.107.2/node_modules/less-loader/dist/cjs/index.js!./src/plugin/tag-tip/index.less
-var tag_tip = __webpack_require__(36227);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.108.4/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.16_typescript@6.0.3_webpack@5.108.4/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.7_webpack@5.108.4/node_modules/less-loader/dist/cjs/index.js!./src/plugin/tag-tip/index.less
+var tag_tip = __webpack_require__(14560);
 ;// ./src/plugin/tag-tip/index.less
 
       
@@ -20158,7 +20180,7 @@ function slicedToArray_slicedToArray(r, e) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/url.js
-var core_js_stable_url = __webpack_require__(81551);
+var core_js_stable_url = __webpack_require__(87430);
 var url_default = /*#__PURE__*/__webpack_require__.n(core_js_stable_url);
 ;// ./src/services/ui-translation/helper.ts
 
@@ -20230,7 +20252,7 @@ merge(/^\/bitcoin\.php/, undefined, {
   'Bitcoin Donation': '比特币捐赠',
   '\n\t\tBitcoin (BTC) and Bitcoin Cash (BCH) are decentralized virtual currencies. This page allows you to donate these coins from an exchange service or a local wallet, track the confirmation process of the transaction, and apply the donated coins as a USD donation or Adopt-a-Server slots. This is not a custodial service; all coins sent to these addresses are considered donated to this site and cannot be withdrawn. ': '\n\t\t比特币 (BTC) 和比特币现金 (BCH) 是去中心化的虚拟货币。本页面允许您从交易所或本地钱包捐赠并跟踪交易过程，并能够将捐赠的虚拟货币作为美元捐赠或领养服务器。这不是一个保管服务，所有发送到这些地址的虚拟货币都被认为是捐赠给本网站的，无法撤回。',
   'Read this thread for more information about donating and how to buy coins': '阅读此帖子以了解更多关于捐赠和如何购买虚拟货币的信息',
-  'Bitcoin (BTC) transaction fees can be high and unpredictable at times. It is currently ': '比特币 (BTC) 的交易手续费有时会很高且不可预测。当前',
+  'Bitcoin (BTC) transaction fees can be high and/or unpredictable at times. It is currently ': '比特币 (BTC) 的交易手续费有时会很高和/或不可预测。当前',
   estimated: '预估',
   'This is the lowest viable feerate currently required for a transaction to be mined, which is estimated by sampling the minimum feerate of transactions that would have been included in a block in the last hour, assuming an average distribution of blocks.': '这是当前交易被挖掘所需的最低可行费率，通过采样最近一小时内可能被包含在区块中的交易的最低费率来估算，假设区块的分布是平均的。',
   'average-sized': '常规金额',
@@ -20259,12 +20281,12 @@ merge(/^\/bitcoin\.php/, undefined, {
   'Member not found.': '未找到此用户。',
   'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
   'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
-  'New donations will typically show up here in less than two minutes. It will show as ': '新的捐赠通常会在两分钟内显示在这里，但在被纳入一个区块并达到两个确认之前会处于',
-  ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. When it has been marked as ': '状态。此状态一般不会超过一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为',
-  ', you still have to apply it below to make it take effect.': '时才能通过下方按钮完成捐赠。',
-  'No transactions in the past year.': '在过去一年内没有交易',
+  'New donations will typically show up here in less than two minutes. It will show as ': '新的捐赠通常会在两分钟内显示在这里，但它会显示为',
   Pending: '待定',
+  ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. After it has been marked as ': '，直到它被包含在一个区块中并达到两次确认。这个过程通常不到一小时，但某些情况下可能需要更长时间。在它被标记为',
   Confirmed: '已确认',
+  ', you still have to apply it below to make it take effect.': '后，你仍需要在下面应用它才能使其生效。',
+  'No transactions in the past year.': '过去一年没有交易记录。',
   'Refresh List': '刷新列表',
   'Unspent: ': '未使用：',
   'Total All-Time Donations: ': '捐赠总额：',
@@ -20946,7 +20968,7 @@ merge(/^\/hathperks\.php/, undefined, {
   'Long Gone Before Daylight': '黎明之前',
   'The first energy drink used in a day gives twice the normal amount of stamina.': '每天的第一瓶能量饮料恢复量加倍。',
   'Dark Descent': '黑暗后裔',
-  "Halve the required number of amnesia shards for reseting an item's potential.": '重置装备潜能的重铸碎片所需数量减半。',
+  'Increases the number of World Seeds dropped from higher-level arenas.': '高等级竞技场掉落的世界种子数量增加 30%。',
   'Eminent Elementalist': '元素大师',
   'Increases effective Elemental Magic Proficiency by 10% of your natural base proficiency.': '您自身的基础元素魔法熟练度的 10% 会增加到有效熟练度里。',
   'Divine Warmage': '圣战法师',
@@ -20961,6 +20983,16 @@ merge(/^\/hathperks\.php/, undefined, {
   'Significantly boosts the damage output of the Orbital Friendship Cannon.': '大幅提升「友情小马炮」的杀伤力。',
   'Follower of Snowflake': '雪花的信徒',
   'Displays your unyielding devotion to Snowflake, the Goddess of Loot and Harvest.': '雪花 ─ 专司战利品与收获的女神。宣示您对她不屈不挠的奉献精神。',
+  'Limit Breaker I': '极限突破 I',
+  'For those who believe that power is but a number; increases the equipment stat fusion cap to 210.': '献给那些相信力量只是一个数字的人。将装备属性融合上限提升至 210。',
+  'Limit Breaker II': '极限突破 II',
+  'Further increases the equipment stat fusion cap to 220.': '进一步提高装备属性融合上限至 220。',
+  'Limit Breaker III': '极限突破 III',
+  'Further increases the equipment stat fusion cap to 230.': '进一步提高装备属性融合上限至 230。',
+  'Limit Breaker IV': '极限突破 IV',
+  'Further increases the equipment stat fusion cap to 240.': '进一步提高装备属性融合上限至 240。',
+  'Limit Breaker V': '极限突破 V',
+  'Further increases the equipment stat fusion cap to 250.': '进一步提高装备属性融合上限至 250。',
   'Thinking Cap': '深思',
   'Increases EXP gain by 25%. For calculation purposes, this bonus is added to the HentaiVerse training bonus.': '所有取得的经验值提升 25%。为计算方便，此奖励被合并到 HentaiVerse 训练奖励。',
   Mentats: '晶算师',
@@ -21006,13 +21038,13 @@ merge(/^\/hathperks\.php/, undefined, {
   'Hoarder V': '囤积者 V',
   'Increases the equipment storage allowance to 1000 equips.': '将装备数量限制增加到 1000。',
   'Repair Bear Mk.1': '修理熊 Mk.1',
-  'The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times. This reduces effective equipment wear by half.': '莫古利动力学的最新发明，修理熊会随侍在侧帮助您的装备随时保持良好状态。有效装备耗损程度将减少一半。',
+  'The latest invention from Moogle Dynamics, the Repair Bear will follow you around and help you keep your equipment in good shape at all times, reducing effective equipment wear by half. Does not affect charms.': '作为莫古利动力学的最新发明，修理熊会一路跟随您，帮助您随时维护装备，使装备的实际磨损降低一半。对护身符无效。',
   'Repair Bear Mk.2': '修理熊 Mk.2',
   'Further hones the skills of your Repair Bear, making it better at maintaining your equipment. Effective equipment wear is reduced to 25% of normal.': '进一步磨练您的修理熊的技巧，使它精于维护您的装备。有效装备耗损程度减少为正常值的 25%。',
   'Repair Bear Mk.3': '修理熊 Mk.3',
   'Trains your Repair Bear to the penultimate level, making those pesky forge visits (almost) a distant memory. Effective equipment wear is reduced to 10% of normal.': '将您的修理熊培训至完全体，让那些烦人的锻造次数 (几乎) 成为遥远的记忆。有效装备耗损程度减少为正常值的 10%。',
   'Repair Bear Mk.4': '修理熊 Mk.4',
-  'The pinnacle of Repair Bear Technology, providing the ultimate in-the-field preventive equipment maintenance. Equipment wear is fully eliminated, and defeat durability loss is cut by half.': '修理熊科技的顶尖之作，提供这门领域最高端的预防性装备维护技术。装备耗损完全消除，被击倒时的耐久度损耗减半。',
+  'The pinnacle of Repair Bear Technology, providing the ultimate in-the-field preventive equipment maintenance. Equipment wear is fully eliminated, and equipment durability loss on defeat is cut by half.': '修理熊科技的顶尖之作，提供实地预防性装备维护的终极方案。装备耗损完全消除，且被击败时的装备耐久度损耗减半。',
   'Dæmon Duality I': '双重守护精灵 I',
   'Increases attack damage and magic damage by 10%.': '提升攻击伤害和魔法伤害各 10%。',
   'Dæmon Duality II': '双重守护精灵 II',
@@ -21087,7 +21119,7 @@ function _defineProperty(e, r, t) {
 
 ;// ./src/services/ui-translation/data/_browsingcountry.ts
 const BROWSING_COUNTRY = {
-  'North America': 'North America (北美洲)',
+  Africa: 'Africa (非洲)',
   Afghanistan: 'Afghanistan (阿富汗)',
   'Aland Islands': 'Aland Islands (奥兰群岛)',
   Albania: 'Albania (阿尔巴尼亚)',
@@ -21101,6 +21133,7 @@ const BROWSING_COUNTRY = {
   Argentina: 'Argentina (阿根廷)',
   Armenia: 'Armenia (亚美尼亚)',
   Aruba: 'Aruba (阿鲁巴)',
+  Asia: 'Asia (亚洲)',
   'Asia/Pacific Region': 'Asia/Pacific Region (亚太地区)',
   Australia: 'Australia (澳大利亚)',
   Austria: 'Austria (奥地利)',
@@ -21134,13 +21167,13 @@ const BROWSING_COUNTRY = {
   'Central African Republic': 'Central African Republic (中非共和国)',
   Chad: 'Chad (乍得)',
   Chile: 'Chile (智利)',
-  China: 'China (中国大陆)',
+  China: 'China (中国)',
+  'Chinese Dominion': 'Chinese Dominion (中国大陆)',
   'Christmas Island': 'Christmas Island (圣诞岛)',
   'Cocos Islands': 'Cocos Islands (科科斯群岛)',
   Colombia: 'Colombia (哥伦比亚)',
   Comoros: 'Comoros (科摩罗)',
   Congo: 'Congo (刚果)',
-  'Congo The Democratic Republic of the': 'Congo The Democratic Republic of the (刚果民主共和国)',
   'Cook Islands': 'Cook Islands (库克群岛)',
   'Costa Rica': 'Costa Rica (哥斯达黎加)',
   "Cote D'Ivoire": "Cote D'Ivoire (科特迪瓦)",
@@ -21241,6 +21274,7 @@ const BROWSING_COUNTRY = {
   Morocco: 'Morocco (摩洛哥)',
   Mozambique: 'Mozambique (莫桑比克)',
   Myanmar: 'Myanmar (缅甸)',
+  'North America': 'North America (北美洲)',
   Namibia: 'Namibia (纳米比亚)',
   Nauru: 'Nauru (瑙鲁)',
   Nepal: 'Nepal (尼泊尔)',
@@ -21255,6 +21289,7 @@ const BROWSING_COUNTRY = {
   'North Korea': 'North Korea (朝鲜)',
   'Northern Mariana Islands': 'Northern Mariana Islands (北马里亚纳群岛)',
   Norway: 'Norway (挪威)',
+  Oceania: 'Oceania (大洋洲)',
   Oman: 'Oman (阿曼)',
   Pakistan: 'Pakistan (巴基斯坦)',
   Palau: 'Palau (帕劳)',
@@ -21295,6 +21330,7 @@ const BROWSING_COUNTRY = {
   'Solomon Islands': 'Solomon Islands (所罗门群岛)',
   Somalia: 'Somalia (索马里)',
   'South Africa': 'South Africa (南非)',
+  'South America': 'South America (南美洲)',
   'South Georgia and the South Sandwich Islands': 'South Georgia and the South Sandwich Islands (南乔治亚岛和南桑威奇群岛)',
   'South Korea': 'South Korea (韩国)',
   'South Sudan': 'South Sudan (南苏丹)',
@@ -21353,7 +21389,8 @@ merge(/^\/hentaiathome\.php\??$/, undefined, _objectSpread(_objectSpread({
   'Hits/sec': '命中/秒',
   Coverage: '覆盖率',
   'Hits/GB': '命中/GB',
-  Quality: '质量',
+  Quality: '质量'
+}, BROWSING_COUNTRY), {}, {
   'North and South America': '北美洲和南美洲',
   'Europe and Africa': '欧洲和非洲',
   'Asia and Oceania': '亚洲和大洋洲',
@@ -21386,8 +21423,7 @@ merge(/^\/hentaiathome\.php\??$/, undefined, _objectSpread(_objectSpread({
   Region: '地区',
   Online: '在线',
   Offline: '离线',
-  'Not available when offline': '离线状态下不可用'
-}, BROWSING_COUNTRY), {}, {
+  'Not available when offline': '离线状态下不可用',
   'Apply for H@H participation': '参与申请 H@H',
   'For information on how to participate in the Hentai@Home Project, refer to the ': '有关如何参与 Hentai@Home 项目的信息，请参阅 ',
   'Hentai@Home Project FAQ': 'Hentai@Home 项目常见问题解答 (英文)',
@@ -21437,13 +21473,13 @@ merge(/^\/hentaiathome\.php\?.*act=settings/, undefined, {
   'Current Value: ': '现值：',
   'New Value: ': '新值：',
   'Port for Incoming Connections': '监听端口',
-  'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.': '可以使用 443 (推荐) 或 1024~65534 的大部分端口。此端口必须在您的防火墙中打开，并经由您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
-  'Note: The port cannot be changed while the client is running.': '注意：客户端运行时不能更改端口。',
+  'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall. For home networks, it must also be forwarded on any NAT-based router(s) you connect to the internet through.': '可以使用 443（推荐）或 1024~65534 之间的大部分端口。此端口必须在您的防火墙中打开。如果是家庭网络，还必须在您连接到 Internet 的任何基于 NAT 的路由器上进行端口转发。',
+  'Note: The port cannot be changed while the client is running.': '注意：客户端运行期间无法更改端口。',
   'Client Name': '客户端名称',
   'You can set a custom name for this client here. This will be used in the various listings this client appears in.': '您可以在这里为此客户端设置自定义名称。它会用于此客户端出现的各种列表中。',
   'Maximum Upload Rate': '最大上传速率',
   'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.': '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
-  'Clients cannot be assigned high-capacity ranges if set below 10 MB/s.': '如果设置低于 10 MB/s，则不会被分配到大容量范围。',
+  'No high-capacity ranges are assigned if set below 10 MB/s.': '如果设置低于 10 MB/s，将不会分配大容量范围。',
   ' KBytes/s': ' KB/s',
   ' Enable Client-Side Speed Limit (recommended only for home networks)': ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
   ' Confirm removing all assigned high-capacity ranges from this client if set below 10 MB/s': ' 如果低于10 MB/s，确认删除客户端中所有大容量范围',
@@ -21455,28 +21491,31 @@ merge(/^\/hentaiathome\.php\?.*act=settings/, undefined, {
   'To reduce the upload rate for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.': '降低该客户端的上传速率需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
   'Maximum Disk Cache Size': '最大磁盘缓存大小',
   'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.': '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现的越好。保留空间必须始终可用。',
+  ' is ': ' 已',
+  committed: '占用',
+  'This is the minimum disk space that has currently been claimed for the H@H cache. Reducing the maximum disk cache size below this value will require removing some static ranges, which will decrease the traffic to your client.': '这是 H@H 缓存当前占用的最小磁盘空间。如果将最大磁盘缓存大小减少到此值以下，则需要移除一些静态范围，这会导致客户端流量减少。',
   ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
   'To reduce the disk space for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.': '降低该客户端所需的磁盘空间需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
   'Advanced Settings': '高级设置',
   'The settings below are optional advanced settings.': '以下设置项为可选的高级设置',
-  'Reset Client Key': '重置客户端 Key',
-  'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next time the client starts.': '如果您认为您的客户端 Key 已泄露，可以通过选中复选框来重置密钥。下次客户端启动时，您必须重新输入密钥。',
-  ' Reset Client Key': ' 重置客户端 Key',
   'Monthly Data Transfer Target': '每月数据流量限制',
   Unlimited: '无限',
   ' GB per month': ' GB/月',
-  'Static Range allocation is limited to 1 per 5 GB. Clients cannot be assigned high-capacity ranges if set below 5 TB/month.': '每 1 组静态范围至少 5 GB。如果设置低于 5 TB/月，则不会被分配到大容量范围。',
+  'If set, Static Range allocation will be limited to 1 per 5 GB. No high-capacity ranges are assigned if set below 5 TB/month.': '若已设置，静态范围分配限制为每 5 GB 分配 1 个。若设置低于 5 TB/月，将不会分配大容量范围。',
   'To reduce the monthly data transfer target for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.': '降低该客户端的每月数据流量限制需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
   'You need to check the confirmation box to confirm removing these ranges to set this.': '你需要勾选确认框，确认移除这些范围才能进行设置。',
   ' Confirm removing all assigned high-capacity ranges from this client if set below 5 TB/month': ' 如果低于5 TB/月，确认删除客户端中所有大容量范围',
   'Minimum Free Disk Space': '磁盘最小剩余空间',
   'Use Default': '默认',
-  'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB even if this is not set.': '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GiB 时，客户端也会退出。',
+  'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB if this is not set.': '如果设置了此值，当磁盘可用空间低于该值时，客户端将停止运行。若未设置此值，当可用空间低于 1 GiB 时，客户端也会退出。',
+  'Reset Client Key': '重置客户端 Key',
+  'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next time the client starts.': '如果您认为您的客户端 Key 已泄露，可以通过选中复选框来重置密钥。下次客户端启动时，您必须重新输入密钥。',
+  ' Reset Client Key': ' 重置客户端 Key',
   'Reset Static Ranges': '重置静态范围',
   'Your client will be assigned ranges of files to cache and serve. This toggle clears these ranges. ': '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
-  'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.': '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
+  'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL CAUSE YOUR CLIENT TO BECOME REVOKED.': '除非缓存丢失，否则请勿执行此操作。它无法修复客户端的其他任何问题。定期执行此操作将导致您的客户端被吊销。',
   'No ranges are assigned yet. The client must run for at least 24 hours continuously before any ranges are assigned.': '尚未分配任何范围。客户端必须连续运行至少 24 小时，才会分配范围。',
-  'The following ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
+  'The following priority ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
   ' Reset Static Ranges': ' 重置静态范围',
   'Warning: You should ': '警告：',
   never: '不要',
@@ -22026,17 +22065,18 @@ merge(/^\/uconfig\.php/, undefined, uconfig_objectSpread(uconfig_objectSpread({
   'Image Load Settings': '图像加载设置',
   'Do you wish to load images through the Hentai@Home Network, if available?': '如果可用，是否希望通过 Hentai@Home 网络加载图像？',
   ' Any client (Recommended)': ' 任意客户端 (推荐)',
-  ' Default port clients only (Can be slower. Enable if behind firewall/proxy that blocks outgoing non-standard ports.)': ' 仅使用默认端口的客户端 (可能稍慢，当防火墙或代理阻止非标准端口的流量时启用此项)',
+  ' Default port clients only (Slower. Use only if behind a firewall or proxy that blocks outgoing non-standard ports.)': ' 仅限默认端口的客户端（速度较慢。仅在防火墙或代理阻止非标准出站端口时使用。）',
   ' No [Modern/HTTPS] (Donator only. You will not be able to browse as many pages. Recommended only if having severe problems.)': ' 否 [现代/HTTPS] (仅限捐赠者，配额消耗会加快，只有出现严重的问题时才启用)',
   ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)': ' 否 [传统/HTTP] (仅限捐赠者，可能无法在现代浏览器中使用，只推荐在过时的浏览器中启用)',
-  'You appear to be browsing the site from ': '看起来您正在 ',
-  ' or use a VPN or proxy in this country, which means the site will try to load images from H@H clients in this general geographic region. If this is incorrect, or if you want to use a different region for any reason (like if you are using a split tunneling VPN), you can select a different country below.': ' 浏览此网页，或者使用了此处的 VPN/代理，这意味着网站会尝试通过此区域的 H@H 客户端加载图像。如果此结果不正确，或者您希望通过其他地区的 H@H 客户端加载图像 (例如您正在使用分割隧道 VPN)，可以在下方选择一个不同的区域。',
-  '\n\t\tBrowsing Country: ': '浏览区域：',
+  'You appear to be located in ': '看起来您位于 ',
+  ', or use a VPN located there, and will default to load images from the ': ' ，或者使用了此处的 VPN/代理，这意味着网站会默认通过 ',
+  ' H@H Region.': ' H@H 区域加载图像。',
+  'If this is incorrect, or you prefer using a different region for any reason (like if you are using a split tunneling VPN), select the desired region below.': '如果此结果不正确，或者您希望通过其他 H@H 区域加载图像 (例如您正在使用分割隧道 VPN)，可以在下方选择您想要的区域。',
+  '\n\t\tH@H Region: ': 'H@H 区域：',
   'Auto-Detect': '自动检测'
 }, BROWSING_COUNTRY), {}, {
   'Image Size Settings': '图像大小设置',
-  'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. Note that legacy images will have horizontal resolutions of 780x / 1280x / 1600x / 2400x instead. (Resolutions above 1280x are restricted to accounts with any hath perk, a bronze star, or an UID below 3,000,000.)': '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 800 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。注意，旧图库的水平分辨率为 780x / 1280x / 1600x / 2400x。 (高于 1280 像素只提供给解锁过任意 Hath Perk、铜星或 UID 小于 3,000,000 的用户)',
-  'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. Note that legacy images will have horizontal resolutions of 780x / 1280x / 1600x / 2400x instead.': '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 800 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。注意，旧图库的水平分辨率为 780x / 1280x / 1600x / 2400x。',
+  'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions.': '在线浏览时，图像通常会被重采样至 1280 像素（桌面端）或 800 像素（移动端）水平分辨率。您可以从以下选项中选择替代分辨率。',
   ' Auto': ' 自动',
   'Use original images instead of the resampled versions? Resampled images will still be used if you select a horizontal resolution different than "Auto" above and the image in question is wider, or if the original image is larger than 10 MiB (or 4 MiB for galleries older than one year).': '在阅读时优先加载原图而非重采样版本？当选择了“自动”以外的分辨率且原图宽度大于设定值，或原图大于 10 MiB (一年前发布的图库 4 MiB) 时，仍会加载重采样版本。',
   ' Prefer resampled images': ' 优先加载重采样版本',
@@ -22597,7 +22637,7 @@ let UiTranslation = class UiTranslation {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.4.8","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 42000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.22.0 || ^24.15.0"},"packageManager":"pnpm@11.6.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.29.7","@babel/plugin-transform-runtime":"^7.29.7","@babel/preset-env":"^7.29.7","@babel/runtime-corejs3":"^7.29.7","@eslint/js":"^10.0.1","@types/chrome":"^0.1.43","@types/escape-html":"^1.0.4","@types/node":"^25.9.3","@types/tampermonkey":"^5.0.5","@types/webextension-polyfill":"^0.12.5","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.1.1","copy-webpack-plugin":"^14.0.0","crx":"^5.0.1","css-loader":"^7.1.4","cssnano":"^8.0.2","eslint":"^10.4.1","eslint-config-prettier":"^10.1.8","execa":"^9.6.1","glob":"^13.0.6","html-webpack-plugin":"^5.6.7","less":"^4.6.4","less-loader":"^13.0.0","postcss":"^8.5.15","postcss-import":"^16.1.1","postcss-loader":"^8.2.1","postcss-preset-env":"^11.3.0","prettier":"^3.8.4","rimraf":"^6.1.3","semver":"^7.8.4","style-loader":"^4.0.0","ts-loader":"^9.6.0","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.7.0","typescript":"^6.0.3","typescript-eslint":"^8.61.0","web-ext":"^10.3.0","webpack":"^5.107.2","webpack-bundle-analyzer":"^5.3.0","webpack-cli":"^7.0.3","webpack-dev-server":"^5.2.4","yaml-loader":"^0.9.0"},"dependencies":{"core-js":"^3.49.0","emoji-regex":"^10.6.0","escape-html":"^1.0.3","idb-keyval":"^6.2.5","lit-html":"^3.3.3","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.4.9","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 42000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^22.22.0 || ^24.15.0"},"packageManager":"pnpm@11.11.0","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^7.29.7","@babel/plugin-transform-runtime":"^7.29.7","@babel/preset-env":"^7.29.7","@babel/runtime-corejs3":"^7.29.7","@eslint/js":"^10.0.1","@types/chrome":"^0.2.2","@types/escape-html":"^1.0.4","@types/node":"^26.1.1","@types/tampermonkey":"^5.0.5","@types/webextension-polyfill":"^0.12.5","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.1.1","copy-webpack-plugin":"^14.0.0","crx":"^5.0.1","css-loader":"^7.1.4","cssnano":"^8.0.2","eslint":"^10.7.0","eslint-config-prettier":"^10.1.8","execa":"^9.6.1","glob":"^13.0.6","html-webpack-plugin":"^5.6.7","less":"^4.6.7","less-loader":"^13.0.0","postcss":"^8.5.16","postcss-import":"^16.1.1","postcss-loader":"^8.2.1","postcss-preset-env":"^11.3.2","prettier":"^3.9.5","rimraf":"^6.1.3","semver":"^7.8.5","style-loader":"^4.0.0","ts-loader":"^9.6.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.8.0","typescript":"^6.0.3","typescript-eslint":"^8.63.0","web-ext":"^10.5.0","webpack":"^5.108.4","webpack-bundle-analyzer":"^5.3.0","webpack-cli":"^7.2.1","webpack-dev-server":"^6.0.0","yaml-loader":"^0.9.0"},"dependencies":{"core-js":"^3.49.0","emoji-regex":"^10.6.0","escape-html":"^1.0.3","idb-keyval":"^6.3.0","lit-html":"^3.3.3","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 const packageJson = package_namespaceObject;
@@ -22746,8 +22786,8 @@ DateTime.month = DateTime_1.day * (365.25 / 12);
 DateTime.year = DateTime_1.month * 12;
 DateTime = DateTime_1 = __decorate([Service()], DateTime);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.107.2/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.15_typescript@6.0.3_webpack@5.107.2/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.4_webpack@5.107.2/node_modules/less-loader/dist/cjs/index.js!./src/plugin/syringe/index.less
-var syringe = __webpack_require__(8510);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.108.4/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.16_typescript@6.0.3_webpack@5.108.4/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.7_webpack@5.108.4/node_modules/less-loader/dist/cjs/index.js!./src/plugin/syringe/index.less
+var syringe = __webpack_require__(96917);
 ;// ./src/plugin/syringe/index.less
 
       
@@ -23906,10 +23946,10 @@ let DatabaseUpdater = class DatabaseUpdater {
 DatabaseUpdater = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, Database, BadgeLoading])], DatabaseUpdater);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/object/from-entries.js
-var from_entries = __webpack_require__(82235);
+var from_entries = __webpack_require__(24754);
 var from_entries_default = /*#__PURE__*/__webpack_require__.n(from_entries);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/instance/flat-map.js
-var flat_map = __webpack_require__(18902);
+var flat_map = __webpack_require__(83255);
 var flat_map_default = /*#__PURE__*/__webpack_require__.n(flat_map);
 ;// ./src/plugin/suggest/dict.yml
 const dict_namespaceObject = /*#__PURE__*/JSON.parse('{"拂":["払"],"奸":["姦"],"爱":["愛"],"拔":["抜"],"罢":["罷"],"霸":["覇"],"败":["敗"],"拜":["拝"],"颁":["頒"],"饱":["飽"],"宝":["寶"],"报":["報"],"贝":["貝"],"备":["備"],"辈":["輩"],"笔":["筆"],"币":["幣"],"闭":["閉"],"边":["辺"],"编":["編"],"变":["変"],"标":["標"],"别":["別"],"宾":["賓"],"冰":["氷"],"并":["並","併"],"钵":["缽"],"补":["補"],"步":["歩"],"财":["財"],"参":["參"],"残":["殘"],"蚕":["蠶"],"惨":["慘"],"仓":["倉"],"藏":["蔵"],"册":["冊"],"侧":["側"],"测":["測"],"层":["層"],"插":["挿"],"查":["査"],"禅":["禪"],"产":["產","産"],"肠":["腸"],"偿":["償"],"场":["場"],"巢":["巣"],"车":["車"],"彻":["徹"],"陈":["陳"],"称":["稱"],"诚":["誠"],"乘":["乗"],"惩":["懲"],"吃":["喫"],"痴":["癡"],"迟":["遅"],"齿":["歯"],"耻":["恥"],"敕":["勅"],"冲":["沖","衝"],"虫":["蟲"],"铳":["銃"],"丑":["醜"],"础":["礎"],"处":["處","処"],"触":["觸"],"传":["伝"],"窗":["窓"],"创":["創"],"锤":["錘"],"纯":["純"],"词":["詞"],"辞":["辭"],"赐":["賜"],"从":["従"],"粹":["粋"],"错":["錯"],"达":["達"],"带":["帯"],"贷":["貸"],"担":["擔"],"单":["単"],"胆":["膽"],"诞":["誕"],"弹":["弾"],"当":["當"],"党":["黨"],"导":["導"],"岛":["島"],"盗":["盜"],"稻":["稲"],"德":["徳"],"灯":["燈"],"敌":["敵"],"递":["逓"],"缔":["締"],"点":["點"],"电":["電"],"钓":["釣"],"叠":["畳"],"顶":["頂"],"订":["訂"],"锭":["錠"],"东":["東"],"动":["動","働"],"冻":["凍"],"栋":["棟"],"斗":["闘"],"独":["獨"],"读":["読"],"笃":["篤"],"断":["斷"],"锻":["鍛"],"队":["隊"],"对":["対"],"钝":["鈍"],"夺":["奪"],"堕":["墮"],"额":["額"],"恶":["悪"],"饿":["餓"],"儿":["児"],"贰":["弐"],"发":["髪","発"],"罚":["罰"],"阀":["閥"],"烦":["煩"],"饭":["飯"],"范":["範"],"贩":["販"],"访":["訪"],"纺":["紡"],"飞":["飛"],"废":["廃"],"费":["費"],"纷":["紛"],"氛":["雰"],"坟":["墳"],"奋":["奮"],"愤":["憤"],"风":["風"],"缝":["縫"],"佛":["仏"],"肤":["膚"],"负":["負"],"妇":["婦"],"复":["複","復"],"赋":["賦"],"缚":["縛"],"该":["該"],"干":["幹","乾"],"绀":["紺"],"刚":["剛"],"纲":["綱"],"钢":["鋼"],"阁":["閣"],"个":["個","箇"],"给":["給"],"宫":["宮"],"贡":["貢"],"沟":["溝"],"构":["構"],"购":["購"],"谷":["穀"],"顾":["顧"],"挂":["掛"],"关":["関"],"观":["観"],"馆":["館"],"贯":["貫"],"惯":["慣"],"广":["広"],"归":["帰"],"规":["規"],"轨":["軌"],"贵":["貴"],"国":["國"],"果":["菓"],"过":["過"],"还":["還"],"汉":["漢"],"号":["號"],"贺":["賀"],"黑":["黒"],"红":["紅"],"后":["後"],"户":["戸"],"护":["護"],"华":["華"],"话":["話"],"怀":["懐"],"坏":["壊"],"欢":["歓"],"环":["環"],"缓":["緩"],"换":["換"],"唤":["喚"],"挥":["揮"],"辉":["輝"],"绘":["絵"],"贿":["賄"],"惠":["恵"],"货":["貨"],"获":["穫","獲"],"祸":["禍"],"击":["撃"],"饥":["飢"],"机":["機"],"鸡":["鶏"],"积":["積"],"级":["級"],"极":["極"],"几":["幾","机"],"计":["計"],"记":["記"],"纪":["紀"],"际":["際"],"剂":["剤"],"迹":["跡"],"济":["済"],"继":["継"],"绩":["績"],"假":["仮"],"价":["価"],"坚":["堅"],"间":["間"],"监":["監"],"茧":["繭"],"俭":["倹"],"检":["検"],"减":["減"],"简":["簡"],"见":["見"],"荐":["薦"],"剑":["剣"],"舰":["艦"],"渐":["漸"],"践":["踐"],"鉴":["鑑","鑑"],"将":["將"],"讲":["講"],"奖":["奨"],"纟":["糸"],"绞":["絞"],"矫":["矯"],"觉":["覚"],"较":["較"],"阶":["階"],"揭":["掲"],"节":["節"],"杰":["傑","傑"],"诘":["詰"],"洁":["潔"],"结":["結"],"届":["屆"],"紧":["緊"],"谨":["謹"],"尽":["盡"],"进":["進"],"经":["経"],"惊":["驚"],"鲸":["鯨"],"净":["浄"],"竞":["競"],"静":["靜"],"镜":["鏡"],"纠":["糾"],"举":["挙"],"剧":["劇"],"据":["據","拠"],"卷":["巻","巻"],"绢":["絹"],"决":["決"],"绝":["絶"],"军":["軍"],"开":["開"],"壳":["殻"],"渴":["渇"],"课":["課"],"垦":["墾"],"恳":["懇"],"库":["庫"],"夸":["誇"],"块":["塊"],"宽":["寛"],"况":["況"],"矿":["鉱"],"扩":["拡"],"来":["來"],"赖":["頼"],"濑":["瀬"],"栏":["欄"],"览":["覧"],"滥":["濫"],"劳":["労"],"乐":["楽"],"垒":["塁"],"泪":["涙"],"类":["類"],"离":["離"],"礼":["禮"],"里":["裡","裏"],"历":["歴","暦"],"丽":["麗"],"励":["勵"],"隶":["隸","隷"],"连":["連"],"练":["練"],"炼":["錬"],"恋":["戀"],"凉":["涼"],"粮":["糧"],"两":["両"],"疗":["療"],"猎":["猟"],"邻":["鄰","隣"],"临":["臨"],"赁":["賃"],"灵":["霊"],"铃":["鈴"],"龄":["齢"],"领":["領"],"泷":["滝"],"楼":["樓"],"炉":["爐"],"虏":["虜"],"陆":["陸"],"录":["録"],"乱":["亂"],"伦":["倫"],"轮":["輪"],"论":["論"],"罗":["羅"],"络":["絡"],"虑":["慮"],"绿":["緑"],"马":["馬"],"买":["買"],"麦":["麥"],"卖":["売"],"脉":["脈"],"蛮":["蠻"],"满":["満"],"猫":["貓"],"贸":["貿"],"没":["沒"],"每":["毎"],"门":["門"],"梦":["夢"],"绵":["綿"],"灭":["滅"],"鸣":["鳴"],"铭":["銘"],"默":["黙"],"谋":["謀"],"亩":["畝"],"纳":["納"],"难":["難"],"恼":["悩"],"脑":["脳"],"内":["內"],"拟":["擬"],"娘":["嬢"],"酿":["醸"],"鸟":["鳥"],"宁":["寧"],"农":["農"],"浓":["濃"],"诺":["諾"],"盘":["盤"],"赔":["賠"],"喷":["噴"],"贫":["貧"],"频":["頻"],"评":["評"],"扑":["撲"],"铺":["舗"],"仆":["僕"],"朴":["樸"],"谱":["譜"],"齐":["斉"],"骑":["騎"],"棋":["碁"],"启":["啓"],"气":["気"],"弃":["棄"],"迁":["遷"],"铅":["鉛"],"谦":["謙"],"钱":["銭"],"潜":["潛"],"浅":["淺"],"强":["強"],"缲":["繰"],"桥":["橋"],"窃":["竊"],"亲":["親"],"寝":["寢"],"轻":["軽"],"倾":["傾"],"请":["請"],"庆":["慶"],"穷":["窮"],"驱":["駆"],"圈":["圏"],"权":["権"],"劝":["勧"],"确":["確"],"壤":["壌"],"让":["譲"],"热":["熱"],"认":["認"],"荣":["栄"],"软":["軟"],"锐":["鋭"],"润":["潤"],"伞":["傘"],"丧":["喪"],"骚":["騒"],"扫":["掃"],"涩":["渋"],"杀":["殺"],"缮":["繕"],"伤":["傷"],"赏":["賞"],"烧":["焼"],"绍":["紹"],"舍":["舎","捨"],"设":["設"],"涉":["渉"],"摄":["摂"],"绅":["紳"],"审":["審"],"声":["聲"],"绳":["縄"],"圣":["聖"],"胜":["勝"],"剩":["剰"],"师":["師"],"诗":["詩"],"湿":["濕"],"时":["時"],"识":["識"],"实":["実"],"势":["勢"],"饰":["飾"],"试":["試"],"视":["視"],"适":["適"],"释":["釈"],"收":["収"],"寿":["壽"],"兽":["獣"],"书":["書"],"枢":["樞"],"疏":["疎"],"输":["輸"],"属":["屬"],"术":["術"],"树":["樹"],"数":["數"],"帅":["帥"],"双":["雙"],"税":["稅"],"顺":["順"],"说":["說","説"],"饲":["飼"],"讼":["訟"],"搜":["捜"],"诉":["訴"],"肃":["粛"],"随":["隨"],"髓":["髄"],"岁":["歳"],"碎":["砕"],"穗":["穂"],"孙":["孫"],"损":["損"],"缩":["縮"],"锁":["鎖"],"态":["態"],"坛":["壇"],"昙":["曇"],"谈":["談"],"叹":["歎","嘆"],"汤":["湯"],"讨":["討"],"腾":["騰"],"誊":["謄"],"题":["題"],"条":["條"],"调":["調"],"铁":["鐵","鉄"],"厅":["庁"],"听":["聴"],"铜":["銅"],"统":["統"],"头":["頭"],"图":["図"],"涂":["塗"],"团":["団"],"脱":["脫"],"驮":["駄"],"湾":["灣"],"顽":["頑"],"万":["萬"],"网":["網"],"为":["為"],"违":["違"],"围":["囲"],"维":["維"],"伟":["偉"],"伪":["偽"],"纬":["緯"],"卫":["衛"],"纹":["紋"],"闻":["聞"],"稳":["穏"],"问":["問"],"涡":["渦"],"污":["汚"],"无":["無"],"吴":["呉"],"务":["務"],"误":["誤"],"雾":["霧"],"溪":["渓","渓"],"习":["習"],"袭":["襲"],"玺":["璽"],"铣":["銑"],"戏":["戯"],"系":["係"],"细":["細"],"舄":["潟"],"辖":["轄"],"吓":["嚇"],"纤":["繊"],"鲜":["鮮"],"闲":["閑","閑"],"贤":["賢"],"显":["顕"],"险":["険"],"现":["現"],"宪":["憲"],"陷":["陥"],"缐":["線"],"乡":["郷"],"详":["詳"],"响":["響"],"项":["項"],"晓":["暁"],"笑":["咲"],"效":["効"],"协":["協"],"胁":["脅"],"写":["寫"],"谢":["謝"],"兴":["興"],"许":["許"],"叙":["敘"],"绪":["緒"],"续":["続"],"轩":["軒"],"悬":["懸"],"选":["選"],"勋":["勲"],"熏":["薫"],"寻":["尋"],"训":["訓"],"压":["圧"],"亚":["亜"],"烟":["煙"],"严":["厳"],"盐":["塩"],"颜":["顔"],"验":["験"],"扬":["揚"],"阳":["陽"],"养":["養"],"样":["様"],"窑":["窯"],"谣":["謡"],"摇":["揺"],"药":["薬"],"业":["業"],"叶":["葉"],"谒":["謁"],"壹":["壱"],"仪":["儀"],"遗":["遺"],"亿":["億"],"义":["義"],"忆":["憶"],"议":["議"],"异":["異"],"译":["訳"],"驿":["駅"],"阴":["陰"],"银":["銀"],"饮":["飲"],"隐":["隠"],"樱":["桜"],"萤":["蛍"],"营":["営"],"应":["応"],"拥":["擁"],"咏":["詠"],"踊":["踴"],"优":["優"],"忧":["憂"],"邮":["郵"],"犹":["猶"],"游":["遊"],"诱":["誘"],"余":["餘"],"鱼":["魚"],"娱":["娯"],"渔":["漁"],"与":["與"],"语":["語"],"狱":["獄"],"预":["預"],"谕":["諭"],"御":["禦"],"誉":["譽"],"园":["園"],"员":["員"],"缘":["縁"],"远":["遠"],"愿":["願"],"约":["約"],"阅":["閲"],"跃":["躍"],"云":["雲","伝"],"运":["運"],"韵":["韻"],"杂":["雑"],"灾":["災"],"载":["載"],"暂":["暫"],"赞":["贊","賛"],"脏":["臓"],"则":["則"],"责":["責"],"择":["択"],"泽":["沢"],"贼":["賊"],"增":["増"],"赠":["贈"],"札":["劄"],"诈":["詐"],"斋":["斎"],"债":["債"],"栈":["桟"],"战":["戦"],"张":["張"],"长":["長"],"帐":["帳"],"胀":["脹"],"诏":["詔"],"着":["著"],"贞":["貞"],"针":["針"],"侦":["偵"],"诊":["診"],"阵":["陣"],"镇":["鎮"],"争":["爭"],"证":["證","証"],"织":["織"],"执":["執"],"值":["値"],"职":["職"],"纸":["紙"],"质":["質"],"滞":["滯"],"终":["終"],"钟":["鐘"],"种":["種"],"冢":["塚"],"众":["眾","衆"],"轴":["軸"],"昼":["晝"],"诸":["諸"],"嘱":["囑"],"贮":["貯"],"驻":["駐"],"筑":["築"],"专":["専"],"转":["転"],"妆":["妝"],"庄":["荘"],"装":["裝"],"壮":["壯"],"状":["狀"],"坠":["墜"],"浊":["濁"],"咨":["諮"],"资":["資"],"姊":["姉"],"渍":["漬"],"总":["総"],"纵":["縦"],"组":["組"],"醉":["酔"],"闷":["悶"],"灌":["浣"],"仿":["倣"],"做":["作"],"划":["画"],"叛":["反"],"圆":["円"],"吊":["弔"],"雕":["彫"],"征":["徴"],"托":["託"],"采":["採"],"榨":["搾"],"拨":["発"],"升":["昇"],"晚":["晩"],"桌":["卓"],"沉":["沈"],"准":["準"],"泼":["発"],"滨":["浜"],"熔":["溶"],"牺":["犠"],"瓣":["弁"],"愈":["癒"],"炮":["砲"],"丝":["糸"],"线":["線"],"县":["県"],"缺":["欠"],"罐":["缶"],"艺":["芸"],"制":["製"],"志":["誌"],"讽":["風"],"丰":["豊"],"辨":["弁"],"辩":["弁"],"周":["週"],"醋":["酢"],"铸":["鋳"],"只":["隻"],"龙":["竜"]}');
@@ -24529,7 +24569,7 @@ let ImageContextMenu = class ImageContextMenu {
 ImageContextMenu = __decorate([Service(), __metadata("design:paramtypes", [])], ImageContextMenu);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/number/parse-float.js
-var parse_float = __webpack_require__(50170);
+var parse_float = __webpack_require__(49337);
 var parse_float_default = /*#__PURE__*/__webpack_require__.n(parse_float);
 // EXTERNAL MODULE: ./node_modules/.pnpm/core-js-pure@3.49.0/node_modules/core-js-pure/full/object/freeze.js
 var freeze = __webpack_require__(76809);
@@ -24548,13 +24588,13 @@ function _taggedTemplateLiteral(e, t) {
 }
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/parse-int.js
-var parse_int = __webpack_require__(6073);
+var parse_int = __webpack_require__(53120);
 var parse_int_default = /*#__PURE__*/__webpack_require__.n(parse_int);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/reflect/set.js
-var reflect_set = __webpack_require__(80724);
+var reflect_set = __webpack_require__(83453);
 var set_default = /*#__PURE__*/__webpack_require__.n(reflect_set);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime-corejs3@7.29.7/node_modules/@babel/runtime-corejs3/core-js-stable/weak-map.js
-var weak_map = __webpack_require__(24547);
+var weak_map = __webpack_require__(38280);
 ;// ./node_modules/.pnpm/lit-html@3.3.3/node_modules/lit-html/lit-html.js
 
 var _t$litHtmlVersions;
@@ -24914,8 +24954,8 @@ const D = (t, i, s) => {
   return h._$AI(t), h;
 };
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.107.2/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.15_typescript@6.0.3_webpack@5.107.2/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.4_webpack@5.107.2/node_modules/less-loader/dist/cjs/index.js!./src/plugin/popup/index.less
-var popup = __webpack_require__(12201);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.108.4/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.16_typescript@6.0.3_webpack@5.108.4/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.7_webpack@5.108.4/node_modules/less-loader/dist/cjs/index.js!./src/plugin/popup/index.less
+var popup = __webpack_require__(62990);
 ;// ./src/plugin/popup/index.less
 
       
@@ -25193,8 +25233,8 @@ let Popup = class Popup {
 };
 Popup = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, DateTime])], Popup);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.107.2/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.15_typescript@6.0.3_webpack@5.107.2/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.4_webpack@5.107.2/node_modules/less-loader/dist/cjs/index.js!./src/user-script/popup-host.less
-var popup_host = __webpack_require__(52677);
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.4_webpack@5.108.4/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.16_typescript@6.0.3_webpack@5.108.4/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.6.7_webpack@5.108.4/node_modules/less-loader/dist/cjs/index.js!./src/user-script/popup-host.less
+var popup_host = __webpack_require__(64950);
 ;// ./src/user-script/popup-host.less
 
       
@@ -25414,4 +25454,4 @@ if (!(LOADED_KEY in window)) {
 
 /******/ })()
 ;
-//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.4.8/ehsyringe.user.js.map
+//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.4.9/ehsyringe.user.js.map
