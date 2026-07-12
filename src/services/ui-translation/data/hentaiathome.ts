@@ -151,11 +151,10 @@ merge(
         'New Value: ': '新值：',
 
         'Port for Incoming Connections': '监听端口',
-        'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall. For home networks, it must also be forwarded on any NAT-based router(s) you connect to the internet through.': 
+        'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall. For home networks, it must also be forwarded on any NAT-based router(s) you connect to the internet through.':
             '可以使用 443（推荐）或 1024~65534 之间的大部分端口。此端口必须在您的防火墙中打开。如果是家庭网络，还必须在您连接到 Internet 的任何基于 NAT 的路由器上进行端口转发。',
 
-        'Note: The port cannot be changed while the client is running.': 
-            '注意：客户端运行期间无法更改端口。',
+        'Note: The port cannot be changed while the client is running.': '注意：客户端运行期间无法更改端口。',
 
         'Client Name': '客户端名称',
         'You can set a custom name for this client here. This will be used in the various listings this client appears in.':
@@ -164,8 +163,7 @@ merge(
         'Maximum Upload Rate': '最大上传速率',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
-        'No high-capacity ranges are assigned if set below 10 MB/s.':
-            '如果设置低于 10 MB/s，将不会分配大容量范围。',
+        'No high-capacity ranges are assigned if set below 10 MB/s.': '如果设置低于 10 MB/s，将不会分配大容量范围。',
         ' KBytes/s': ' KB/s',
         ' Enable Client-Side Speed Limit (recommended only for home networks)':
             ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',

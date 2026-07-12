@@ -58,8 +58,7 @@ merge(
         ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. After it has been marked as ':
             '，直到它被包含在一个区块中并达到两次确认。这个过程通常不到一小时，但某些情况下可能需要更长时间。在它被标记为',
         Confirmed: '已确认',
-        ', you still have to apply it below to make it take effect.':
-            '后，你仍需要在下面应用它才能使其生效。',
+        ', you still have to apply it below to make it take effect.': '后，你仍需要在下面应用它才能使其生效。',
         'No transactions in the past year.': '过去一年没有交易记录。',
         'Refresh List': '刷新列表',
 

@@ -209,5 +209,5 @@ merge(
         Apply: '应用',
         'Settings were updated': '设置更新完毕',
     },
-    [[/ \(Default\)$/, ' (默认)'],],
+    [[/ \(Default\)$/, ' (默认)']],
 );

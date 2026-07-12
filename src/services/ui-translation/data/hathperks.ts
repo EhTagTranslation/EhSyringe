@@ -110,8 +110,7 @@ merge(/^\/hathperks\.php/, undefined, {
         '每天的第一瓶能量饮料恢复量加倍。',
 
     'Dark Descent': '黑暗后裔',
-    "Increases the number of World Seeds dropped from higher-level arenas.":
-        '高等级竞技场掉落的世界种子数量增加 30%。',
+    'Increases the number of World Seeds dropped from higher-level arenas.': '高等级竞技场掉落的世界种子数量增加 30%。',
 
     'Eminent Elementalist': '元素大师',
     'Increases effective Elemental Magic Proficiency by 10% of your natural base proficiency.':
@@ -140,16 +139,16 @@ merge(/^\/hathperks\.php/, undefined, {
     'Displays your unyielding devotion to Snowflake, the Goddess of Loot and Harvest.':
         '雪花 ─ 专司战利品与收获的女神。宣示您对她不屈不挠的奉献精神。',
 
-    'Limit Breaker I':'极限突破 I',
-    'For those who believe that power is but a number; increases the equipment stat fusion cap to 210.': 
+    'Limit Breaker I': '极限突破 I',
+    'For those who believe that power is but a number; increases the equipment stat fusion cap to 210.':
         '献给那些相信力量只是一个数字的人。将装备属性融合上限提升至 210。',
-    'Limit Breaker II':'极限突破 II',
+    'Limit Breaker II': '极限突破 II',
     'Further increases the equipment stat fusion cap to 220.': '进一步提高装备属性融合上限至 220。',
-    'Limit Breaker III':'极限突破 III',
+    'Limit Breaker III': '极限突破 III',
     'Further increases the equipment stat fusion cap to 230.': '进一步提高装备属性融合上限至 230。',
-    'Limit Breaker IV':'极限突破 IV',
+    'Limit Breaker IV': '极限突破 IV',
     'Further increases the equipment stat fusion cap to 240.': '进一步提高装备属性融合上限至 240。',
-    'Limit Breaker V':'极限突破 V',
+    'Limit Breaker V': '极限突破 V',
     'Further increases the equipment stat fusion cap to 250.': '进一步提高装备属性融合上限至 250。',
 
     'Thinking Cap': '深思',

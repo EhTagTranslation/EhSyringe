@@ -297,9 +297,11 @@ export class Popup {
                         <p class="range-title">
                             介绍图片:
                             <span
-                                >${['隐藏全部', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][
-                                    state.configValue.introduceImageLevel
-                                ]}</span
+                                >${
+                                    ['隐藏全部', '隐藏色情图片', '隐藏引起不适的图片', '全部显示'][
+                                        state.configValue.introduceImageLevel
+                                    ]
+                                }</span
                             >
                         </p>
                         <div class="range-box">
