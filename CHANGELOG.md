@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.4.9
+
+- 更新翻译 [#1355](https://github.com/EhTagTranslation/EhSyringe/pull/1355) [#1358](https://github.com/EhTagTranslation/EhSyringe/pull/1358)
+
 ## 3.4.8
 
 - [WebExtension] 修复存储限制问题 [#1352](https://github.com/EhTagTranslation/EhSyringe/issues/1352)
