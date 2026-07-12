@@ -1,6 +1,5 @@
 export const BROWSING_COUNTRY = {
     Africa: 'Africa (非洲)',
-    Asia: 'Asia (亚洲)',
     Afghanistan: 'Afghanistan (阿富汗)',
     'Aland Islands': 'Aland Islands (奥兰群岛)',
     Albania: 'Albania (阿尔巴尼亚)',
@@ -190,7 +189,6 @@ export const BROWSING_COUNTRY = {
     Romania: 'Romania (罗马尼亚)',
     'Russian Federation': 'Russian Federation (俄罗斯)',
     Rwanda: 'Rwanda (卢旺达)',
-    'South America': 'South America (南美洲)',
     'Saint Barthelemy': 'Saint Barthelemy (圣巴泰勒米)',
     'Saint Helena': 'Saint Helena (圣赫勒拿)',
     'Saint Kitts and Nevis': 'Saint Kitts and Nevis (圣基茨和尼维斯)',
@@ -215,7 +213,7 @@ export const BROWSING_COUNTRY = {
     'South Africa': 'South Africa (南非)',
     'South America': 'South America (南美洲)',
     'South Georgia and the South Sandwich Islands':
-        'South Georgia and the South Sandwich Islands (南乔治亚岛和南桑威奇群岛)',
+    'South Georgia and the South Sandwich Islands (南乔治亚岛和南桑威奇群岛)',
     'South Korea': 'South Korea (韩国)',
     'South Sudan': 'South Sudan (南苏丹)',
     Spain: 'Spain (西班牙)',
