@@ -13,8 +13,8 @@ merge(
         'Do you wish to load images through the Hentai@Home Network, if available?':
             '如果可用，是否希望通过 Hentai@Home 网络加载图像？',
         ' Any client (Recommended)': ' 任意客户端 (推荐)',
-        ' Default port clients only (Can be slower. Enable if behind firewall/proxy that blocks outgoing non-standard ports.)':
-            ' 仅使用默认端口的客户端 (可能稍慢，当防火墙或代理阻止非标准端口的流量时启用此项)',
+        ' Default port clients only (Slower. Use only if behind a firewall or proxy that blocks outgoing non-standard ports.)':
+            ' 仅限默认端口的客户端（速度较慢。仅在防火墙或代理阻止非标准出站端口时使用。）',
         ' No [Modern/HTTPS] (Donator only. You will not be able to browse as many pages. Recommended only if having severe problems.)':
             ' 否 [现代/HTTPS] (仅限捐赠者，配额消耗会加快，只有出现严重的问题时才启用)',
         ' No [Legacy/HTTP] (Donator only. May not work by default in modern browsers. Recommended for legacy/outdated browsers only.)':
@@ -30,10 +30,8 @@ merge(
         ...BROWSING_COUNTRY,
 
         'Image Size Settings': '图像大小设置',
-        'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. Note that legacy images will have horizontal resolutions of 780x / 1280x / 1600x / 2400x instead. (Resolutions above 1280x are restricted to accounts with any hath perk, a bronze star, or an UID below 3,000,000.)':
-            '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 800 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。注意，旧图库的水平分辨率为 780x / 1280x / 1600x / 2400x。 (高于 1280 像素只提供给解锁过任意 Hath Perk、铜星或 UID 小于 3,000,000 的用户)',
-        'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions. Note that legacy images will have horizontal resolutions of 780x / 1280x / 1600x / 2400x instead.':
-            '通常情况下，图像会被重采样到 1280 像素 (桌面端) 或 800 像素 (移动端) 宽度用于在线浏览，您也可以手动指定重采样分辨率。注意，旧图库的水平分辨率为 780x / 1280x / 1600x / 2400x。',
+        'Images are normally resampled to 1280 pixels (desktop) or 800 pixels (mobile) horizontal resolution for online viewing. You can select one of the following alternative resolutions.':
+            '在线浏览时，图像通常会被重采样至 1280 像素（桌面端）或 800 像素（移动端）水平分辨率。您可以从以下选项中选择替代分辨率。',
         ' Auto': ' 自动',
         'Use original images instead of the resampled versions? Resampled images will still be used if you select a horizontal resolution different than "Auto" above and the image in question is wider, or if the original image is larger than 10 MiB (or 4 MiB for galleries older than one year).':
             '在阅读时优先加载原图而非重采样版本？当选择了“自动”以外的分辨率且原图宽度大于设定值，或原图大于 10 MiB (一年前发布的图库 4 MiB) 时，仍会加载重采样版本。',
@@ -211,5 +209,5 @@ merge(
         Apply: '应用',
         'Settings were updated': '设置更新完毕',
     },
-    [[/ \(Default\)$/, ' (默认)']],
+    [[/ \(Default\)$/, ' (默认)'],],
 );

@@ -11,8 +11,8 @@ merge(
         'Read this thread for more information about donating and how to buy coins':
             '阅读此帖子以了解更多关于捐赠和如何购买虚拟货币的信息',
 
-        'Bitcoin (BTC) transaction fees can be high and unpredictable at times. It is currently ':
-            '比特币 (BTC) 的交易手续费有时会很高且不可预测。当前',
+        'Bitcoin (BTC) transaction fees can be high and/or unpredictable at times. It is currently ':
+            '比特币 (BTC) 的交易手续费有时会很高和/或不可预测。当前',
         estimated: '预估',
         'This is the lowest viable feerate currently required for a transaction to be mined, which is estimated by sampling the minimum feerate of transactions that would have been included in a block in the last hour, assuming an average distribution of blocks.':
             '这是当前交易被挖掘所需的最低可行费率，通过采样最近一小时内可能被包含在区块中的交易的最低费率来估算，假设区块的分布是平均的。',
@@ -53,13 +53,14 @@ merge(
         'Recent Bitcoin (BTC) Donations': '最近的比特币 (BTC) 捐赠',
         'Recent Bitcoin Cash (BCH) Donations': '最近的比特币现金 (BCH) 捐赠',
         'New donations will typically show up here in less than two minutes. It will show as ':
-            '新的捐赠通常会在两分钟内显示在这里，但在被纳入一个区块并达到两个确认之前会处于',
-        ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. When it has been marked as ':
-            '状态。此状态一般不会超过一个小时，但在某些情况下可能会花费更长时间。只有当状态变更为',
-        ', you still have to apply it below to make it take effect.': '时才能通过下方按钮完成捐赠。',
-        'No transactions in the past year.': '在过去一年内没有交易',
+            '新的捐赠通常会在两分钟内显示在这里，但它会显示为',
         Pending: '待定',
+        ' until it is included in a block and reaches two confirmations. This usually takes less than an hour, but can take longer in some cases. After it has been marked as ':
+            '，直到它被包含在一个区块中并达到两次确认。这个过程通常不到一小时，但某些情况下可能需要更长时间。在它被标记为',
         Confirmed: '已确认',
+        ', you still have to apply it below to make it take effect.':
+            '后，你仍需要在下面应用它才能使其生效。',
+        'No transactions in the past year.': '过去一年没有交易记录。',
         'Refresh List': '刷新列表',
 
         'Unspent: ': '未使用：',

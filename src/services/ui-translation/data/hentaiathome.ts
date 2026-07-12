@@ -1,5 +1,4 @@
 import { merge } from '../helper';
-import { BROWSING_COUNTRY } from './_browsingcountry';
 
 merge(
     /^\/hentaiathome\.php\??$/,
@@ -13,11 +12,18 @@ merge(
         Coverage: '覆盖率',
         'Hits/GB': '命中/GB',
         Quality: '质量',
-        'North and South America': 'North and South America （北美洲和南美洲）',
-        'Europe and Africa': 'Europe and Africa (欧洲和非洲)',
-        'Asia and Oceania': 'Asia and Oceania (亚洲和大洋洲)',
-        Global: 'Global (全球)',
-        ...BROWSING_COUNTRY,
+        'North and South America': '北美洲和南美洲',
+        'Europe and Africa': '欧洲和非洲',
+        'Asia and Oceania': '亚洲和大洋洲',
+
+        'Chinese Dominion': '中国大陆',
+        North: '北美洲',
+        South: '南美洲',
+        Europe: '欧洲',
+        Africa: '非洲',
+        Asia: '亚洲',
+        Oceania: '大洋洲',
+        Global: '全球',
 
         '\n\tHits/GB shows the current average number of hits per minute per gigabyte of allocated disk space for all online clients in the region.':
             '命中/GB 表示当前此区域所有在线客户端分配的每 GB 磁盘空间每分钟的平均命中次数。',
@@ -57,7 +63,6 @@ merge(
         Online: '在线',
         Offline: '离线',
         'Not available when offline': '离线状态下不可用',
-        ...BROWSING_COUNTRY,
 
         'Apply for H@H participation': '参与申请 H@H',
         'For information on how to participate in the Hentai@Home Project, refer to the ':
@@ -146,9 +151,11 @@ merge(
         'New Value: ': '新值：',
 
         'Port for Incoming Connections': '监听端口',
-        'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall, and forwarded from any NAT-based cable/xDSL modems or routers you connect to the internet through.':
-            '可以使用 443 (推荐) 或 1024~65534 的大部分端口。此端口必须在您的防火墙中打开，并经由您连接到 Internet 的任何基于 NAT 的电缆/xDSL 调制解调器或路由器转发。',
-        'Note: The port cannot be changed while the client is running.': '注意：客户端运行时不能更改端口。',
+        'Can be 443 (recommended) or most numbers between 1024 and 65534. This port must be opened in your firewall. For home networks, it must also be forwarded on any NAT-based router(s) you connect to the internet through.': 
+            '可以使用 443（推荐）或 1024~65534 之间的大部分端口。此端口必须在您的防火墙中打开。如果是家庭网络，还必须在您连接到 Internet 的任何基于 NAT 的路由器上进行端口转发。',
+
+        'Note: The port cannot be changed while the client is running.': 
+            '注意：客户端运行期间无法更改端口。',
 
         'Client Name': '客户端名称',
         'You can set a custom name for this client here. This will be used in the various listings this client appears in.':
@@ -157,8 +164,8 @@ merge(
         'Maximum Upload Rate': '最大上传速率',
         'Turning on the client-side speed limit makes the client enforce this as the maximum speed, which reduces the burstiness of the load. This will increase CPU usage and can reduce the performance of the client. You should only enable this if H@H noticeably affects your home network performance.':
             '打开客户端侧速度限制会使客户端以设置的最大速度运行，从而减少负载的突发性。但这会增加 CPU 使用率，降低客户端的性能。仅当 H@H 明显影响您的家庭网络性能时才应启用此功能。',
-        'Clients cannot be assigned high-capacity ranges if set below 10 MB/s.':
-            '如果设置低于 10 MB/s，则不会被分配到大容量范围。',
+        'No high-capacity ranges are assigned if set below 10 MB/s.':
+            '如果设置低于 10 MB/s，将不会分配大容量范围。',
         ' KBytes/s': ' KB/s',
         ' Enable Client-Side Speed Limit (recommended only for home networks)':
             ' 启用客户端侧的速度限制 (仅建议家庭网络开启)',
@@ -176,6 +183,10 @@ merge(
         'Maximum Disk Cache Size': '最大磁盘缓存大小',
         'How much disk space to reserve for this client. Must be at least 10 GiB, but the more you assign the better your client will perform. The reserved space must always be available.':
             '希望为此客户端保留多少磁盘空间。最少 10 GiB，但是保留的越多，客户端表现的越好。保留空间必须始终可用。',
+        ' is ': ' 已',
+        committed: '占用',
+        'This is the minimum disk space that has currently been claimed for the H@H cache. Reducing the maximum disk cache size below this value will require removing some static ranges, which will decrease the traffic to your client.':
+            '这是 H@H 缓存当前占用的最小磁盘空间。如果将最大磁盘缓存大小减少到此值以下，则需要移除一些静态范围，这会导致客户端流量减少。',
         ' Verify cache integrity on next startup': ' 下次启动时验证缓存完整性',
         'To reduce the disk space for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端所需的磁盘空间需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
@@ -183,16 +194,11 @@ merge(
         'Advanced Settings': '高级设置',
         'The settings below are optional advanced settings.': '以下设置项为可选的高级设置',
 
-        'Reset Client Key': '重置客户端 Key',
-        'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next time the client starts.':
-            '如果您认为您的客户端 Key 已泄露，可以通过选中复选框来重置密钥。下次客户端启动时，您必须重新输入密钥。',
-        ' Reset Client Key': ' 重置客户端 Key',
-
         'Monthly Data Transfer Target': '每月数据流量限制',
         Unlimited: '无限',
         ' GB per month': ' GB/月',
-        'Static Range allocation is limited to 1 per 5 GB. Clients cannot be assigned high-capacity ranges if set below 5 TB/month.':
-            '每 1 组静态范围至少 5 GB。如果设置低于 5 TB/月，则不会被分配到大容量范围。',
+        'If set, Static Range allocation will be limited to 1 per 5 GB. No high-capacity ranges are assigned if set below 5 TB/month.':
+            '若已设置，静态范围分配限制为每 5 GB 分配 1 个。若设置低于 5 TB/月，将不会分配大容量范围。',
         'To reduce the monthly data transfer target for this client below this level, you must first shut it down, then check the "Remove static ranges if necessary" option.':
             '降低该客户端的每月数据流量限制需要先关闭客户端，然后勾选“必要时移除静态范围”选项。',
         'You need to check the confirmation box to confirm removing these ranges to set this.':
@@ -202,17 +208,22 @@ merge(
 
         'Minimum Free Disk Space': '磁盘最小剩余空间',
         'Use Default': '默认',
-        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB even if this is not set.':
-            '如果设置了此值，则当磁盘上的可用空间低于此值时，客户端会停止运行。即使未设置，当可用空间低于 1 GiB 时，客户端也会退出。',
+        'If this value is set, the client will stop running if the free space on the disk decreases below this value. The client will exit if free space drops below 1 GiB if this is not set.':
+            '如果设置了此值，当磁盘可用空间低于该值时，客户端将停止运行。若未设置此值，当可用空间低于 1 GiB 时，客户端也会退出。',
+
+        'Reset Client Key': '重置客户端 Key',
+        'If you believe your client key has been compromised, you can reset the key by checking this box. You will have to re-enter the key the next time the client starts.':
+            '如果您认为您的客户端 Key 已泄露，可以通过选中复选框来重置密钥。下次客户端启动时，您必须重新输入密钥。',
+        ' Reset Client Key': ' 重置客户端 Key',
 
         'Reset Static Ranges': '重置静态范围',
         'Your client will be assigned ranges of files to cache and serve. This toggle clears these ranges. ':
             '您的客户端会被分配到一段文件范围用于缓存和提供服务。此复选框用于重置这些范围。',
-        'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL REVOKE YOUR CLIENT.':
-            '除非您丢失了缓存，否则不要执行此操作。它不会修复客户端的其他任何问题。定期执行此操作将吊销您的客户端。',
+        'DO NOT DO THIS UNLESS YOU LOST YOUR CACHE. IT WILL NOT FIX OTHER CLIENT ISSUES. DOING THIS REGULARLY WILL CAUSE YOUR CLIENT TO BECOME REVOKED.':
+            '除非缓存丢失，否则请勿执行此操作。它无法修复客户端的其他任何问题。定期执行此操作将导致您的客户端被吊销。',
         'No ranges are assigned yet. The client must run for at least 24 hours continuously before any ranges are assigned.':
             '尚未分配任何范围。客户端必须连续运行至少 24 小时，才会分配范围。',
-        'The following ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
+        'The following priority ranges are currently assigned: P1 = ': '当前分配的范围：P1 = ',
         ' Reset Static Ranges': ' 重置静态范围',
         'Warning: You should ': '警告：',
         never: '不要',
