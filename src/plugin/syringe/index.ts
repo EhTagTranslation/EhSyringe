@@ -37,6 +37,7 @@ function childNodes(node: Node): Node[] {
 const skipNodeName = new Set<string>(['TITLE', 'LINK', 'META', 'HEAD', 'SCRIPT', 'BR', 'HR', 'STYLE', 'MARK']);
 const ignoreClassName = `eh-syringe-ignore`;
 const skipElementMatcher = `.${ignoreClassName}, .${ignoreClassName} *, [translate=no], [translate=no] :not([translate=yes])`;
+const hAthFontStyleId = 'ehs-hath-font-style';
 
 declare global {
     interface Window {
@@ -259,6 +260,7 @@ export class Syringe {
         this.config = config;
         this.storage.set('config', config);
         this.setRootAttrs();
+        this.setPageStyles();
         this.translateTags();
     }
 
@@ -304,6 +306,7 @@ export class Syringe {
             this.documentEnd = true;
         });
         this.setRootAttrs();
+        this.setPageStyles();
         const { body } = document;
         if (body) {
             const nodes = childNodes(body);
@@ -363,6 +366,7 @@ export class Syringe {
     readonly isEh = isEh(location.hostname);
     readonly isRepo = isRepo(location.hostname);
     readonly isWiki = isWiki(location.hostname);
+    readonly isHentaiAtHome = location.pathname === '/hentaiathome.php';
     setRootAttrs(): void {
         const node = document.documentElement;
         if (!node) return;
@@ -397,6 +401,19 @@ export class Syringe {
             node.setAttribute('lang', 'en');
         }
         node.classList.add(`ehs-image-level-${this.config.introduceImageLevel}`);
+    }
+
+    private setPageStyles(): void {
+        const style = document.getElementById(hAthFontStyleId);
+        if (!this.isHentaiAtHome || !this.config.translateUi) {
+            style?.remove();
+            return;
+        }
+        if (style) return;
+        const nextStyle = document.createElement('style');
+        nextStyle.id = hAthFontStyleId;
+        nextStyle.textContent = ':root { font-family: sans-serif; }';
+        (document.head ?? document.documentElement)?.append(nextStyle);
     }
 
     translateNode(node: Node): void {
