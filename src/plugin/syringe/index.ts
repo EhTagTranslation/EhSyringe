@@ -412,7 +412,7 @@ export class Syringe {
         if (style) return;
         const nextStyle = document.createElement('style');
         nextStyle.id = hAthFontStyleId;
-        nextStyle.textContent = ':root { font-family: sans-serif; }';
+        nextStyle.textContent = '#hct { font-family: sans-serif; }';
         (document.head ?? document.documentElement)?.append(nextStyle);
     }
 
