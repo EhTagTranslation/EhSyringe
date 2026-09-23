@@ -367,6 +367,7 @@ export class Syringe {
     readonly isRepo = isRepo(location.hostname);
     readonly isWiki = isWiki(location.hostname);
     readonly isHentaiAtHome = location.pathname === '/hentaiathome.php';
+
     setRootAttrs(): void {
         const node = document.documentElement;
         if (!node) return;
