@@ -1,8 +1,8 @@
 # 更新日志
 
-## Upcoming
+## 3.4.10
 
-- 更新翻译 [#1364](https://github.com/EhTagTranslation/EhSyringe/issues/1364) 
+- 更新翻译 [#1364](https://github.com/EhTagTranslation/EhSyringe/issues/1364)
 - 对日文标题使用日文字体 [#1361](https://github.com/EhTagTranslation/EhSyringe/issues/1361)
 - 调整 HAH 字体 [#1366](https://github.com/EhTagTranslation/EhSyringe/issues/1366)
 
