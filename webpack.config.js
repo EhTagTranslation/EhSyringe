@@ -2,7 +2,7 @@
 import path from 'node:path';
 import fs from 'node:fs';
 import { glob } from 'glob';
-import { execaCommandSync } from 'execa';
+import { execaSync } from 'execa';
 import semver from 'semver';
 import webpack from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
@@ -167,7 +167,7 @@ export default async (env = {}, argv = {}) => {
         }
 
         config.optimization.minimize = false;
-        const currentHEAD = execaCommandSync('git rev-parse HEAD').stdout.trim();
+        const currentHEAD = execaSync`git rev-parse HEAD`.stdout.trim();
         const fileHost = devServer
             ? `${config.devServer.https ? 'https' : 'http'}://${config.devServer.host || 'localhost'}:${
                   config.devServer.port || 8080

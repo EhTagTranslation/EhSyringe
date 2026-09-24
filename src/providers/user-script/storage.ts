@@ -28,7 +28,7 @@ class AsyncPolyfill implements Storage {
     private readonly listeners = new Map<number, { name: string; listener: Tampermonkey.ValueChangeListener }>();
     private readonly store = createStore('EhSyringe', 'keyval');
     private async onAllStorageChange(): Promise<void> {
-        const values = new Map<string, unknown>();
+        const values = new Map<string, Tampermonkey.StorageValue>();
         for (const { name } of this.listeners.values()) {
             if (!values.has(name)) {
                 values.set(name, await this.get(name));
@@ -38,7 +38,11 @@ class AsyncPolyfill implements Storage {
             listener(name, undefined, values.get(name), false);
         }
     }
-    private onStorageChange(key?: string, oldValue?: unknown, value?: unknown): void {
+    private onStorageChange(
+        key?: string,
+        oldValue?: Tampermonkey.StorageValue,
+        value?: Tampermonkey.StorageValue,
+    ): void {
         if (!key) {
             void this.onAllStorageChange();
             return;

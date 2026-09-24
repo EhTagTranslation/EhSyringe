@@ -30,7 +30,7 @@ export class TagContextMenu implements Menu {
         '*://*.exhentai55ld2wyap5juskbm67czulomrouspdacjamjeloj7ugjbsad.onion/tag/*',
         '*://*.e-hentai.org/tag/*',
     ];
-    readonly contexts: Context[] = ['link'];
+    readonly contexts: [Context, ...Context[]] = ['link'];
 
     readonly onclick = (info: OnClickData): void => {
         if (!info.url?.includes('/tag/')) {

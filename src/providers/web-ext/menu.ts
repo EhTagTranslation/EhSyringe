@@ -1,9 +1,8 @@
 /// <reference types="chrome" />
 import type { Menu } from '../common/menu';
-import type { Menus } from 'webextension-polyfill';
 export * from '../common/menu';
 
-const clickHandlers = new Map<string, (info: Menus.OnClickData) => void>();
+const clickHandlers = new Map<string, (info: chrome.contextMenus.OnClickData) => void>();
 
 async function createMenuImpl(info: Menu): Promise<void> {
     try {
@@ -25,14 +24,14 @@ async function createMenuImpl(info: Menu): Promise<void> {
         },
     );
     if (clickHandlers.size === 0) {
-        browser.contextMenus.onClicked.addListener((data: Menus.OnClickData): void => {
+        browser.contextMenus.onClicked.addListener((data: chrome.contextMenus.OnClickData): void => {
             const handler = clickHandlers.get(data.menuItemId as string);
             if (handler) {
                 handler(data);
             }
         });
     }
-    clickHandlers.set(info.title, (data: Menus.OnClickData): void => {
+    clickHandlers.set(info.title, (data: chrome.contextMenus.OnClickData): void => {
         info.onclick({
             url: data.mediaType ? data.srcUrl : data.linkUrl,
         });

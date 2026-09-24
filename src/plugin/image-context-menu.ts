@@ -31,7 +31,7 @@ export class ImageContextMenu implements Menu {
         `*://*.${HATH}:*/h/*`,
         `*://*.${HATH}/h/*`,
     ];
-    readonly contexts: Context[] = ['image', 'link'];
+    readonly contexts: [Context, ...Context[]] = ['image', 'link'];
 
     readonly onclick = (info: OnClickData): void => {
         if (!info.url) return;
