@@ -128,7 +128,7 @@ merge(/^\/hathperks\.php/, undefined, {
     'Increases effective Deprecating Magic Proficiency by 10% of your natural base proficiency.':
         '您自身的基础减益魔法熟练度的 10% 会增加到有效熟练度里。',
 
-    'Force of Nature': '大自然的力量',
+    'Force of Nature': '自然之力',
     'Increases effective Supportive Magic Proficiency by 10% of your natural base proficiency.':
         '您自身的基础增益魔法熟练度的 10% 会增加到有效熟练度里。',
 
