@@ -12,6 +12,7 @@ import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import pkgJson from './package.json' with { type: 'json' };
 import manifestJson from './manifest.json' with { type: 'json' };
+import coreJsPkg from 'core-js/package.json' with { type: 'json' };
 
 const __dirname = import.meta.dirname;
 
@@ -35,6 +36,32 @@ const cssLoaders = [
             postcssOptions: {
                 plugins: ['postcss-import', 'postcss-preset-env', 'cssnano'],
             },
+        },
+    },
+];
+
+/** @type {webpack.RuleSetUseItem[]} */
+const jsLoaders = [
+    {
+        loader: 'babel-loader',
+        options: {
+            sourceType: 'unambiguous',
+            presets: ['@babel/preset-env'],
+            plugins: [
+                [
+                    '@babel/plugin-transform-runtime',
+                    {
+                        moduleName: '@babel/runtime',
+                    },
+                ],
+                [
+                    'babel-plugin-polyfill-corejs3',
+                    {
+                        method: 'usage-global',
+                        version: coreJsPkg.version,
+                    },
+                ],
+            ],
         },
     },
 ];
@@ -63,31 +90,12 @@ export default async (env = {}, argv = {}) => {
                     test: /\.js$/,
                     include: /[/\\]node_modules[/\\]/,
                     exclude: [/[/\\]core-js(-pure)?[/\\]/],
-                    use: [
-                        {
-                            loader: 'babel-loader',
-                            options: {
-                                sourceType: 'unambiguous',
-                                presets: ['@babel/preset-env'],
-                                plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
-                            },
-                        },
-                    ],
+                    use: jsLoaders,
                 },
                 {
                     test: /\.ts$/,
                     exclude: /[/\\]node_modules[/\\]/,
-                    use: [
-                        {
-                            loader: 'babel-loader',
-                            options: {
-                                sourceType: 'unambiguous',
-                                presets: ['@babel/preset-env'],
-                                plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]],
-                            },
-                        },
-                        'ts-loader',
-                    ],
+                    use: [...jsLoaders, 'ts-loader'],
                 },
                 {
                     test: /\.less$/,
