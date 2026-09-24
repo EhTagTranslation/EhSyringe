@@ -1,6 +1,6 @@
 # 更新日志
 
-## 3.4.11
+## 3.5.0
 
 - 更新翻译 [#1364](https://github.com/EhTagTranslation/EhSyringe/issues/1364)
 - 对日文标题使用日文字体 [#1361](https://github.com/EhTagTranslation/EhSyringe/issues/1361)
