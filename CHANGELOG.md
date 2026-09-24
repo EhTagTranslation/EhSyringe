@@ -1,5 +1,9 @@
 # 更新日志
 
+## Upcoming
+
+- 调整字体 [#1366](https://github.com/EhTagTranslation/EhSyringe/issues/1366)
+
 ## 3.4.9
 
 - 更新翻译 [#1355](https://github.com/EhTagTranslation/EhSyringe/pull/1355) [#1358](https://github.com/EhTagTranslation/EhSyringe/pull/1358)
