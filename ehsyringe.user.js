@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         EhSyringe
-// @version      3.5.0
+// @version      3.5.1
 // @author       EhTagTranslation
 // @description  E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 44000 条标签翻译，标签数据库持续更新中。
-// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@60fa185d9c225270e90934701555f8dfa6d7a60e/src/assets/logo.svg
+// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@dfe7c88e5059f79525df657efc56dea5ed5345ce/src/assets/logo.svg
 // @license      MIT
 // @namespace    https://github.com/EhTagTranslation/EhSyringe
 // @homepage     https://github.com/EhTagTranslation/EhSyringe
@@ -277,6 +277,29 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root{--csstools-color-scheme--light:i
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.eh-syringe-lite-auto-complete-list{background:#f8f4ec;color:#5c0d12;position:absolute;top:168px;left:628px;min-width:570px;min-height:20px;text-align-last:left;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);display:block;max-height:50vh;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;padding:8px 0;scroll-padding:16px;scrollbar-width:thin;z-index:10}:root.ehs-ex .eh-syringe-lite-auto-complete-list{background:#2b2b2b;color:#f1f1f1}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list.exclude .auto-complete-item .en-name:before{content:"- "}.eh-syringe-lite-auto-complete-list .auto-complete-item{padding:0 8px;line-height:24px;height:24px;contain:strict;content-visibility:auto;display:flex;justify-content:space-between;cursor:pointer}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8ecf3}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item.selected,:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#3e3f40}.eh-syringe-lite-auto-complete-list .auto-complete-text{flex:0 1 auto;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{flex-shrink:4;padding-left:8px;color:#5f6368}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{color:#d9d9d9}.eh-syringe-lite-auto-complete-list mark{color:inherit;background:#f5f500}:root.ehs-ex .eh-syringe-lite-auto-complete-list mark{background:#727200}`, "",{"version":3,"sources":["webpack://./src/plugin/tag-tip/index.less"],"names":[],"mappings":"AAAA,oCACI,kBAAA,CACA,aAAA,CAOA,iBAAA,CACA,SAAA,CACA,UAAA,CACA,eAAA,CACA,eAAA,CACA,oBAAA,CACA,iBAAA,CACA,gGAAA,CAIA,aAAA,CACA,eAAA,CACA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,aAAA,CACA,mBAAA,CACA,oBAAA,CACA,UARJ,CAdI,iDACI,kBAAA,CACA,aAgBR,CAMI,sFAEI,YAJR,CAOI,gFAGY,YAPhB,CA7BA,wDA0CQ,aAAA,CACA,gBAAA,CACA,WAAA,CACA,cAAA,CACA,uBAAA,CACA,YAAA,CACA,6BAAA,CACA,cAVR,CAvCA,4DAoDY,8BAAA,CACA,UAAA,CACA,uBAVZ,CAaQ,+HAEI,kBAXZ,CAaY,yJACI,kBAVhB,CApDA,wDAoEQ,aAAA,CACA,kBAAA,CACA,sBAAA,CACA,eAbR,CAeQ,gEACI,aAAA,CACA,gBAAA,CACA,aAbZ,CAcY,6EACI,aAZhB,CAlEA,yCAoFQ,aAAA,CACA,kBAfR,CAgBQ,sDACI,kBAdZ","sourcesContent":[".eh-syringe-lite-auto-complete-list {\n    background: #f8f4ec;\n    color: #5c0d12;\n\n    :root.ehs-ex & {\n        background: #2b2b2b;\n        color: #f1f1f1;\n    }\n\n    position: absolute;\n    top: 168px;\n    left: 628px;\n    min-width: 570px;\n    min-height: 20px;\n    text-align-last: left;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    display: block;\n    max-height: 50vh;\n    overflow: hidden auto;\n    padding: 8px 0;\n    scroll-padding: 16px;\n    scrollbar-width: thin;\n    z-index: 10;\n\n    &[hidden],\n    &:empty {\n        display: none;\n    }\n\n    &.exclude {\n        .auto-complete-item {\n            .en-name::before {\n                content: '- ';\n            }\n        }\n    }\n\n    .auto-complete-item {\n        padding: 0 8px;\n        line-height: 24px;\n        height: 24px;\n        contain: strict;\n        content-visibility: auto;\n        display: flex;\n        justify-content: space-between;\n        cursor: pointer;\n\n        img {\n            display: inline-block !important;\n            height: 8pt;\n            vertical-align: text-top;\n        }\n\n        &:hover,\n        &.selected {\n            background: #e8ecf3;\n\n            :root.ehs-ex & {\n                background: #3e3f40;\n            }\n        }\n    }\n\n    .auto-complete-text {\n        flex: 0 1 auto;\n        white-space: nowrap;\n        text-overflow: ellipsis;\n        overflow: hidden;\n\n        &.en-name {\n            flex-shrink: 4;\n            padding-left: 8px;\n            color: #5f6368;\n            :root.ehs-ex & {\n                color: #d9d9d9;\n            }\n        }\n    }\n\n    mark {\n        color: inherit;\n        background: #f5f500;\n        :root.ehs-ex & {\n            background: #727200;\n        }\n    }\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ }),
+
+/***/ 2719:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9147);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1129);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `:root .ehs-context-menu{position:fixed;z-index:2147483647;padding:8px 0;background:#f8f4ec;color:#5c0d12;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);max-width:100vw;max-height:100vh;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;scrollbar-width:thin;box-sizing:border-box}:root .ehs-context-menu>button{display:block;width:100%;padding:0 8px;min-height:24px;border:0;background:transparent;color:inherit;font:inherit;line-height:24px;text-align:left;cursor:pointer}:root .ehs-context-menu>button:focus-visible,:root .ehs-context-menu>button:hover{background:#e8ecf3}:root.ehs-ex .ehs-context-menu{background:#2b2b2b;color:#f1f1f1}:root.ehs-ex .ehs-context-menu>button:focus-visible,:root.ehs-ex .ehs-context-menu>button:hover{background:#3e3f40}`, "",{"version":3,"sources":["webpack://./src/providers/user-script/menu.less"],"names":[],"mappings":"AAAA,wBACI,cAAA,CACA,kBAAA,CACA,aAAA,CACA,kBAAA,CACA,aAAA,CACA,iBAAA,CACA,gGAAA,CAIA,eAAA,CACA,gBAAA,CACA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,oBAAA,CACA,qBAFJ,CAbA,+BAkBQ,aAAA,CACA,UAAA,CACA,aAAA,CACA,eAAA,CACA,QAAA,CACA,sBAAA,CACA,aAAA,CACA,YAAA,CACA,gBAAA,CACA,eAAA,CACA,cAFR,CAIQ,kFAEI,kBAFZ,CAOA,+BACI,kBAAA,CACA,aALJ,CAGA,gGAMQ,kBALR","sourcesContent":[":root .ehs-context-menu {\n    position: fixed;\n    z-index: 2147483647;\n    padding: 8px 0;\n    background: #f8f4ec;\n    color: #5c0d12;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    max-width: 100vw;\n    max-height: 100vh;\n    overflow: hidden auto;\n    scrollbar-width: thin;\n    box-sizing: border-box;\n\n    > button {\n        display: block;\n        width: 100%;\n        padding: 0 8px;\n        min-height: 24px;\n        border: 0;\n        background: transparent;\n        color: inherit;\n        font: inherit;\n        line-height: 24px;\n        text-align: left;\n        cursor: pointer;\n\n        &:hover,\n        &:focus-visible {\n            background: #e8ecf3;\n        }\n    }\n}\n\n:root.ehs-ex .ehs-context-menu {\n    background: #2b2b2b;\n    color: #f1f1f1;\n\n    > button:hover,\n    > button:focus-visible {\n        background: #3e3f40;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22990,7 +23013,7 @@ let UiTranslation = class UiTranslation {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.5.0","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 44000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^24.21.0"},"packageManager":"pnpm@11.27.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^8.0.6","@babel/plugin-transform-runtime":"^8.0.6","@babel/preset-env":"^8.0.6","@babel/runtime":"^8.0.5","@eslint/js":"^10.0.1","@types/chrome":"^0.3.0","@types/escape-html":"^1.0.4","@types/node":"^26.6.2","@types/tampermonkey":"^5.5.0","@types/webextension-polyfill":"^0.12.6","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.1.1","babel-plugin-polyfill-corejs3":"^1.0.0","copy-webpack-plugin":"^14.0.0","crx":"^5.0.1","css-loader":"^7.1.5","cssnano":"^9.0.5","eslint":"^10.11.0","eslint-config-prettier":"^10.1.8","execa":"^10.0.1","glob":"^13.0.6","html-webpack-plugin":"^5.6.8","less":"^4.9.1","less-loader":"^13.0.0","postcss":"^8.5.28","postcss-import":"^17.0.0","postcss-loader":"^8.2.1","postcss-preset-env":"^11.5.3","prettier":"^3.9.9","rimraf":"^6.1.3","semver":"^7.8.5","style-loader":"^4.0.0","ts-loader":"^9.6.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.10.0","typescript":"^6.0.3","typescript-eslint":"^8.70.1","web-ext":"^10.7.0","webpack":"^5.111.1","webpack-bundle-analyzer":"^5.4.0","webpack-cli":"^7.2.3","webpack-dev-server":"^6.0.0","yaml-loader":"^0.9.0"},"dependencies":{"core-js":"^3.50.0","emoji-regex":"^11.0.0","escape-html":"^1.0.3","idb-keyval":"^6.3.0","lit-html":"^3.3.3","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.5.1","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 44000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^24.21.0"},"packageManager":"pnpm@12.8.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^8.0.6","@babel/plugin-transform-runtime":"^8.0.6","@babel/preset-env":"^8.0.6","@babel/runtime":"^8.0.5","@eslint/js":"^10.0.1","@types/chrome":"^0.3.4","@types/escape-html":"^1.0.4","@types/node":"^26.6.3","@types/tampermonkey":"^5.5.0","@types/webextension-polyfill":"^0.12.6","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.1.1","babel-plugin-polyfill-corejs3":"^1.0.0","copy-webpack-plugin":"^14.0.0","crx":"^5.0.1","css-loader":"^7.1.5","cssnano":"^9.0.5","eslint":"^10.11.0","eslint-config-prettier":"^10.1.8","execa":"^10.0.1","glob":"^13.0.6","html-webpack-plugin":"^5.6.8","less":"^4.9.1","less-loader":"^13.0.0","postcss":"^8.5.28","postcss-import":"^17.0.0","postcss-loader":"^8.2.1","postcss-preset-env":"^11.5.4","prettier":"^3.9.9","rimraf":"^6.1.3","semver":"^7.8.5","style-loader":"^4.0.0","ts-loader":"^9.6.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.10.0","typescript":"^6.0.3","typescript-eslint":"^8.71.0","web-ext":"^10.7.0","webpack":"^5.111.1","webpack-bundle-analyzer":"^5.4.0","webpack-cli":"^7.2.3","webpack-dev-server":"^6.0.0","yaml-loader":"^0.9.0"},"dependencies":{"core-js":"^3.50.0","emoji-regex":"^11.0.0","escape-html":"^1.0.3","idb-keyval":"^6.3.0","lit-html":"^3.3.3","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 const packageJson = package_namespaceObject;
@@ -23763,22 +23786,152 @@ let AutoUpdate = class AutoUpdate {
 };
 AutoUpdate = __decorate([Service(), __metadata("design:paramtypes", [Logger, Storage, messaging_Messaging])], AutoUpdate);
 
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.flat-map.js
+es_array_flat_map_namespaceFn();
+
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.unscopables.flat-map.js
+es_array_unscopables_flat_map_namespaceFn();
+
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.flat-map.js
+es_iterator_flat_map_namespaceFn();
+
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.some.js
+es_iterator_some_namespaceFn();
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.5_webpack@5.111.1/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.28_typescript@6.0.3_webpack@5.111.1/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.9.1_webpack@5.111.1/node_modules/less-loader/dist/cjs/index.js!./src/providers/user-script/menu.less
+var menu = __webpack_require__(2719);
+;// ./src/providers/user-script/menu.less
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var menu_options = {};
+
+menu_options.styleTagTransform = (styleTagTransform_default()());
+menu_options.setAttributes = (setAttributesWithoutAttributes_default()());
+menu_options.insert = (insertBySelector_default()().bind)(null, ":root");
+menu_options.domAPI = (styleDomAPI_default()());
+menu_options.insertStyleElement = (insertStyleElement_default()());
+
+var menu_update = injectStylesIntoStyleTag_default()()(menu/* default */.A, menu_options);
+
+
+
+
+       /* harmony default export */ const user_script_menu = (menu/* default */.A && menu/* default */.A.locals ? menu/* default */.A.locals : undefined);
+
 ;// ./src/providers/user-script/menu.ts
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function matchesUrlPatterns(url, patterns) {
+  return patterns.some(pattern => {
+    const source = pattern.split('*').map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*');
+    return new RegExp('^' + source + '$').test(url);
+  });
+}
 let MenuProvider = class MenuProvider {
-  constructor(logger) {
-    this.logger = logger;
-    logger.warn(`不支持右键菜单`);
+  constructor() {
+    this.menus = [];
   }
-  createMenu(_info) {
-    return;
+  handleEvent(ev) {
+    var _this$closeMenu, _menu$querySelector;
+    (_this$closeMenu = this.closeMenu) === null || _this$closeMenu === void 0 || _this$closeMenu.call(this);
+    if (!(ev.target instanceof Element)) return;
+    const image = ev.target.closest('img');
+    const link = ev.target.closest('a[href]');
+    const items = this.menus.flatMap(info => {
+      const urls = [...(info.contexts.includes('image') && image ? [image.currentSrc || image.src] : []), ...(info.contexts.includes('link') && link instanceof HTMLAnchorElement ? [link.href] : [])];
+      const url = urls.find(url => matchesUrlPatterns(url, info.targetUrlPatterns));
+      return url ? [{
+        info,
+        url
+      }] : [];
+    });
+    if (items.length === 0) return;
+    ev.preventDefault();
+    const menu = document.createElement('div');
+    menu.className = 'ehs-context-menu';
+    menu.setAttribute('role', 'menu');
+    const controller = new AbortController();
+    const close = () => {
+      menu.remove();
+      controller.abort();
+      this.closeMenu = undefined;
+    };
+    this.closeMenu = close;
+    for (const {
+      info,
+      url
+    } of items) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = info.title;
+      button.setAttribute('role', 'menuitem');
+      button.addEventListener('click', () => {
+        close();
+        info.onclick({
+          url
+        });
+      });
+      menu.append(button);
+    }
+    document.body.append(menu);
+    menu.style.left = `${Math.max(0, Math.min(ev.clientX, window.innerWidth - menu.offsetWidth))}px`;
+    menu.style.top = `${Math.max(0, Math.min(ev.clientY, window.innerHeight - menu.offsetHeight))}px`;
+    const options = {
+      capture: true,
+      signal: controller.signal
+    };
+    document.addEventListener('pointerdown', event => {
+      if (!(event.target instanceof Node) || !menu.contains(event.target)) close();
+    }, options);
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') close();
+    }, options);
+    document.addEventListener('scroll', close, options);
+    window.addEventListener('blur', event => {
+      if (event.target === window) close();
+    }, options);
+    (_menu$querySelector = menu.querySelector('button')) === null || _menu$querySelector === void 0 || _menu$querySelector.focus({
+      preventScroll: true
+    });
+  }
+  createMenu(info) {
+    if (!matchesUrlPatterns(location.href, info.documentUrlPatterns)) {
+      return;
+    }
+    document.addEventListener('contextmenu', this);
+    this.menus.push(info);
   }
 };
-MenuProvider = __decorate([Service(), __metadata("design:paramtypes", [Logger])], MenuProvider);
+MenuProvider = __decorate([Service()], MenuProvider);
 const provider = services_Container.get(MenuProvider);
 const createMenu = provider.createMenu.bind(provider);
 ;// ./src/providers/user-script/utils.ts
@@ -23878,9 +24031,6 @@ TagContextMenu = __decorate([Service(), __metadata("design:paramtypes", [Tagging
 
 ;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.number.to-fixed.js
 es_number_to_fixed_namespaceFn();
-
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.some.js
-es_iterator_some_namespaceFn();
 
 ;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array-buffer.constructor.js
 es_array_buffer_constructor_namespaceFn();
@@ -24405,15 +24555,6 @@ let DatabaseUpdater = class DatabaseUpdater {
   }
 };
 DatabaseUpdater = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, Database, BadgeLoading])], DatabaseUpdater);
-
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.flat-map.js
-es_array_flat_map_namespaceFn();
-
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.unscopables.flat-map.js
-es_array_unscopables_flat_map_namespaceFn();
-
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.flat-map.js
-es_iterator_flat_map_namespaceFn();
 
 ;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.object.from-entries.js
 es_object_from_entries_namespaceFn();
@@ -26168,4 +26309,4 @@ if (!(LOADED_KEY in window)) {
 }
 /******/ })()
 ;
-//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.5.0/ehsyringe.user.js.map
+//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.5.1/ehsyringe.user.js.map
