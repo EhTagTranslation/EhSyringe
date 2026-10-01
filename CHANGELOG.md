@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.5.1
+
+- [UserScript] 支持右键菜单 [EhTagTranslation/Editor/issues/1385](https://github.com/EhTagTranslation/Editor/issues/1385)
+
 ## 3.5.0
 
 - 更新翻译 [#1364](https://github.com/EhTagTranslation/EhSyringe/issues/1364)
