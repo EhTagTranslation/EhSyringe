@@ -14,8 +14,9 @@ async function createMenuImpl(info: Menu): Promise<void> {
         {
             id: info.title,
             title: info.title,
-            targetUrlPatterns: info.targetUrlPatterns,
             contexts: info.contexts,
+            targetUrlPatterns: info.targetUrlPatterns,
+            documentUrlPatterns: info.documentUrlPatterns,
         },
         () => {
             if (chrome.runtime.lastError) {

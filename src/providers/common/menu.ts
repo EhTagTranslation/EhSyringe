@@ -6,6 +6,7 @@ export interface OnClickData {
 
 export interface Menu {
     title: string;
+    documentUrlPatterns: string[];
     targetUrlPatterns: string[];
     contexts: [Context, ...Context[]];
 
