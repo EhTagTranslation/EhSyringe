@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         EhSyringe
-// @version      3.5.1
+// @version      3.5.2
 // @author       EhTagTranslation
 // @description  E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 44000 条标签翻译，标签数据库持续更新中。
-// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@dfe7c88e5059f79525df657efc56dea5ed5345ce/src/assets/logo.svg
+// @icon         https://fastly.jsdelivr.net/gh/EhTagTranslation/EhSyringe@6b991d19d82959a87c53b902be1b1a119324f47a/src/assets/logo.svg
 // @license      MIT
 // @namespace    https://github.com/EhTagTranslation/EhSyringe
 // @homepage     https://github.com/EhTagTranslation/EhSyringe
@@ -207,7 +207,7 @@ module.exports = function (item) {
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `#gmid{display:grid;grid:"gd3 spa spa" auto "gd3 gd4 gd5" auto/auto 1fr auto}#gmid #gd3{grid-area:gd3}#gmid #spa{grid-area:spa;width:auto}#gmid #gd4{grid-area:gd4;width:auto}#gmid #gd5{grid-area:gd5;z-index:3;position:relative;min-width:150px}:root #ehs-introduce-box{position:absolute;top:0;right:-5px;bottom:0;left:0;overflow:auto;text-align:left;display:flex;flex-flow:column;border-radius:0 0 6px 0;background:#edebdf}:root #ehs-introduce-box .ehs-title{flex:none;margin:0 8px;border-bottom:1px solid #5c0d12;line-height:14px;padding:3px 0;display:flex;flex-direction:row}:root #ehs-introduce-box .ehs-title .ehs-cn{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title .ehs-en{opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title>div{overflow:hidden;flex:auto}:root #ehs-introduce-box .ehs-title>span{overflow:hidden;flex:none}:root #ehs-introduce-box .ehs-close{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;font-size:16px;opacity:.8;line-height:28px;width:20px;text-align:center}:root #ehs-introduce-box .ehs-close:hover{opacity:1}:root #ehs-introduce-box .ehs-close:after{content:"\\00d7"}:root #ehs-introduce-box .ehs-content{flex:auto;overflow:auto;margin:4px 0;padding:4px 8px;scrollbar-width:thin;scrollbar-color:#5c0d12 transparent}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar{width:4px;height:4px}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#5c0d12}:root #ehs-introduce-box .ehs-content abbr[title]{padding:0 1px}:root #ehs-introduce-box .ehs-content abbr[title]:after{content:" (" attr(title) ")";font-size:90%}:root #ehs-introduce-box .ehs-href{flex:none;border-top:1px solid #5c0d12;margin:0 8px;line-height:24px}:root #ehs-introduce-box .ehs-href:empty,:root #ehs-introduce-box:empty{display:none}:root #ehs-introduce-box img{max-width:100%;margin:0;width:auto;height:auto}:root.ehs-ex #ehs-introduce-box{background:#4f535b;border-radius:0}:root.ehs-ex #ehs-introduce-box .ehs-title{border-bottom:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-href{border-top:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-content{scrollbar-color:#000 transparent}:root.ehs-ex #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#000}.ehs-no-intro,.ehs-no-translation{opacity:.8}.ehs-no-intro h3,.ehs-no-translation h3{opacity:.6;text-align:center;font-size:16px;padding:8px;font-weight:700}:root.ehs-image-level-0 #ehs-introduce-box .ehs-content img,:root.ehs-image-level-1 #ehs-introduce-box .ehs-content img[nsfw],:root.ehs-image-level-2 #ehs-introduce-box .ehs-content img[nsfw=R18G]{display:none}`, "",{"version":3,"sources":["webpack://./src/plugin/introduce/index.less"],"names":[],"mappings":"AAAA,MACI,YAAA,CACA,wDACJ,CAHA,WAOQ,aADR,CANA,WAUQ,aAAA,CACA,UADR,CAVA,WAcQ,aAAA,CACA,UADR,CAdA,WAkBQ,aAAA,CACA,SAAA,CACA,iBAAA,CACA,eADR,CAKA,yBACI,iBAAA,CACA,KAAA,CAAA,UAAA,CAAA,QAAA,CAAA,MAAA,CACA,aAAA,CACA,eAAA,CACA,YAAA,CACA,gBAAA,CACA,uBAAA,CACA,kBAHJ,CALA,oCAUQ,SAAA,CACA,YAAA,CACA,+BAAA,CACA,gBAAA,CACA,aAAA,CACA,YAAA,CACA,kBAFR,CAdA,4CAmBY,eAAA,CACA,eAAA,CACA,sBAAA,CACA,kBAFZ,CApBA,4CAyBY,UAAA,CACA,eAAA,CACA,sBAAA,CACA,kBAFZ,CA1BA,wCAgCY,eAAA,CACA,SAHZ,CA9BA,yCAoCY,eAAA,CACA,SAHZ,CAlCA,oCAyCQ,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CACA,cAAA,CACA,cAAA,CACA,UAAA,CACA,gBAAA,CACA,UAAA,CACA,iBAJR,CAKQ,0CACI,SAHZ,CAKQ,0CACI,eAHZ,CAjDA,sCAwDQ,SAAA,CACA,aAAA,CACA,YAAA,CACA,eAAA,CACA,oBAAA,CACA,mCAJR,CAMQ,yDACI,SAAA,CACA,UAJZ,CAMQ,+DACI,kBAJZ,CAhEA,kDAuEY,aAJZ,CAKY,wDACI,4BAAA,CACA,aAHhB,CAvEA,mCA+EQ,SAAA,CACA,4BAAA,CACA,YAAA,CACA,gBALR,CAUI,wEACI,YALR,CAnFA,6BA2FQ,cAAA,CACA,QAAA,CACA,UAAA,CACA,WALR,CASA,gCACI,kBAAA,CACA,eAPJ,CAKA,2CAIQ,4BANR,CAEA,0CAOQ,yBANR,CADA,6CAUQ,gCANR,CAOQ,sEACI,eALZ,CAUA,kCAEI,UARJ,CAMA,wCAIQ,UAAA,CACA,iBAAA,CACA,cAAA,CACA,WAAA,CACA,eANR,CAsBA,qMAEQ,YAdR","sourcesContent":["#gmid {\n    display: grid;\n    grid:\n        'gd3 spa spa' auto\n        'gd3 gd4 gd5' auto\n        / auto 1fr auto;\n    #gd3 {\n        grid-area: gd3;\n    }\n    #spa {\n        grid-area: spa;\n        width: auto;\n    }\n    #gd4 {\n        grid-area: gd4;\n        width: auto;\n    }\n    #gd5 {\n        grid-area: gd5;\n        z-index: 3;\n        position: relative;\n        min-width: 150px;\n    }\n}\n\n:root #ehs-introduce-box {\n    position: absolute;\n    inset: 0 -5px 0 0;\n    overflow: auto;\n    text-align: left;\n    display: flex;\n    flex-flow: column;\n    border-radius: 0 0 6px 0;\n    background: #edebdf;\n    .ehs-title {\n        flex: none;\n        margin: 0 8px;\n        border-bottom: 1px solid #5c0d12;\n        line-height: 14px;\n        padding: 3px 0;\n        display: flex;\n        flex-direction: row;\n\n        .ehs-cn {\n            font-weight: bold;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n        .ehs-en {\n            opacity: 0.7;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n\n        > div {\n            overflow: hidden;\n            flex: auto;\n        }\n        > span {\n            overflow: hidden;\n            flex: none;\n        }\n    }\n    .ehs-close {\n        user-select: none;\n        cursor: pointer;\n        font-size: 16px;\n        opacity: 0.8;\n        line-height: 28px;\n        width: 20px;\n        text-align: center;\n        &:hover {\n            opacity: 1;\n        }\n        &::after {\n            content: '\\00d7';\n        }\n    }\n    .ehs-content {\n        flex: auto;\n        overflow: auto;\n        margin: 4px 0;\n        padding: 4px 8px;\n        scrollbar-width: thin;\n        scrollbar-color: #5c0d12 transparent;\n\n        &::-webkit-scrollbar {\n            width: 4px;\n            height: 4px;\n        }\n        &::-webkit-scrollbar-thumb {\n            background: #5c0d12;\n        }\n        abbr[title] {\n            padding: 0 1px;\n            &::after {\n                content: ' (' attr(title) ')';\n                font-size: 90%;\n            }\n        }\n    }\n    .ehs-href {\n        flex: none;\n        border-top: 1px solid #5c0d12;\n        margin: 0 8px;\n        line-height: 24px;\n        &:empty {\n            display: none;\n        }\n    }\n    &:empty {\n        display: none;\n    }\n    img {\n        max-width: 100%;\n        margin: 0;\n        width: auto;\n        height: auto;\n    }\n}\n\n:root.ehs-ex #ehs-introduce-box {\n    background: #4f535b;\n    border-radius: 0;\n    .ehs-title {\n        border-bottom: 1px solid #000;\n    }\n    .ehs-href {\n        border-top: 1px solid #000;\n    }\n    .ehs-content {\n        scrollbar-color: #000 transparent;\n        &::-webkit-scrollbar-thumb {\n            background: #000;\n        }\n    }\n}\n\n.ehs-no-translation,\n.ehs-no-intro {\n    opacity: 0.8;\n    h3 {\n        opacity: 0.6;\n        text-align: center;\n        font-size: 16px;\n        padding: 8px;\n        font-weight: bold;\n    }\n}\n\n//0:hide, 1:non-h 2: R18 3: R18G\n/* nsfw=\"R18\" */\n:root.ehs-image-level-0 #ehs-introduce-box .ehs-content {\n    img {\n        display: none;\n    }\n}\n:root.ehs-image-level-1 #ehs-introduce-box .ehs-content {\n    img[nsfw] {\n        display: none;\n    }\n}\n:root.ehs-image-level-2 #ehs-introduce-box .ehs-content {\n    img[nsfw='R18G'] {\n        display: none;\n    }\n}\n:root.ehs-image-level-3 {\n    // 所有都显示\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `#gmid{display:grid;grid:"gd3 spa spa" auto "gd3 gd4 gd5" auto/auto 1fr auto}#gmid #gd3{grid-area:gd3}#gmid #spa{grid-area:spa;width:auto}#gmid #gd4{grid-area:gd4;width:auto}#gmid #gd5{grid-area:gd5;z-index:3;position:relative;min-width:150px}:root #ehs-introduce-box{position:absolute;top:0;right:-5px;bottom:0;left:0;overflow:auto;text-align:left;display:flex;flex-flow:column;border-radius:0 0 6px 0;background:#edebdf}:root #ehs-introduce-box .ehs-title{flex:none;margin:0 8px;border-bottom:1px solid #5c0d12;line-height:14px;padding:3px 0;display:flex;flex-direction:row}:root #ehs-introduce-box .ehs-title .ehs-cn{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title .ehs-en{opacity:.7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}:root #ehs-introduce-box .ehs-title>div{overflow:hidden;flex:auto}:root #ehs-introduce-box .ehs-title>.ehs-actions{display:flex;flex-direction:column;justify-content:center;gap:4px;flex:none}:root #ehs-introduce-box .ehs-close,:root #ehs-introduce-box .ehs-edit{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;font-size:12px;opacity:.8;line-height:12px;width:20px;text-align:center;color:inherit;-webkit-text-decoration:none;text-decoration:none}:root #ehs-introduce-box .ehs-close:hover,:root #ehs-introduce-box .ehs-edit:hover{opacity:1}:root #ehs-introduce-box .ehs-edit:after{content:"\\270e"}:root #ehs-introduce-box .ehs-close:after{content:"\\2715"}:root #ehs-introduce-box .ehs-content{flex:auto;overflow:auto;margin:4px 0;padding:4px 8px;scrollbar-width:thin;scrollbar-color:#5c0d12 transparent}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar{width:4px;height:4px}:root #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#5c0d12}:root #ehs-introduce-box .ehs-content abbr[title]{padding:0 1px}:root #ehs-introduce-box .ehs-content abbr[title]:after{content:" (" attr(title) ")";font-size:90%}:root #ehs-introduce-box .ehs-href{flex:none;border-top:1px solid #5c0d12;margin:0 8px;line-height:24px}:root #ehs-introduce-box .ehs-href:empty,:root #ehs-introduce-box:empty{display:none}:root #ehs-introduce-box img{max-width:100%;margin:0;width:auto;height:auto}:root.ehs-ex #ehs-introduce-box{background:#4f535b;border-radius:0}:root.ehs-ex #ehs-introduce-box .ehs-title{border-bottom:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-href{border-top:1px solid #000}:root.ehs-ex #ehs-introduce-box .ehs-content{scrollbar-color:#000 transparent}:root.ehs-ex #ehs-introduce-box .ehs-content::-webkit-scrollbar-thumb{background:#000}.ehs-no-intro,.ehs-no-translation{opacity:.8}.ehs-no-intro h3,.ehs-no-translation h3{opacity:.6;text-align:center;font-size:16px;padding:8px;font-weight:700}:root.ehs-image-level-0 #ehs-introduce-box .ehs-content img,:root.ehs-image-level-1 #ehs-introduce-box .ehs-content img[nsfw],:root.ehs-image-level-2 #ehs-introduce-box .ehs-content img[nsfw=R18G]{display:none}`, "",{"version":3,"sources":["webpack://./src/plugin/introduce/index.less"],"names":[],"mappings":"AAAA,MACI,YAAA,CACA,wDACJ,CAHA,WAOQ,aADR,CANA,WAUQ,aAAA,CACA,UADR,CAVA,WAcQ,aAAA,CACA,UADR,CAdA,WAkBQ,aAAA,CACA,SAAA,CACA,iBAAA,CACA,eADR,CAKA,yBACI,iBAAA,CACA,KAAA,CAAA,UAAA,CAAA,QAAA,CAAA,MAAA,CACA,aAAA,CACA,eAAA,CACA,YAAA,CACA,gBAAA,CACA,uBAAA,CACA,kBAHJ,CALA,oCAUQ,SAAA,CACA,YAAA,CACA,+BAAA,CACA,gBAAA,CACA,aAAA,CACA,YAAA,CACA,kBAFR,CAdA,4CAmBY,eAAA,CACA,eAAA,CACA,sBAAA,CACA,kBAFZ,CApBA,4CAyBY,UAAA,CACA,eAAA,CACA,sBAAA,CACA,kBAFZ,CA1BA,wCAgCY,eAAA,CACA,SAHZ,CA9BA,iDAoCY,YAAA,CACA,qBAAA,CACA,sBAAA,CACA,OAAA,CACA,SAHZ,CArCA,uEA6CQ,wBAAA,CAAA,qBAAA,CAAA,oBAAA,CAAA,gBAAA,CACA,cAAA,CACA,cAAA,CACA,UAAA,CACA,gBAAA,CACA,UAAA,CACA,iBAAA,CACA,aAAA,CACA,4BAAA,CAAA,oBAJR,CAKQ,mFACI,SAFZ,CArDA,yCA2DQ,eAHR,CAMQ,0CACI,eAJZ,CA3DA,sCAmEQ,SAAA,CACA,aAAA,CACA,YAAA,CACA,eAAA,CACA,oBAAA,CACA,mCALR,CAOQ,yDACI,SAAA,CACA,UALZ,CAOQ,+DACI,kBALZ,CA1EA,kDAkFY,aALZ,CAMY,wDACI,4BAAA,CACA,aAJhB,CAjFA,mCA0FQ,SAAA,CACA,4BAAA,CACA,YAAA,CACA,gBANR,CAWI,wEACI,YANR,CA7FA,6BAsGQ,cAAA,CACA,QAAA,CACA,UAAA,CACA,WANR,CAUA,gCACI,kBAAA,CACA,eARJ,CAMA,2CAIQ,4BAPR,CAGA,0CAOQ,yBAPR,CAAA,6CAUQ,gCAPR,CAQQ,sEACI,eANZ,CAWA,kCAEI,UATJ,CAOA,wCAIQ,UAAA,CACA,iBAAA,CACA,cAAA,CACA,WAAA,CACA,eAPR,CAuBA,qMAEQ,YAfR","sourcesContent":["#gmid {\n    display: grid;\n    grid:\n        'gd3 spa spa' auto\n        'gd3 gd4 gd5' auto\n        / auto 1fr auto;\n    #gd3 {\n        grid-area: gd3;\n    }\n    #spa {\n        grid-area: spa;\n        width: auto;\n    }\n    #gd4 {\n        grid-area: gd4;\n        width: auto;\n    }\n    #gd5 {\n        grid-area: gd5;\n        z-index: 3;\n        position: relative;\n        min-width: 150px;\n    }\n}\n\n:root #ehs-introduce-box {\n    position: absolute;\n    inset: 0 -5px 0 0;\n    overflow: auto;\n    text-align: left;\n    display: flex;\n    flex-flow: column;\n    border-radius: 0 0 6px 0;\n    background: #edebdf;\n    .ehs-title {\n        flex: none;\n        margin: 0 8px;\n        border-bottom: 1px solid #5c0d12;\n        line-height: 14px;\n        padding: 3px 0;\n        display: flex;\n        flex-direction: row;\n\n        .ehs-cn {\n            font-weight: bold;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n        .ehs-en {\n            opacity: 0.7;\n            overflow: hidden;\n            text-overflow: ellipsis;\n            white-space: nowrap;\n        }\n\n        > div {\n            overflow: hidden;\n            flex: auto;\n        }\n        > .ehs-actions {\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            gap: 4px;\n            flex: none;\n        }\n    }\n    .ehs-edit,\n    .ehs-close {\n        user-select: none;\n        cursor: pointer;\n        font-size: 12px;\n        opacity: 0.8;\n        line-height: 12px;\n        width: 20px;\n        text-align: center;\n        color: inherit;\n        text-decoration: none;\n        &:hover {\n            opacity: 1;\n        }\n    }\n    .ehs-edit::after {\n        content: '\\270e';\n    }\n    .ehs-close {\n        &::after {\n            content: '\\2715';\n        }\n    }\n    .ehs-content {\n        flex: auto;\n        overflow: auto;\n        margin: 4px 0;\n        padding: 4px 8px;\n        scrollbar-width: thin;\n        scrollbar-color: #5c0d12 transparent;\n\n        &::-webkit-scrollbar {\n            width: 4px;\n            height: 4px;\n        }\n        &::-webkit-scrollbar-thumb {\n            background: #5c0d12;\n        }\n        abbr[title] {\n            padding: 0 1px;\n            &::after {\n                content: ' (' attr(title) ')';\n                font-size: 90%;\n            }\n        }\n    }\n    .ehs-href {\n        flex: none;\n        border-top: 1px solid #5c0d12;\n        margin: 0 8px;\n        line-height: 24px;\n        &:empty {\n            display: none;\n        }\n    }\n    &:empty {\n        display: none;\n    }\n    img {\n        max-width: 100%;\n        margin: 0;\n        width: auto;\n        height: auto;\n    }\n}\n\n:root.ehs-ex #ehs-introduce-box {\n    background: #4f535b;\n    border-radius: 0;\n    .ehs-title {\n        border-bottom: 1px solid #000;\n    }\n    .ehs-href {\n        border-top: 1px solid #000;\n    }\n    .ehs-content {\n        scrollbar-color: #000 transparent;\n        &::-webkit-scrollbar-thumb {\n            background: #000;\n        }\n    }\n}\n\n.ehs-no-translation,\n.ehs-no-intro {\n    opacity: 0.8;\n    h3 {\n        opacity: 0.6;\n        text-align: center;\n        font-size: 16px;\n        padding: 8px;\n        font-weight: bold;\n    }\n}\n\n//0:hide, 1:non-h 2: R18 3: R18G\n/* nsfw=\"R18\" */\n:root.ehs-image-level-0 #ehs-introduce-box .ehs-content {\n    img {\n        display: none;\n    }\n}\n:root.ehs-image-level-1 #ehs-introduce-box .ehs-content {\n    img[nsfw] {\n        display: none;\n    }\n}\n:root.ehs-image-level-2 #ehs-introduce-box .ehs-content {\n    img[nsfw='R18G'] {\n        display: none;\n    }\n}\n:root.ehs-image-level-3 {\n    // 所有都显示\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -277,29 +277,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root{--csstools-color-scheme--light:i
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.eh-syringe-lite-auto-complete-list{background:#f8f4ec;color:#5c0d12;position:absolute;top:168px;left:628px;min-width:570px;min-height:20px;text-align-last:left;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);display:block;max-height:50vh;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;padding:8px 0;scroll-padding:16px;scrollbar-width:thin;z-index:10}:root.ehs-ex .eh-syringe-lite-auto-complete-list{background:#2b2b2b;color:#f1f1f1}.eh-syringe-lite-auto-complete-list:empty,.eh-syringe-lite-auto-complete-list[hidden]{display:none}.eh-syringe-lite-auto-complete-list.exclude .auto-complete-item .en-name:before{content:"- "}.eh-syringe-lite-auto-complete-list .auto-complete-item{padding:0 8px;line-height:24px;height:24px;contain:strict;content-visibility:auto;display:flex;justify-content:space-between;cursor:pointer}.eh-syringe-lite-auto-complete-list .auto-complete-item img{display:inline-block!important;height:8pt;vertical-align:text-top}.eh-syringe-lite-auto-complete-list .auto-complete-item.selected,.eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#e8ecf3}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item.selected,:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-item:hover{background:#3e3f40}.eh-syringe-lite-auto-complete-list .auto-complete-text{flex:0 1 auto;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{flex-shrink:4;padding-left:8px;color:#5f6368}:root.ehs-ex .eh-syringe-lite-auto-complete-list .auto-complete-text.en-name{color:#d9d9d9}.eh-syringe-lite-auto-complete-list mark{color:inherit;background:#f5f500}:root.ehs-ex .eh-syringe-lite-auto-complete-list mark{background:#727200}`, "",{"version":3,"sources":["webpack://./src/plugin/tag-tip/index.less"],"names":[],"mappings":"AAAA,oCACI,kBAAA,CACA,aAAA,CAOA,iBAAA,CACA,SAAA,CACA,UAAA,CACA,eAAA,CACA,eAAA,CACA,oBAAA,CACA,iBAAA,CACA,gGAAA,CAIA,aAAA,CACA,eAAA,CACA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,aAAA,CACA,mBAAA,CACA,oBAAA,CACA,UARJ,CAdI,iDACI,kBAAA,CACA,aAgBR,CAMI,sFAEI,YAJR,CAOI,gFAGY,YAPhB,CA7BA,wDA0CQ,aAAA,CACA,gBAAA,CACA,WAAA,CACA,cAAA,CACA,uBAAA,CACA,YAAA,CACA,6BAAA,CACA,cAVR,CAvCA,4DAoDY,8BAAA,CACA,UAAA,CACA,uBAVZ,CAaQ,+HAEI,kBAXZ,CAaY,yJACI,kBAVhB,CApDA,wDAoEQ,aAAA,CACA,kBAAA,CACA,sBAAA,CACA,eAbR,CAeQ,gEACI,aAAA,CACA,gBAAA,CACA,aAbZ,CAcY,6EACI,aAZhB,CAlEA,yCAoFQ,aAAA,CACA,kBAfR,CAgBQ,sDACI,kBAdZ","sourcesContent":[".eh-syringe-lite-auto-complete-list {\n    background: #f8f4ec;\n    color: #5c0d12;\n\n    :root.ehs-ex & {\n        background: #2b2b2b;\n        color: #f1f1f1;\n    }\n\n    position: absolute;\n    top: 168px;\n    left: 628px;\n    min-width: 570px;\n    min-height: 20px;\n    text-align-last: left;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    display: block;\n    max-height: 50vh;\n    overflow: hidden auto;\n    padding: 8px 0;\n    scroll-padding: 16px;\n    scrollbar-width: thin;\n    z-index: 10;\n\n    &[hidden],\n    &:empty {\n        display: none;\n    }\n\n    &.exclude {\n        .auto-complete-item {\n            .en-name::before {\n                content: '- ';\n            }\n        }\n    }\n\n    .auto-complete-item {\n        padding: 0 8px;\n        line-height: 24px;\n        height: 24px;\n        contain: strict;\n        content-visibility: auto;\n        display: flex;\n        justify-content: space-between;\n        cursor: pointer;\n\n        img {\n            display: inline-block !important;\n            height: 8pt;\n            vertical-align: text-top;\n        }\n\n        &:hover,\n        &.selected {\n            background: #e8ecf3;\n\n            :root.ehs-ex & {\n                background: #3e3f40;\n            }\n        }\n    }\n\n    .auto-complete-text {\n        flex: 0 1 auto;\n        white-space: nowrap;\n        text-overflow: ellipsis;\n        overflow: hidden;\n\n        &.en-name {\n            flex-shrink: 4;\n            padding-left: 8px;\n            color: #5f6368;\n            :root.ehs-ex & {\n                color: #d9d9d9;\n            }\n        }\n    }\n\n    mark {\n        color: inherit;\n        background: #f5f500;\n        :root.ehs-ex & {\n            background: #727200;\n        }\n    }\n}\n"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, [
-/* harmony export */   "A", 0, __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ ]);
-
-
-/***/ }),
-
-/***/ 2719:
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9147);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1129);
-/* harmony import */ var _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_5_webpack_5_111_1_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `:root .ehs-context-menu{position:fixed;z-index:2147483647;padding:8px 0;background:#f8f4ec;color:#5c0d12;border-radius:4px;box-shadow:0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);max-width:100vw;max-height:100vh;overflow-x:hidden;overflow-y:auto;overflow:hidden auto;scrollbar-width:thin;box-sizing:border-box}:root .ehs-context-menu>button{display:block;width:100%;padding:0 8px;min-height:24px;border:0;background:transparent;color:inherit;font:inherit;line-height:24px;text-align:left;cursor:pointer}:root .ehs-context-menu>button:focus-visible,:root .ehs-context-menu>button:hover{background:#e8ecf3}:root.ehs-ex .ehs-context-menu{background:#2b2b2b;color:#f1f1f1}:root.ehs-ex .ehs-context-menu>button:focus-visible,:root.ehs-ex .ehs-context-menu>button:hover{background:#3e3f40}`, "",{"version":3,"sources":["webpack://./src/providers/user-script/menu.less"],"names":[],"mappings":"AAAA,wBACI,cAAA,CACA,kBAAA,CACA,aAAA,CACA,kBAAA,CACA,aAAA,CACA,iBAAA,CACA,gGAAA,CAIA,eAAA,CACA,gBAAA,CACA,iBAAA,CAAA,eAAA,CAAA,oBAAA,CACA,oBAAA,CACA,qBAFJ,CAbA,+BAkBQ,aAAA,CACA,UAAA,CACA,aAAA,CACA,eAAA,CACA,QAAA,CACA,sBAAA,CACA,aAAA,CACA,YAAA,CACA,gBAAA,CACA,eAAA,CACA,cAFR,CAIQ,kFAEI,kBAFZ,CAOA,+BACI,kBAAA,CACA,aALJ,CAGA,gGAMQ,kBALR","sourcesContent":[":root .ehs-context-menu {\n    position: fixed;\n    z-index: 2147483647;\n    padding: 8px 0;\n    background: #f8f4ec;\n    color: #5c0d12;\n    border-radius: 4px;\n    box-shadow:\n        0 1px 3px 0 rgba(0, 0, 0, 0.2),\n        0 1px 1px 0 rgba(0, 0, 0, 0.14),\n        0 2px 1px -1px rgba(0, 0, 0, 0.12);\n    max-width: 100vw;\n    max-height: 100vh;\n    overflow: hidden auto;\n    scrollbar-width: thin;\n    box-sizing: border-box;\n\n    > button {\n        display: block;\n        width: 100%;\n        padding: 0 8px;\n        min-height: 24px;\n        border: 0;\n        background: transparent;\n        color: inherit;\n        font: inherit;\n        line-height: 24px;\n        text-align: left;\n        cursor: pointer;\n\n        &:hover,\n        &:focus-visible {\n            background: #e8ecf3;\n        }\n    }\n}\n\n:root.ehs-ex .ehs-context-menu {\n    background: #2b2b2b;\n    color: #f1f1f1;\n\n    > button:hover,\n    > button:focus-visible {\n        background: #3e3f40;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -19079,6 +19056,12 @@ let Introduce = class Introduce {
       namespace,
       key
     });
+    // language=HTML
+    const actions = `
+            <div class="ehs-actions">
+                ${namespace === 'temp' ? '' : `<a class="ehs-edit" href="${editorUrl}" target="_blank" title="编辑标签" aria-label="编辑标签"></a>`}
+                <span class="ehs-close" title="关闭介绍" aria-label="关闭介绍"></span>
+            </div>`;
     if (tagData) {
       var _tagData$links;
       const tagEn = `${this.tagging.namespace(tagData.ns)}:${tagData.key}`;
@@ -19089,7 +19072,7 @@ let Introduce = class Introduce {
                     <div class="ehs-cn">${this.tagging.markImagesAndEmoji(tagData.name)}</div>
                     <div class="ehs-en">${tagEn}</div>
                 </div>
-                <span class="ehs-close"></span>
+                ${actions}
             </div>
             <div class="ehs-content">
                 ${tagData.intro || `<div class="ehs-no-intro">
@@ -19106,7 +19089,7 @@ let Introduce = class Introduce {
                     <div class="ehs-cn">${namespace}:${key}</div>
                     <div class="ehs-en">该标签尚未翻译</div>
                 </div>
-                <span class="ehs-close"></span>
+                ${actions}
             </div>
             <div class="ehs-content">
                 <div class="ehs-no-translation">
@@ -23013,7 +22996,7 @@ let UiTranslation = class UiTranslation {
 UiTranslation = __decorate([Service(), __metadata("design:paramtypes", [Logger])], UiTranslation);
 
 ;// ./package.json
-const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.5.1","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 44000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^24.21.0"},"packageManager":"pnpm@12.8.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^8.0.6","@babel/plugin-transform-runtime":"^8.0.6","@babel/preset-env":"^8.0.6","@babel/runtime":"^8.0.5","@eslint/js":"^10.0.1","@types/chrome":"^0.3.4","@types/escape-html":"^1.0.4","@types/node":"^26.6.3","@types/tampermonkey":"^5.5.0","@types/webextension-polyfill":"^0.12.6","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.1.1","babel-plugin-polyfill-corejs3":"^1.0.0","copy-webpack-plugin":"^14.0.0","crx":"^5.0.1","css-loader":"^7.1.5","cssnano":"^9.0.5","eslint":"^10.11.0","eslint-config-prettier":"^10.1.8","execa":"^10.0.1","glob":"^13.0.6","html-webpack-plugin":"^5.6.8","less":"^4.9.1","less-loader":"^13.0.0","postcss":"^8.5.28","postcss-import":"^17.0.0","postcss-loader":"^8.2.1","postcss-preset-env":"^11.5.4","prettier":"^3.9.9","rimraf":"^6.1.3","semver":"^7.8.5","style-loader":"^4.0.0","ts-loader":"^9.6.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.10.0","typescript":"^6.0.3","typescript-eslint":"^8.71.0","web-ext":"^10.7.0","webpack":"^5.111.1","webpack-bundle-analyzer":"^5.4.0","webpack-cli":"^7.2.3","webpack-dev-server":"^6.0.0","yaml-loader":"^0.9.0"},"dependencies":{"core-js":"^3.50.0","emoji-regex":"^11.0.0","escape-html":"^1.0.3","idb-keyval":"^6.3.0","lit-html":"^3.3.3","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
+const package_namespaceObject = /*#__PURE__*/JSON.parse('{"name":"ehsyringe","displayName":"EhSyringe","version":"3.5.2","description":"E 站注射器，将中文翻译注入到 E 站体内。包含全站 UI 翻译和超过 44000 条标签翻译，标签数据库持续更新中。","author":"EhTagTranslation","repository":{"type":"git","url":"git+https://github.com/EhTagTranslation/EhSyringe.git"},"engines":{"node":"^24.21.0"},"packageManager":"pnpm@12.8.1","license":"MIT","bugs":"https://github.com/EhTagTranslation/EhSyringe/issues","homepage":"https://github.com/EhTagTranslation/EhSyringe","type":"module","scripts":{"start:monkey":"webpack serve --mode=development --env type=user-script","start:ext":"webpack --mode=development --watch --env type=web-ext","start:chrome":"pnpm run start:ext --env vendor=chrome","start:firefox":"pnpm run start:ext --env vendor=firefox","build":"webpack --mode=production","build:monkey":"pnpm run build --env type=user-script","build:ext":"pnpm run build --env type=web-ext","build:chrome":"pnpm run build:ext --env vendor=chrome","build:firefox":"pnpm run build:ext --env vendor=firefox","pack:chrome":"crx pack dist --zip-output releases/ehsyringe.chrome.zip && crx pack dist -o releases/ehsyringe.chrome.crx","pack:firefox":"web-ext build -s dist -a releases -n ehsyringe.firefox.xpi -o && web-ext build -s dist -a releases -n ehsyringe.firefox.zip -o","lint":"eslint","format":"prettier --ignore-path .gitignore --write .","clean":"rimraf dist releases"},"devDependencies":{"@babel/core":"^8.0.6","@babel/plugin-transform-runtime":"^8.0.6","@babel/preset-env":"^8.0.6","@babel/runtime":"^8.0.5","@eslint/js":"^10.0.1","@types/chrome":"^0.3.4","@types/escape-html":"^1.0.4","@types/node":"^26.6.3","@types/tampermonkey":"^5.5.0","@types/webextension-polyfill":"^0.12.6","@webextension-toolbox/webpack-webextension-plugin":"^3.3.1","babel-loader":"^10.1.1","babel-plugin-polyfill-corejs3":"^1.0.0","copy-webpack-plugin":"^14.0.0","crx":"^5.0.1","css-loader":"^7.1.5","cssnano":"^9.0.5","eslint":"^10.11.0","eslint-config-prettier":"^10.1.8","execa":"^10.0.1","glob":"^13.0.6","html-webpack-plugin":"^5.6.8","less":"^4.9.1","less-loader":"^13.0.0","postcss":"^8.5.28","postcss-import":"^17.0.0","postcss-loader":"^8.2.1","postcss-preset-env":"^11.5.4","prettier":"^3.9.9","rimraf":"^6.1.3","semver":"^7.8.5","style-loader":"^4.0.0","ts-loader":"^9.6.2","tsconfig-paths-webpack-plugin":"^4.2.0","type-fest":"^5.10.0","typescript":"^6.0.3","typescript-eslint":"^8.71.0","web-ext":"^10.7.0","webpack":"^5.111.1","webpack-bundle-analyzer":"^5.4.0","webpack-cli":"^7.2.3","webpack-dev-server":"^6.0.0","yaml-loader":"^0.9.0"},"dependencies":{"core-js":"^3.50.0","emoji-regex":"^11.0.0","escape-html":"^1.0.3","idb-keyval":"^6.3.0","lit-html":"^3.3.3","rxjs":"^7.8.2","tslib":"^2.8.1","typedi":"^0.10.0","webextension-polyfill":"^0.12.0"}}');
 ;// ./src/info.ts
 
 const packageJson = package_namespaceObject;
@@ -23786,152 +23769,22 @@ let AutoUpdate = class AutoUpdate {
 };
 AutoUpdate = __decorate([Service(), __metadata("design:paramtypes", [Logger, Storage, messaging_Messaging])], AutoUpdate);
 
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.flat-map.js
-es_array_flat_map_namespaceFn();
-
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.unscopables.flat-map.js
-es_array_unscopables_flat_map_namespaceFn();
-
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.flat-map.js
-es_iterator_flat_map_namespaceFn();
-
-;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.some.js
-es_iterator_some_namespaceFn();
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/css-loader@7.1.5_webpack@5.111.1/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/postcss-loader@8.2.1_postcss@8.5.28_typescript@6.0.3_webpack@5.111.1/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/less-loader@13.0.0_less@4.9.1_webpack@5.111.1/node_modules/less-loader/dist/cjs/index.js!./src/providers/user-script/menu.less
-var menu = __webpack_require__(2719);
-;// ./src/providers/user-script/menu.less
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var menu_options = {};
-
-menu_options.styleTagTransform = (styleTagTransform_default()());
-menu_options.setAttributes = (setAttributesWithoutAttributes_default()());
-menu_options.insert = (insertBySelector_default()().bind)(null, ":root");
-menu_options.domAPI = (styleDomAPI_default()());
-menu_options.insertStyleElement = (insertStyleElement_default()());
-
-var menu_update = injectStylesIntoStyleTag_default()()(menu/* default */.A, menu_options);
-
-
-
-
-       /* harmony default export */ const user_script_menu = (menu/* default */.A && menu/* default */.A.locals ? menu/* default */.A.locals : undefined);
-
 ;// ./src/providers/user-script/menu.ts
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function matchesUrlPatterns(url, patterns) {
-  return patterns.some(pattern => {
-    const source = pattern.split('*').map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*');
-    return new RegExp('^' + source + '$').test(url);
-  });
-}
 let MenuProvider = class MenuProvider {
-  constructor() {
-    this.menus = [];
+  constructor(logger) {
+    this.logger = logger;
+    logger.warn(`不支持右键菜单`);
   }
-  handleEvent(ev) {
-    var _this$closeMenu, _menu$querySelector;
-    (_this$closeMenu = this.closeMenu) === null || _this$closeMenu === void 0 || _this$closeMenu.call(this);
-    if (!(ev.target instanceof Element)) return;
-    const image = ev.target.closest('img');
-    const link = ev.target.closest('a[href]');
-    const items = this.menus.flatMap(info => {
-      const urls = [...(info.contexts.includes('image') && image ? [image.currentSrc || image.src] : []), ...(info.contexts.includes('link') && link instanceof HTMLAnchorElement ? [link.href] : [])];
-      const url = urls.find(url => matchesUrlPatterns(url, info.targetUrlPatterns));
-      return url ? [{
-        info,
-        url
-      }] : [];
-    });
-    if (items.length === 0) return;
-    ev.preventDefault();
-    const menu = document.createElement('div');
-    menu.className = 'ehs-context-menu';
-    menu.setAttribute('role', 'menu');
-    const controller = new AbortController();
-    const close = () => {
-      menu.remove();
-      controller.abort();
-      this.closeMenu = undefined;
-    };
-    this.closeMenu = close;
-    for (const {
-      info,
-      url
-    } of items) {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.textContent = info.title;
-      button.setAttribute('role', 'menuitem');
-      button.addEventListener('click', () => {
-        close();
-        info.onclick({
-          url
-        });
-      });
-      menu.append(button);
-    }
-    document.body.append(menu);
-    menu.style.left = `${Math.max(0, Math.min(ev.clientX, window.innerWidth - menu.offsetWidth))}px`;
-    menu.style.top = `${Math.max(0, Math.min(ev.clientY, window.innerHeight - menu.offsetHeight))}px`;
-    const options = {
-      capture: true,
-      signal: controller.signal
-    };
-    document.addEventListener('pointerdown', event => {
-      if (!(event.target instanceof Node) || !menu.contains(event.target)) close();
-    }, options);
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') close();
-    }, options);
-    document.addEventListener('scroll', close, options);
-    window.addEventListener('blur', event => {
-      if (event.target === window) close();
-    }, options);
-    (_menu$querySelector = menu.querySelector('button')) === null || _menu$querySelector === void 0 || _menu$querySelector.focus({
-      preventScroll: true
-    });
-  }
-  createMenu(info) {
-    if (!matchesUrlPatterns(location.href, info.documentUrlPatterns)) {
-      return;
-    }
-    document.addEventListener('contextmenu', this);
-    this.menus.push(info);
+  createMenu(_info) {
+    return;
   }
 };
-MenuProvider = __decorate([Service()], MenuProvider);
+MenuProvider = __decorate([Service(), __metadata("design:paramtypes", [Logger])], MenuProvider);
 const provider = services_Container.get(MenuProvider);
 const createMenu = provider.createMenu.bind(provider);
 ;// ./src/providers/user-script/utils.ts
@@ -24031,6 +23884,9 @@ TagContextMenu = __decorate([Service(), __metadata("design:paramtypes", [Tagging
 
 ;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.number.to-fixed.js
 es_number_to_fixed_namespaceFn();
+
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.some.js
+es_iterator_some_namespaceFn();
 
 ;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array-buffer.constructor.js
 es_array_buffer_constructor_namespaceFn();
@@ -24555,6 +24411,15 @@ let DatabaseUpdater = class DatabaseUpdater {
   }
 };
 DatabaseUpdater = __decorate([Service(), __metadata("design:paramtypes", [Logger, messaging_Messaging, Storage, Database, BadgeLoading])], DatabaseUpdater);
+
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.flat-map.js
+es_array_flat_map_namespaceFn();
+
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.array.unscopables.flat-map.js
+es_array_unscopables_flat_map_namespaceFn();
+
+;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.iterator.flat-map.js
+es_iterator_flat_map_namespaceFn();
 
 ;// ./node_modules/.pnpm/core-js@3.50.0/node_modules/core-js/modules/es.object.from-entries.js
 es_object_from_entries_namespaceFn();
@@ -26309,4 +26174,4 @@ if (!(LOADED_KEY in window)) {
 }
 /******/ })()
 ;
-//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.5.1/ehsyringe.user.js.map
+//# sourceMappingURL=https://github.com/EhTagTranslation/EhSyringe/releases/download/v3.5.2/ehsyringe.user.js.map
