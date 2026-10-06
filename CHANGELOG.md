@@ -1,5 +1,9 @@
 # 更新日志
 
+## 3.5.2
+
+- [UserScript] 优化标签编辑 [#1368](https://github.com/EhTagTranslation/EhSyringe/issues/1368)
+
 ## 3.5.1
 
 - [UserScript] 支持右键菜单 [EhTagTranslation/Editor/issues/1385](https://github.com/EhTagTranslation/Editor/issues/1385)

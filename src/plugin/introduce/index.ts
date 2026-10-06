@@ -100,6 +100,12 @@ export class Introduce {
             return;
         }
         const editorUrl = this.tagging.editorUrl({ namespace, key });
+        // language=HTML
+        const actions = `
+            <div class="ehs-actions">
+                ${namespace === 'temp' ? '' : `<a class="ehs-edit" href="${editorUrl}" target="_blank" title="编辑标签" aria-label="编辑标签"></a>`}
+                <span class="ehs-close" title="关闭介绍" aria-label="关闭介绍"></span>
+            </div>`;
         if (tagData) {
             const tagEn = `${this.tagging.namespace(tagData.ns)}:${tagData.key}`;
             // language=HTML
@@ -109,7 +115,7 @@ export class Introduce {
                     <div class="ehs-cn">${this.tagging.markImagesAndEmoji(tagData.name)}</div>
                     <div class="ehs-en">${tagEn}</div>
                 </div>
-                <span class="ehs-close"></span>
+                ${actions}
             </div>
             <div class="ehs-content">
                 ${
@@ -129,7 +135,7 @@ export class Introduce {
                     <div class="ehs-cn">${namespace}:${key}</div>
                     <div class="ehs-en">该标签尚未翻译</div>
                 </div>
-                <span class="ehs-close"></span>
+                ${actions}
             </div>
             <div class="ehs-content">
                 <div class="ehs-no-translation">
